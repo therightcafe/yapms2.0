@@ -51,7 +51,6 @@ class State {
 	setVoteCount(value, updateText) {
 		var diff = value - this.voteCount;
 		this.voteCount = value;
-		console.log("DIFF: " + diff + " " + value);
 		totalVotes += diff;
 
 		// update the html text display
