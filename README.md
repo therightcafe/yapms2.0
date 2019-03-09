@@ -9,6 +9,10 @@ The following readme should help you get started with contributing to the YAPms 
 sudo apt install php7.0 git
 ```
 **2.** Create a directory for the YAPms code
+```
+mkdir yapms
+cd yapms
+```
 **3.** Initialize a git project in the directory
 ```
 git init
@@ -22,6 +26,9 @@ git remote add origin https://github.com/yapms/YAPms
 git pull origin master
 ```
 **6.** Navigate into /app
+```
+cd app
+```
 **7.** Start a local php server
 ```
 php -S localhost:8000
