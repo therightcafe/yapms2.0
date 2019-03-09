@@ -661,6 +661,11 @@ function clearMap() {
 
 // iterate over each state and delegate votes to the candidate
 function countVotes() {
+	var mid = document.getElementById("battlechartmid");
+	if(mid !== null) {
+		mid.setAttribute("fill", TOSSUP.colors[2]);
+	}
+
 	if(mapType === 'demprimary' || mapType === 'repprimary') {
 		for(var key in candidates) {
 			var candidate = candidates[key];
@@ -699,6 +704,16 @@ function countVotes() {
 				if(state.candidate === key) {
 					candidate.voteCount += state.voteCount;
 					candidate.probVoteCounts[state.colorValue] += state.voteCount;
+				}
+			}
+
+			if(mid !== null) {
+				if(candidate.voteCount > Math.ceil(totalVotes / 2)) {
+					if(key === 'Tossup') {
+						mid.setAttribute("fill",candidate.colors[2]);
+					} else {
+						mid.setAttribute("fill", candidate.colors[0]);
+					}
 				}
 			}
 		}
