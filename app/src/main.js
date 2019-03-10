@@ -1,4 +1,4 @@
-var currentCache = 'v0.10.10';
+var currentCache = 'v0.10.12';
 
 var states = [];
 var lands = [];
@@ -151,7 +151,7 @@ function initData(dataid) {
 			htmlElement.style.fill = '#bbb7b2';
 			buttons.push(htmlElement);
 
-		} else if(name.includes('land')) {
+		} else if(name.includes('-land')) {
 			htmlElement.setAttribute('onclick', 'landClick(this)');
 			htmlElement.style.fill = '#bbb7b2';
 			lands.push(htmlElement);
@@ -180,6 +180,12 @@ function initData(dataid) {
 			var state = new State(name, htmlElement, dataid);
 
 			// add the state to the list
+			states.push(state);
+		} else {
+			// catch all
+			htmlElement.setAttribute('onclick',
+				'stateClick(this)');
+			var state = new State(name, htmlElement, dataid);
 			states.push(state);
 		}
 	}

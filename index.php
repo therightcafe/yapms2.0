@@ -61,7 +61,7 @@
 
 		<div id="whatsnew" class="infobox">
 			<b>New Stuff:</b>
-			Republican primary map! Share your Republican primary prediction with friends<br>
+			USA County Map! 
 		</div>
 
 		<div class="infobox">
@@ -90,22 +90,6 @@
 			Android App
 		</div>
 	</a>
-	
-	<div id="amazon">
-		<script type="text/javascript">
-		amzn_assoc_placement = "adunit0";
-		amzn_assoc_tracking_id = "yapms-20";
-		amzn_assoc_ad_mode = "manual";
-		amzn_assoc_ad_type = "smart";
-		amzn_assoc_marketplace = "amazon";
-		amzn_assoc_region = "US";
-		amzn_assoc_linkid = "45adcb2c9eb97ff87d781da99a19129d";
-		amzn_assoc_asins = "0307237702,0399594493,1250163269,0804189765";
-		amzn_assoc_design = "in_content";
-		amzn_assoc_title = "Interesting Reads";
-		</script>
-		<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
-	</div>
 
 	<div id="bottombar">
 		<a href="https://privacypolicies.com/privacy/view/5e9b5eee7febd2d29c0ec896e1ac90ef">Privacy</a>
