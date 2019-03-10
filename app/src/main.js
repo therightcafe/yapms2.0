@@ -136,60 +136,28 @@ function initData(dataid) {
 	var htmlElements = document.getElementById('outlines').children;
 
 	// iterate over each element
-	for(var index = 0; index < htmlElements.length; ++index) {
+	for(var index = 0, length = htmlElements.length; index < length; ++index) {
 		var htmlElement = htmlElements[index];
 		htmlElement.setAttribute('style', 'inherit');
 		var name = htmlElement.getAttribute('id');
-		if(name.includes('text')) {
-			// dont include text as states
-			// make sure you can't click them
-			//htmlElement.style.pointerEvents = 'none';
-		} else if(name.includes('button')) {
+		if(name.includes('*lines*') || name.includes("*ignore*")) {
+			// do nothing with it paths that
+			// have these ids
+		} else if(name.includes('-button')) {
 			// don't include buttons as states
 			htmlElement.setAttribute('onclick',
 				'buttonClick(this)');
-			htmlElement.style.fill = '#bbb7b2';
 			buttons.push(htmlElement);
-
 		} else if(name.includes('-land')) {
 			htmlElement.setAttribute('onclick', 'landClick(this)');
-			htmlElement.style.fill = '#bbb7b2';
 			lands.push(htmlElement);
-		} else if(name.includes('-D') || name.includes('-A')) {
-			htmlElement.setAttribute('onclick', 'districtClick(this)');
-			htmlElement.style.fill = '#bbb7b2';
-			states.push(new State(name, htmlElement, dataid));
-
-		} else if(name.length == 5) {
-			// set click function
-			htmlElement.setAttribute('onclick', 
-				'districtClick(this)');
-			htmlElement.style.fill = '#bbb7b2';
-
-			var state = new State(name, htmlElement, dataid);
-
-			// add the state to the list
-			states.push(state);
-
-		} else if(name.length == 2 || name.length == 5 ) {
-			// set click function
-			htmlElement.setAttribute('onclick', 
-				'stateClick(this)');
-			htmlElement.style.fill = '#bbb7b2';
-
-			var state = new State(name, htmlElement, dataid);
-
-			// add the state to the list
-			states.push(state);
 		} else {
-			// catch all
-			htmlElement.setAttribute('onclick',
-				'stateClick(this)');
-			var state = new State(name, htmlElement, dataid);
-			states.push(state);
+			htmlElement.setAttribute('onclick', 'stateClick(this)');
+			states.push(new State(name, htmlElement, dataid));
 		}
 	}
 
+	/* Special Elections for Senate */
 	var special = document.getElementById('special');
 	var specialChildren;
 	if(special != null) {
@@ -687,6 +655,9 @@ function countVotes() {
 					if(key === 'Tossup') {
 						state.delegates[key] = state.voteCount;	
 					}
+				}
+				if(isNaN(state.delegates[key])) {
+					console.log(state);
 				}
 				candidate.voteCount += state.delegates[key];
 				candidate.probVoteCounts[0] += state.delegates[key];

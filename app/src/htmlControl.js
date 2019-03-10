@@ -151,7 +151,9 @@ function darkPalette() {
 	setClickButtonColor('#bbb7b2');
 	setClickButtonTextColor('#000000');
 	setMenuColor('#2f3136');
-	
+
+	setBorderStyle('#000000', 7.0);
+
 	chartOptions.plugins.datalabels.borderWidth = 2;
 	chartOptions.plugins.datalabels.borderRadius = 4;
 
@@ -181,6 +183,8 @@ function terminalPalette() {
 	setClickButtonColor('#000000');
 	setClickButtonTextColor('#ffffff');
 	setMenuColor('#eeeeee');
+	
+	setBorderStyle('#ffffff', 6.0);
 	
 	chartOptions.plugins.datalabels.borderWidth = 2;
 	chartOptions.plugins.datalabels.borderRadius = 4;
@@ -213,6 +217,8 @@ function lightPalette() {
 	setClickButtonTextColor('#000000');
 	setMenuColor('#2b2e33');
 	
+	setBorderStyle('#000000', 6.0);
+	
 	chartOptions.plugins.datalabels.borderWidth = 2;
 	chartOptions.plugins.datalabels.borderRadius = 4;
 	
@@ -241,6 +247,8 @@ function contrastPalette() {
 	setClickButtonColor('#ded9d3');
 	setClickButtonTextColor('#000000');
 	setMenuColor('#222222');
+	
+	setBorderStyle('#000000', 6.0);
 
 	chartOptions.plugins.datalabels.borderWidth = 2;
 	chartOptions.plugins.datalabels.borderRadius = 4;
@@ -273,6 +281,8 @@ function metallicPalette() {
 	setClickButtonColor('#bbb7b2');
 	setClickButtonTextColor('#000000');
 	setMenuColor('#33353b');
+	
+	setBorderStyle('#000000', 6.0);
 
 	chartOptions.plugins.datalabels.borderWidth = 2;
 	chartOptions.plugins.datalabels.borderRadius = 4;
@@ -306,6 +316,8 @@ function toWinPalette() {
 	setClickButtonColor('#f2eee6');
 	setClickButtonTextColor('#000000');
 	setMenuColor('#000000');
+
+	setBorderStyle('#ffffff', 6.0);
 
 	chartOptions.plugins.datalabels.borderWidth = 0;
 	chartOptions.plugins.datalabels.borderRadius = 2;
@@ -375,6 +387,14 @@ function setMapStyle(color, strokeWidth) {
 	if(special != null) {
 		special.style.stroke = color;
 		special.style.strokeWidth = strokeWidth * strokeMultiplier;
+	}
+}
+
+function setBorderStyle(color, strokeWidth) {
+	var border = document.getElementById('*lines*');
+	if(border !== null) {
+		border.style.stroke = color;
+		border.style.strokeWidth = strokeWidth * strokeMultiplier;
 	}
 }
 

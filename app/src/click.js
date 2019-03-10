@@ -94,58 +94,14 @@ function landClick(clickElement) {
 	updateLegend();
 }
 
-function districtClick(clickElement) {
-
-	var id = clickElement.getAttribute('id');
-	var split = id.split('-');
-	var district = states.find(state => state.name === id);
-
-	if(mode === 'move') {
-
-	} else if(mode === 'paint' || mode === 'paintmove') {
-		//var state = states.find(state => state.name === split[0]);
-		//state.setColor('tossup', 1);
-		district.incrementCandidateColor(paintIndex);
-		var landId = split[0] + '-' + split[1] + '-land';
-		var land = document.getElementById(landId);
-		if(land != null) {
-			land.style.fill = district.getDisplayColor();
-		}
-		
-		countVotes();
-		updateChart();
-		updateLegend();
-		if(loadConfig.filename === './res/lte_house.svg') {
-			updateLTEHouse();
-		}
-	} else if(mode === 'delete') {
-		/*
-		district.toggleDisable();
-		countVotes();
-		updateChart();
-		updateLegend();
-		*/
-	} else if(mode === 'ec') {
-		if(district.disabled === false) {
-			var ecedit = document.getElementById('ecedit');
-			var eceditText = document.getElementById('ecedit-message');
-			var input = document.getElementById('state-ec');
-			var stateId = document.getElementById('state-id');
-			eceditText.innerHTML = 'Set ' + id + ' electoral college';
-			input.value = district.voteCount;
-			stateId.value = id;
-			ecedit.style.display = 'inline';
-		}
-	}
-}
-
 function stateClick(clickElement, e) {
 	var id = clickElement.getAttribute('id');
 	// first element is the state
 	// second element might be button
-	var split = id.split('-');
+	//var split = id.split('-');
 	// get state where state.name equals the id attribute
-	var state = states.find(state => state.name === split[0]);
+	//var state = states.find(state => state.name === split[0]);
+	var state = states.find(state => state.name === id);
 
 	switch(mode) {
 		case 'paint':
