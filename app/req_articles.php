@@ -11,7 +11,7 @@ catch(PDOException $e) {
 	die();
 }
 
-$sql = 'select * from articles';
+$sql = 'select * from articles order by date desc limit 10 offset 0';
 
 $q = $dbh->query($sql);
 
