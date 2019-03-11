@@ -19,6 +19,7 @@ $.ajax({
 			article.style.backround = 'red';
 			article.style.margin = '10px';
 			articles.appendChild(article);
+			alert('testing');
 		}
 	},
 	error: function(a,b,c) {
