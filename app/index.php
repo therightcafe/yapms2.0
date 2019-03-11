@@ -159,6 +159,8 @@ if($mobile === false) {
 		'<div id="yapnews-header">' ,
 			'YAPNews' ,
 		'</div>' ,
+		'<div id="yapnews-articles">' ,
+		'</div>' ,
 	'</div>';
 }
 ?>
