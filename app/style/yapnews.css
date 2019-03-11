@@ -1,3 +1,9 @@
+#yapnews {
+	overflow-y: auto;
+	display: inline-flex;
+	flex-direction: column;
+}
+
 #yapnews-header {
 	font-family: Times;
 	font-size: 28px;
