@@ -349,6 +349,9 @@ function setMenuColor(color) {
 		button = clickButtons[index];
 		button.style.borderColor = color;
 	}
+	
+	var yapnewsClose = document.getElementById('yapnews-close');
+	yapnewsClose.style.borderColor = color;
 }
 
 function setClickButtonTextColor(color) {
@@ -357,6 +360,11 @@ function setClickButtonTextColor(color) {
 		button = clickButtons[index];
 		button.style.color = color;
 	}
+
+	var l1 = document.getElementById('yapnews-close-l1');
+	l1.setAttribute('stroke', color);
+	var l2 = document.getElementById('yapnews-close-l2');
+	l2.setAttribute('stroke', color);
 }
 
 function setClickButtonColor(color) {
@@ -365,6 +373,9 @@ function setClickButtonColor(color) {
 		button = clickButtons[index];
 		button.style.backgroundColor = color;
 	}
+
+	var yapnewsClose = document.getElementById('yapnews-close');
+	yapnewsClose.style.backgroundColor = color;
 }
 
 function setDisableColor(color) {
@@ -637,4 +648,26 @@ function setChart(type, position) {
 	updateChart();
 }
 
+function toggleYAPNews() {
+	var yapnews = document.getElementById("yapnews");
+	var l1 = document.getElementById("yapnews-close-l1");
+	var l2 = document.getElementById("yapnews-close-l2");
 
+	if(yapnews !== null) {
+		if(yapnews.style.width === "0vw") {
+			yapnews.style.width = "20vw";
+			l1.setAttribute('x1', '1');
+			l1.setAttribute('x2', '8');
+			l2.setAttribute('x1', '1');
+			l2.setAttribute('x2', '8');
+		} else {
+			yapnews.style.width = "0vw";
+			l1.setAttribute('x1', '8');
+			l1.setAttribute('x2', '1');
+			l2.setAttribute('x1', '8');
+			l2.setAttribute('x2', '1');
+		}
+		
+		centerMap();
+	}
+}
