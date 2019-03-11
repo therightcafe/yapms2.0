@@ -23,7 +23,7 @@
 }
 
 .recent .article .article-title {
-	font-size: 28px;
+	font-size: 32px;
 }
 
 .article {
@@ -40,12 +40,13 @@
 }
 
 .article-title {
+	font-size: 32px;
 	padding-left: 3px;
 }
 
 .article-snippet {
 	padding-left: 16px;
-	font-size: 22px;
+	font-size: 24px;
 	color: #444444;
 	flex: 1;
 }
@@ -78,5 +79,5 @@
 }
 
 .featured .article-snippet {
-	font-size: 26px;
+	font-size: 30px;
 }
