@@ -2,11 +2,20 @@
 <html>
 	<head>
 		<title>
-			YAPNews
+			YAPNews - Yet Another Political New Source
 		</title>
 
 		<link rel="stylesheet" type="text/css" href="style/common.css">
 		<link rel="stylesheet" type="text/css" href="style/style.css">
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132710089-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-132710089-1');
+		</script>
 	</head>
 
 	<body>

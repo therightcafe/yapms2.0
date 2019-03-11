@@ -1,8 +1,29 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<title> 
+		<?php
+			require 'dblogin.php';	
+			$sql = 'select * from articles where id = ' . $_GET['a']; 
+			$q = $dbh->query($sql);
+
+			foreach($q as $row) {
+				echo 'YAPNews - ' . $row['title'];
+			}
+		?>
+		</title>
+
 		<link rel="stylesheet" type="text/css" href="style/common.css">
 		<link rel="stylesheet" type="text/css" href="style/article.css">
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132710089-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-132710089-1');
+		</script>
 	</head>
 
 	<body>
@@ -20,10 +41,7 @@
 
 		<div id="article">
 		<?php
-			require 'dblogin.php';	
-
-			$sql = 'select * from articles where id = ' . $_GET['a']; 
-			foreach($dbh->query($sql) as $row) {
+			foreach($q as $row) {
 				echo '<div id="article-title">';
 				echo $row['title'];
 				echo '</div>';
