@@ -39,7 +39,7 @@
 	$sql = 'insert into articles (title, author, date, snippet, text, source, Featured) values (?,?,?,?,?,?,?)';
 	$stm = $dbh->prepare($sql);
 	
-	if($stm->execute([$title, $author, date("Y-m-d H:i:s"), $snippet, $text, $f])) {
+	if($stm->execute([$title, $author, date("Y-m-d H:i:s"), $snippet, $text, $source, $f])) {
 		echo "sql query success...<br>";
 		echo $sql;
 	} else {
