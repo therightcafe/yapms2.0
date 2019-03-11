@@ -72,39 +72,15 @@
 		<path id="NE-D2-land" d="m469.598 228.152 3.33943 8.96545 8.57987-3.06754-1.12735-5.45679z"/>
 	</g>
 	<g id="text">
-		<text id="NY-text" y="153.05663" x="818.16394">
-			<tspan id="tspan73" y="153.05663" x="818.16394">NY</tspan>
-			<tspan id="tspan75" y="168.05663" x="818.16394">29</tspan>
-		</text>
-		<text id="PA-text" y="209.66608" x="782.07806">
-			<tspan id="tspan78" y="209.66608" x="782.07806">PA</tspan>
-			<tspan id="tspan80" y="224.66608" x="782.07806">20</tspan>
-		</text>
-		<text id="OH-text" y="240.423" x="698.93951">
-			<tspan id="tspan83" y="240.423" x="698.93951">OH</tspan>
-			<tspan id="tspan85" y="255.423" x="698.93951">18</tspan>
-		</text>
-		<text id="VA-text" y="282.26245" x="787.45361">
-			<tspan id="tspan88" y="282.26245" x="787.45361">VA</tspan>
-			<tspan id="tspan90" y="297.26245" x="787.45361">13</tspan>
-		</text>
-		<text id="NC-text" y="332.69342" x="788.30316">
-			<tspan id="tspan93" y="332.69342" x="788.30316">NC</tspan>
-			<tspan id="tspan95" y="347.69342" x="788.30316">15</tspan>
-		</text>
-		<text id="SC-text" y="377.11313" x="760.30951">
-			<tspan id="tspan98" y="377.11313" x="760.30951">SC</tspan>
-			<tspan id="tspan100" y="392.11313" x="760.30951">9</tspan>
-		</text>
-		<text id="GA-text" y="409.59967" x="715.9754">
-			<tspan id="tspan103" y="409.59967" x="715.9754">GA</tspan>
-			<tspan id="tspan105" y="424.59967" x="715.9754">16</tspan>
-		</text>
-		<text id="FL-text" y="501.80151" x="763.95477">
-			<tspan id="tspan108" y="501.80151" x="763.95477">FL</tspan>
-			<tspan id="tspan110" y="516.80151" x="763.95477">29</tspan>
-		</text>
-		<text id="AL-text" y="413.86169" x="653.29108" xml:space="preserve"><tspan id="tspan8988-2-7" y="413.86169" x="653.29108">AL </tspan><tspan id="tspan316" y="428.86169" x="653.29108">9</tspan></text>
+		<text id="NY-text" y="153.05663" x="818.16394"><tspan id="tspan73" y="153.05663" x="818.16394">NY</tspan><tspan id="tspan75" y="168.05663" x="818.16394">29</tspan></text>
+		<text id="PA-text" y="209.66608" x="782.07806"><tspan id="tspan78" y="209.66608" x="782.07806">PA</tspan><tspan id="tspan80" y="224.66608" x="782.07806">20</tspan></text>
+		<text id="OH-text" y="240.423" x="698.93951"><tspan id="tspan83" y="240.423" x="698.93951">OH</tspan><tspan id="tspan85" y="255.423" x="698.93951">18</tspan></text>
+		<text id="VA-text" y="282.26245" x="787.45361"><tspan id="tspan88" y="282.26245" x="787.45361">VA</tspan><tspan id="tspan90" y="297.26245" x="787.45361">13</tspan></text>
+		<text id="NC-text" y="332.69342" x="788.30316" xml:space="preserve"><tspan id="tspan93" y="332.69342" x="788.30316">NC</tspan><tspan id="tspan95" y="347.69342" x="788.30316">15</tspan></text>
+		<text id="SC-text" y="377.11313" x="760.30951"><tspan id="tspan98" y="377.11313" x="760.30951">SC</tspan><tspan id="tspan100" y="392.11313" x="760.30951">9</tspan></text>
+		<text id="GA-text" y="409.59967" x="715.9754"><tspan id="tspan103" y="409.59967" x="715.9754">GA</tspan><tspan id="tspan105" y="424.59967" x="715.9754">16</tspan></text>
+		<text id="FL-text" y="501.80151" x="763.95477"><tspan id="tspan108" y="501.80151" x="763.95477">FL</tspan><tspan id="tspan110" y="516.80151" x="763.95477">29</tspan></text>
+		<text id="AL-text" y="413.86169" x="653.29108"><tspan id="tspan8988-2-7" y="413.86169" x="653.29108">AL </tspan><tspan id="tspan316" y="428.86169" x="653.29108">9</tspan></text>
 		<text id="MS-text" y="417.56348" x="599.49976" xml:space="preserve"><tspan id="tspan8988-2-9" y="417.56348" x="599.49976">MS </tspan><tspan id="tspan314" y="432.56348" x="599.49976">6</tspan></text>
 		<text id="LA-text" y="442.68225" x="543.47321" xml:space="preserve"><tspan id="tspan8988-2-2" y="442.68225" x="543.47321">LA </tspan><tspan id="tspan312" y="457.68225" x="543.47321">8</tspan></text>
 		<text id="TX-text" y="451.78485" x="425.24323" xml:space="preserve"><tspan id="tspan8988-2-97" y="451.78485" x="425.24323">TX </tspan><tspan id="tspan308" y="466.78485" x="425.24323">38</tspan></text>
