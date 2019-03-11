@@ -1,5 +1,5 @@
 <?php
-	include "../dblogin.php";
+	include "dblogin.php";
 
 	$title = trim($_POST["title"]);
 	//$title = filter_var($title, FILTER_SANITIZE_SPECIAL_CHARS);
