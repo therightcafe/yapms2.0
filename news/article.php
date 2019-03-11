@@ -60,7 +60,7 @@
 			echo $text;
 			echo '</div>';
 			echo '<div id="article-source">';
-			echo $source;
+			echo '<a href="' . $source . '">Original Source</a>';
 			echo '</div>';
 		?>
 		</div>
