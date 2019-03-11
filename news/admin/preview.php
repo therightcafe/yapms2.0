@@ -41,6 +41,11 @@
 				echo $_POST["text"];
 			?>
 			</div>
+			<div id="article-source">
+			<?php
+				echo $_POST["source"];
+			?>
+			</div>
 		</div>
 	
 		<?php 

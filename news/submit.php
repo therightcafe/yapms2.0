@@ -61,6 +61,11 @@
 				</p>
 				<textarea rows="15" cols="50" name="text" required>Write Article Here</textarea>
 
+				<p>
+					Original Source URL (if found elsewhere)
+				</p>
+				<input type="text" name="source"><br>
+
 				<br>
 				<br>				
 

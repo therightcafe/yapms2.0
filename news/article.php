@@ -33,6 +33,9 @@
 				echo '<div id="article-text">';
 				echo $row['text'];
 				echo '</div>';
+				echo '<div id="article-source">';
+				echo $row['source'];
+				echo '</div>';
 			}
 		?>
 		</div>
