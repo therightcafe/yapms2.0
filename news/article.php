@@ -34,7 +34,7 @@
 				echo $row['text'];
 				echo '</div>';
 				echo '<div id="article-source">';
-				echo $row['source'];
+				echo '<a href="' . $row['source'] . '">Original Source</a>';
 				echo '</div>';
 			}
 		?>
