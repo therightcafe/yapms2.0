@@ -41,6 +41,7 @@
 
 .yapnews-article-title {
 	text-decoration: none;
+	color: inherit;
 }
 
 .yapnews-article-author {
