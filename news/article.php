@@ -50,20 +50,18 @@
 
 		<div id="article">
 		<?php
-			foreach($q as $row) {
-				echo '<div id="article-title">';
-				echo $title;
-				echo '</div>';
-				echo '<div id="article-author">';
-				echo 'By ' . $author;
-				echo '</div>';
-				echo '<div id="article-text">';
-				echo $text;
-				echo '</div>';
-				echo '<div id="article-source">';
-				echo $source;
-				echo '</div>';
-			}
+			echo '<div id="article-title">';
+			echo $title;
+			echo '</div>';
+			echo '<div id="article-author">';
+			echo 'By ' . $author;
+			echo '</div>';
+			echo '<div id="article-text">';
+			echo $text;
+			echo '</div>';
+			echo '<div id="article-source">';
+			echo $source;
+			echo '</div>';
 		?>
 		</div>
 		
