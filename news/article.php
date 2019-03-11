@@ -6,10 +6,19 @@
 			require 'dblogin.php';	
 			$sql = 'select * from articles where id = ' . $_GET['a']; 
 			$q = $dbh->query($sql);
+			$title = "";
+			$author = "";
+			$text = "";
+			$source = "";
 
 			foreach($q as $row) {
-				echo 'YAPNews - ' . $row['title'];
+				$title = $row['title'];
+				$author = $row['author'];
+				$text = $row['text'];
+				$source = $row['source'];
 			}
+			
+			echo 'YAPNews - ' . $title;
 		?>
 		</title>
 
@@ -43,16 +52,16 @@
 		<?php
 			foreach($q as $row) {
 				echo '<div id="article-title">';
-				echo $row['title'];
+				echo $title;
 				echo '</div>';
 				echo '<div id="article-author">';
-				echo 'By ' . $row['author'];
+				echo 'By ' . $author;
 				echo '</div>';
 				echo '<div id="article-text">';
-				echo $row['text'];
+				echo $text;
 				echo '</div>';
 				echo '<div id="article-source">';
-				echo $row['source'];
+				echo $source;
 				echo '</div>';
 			}
 		?>
