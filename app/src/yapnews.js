@@ -15,7 +15,7 @@ $.ajax({
 
 		for(var index = 0; index < obj.length; ++index) {
 			var article = document.createElement('div');
-			article.setAttribute('class', 'article');
+			article.setAttribute('class', 'yapnews-article');
 			article.innerHTML = obj[index]['title'];
 			articles.appendChild(article);
 		}

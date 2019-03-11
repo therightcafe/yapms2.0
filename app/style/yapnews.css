@@ -19,7 +19,7 @@
 	transition: all 200ms;
 }
 
-#yapnews-article {
+.yapnews-article {
 	border-bottom: 1px solid #cccccc;
 	background-color: red;
 }
