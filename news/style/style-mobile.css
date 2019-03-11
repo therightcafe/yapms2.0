@@ -52,13 +52,13 @@
 
 .article-author {
 	padding-left: 3px;
-	font-size: 20px;
+	font-size: 22px;
 	color: #444444;
 }
 
 .article-date {
 	padding-left: 3px;
-	font-size: 20px;
+	font-size: 22px;
 	color: #444444;
 	flex: 1;
 }
@@ -74,9 +74,9 @@
 }
 
 .featured .article-title {
-	font-size: 38px;
+	font-size: 44px;
 }
 
 .featured .article-snippet {
-	font-size: 22px;
+	font-size: 26px;
 }
