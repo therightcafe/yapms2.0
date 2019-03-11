@@ -16,6 +16,12 @@
 			gtag('js', new Date());
 			gtag('config', 'UA-132710089-1');
 		</script>
+
+		<?php
+			if(strpos($_SERVER['HTTP_USER_AGENT'], 'Mobi')) {
+				echo '<link rel="stylesheet" type="text/css" href="style/style-mobile.css">';
+			};
+		?>
 	</head>
 
 	<body>
