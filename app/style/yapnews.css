@@ -24,3 +24,17 @@
 	margin: 10px;
 	padding-bottom: 10px;
 }
+
+.yapnews-article-title {
+
+}
+
+.yapnews-article-author {
+	font-size: 12px;
+	color: #444444;
+}
+
+.yapnews-article-snippet {
+	font-size: 14px;
+	color: #444444;
+}
