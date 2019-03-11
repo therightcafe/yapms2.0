@@ -22,8 +22,6 @@
 		?>
 		</title>
 
-		<link rel="stylesheet" type="text/css" href="style/common.css">
-
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132710089-1"></script>
 		<script>
@@ -36,8 +34,10 @@
 		<?php
 			if(strpos($_SERVER['HTTP_USER_AGENT'], 'Mobi')) {
 				echo '<link rel="stylesheet" type="text/css" href="style/article-mobile.css">';
+				echo '<link rel="stylesheet" type="text/css" href="style/common-mobile.css">';
 			} else {
 				echo '<link rel="stylesheet" type="text/css" href="style/article.css">';
+				echo '<link rel="stylesheet" type="text/css" href="style/common.css">';
 			}
 		?>
 	</head>
