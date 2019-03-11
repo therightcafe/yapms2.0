@@ -4,15 +4,15 @@
 
 #article-title {
 	text-align: center;
-	font-size: 52px;
+	font-size: 58px;
 }
 
 #article-author {
-	font-size: 18px;
+	font-size: 24px;
 	color: #444444;
 }
 
 #article-text {
 	margin: 20px;
-	font-size: 36px;
+	font-size: 38px;
 }
