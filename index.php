@@ -65,6 +65,12 @@
 		</div>
 
 		<div class="infobox">
+			<br>
+			Checkout our Android App at
+			<a href="https://play.google.com/store/apps/details?id=com.fishstudio.yapms&hl=en_GB" style="color:blue;">this link</a>
+		</div>
+
+		<div class="infobox">
 			<br>If you would like to submit ideas, or report bugs, please send an email to <a style="color:blue;" href="mailto:bugreport@yapms.com">bugreport@yapms.com</a>
 		</div>
 	</div>
@@ -77,19 +83,8 @@
 
 	<br>
 
-	<a href="https://discord.gg/WQh5fHU">
-		<div id="discord" class="start">
-			Discord
-		</div>
-	</a>
-
+	<iframe src="https://discordapp.com/widget?id=547448681289482241&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
 	<br>
-
-	<a href="https://play.google.com/store/apps/details?id=com.fishstudio.yapms&hl=en_US">
-		<div id="app" class="start">
-			Android App
-		</div>
-	</a>
 
 	<div id="bottombar">
 		<a href="https://privacypolicies.com/privacy/view/5e9b5eee7febd2d29c0ec896e1ac90ef">Privacy</a>
