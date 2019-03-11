@@ -21,6 +21,8 @@
 	
 	$source = trim($_POST["source"]);
 
+	$source = trim($_POST["source"]);
+
 	$featured = trim($_POST["featured"]);
 	$f;
 	if($featured) {
@@ -44,5 +46,6 @@
 		echo $sql;
 	} else {
 		echo "sql query failed...<br>";
+		echo $sql;
 	}
 ?>

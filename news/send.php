@@ -28,6 +28,9 @@
 	$text= trim($_POST["text"]);
 	$text = filter_var($text, FILTER_SANITIZE_SPECIAL_CHARS);
 
+	$source = trim($_post["source"]);
+	$source = filter_var($source, FILTER_SANITIZE_SPECIAL_CHARS);
+
 	$toyap =
 		"***********\r\n" .
 		$email .
@@ -38,7 +41,9 @@
 		"\r\n***********\r\n" .
 		$snippet .
 		"\r\n***********\r\n" .
-		$text;
+		$text .
+		"\r\n***********\r\n" .
+		$source;
 	
 	$touser =
 		"We have received an article submition from you, please reply to confirm your submission...\r\n" .

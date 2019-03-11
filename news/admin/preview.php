@@ -43,7 +43,7 @@
 			</div>
 			<div id="article-source">
 			<?php
-				echo $_POST["source"];
+				echo '<a href="' . $_POST["source"] . '">Original Source</a>';
 			?>
 			</div>
 		</div>

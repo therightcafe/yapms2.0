@@ -144,22 +144,32 @@
 	<div id="map-div">
 
 	</div>
-</div>
 
-</div>
-
-<!--
-<div id="yapnews">
-	<svg id="yapnews-closebutton" onclick="closeNotification(this)" width="24" height="24">
-		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="1"/>
-		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
-		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
-	</svg>
-	<div id="yapnews-header">
-		YAPNews
+	<div id="yapnews-close" onclick="toggleYAPNews()">
+		<svg class="yapnews-close-svg" width="8" height="24">
+			<line id="yapnews-close-l1" x1="1" y1="0" x2="8" y2="12" stroke="#333333" stroke-width="2"/>
+			<line id="yapnews-close-l2" x1="1" y1="24" x2="8" y2="12" stroke="#333333" stroke-width="2"/>
+		</svg>
 	</div>
 </div>
--->
+
+</div>
+
+<?php
+if($mobile === false) {
+
+	echo '<div id="yapnews">' ,
+		'<div id="yapnews-header">' ,
+		'<a href="https://www.yapms.com/news" target="_blank" ', 
+		'style="color:inherit; text-decoration: none;">' ,
+			'YAPNews' , 
+		'</a>' ,
+		'</div>' ,
+		'<div id="yapnews-articles">' ,
+		'</div>' ,
+	'</div>';
+}
+?>
 
 <div id="demdel" class="popup">
 	<h3 id="demdel-message"></h3>

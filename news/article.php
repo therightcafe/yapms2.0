@@ -1,8 +1,45 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="style/common.css">
-		<link rel="stylesheet" type="text/css" href="style/article.css">
+		<title> 
+		<?php
+			require 'dblogin.php';	
+			$sql = 'select * from articles where id = ' . $_GET['a']; 
+			$q = $dbh->query($sql);
+			$title = "";
+			$author = "";
+			$text = "";
+			$source = "";
+
+			foreach($q as $row) {
+				$title = $row['title'];
+				$author = $row['author'];
+				$text = $row['text'];
+				$source = $row['source'];
+			}
+			
+			echo 'YAPNews - ' . $title;
+		?>
+		</title>
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132710089-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-132710089-1');
+		</script>
+
+		<?php
+			if(strpos($_SERVER['HTTP_USER_AGENT'], 'Mobi')) {
+				echo '<link rel="stylesheet" type="text/css" href="style/article-mobile.css">';
+				echo '<link rel="stylesheet" type="text/css" href="style/common-mobile.css">';
+			} else {
+				echo '<link rel="stylesheet" type="text/css" href="style/article.css">';
+				echo '<link rel="stylesheet" type="text/css" href="style/common.css">';
+			}
+		?>
 	</head>
 
 	<body>
@@ -20,23 +57,18 @@
 
 		<div id="article">
 		<?php
-			require 'dblogin.php';	
-
-			$sql = 'select * from articles where id = ' . $_GET['a']; 
-			foreach($dbh->query($sql) as $row) {
-				echo '<div id="article-title">';
-				echo $row['title'];
-				echo '</div>';
-				echo '<div id="article-author">';
-				echo 'By ' . $row['author'];
-				echo '</div>';
-				echo '<div id="article-text">';
-				echo $row['text'];
-				echo '</div>';
-				echo '<div id="article-source">';
-				echo '<a href="' . $row['source'] . '">Original Source</a>';
-				echo '</div>';
-			}
+			echo '<div id="article-title">';
+			echo $title;
+			echo '</div>';
+			echo '<div id="article-author">';
+			echo 'By ' . $author;
+			echo '</div>';
+			echo '<div id="article-text">';
+			echo $text;
+			echo '</div>';
+			echo '<div id="article-source">';
+			echo '<a href="' . $source . '" target="_blank" style="color:blue">Original Source</a>';
+			echo '</div>';
 		?>
 		</div>
 		
