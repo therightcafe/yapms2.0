@@ -15,7 +15,9 @@
 		</script>
 
 		<?php
+			$mobile = false;
 			if(strpos($_SERVER['HTTP_USER_AGENT'], 'Mobi')) {
+				$mobile = true;
 				echo '<link rel="stylesheet" type="text/css" href="style/style-mobile.css">';
 				echo '<link rel="stylesheet" type="text/css" href="style/common-mobile.css">';
 			} else {
@@ -38,10 +40,15 @@
 			</div>
 		</div>
 
-		<?php 
-			require './html/desktop.php';
-			include 'footer.php';
-		?>
+<?php 
+			if($mobile) {
+				require './html/mobile.php';
+			} else {
+				require './html/desktop.php';
+			}
+
+			require 'footer.php';
+?>
 	
 	</body>
 </html>
