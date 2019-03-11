@@ -44,5 +44,6 @@
 		echo $sql;
 	} else {
 		echo "sql query failed...<br>";
+		echo $sql;
 	}
 ?>
