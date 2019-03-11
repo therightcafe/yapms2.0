@@ -19,6 +19,7 @@ $.ajax({
 			var articleTitle = document.createElement('a');
 			articleTitle.setAttribute('class', 'yapnews-article-title');
 			articleTitle.setAttribute('href', 'https://www.yapms.com/news/article.php?a=' + obj[index]['id']);
+			articleTitle.setAttribute('target', '_blank');
 			var articleAuthor = document.createElement('div');
 			articleAuthor.setAttribute('class', 'yapnews-article-author');
 			var articleSnippet = document.createElement('div');
