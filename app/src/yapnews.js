@@ -16,8 +16,6 @@ $.ajax({
 		for(var index = 0; index < obj.length; ++index) {
 			var article = document.createElement('div');
 			article.setAttribute('class', 'article');
-			article.style.backround = 'red';
-			article.style.margin = '10px';
 			article.innerHTML = obj[index]['title'];
 			articles.appendChild(article);
 		}

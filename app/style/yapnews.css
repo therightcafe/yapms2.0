@@ -18,3 +18,8 @@
 	fill: pink;
 	transition: all 200ms;
 }
+
+#yapnews-article {
+	border-bottom: 1px solid #cccccc;
+	background-color: red;
+}
