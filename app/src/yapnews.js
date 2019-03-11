@@ -16,7 +16,19 @@ $.ajax({
 		for(var index = 0; index < obj.length; ++index) {
 			var article = document.createElement('div');
 			article.setAttribute('class', 'yapnews-article');
-			article.innerHTML = obj[index]['title'];
+			var articleTitle = document.createElement('div');
+			articleTitle.setAttribute('class', 'yapnews-article-title');
+			var articleAuthor = document.createElement('div');
+			articleAuthor.setAttribute('class', 'yapnews-article-author');
+			var articleSnippet = document.createElement('div');
+			articleSnippet.setAttribute('class', 'yapnews-article-snippet');
+			articleTitle.innerHTML = obj[index]['title'];
+			articleAuthor.innerHTML = obj[index]['author'];
+			articleSnippet.innerHTML = obj[index]['snippet'];
+
+			article.appendChild(articleTitle);
+			article.appendChild(articleAuthor);
+			article.appendChild(articleSnippet);
 			articles.appendChild(article);
 		}
 	},
