@@ -160,7 +160,10 @@ if($mobile === false) {
 
 	echo '<div id="yapnews">' ,
 		'<div id="yapnews-header">' ,
-			'YAPNews' ,
+		'<a href="https://www.yapms.com/news" target="_blank" ', 
+		'style="color:inherit; text-decoration: none;">' ,
+			'YAPNews' , 
+		'</a>' ,
 		'</div>' ,
 		'<div id="yapnews-articles">' ,
 		'</div>' ,
