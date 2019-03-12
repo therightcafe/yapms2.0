@@ -63,6 +63,7 @@
 .featured {
 	display: flex;
 	flex-direction: column;
+	flex: 1;
 	margin-top: 32px;
 	margin-bottom: 32px;
 	margin-right: 32px;
