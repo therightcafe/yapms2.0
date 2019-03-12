@@ -316,7 +316,7 @@ if($mobile === false) {
 	<a class="selectmenu-split">USA 2020</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open");'>Presidential</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_senate.svg", 16, 1, "usa_senate", "senatorial", "2020")'>Senatorial</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_congressional_2018.svg", 16, 0.075, "congressional", "congressional", "open")'>Congressional</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); loadCurrentCongress()'>Current Congress</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_gubernatorial.svg", 16, 1, "usa_gubernatorial", "gubernatorial", "2020")'>Gubernatorial</a>
 
 	<a class="selectmenu-split">USA Primaries</a>

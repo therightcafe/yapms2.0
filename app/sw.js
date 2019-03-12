@@ -1,4 +1,4 @@
-var currentCache = 'v0.11.1';
+var currentCache = 'v0.11.2';
 
 function swLog(message) {
 	console.log('SW' + currentCache + ': ' + message);
@@ -43,6 +43,8 @@ self.addEventListener('install', function(event) {
 				'./res/lte_president.svg',
 				'./res/lte_senate.svg',
 				'./res/lte_house.svg',
+
+				'./res/presets/current_congress',
 				
 				'./res/lte.jpg',
 
