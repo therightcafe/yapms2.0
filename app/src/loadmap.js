@@ -5,6 +5,24 @@ var save_year;
 var save_fontsize;
 var save_strokewidth;
 
+function loadCurrentCongress() {
+	$.ajax({
+		url: "./res/presets/current_congress",
+		type: "POST",
+		processData: false,
+		contentType: false,
+		success: function(a, b, c) {
+			console.log("Found preset map...");
+			loadSavedMap(a);
+		},
+		error: function(a, b, c) {
+			console.log("Did not find preset map...");
+			loadMap("../res/usa_congressional_2018.svg", 16, 0.075, "congressional", "congressional", "open");
+		
+		}
+	});
+}
+
 // loads the svg element into the HTML
 function loadMap(filename, fontsize, strokewidth, dataid, type, year, onLoad) {
 	save_filename = filename;
