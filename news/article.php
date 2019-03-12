@@ -6,7 +6,7 @@
 		<meta name="keywords" content="Press,Release,News,Politics,Source">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta property="og:image:type" content="image/jpeg">
-		<meta property="og:site_name" content="yapms.com">
+		<meta property="og:site_name" content="yapms.com/news">
 		<meta property="og:image" content="http://www.yapms.com/app/res/yapms-96.png">
 		<meta property="og:image:secure_url" content="https://www.yapms.com/app/res/yapms-96.png">
 
