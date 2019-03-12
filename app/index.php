@@ -335,8 +335,9 @@ if($mobile === false) {
 	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/lte_senate.svg", 35, 1, "ltesenate", "senatorial", "open")'>Senatorial</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/lte_house.svg", 35, 1, "congressional", "congressional", "open")'>Congressional</a>
 
-	<a class="selectmenu-split">Worldwide</a>
+	<a class="selectmenu-split">World</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/canada_states.svg", 38, 3, "canada_ec", "presidential", "open");'>Canada Regions</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/germany.svg", 16, 1, "congressional", "congressional", "open");'>Germany</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/world.svg", 38, 0.5, "congressional", "congressional", "open");'>World Countries</a>
 </div> 
 
