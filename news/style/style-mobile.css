@@ -22,10 +22,6 @@
 	flex-direction: column;
 }
 
-.recent .article .article-title {
-	font-size: 32px;
-}
-
 .article {
 	display: flex;
 	flex-direction: column;
@@ -40,26 +36,26 @@
 }
 
 .article-title {
-	font-size: 32px;
+	font-size: 26px;
 	padding-left: 3px;
 }
 
 .article-snippet {
 	padding-left: 16px;
-	font-size: 24px;
+	font-size: 20px;
 	color: #444444;
 	flex: 1;
 }
 
 .article-author {
 	padding-left: 3px;
-	font-size: 22px;
+	font-size: 18px;
 	color: #444444;
 }
 
 .article-date {
 	padding-left: 3px;
-	font-size: 22px;
+	font-size: 18px;
 	color: #444444;
 	flex: 1;
 }
@@ -75,9 +71,9 @@
 }
 
 .featured .article-title {
-	font-size: 44px;
+	font-size: 26px;
 }
 
 .featured .article-snippet {
-	font-size: 30px;
+	font-size: 20px;
 }
