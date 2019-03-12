@@ -22,10 +22,6 @@
 	flex-direction: column;
 }
 
-.recent .article .article-title {
-	font-size: 32px;
-}
-
 .article {
 	display: flex;
 	flex-direction: column;
@@ -40,7 +36,7 @@
 }
 
 .article-title {
-	font-size: 22px;
+	font-size: 26px;
 	padding-left: 3px;
 }
 
@@ -75,9 +71,9 @@
 }
 
 .featured .article-title {
-	font-size: 28px;
+	font-size: 26px;
 }
 
 .featured .article-snippet {
-	font-size: 26px;
+	font-size: 20px;
 }
