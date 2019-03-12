@@ -65,7 +65,6 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year, onLoad) {
 		if(mobile === true) {
 			enableInputMobile();
 		} else if(mobile === false) {
-		//	enableInputMobile();
 			enableInputDesktop();
 		}
 
@@ -281,7 +280,7 @@ function loadSavedMap(data) {
 			
 
 			// if its a primary map
-			if(save_type === "demprimary" || save_type === "repprimary") {
+			if(save_type === "primary") {
 				var majorityCandidate = "Tossup";
 				var majorityVoteCount = 0;
 				var state = states.find(state => state.name === stateData[0]);

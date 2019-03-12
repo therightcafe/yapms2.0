@@ -2,8 +2,7 @@ function buttonClick(clickElement) {
 	if(mode === 'move') {
 		return;
 	} else if(mode === 'paint' || mode === 'paintmove') {
-		if(mapType === 'demprimary' ||
-			mapType === 'repprimary') {
+		if(mapType === 'primary') {
 			buttonClickPaintPrimary(clickElement);
 		} else {
 			buttonClickPaint(clickElement);
@@ -106,8 +105,7 @@ function stateClick(clickElement, e) {
 	switch(mode) {
 		case 'paint':
 		case 'paintmove':
-			if(mapType === 'demprimary' ||
-				mapType === 'repprimary') {
+			if(mapType === 'primary') {
 				stateClickPaintPrimary(state, id);
 			} else {
 				stateClickPaint(state, id);

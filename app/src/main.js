@@ -640,7 +640,7 @@ function countVotes() {
 		mid.setAttribute("fill", TOSSUP.colors[2]);
 	}
 
-	if(mapType === 'demprimary' || mapType === 'repprimary') {
+	if(mapType === 'primary') {
 		for(var key in candidates) {
 			var candidate = candidates[key];
 			candidate.voteCount = 0;
