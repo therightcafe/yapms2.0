@@ -40,26 +40,26 @@
 }
 
 .article-title {
-	font-size: 28px;
+	font-size: 24px;
 	padding-left: 3px;
 }
 
 .article-snippet {
 	padding-left: 16px;
-	font-size: 22px;
+	font-size: 20px;
 	color: #444444;
 	flex: 1;
 }
 
 .article-author {
 	padding-left: 3px;
-	font-size: 20px;
+	font-size: 18px;
 	color: #444444;
 }
 
 .article-date {
 	padding-left: 3px;
-	font-size: 20px;
+	font-size: 18px;
 	color: #444444;
 	flex: 1;
 }
@@ -75,9 +75,9 @@
 }
 
 .featured .article-title {
-	font-size: 40px;
+	font-size: 28px;
 }
 
 .featured .article-snippet {
-	font-size: 28px;
+	font-size: 26px;
 }
