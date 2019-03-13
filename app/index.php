@@ -298,7 +298,7 @@ if($mobile === false) {
 	<a class="selectmenu-split">Custom</a>
 	<a class="selectmenu-button" onclick='displayAddCandidateMenu();'>Add Custom</a>
 	<a class="selectmenu-split">Preset</a>
-	<a class="selectmenu-button" onclick='loadPreset("tossup")'>None</a>
+	<a class="selectmenu-button" onclick='loadPreset("tossup")'>Clear</a>
 	<a class="selectmenu-button" onclick='loadPreset("classic")'>R/D</a>
 	<a class="selectmenu-button" onclick='loadPreset("libertarian")'>R/D/L</a>
 	<a class="selectmenu-button" onclick='loadPreset("green")'>R/D/G</a>
@@ -366,8 +366,10 @@ if($mobile === false) {
 </div>
 			
 <script>
+/*
 	document.getElementById('logo-div').innerHTML =
-		'<img id="logo" src="./res/lte.jpg">';
+	'<img id="logo" src="./res/lte.jpg">';
+ */
 
 	if('serviceWorker' in navigator) {
 		navigator.serviceWorker
