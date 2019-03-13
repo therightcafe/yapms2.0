@@ -21,6 +21,11 @@
 	margin: auto;
 }
 
+#battlechartmid {
+	width: 100%;
+	height: auto;
+}
+
 #battlechart div {
 	display: flex;
 }
