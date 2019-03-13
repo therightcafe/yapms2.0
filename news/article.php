@@ -25,6 +25,7 @@
 			$text = "";
 			$source = "";
 			$snippet = "";
+			$published = "";
 
 			foreach($q as $row) {
 				$title = $row['title'];
@@ -32,6 +33,7 @@
 				$text = $row['text'];
 				$source = $row['source'];
 				$snippet = $row['snippet'];
+				$published = $row['published'];
 			}
 			
 			echo 'YAPNews - ' . $title;
@@ -92,7 +94,7 @@
 			echo $title;
 			echo '</div>';
 			echo '<div id="article-author">';
-			echo 'By ' . $author;
+			echo 'By ' . $author . ' on ' . $published;
 			echo '</div>';
 			echo '<div id="article-text">';
 			echo $text;
