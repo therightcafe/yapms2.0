@@ -2,7 +2,7 @@
 <div id="application-left">
 	<?php
 		require 'dblogin.php';
-		$sql = 'select * from articles where featured = true order by date desc limit 1 offset 0';
+		$sql = 'select * from articles where featured = true order by upload desc limit 1 offset 0';
 		if($q = $dbh->query($sql)) {
 			foreach($q as $row) {
 				echo '<div id="featured-1" class="featured">'.
@@ -17,7 +17,7 @@
 						$row['author'] .
 					'</div>'.
 					'<div class="article-date">'.
-						$row['date'] .
+						$row['upload'] .
 					'</div>' .
 					'<div class="article-snippet">'.
 						$row['snippet'].
@@ -30,7 +30,7 @@
 	?>
 	<div id="recent-1" class="recent">
 		<?php
-			$sql = 'select * from articles where featured = false order by date desc limit 6 offset 0';
+			$sql = 'select * from articles where featured = false order by upload desc limit 6 offset 0';
 			if($q = $dbh->query($sql)) {
 				foreach($q as $row) {
 					echo '<div class="article">'.
@@ -45,7 +45,7 @@
 							$row['author'] .
 						'</div>'.
 						'<div class="article-date">'.
-							$row['date'] .
+							$row['upload'] .
 						'</div>' .
 						'<div class="article-snippet">'.
 							$row['snippet'].
@@ -58,7 +58,7 @@
 		?>
 	</div>
 	<?php
-		$sql = 'select * from articles where featured = true order by date desc limit 1 offset 1';
+		$sql = 'select * from articles where featured = true order by upload desc limit 1 offset 1';
 		if($q = $dbh->query($sql)) {
 			foreach($q as $row) {
 				echo '<div id="featured-2" class="featured">'.
@@ -73,7 +73,7 @@
 						$row['author'] .
 					'</div>'.
 					'<div class="article-date">'.
-						$row['date'] .
+						$row['upload'] .
 					'</div>' .
 					'<div class="article-snippet">'.
 						$row['snippet'].
@@ -86,7 +86,7 @@
 	?>
 	<div id="recent-2" class="recent">
 		<?php
-			$sql = 'select * from articles where featured = false order by date desc limit 3 offset 6';
+			$sql = 'select * from articles where featured = false order by upload desc limit 3 offset 6';
 			if($q = $dbh->query($sql)) {
 				foreach($q as $row) {
 					echo '<div class="article">'.
@@ -101,7 +101,7 @@
 							$row['author'] .
 						'</div>'.
 						'<div class="article-date">'.
-							$row['date'] .
+							$row['upload'] .
 						'</div>' .
 						'<div class="article-snippet">'.
 							$row['snippet'].

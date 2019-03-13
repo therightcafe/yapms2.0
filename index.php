@@ -61,7 +61,7 @@
 
 		<div id="whatsnew" class="infobox">
 			<b>New Stuff:</b>
-			USA County Map! 
+			USA County Map, German states.
 		</div>
 
 		<div class="infobox">
