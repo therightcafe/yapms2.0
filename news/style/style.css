@@ -18,7 +18,7 @@
 
 .recent {
 	display: flex;
-	flex: 1;
+	flex: 1 1 auto;
 	flex-direction: column;
 }
 
@@ -63,7 +63,7 @@
 .featured {
 	display: flex;
 	flex-direction: column;
-	flex: 1;
+	flex: 1 1 auto;
 	margin-top: 32px;
 	margin-bottom: 32px;
 	margin-right: 32px;
