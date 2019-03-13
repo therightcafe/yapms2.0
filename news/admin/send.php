@@ -36,20 +36,14 @@
 	}
 	//$featured = filter_var($featured, FILTER_SANITIZE_SPECIAL_CHARS);
 
-/*
-	$sql = "insert into articles (title, author, date, snippet, text, Featured) values (".
-		$title . "," . $author . "," . date("m/d/Y") . "," . $snippet . "," . $text . "," .
-		$featured . ")";
-*/
-
 	$sql = 'insert into articles (title, author, published, upload, snippet, text, source, Featured) values (?,?,?,?,?,?,?,?)';
 	$stm = $dbh->prepare($sql);
 	
 	if($stm->execute([$title, $author, $published, date("Y-m-d H:i:s"), $snippet, $text, $source, $f])) {
 		echo "sql query success...<br>";
-		echo $sql;
 	} else {
 		echo "sql query failed...<br>";
-		echo $sql;
 	}
+	echo $sql;
+	echo '<a href="www.yapms.com/news">Home</a>';
 ?>
