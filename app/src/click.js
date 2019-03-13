@@ -2,8 +2,7 @@ function buttonClick(clickElement) {
 	if(mode === 'move') {
 		return;
 	} else if(mode === 'paint' || mode === 'paintmove') {
-		if(mapType === 'demprimary' ||
-			mapType === 'repprimary') {
+		if(mapType === 'primary') {
 			buttonClickPaintPrimary(clickElement);
 		} else {
 			buttonClickPaint(clickElement);
@@ -20,15 +19,16 @@ function buttonClick(clickElement) {
 }
 
 function buttonClickPaint(clickElement) {
-	var id = clickElement.getAttribute('id');
-	var split = id.split('-');
-	var state = states.find(state => state.name === split[0]);
-	state.incrementCandidateColor(paintIndex);
-	clickElement.style.fill = state.getDisplayColor();
+	var id = clickElement.getAttribute('id').split('-')[0];
+	var state = states.find(state => state.name === id);
+	stateClickPaint(state);
+	//state.incrementCandidateColor(paintIndex);
 }
 
 function buttonClickPaintPrimary(clickElement) {
-	stateClick(clickElement);
+	var id = clickElement.getAttribute('id').split('-')[0];
+	var state = states.find(state => state.name === id);
+	stateClickPaintPrimary(state);
 }
 
 function buttonClickEC(clickElement) {
@@ -106,8 +106,7 @@ function stateClick(clickElement, e) {
 	switch(mode) {
 		case 'paint':
 		case 'paintmove':
-			if(mapType === 'demprimary' ||
-				mapType === 'repprimary') {
+			if(mapType === 'primary') {
 				stateClickPaintPrimary(state, id);
 			} else {
 				stateClickPaint(state, id);
@@ -132,6 +131,10 @@ function stateClickPaint(state, id) {
 }
 
 function stateClickPaintPrimary(state, id) {
+	if(state === undefined) {
+		alert("FAIL");
+	}
+
 	var demdel = document.getElementById('demdel');
 	demdel.style.display = 'inline';
 	var message = document.getElementById('demdel-message');
