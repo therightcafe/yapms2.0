@@ -50,14 +50,18 @@
 				<p>
 					Snippet	
 				</p>
-
 				<input type="text" name="snippet"><br>
 				
 				<p>
 					Article
 				</p>
-				
 				<textarea rows="15" cols="50" name="text">Write Article Here</textarea>
+
+				<p>
+					Published
+				</p>
+				<input type="date" name="published"><br>
+
 				<p>
 					Original Source URL (if found elsewhere)
 				</p>
