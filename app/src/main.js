@@ -1,4 +1,4 @@
-var currentCache = 'v0.11.6';
+var currentCache = 'v0.11.7';
 
 var states = [];
 var lands = [];
@@ -952,7 +952,6 @@ function start() {
 	initCandidates();
 	initChart();
 	setChart('horizontalbattle');
-	loadPreset("classic");
 	if(php_load_map === true) {
 		$.ajax({
 			url: "./maps/" + php_load_map_id,
@@ -970,6 +969,7 @@ function start() {
 		});
 
 	} else {
+		loadPreset("classic");
 		loadMap('./res/usa_presidential.svg', 16, 1, 'usa_ec',"presidential", "open");
 	}
 }
