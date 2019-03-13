@@ -1,4 +1,4 @@
-var currentCache = 'v0.11.8';
+var currentCache = 'v0.11.9';
 
 var states = [];
 var lands = [];
@@ -945,6 +945,12 @@ function onResize() {
 		var charthtml = document.getElementById('chart');
 		charthtml.style.height = 'auto';
 		charthtml.style.width = '' + (sidebarhtml.offsetHeight - 5) + 'px';
+	} else {
+		var sidebarhtml = document.getElementById('chart-div');
+		var charthtml = document.getElementById('chart');
+		charthtml.style.height = 'auto';
+		charthtml.style.width = '100%';
+
 	}
 }
 

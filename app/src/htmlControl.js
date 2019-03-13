@@ -1,5 +1,11 @@
 var textOn = true;
 
+// when the yapnews div gets resized, center the map
+document.getElementById("yapnews").addEventListener("transitionend",
+	function() {
+		centerMap();
+	});
+
 function selectCandidateDisplay(html) {
 	var legendButtons = html.parentElement.children;
 
@@ -567,6 +573,8 @@ function setChart(type, position) {
 			var logo = document.getElementById('logo-div');
 			logo.style.width = '15%';
 			logo.style.height = '100%';
+			sidebar.style.borderRight = '0px';
+			sidebar.style.borderTop = '1px solid black';
 		}
 		else {
 			unsetBattleHorizontal();
@@ -574,6 +582,8 @@ function setChart(type, position) {
 			var logo = document.getElementById('logo-div');
 			logo.style.width = '100%';
 			logo.style.height = '15%';
+			sidebar.style.borderTop = '0px';
+			sidebar.style.borderRight = '1px solid black';
 		}
 
 		html.style.display = 'none';
@@ -595,10 +605,12 @@ function setChart(type, position) {
 		var map = document.getElementById('map-div');
 		map.style.height = '80%';
 
-		var sidebar = document.getElementById('chart-div');
+		//var sidebar = document.getElementById('chart-div');
 		sidebar.style.flexDirection = 'row';
 		sidebar.style.width = '100%';	
 		sidebar.style.height = '20%';
+		sidebar.style.borderRight = '0px';
+		sidebar.style.borderTop = '1px solid black';
 	
 		var charthtml = document.getElementById('chart');
 		charthtml.style.height = 'auto';
@@ -614,10 +626,12 @@ function setChart(type, position) {
 		var map = document.getElementById('map-div');
 		map.style.height = '100%';
 
-		var sidebar = document.getElementById('chart-div');
+		//var sidebar = document.getElementById('chart-div');
 		sidebar.style.flexDirection = 'column';
 		sidebar.style.width = '28vw';	
 		sidebar.style.height = '100%';
+		sidebar.style.borderTop = '0px';
+		sidebar.style.borderRight = '1px solid black';
 		
 		var charthtml = document.getElementById('chart');
 		charthtml.style.width = '100%';
