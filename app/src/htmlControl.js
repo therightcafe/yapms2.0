@@ -457,17 +457,18 @@ function setBattleHorizontal() {
 	var battlechart = document.getElementById('battlechart');
 	battlechart.style.flexDirection = 'column';
 	battlechart.style.height = '55%';
-	battlechart.style.marginLeft = '50px';
-	battlechart.style.marginRight = '50px';
-	battlechart.style.marginTop = '0px';
-	battlechart.style.marginBottom = '0';
+	battlechart.style.margin = '5%';
 	var battlechartmid = document.getElementById('battlechartmid');
 	battlechartmid.style.transform = 'rotate(90deg)';	
 	var battlechartright = document.getElementById('battlechartright');
 	battlechartright.style.flexDirection = 'row';
+	battlechartright.style.height = '80%';
+	battlechartright.style.width = '100%';
+	var battlechartright = document.getElementById('battlechartleft');
+	battlechartleft.style.height = '20%';
+	battlechartleft.style.width = '100%';
 
 	var topbar = document.getElementById('topbar');
-	//topbar.style.boxShadow = '1px 0px 3px black';
 	topbar.style.borderRight = topbar.style.borderBottom;
 	topbar.style.borderBottom = '';
 	topbar.style.flexDirection = 'row';
@@ -496,19 +497,25 @@ function unsetBattleHorizontal() {
 	var battlechart = document.getElementById('battlechart');
 	battlechart.style.flexDirection = 'row';
 	battlechart.style.height = '100%';
+	battlechart.style.margin = '5%';
 	if(mobile) {
 		battlechart.style.width = '100%';
+	} else {
+		battlechart.style.width = '50%';
 	}
-	battlechart.style.marginLeft = '25px';
-	battlechart.style.marginRight = '25px';
-	battlechart.style.marginTop = '20px';
-	battlechart.style.marginBottom = '20px';
+	//battlechart.style.marginTop = '20px';
+	//battlechart.style.marginBottom = '20px';
 
 	var battlechartmid = document.getElementById('battlechartmid');
 	battlechartmid.style.transform = '';	
 	var battlechartright = document.getElementById('battlechartright');
 	battlechartright.style.flexDirection = 'column';
-
+	battlechartright.style.width = '85%';
+	battlechartright.style.height = '100%';
+	var battlechartright = document.getElementById('battlechartleft');
+	battlechartleft.style.height = '20%';
+	battlechartleft.style.width = '15%';
+	
 	var topbar = document.getElementById('topbar');
 	//topbar.style.boxShadow = '0px -1px 3px black';
 	topbar.style.borderBottom = topbar.style.borderRight;
@@ -557,10 +564,16 @@ function setChart(type, position) {
 		
 		if(type === 'horizontalbattle') {
 			setBattleHorizontal();
+			var logo = document.getElementById('logo-div');
+			logo.style.width = '15%';
+			logo.style.height = '100%';
 		}
 		else {
 			unsetBattleHorizontal();
 			sidebar.style.width = '20vw';	
+			var logo = document.getElementById('logo-div');
+			logo.style.width = '100%';
+			logo.style.height = '15%';
 		}
 
 		html.style.display = 'none';
@@ -590,6 +603,10 @@ function setChart(type, position) {
 		var charthtml = document.getElementById('chart');
 		charthtml.style.height = 'auto';
 		charthtml.style.width = '' + (sidebar.offsetHeight - 5) + 'px';
+
+		var logo = document.getElementById('logo-div');
+		logo.style.width = '15%';
+		logo.style.height = '100%';
 	} else {
 		var application = document.getElementById('application');
 		application.style.flexDirection = 'row';
@@ -604,6 +621,10 @@ function setChart(type, position) {
 		
 		var charthtml = document.getElementById('chart');
 		charthtml.style.width = '100%';
+		
+		var logo = document.getElementById('logo-div');
+		logo.style.width = '100%';
+		logo.style.height = '15%';
 	}
 
 

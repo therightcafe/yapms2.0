@@ -899,7 +899,7 @@ function centerMap() {
 }
 
 function toggleLTELogo() {
-	var lteLogo = document.getElementById('logo');
+	var lteLogo = document.getElementById('logo-div');
 	if(lteLogo.style.display === '') {
 		lteLogo.style.display = 'inline';
 	} else if(lteLogo.style.display === 'inline') {
@@ -952,6 +952,7 @@ function start() {
 	initCandidates();
 	initChart();
 	setChart('horizontalbattle');
+	loadPreset("classic");
 	if(php_load_map === true) {
 		$.ajax({
 			url: "./maps/" + php_load_map_id,
