@@ -462,16 +462,16 @@ function setBattleHorizontal() {
 	application.style.flexDirection = 'column-reverse';
 
 	var map = document.getElementById('map-div');
-	map.style.height = '80%';
+	map.style.height = '85%';
 
 	var sidebar = document.getElementById('chart-div');
 	sidebar.style.flexDirection = 'row';
 	sidebar.style.width = '100%';	
-	sidebar.style.height = '20%';
+	sidebar.style.height = '15%';
 
 	var battlechart = document.getElementById('battlechart');
 	battlechart.style.flexDirection = 'column';
-	battlechart.style.height = '55%';
+	battlechart.style.height = '75%';
 	battlechart.style.margin = '5%';
 
 	var battlechartmid = document.getElementById('battlechartmid');
