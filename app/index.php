@@ -22,7 +22,7 @@
 	<!-- CSSs (1st is Font Awesome) -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	<link rel="icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
-	<!--<link rel="shortcut icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>-->
+	<link rel="shortcut icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
 	<link rel="manifest" href="./manifest.json">
 
 	<?php
