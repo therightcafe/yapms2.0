@@ -54,7 +54,7 @@
 		}
 	?>
 
-	<title>YAPms - Yet Another Political Map Simulator</title>
+	<title>Interactive Maps</title>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132710089-1"></script>
