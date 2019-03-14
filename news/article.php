@@ -39,6 +39,9 @@
 			echo 'YAPNews - ' . $title;
 		?>
 		</title>
+		
+		<link rel="icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
+		<link rel="shortcut icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
 
 		<?php
 			echo '<meta name="twitter:title" content="' ,

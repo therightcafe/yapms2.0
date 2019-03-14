@@ -21,6 +21,9 @@
 		<title>
 			YAPNews - Yet Another Political New Source
 		</title>
+	
+		<link rel="icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
+		<link rel="shortcut icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
 
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132710089-1"></script>
