@@ -464,13 +464,18 @@ function setBattleHorizontal() {
 	battlechart.style.flexDirection = 'column';
 	battlechart.style.height = '55%';
 	battlechart.style.margin = '5%';
+
 	var battlechartmid = document.getElementById('battlechartmid');
-	battlechartmid.style.transform = 'rotate(90deg)';	
+	battlechartmid.setAttribute('transform', 'rotate(90)');
+	battlechartmid.style.height = '100%';
+	battlechartmid.style.width = '';
+
 	var battlechartright = document.getElementById('battlechartright');
 	battlechartright.style.flexDirection = 'row';
 	battlechartright.style.height = '80%';
 	battlechartright.style.width = '100%';
-	var battlechartright = document.getElementById('battlechartleft');
+
+	var battlechartleft = document.getElementById('battlechartleft');
 	battlechartleft.style.height = '20%';
 	battlechartleft.style.width = '100%';
 
@@ -509,11 +514,12 @@ function unsetBattleHorizontal() {
 	} else {
 		battlechart.style.width = '50%';
 	}
-	//battlechart.style.marginTop = '20px';
-	//battlechart.style.marginBottom = '20px';
 
 	var battlechartmid = document.getElementById('battlechartmid');
-	battlechartmid.style.transform = '';	
+	battlechartmid.setAttribute('transform', 'rotate(0)');
+	battlechartmid.style.height = '';
+	battlechartmid.style.width = '100%';
+
 	var battlechartright = document.getElementById('battlechartright');
 	battlechartright.style.flexDirection = 'column';
 	battlechartright.style.width = '85%';
