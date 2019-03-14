@@ -5,7 +5,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="description" content="Presidential, Senatorial, Congressional, Guberntorial, and Democratic Primary, political map simulator.">
-	<meta name="keywords" content="Maps,Political,Simulator,Election,President,Governor,Senator,Congress,Primary,Interactive">
+	<meta name="keywords" content="Map,Election,Political,Interactive,Electoral,270,2020">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<meta property="og:title" content="YAPms - Yet Another Political Map Simulator">
