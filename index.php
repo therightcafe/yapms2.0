@@ -32,7 +32,7 @@
 		gtag('config', 'UA-132710089-1');
 	</script>
 	
-	<!--<link rel="icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>-->
+	<link rel="icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
 	<link rel="shortcut icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
 	
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
