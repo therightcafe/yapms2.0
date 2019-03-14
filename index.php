@@ -42,7 +42,7 @@
 <body>
 	<div id="info">
 		<div id="topbar">
-			<h2> YAPms - Yet Another Political Map Simulator </h2>
+			<h1> YAPms - Yet Another Political Map Simulator </h1>
 		</div>
 
 
