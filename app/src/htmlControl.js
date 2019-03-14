@@ -126,6 +126,15 @@ function displayAddCandidateMenu(type) {
 	addcandidatemenu.style.display = 'flex';
 }
 
+function displayVersionInfo() {
+	closeAllPopups();
+	var versioninfo = document.getElementById('versioninfo');
+	var versioninfotext = document.getElementById('versioninfo-text');
+
+	versioninfo.style.display = 'inline';
+	versioninfotext.innerHTML = currentCache;
+}
+
 function closeAllPopups() {
 	var popups = document.getElementsByClassName('popup');
 	for(var index = 0; index < popups.length; ++index) {

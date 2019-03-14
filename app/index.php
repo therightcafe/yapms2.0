@@ -205,6 +205,7 @@ if($mobile === false) {
 		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
 	</svg>
 	<h2>Misc</h2>
+	<a class="selectmenu-button" onclick="displayVersionInfo()">Version Info</a>
 	<a class="selectmenu-button" onclick="centerMap()">Center Map</a>
 	<a class="selectmenu-button" onclick="toggleLTELogo()">LTE Logo</a>
 	<a class="selectmenu-button" href="https://commons.wikimedia.org/wiki/File:Blank_US_Map_(states_only).svg" target="_blank" rel="noreferrer">Map Src</a>
@@ -364,7 +365,18 @@ if($mobile === false) {
 	<div id="shareurl"></div>
 	<img id="screenshotimg"/>
 </div>
-			
+
+<div id="versioninfo" class="popup">
+	<svg id="shareclose" class="closebutton" onclick="closeNotification(this)" width="24" height="24">
+		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
+		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
+		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
+	</svg>
+
+	<h2>Version Info</h2>
+	<a id="versioninfo-text"></a>
+</div>
+
 <script>
 /*
 	document.getElementById('logo-div').innerHTML =
