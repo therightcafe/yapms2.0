@@ -54,7 +54,7 @@
 		}
 	?>
 
-	<title>Interactive Maps</title>
+	<title>Interactive Maps - YAPms</title>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132710089-1"></script>
