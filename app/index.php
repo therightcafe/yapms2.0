@@ -326,6 +326,7 @@ if($mobile === false) {
 	<a class="selectmenu-split">USA Open</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_no_districts.svg", 16, 1, "usa_no_districts_ec", "presidential", "open")'>Presidential Take All</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_senate.svg", 16, 1.5, "usa_senate", "senatorial", "open")'>Senatorial</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_gubernatorial.svg", 16, 1.5, "usa_gubernatorial", "gubernatorial", "open")'>Gubernatorial</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_congressional_2018.svg", 16, 0.075, "congressional", "congressional", "open")'>Congressional</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); loadCurrentCongress()'>Current Congressional</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_county.svg", 16, 0.075, "congressional", "congressional", "open")'>County</a>
@@ -336,6 +337,7 @@ if($mobile === false) {
 	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/lte_house.svg", 35, 1, "congressional", "congressional", "open")'>Congressional</a>
 
 	<a class="selectmenu-split">Other</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/unitedkingdom.svg", 16, 0.075, "congressional", "congressional", "open");'>United Kingdom</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/canada_states.svg", 38, 3, "canada_ec", "presidential", "open");'>Canada</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/germany.svg", 16, 1, "congressional", "congressional", "open");'>Germany</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/world.svg", 38, 0.5, "congressional", "congressional", "open");'>World</a>
