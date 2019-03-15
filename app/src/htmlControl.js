@@ -90,6 +90,11 @@ function displayMapMenu(type) {
 	mapmenu.style.display = 'flex';
 }
 
+function displayCountryMenu(type) {
+	var mapmenu = document.getElementById('mapmenu-' + type);
+	mapmenu.style.display = 'flex';
+}
+
 function displayPresetMenu(type) {
 	closeAllPopups();
 	var presetmenu = document.getElementById('presetmenu');

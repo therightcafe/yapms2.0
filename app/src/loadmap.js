@@ -23,6 +23,24 @@ function loadCurrentCongress() {
 	});
 }
 
+function loadPresetMap(preset) {
+	$.ajax({
+		url: "./res/presets/" + preset,
+		type: "POST",
+		processData: false,
+		contentType: false,
+		success: function(a, b, c) {
+			console.log("Found preset map...");
+			loadSavedMap(a);
+		},
+		error: function(a, b, c) {
+			console.log("Did not find preset map...");
+			loadMap("../res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open");
+		
+		}
+	});
+}
+
 // loads the svg element into the HTML
 function loadMap(filename, fontsize, strokewidth, dataid, type, year, onLoad) {
 	save_filename = filename;
