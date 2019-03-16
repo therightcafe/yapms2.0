@@ -89,5 +89,15 @@
 	<div id="bottombar">
 		<a href="https://privacypolicies.com/privacy/view/5e9b5eee7febd2d29c0ec896e1ac90ef">Privacy</a>
 	</div>
+
+<!-- google ads -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+               google_ad_client: "ca-pub-1660456925957249",
+		                 enable_page_level_ads: true
+				      });
+</script>
+
 </body>
 </html>
