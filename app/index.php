@@ -165,6 +165,19 @@ if($mobile === false) {
 			'YAPNews' , 
 		'</a>' ,
 		'</div>' ,
+
+		'<div id="sidebar-ad1">' ,
+		'<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<ins class="adsbygoogle"
+		     style="display:block"
+		          data-ad-format="fluid"
+			       data-ad-layout-key="-7k+dp+2w-11-86"
+			            data-ad-client="ca-pub-1660456925957249"
+				         data-ad-slot="9463416463"></ins>
+					 <script>
+			     (adsbygoogle = window.adsbygoogle || []).push({});
+			</script>',
+		'</div>' ,
 		'<div id="yapnews-articles">' ,
 		'</div>' ,
 	'</div>';
