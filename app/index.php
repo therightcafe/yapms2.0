@@ -180,7 +180,7 @@ if($mobile === false) {
 		<ins class="adsbygoogle"
 		     style="display:block"
 		          data-ad-format="fluid"
-			       data-ad-layout-key="-71+dg+5d-26-94"
+			       data-ad-layout-key="-7b+dg+5d-26-94"
 			            data-ad-client="ca-pub-1660456925957249"
 				         data-ad-slot="6532154886"></ins>
 					 <script>
