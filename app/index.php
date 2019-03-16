@@ -171,7 +171,7 @@ if($mobile === false) {
 		<ins class="adsbygoogle"
 		     style="display:block"
 		          data-ad-format="fluid"
-			       data-ad-layout-key="-ep+6l-2o-ba+ub"
+			       data-ad-layout-key="-av+bi-2b-4d+gx"
 			            data-ad-client="ca-pub-1660456925957249"
 				         data-ad-slot="9463416463"></ins>
 					 <script>
