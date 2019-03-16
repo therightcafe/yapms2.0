@@ -379,7 +379,7 @@ if($mobile === false) {
 		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
 	</svg>
 	<h2>LTE</h2>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/lte_president.svg", 35, 1, "lte_ec", "presidential", "open");'>Presidential</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/lte_president.svg", 30, 1, "lte_ec", "presidential", "open");'>Presidential</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/lte_senate.svg", 35, 1, "ltesenate", "senatorial", "open")'>Senatorial</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/lte_house.svg", 35, 1, "congressional", "congressional", "open")'>Congressional</a>
 </div>
