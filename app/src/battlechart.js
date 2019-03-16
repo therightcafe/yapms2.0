@@ -24,6 +24,12 @@ function updateBattleChart() {
 	var bottombarLean = document.getElementById('bottombar-lean');
 	var bottombarTilt = document.getElementById('bottombar-tilt');
 
+	// this is for when the candidates get removed
+	// if a candidate gets removed, it will not get cleared from
+	// the graph in the loop below
+	topbar.style.flexBasis = '';
+	bottombar.style.flexBasis = '';
+
 	var candidateIndex = -1;
 	for(var key in candidates) {
 		++candidateIndex;
