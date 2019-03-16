@@ -398,6 +398,7 @@ if($mobile === false) {
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("germany")'; >Germany</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/canada_states.svg", 38, 3, "canada_ec", "presidential", "open");'>Canada</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/unitedkingdom.svg", 16, 0.075, "congressional", "congressional", "open");'>United Kingdom</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/eu.svg", 16, 0.25, "eu_parliament", "primary", "open");'>EU</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/world.svg", 38, 0.5, "congressional", "congressional", "open");'>World</a>
 
 	<a class="selectmenu-split">Mock</a>
