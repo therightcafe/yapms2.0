@@ -1,4 +1,4 @@
-var currentCache = 'v0.11.39';
+var currentCache = 'v0.11.40';
 
 var states = [];
 var lands = [];
@@ -88,27 +88,35 @@ function share() {
 	var applicationWidth = document.getElementById('application').offsetWidth;
 	var applicationHeight = document.getElementById('application').offsetHeight;
 
-	html2canvas(document.getElementById('application'), {async: false, logging: true}).then(function(canvas) {
-		notification.appendChild(canvas);
-		// set the text back
-		if(svgtext !== null) {
-			svgtext.style.fontFamily = '';
-			svgtext.style.fontSize = oldfontsize;
-			svg.removeAttribute('width');
-			svg.removeAttribute('height');
-		}
-		canvas.style.width = 0;
-		canvas.style.height = 0;	
-		canvas.style.display = 'none';
-		var img = canvas.toDataURL('image/png');
-		var i = document.getElementById('screenshotimg');
-		i.src = img;
-		i.style.width = '40vw';
-		i.style.height = 'auto';
-		saveMap(img);
-	});
-
 	displayShare();
+
+	//return;
+
+	html2canvas(document.getElementById('application'), {async: false, logging: true}).then(function(canvas) {
+		if(canvas) {
+			notification.appendChild(canvas);
+			canvas.style.width = 0;
+			canvas.style.height = 0;	
+			canvas.style.display = 'none';
+			// set the text back
+			if(svgtext !== null) {
+				svgtext.style.fontFamily = '';
+				svgtext.style.fontSize = oldfontsize;
+				svg.removeAttribute('width');
+				svg.removeAttribute('height');
+			}
+			var img = canvas.toDataURL('image/png');
+			notification.removeChild(canvas);
+			var i = document.getElementById('screenshotimg');
+			i.src = img;
+			i.style.width = '40vw';
+			i.style.height = 'auto';
+			saveMap(img);
+		} else {
+			var shareurl = document.getElementById('shareurl');
+			shareurl.innerHTML = "Your browser does not have HTML5, and cannot support his feature";
+		}
+	});
 }
 
 window.onerror = function(message, source, lineno, colno, error) {
