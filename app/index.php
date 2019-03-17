@@ -154,12 +154,16 @@
 
 	</div>
 
-	<div id="yapnews-close" onclick="toggleYAPNews()">
-		<svg class="yapnews-close-svg" width="8" height="24">
-			<line id="yapnews-close-l1" x1="1" y1="0" x2="8" y2="12" stroke="#333333" stroke-width="2"/>
-			<line id="yapnews-close-l2" x1="1" y1="24" x2="8" y2="12" stroke="#333333" stroke-width="2"/>
-		</svg>
-	</div>
+<?php
+if($mobile === false) {
+	echo '<div id="yapnews-close" onclick="toggleYAPNews()">',
+		'<svg class="yapnews-close-svg" width="8" height="24">',
+			'<line id="yapnews-close-l1" x1="1" y1="0" x2="8" y2="12" stroke="#333333" stroke-width="2"/>',
+			'<line id="yapnews-close-l2" x1="1" y1="24" x2="8" y2="12" stroke="#333333" stroke-width="2"/>',
+		'</svg>',
+		'</div>';
+}
+?>
 </div>
 
 </div>
