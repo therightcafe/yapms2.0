@@ -371,7 +371,9 @@ function setMenuColor(color) {
 	}
 	
 	var yapnewsClose = document.getElementById('yapnews-close');
+	if(yapnewsClose !== null) {
 	yapnewsClose.style.borderColor = color;
+	}
 }
 
 function setClickButtonTextColor(color) {
@@ -382,9 +384,13 @@ function setClickButtonTextColor(color) {
 	}
 
 	var l1 = document.getElementById('yapnews-close-l1');
-	l1.setAttribute('stroke', color);
+	if(l1 !== null) {
+		l1.setAttribute('stroke', color);
+	}
 	var l2 = document.getElementById('yapnews-close-l2');
+	if(l2 !== null) {
 	l2.setAttribute('stroke', color);
+	}
 }
 
 function setClickButtonColor(color) {
@@ -395,7 +401,9 @@ function setClickButtonColor(color) {
 	}
 
 	var yapnewsClose = document.getElementById('yapnews-close');
-	yapnewsClose.style.backgroundColor = color;
+	if(yapnewsClose !== null) {
+		yapnewsClose.style.backgroundColor = color;
+	}
 }
 
 function setDisableColor(color) {

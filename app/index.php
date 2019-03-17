@@ -153,8 +153,7 @@
 	<div id="map-div">
 
 	</div>
-
-<!--
+<?php
 if($mobile === false) {
 	echo '<div id="yapnews-close" onclick="toggleYAPNews()">',
 		'<svg class="yapnews-close-svg" width="8" height="24">',
@@ -163,7 +162,8 @@ if($mobile === false) {
 		'</svg>',
 		'</div>';
 }
--->
+?>
+
 </div>
 
 </div>
