@@ -178,14 +178,15 @@ if($mobile === false) {
 		'<div id="sidebar-ad1">' ,
 		'<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		<ins class="adsbygoogle"
-		     style="display:block"
-		          data-ad-format="fluid"
-			       data-ad-layout-key="-7b+dg+5d-26-94"
-			            data-ad-client="ca-pub-1660456925957249"
-				         data-ad-slot="6532154886"></ins>
-					 <script>
-			     (adsbygoogle = window.adsbygoogle || []).push({});
-			</script>',
+			style="display:block"
+			data-ad-format="auto"
+			data-ad-client="ca-pub-1660456925957249"
+			data-ad-slot="2413780621"
+			data-full-width-responsive="true">
+		</ins>
+		<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>',
 		'</div>' ,
 		'<div id="yapnews-articles">' ,
 		'</div>' ,
