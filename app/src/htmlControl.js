@@ -710,7 +710,7 @@ function toggleYAPNews() {
 
 	if(yapnews !== null) {
 		if(yapnews.style.width === "0vw") {
-			yapnews.style.width = "20vw";
+			yapnews.style.width = "25vw";
 			l1.setAttribute('x1', '1');
 			l1.setAttribute('x2', '8');
 			l2.setAttribute('x1', '1');
