@@ -82,6 +82,9 @@ function displayShare() {
 	closeAllPopups();
 	var share = document.getElementById('share');
 	share.style.display = 'inline';
+
+	var shareurl = document.getElementById('shareurl');
+	shareurl.innerHTML = "Please wait for your share link...";
 }
 
 function displayMapMenu(type) {
