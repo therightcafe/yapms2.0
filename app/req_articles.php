@@ -1,5 +1,5 @@
 <?php
-require '../../external/db.php';
+include '../../external/db.php';
 
 $dbh = null;
 

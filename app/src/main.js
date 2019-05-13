@@ -681,6 +681,7 @@ function countVotes() {
 			candidate.voteCount = 0;
 			candidate.probVoteCounts = [0,0,0,0];
 			// iterate over every state
+		
 			for(var stateIndex = 0, length = states.length; stateIndex < length; ++stateIndex) {
 				var state = states[stateIndex];
 				// if the candidate value of the state

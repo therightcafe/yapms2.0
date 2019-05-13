@@ -37,18 +37,18 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1865"
-     inkscape:window-height="1016"
+     inkscape:window-width="1920"
+     inkscape:window-height="1043"
      id="namedview3848"
      showgrid="true"
      inkscape:pagecheckerboard="true"
-     inkscape:zoom="1.6297889"
-     inkscape:cx="618.12888"
-     inkscape:cy="-163.58588"
-     inkscape:window-x="55"
-     inkscape:window-y="27"
+     inkscape:zoom="0.81489445"
+     inkscape:cx="403.06475"
+     inkscape:cy="-195.96646"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="text"
+     inkscape:current-layer="svgdata"
      inkscape:snap-center="false"
      inkscape:snap-grids="false"
      inkscape:snap-object-midpoints="false"
@@ -83,7 +83,7 @@
     <color-profile
        name="sRGB"
        xlink:href="/usr/share/color/icc/colord/sRGB.icc"
-       id="color-profile730" />
+       id="color-profile5" />
     <inkscape:tag
        id="Set 3"
        inkscape:expanded="true">
@@ -582,17 +582,6 @@
        inkscape:label="#DC"
        ry="3"
        rx="3" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       x="770"
-       y="328"
-       id="text8928"
-       inkscape:label="text8928"><tspan
-         sodipodi:role="line"
-         id="tspan8926"
-         x="770"
-         y="363.39062" /></text>
     <rect
        style="opacity:1;fill:#fffff3;fill-opacity:1"
        id="MD-button"
