@@ -8,7 +8,7 @@ Northwest_Arctic__AK Democrat 0 1 f
 Prince_of_Wales_Hyder__AK Republican 0 1 f
 Ketchikan_Gateway__AK Republican 0 1 f
 Wrangell__AK Republican 0 1 f
-Petersburg__AK Democrat 0 1 f
+Petersburg__AK Republican 0 1 f
 Sitka__AK Democrat 0 1 f
 Haines__AK Democrat 0 1 f
 Juneau__AK Democrat 0 1 f
@@ -718,8 +718,8 @@ White__IL Republican 0 1 f
 Jefferson__IL Republican 0 1 f
 Washington__IL Republican 0 1 f
 Clinton__IL Republican 0 1 f
-St._Clair__IL Republican 0 1 f
-Madison__IL Democrat 0 1 f
+St._Clair__IL Democrat 0 1 f
+Madison__IL Republican 0 1 f
 Bond__IL Republican 0 1 f
 Marion__IL Republican 0 1 f
 Wayne__IL Republican 0 1 f
@@ -2585,7 +2585,7 @@ Mitchell__TX Republican 0 1 f
 Sterling__TX Republican 0 1 f
 Irion__TX Republican 0 1 f
 Crockett__TX Republican 0 1 f
-Val_Verde__TX Republican 0 1 f
+Val_Verde__TX Democrat 0 1 f
 Zapata__TX Democrat 0 1 f
 Jim_Hogg__TX Democrat 0 1 f
 Starr__TX Democrat 0 1 f

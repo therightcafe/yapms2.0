@@ -192,6 +192,9 @@ if($mobile === false) {
 			(adsbygoogle = window.adsbygoogle || []).push({});
 		</script>',
 		'</div>' ,
+		'<div id="yapnews-discord">',
+			'<a href="https://discord.gg/WQh5fHU" target="_blank">Join Our Discord</a>',
+		'</div>',
 		'<div id="yapnews-articles">' ,
 		'</div>' ,
 	'</div>';
@@ -235,6 +238,7 @@ if($mobile === false) {
 	<a class="selectmenu-button" onclick="displayVersionInfo()">Version Info</a>
 	<a class="selectmenu-button" onclick="centerMap()">Center Map</a>
 	<a class="selectmenu-button" onclick="toggleLTELogo()">LTE Logo</a>
+	<a class="selectmenu-button" onclick="disableNews()">Disable News</a>
 	<a class="selectmenu-button" href="https://commons.wikimedia.org/wiki/File:Blank_US_Map_(states_only).svg" target="_blank" rel="noreferrer">Map Src</a>
 </div>
 
@@ -386,7 +390,10 @@ if($mobile === false) {
 
 	<a class="selectmenu-split">Historical</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); loadCurrentCongress()'>Congress 2018</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadPresetMap("2016_presidential_county");'>Presidential County Results 2016</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); loadPresetMap("2016_presidential_county");'>Presidential County 2016</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); loadPresetMap("2016_presidential");'>Presidential 2016</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); loadPresetMap("2012_presidential");'>Presidential 2012</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); loadPresetMap("2008_presidential");'>Presidential 2008</a>
 	
 
 	<a class="selectmenu-split">Open</a>

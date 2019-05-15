@@ -1,4 +1,4 @@
-var currentCache = 'v0.11.40';
+var currentCache = 'v0.12.0';
 
 var states = [];
 var lands = [];
@@ -895,6 +895,18 @@ function updateLegend() {
 			selectCandidateDisplay(html.parentElement);
 		}
 	}
+}
+
+function disableNews() {
+	var yapnews = document.getElementById('yapnews');
+	if(yapnews !== null) {
+		yapnews.style.display = 'none';
+	}
+	var yapnewsclose = document.getElementById('yapnews-close');
+	if(yapnewsclose !== null) {
+		yapnewsclose.style.display = 'none';
+	}
+	centerMap();
 }
 
 function centerMap() {
