@@ -321,6 +321,8 @@ function loadSavedMap(data) {
 					}
 				}
 
+				state.delegates['Tossup'] = parseInt(stateData[3]);
+
 				// set the color to the candidate with the most delegates
 				if(majorityCandidate === 'Tossup') {
 					state.setColor('Tossup', 2);
