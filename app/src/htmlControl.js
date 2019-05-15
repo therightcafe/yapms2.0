@@ -720,14 +720,33 @@ function toggleYAPNews() {
 	var l2 = document.getElementById("yapnews-close-l2");
 
 	if(yapnews !== null) {
+		/*
+		if(yapnews.style.display === "none") {
+			yapnews.style.display = "inline-flex";
+			l1.setAttribute('x1', '1');
+			l1.setAttribute('x2', '8');
+			l2.setAttribute('x1', '1');
+			l2.setAttribute('x2', '8');
+		} else {
+			yapnews.style.display = "none";
+			l1.setAttribute('x1', '8');
+			l1.setAttribute('x2', '1');
+			l2.setAttribute('x1', '8');
+			l2.setAttribute('x2', '1');
+		}*/
+		
 		if(yapnews.style.width === "0vw") {
 			yapnews.style.width = "20vw";
+			yapnews.style["overflow-y"] = "visible";
+			yapnews.style["padding-right"] = "12px";
 			l1.setAttribute('x1', '1');
 			l1.setAttribute('x2', '8');
 			l2.setAttribute('x1', '1');
 			l2.setAttribute('x2', '8');
 		} else {
 			yapnews.style.width = "0vw";
+			yapnews.style["overflow-y"] = "hidden";
+			yapnews.style["padding-right"] = "0px";
 			l1.setAttribute('x1', '8');
 			l1.setAttribute('x2', '1');
 			l2.setAttribute('x1', '8');
