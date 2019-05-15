@@ -737,7 +737,7 @@ function toggleYAPNews() {
 		
 		if(yapnews.style.width === "0vw") {
 			yapnews.style.width = "20vw";
-			yapnews.style["overflow-y"] = "visible";
+			yapnews.style["overflow-y"] = "auto";
 			yapnews.style["padding-right"] = "12px";
 			l1.setAttribute('x1', '1');
 			l1.setAttribute('x2', '8');
