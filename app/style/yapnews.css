@@ -13,6 +13,17 @@
 	border-bottom: 1px solid #cccccc;
 }
 
+#yapnews-discord {
+	background: black;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#yapnews-discord a { 
+	text-decoration: none;
+	color: white;
+}
+
 #yapnews-close {
 	background-color: #cccccc;
 	position: absolute;
