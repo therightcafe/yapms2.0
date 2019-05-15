@@ -48,6 +48,7 @@ button {
 	font-family: Times;
 	border-left: 1px solid black;
 	width: 20vw;
+	min-width: 260px;
 	padding-right:12px;
 }
 
