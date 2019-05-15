@@ -235,6 +235,7 @@ if($mobile === false) {
 	<a class="selectmenu-button" onclick="displayVersionInfo()">Version Info</a>
 	<a class="selectmenu-button" onclick="centerMap()">Center Map</a>
 	<a class="selectmenu-button" onclick="toggleLTELogo()">LTE Logo</a>
+	<a class="selectmenu-button" onclick="disableNews()">Disable News</a>
 	<a class="selectmenu-button" href="https://commons.wikimedia.org/wiki/File:Blank_US_Map_(states_only).svg" target="_blank" rel="noreferrer">Map Src</a>
 </div>
 
