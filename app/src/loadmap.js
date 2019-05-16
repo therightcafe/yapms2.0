@@ -24,6 +24,9 @@ function loadCurrentCongress() {
 }
 
 function loadPresetMap(preset) {
+	// Remove all candidates, and load the ones for the map
+	initCandidates();
+
 	$.ajax({
 		url: "./res/presets/" + preset,
 		type: "POST",
