@@ -995,6 +995,9 @@ function start() {
 			}
 		});
 
+	} else if(php_load_type_map === true) {
+		loadPreset("classic");
+		loadMapFromId(php_load_map_id);
 	} else {
 		loadPreset("classic");
 		loadMap('./res/usa_presidential.svg', 16, 1, 'usa_ec',"presidential", "open");

@@ -40,15 +40,24 @@
 			is_numeric($_GET["m"])) {
 			echo '<script>' .
 				'var php_load_map = true;' .
+				'var php_load_type_map = false;' .
 				'var php_load_map_id = '.$_GET["m"].';' .
 				'</script>';	
 
 			echo '<meta property="og:image" content="http://www.yapms.com/app/maps/' . $_GET["m"] . '.png">';
 			echo '<meta property="og:image:secure_url" content="https://www.yapms.com/app/maps/' . $_GET["m"] . '.png">';
 			echo '<meta name="twitter:image" content="https://www.yapms.com/app/maps/' . $_GET["m"] . '.png">';
+		} else if(isset($_GET["t"]) && !empty($_GET["t"])) {
+			echo '<script>' .
+				'var php_load_map = false;' .
+				'var php_load_type_map = true;' .
+				'var php_load_map_id = "' . $_GET["t"] . '";' .
+			     '</script>';
+				
 		} else {
 			echo '<script>' .
 				'var php_load_map = false;' .
+				'var php_load_type_map = false;' .
 				'var php_load_map_id = 0;' .
 			     '</script>';
 		}
@@ -388,7 +397,24 @@ if($mobile === false) {
 	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_dem_primary.svg", 16, 1, "dem_primary", "primary", "2020");'>Democratic</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_rep_primary.svg", 16, 1, "rep_primary", "primary", "2020");'>Republican</a>
 
-	<a class="selectmenu-split">Historical</a>
+	<a class="selectmenu-split">Open</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_no_districts.svg", 16, 1, "usa_no_districts_ec", "presidential", "open")'>Presidential Take All</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_senate.svg", 16, 1.5, "usa_senate", "senatorial", "open")'>Senatorial</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_gubernatorial.svg", 16, 1.5, "usa_gubernatorial", "gubernatorial", "open")'>Gubernatorial</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_congressional_2018.svg", 16, 0.075, "congressional", "congressional", "open")'>Congressional</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_county.svg", 16, 0.075, "congressional", "congressional", "open")'>County</a>
+
+</div>
+
+<!-- USA Historical Maps -->
+<div id="mapmenu-usa-historical" class="popup selectmenu">
+	<svg class="closebutton" onclick="closeNotification(this)" width="24" height="24">
+		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
+		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
+		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
+	</svg>
+
+	<h2>USA Historical Maps</h2>
 	<a class="selectmenu-button" onclick='closeNotification(this); loadCurrentCongress()'>Congress 2018</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); loadPresetMap("2016_presidential_county");'>Presidential County 2016</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); loadPresetMap("2016_presidential");'>Presidential 2016</a>
@@ -398,14 +424,6 @@ if($mobile === false) {
 	<a class="selectmenu-button" onclick='closeNotification(this); loadPresetMap("2000_presidential");'>Presidential 2000</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); loadPresetMap("1996_presidential");'>Presidential 1996</a>
 	
-
-	<a class="selectmenu-split">Open</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_no_districts.svg", 16, 1, "usa_no_districts_ec", "presidential", "open")'>Presidential Take All</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_senate.svg", 16, 1.5, "usa_senate", "senatorial", "open")'>Senatorial</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_gubernatorial.svg", 16, 1.5, "usa_gubernatorial", "gubernatorial", "open")'>Gubernatorial</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_congressional_2018.svg", 16, 0.075, "congressional", "congressional", "open")'>Congressional</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_county.svg", 16, 0.075, "congressional", "congressional", "open")'>County</a>
-
 </div>
 
 <!-- Mock Maps -->
@@ -432,6 +450,7 @@ if($mobile === false) {
 	<h2>Select Map</h2>
 	<a class="selectmenu-split">Countries</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("usa")'; >USA</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("usa-historical")'; >USA Historical</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("germany")'; >Germany</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/canada_states.svg", 38, 3, "canada_ec", "presidential", "open");'>Canada</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/unitedkingdom.svg", 16, 0.075, "congressional", "congressional", "open");'>United Kingdom</a>

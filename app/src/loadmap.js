@@ -44,6 +44,47 @@ function loadPresetMap(preset) {
 	});
 }
 
+// Load map based off of php t parameter
+function loadMapFromId(id) {
+	switch(id) {
+		case "2016_presidential":
+		case "2012_presidential":
+		case "2008_presidential":
+		case "2004_presidential":
+		case "2000_presidential":
+		case "1996_presidential":
+			loadPresetMap(id);
+			break;
+		case "2020_presidential":
+			loadMap("../res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open");
+			break;
+		case "2020_senatorial":
+			loadMap("../res/usa_senate.svg", 16, 1, "usa_senate", "senatorial", "2020");
+			break;
+		case "2020_gubernatorial":
+			loadMap("./res/usa_gubernatorial.svg", 16, 1, "usa_gubernatorial", "gubernatorial", "2020");
+			break;
+		case "2020_democratic_primary":
+			loadMap("./res/usa_dem_primary.svg", 16, 1, "dem_primary", "primary", "2020");
+			break;
+		case "2020_republican_primary":
+			loadMap("./res/usa_rep_primary.svg", 16, 1, "rep_primary", "primary", "2020");
+			break;
+		case "USA_county":
+			loadMap("./res/usa_county.svg", 16, 0.075, "congressional", "congressional", "open");
+			break;
+		case "USA_congressional":
+			loadMap("./res/usa_congressional_2018.svg", 16, 0.075, "congressional", "congressional", "open");
+			break;
+		case "USA_gubernatorial":
+			loadMap("./res/usa_gubernatorial.svg", 16, 1.5, "usa_gubernatorial", "gubernatorial", "open");
+			break;
+		case "USA_senatorial":
+			loadMap("./res/usa_senate.svg", 16, 1.5, "usa_senate", "senatorial", "open");
+			break;
+	}
+}
+
 // loads the svg element into the HTML
 function loadMap(filename, fontsize, strokewidth, dataid, type, year, onLoad) {
 	save_filename = filename;
