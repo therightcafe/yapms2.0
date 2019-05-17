@@ -394,6 +394,9 @@ if($mobile === false) {
 	<a class="selectmenu-button" onclick='closeNotification(this); loadPresetMap("2016_presidential");'>Presidential 2016</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); loadPresetMap("2012_presidential");'>Presidential 2012</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); loadPresetMap("2008_presidential");'>Presidential 2008</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); loadPresetMap("2004_presidential");'>Presidential 2004</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); loadPresetMap("2000_presidential");'>Presidential 2000</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); loadPresetMap("1996_presidential");'>Presidential 1996</a>
 	
 
 	<a class="selectmenu-split">Open</a>

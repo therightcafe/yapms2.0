@@ -1,4 +1,4 @@
-var currentCache = 'v0.12.8';
+var currentCache = 'v0.12.9';
 
 function swLog(message) {
 	console.log('SW' + currentCache + ': ' + message);
@@ -53,6 +53,9 @@ self.addEventListener('install', function(event) {
 				'./res/presets/2016_presidential',
 				'./res/presets/2012_presidential',
 				'./res/presets/2008_presidential',
+				'./res/presets/2004_presidential',
+				'./res/presets/2000_presidential',
+				'./res/presets/1996_presidential',
 				
 				'./res/lte.jpg',
 
