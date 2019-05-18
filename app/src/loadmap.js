@@ -56,6 +56,7 @@ function loadMapFromId(id) {
 			loadPresetMap(id);
 			break;
 		case "2020_presidential":
+			alert("HELP ME");
 			loadMap("../res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open");
 			break;
 		case "2020_senatorial":
