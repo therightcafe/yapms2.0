@@ -56,11 +56,10 @@ function loadMapFromId(id) {
 			loadPresetMap(id);
 			break;
 		case "2020_presidential":
-			alert("HELP ME");
-			loadMap("../res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open");
+			loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open");
 			break;
 		case "2020_senatorial":
-			loadMap("../res/usa_senate.svg", 16, 1, "usa_senate", "senatorial", "2020");
+			loadMap("./res/usa_senate.svg", 16, 1, "usa_senate", "senatorial", "2020");
 			break;
 		case "2020_gubernatorial":
 			loadMap("./res/usa_gubernatorial.svg", 16, 1, "usa_gubernatorial", "gubernatorial", "2020");
@@ -84,7 +83,7 @@ function loadMapFromId(id) {
 			loadMap("./res/usa_senate.svg", 16, 1.5, "usa_senate", "senatorial", "open");
 			break;
 		default:
-			loadMap("../res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open");
+			loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open");
 			break;
 	}
 }
