@@ -82,6 +82,9 @@ function loadMapFromId(id) {
 		case "USA_senatorial":
 			loadMap("./res/usa_senate.svg", 16, 1.5, "usa_senate", "senatorial", "open");
 			break;
+		default:
+			loadMap("../res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open");
+			break;
 	}
 }
 

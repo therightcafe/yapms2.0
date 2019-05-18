@@ -59,11 +59,6 @@
 			</p>
 		</div>
 
-		<div id="whatsnew" class="infobox">
-			<b>New Stuff:</b>
-			USA County Map, German states.
-		</div>
-
 		<div class="infobox">
 			<br>
 			Checkout our Android App at
@@ -74,12 +69,108 @@
 			<br>If you would like to submit ideas, or report bugs, please send an email to <a style="color:blue;" href="mailto:bugreport@yapms.com">bugreport@yapms.com</a>
 		</div>
 	</div>
-	
+
+	<br>
+
+<!--	
 	<a href="./app">
 		<div id="start" class="start">
 			Start
 		</div>
 	</a>
+-->
+	
+	<div class="seperator">
+		Modern Maps
+	</div>
+	
+	<br>
+
+	<div>	
+		<a href="./maps/2020_presidential">
+			<div class="map-button">
+				Presidential
+			</div>
+		</a>
+
+		<a href="./maps/2020_gubernatorial">
+			<div class="map-button">
+				Gubernatorial
+			</div>
+		</a>
+		
+		<a href="./maps/2020_senatorial">
+			<div class="map-button">
+				Senatorial
+			</div>
+		</a>
+	</div>
+
+	<br>
+	
+	<div>	
+		<a href="./maps/2020_democratic_primary">
+			<div class="map-button">
+				Democratic Primary
+			</div>
+		</a>
+
+		<a href="./maps/2020_republican_primary">
+			<div class="map-button">
+				Republican Primary
+			</div>
+		</a>
+	</div>
+
+	<br>
+
+	<div class="seperator">
+		Historical Maps
+	</div>
+
+	<br>
+
+	<div>	
+		<a href="./maps/2016_presidential">
+			<div class="map-button">
+				2016 Presidential
+			</div>
+		</a>
+		
+		<a href="./maps/2012_presidential">
+			<div class="map-button">
+				2012 Presidential
+			</div>
+		</a>
+		
+		<a href="./maps/2008_presidential">
+			<div class="map-button">
+				2008 Presidential
+			</div>
+		</a>
+	</div>
+	
+	<br>
+
+	<div>	
+		<a href="./maps/2004_presidential">
+			<div class="map-button">
+				2004 Presidential
+			</div>
+		</a>
+		
+		<a href="./maps/2000_presidential">
+			<div class="map-button">
+				2000 Presidential
+			</div>
+		</a>
+		
+		<a href="./maps/1996_presidential">
+			<div class="map-button">
+				1996 Presidential
+			</div>
+		</a>
+	</div>
 
 	<br>
 
