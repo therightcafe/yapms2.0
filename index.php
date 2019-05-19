@@ -1,4 +1,6 @@
-<html>
+<!DOCTYPE html>
+<?php echo '<?xml version="1.0" encoding="UTF-8" standalone="no"?>' ?>
+<html class="noSelect" lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="description" content="Presidential, Senatorial, Congressional, Guberntorial and Primary political map simulator.">
@@ -37,6 +39,15 @@
 	
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+	     (adsbygoogle = window.adsbygoogle || []).push({
+		  google_ad_client: "ca-pub-1660456925957249",
+		  enable_page_level_ads: true
+	     });
+	</script>	
+
 </head>
 
 <body>
