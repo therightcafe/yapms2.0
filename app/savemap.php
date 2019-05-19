@@ -1,5 +1,5 @@
 <?php
-$filename = "" . rand(0, 40000);
+$filename = "" . rand(0, 80000);
 
 $imgData = $_POST["img"];
 $imgData = str_replace(' ', '+', $imgData);
