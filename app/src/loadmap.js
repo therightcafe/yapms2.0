@@ -418,7 +418,7 @@ function loadSavedMap(data) {
 				// get the candidate
 				var candidateName = stateData[1].replace(/\%/g, " ");
 				// set the proper color
-				state.setColor(candidateName, stateData[2]);
+				state.setColor(candidateName, parseInt(stateData[2]));
 			}
 			
 			var disable = (stateData[stateData.length - 1] === 't');
