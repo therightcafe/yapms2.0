@@ -365,7 +365,7 @@ if($mobile === false) {
 		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
 	</svg>
 	<h2>Canada</h2>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/canada_states.svg", 38, 3, "canada_ec", "presidential", "open");'>Canada</a>
+	<a class="selectmenu-button" href="./?t=Canada_provinces">Canada</a>
 </div>
 
 <!-- German Maps -->
@@ -376,8 +376,8 @@ if($mobile === false) {
 		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
 	</svg>
 	<h2>Germany</h2>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/germany.svg", 16, 1, "congressional", "congressional", "open");'>States</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/germany_constituencies.svg", 16, 1, "congressional", "congressional", "open");'>Constituencies</a>
+	<a class="selectmenu-button" href="./?t=Germany_states">States</a>
+	<a class="selectmenu-button" href="./?t=Germany_constituencies">Constituencies</a>
 </div>
 
 <!-- USA Maps -->
@@ -389,20 +389,25 @@ if($mobile === false) {
 	</svg>
 	<h2>USA Maps</h2>
 	<a class="selectmenu-split">2020</a>
+	<!--
 	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open");'>Presidential</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_senate.svg", 16, 1, "usa_senate", "senatorial", "2020")'>Senatorial</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_gubernatorial.svg", 16, 1, "usa_gubernatorial", "gubernatorial", "2020")'>Gubernatorial</a>
+	-->
+	<a class="selectmenu-button" href="./?t=2020_presidential">Presidential</a>
+	<a class="selectmenu-button" href="./?t=2020_senatorial">Senatorial</a>
+	<a class="selectmenu-button" href="./?t=2020_gubernatorial">Gubernatorial</a>
 
 	<a class="selectmenu-split">Primaries</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_dem_primary.svg", 16, 1, "dem_primary", "primary", "2020");'>Democratic</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_rep_primary.svg", 16, 1, "rep_primary", "primary", "2020");'>Republican</a>
+	<a class="selectmenu-button" href="./?t=2020_democratic_primary">Democratic</a>
+	<a class="selectmenu-button" href="./?t=2020_republican_primary">Republican</a>
 
 	<a class="selectmenu-split">Open</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_no_districts.svg", 16, 1, "usa_no_districts_ec", "presidential", "open")'>Presidential Take All</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_senate.svg", 16, 1.5, "usa_senate", "senatorial", "open")'>Senatorial</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_gubernatorial.svg", 16, 1.5, "usa_gubernatorial", "gubernatorial", "open")'>Gubernatorial</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_congressional_2018.svg", 16, 0.075, "congressional", "congressional", "open")'>Congressional</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_county.svg", 16, 0.075, "congressional", "congressional", "open")'>County</a>
+	<a class="selectmenu-button" href="./?t=USA_takeall">Presidential Take All</a>
+	<a class="selectmenu-button" href="./?t=USA_senatorial">Senatorial</a>
+	<a class="selectmenu-button" href="./?t=USA_gubernatorial">Gubernatorial</a>
+	<a class="selectmenu-button" href="./?t=USA_congressional">Congressional</a>
+	<a class="selectmenu-button" href="./?t=USA_county">County</a>
 
 </div>
 
@@ -415,14 +420,14 @@ if($mobile === false) {
 	</svg>
 
 	<h2>USA Historical Maps</h2>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadCurrentCongress()'>Congress 2018</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadPresetMap("2016_presidential_county");'>Presidential County 2016</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadPresetMap("2016_presidential");'>Presidential 2016</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadPresetMap("2012_presidential");'>Presidential 2012</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadPresetMap("2008_presidential");'>Presidential 2008</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadPresetMap("2004_presidential");'>Presidential 2004</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadPresetMap("2000_presidential");'>Presidential 2000</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadPresetMap("1996_presidential");'>Presidential 1996</a>
+	<a class="selectmenu-button" href="./?t=2018_congress">Congress 2018</a>
+	<a class="selectmenu-button" href="./?t=2016_presidential_county">Presidential County 2016</a>
+	<a class="selectmenu-button" href="./?t=2016_presidential">Presidential 2016</a>
+	<a class="selectmenu-button" href="./?t=2012_presidential">Presidential 2012</a>
+	<a class="selectmenu-button" href="./?t=2008_presidential">Presidential 2008</a>
+	<a class="selectmenu-button" href="./?t=2004_presidential">Presidential 2004</a>
+	<a class="selectmenu-button" href="./?t=2000_presidential">Presidential 2000</a>
+	<a class="selectmenu-button" href="./?t=1996_presidential">Presidential 1996</a>
 	
 </div>
 
@@ -434,9 +439,9 @@ if($mobile === false) {
 		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
 	</svg>
 	<h2>LTE</h2>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/lte_president.svg", 30, 1, "lte_ec", "presidential", "open");'>Presidential</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/lte_senate.svg", 35, 1, "ltesenate", "senatorial", "open")'>Senatorial</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/lte_house.svg", 35, 1, "congressional", "congressional", "open")'>Congressional</a>
+	<a class="selectmenu-button" href="./?t=LTE_presidential">Presidential</a>
+	<a class="selectmenu-button" href="./?t=LTE_senatorial">Senatorial</a>
+	<a class="selectmenu-button" href="./?t=LTE_congressional">Congressional</a>
 </div>
 
 
@@ -452,10 +457,10 @@ if($mobile === false) {
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("usa")'; >USA</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("usa-historical")'; >USA Historical</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("germany")'; >Germany</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/canada_states.svg", 38, 3, "canada_ec", "presidential", "open");'>Canada</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/unitedkingdom.svg", 16, 0.075, "congressional", "congressional", "open");'>United Kingdom</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/eu.svg", 16, 0.25, "eu_parliament", "primary", "open");'>EU</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/world.svg", 38, 0.5, "congressional", "congressional", "open");'>World</a>
+	<a class="selectmenu-button" href="./?t=Canada_provinces">Canada</a>
+	<a class="selectmenu-button" href="./?t=UnitedKingdom_constituencies">United Kingdom</a>
+	<a class="selectmenu-button" href="./?t=EuropeanUnion">EU</a>
+	<a class="selectmenu-button" href="./?t=World">World</a>
 
 	<a class="selectmenu-split">Mock</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("lte")'; >LTE</a>

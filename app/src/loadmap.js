@@ -47,12 +47,16 @@ function loadPresetMap(preset) {
 // Load map based off of php t parameter
 function loadMapFromId(id) {
 	switch(id) {
+		case "2018_congress":
+			loadCurrentCongress();
+			break;
 		case "2016_presidential":
 		case "2012_presidential":
 		case "2008_presidential":
 		case "2004_presidential":
 		case "2000_presidential":
 		case "1996_presidential":
+		case "2016_presidential_county":
 			loadPresetMap(id);
 			break;
 		case "2020_presidential":
@@ -81,6 +85,36 @@ function loadMapFromId(id) {
 			break;
 		case "USA_senatorial":
 			loadMap("./res/usa_senate.svg", 16, 1.5, "usa_senate", "senatorial", "open");
+			break;
+		case "USA_takeall":
+			loadMap("./res/usa_no_districts.svg", 16, 1, "usa_no_districts_ec", "presidential", "open");
+			break;
+		case "Germany_states":
+			loadMap("./res/germany.svg", 16, 1, "congressional", "congressional", "open");
+			break;
+		case "Germany_constituencies":
+			loadMap("./res/germany_constituencies.svg", 16, 1, "congressional", "congressional", "open");
+			break;
+		case "UnitedKingdom_constituencies":
+			loadMap("./res/unitedkingdom.svg", 16, 0.075, "congressional", "congressional", "open");
+			break;
+		case "Canada_provinces":
+			loadMap("./res/canada_states.svg", 38, 3, "canada_ec", "presidential", "open");
+			break;
+		case "EuropeanUnion":
+			loadMap("./res/eu.svg", 16, 0.25, "eu_parliament", "primary", "open");
+			break;
+		case "World":
+			loadMap("./res/world.svg", 38, 0.5, "congressional", "congressional", "open");
+			break;
+		case "LTE_presidential":
+			loadMap("./res/lte_president.svg", 30, 1, "lte_ec", "presidential", "open");
+			break;
+		case "LTE_senatorial":
+			loadMap("./res/lte_senate.svg", 35, 1, "ltesenate", "senatorial", "open");
+			break;
+		case "LTE_congressional":
+			loadMap("./res/lte_house.svg", 35, 1, "congressional", "congressional", "open");
 			break;
 		default:
 			loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open");

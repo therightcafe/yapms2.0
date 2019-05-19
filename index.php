@@ -66,7 +66,7 @@
 		</div>
 
 		<div class="infobox">
-			<br>If you would like to submit ideas, or report bugs, please send an email to <a style="color:blue;" href="mailto:bugreport@yapms.com">bugreport@yapms.com</a>
+			<br> Contact Email - <a style="color:blue;" href="mailto:bugreport@yapms.com">bugreport@yapms.com</a>
 		</div>
 	</div>
 
@@ -79,97 +79,157 @@
 		</div>
 	</a>
 -->
-	
-	<div class="seperator">
-		Modern Maps
+
+	<div class="map-type-box">	
+	<div class="map-type-header">
+		USA - 2020 Maps	
 	</div>
-	
-	<br>
 
 	<div>	
-		<a href="./maps/2020_presidential">
+		<a href="./app/?t=2020_presidential">
 			<div class="map-button">
 				Presidential
 			</div>
 		</a>
 
-		<a href="./maps/2020_gubernatorial">
+		<a href="./app/?t=2020_gubernatorial">
 			<div class="map-button">
 				Gubernatorial
 			</div>
 		</a>
 		
-		<a href="./maps/2020_senatorial">
+		<a href="./app/?t=2020_senatorial">
 			<div class="map-button">
 				Senatorial
 			</div>
 		</a>
-	</div>
 
-	<br>
-	
-	<div>	
-		<a href="./maps/2020_democratic_primary">
+		<br>	
+
+		<a href="./app/?t=2020_democratic_primary">
 			<div class="map-button">
 				Democratic Primary
 			</div>
 		</a>
 
-		<a href="./maps/2020_republican_primary">
+		<a href="./app/?t=2020_republican_primary">
 			<div class="map-button">
 				Republican Primary
 			</div>
 		</a>
 	</div>
-
-	<br>
-
-	<div class="seperator">
-		Historical Maps
 	</div>
 
-	<br>
+	<div class="map-type-box">	
+	<div class="map-type-header">
+		USA - Blank Maps	
+	</div>
+		
+	<div>
+		<a href="./app/?t=USA_county">
+			<div class="map-button">
+				Counties
+			</div>
+		</a>
+		
+		<a href="./app/?t=USA_congressional">
+			<div class="map-button">
+				Congressional
+			</div>
+		</a>
+
+		<br>
+
+		<a href="./app/?t=USA_senatorial">
+			<div class="map-button">
+				Senatorial
+			</div>
+		</a>
+		
+		<a href="./app/?t=USA_gubernatorial">
+			<div class="map-button">
+				Gubernatorial
+			</div>
+		</a>
+	</div>
+	</div>
+
+	<div class="map-type-box">
+	<div class="map-type-header">
+		USA - Historical Maps
+	</div>
 
 	<div>	
-		<a href="./maps/2016_presidential">
+		<a href="./app/?t=2016_presidential">
 			<div class="map-button">
 				2016 Presidential
 			</div>
 		</a>
 		
-		<a href="./maps/2012_presidential">
+		<a href="./app/?t=2012_presidential">
 			<div class="map-button">
 				2012 Presidential
 			</div>
 		</a>
 		
-		<a href="./maps/2008_presidential">
+		<a href="./app/?t=2008_presidential">
 			<div class="map-button">
 				2008 Presidential
 			</div>
 		</a>
-	</div>
 	
-	<br>
+		<br>
 
-	<div>	
-		<a href="./maps/2004_presidential">
+		<a href="./app/?t=2004_presidential">
 			<div class="map-button">
 				2004 Presidential
 			</div>
 		</a>
 		
-		<a href="./maps/2000_presidential">
+		<a href="./app/?t=2000_presidential">
 			<div class="map-button">
 				2000 Presidential
 			</div>
 		</a>
 		
-		<a href="./maps/1996_presidential">
+		<a href="./app/?t=1996_presidential">
 			<div class="map-button">
 				1996 Presidential
 			</div>
 		</a>
+	</div>
+	</div>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
+		Germany
+	</div>
+	<div>
+		<a href="./app/?t=Germany_states">
+			<div class="map-button">
+				States
+			</div>
+		</a>
+		<a href="./app/?t=Germany_constituencies">
+			<div class="map-button">
+				Constituencies
+			</div>
+		</a>
+		
+	</div>
+	</div>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
+		United Kingdom
+	</div>
+	<div>
+		<a href="./app/?t=UnitedKingdom_constituencies">
+			<div class="map-button">
+				Constituencies
+			</div>
+		</a>
+	</div>
 	</div>
 
 	<br>
