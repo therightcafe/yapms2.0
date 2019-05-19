@@ -1,4 +1,4 @@
-var currentCache = 'v0.13.3';
+var currentCache = 'v0.13.4';
 
 var states = [];
 var lands = [];
@@ -417,7 +417,6 @@ function setEC(e) {
 			element.setVoteCount(parseInt(input), true);
 		}
 	});
-
 
 	// update the html text display
 	var stateText = document.getElementById(stateId + '-text');

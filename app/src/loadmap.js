@@ -374,8 +374,8 @@ function loadSavedMap(data) {
 				updateText = true;
 			}
 			
-			var voteCount = stateData[stateData.length - 2];
-			state.setVoteCount(parseInt(voteCount), updateText);	
+			var voteCount = parseInt(stateData[stateData.length - 2]);
+			state.setVoteCount(voteCount, updateText);	
 			
 
 			// if its a primary map

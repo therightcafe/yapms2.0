@@ -65,10 +65,6 @@ class State {
 				stateText.childNodes[0].innerHTML = this.name + ' ' + value;
 			}
 		}
-		
-		countVotes();
-		updateChart();
-		updateLegend();
 	}
 
 	getHtml() { 
