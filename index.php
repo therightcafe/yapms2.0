@@ -208,6 +208,12 @@
 				1996 Presidential
 			</div>
 		</a>
+		
+		<a href="./app/?t=1992_presidential">
+			<div class="map-button">
+				1992 Presidential
+			</div>
+		</a>
 	</div>
 	</div>
 	
