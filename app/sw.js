@@ -1,4 +1,4 @@
-var currentCache = 'v0.14.0';
+var currentCache = 'v0.14.1';
 
 function swLog(message) {
 	console.log('SW' + currentCache + ': ' + message);
@@ -59,6 +59,7 @@ self.addEventListener('install', function(event) {
 				'./res/presets/1996_presidential',
 				
 				'./res/lte.jpg',
+				'./res/redeagletv.png',
 
 				'./src/main.js',
 				'./src/mobile.js',

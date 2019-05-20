@@ -400,7 +400,7 @@ if($mobile === false) {
 	<a class="selectmenu-button" href="./?t=2020_presidential">Presidential</a>
 	<a class="selectmenu-button" href="./?t=2020_senatorial">Senatorial</a>
 	<a class="selectmenu-button" href="./?t=2020_gubernatorial">Gubernatorial</a>
-	<a class="selectmenu-button" href="./?t=1972_presidential">1972 Presidential</a>
+	<!-- <a class="selectmenu-button" href="./?t=1972_presidential">1972 Presidential</a> -->
 
 	<a class="selectmenu-split">Primaries</a>
 	<a class="selectmenu-button" href="./?t=2020_democratic_primary">Democratic</a>
