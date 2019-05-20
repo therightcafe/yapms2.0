@@ -135,7 +135,8 @@ button {
 	margin-bottom: 10px;
 	margin-right: 10px;
 	display: none;
-	background-image: url('https://testing.yapms.com/app/res/redeagle.png');
+	background-image: url('https://testing.yapms.com/app/res/redeagletv.png');
+	/*background-color: #fafafa;*/
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
