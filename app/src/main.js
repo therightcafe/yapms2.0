@@ -1,4 +1,4 @@
-var currentCache = 'v0.13.4';
+var currentCache = 'v0.14.0';
 
 var states = [];
 var lands = [];
@@ -924,6 +924,15 @@ function toggleLTELogo() {
 		lteLogo.style.display = 'inline';
 	} else if(lteLogo.style.display === 'inline') {
 		lteLogo.style.display = '';
+	}
+}
+
+function toggleRedEagleLogo() {
+	var redEagleLogo = document.getElementById('logo-redeagle-div');
+	if(redEagleLogo.style.display === '') {
+		redEagleLogo.style.display = 'inline';
+	} else if(redEagleLogo.style.display === 'inline') {
+		redEagleLogo.style.display = '';
 	}
 }
 

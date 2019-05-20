@@ -56,11 +56,15 @@ function loadMapFromId(id) {
 		case "2004_presidential":
 		case "2000_presidential":
 		case "1996_presidential":
+		case "1992_presidential":
 		case "2016_presidential_county":
 			loadPresetMap(id);
 			break;
 		case "2020_presidential":
 			loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open");
+			break;
+		case "1972_presidential":
+			loadMap("./res/usa_1972_presidential.svg", 16, 1, "usa_1972_ec", "presidential", "open");
 			break;
 		case "2020_senatorial":
 			loadMap("./res/usa_senate.svg", 16, 1, "usa_senate", "senatorial", "2020");

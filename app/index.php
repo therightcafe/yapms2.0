@@ -157,6 +157,8 @@
 
 		<div id="logo-div">
 		</div>
+		<div id="logo-redeagle-div">
+		</div>
 	</div>
 
 	<div id="map-div">
@@ -247,6 +249,7 @@ if($mobile === false) {
 	<a class="selectmenu-button" onclick="displayVersionInfo()">Version Info</a>
 	<a class="selectmenu-button" onclick="centerMap()">Center Map</a>
 	<a class="selectmenu-button" onclick="toggleLTELogo()">LTE Logo</a>
+	<a class="selectmenu-button" onclick="toggleRedEagleLogo()">RedEagle Logo</a>
 	<a class="selectmenu-button" onclick="disableNews()">Disable News</a>
 	<a class="selectmenu-button" href="https://commons.wikimedia.org/wiki/File:Blank_US_Map_(states_only).svg" target="_blank" rel="noreferrer">Map Src</a>
 </div>
@@ -397,6 +400,7 @@ if($mobile === false) {
 	<a class="selectmenu-button" href="./?t=2020_presidential">Presidential</a>
 	<a class="selectmenu-button" href="./?t=2020_senatorial">Senatorial</a>
 	<a class="selectmenu-button" href="./?t=2020_gubernatorial">Gubernatorial</a>
+	<a class="selectmenu-button" href="./?t=1972_presidential">1972 Presidential</a>
 
 	<a class="selectmenu-split">Primaries</a>
 	<a class="selectmenu-button" href="./?t=2020_democratic_primary">Democratic</a>
@@ -428,6 +432,7 @@ if($mobile === false) {
 	<a class="selectmenu-button" href="./?t=2004_presidential">Presidential 2004</a>
 	<a class="selectmenu-button" href="./?t=2000_presidential">Presidential 2000</a>
 	<a class="selectmenu-button" href="./?t=1996_presidential">Presidential 1996</a>
+	<a class="selectmenu-button" href="./?t=1992_presidential">Presidential 1996</a>
 	
 </div>
 

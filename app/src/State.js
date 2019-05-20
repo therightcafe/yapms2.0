@@ -17,16 +17,16 @@ class State {
 	resetVoteCount() {
 		//totalVotes -= this.voteCount;
 		if(this.dataid === 'congressional') {
-			this.setVoteCount(1);
+			this.setVoteCount(1, true);
 			//this.voteCount = 1;
 		} else if(this.dataid === 'senate') {
-			this.setVoteCount(2);
+			this.setVoteCount(2, true);
 			//this.voteCount = 2;
 		} else if(this.dataid === 'ltesenate') {
-			this.setVoteCount(1);
+			this.setVoteCount(1, true);
 			//this.voteCount = 1;	
 		}else {
-			this.setVoteCount(data[this.dataid][this.name]);
+			this.setVoteCount(data[this.dataid][this.name], true);
 			//this.voteCount = data[this.dataid][this.name];
 		}
 		//totalVotes += this.voteCount;
