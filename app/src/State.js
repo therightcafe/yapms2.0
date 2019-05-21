@@ -31,7 +31,7 @@ class State {
 				this.dataid === 'rep_primary') {
 			this.setVoteCount(data[this.dataid][this.name], false);
 		}else {
-			this.setVoteCount(data[this.dataid][this.name], true);
+			this.setVoteCount(data[this.dataid][this.name], false);
 		}
 		//totalVotes += this.voteCount;
 	}
@@ -56,6 +56,12 @@ class State {
 		var diff = value - this.voteCount;
 		this.voteCount = value;
 		totalVotes += diff;
+
+		/*
+		if(updateText) {
+			alert("UPDATE TEXT");
+		}
+		*/
 
 		// update the html text display
 		if(updateText) {
