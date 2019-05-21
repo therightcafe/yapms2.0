@@ -604,8 +604,13 @@ function setChart(type, position) {
 			var logo = document.getElementById('logo-div');
 			logo.style.width = '15%';
 			logo.style.height = '100%';
+
 			sidebar.style.borderRight = '0px';
 			sidebar.style.borderTop = '1px solid black';
+
+			logo = document.getElementById('logo-redeagle-div');
+			logo.style.width = '15%';
+			logo.style.height = '100%';
 		}
 		else {
 			unsetBattleHorizontal();
@@ -615,6 +620,10 @@ function setChart(type, position) {
 			logo.style.height = '15%';
 			sidebar.style.borderTop = '0px';
 			sidebar.style.borderRight = '1px solid black';
+			
+			logo = document.getElementById('logo-redeagle-div');
+			logo.style.width = '100%';
+			logo.style.height = '15%';
 		}
 
 		html.style.display = 'none';
@@ -650,6 +659,9 @@ function setChart(type, position) {
 		var logo = document.getElementById('logo-div');
 		logo.style.width = '15%';
 		logo.style.height = '100%';
+		logo = document.getElementById('logo-redeagle-div');
+		logo.style.width = '15%';
+		logo.style.height = '100%';
 	} else {
 		var application = document.getElementById('application');
 		application.style.flexDirection = 'row';
@@ -668,6 +680,9 @@ function setChart(type, position) {
 		charthtml.style.width = '100%';
 		
 		var logo = document.getElementById('logo-div');
+		logo.style.width = '100%';
+		logo.style.height = '15%';
+		logo = document.getElementById('logo-redeagle-div');
 		logo.style.width = '100%';
 		logo.style.height = '15%';
 	}

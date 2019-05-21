@@ -155,9 +155,9 @@
 			include 'html/battlechart.html';
 		?>
 
-		<div id="logo-div">
-		</div>
 		<div id="logo-redeagle-div">
+		</div>
+		<div id="logo-div">
 		</div>
 	</div>
 
