@@ -16,18 +16,22 @@ class State {
 
 	resetVoteCount() {
 		//totalVotes -= this.voteCount;
-		if(this.dataid === 'congressional') {
-			this.setVoteCount(1, true);
+		if(this.dataid === 'congressional' ||
+			this.dataid === 'usa_gubernatorial') {
+			this.setVoteCount(1, false);
 			//this.voteCount = 1;
-		} else if(this.dataid === 'senate') {
-			this.setVoteCount(2, true);
+		} else if(this.dataid === 'senate' ||
+				this.dataid === 'usa_senate') {
+			this.setVoteCount(2, false);
 			//this.voteCount = 2;
 		} else if(this.dataid === 'ltesenate') {
-			this.setVoteCount(1, true);
+			this.setVoteCount(1, false);
 			//this.voteCount = 1;	
+		} else if(this.dataid === 'dem_primary' ||
+				this.dataid === 'rep_primary') {
+			this.setVoteCount(data[this.dataid][this.name], false);
 		}else {
 			this.setVoteCount(data[this.dataid][this.name], true);
-			//this.voteCount = data[this.dataid][this.name];
 		}
 		//totalVotes += this.voteCount;
 	}
@@ -57,12 +61,13 @@ class State {
 		if(updateText) {
 			var stateText = document.getElementById(this.name + '-text');
 			var text = this.name + ' ' + value;
-
-			// the text elements in an svg are inside spans
-			if(typeof stateText.childNodes[1] !== 'undefined') {
-				stateText.childNodes[1].innerHTML = ' ' + value;
-			} else {
-				stateText.childNodes[0].innerHTML = this.name + ' ' + value;
+			if(stateText !== null) {
+				// the text elements in an svg are inside spans
+				if(typeof stateText.childNodes[1] !== 'undefined') {
+					stateText.childNodes[1].innerHTML = ' ' + value;
+				} else {
+					stateText.childNodes[0].innerHTML = this.name + ' ' + value;
+				}
 			}
 		}
 	}
