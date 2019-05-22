@@ -221,6 +221,24 @@
 	
 	<div class="map-type-box">
 	<div class="map-type-header">
+		Canada
+	</div>
+	<div>
+		<a href="./app/?t=Canada_provinces">
+			<div class="map-button">
+				Provinces
+			</div>
+		</a>
+		<a href="./app/?t=Canada_constituencies">
+			<div class="map-button">
+				Constituencies
+			</div>
+		</a>
+	</div>
+	</div>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
 		Germany
 	</div>
 	<div>

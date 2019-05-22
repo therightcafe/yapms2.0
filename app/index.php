@@ -368,7 +368,8 @@ if($mobile === false) {
 		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
 	</svg>
 	<h2>Canada</h2>
-	<a class="selectmenu-button" href="./?t=Canada_provinces">Canada</a>
+	<a class="selectmenu-button" href="./?t=Canada_provinces">Canada Provinces</a>
+	<a class="selectmenu-button" href="./?t=Canada_constituencies">Canada Constituencies</a>
 </div>
 
 <!-- German Maps -->
@@ -432,7 +433,7 @@ if($mobile === false) {
 	<a class="selectmenu-button" href="./?t=2004_presidential">Presidential 2004</a>
 	<a class="selectmenu-button" href="./?t=2000_presidential">Presidential 2000</a>
 	<a class="selectmenu-button" href="./?t=1996_presidential">Presidential 1996</a>
-	<a class="selectmenu-button" href="./?t=1992_presidential">Presidential 1996</a>
+	<a class="selectmenu-button" href="./?t=1992_presidential">Presidential 1992</a>
 	
 </div>
 
@@ -462,7 +463,7 @@ if($mobile === false) {
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("usa")'; >USA</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("usa-historical")'; >USA Historical</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("germany")'; >Germany</a>
-	<a class="selectmenu-button" href="./?t=Canada_provinces">Canada</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("canada")'>Canada</a>
 	<a class="selectmenu-button" href="./?t=UnitedKingdom_constituencies">United Kingdom</a>
 	<a class="selectmenu-button" href="./?t=EuropeanUnion">EU</a>
 	<a class="selectmenu-button" href="./?t=World">World</a>

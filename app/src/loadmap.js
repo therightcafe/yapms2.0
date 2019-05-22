@@ -105,6 +105,9 @@ function loadMapFromId(id) {
 		case "Canada_provinces":
 			loadMap("./res/canada_states.svg", 38, 3, "canada_ec", "presidential", "open");
 			break;
+		case "Canada_constituencies":
+			loadMap("./res/canada_constituencies.svg", 16, 0.075, "congressional", "congressional", "open");
+			break;
 		case "EuropeanUnion":
 			loadMap("./res/eu.svg", 16, 0.25, "eu_parliament", "primary", "open");
 			break;

@@ -1,4 +1,4 @@
-var currentCache = 'v0.14.6';
+var currentCache = 'v0.15.0';
 
 var states = [];
 var lands = [];
@@ -148,13 +148,13 @@ function initData(dataid) {
 		var htmlElement = htmlElements[index];
 		htmlElement.setAttribute('style', 'inherit');
 		var name = htmlElement.getAttribute('id');
-		if(name.includes('*lines*') || name.includes("*ignore*")) {
+		if(name === null || name.includes('*lines*') || name.includes("*ignore*") ||
+			name.includes("_ignore_")) {
 			// do nothing with it paths that
 			// have these ids
 		} else if(name.includes('-button')) {
 			// don't include buttons as states
-			htmlElement.setAttribute('onclick',
-				'buttonClick(this)');
+			htmlElement.setAttribute('onclick', 'buttonClick(this)');
 			buttons.push(htmlElement);
 		} else if(name.includes('-land')) {
 			htmlElement.setAttribute('onclick', 'landClick(this)');
