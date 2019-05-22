@@ -1,10 +1,10 @@
-var currentCache = 'v0.15.6';
+var currentCache = 'v0.15.7';
 
 function swLog(message) {
 	console.log('SW' + currentCache + ': ' + message);
 }
 
-self.skipWaiting();
+//self.skipWaiting();
 
 self.addEventListener('install', function(event) {
 	event.waitUntil(
