@@ -1,4 +1,4 @@
-var currentCache = 'v0.15.10';
+var currentCache = 'v0.15.11';
 
 function swLog(message) {
 	console.log('SW' + currentCache + ': ' + message);
@@ -131,6 +131,6 @@ self.addEventListener('controllerchange', function(event) {
 	window.location.reload();
 });
 
-self.oncontrollchange = function(event) {
+self.oncontrollerchange = function(event) {
 	swLog('swap to service worker ' + currentCache);
 }
