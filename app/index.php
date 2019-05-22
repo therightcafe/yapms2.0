@@ -108,7 +108,7 @@
 	</button>
 
 	<button class="click-button" onclick="displayMapMenu()" style="white-space: nowrap;">
-		<i class="far fa-map"></i> Maps c
+		<i class="far fa-map"></i> Maps d
 	</button>
 
 	<button class="click-button" onclick="displayPresetMenu()" style="white-space: nowrap;">
