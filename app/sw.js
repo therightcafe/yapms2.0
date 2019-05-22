@@ -1,8 +1,10 @@
-var currentCache = 'v0.15.3';
+var currentCache = 'v0.15.4';
 
 function swLog(message) {
 	console.log('SW' + currentCache + ': ' + message);
 }
+
+self.skipWaiting();
 
 self.addEventListener('install', function(event) {
 	event.waitUntil(
@@ -125,6 +127,5 @@ self.addEventListener('activate', function(event) {
 });
 
 self.addEventListener('controllerchange', function() {
-	alert("HELP");
 	window.location.reload();
 });
