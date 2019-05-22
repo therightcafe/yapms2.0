@@ -1,4 +1,4 @@
-var currentCache = 'v0.15.0';
+var currentCache = 'v0.15.2';
 
 function swLog(message) {
 	console.log('SW' + currentCache + ': ' + message);
@@ -122,4 +122,9 @@ self.addEventListener('activate', function(event) {
 			});
 		})
 	);
+});
+
+self.addEventListener('controllerchange', function() {
+	alert("HELP");
+	window.location.reload();
 });
