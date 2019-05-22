@@ -20,8 +20,7 @@ class State {
 			this.dataid === 'usa_gubernatorial') {
 			this.setVoteCount(1, false);
 			//this.voteCount = 1;
-		} else if(this.dataid === 'senate' ||
-				this.dataid === 'usa_senate') {
+		} else if(this.dataid === 'senate') {
 			this.setVoteCount(2, false);
 			//this.voteCount = 2;
 		} else if(this.dataid === 'ltesenate') {
