@@ -1,4 +1,4 @@
-var currentCache = 'v0.15.11';
+var currentCache = 'v0.15.12';
 
 function swLog(message) {
 	console.log('SW' + currentCache + ': ' + message);
@@ -119,18 +119,10 @@ self.addEventListener('activate', function(event) {
 			cacheNames.forEach(function(cacheName) {
 				if(cacheName !== currentCache) {
 					swLog('clear cache ' + cacheName);
+					window.location.reload();
 					return caches.delete(cacheName);
 				}
 			});
 		})
 	);
 });
-
-self.addEventListener('controllerchange', function(event) {
-	swLog('swap to service worker ' + currentCache);
-	window.location.reload();
-});
-
-self.oncontrollerchange = function(event) {
-	swLog('swap to service worker ' + currentCache);
-}
