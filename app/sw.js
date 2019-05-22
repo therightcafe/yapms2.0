@@ -1,4 +1,4 @@
-var currentCache = 'v0.15.12';
+var currentCache = 'v0.15.13';
 
 function swLog(message) {
 	console.log('SW' + currentCache + ': ' + message);
@@ -119,7 +119,6 @@ self.addEventListener('activate', function(event) {
 			cacheNames.forEach(function(cacheName) {
 				if(cacheName !== currentCache) {
 					swLog('clear cache ' + cacheName);
-					window.location.reload();
 					return caches.delete(cacheName);
 				}
 			});

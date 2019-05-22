@@ -519,6 +519,7 @@ if($mobile === false) {
 		.register('./sw.js')
 		.then(function(a) {
 			console.log('SW: registered');
+			window.location.reload();
 		}, function(err) {
 			console.log('SW: register error... ', err);
 		});
