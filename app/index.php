@@ -409,6 +409,7 @@ if($mobile === false) {
 
 	<a class="selectmenu-split">Open</a>
 	<a class="selectmenu-button" href="./?t=USA_takeall">Presidential Take All</a>
+	<a class="selectmenu-button" href="./?t=USA_proportional">Presidential Proportional</a>
 	<a class="selectmenu-button" href="./?t=USA_senatorial">Senatorial</a>
 	<a class="selectmenu-button" href="./?t=USA_gubernatorial">Gubernatorial</a>
 	<a class="selectmenu-button" href="./?t=USA_congressional">Congressional</a>

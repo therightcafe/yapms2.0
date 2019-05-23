@@ -93,6 +93,9 @@ function loadMapFromId(id) {
 		case "USA_takeall":
 			loadMap("./res/usa_no_districts.svg", 16, 1, "usa_no_districts_ec", "presidential", "open");
 			break;
+		case "USA_proportional":
+			loadMap("./res/usa_no_districts.svg", 16, 1, "usa_no_districts_ec", "primary", "open");
+			break;
 		case "Germany_states":
 			loadMap("./res/germany.svg", 16, 1, "congressional", "congressional", "open");
 			break;
