@@ -137,20 +137,6 @@
 	</div>
 		
 	<div>
-		<a href="./app/?t=USA_county">
-			<div class="map-button">
-				Counties
-			</div>
-		</a>
-		
-		<a href="./app/?t=USA_congressional">
-			<div class="map-button">
-				Congressional
-			</div>
-		</a>
-
-		<br>
-
 		<a href="./app/?t=USA_senatorial">
 			<div class="map-button">
 				Senatorial
@@ -162,6 +148,33 @@
 				Gubernatorial
 			</div>
 		</a>
+		
+		<a href="./app/?t=USA_congressional">
+			<div class="map-button">
+				Congressional
+			</div>
+		</a>
+
+		<br>
+		
+		<a href="./app/?t=USA_county">
+			<div class="map-button">
+				Counties
+			</div>
+		</a>
+
+		<a href="./app/?t=USA_takeall">
+			<div class="map-button">
+				Take All
+			</div>
+		</a>
+		
+		<a href="./app/?t=USA_proportional">
+			<div class="map-button">
+				Proportional
+			</div>
+		</a>
+
 	</div>
 	</div>
 
