@@ -224,7 +224,7 @@ if($mobile === false) {
 	<h3 id="ecedit-message"></h3>
 	<input id="state-ec" type="number" name="value" min="1" max="10000" step="1">
 	<input id="state-id" type="hidden">
-	<button onclick="setEC(this)">set</button>
+	<button onclick="setEC(this);">set</button>
 </div>
 
 <div id="candidateedit" class="popup">
@@ -414,7 +414,6 @@ if($mobile === false) {
 	<a class="selectmenu-button" href="./?t=USA_gubernatorial">Gubernatorial</a>
 	<a class="selectmenu-button" href="./?t=USA_congressional">Congressional</a>
 	<a class="selectmenu-button" href="./?t=USA_county">County</a>
-
 </div>
 
 <!-- USA Historical Maps -->
@@ -465,6 +464,9 @@ if($mobile === false) {
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("usa-historical")'; >USA Historical</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("germany")'; >Germany</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("canada")'>Canada</a>
+<!--
+	<a class="selectmenu-button" href="./?t=Australia_constituencies">Australia</a>
+-->
 	<a class="selectmenu-button" href="./?t=UnitedKingdom_constituencies">United Kingdom</a>
 	<a class="selectmenu-button" href="./?t=EuropeanUnion">EU</a>
 	<a class="selectmenu-button" href="./?t=World">World</a>

@@ -1,4 +1,4 @@
-var currentCache = 'v0.16.2';
+var currentCache = 'v0.17.0';
 
 var states = [];
 var lands = [];
@@ -431,11 +431,14 @@ function setEC(e) {
 		stateId = split[0] + split[1];
 	}
 	var text = stateId + ' ' + input;
-	// the text elements in an svg are inside spans
-	if(typeof stateText.childNodes[1] !== 'undefined') {
-		stateText.childNodes[1].innerHTML = ' ' + input;
-	} else {
-		stateText.childNodes[0].innerHTML = stateId + ' ' + input;
+
+	if(stateText !== null) {
+		// the text elements in an svg are inside spans
+		if(typeof stateText.childNodes[1] !== 'undefined') {
+			stateText.childNodes[1].innerHTML = ' ' + input;
+		} else {
+			stateText.childNodes[0].innerHTML = stateId + ' ' + input;
+		}
 	}
 
 	// recount the votes
@@ -538,6 +541,16 @@ function setMode(set) {
 		if(set === 'delete' || set === 'ec') {
 			title.innerHTML = 'Sorry';
 			message.innerHTML = 'This mode is not available while editing a congressional map';
+			notification.style.display = 'inline';
+			console.log('denied');
+			return;
+		}
+	}
+
+	if(mapType === 'primary') {
+		if(set === 'delete' || set === 'ec') {
+			title.innerHTML = 'Sorry';
+			message.innerHTML = 'This mode is not available while editing a proportional map';
 			notification.style.display = 'inline';
 			console.log('denied');
 			return;
