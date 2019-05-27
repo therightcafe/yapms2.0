@@ -2,8 +2,8 @@ function buttonClick(clickElement) {
 	if(mode === 'move') {
 		return;
 	} else if(mode === 'paint' || mode === 'paintmove') {
-		if(mapType === 'primary') {
-			buttonClickPaintPrimary(clickElement);
+		if(mapType === 'primary' || mapType === 'proportional') {
+			buttonClickPaintProportional(clickElement);
 		} else {
 			buttonClickPaint(clickElement);
 		}
@@ -25,10 +25,10 @@ function buttonClickPaint(clickElement) {
 	//state.incrementCandidateColor(paintIndex);
 }
 
-function buttonClickPaintPrimary(clickElement) {
+function buttonClickPaintProportional(clickElement) {
 	var id = clickElement.getAttribute('id').split('-')[0];
 	var state = states.find(state => state.name === id);
-	stateClickPaintPrimary(state);
+	stateClickPaintProportional(state);
 }
 
 function buttonClickEC(clickElement) {
@@ -106,8 +106,8 @@ function stateClick(clickElement, e) {
 	switch(mode) {
 		case 'paint':
 		case 'paintmove':
-			if(mapType === 'primary') {
-				stateClickPaintPrimary(state, id);
+			if(mapType === 'primary' || mapType === 'proportional') {
+				stateClickPaintProportional(state, id);
 			} else {
 				stateClickPaint(state, id);
 			}
@@ -130,7 +130,7 @@ function stateClickPaint(state, id) {
 	state.incrementCandidateColor(paintIndex);
 }
 
-function stateClickPaintPrimary(state, id) {
+function stateClickPaintProportional(state, id) {
 	if(state === undefined) {
 		alert("FAIL");
 	}

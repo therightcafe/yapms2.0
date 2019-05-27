@@ -73,10 +73,10 @@ function loadMapFromId(id) {
 			loadMap("./res/usa_gubernatorial.svg", 16, 1, "usa_gubernatorial", "gubernatorial", "2020");
 			break;
 		case "2020_democratic_primary":
-			loadMap("./res/usa_dem_primary.svg", 16, 1, "dem_primary", "primary", "2020");
+			loadMap("./res/usa_dem_primary.svg", 16, 1, "dem_primary", "primary", "open");
 			break;
 		case "2020_republican_primary":
-			loadMap("./res/usa_rep_primary.svg", 16, 1, "rep_primary", "primary", "2020");
+			loadMap("./res/usa_rep_primary.svg", 16, 1, "rep_primary", "primary", "open");
 			break;
 		case "USA_county":
 			loadMap("./res/usa_county.svg", 16, 0.075, "congressional", "congressional", "open");
@@ -94,7 +94,7 @@ function loadMapFromId(id) {
 			loadMap("./res/usa_no_districts.svg", 16, 1, "usa_no_districts_ec", "presidential", "open");
 			break;
 		case "USA_proportional":
-			loadMap("./res/usa_no_districts.svg", 16, 1, "usa_no_districts_ec", "primary", "open");
+			loadMap("./res/usa_no_districts.svg", 16, 1, "usa_no_districts_ec", "proportional", "open");
 			break;
 		case "Germany_states":
 			loadMap("./res/germany.svg", 16, 1, "congressional", "congressional", "open");

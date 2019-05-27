@@ -54,13 +54,12 @@ class State {
 	setVoteCount(value, updateText) {
 		var diff = value - this.voteCount;
 		this.voteCount = value;
-		totalVotes += diff;
-
-		/*
-		if(updateText) {
-			alert("UPDATE TEXT");
+		this.delegates = {};
+		this.delegates['Tossup'] = value;
+		if(mapType === 'proportional') {
+			this.candidate = 'Tossup';
 		}
-		*/
+		totalVotes += diff;
 
 		// update the html text display
 		if(updateText) {

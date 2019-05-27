@@ -1,4 +1,4 @@
-var currentCache = 'v0.17.0';
+var currentCache = 'v0.17.1';
 
 var states = [];
 var lands = [];
@@ -396,6 +396,7 @@ function clearDelegates() {
 	for(var index = 0; index < states.length; ++index) {
 		state = states[index];
 		state.delegates = {};
+		state.setColor('Tossup', 0);
 	}
 
 	countVotes();
@@ -424,27 +425,30 @@ function setEC(e) {
 	});
 
 	// update the html text display
-	var stateText = document.getElementById(stateId + '-text');
+	//var stateText = document.getElementById(stateId + '-text');
 	// if the id has a dash then remove it
+	/*
 	if(stateId.includes('-')) {
 		var split = stateId.split('-');
 		stateId = split[0] + split[1];
 	}
 	var text = stateId + ' ' + input;
-
-	if(stateText !== null) {
-		// the text elements in an svg are inside spans
+	
+	if(stateText !== null) { */
+		// the text elements in an svg are inside spans 
+	/*
 		if(typeof stateText.childNodes[1] !== 'undefined') {
 			stateText.childNodes[1].innerHTML = ' ' + input;
 		} else {
 			stateText.childNodes[0].innerHTML = stateId + ' ' + input;
 		}
-	}
+	} */
 
 	// recount the votes
 	countVotes();
 	updateChart();
 	updateLegend();
+	verifyMap();
 }
 
 function rebuildChart() {
@@ -548,7 +552,7 @@ function setMode(set) {
 	}
 
 	if(mapType === 'primary') {
-		if(set === 'delete' || set === 'ec') {
+		if(set === 'delete') {
 			title.innerHTML = 'Sorry';
 			message.innerHTML = 'This mode is not available while editing a proportional map';
 			notification.style.display = 'inline';
@@ -665,7 +669,7 @@ function countVotes() {
 		mid.setAttribute("fill", TOSSUP.colors[2]);
 	}
 
-	if(mapType === 'primary') {
+	if(mapType === 'primary' || mapType === 'proportional') {
 		for(var key in candidates) {
 			var candidate = candidates[key];
 			candidate.voteCount = 0;
@@ -684,6 +688,7 @@ function countVotes() {
 				if(isNaN(state.delegates[key])) {
 					console.log(state);
 				}
+
 				candidate.voteCount += state.delegates[key];
 				candidate.probVoteCounts[0] += state.delegates[key];
 			}
