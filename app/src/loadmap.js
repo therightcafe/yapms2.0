@@ -61,82 +61,82 @@ function loadMapFromId(id) {
 			loadPresetMap(id);
 			break;
 		case "2020_presidential":
-			loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open");
+			loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open", null, {updateText: true});
 			break;
 		case "1972_presidential":
-			loadMap("./res/usa_1972_presidential.svg", 16, 1, "usa_1972_ec", "presidential", "open");
+			loadMap("./res/usa_1972_presidential.svg", 16, 1, "usa_1972_ec", "presidential", "open", null, {updateText: true});
 			break;
 		case "2020_senatorial":
-			loadMap("./res/usa_senate.svg", 16, 1, "usa_senate", "senatorial", "2020");
+			loadMap("./res/usa_senate.svg", 16, 1, "usa_senate", "senatorial", "2020", null, {updateText: false});
 			break;
 		case "2020_gubernatorial":
-			loadMap("./res/usa_gubernatorial.svg", 16, 1, "usa_gubernatorial", "gubernatorial", "2020");
+			loadMap("./res/usa_gubernatorial.svg", 16, 1, "usa_gubernatorial", "gubernatorial", "2020", null, {updateText: false});
 			break;
 		case "2020_democratic_primary":
-			loadMap("./res/usa_dem_primary.svg", 16, 1, "dem_primary", "primary", "open");
+			loadMap("./res/usa_dem_primary.svg", 16, 1, "dem_primary", "primary", "open", null, {updateText: false});
 			break;
 		case "2020_republican_primary":
-			loadMap("./res/usa_rep_primary.svg", 16, 1, "rep_primary", "primary", "open");
+			loadMap("./res/usa_rep_primary.svg", 16, 1, "rep_primary", "primary", "open",null, {updateText: false});
 			break;
 		case "USA_county":
-			loadMap("./res/usa_county.svg", 16, 0.075, "congressional", "congressional", "open");
+			loadMap("./res/usa_county.svg", 16, 0.075, "congressional", "congressional", "open", null, {updateText: false});
 			break;
 		case "USA_congressional":
-			loadMap("./res/usa_congressional_2018.svg", 16, 0.075, "congressional", "congressional", "open");
+			loadMap("./res/usa_congressional_2018.svg", 16, 0.075, "congressional", "congressional", "open", null, {updateText: false});
 			break;
 		case "USA_gubernatorial":
-			loadMap("./res/usa_gubernatorial.svg", 16, 1.5, "usa_gubernatorial", "gubernatorial", "open");
+			loadMap("./res/usa_gubernatorial.svg", 16, 1.5, "usa_gubernatorial", "gubernatorial", "open", null, {updateText: false});
 			break;
 		case "USA_senatorial":
-			loadMap("./res/usa_senate.svg", 16, 1.5, "usa_senate", "senatorial", "open");
+			loadMap("./res/usa_senate.svg", 16, 1.5, "usa_senate", "senatorial", "open", null, {updateText: false});
 			break;
 		case "USA_takeall":
-			loadMap("./res/usa_no_districts.svg", 16, 1, "usa_no_districts_ec", "presidential", "open");
+			loadMap("./res/usa_no_districts.svg", 16, 1, "usa_no_districts_ec", "presidential", "open", null, {updateText: true});
 			break;
 		case "USA_proportional":
-			loadMap("./res/usa_no_districts.svg", 16, 1, "usa_no_districts_ec", "proportional", "open");
+			loadMap("./res/usa_no_districts.svg", 16, 1, "usa_no_districts_ec", "proportional", "open", null, {updateText: true});
 			break;
 		case "Germany_states":
-			loadMap("./res/germany.svg", 16, 1, "congressional", "congressional", "open");
+			loadMap("./res/germany.svg", 16, 1, "congressional", "congressional", "open", null, {updateText: false});
 			break;
 		case "Germany_constituencies":
-			loadMap("./res/germany_constituencies.svg", 16, 1, "congressional", "congressional", "open");
+			loadMap("./res/germany_constituencies.svg", 16, 1, "congressional", "congressional", "open", null, {updateText: false});
 			break;
 		case "UnitedKingdom_constituencies":
-			loadMap("./res/unitedkingdom.svg", 16, 0.075, "congressional", "congressional", "open");
+			loadMap("./res/unitedkingdom.svg", 16, 0.075, "congressional", "congressional", "open", null, {updateText: false});
 			break;
 		case "Canada_provinces":
-			loadMap("./res/canada_states.svg", 38, 3, "canada_ec", "presidential", "open");
+			loadMap("./res/canada_states.svg", 38, 3, "canada_ec", "presidential", "open", null, {updateText: true});
 			break;
 		case "Canada_constituencies":
-			loadMap("./res/canada_constituencies.svg", 16, 0.075, "congressional", "congressional", "open");
+			loadMap("./res/canada_constituencies.svg", 16, 0.075, "congressional", "congressional", "open", null, {updateText: true});
 			break;
 		case "Australia_constituencies":
-			loadMap("./res/australia_constituencies.svg", 16, 0.075, "congressional", "congressional", "open");
+			loadMap("./res/australia_constituencies.svg", 16, 0.075, "congressional", "congressional", "open", null, {updateText: false});
 			break;
 		case "EuropeanUnion":
-			loadMap("./res/eu.svg", 16, 0.25, "eu_parliament", "primary", "open");
+			loadMap("./res/eu.svg", 16, 0.25, "eu_parliament", "primary", "open", null, {updateText: false});
 			break;
 		case "World":
-			loadMap("./res/world.svg", 38, 0.5, "congressional", "congressional", "open");
+			loadMap("./res/world.svg", 38, 0.5, "congressional", "congressional", "open", null, {updateText: false});
 			break;
 		case "LTE_presidential":
-			loadMap("./res/lte_president.svg", 30, 1, "lte_ec", "presidential", "open");
+			loadMap("./res/lte_president.svg", 30, 1, "lte_ec", "presidential", "open", null, {updateText: true});
 			break;
 		case "LTE_senatorial":
-			loadMap("./res/lte_senate.svg", 35, 1, "ltesenate", "senatorial", "open");
+			loadMap("./res/lte_senate.svg", 35, 1, "ltesenate", "senatorial", "open", null, {updateText: false});
 			break;
 		case "LTE_congressional":
-			loadMap("./res/lte_house.svg", 35, 1, "congressional", "congressional", "open");
+			loadMap("./res/lte_house.svg", 35, 1, "congressional", "congressional", "open", null, {updateText: false});
 			break;
 		default:
-			loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open");
+			loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open", null, {updateText: true});
 			break;
 	}
 }
 
 // loads the svg element into the HTML
-function loadMap(filename, fontsize, strokewidth, dataid, type, year, onLoad) {
+function loadMap(filename, fontsize, strokewidth, dataid, type, year, onLoad, options) {
 	save_filename = filename;
 	save_dataid = dataid;
 	save_type = type;
@@ -169,6 +169,8 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year, onLoad) {
 		type: type,
 		year: year
 	}
+
+	mapOptions = options;
 
 	console.log('Loading ' + filename);
 	$('#map-div').load(filename, function(a) {
@@ -341,7 +343,7 @@ function loadSenateFile(senatefile, onLoad) {
 
 function finishDataLoad(onLoad) {
 
-	if(onLoad !== undefined) {
+	if(onLoad !== undefined && onLoad !== null) {
 		onLoad();
 	}
 	

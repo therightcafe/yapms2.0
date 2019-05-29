@@ -56,40 +56,39 @@
 			<h1> YAPms - Yet Another Political Map Simulator </h1>
 		</div>
 
-
 		<div id="welcome" class="infobox">
-			<p>
-				YAPms is a tool for creating political maps that can be shared with friends
-			</p>
-		</div>
 
-		<div id="support" class="infobox">
+			<p>
+				YAPms is a tool for creating and sharing political maps
+			</p>
+
 			<p>
 				<b>Supported Browsers:</b>
 				Chrome, Firefox and Opera
 			</p>
+			
+			<p> 
+				<b>Contact Email:</b>
+				<a style="color:blue;" href="mailto:bugreport@yapms.com">bugreport@yapms.com</a> 
+			</p>
 		</div>
+		
+		<br>
 
-		<div class="infobox">
-			<br>
-			Checkout our Android App at
-			<a href="https://play.google.com/store/apps/details?id=com.fishstudio.yapms&hl=en_GB" style="color:blue;">this link</a>
-		</div>
+		<a href="https://play.google.com/store/apps/details?id=com.fishstudio.yapms&hl=en_GB">
+			<div class="infobox link">
+				Download Android App
+			</div>
+		</a>
 
-		<div class="infobox">
-			<br> Contact Email - <a style="color:blue;" href="mailto:bugreport@yapms.com">bugreport@yapms.com</a>
-		</div>
+		<a href="https://discord.gg/WQh5fHU">
+			<div class="infobox link">
+				Join Our Discord
+			</div>
+		</a>
 	</div>
 
 	<br>
-
-<!--	
-	<a href="./app">
-		<div id="start" class="start">
-			Start
-		</div>
-	</a>
--->
 
 	<div class="map-type-box">	
 	<div class="map-type-header">
@@ -298,12 +297,10 @@
 	</div>
 
 	<br>
-
-	<iframe src="https://discordapp.com/widget?id=547448681289482241&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
-	<br>
-
+<!--
 	<div id="bottombar">
 		<a href="https://privacypolicies.com/privacy/view/5e9b5eee7febd2d29c0ec896e1ac90ef">Privacy</a>
 	</div>
+-->
 </body>
 </html>

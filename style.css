@@ -10,28 +10,37 @@ body {
 }
 
 #info {
-	background: white;
-	width: 100%;
-	margin: auto;
+	background: #dddddd;
 	align-items: center;
-	display: flex;
-	border-bottom: 1px solid black;
-	flex-direction: column;
-	padding-bottom: 20px;
+	display: block;
 	z-index: 1;
 }
 
 #topbar {
-	width: 100%;
 	text-align: center;
 	color: white;
 	background: #151515;
+	padding: 10px;
 }
 
 .infobox {
-	width: 100%;
+	display: inline-block;
+	background: white;
 	font-size: 20px;
 	text-align: center;
+	border: 1px solid black;
+	padding: 0px 30px 0px 30px;
+	margin: 5px;
+}
+
+.link {
+	background: #7289da;
+	color: white;
+	font-size: 25px;
+	font-weight: bold;
+	padding: 10px;
+	border-radius: 12px;
+	border: 2px solid white;
 }
 
 #welcome {
@@ -48,7 +57,6 @@ a {
 
 .map-type-box {
 	background: #dddddd;
-	border: 0px solid black;
 	display: inline-block;
 	margin: 8px;
 	vertical-align: top;
@@ -74,42 +82,8 @@ a {
 	font-size: 20px;
 }
 
-.start {
-	display: inline-block;
-	margin: auto;
-	margin-top: 15px;
-	margin-bottom: 20px;
-	padding-left: 10px;
-	padding-right: 10px;
-	background: white;
-	font-size: 50px;
-	text-align: center;
-	border: 1px solid black;
-
-	transition-timing-function: linear;
-	transition: all 125ms;
-}
-
-.start:hover {
-	background-color: #eeeeff;
-	box-shadow: 1px 1px 4px black;	
-	
-	transition-timing-function: linear;
-	transition: all 125ms;
-}
-
 .map-button:hover {
 	background-color: #eeeeff;
-}
-
-#app {
-
-}
-
-#amazon {
-	margin: auto;
-	margin-bottom: 50px;
-	width: 95%;
 }
 
 #bottombar {
@@ -123,6 +97,7 @@ a {
 	box-shadow: 1px 0px 4px black;
 	z-index: 1;
 	margin-top: 25px;
+	float: bottom;
 }
 
 #bottombar a {

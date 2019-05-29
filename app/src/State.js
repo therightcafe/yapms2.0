@@ -56,8 +56,9 @@ class State {
 		this.voteCount = value;
 		this.delegates = {};
 		this.delegates['Tossup'] = value;
-		if(mapType === 'proportional') {
+		if(mapType === 'proportional' || mapType === 'primary') {
 			this.candidate = 'Tossup';
+			this.setColor('Tossup', 2);
 		}
 		totalVotes += diff;
 

@@ -1,4 +1,4 @@
-var currentCache = 'v0.17.1';
+var currentCache = 'v0.17.2';
 
 var states = [];
 var lands = [];
@@ -53,6 +53,10 @@ var loadConfig = {
 	dataid: '', 
 	type: '',
 	year: ''
+};
+
+var mapOptions = {
+	updateText: true
 };
 
 var strokeMultiplier = 1;
@@ -416,33 +420,9 @@ function setEC(e) {
 	states.forEach(function(element) {
 		if(element.getName() === stateId) {
 			// only update the text on presidential maps
-			if(mapType === "presidential") {
-				element.setVoteCount(parseInt(input), true);
-			} else {
-				element.setVoteCount(parseInt(input), false);
-			}
+			element.setVoteCount(parseInt(input), mapOptions.updateText);
 		}
 	});
-
-	// update the html text display
-	//var stateText = document.getElementById(stateId + '-text');
-	// if the id has a dash then remove it
-	/*
-	if(stateId.includes('-')) {
-		var split = stateId.split('-');
-		stateId = split[0] + split[1];
-	}
-	var text = stateId + ' ' + input;
-	
-	if(stateText !== null) { */
-		// the text elements in an svg are inside spans 
-	/*
-		if(typeof stateText.childNodes[1] !== 'undefined') {
-			stateText.childNodes[1].innerHTML = ' ' + input;
-		} else {
-			stateText.childNodes[0].innerHTML = stateId + ' ' + input;
-		}
-	} */
 
 	// recount the votes
 	countVotes();
@@ -640,6 +620,8 @@ function verifyMap() {
 			var currentCandidate = state.getCandidate();
 			// the candidate the state should be controle by
 			var shouldCandidate = candidates[state.getCandidate()].name;
+
+			//alert(shouldCandidate);
 
 			// if these values differ, change the state to tossup
 			if(currentCandidate !== shouldCandidate) {
