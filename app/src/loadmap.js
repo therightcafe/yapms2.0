@@ -222,7 +222,8 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year, onLoad, op
 			loadGubernatorialFile(dataname, onLoad);
 		} else {
 			mapHTML.style.visibility = 'visible';
-			if(onLoad !== undefined && onLoad !== null) {
+			alert(onLoad);
+			if(typeof onLoad === 'function') {
 				onLoad();
 			}
 		}
