@@ -203,9 +203,11 @@ if($mobile === false) {
 			(adsbygoogle = window.adsbygoogle || []).push({});
 		</script>',
 		'</div>' ,
+		'<a id="yapnews-discord-link" href="https://discord.gg/WQh5fHU" target="_blank">',
 		'<div id="yapnews-discord">',
-			'<a href="https://discord.gg/WQh5fHU" target="_blank">Join Our Discord</a>',
+			'Join Our Discord',
 		'</div>',
+		'</a>',
 		'<div id="yapnews-articles">' ,
 		'</div>' ,
 	'</div>';
