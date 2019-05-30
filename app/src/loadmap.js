@@ -159,8 +159,6 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year, onLoad, op
 	strokeMultiplier = strokewidth;
 	var dataname = './data/' + type + '_' + year;
 
-	console.log(dataname);
-
 	loadConfig = {
 		filename: filename,
 		fontsize: fontsize,
@@ -224,7 +222,7 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year, onLoad, op
 			loadGubernatorialFile(dataname, onLoad);
 		} else {
 			mapHTML.style.visibility = 'visible';
-			if(onLoad !== undefined) {
+			if(onLoad !== undefined && onLoad !== null) {
 				onLoad();
 			}
 		}
