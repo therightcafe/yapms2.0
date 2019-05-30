@@ -14,9 +14,12 @@
 }
 
 #yapnews-discord {
-	background: black;
+	background: #7289da;
 	padding-top: 10px;
 	padding-bottom: 10px;
+	border-radius: 12px;
+	border: 2px solid white;
+	font-weight: bold;
 }
 
 #yapnews-discord a { 
