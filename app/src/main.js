@@ -1,4 +1,4 @@
-var currentCache = 'v0.17.6';
+var currentCache = 'v0.17.7';
 
 var states = [];
 var lands = [];
@@ -85,6 +85,11 @@ function share() {
 		svgtext.style.fontSize = '15px';
 	}
 
+	var yapnewsClose = document.getElementById('yapnews-close');
+	if(yapnewsClose !== null) {
+		yapnewsClose.style.display = 'none';
+	}
+
 	var chartdiv = document.getElementById('chart-div');
 	//var oldborder = chartdiv.style.border;
 	//chartdiv.style.border = 'none';
@@ -108,6 +113,10 @@ function share() {
 				svgtext.style.fontSize = oldfontsize;
 				svg.removeAttribute('width');
 				svg.removeAttribute('height');
+			}
+
+			if(yapnewsClose !== null) {
+				yapnewsClose.style.display = 'inline-flex';
 			}
 			var img = canvas.toDataURL('image/png');
 			notification.removeChild(canvas);
