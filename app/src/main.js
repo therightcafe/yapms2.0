@@ -1,4 +1,4 @@
-var currentCache = 'v0.18.2';
+var currentCache = 'v0.18.3';
 
 var states = [];
 var lands = [];
@@ -1019,7 +1019,7 @@ function start() {
 				var message = notification.querySelector('#notification-message');
 				var title = notification.querySelector('#notification-title');
 				title.innerHTML = 'Sorry';
-				message.innerHTML = 'The map you are looking for does not exists.<br><br>This feature is still in development and it may have been deleted.';
+				message.innerHTML = 'The map you are looking for does not exist.<br><br>This feature is still in development and it may have been deleted.';
 				notification.style.display = 'inline';
 			}
 		});
