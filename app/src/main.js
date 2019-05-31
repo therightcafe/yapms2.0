@@ -1,4 +1,4 @@
-var currentCache = 'v0.18.1';
+var currentCache = 'v0.18.2';
 
 var states = [];
 var lands = [];
@@ -1014,6 +1014,13 @@ function start() {
 			error: function(a, b, c) {
 				console.log("Did not find saved map...");
 				loadMap('./res/usa_presidential.svg', 16, 1, 'usa_ec',"presidential", "open", {updateText: true});
+
+				var notification = document.getElementById('notification');
+				var message = notification.querySelector('#notification-message');
+				var title = notification.querySelector('#notification-title');
+				title.innerHTML = 'Sorry';
+				message.innerHTML = 'The map you are looking for does not exists.<br><br>This feature is still in development and it may have been deleted.';
+				notification.style.display = 'inline';
 			}
 		});
 
