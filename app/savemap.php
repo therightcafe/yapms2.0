@@ -1,5 +1,5 @@
 <?php
-$filename = "" . rand(0, 80000);
+$filename = "" . rand(0, 100000);
 
 $imgData = $_POST["img"];
 $imgData = str_replace(' ', '+', $imgData);
@@ -23,7 +23,7 @@ if($file) {
 
 	$candidate_data = json_decode($_POST["candidates"], true);
 
-	$writeData .= count($candidate_data["candidate_data"]) . PHP_EOL;
+	$writeData .= count($candidate_data["candidate_data"]) . " " . $_POST["updateText"] . PHP_EOL;
 
 	foreach($candidate_data["candidate_data"] as $v) {
 		$v["name"] = str_replace(' ', '%', $v["name"]);

@@ -38,7 +38,7 @@ function loadPresetMap(preset) {
 		},
 		error: function(a, b, c) {
 			console.log("Did not find preset map...");
-			loadMap("../res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open");
+			loadMap("../res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open", {updateText: true});
 		
 		}
 	});
@@ -165,7 +165,7 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year, onLoad, op
 		strokewidth: strokewidth,
 		dataid: dataid,
 		type: type,
-		year: year
+		year: year,
 	}
 
 	mapOptions = options;
@@ -381,11 +381,7 @@ function loadSavedMap(data) {
 			var stateData = lines[stateDataIndex].split(' ');
 			var stateName = stateData[0];
 			var state = states[stateIndex];
-			var updateText = false;
-
-			if(save_type === "presidential") {
-				updateText = true;
-			}
+			var updateText = meta[7];
 			
 			var voteCount = parseInt(stateData[stateData.length - 2]);
 			state.setVoteCount(voteCount, updateText);	
@@ -444,6 +440,9 @@ function loadSavedMap(data) {
 		updateChart();
 		updateLegend();
 		updateLTEHouse();
+	},
+		{
+		updateText: meta[7]
 	});
 }
 
