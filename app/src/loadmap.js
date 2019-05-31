@@ -17,7 +17,7 @@ function loadCurrentCongress() {
 		},
 		error: function(a, b, c) {
 			console.log("Did not find preset map...");
-			loadMap("../res/usa_congressional_2018.svg", 16, 0.075, "congressional", "congressional", "open");
+			loadMap("../res/usa_congressional_2018.svg", 16, 0.075, "congressional", "congressional", "open", null, {updateText: false});
 		
 		}
 	});
@@ -38,7 +38,7 @@ function loadPresetMap(preset) {
 		},
 		error: function(a, b, c) {
 			console.log("Did not find preset map...");
-			loadMap("../res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open", {updateText: true});
+			loadMap("../res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open", null, {updateText: true});
 		
 		}
 	});

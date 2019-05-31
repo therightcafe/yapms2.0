@@ -1,4 +1,4 @@
-var currentCache = 'v0.18.5';
+var currentCache = 'v0.18.6';
 
 var states = [];
 var lands = [];
@@ -1013,7 +1013,7 @@ function start() {
 			},
 			error: function(a, b, c) {
 				console.log("Did not find saved map...");
-				loadMap('./res/usa_presidential.svg', 16, 1, 'usa_ec',"presidential", "open", {updateText: true});
+				loadMap('./res/usa_presidential.svg', 16, 1, 'usa_ec',"presidential", "open", null, {updateText: true});
 
 				var notification = document.getElementById('notification');
 				var message = notification.querySelector('#notification-message');
@@ -1029,7 +1029,7 @@ function start() {
 		loadMapFromId(php_load_map_id);
 	} else {
 		loadPreset("classic");
-		loadMap('./res/usa_presidential.svg', 16, 1, 'usa_ec',"presidential", "open", {updateText: true});
+		loadMap('./res/usa_presidential.svg', 16, 1, 'usa_ec',"presidential", "open", null, {updateText: true});
 	}
 }
 
