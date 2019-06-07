@@ -307,6 +307,19 @@
 		</a>
 	</div>
 	</div>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
+		Italy
+	</div>
+	<div>
+		<a href="./app/?t=Italy_states">
+			<div class="map-button">
+				States
+			</div>
+		</a>
+	</div>
+	</div>
 
 	<br>
 <!--

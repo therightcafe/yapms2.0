@@ -1,4 +1,4 @@
-var currentCache = 'v0.18.8';
+var currentCache = 'v0.18.9';
 
 var states = [];
 var lands = [];
@@ -429,7 +429,11 @@ function setEC(e) {
 	states.forEach(function(element) {
 		if(element.getName() === stateId) {
 			// only update the text on presidential maps
-			element.setVoteCount(parseInt(input), mapOptions.updateText);
+			if(mapOptions !== undefined && mapOtions.updateText !== undefined) {
+				element.setVoteCount(parseInt(input), mapOptions.updateText);
+			} else {
+				element.setVoteCount(parseInt(input), false);
+			}
 		}
 	});
 

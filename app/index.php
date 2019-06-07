@@ -386,7 +386,6 @@ if($mobile === false) {
 </div>
 
 <!-- Italy Maps -->
-<!--
 <div id="mapmenu-italy" class="popup selectmenu">
 	<svg class="closebutton" onclick="closeNotification(this)" width="24" height="24">
 		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
@@ -395,8 +394,8 @@ if($mobile === false) {
 	</svg>
 	<h2>Italy</h2>
 	<a class="selectmenu-button" href="./?t=Italy_states">States</a>
+	<!--<a class="selectmenu-button" href="./?t=Italy_constituencies">Constituencies</a>-->
 </div>
--->
 
 <!-- USA Maps -->
 <div id="mapmenu-usa" class="popup selectmenu">
@@ -478,10 +477,11 @@ if($mobile === false) {
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("usa-historical")'; >USA Historical</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("germany")'; >Germany</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("canada")'>Canada</a>
-<!--
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("italy")'; >Italy</a>
+<!--
 	<a class="selectmenu-button" href="./?t=Australia_constituencies">Australia</a>
 -->
+	<a class="selectmenu-button" href="./?t=Italy_states">Italy</a>
 	<a class="selectmenu-button" href="./?t=UnitedKingdom_constituencies">United Kingdom</a>
 	<a class="selectmenu-button" href="./?t=EuropeanUnion">EU</a>
 	<a class="selectmenu-button" href="./?t=World">World</a>
