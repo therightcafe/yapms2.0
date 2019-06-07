@@ -103,6 +103,9 @@ function setCandidate(e) {
 	if(newname !== candidateid) {
 		Object.defineProperty(candidates, newname,
 			Object.getOwnPropertyDescriptor(candidates, candidateid));
+
+		setChangeCandidate(candidateid, newname);
+
 		delete candidates[candidateid];
 	}
 

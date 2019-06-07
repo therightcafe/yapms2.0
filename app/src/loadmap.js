@@ -102,6 +102,9 @@ function loadMapFromId(id) {
 		case "Germany_constituencies":
 			loadMap("./res/germany_constituencies.svg", 16, 1, "congressional", "congressional", "open", null, {updateText: false});
 			break;
+		case "Italy_states":
+			loadMap("./res/italy.svg", 16, 1, "congressional", "congressional", "open", null, {updateText: false});
+			break;
 		case "UnitedKingdom_constituencies":
 			loadMap("./res/unitedkingdom.svg", 16, 0.075, "congressional", "congressional", "open", null, {updateText: false});
 			break;

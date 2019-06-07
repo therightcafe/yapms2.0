@@ -1,4 +1,4 @@
-var currentCache = 'v0.18.7';
+var currentCache = 'v0.18.8';
 
 var states = [];
 var lands = [];
@@ -650,7 +650,7 @@ function verifyMap() {
 
 // sets all states to white
 function clearMap() {
-	loadMap(loadConfig.filename, loadConfig.fontsize, loadConfig.strokewidth, loadConfig.dataid, loadConfig.type, loadConfig.year);
+	loadMap(loadConfig.filename, loadConfig.fontsize, loadConfig.strokewidth, loadConfig.dataid, loadConfig.type, loadConfig.year, null, {updateText: mapOptions.updateText});
 }
 
 // iterate over each state and delegate votes to the candidate
@@ -994,6 +994,19 @@ function onResize() {
 		charthtml.style.height = 'auto';
 		charthtml.style.width = '100%';
 
+	}
+}
+
+function setChangeCandidate(oldCandidate, newCandidate) {
+	for(var stateIndex = 0, length = states.length; stateIndex < length; ++stateIndex) {
+		var state = states[stateIndex];
+
+		if(state.candidate === oldCandidate) {
+			state.setColor(newCandidate, state.colorValue);	
+		}
+
+		state.delegates[newCandidate] = state.delegates[oldCandidate];
+		state.delegates[oldCandidate] = undefined;
 	}
 }
 

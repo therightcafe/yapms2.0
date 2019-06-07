@@ -231,7 +231,6 @@ if($mobile === false) {
 
 <div id="candidateedit" class="popup">
 	<h3 id="candidateedit-message"></h3>
-	<p> A name change will remove the candidate from the map </p>
 	Name:<input id="candidate-name" type="text" name="name"><br>
 	Solid:<input id="candidate-solid" type="color"><br>
 	Likely:<input id="candidate-likely" type="color"><br>
@@ -386,6 +385,19 @@ if($mobile === false) {
 	<a class="selectmenu-button" href="./?t=Germany_constituencies">Constituencies</a>
 </div>
 
+<!-- Italy Maps -->
+<!--
+<div id="mapmenu-italy" class="popup selectmenu">
+	<svg class="closebutton" onclick="closeNotification(this)" width="24" height="24">
+		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
+		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
+		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
+	</svg>
+	<h2>Italy</h2>
+	<a class="selectmenu-button" href="./?t=Italy_states">States</a>
+</div>
+-->
+
 <!-- USA Maps -->
 <div id="mapmenu-usa" class="popup selectmenu">
 	<svg class="closebutton" onclick="closeNotification(this)" width="24" height="24">
@@ -467,6 +479,7 @@ if($mobile === false) {
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("germany")'; >Germany</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("canada")'>Canada</a>
 <!--
+	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("italy")'; >Italy</a>
 	<a class="selectmenu-button" href="./?t=Australia_constituencies">Australia</a>
 -->
 	<a class="selectmenu-button" href="./?t=UnitedKingdom_constituencies">United Kingdom</a>
