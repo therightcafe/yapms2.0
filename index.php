@@ -129,6 +129,33 @@
 		</a>
 	</div>
 	</div>
+	
+	<div class="map-type-box">	
+	<div class="map-type-header">
+		USA - 2020 Forcasts
+	</div>
+	<div>
+		<a href="./app/?t=2020_cook">
+			<div class="map-button">
+				Cook Political Forcast
+			</div>
+		</a>
+
+		<a href="./app/?t=2020_inside">
+			<div class="map-button">
+				Inside Elections
+			</div>
+		</a>
+
+		<br>
+
+		<a href="./app/?t=2020_sabatos">
+			<div class="map-button">
+				Sabatos Crystal Ball
+			</div>
+		</a>
+	</div>
+	</div>
 
 	<div class="map-type-box">	
 	<div class="map-type-header">
