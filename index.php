@@ -347,6 +347,25 @@
 		</a>
 	</div>
 	</div>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
+		Australia
+	</div>
+	<div>
+		<a href="./app/?t=Australia_states">
+			<div class="map-button">
+				States
+			</div>
+		</a>
+		
+		<a href="./app/?t=Australia_constituencies">
+			<div class="map-button">
+				Constituencies
+			</div>
+		</a>
+	</div>
+	</div>
 
 	<br>
 <!--

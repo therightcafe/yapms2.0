@@ -18,7 +18,6 @@ function loadCurrentCongress() {
 		error: function(a, b, c) {
 			console.log("Did not find preset map...");
 			loadMap("../res/usa_congressional_2018.svg", 16, 0.075, "congressional", "congressional", "open", null, {updateText: false});
-		
 		}
 	});
 }
@@ -39,7 +38,6 @@ function loadPresetMap(preset) {
 		error: function(a, b, c) {
 			console.log("Did not find preset map...");
 			loadMap("../res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open", null, {updateText: true});
-		
 		}
 	});
 }
@@ -121,7 +119,7 @@ function loadMapFromId(id) {
 		case "Australia_constituencies":
 			loadMap("./res/australia_constituencies.svg", 16, 0.075, "congressional", "congressional", "open", null, {updateText: false});
 			break;
-		case "Australia":
+		case "Australia_states":
 			loadMap("./res/australia.svg", 16, 0.075, "congressional", "congressional", "open", null, {updateText: false});
 			break;
 		case "EuropeanUnion":
