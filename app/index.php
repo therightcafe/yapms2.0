@@ -477,8 +477,8 @@ if($mobile === false) {
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("usa-historical")'; >USA Historical</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("germany")'; >Germany</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("canada")'>Canada</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("italy")'; >Italy</a>
 <!--
+	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("italy")'; >Italy</a>
 	<a class="selectmenu-button" href="./?t=Australia_constituencies">Australia</a>
 -->
 	<a class="selectmenu-button" href="./?t=Italy_states">Italy</a>
