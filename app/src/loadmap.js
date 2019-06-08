@@ -59,6 +59,9 @@ function loadMapFromId(id) {
 		case "2000_presidential":
 		case "1996_presidential":
 		case "1992_presidential":
+		case "1988_presidential":
+		case "1984_presidential":
+		case "1980_presidential":
 		case "2016_presidential_county":
 			loadPresetMap(id);
 			break;

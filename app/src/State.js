@@ -16,6 +16,7 @@ class State {
 
 	resetVoteCount() {
 		//totalVotes -= this.voteCount;
+		//
 		if(this.dataid === 'congressional' ||
 			this.dataid === 'usa_gubernatorial') {
 			this.setVoteCount(1, false);
@@ -29,7 +30,9 @@ class State {
 		} else if(this.dataid === 'dem_primary' ||
 				this.dataid === 'rep_primary') {
 			this.setVoteCount(data[this.dataid][this.name], false);
-		}else {
+		}else if(this.dataid === 'usa_1972_ec') {
+			this.setVoteCount(data[this.dataid][this.name], true);
+		} else {
 			this.setVoteCount(data[this.dataid][this.name], false);
 		}
 		//totalVotes += this.voteCount;

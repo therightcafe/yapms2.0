@@ -201,6 +201,12 @@
 			</div>
 		</a>
 
+		<a href="./app/?t=1972_presidential">
+			<div class="map-button">
+				1972
+			</div>
+		</a>
+
 	</div>
 	</div>
 
@@ -265,6 +271,26 @@
 		<a href="./app/?t=1992_presidential">
 			<div class="map-button">
 				1992 Presidential
+			</div>
+		</a>
+
+		<a href="./app/?t=1988_presidential">
+			<div class="map-button">
+				1988 Presidential
+			</div>
+		</a>
+
+		<a href="./app/?t=1984_presidential">
+			<div class="map-button">
+				1984 Presidential
+			</div>
+		</a>
+
+		<br>
+		
+		<a href="./app/?t=1980_presidential">
+			<div class="map-button">
+				1980 Presidential
 			</div>
 		</a>
 	</div>
