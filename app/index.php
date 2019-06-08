@@ -428,7 +428,7 @@ if($mobile === false) {
 	<a class="selectmenu-button" href="./?t=2020_gubernatorial">Gubernatorial</a>
 	<!-- <a class="selectmenu-button" href="./?t=1972_presidential">1972 Presidential</a> -->
 
-	<a class="selectmenu-split">Forcasts</a>
+	<a class="selectmenu-split">Forecasts</a>
 	<a class="selectmenu-button" href="./?t=2020_cook">Cook Political Report</a>
 	<a class="selectmenu-button" href="./?t=2020_inside">Inside Elections</a>
 	<a class="selectmenu-button" href="./?t=2020_sabatos">Sabatos Crystal Ball</a>

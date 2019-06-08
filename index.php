@@ -132,12 +132,12 @@
 	
 	<div class="map-type-box">	
 	<div class="map-type-header">
-		USA - 2020 Forcasts
+		USA - 2020 Forecasts
 	</div>
 	<div>
 		<a href="./app/?t=2020_cook">
 			<div class="map-button">
-				Cook Political Forcast
+				Cook Political Report
 			</div>
 		</a>
 
