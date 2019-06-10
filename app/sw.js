@@ -1,4 +1,4 @@
-var currentCache = 'v0.19.0';
+var currentCache = 'v0.19.1';
 
 function swLog(message) {
 	console.log('SW' + currentCache + ': ' + message);
@@ -68,6 +68,7 @@ self.addEventListener('install', function(event) {
 				'./res/presets/1988_presidential',
 				'./res/presets/1984_presidential',
 				'./res/presets/1980_presidential',
+				'./res/presets/1976_presidential',
 				'./res/presets/2020_cook',
 				'./res/presets/2020_inside',
 				'./res/presets/2020_sabatos',

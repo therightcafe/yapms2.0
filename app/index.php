@@ -467,6 +467,8 @@ if($mobile === false) {
 	<a class="selectmenu-button" href="./?t=1988_presidential">Presidential 1988</a>
 	<a class="selectmenu-button" href="./?t=1984_presidential">Presidential 1984</a>
 	<a class="selectmenu-button" href="./?t=1980_presidential">Presidential 1980</a>
+	<a class="selectmenu-button" href="./?t=1976_presidential">Presidential 1976</a>
+	<a class="selectmenu-button" href="./?t=1972_presidential">Presidential 1972</a>
 	
 </div>
 

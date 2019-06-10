@@ -293,6 +293,18 @@
 				1980 Presidential
 			</div>
 		</a>
+		
+		<a href="./app/?t=1976_presidential">
+			<div class="map-button">
+				1976 Presidential
+			</div>
+		</a>
+		
+		<a href="./app/?t=1972_presidential">
+			<div class="map-button">
+				1972 Presidential
+			</div>
+		</a>
 	</div>
 	</div>
 	
