@@ -122,3 +122,31 @@ function setCandidate(e) {
 	verifyMap();
 	updateChart();
 }
+
+function deleteCandidate(e) {
+	// hide the popup window
+	e.parentElement.style.display = 'none';
+
+	var candidateid = e.parentElement.querySelector('#candidate-originalName').value;
+	for(var index = 0; index < states.length; ++index) {
+		state = states[index];
+		// set the candidate to tossup
+		if(state.getCandidate() === candidateid) {
+			state.setColor('Tossup', 0);
+		}
+
+		// if its a primary remove the delegates and set them to tossup
+		var dels = state.delegates[candidateid];
+		if(dels) {
+			state.delegates['Tossup'] += dels;
+		}
+		state.delegates[candidateid] = undefined;
+	}
+
+	delete candidates[candidateid];
+	chart.generateLegend();
+	countVotes();
+	updateLegend();
+	verifyMap();
+	updateChart();
+}

@@ -33,3 +33,23 @@
 	fill: pink;
 	transition: all 200ms;
 }
+
+#setcandidate {
+	color: white;
+	background: green;
+	padding: 8px;
+	margin: 5px;
+	cursor: pointer;
+	font-weight: bold;
+	border: 1px solid black;
+}
+
+#deletecandidate {
+	color: white;
+	background: red;
+	padding: 8px;
+	margin: 5px;
+	cursor: pointer;
+	font-weight: bold;
+	border: 1px solid black;
+}

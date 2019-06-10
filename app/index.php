@@ -231,13 +231,14 @@ if($mobile === false) {
 
 <div id="candidateedit" class="popup">
 	<h3 id="candidateedit-message"></h3>
-	Name:<input id="candidate-name" type="text" name="name"><br>
-	Solid:<input id="candidate-solid" type="color"><br>
-	Likely:<input id="candidate-likely" type="color"><br>
-	Lean:<input id="candidate-lean" type="color"><br>
-	Tilt:<input id="candidate-tilt" type="color"><br>
+	Name <input id="candidate-name" type="text" name="name"><br><br>
+	Solid <input id="candidate-solid" type="color"><br>
+	Likely <input id="candidate-likely" type="color"><br>
+	Lean <input id="candidate-lean" type="color"><br>
+	Tilt <input id="candidate-tilt" type="color"><br><br>
 	<input id="candidate-originalName" type="hidden">
-	<button onclick="setCandidate(this)">set</button>
+	<button id="setcandidate" onclick="setCandidate(this)">set</button>
+	<button id="deletecandidate" onclick="deleteCandidate(this)">delete</button>
 </div>
 
 <div id="miscmenu" class="popup selectmenu">
@@ -288,7 +289,7 @@ if($mobile === false) {
 	<a class="selectmenu-button" id="movebutton" onclick='closeNotification(this); setMode("move")'><i class="fas fa-arrows-alt"></i> Move</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); setMode("delete")'><i class="fas fa-eraser"></i> Delete</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); setMode("ec")'><i class="far fa-edit"></i> EC Edit</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); setMode("candidate")'><i class="fas fa-user-edit"></i> Candidate Edit</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); setMode("candidate")'><i class="fas fa-user-edit"></i> Edit Candidate</a>
 </div>
 
 <div id="thememenu" class="popup selectmenu">
