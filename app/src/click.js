@@ -266,5 +266,7 @@ function legendClick(candidate, button) {
 		var message = document.getElementById('candidateedit-message');
 		message.innerHTML = 'Edit ' + candidate;
 		hiddeninput.value = candidate;
+	} else if(mode === 'deletecandidate' && candidate !== 'Tossup') {
+		deleteCandidateByName(candidate);		
 	}
 }

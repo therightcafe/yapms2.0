@@ -150,3 +150,28 @@ function deleteCandidate(e) {
 	verifyMap();
 	updateChart();
 }
+
+function deleteCandidateByName(name) {
+	var candidateid = name;
+	for(var index = 0; index < states.length; ++index) {
+		state = states[index];
+		// set the candidate to tossup
+		if(state.getCandidate() === candidateid) {
+			state.setColor('Tossup', 0);
+		}
+
+		// if its a primary remove the delegates and set them to tossup
+		var dels = state.delegates[candidateid];
+		if(dels) {
+			state.delegates['Tossup'] += dels;
+		}
+		state.delegates[candidateid] = undefined;
+	}
+
+	delete candidates[candidateid];
+	chart.generateLegend();
+	countVotes();
+	updateLegend();
+	verifyMap();
+	updateChart();
+}

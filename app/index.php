@@ -219,14 +219,15 @@ if($mobile === false) {
 	<div id="demdel-ranges">
 	</div>
 	<input id="demdel-state-name" type="hidden">
-	<button onclick="setDelegates(this)">set</button>
+	<br>
+	<button class="setbutton" onclick="setDelegates(this)">set</button>
 </div>
 
 <div id="ecedit" class="popup">
 	<h3 id="ecedit-message"></h3>
 	<input id="state-ec" type="number" name="value" min="1" max="10000" step="1">
 	<input id="state-id" type="hidden">
-	<button onclick="setEC(this);">set</button>
+	<button class="setbutton" onclick="setEC(this);">set</button>
 </div>
 
 <div id="candidateedit" class="popup">
@@ -237,8 +238,8 @@ if($mobile === false) {
 	Lean <input id="candidate-lean" type="color"><br>
 	Tilt <input id="candidate-tilt" type="color"><br><br>
 	<input id="candidate-originalName" type="hidden">
-	<button id="setcandidate" onclick="setCandidate(this)">set</button>
-	<button id="deletecandidate" onclick="deleteCandidate(this)">delete</button>
+	<button class="setbutton" onclick="setCandidate(this)">set</button>
+	<!--<button id="deletecandidate" onclick="deleteCandidate(this)">delete</button>-->
 </div>
 
 <div id="miscmenu" class="popup selectmenu">
@@ -287,9 +288,10 @@ if($mobile === false) {
 	<a class="selectmenu-button" id="paintmovebutton" onclick='closeNotification(this); setMode("paintmove")'><i class="fas fa-paint-brush"></i> Paint/Move</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); setMode("paint")'><i class="fas fa-paint-brush"></i> Paint</a>
 	<a class="selectmenu-button" id="movebutton" onclick='closeNotification(this); setMode("move")'><i class="fas fa-arrows-alt"></i> Move</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); setMode("delete")'><i class="fas fa-eraser"></i> Delete</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); setMode("delete")'><i class="fas fa-eraser"></i> Disable State</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); setMode("ec")'><i class="far fa-edit"></i> EC Edit</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); setMode("candidate")'><i class="fas fa-user-edit"></i> Edit Candidate</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); setMode("deletecandidate")'><i class="fas fa-eraser"></i> Delete Candidate</a>
 </div>
 
 <div id="thememenu" class="popup selectmenu">

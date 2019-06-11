@@ -1,4 +1,4 @@
-var currentCache = 'v0.19.1';
+var currentCache = 'v0.19.2';
 
 var states = [];
 var lands = [];
@@ -504,7 +504,7 @@ function setMode(set) {
 	var title = notification.querySelector('#notification-title');
 
 	if(mapYear !== 'open') {
-		if(set === 'ec' || set === 'candidate' || set === 'delete') {
+		if(set === 'ec' || set === 'candidate' || set === 'delete' || set === 'deletecandidate') {
 			title.innerHTML = 'Sorry';
 			message.innerHTML = 'This mode is not available while editing a historical ' + mapType + ' map';
 			notification.style.display = 'inline';
@@ -581,11 +581,14 @@ function setMode(set) {
 		modeText = '<i class="fas fa-edit"></i> EC Edit';
 		notificationText = "Click on a state to set its electoral college";
 	} else if(set === 'delete') {
-		modeText = '<i class="fas fa-eraser"></i> Delete';
-		notificationText = "Click on a state to delete it";
+		modeText = '<i class="fas fa-eraser"></i> Disable State';
+		notificationText = "Click on a state to disable/enable it";
 	} else if(set === 'candidate') {
-		modeText = '<i class="fas fa-user-edit"></i> Candidate Edit';
-		notificationText = "Click on a candidate in the legend to edit its name and color";
+		modeText = '<i class="fas fa-user-edit"></i> Edit Candidate';
+		notificationText = "Click on a candidate in the legend to edit their name and color";
+	} else if(set === 'deletecandidate') {
+		modeText = '<i class="fas fa-user-edit"></i> Delete Candidate';
+		notificationText = "Click on a candidate to delete them";
 	}
 
 	modeHTML.innerHTML = '<i class="fas fa-cog"></i> Modes (' + modeText + ')';
