@@ -191,7 +191,7 @@ if($mobile === false) {
 		'</div>' ,
 
 		'<div id="sidebar-ad1">' ,
-		'<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		<ins class="adsbygoogle"
 			style="display:block"
 			data-ad-format="fluid"
