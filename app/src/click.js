@@ -108,6 +108,8 @@ function stateClick(clickElement, e) {
 		case 'paintmove':
 			if(mapType === 'primary' || mapType === 'proportional') {
 				stateClickPaintProportional(state, id);
+			} else if(mapType === 'usapopular') {
+				stateClickPaintProportional(state, id);	
 			} else {
 				stateClickPaint(state, id);
 			}

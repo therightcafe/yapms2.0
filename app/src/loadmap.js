@@ -67,6 +67,9 @@ function loadMapFromId(id) {
 		case "2016_presidential_county":
 			loadPresetMap(id);
 			break;
+		case "2020_presidential_popular":
+			loadMap("./res/usa_presidential.svg", 16, 1, "usa_voting_pop", "usapopular", "open", null, {updateText: false});
+			break;
 		case "2020_presidential":
 			loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open", null, {updateText: true});
 			break;
@@ -90,6 +93,9 @@ function loadMapFromId(id) {
 			break;
 		case "USA_congressional":
 			loadMap("./res/usa_congressional_2018.svg", 16, 0.075, "congressional", "congressional", "open", null, {updateText: false});
+			break;
+		case "USA_congressional_2008":
+			loadMap("./res/usa_congressional_2008.svg", 16, 0.005, "congressional", "congressional", "open", null, {updateText: false});
 			break;
 		case "USA_gubernatorial":
 			loadMap("./res/usa_gubernatorial.svg", 16, 1.5, "usa_gubernatorial", "gubernatorial", "open", null, {updateText: false});
