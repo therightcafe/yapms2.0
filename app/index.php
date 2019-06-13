@@ -4,7 +4,9 @@
 
 <head>
 	<meta charset="UTF-8">
-	<meta name="description" content="Presidential, Senatorial, Congressional, Guberntorial, and Democratic Primary, political map simulator.">
+<?php
+	include './html/description.php';
+?>
 	<meta name="keywords" content="Map,Election,Political,Interactive,Simulator,Electoral,270,2020">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -63,8 +65,6 @@
 		}
 	?>
 
-	<title>YAPms - Interactive Maps</title>
-
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132710089-1"></script>
 	<script>
@@ -111,9 +111,11 @@
 		<i class="far fa-map"></i> Maps
 	</button>
 
+<!--
 	<button class="click-button" onclick="displayPresetMenu()" style="white-space: nowrap;">
 		<i class="fas fa-users"></i> Candidates
 	</button>
+-->
 
 	<button id="modesbutton" class="click-button" onclick="displayModeMenu()" style="white-space: nowrap;">
 		<i class="fas fa-cog"></i> Modes (<i class="fas fa-paint-brush"></i> Paint/Move)
@@ -143,7 +145,6 @@
 
 <div id="application">
 	<div id="legend-div">
-
 	</div>
 
 	<div id="chart-div">
@@ -254,7 +255,6 @@ if($mobile === false) {
 	<a class="selectmenu-button" onclick="toggleLTELogo()">LTE Logo</a>
 	<a class="selectmenu-button" onclick="toggleRedEagleLogo()">RedEagle Logo</a>
 	<a class="selectmenu-button" onclick="disableNews()">Disable News</a>
-	<a class="selectmenu-button" href="https://commons.wikimedia.org/wiki/File:Blank_US_Map_(states_only).svg" target="_blank" rel="noreferrer">Map Src</a>
 </div>
 
 <div id="addcandidatemenu" class="popup selectmenu">

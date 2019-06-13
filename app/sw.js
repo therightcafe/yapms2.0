@@ -1,4 +1,4 @@
-var currentCache = 'v0.19.5';
+var currentCache = 'v0.20.0';
 
 function swLog(message) {
 	console.log('SW' + currentCache + ': ' + message);
@@ -14,6 +14,7 @@ self.addEventListener('install', function(event) {
 				'./',
 				'./index.php',
 				'./html/battlechart.html',
+				'./html/description.php',
 				
 				'./manifest.json',
 

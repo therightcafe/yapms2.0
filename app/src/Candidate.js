@@ -18,12 +18,13 @@ function initCandidates() {
 	candidates['Tossup'] = TOSSUP;
 }
 
+// i dont think this function call in needed
 initCandidates();
 
 // add candidate to the list
 // update map, chart and legend
 function addCandidate(name, solid, likely, leaning, tilting) {
-	clearDelegates();
+	//clearDelegates();
 
 	if(name === undefined) {
 		var nameHTML = document.getElementById('name');

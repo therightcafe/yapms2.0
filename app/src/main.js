@@ -1,4 +1,4 @@
-var currentCache = 'v0.19.5';
+var currentCache = 'v0.20.0';
 
 var states = [];
 var lands = [];
@@ -241,8 +241,27 @@ function initChart() {
 						legendColorDiv.appendChild(legendColor);
 					}
 				}
-				
 			}
+		
+
+			// after adding all the candidates, add the add candidate button
+			var legendElement = document.createElement('div');
+			legendElement.setAttribute('id', 'addcandidate-button');
+			legendElement.setAttribute('class', 'legend-button');
+			legendElement.setAttribute(
+				'onclick', 'displayAddCandidateMenu();');
+			legendElement.style.background = 'none';
+			legendDiv.appendChild(legendElement);
+			var legendText = document.createElement('div');
+			legendText.setAttribute('id', 'addcandidate-button-text');	
+			legendText.setAttribute('class', 'legend-button-text');	
+			legendText.style.backgroundColor = candidates['Tossup'].colors[tossupColor];
+			legendText.style.padding = '0px';
+			legendText.innerHTML = '+';
+			legendElement.appendChild(legendText);
+			var legendColorDiv = document.createElement('div');
+			legendColorDiv.setAttribute('class', 'legend-color-div');
+			legendElement.appendChild(legendColorDiv);
 		},
 		// do not display the build in legend for the chart
 		legend: {
