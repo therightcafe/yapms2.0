@@ -418,6 +418,8 @@ function setTossupColor(color) {
 	TOSSUP.colors[2] = color;
 	var tossupText = document.getElementById('Tossup-text');
 	tossupText.style.backgroundColor = color;
+	var addCandidateButton = document.getElementById('addcandidate-button-text');
+	addCandidateButton.style.backgroundColor = color;
 }
 
 function setMapStyle(color, strokeWidth) {

@@ -1,4 +1,6 @@
 #legend-div {
+	display: flex;
+	flex-direction: row;
 	position: absolute;
 	border-color: #2f3136;
 	z-index: 2;
@@ -7,15 +9,31 @@
 }
 
 .legend-button {
-	display: inline-block;
+	display: flex;
+	flex-direction: column;
 	cursor: pointer;
 	margin-top: 4px;
 	margin-left: 3px;
+	margin-right: 0px;
+	vertical-align: top;
+	pointer-events: auto;
+}
+
+.legend-delete {
+	display: flex;
+	flex-direction: column;
+	cursor: pointer;
+	margin-top: 4px;
+	margin-left: 0px;
 	margin-right: 3px;
 	vertical-align: top;
 	pointer-events: auto;
 }
 
+.legend-delete-text {
+	border-radius: 5px;
+	color: white;
+}
 
 .legend-color-div {
 	margin-top: 1px;
@@ -34,6 +52,6 @@
 	border: 2px solid;
 	border-color: inherit;
 	border-radius: 5px;
-	transition: all 175ms;
+	transition: all 100ms;
 	transition-timing-function: linear;
 }

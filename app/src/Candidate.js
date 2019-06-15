@@ -176,3 +176,10 @@ function deleteCandidateByName(name) {
 	verifyMap();
 	updateChart();
 }
+
+function deleteCandidateByNameConfirm(name) {
+	var popup = document.getElementById("deletecandidateconfirm");
+	var hidden = document.getElementById("delete-candidate-name");
+	hidden.value = name;
+	popup.style.display = 'inline';
+}

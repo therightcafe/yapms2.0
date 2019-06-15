@@ -226,10 +226,35 @@ function initChart() {
 				legendText.style.padding = '0px';
 				legendText.innerHTML = candidate.name;
 				legendElement.appendChild(legendText);
-		
+	
+				var legendDelete = document.createElement('div');
+				legendDelete.setAttribute('class', 'legend-delete');
+				legendDelete.style.backgroundColor = 'black';
+				legendDelete.innerHTML = 'tesstt';
+				legendText.appendChild(legendDelete);
+
 				var legendColorDiv = document.createElement('div');
 				legendColorDiv.setAttribute('class', 'legend-color-div');
 				legendElement.appendChild(legendColorDiv);
+
+				if(key !== 'Tossup') {
+					// after adding all the candidates, add the add candidate button
+					var legendDelete = document.createElement('div');
+					legendDelete.setAttribute('id', 'addcandidate-button');
+					legendDelete.setAttribute('class', 'legend-delete');
+					legendDelete.setAttribute('onclick', 'deleteCandidateByNameConfirm("' + candidate.name + '")');
+					legendDelete.style.background = 'none';
+					legendDiv.appendChild(legendDelete);
+					var legendDeleteText = document.createElement('div');
+					legendDeleteText.setAttribute('id', 'addcandidate-button-text');	
+					legendDeleteText.setAttribute('class', 'legend-delete-text');	
+					legendDeleteText.style.backgroundColor = candidate.colors[0];
+					
+					legendDeleteText.style.padding = '0px';
+					legendDeleteText.innerHTML = 'x';
+					legendDelete.appendChild(legendDeleteText);
+					alert(key);
+				}
 
 				if(key !== 'Tossup' && legendLeans) {
 					var amts = ['solid', 'likely', 'lean', 'tilt'];

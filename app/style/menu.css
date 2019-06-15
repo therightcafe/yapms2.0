@@ -93,3 +93,21 @@
 .dropdown:hover .dropdown-content {
 	display: block;
 }
+
+.yes-button {
+	border: none;
+	background-color: green;
+	color: white;
+	padding: 10px;
+	margin: 5px;
+	cursor: pointer;
+}
+
+.no-button {
+	border: none;
+	background-color: red;
+	color: white;
+	padding: 10px;
+	margin: 5px;
+	cursor: pointer;
+}

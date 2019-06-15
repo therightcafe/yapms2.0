@@ -277,6 +277,13 @@ if($mobile === false) {
 	<a class="selectmenu-button" onclick="addCandidate(); closeNotification(this);">Add</a>
 </div>
 
+<div id="deletecandidateconfirm" class="popup">
+	<h2>Delete Candidate?</h2>
+	<input id="delete-candidate-name" type="hidden">
+	<button class="yes-button" onclick='deleteCandidateByName(document.getElementById("delete-candidate-name").value); closeNotification(this);'>Yes</button>
+	<button class="no-button" onclick="closeNotification(this);">No</button>
+</div>
+
 <div id="modemenu" class="popup selectmenu">
 	<svg class="closebutton" onclick="closeNotification(this)" width="24" height="24">
 		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
