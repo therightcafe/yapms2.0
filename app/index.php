@@ -298,7 +298,6 @@ if($mobile === false) {
 	<a class="selectmenu-button" onclick='closeNotification(this); setMode("delete")'><i class="fas fa-eraser"></i> Disable State</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); setMode("ec")'><i class="far fa-edit"></i> EC Edit</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); setMode("candidate")'><i class="fas fa-user-edit"></i> Edit Candidate</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); setMode("deletecandidate")'><i class="fas fa-eraser"></i> Delete Candidate</a>
 </div>
 
 <div id="thememenu" class="popup selectmenu">

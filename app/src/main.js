@@ -246,14 +246,12 @@ function initChart() {
 					legendDelete.style.background = 'none';
 					legendDiv.appendChild(legendDelete);
 					var legendDeleteText = document.createElement('div');
-					legendDeleteText.setAttribute('id', 'addcandidate-button-text');	
 					legendDeleteText.setAttribute('class', 'legend-delete-text');	
 					legendDeleteText.style.backgroundColor = candidate.colors[0];
 					
 					legendDeleteText.style.padding = '0px';
 					legendDeleteText.innerHTML = 'x';
 					legendDelete.appendChild(legendDeleteText);
-					alert(key);
 				}
 
 				if(key !== 'Tossup' && legendLeans) {
