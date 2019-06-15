@@ -1,6 +1,4 @@
 #legend-div {
-	display: flex;
-	flex-direction: row;
 	position: absolute;
 	border-color: #2f3136;
 	z-index: 2;
@@ -9,8 +7,7 @@
 }
 
 .legend-button {
-	display: flex;
-	flex-direction: column;
+	display: inline-block;
 	cursor: pointer;
 	margin-top: 4px;
 	margin-left: 3px;
@@ -20,8 +17,7 @@
 }
 
 .legend-delete {
-	display: flex;
-	flex-direction: column;
+	display: inline-block;
 	cursor: pointer;
 	margin-top: 4px;
 	margin-left: 0px;
