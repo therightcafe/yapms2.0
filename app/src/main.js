@@ -237,7 +237,12 @@ function initChart() {
 				legendColorDiv.setAttribute('class', 'legend-color-div');
 				legendElement.appendChild(legendColorDiv);
 
-				if(key !== 'Tossup') {
+				if((key === 'Republican' || key === 'Democrat')
+					&& mapYear === '2020' && 
+					(mapType === 'senatorial' || mapType === 'gubernatorial')) {
+					// dont add the remove candidate button
+
+				} else if(key !== 'Tossup') {
 					// after adding all the candidates, add the add candidate button
 					var legendDelete = document.createElement('div');
 					legendDelete.setAttribute('id', 'addcandidate-button');
