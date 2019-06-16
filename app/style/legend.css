@@ -28,8 +28,9 @@
 
 .legend-delete-text {
 	border: 2px solid;
+	border-color: inherit;
 	border-radius: 5px;
-	color: white;
+	color: inherit;
 }
 
 .legend-color-div {
