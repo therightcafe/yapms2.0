@@ -190,7 +190,7 @@ if($mobile === false) {
 			'YAPNews' , 
 		'</a>' ,
 		'</div>' ,
-
+/*
 		'<div id="sidebar-ad1">' ,
 		'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		<ins class="adsbygoogle"
@@ -203,6 +203,10 @@ if($mobile === false) {
 		<script>
 			(adsbygoogle = window.adsbygoogle || []).push({});
 		</script>',
+ */
+
+ '<input type="hidden" name="IL_IN_ARTICLE">',
+
 		'</div>' ,
 		'<a id="yapnews-discord-link" href="https://discord.gg/WQh5fHU" target="_blank">',
 		'<div id="yapnews-discord">',
