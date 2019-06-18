@@ -205,7 +205,7 @@ if($mobile === false) {
 		</script>',
  */
 
- '<input type="hidden" name="IL_IN_ARTICLE">',
+ '<input type="hidden" name="IL_IN_ARTICLE"><br>',
 
 		'</div>' ,
 		'<a id="yapnews-discord-link" href="https://discord.gg/WQh5fHU" target="_blank">',
