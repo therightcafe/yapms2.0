@@ -56,6 +56,7 @@ if($file) {
 
 	fwrite($file, $writeData);
 	fclose($file);
-	echo "https://www.yapms.com/app/?m=" . $filename;
+	echo 'https://www.yapms.com/app/?m=' . $filename . ' ';
+	echo $filename;
 }
 ?>

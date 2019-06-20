@@ -40,6 +40,7 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 	<link rel="stylesheet" type="text/css" href="style.css">
 
+<!--
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<script>
 	     (adsbygoogle = window.adsbygoogle || []).push({
@@ -47,6 +48,7 @@
 		  enable_page_level_ads: true
 	     });
 	</script>	
+-->
 
 </head>
 

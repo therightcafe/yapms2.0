@@ -89,13 +89,17 @@
 	<link async rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 
 	<!-- google ads -->
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<?php
+if($mobile === false) {
+	echo '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<script>
 	     (adsbygoogle = window.adsbygoogle || []).push({
 		       google_ad_client: "ca-pub-1660456925957249",
 					 enable_page_level_ads: true
 					      });
-	</script>
+	</script>';
+}
+?>
 </head>
 
 <body id="body" onresize="onResize()">
@@ -110,12 +114,6 @@
 	<button class="click-button" onclick="displayMapMenu()" style="white-space: nowrap;">
 		<i class="far fa-map"></i> Maps
 	</button>
-
-<!--
-	<button class="click-button" onclick="displayPresetMenu()" style="white-space: nowrap;">
-		<i class="fas fa-users"></i> Candidates
-	</button>
--->
 
 	<button id="modesbutton" class="click-button" onclick="displayModeMenu()" style="white-space: nowrap;">
 		<i class="fas fa-cog"></i> Modes (<i class="fas fa-paint-brush"></i> Paint/Move)
@@ -132,6 +130,14 @@
 	<button class="click-button" onclick="share()" style="white-space: nowrap;">
 		<i class="fas fa-share-alt"></i> Share
 	</button>
+
+<?php
+if($mobile === false) {
+	echo '<button class="click-button" onclick="displayLoadMenu()" style="white-space: nowrap;">
+		<i class="fas fa-upload"></i> Load
+		</button>';
+}
+?>
 
 	<button class="click-button" onclick="enableFullscreen()" style="white-space: nowrap;">
 		<i class="fas fa-expand-arrows-alt"></i> Fullscreen	
@@ -175,14 +181,10 @@ if($mobile === false) {
 		'</div>';
 }
 ?>
-
 </div>
-
 </div>
-
 <?php
 if($mobile === false) {
-
 	echo '<div id="yapnews">' ,
 		'<div id="yapnews-header">' ,
 		'<a href="https://www.yapms.com/news" target="_blank" ', 
@@ -202,7 +204,6 @@ if($mobile === false) {
 		<script>
 			(adsbygoogle = window.adsbygoogle || []).push({});
 		</script>',
-
 		'</div>' ,
 		'<a id="yapnews-discord-link" href="https://discord.gg/WQh5fHU" target="_blank">',
 		'<div id="yapnews-discord">',
@@ -306,7 +307,6 @@ if($mobile === false) {
 		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
 		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
 	</svg>
-
 	<h2>Select Theme</h2>	
 	<a class="selectmenu-button" onclick='darkPalette()'>Dark</a>
 	<a class="selectmenu-button" onclick='terminalPalette()'>Terminal</a>
@@ -322,7 +322,6 @@ if($mobile === false) {
 		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
 		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
 	</svg>
-
 	<h2>Select Chart</h2>	
 	<a class="selectmenu-split">Charts</a>
 	<a class="selectmenu-button" onclick='setChart("horizontalbattle")'>Horizontal Battle</a>
@@ -333,7 +332,6 @@ if($mobile === false) {
 	<a class="selectmenu-button" onclick='setChart("doughnut", "bottom")'>Bottom Doughnut</a>
 	<a class="selectmenu-button" onclick='setChart("horizontalBar")'>Side Bar</a>
 	<a class="selectmenu-button" onclick='setChart("none")'>None</a>
-	
 	<a class="selectmenu-split">Chart Settings</a>
 	<a class="selectmenu-button" onclick='toggleLegendCounter()'>Legend Counter</a>
 	<a class="selectmenu-button" onclick='toggleChartLabels()'>Chart Labels</a>
@@ -347,7 +345,6 @@ if($mobile === false) {
 		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
 		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
 	</svg>
-
 	<h2>Add Candidates</h2>	
 	<a class="selectmenu-split">Custom</a>
 	<a class="selectmenu-button" onclick='displayAddCandidateMenu();'>Add Custom</a>
@@ -427,25 +424,16 @@ if($mobile === false) {
 	</svg>
 	<h2>USA Maps</h2>
 	<a class="selectmenu-split">2020</a>
-	<!--
-	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open");'>Presidential</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_senate.svg", 16, 1, "usa_senate", "senatorial", "2020")'>Senatorial</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_gubernatorial.svg", 16, 1, "usa_gubernatorial", "gubernatorial", "2020")'>Gubernatorial</a>
-	-->
 	<a class="selectmenu-button" href="./?t=2020_presidential">Presidential</a>
 	<a class="selectmenu-button" href="./?t=2020_senatorial">Senatorial</a>
 	<a class="selectmenu-button" href="./?t=2020_gubernatorial">Gubernatorial</a>
-	<!-- <a class="selectmenu-button" href="./?t=1972_presidential">1972 Presidential</a> -->
-
 	<a class="selectmenu-split">Forecasts</a>
 	<a class="selectmenu-button" href="./?t=2020_cook">Cook Political Report</a>
 	<a class="selectmenu-button" href="./?t=2020_inside">Inside Elections</a>
 	<a class="selectmenu-button" href="./?t=2020_sabatos">Sabatos Crystal Ball</a>
-
 	<a class="selectmenu-split">Primaries</a>
 	<a class="selectmenu-button" href="./?t=2020_democratic_primary">Democratic</a>
 	<a class="selectmenu-button" href="./?t=2020_republican_primary">Republican</a>
-
 	<a class="selectmenu-split">Open</a>
 	<a class="selectmenu-button" href="./?t=USA_takeall">Presidential Take All</a>
 	<a class="selectmenu-button" href="./?t=USA_proportional">Presidential Proportional</a>
@@ -463,7 +451,6 @@ if($mobile === false) {
 		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
 		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
 	</svg>
-
 	<h2>USA Historical Maps</h2>
 	<a class="selectmenu-button" href="./?t=2018_congress">Congress 2018</a>
 	<a class="selectmenu-button" href="./?t=2016_presidential_county">Presidential County 2016</a>
@@ -479,7 +466,6 @@ if($mobile === false) {
 	<a class="selectmenu-button" href="./?t=1980_presidential">Presidential 1980</a>
 	<a class="selectmenu-button" href="./?t=1976_presidential">Presidential 1976</a>
 	<a class="selectmenu-button" href="./?t=1972_presidential">Presidential 1972</a>
-	
 </div>
 
 <!-- Mock Maps -->
@@ -495,7 +481,6 @@ if($mobile === false) {
 	<a class="selectmenu-button" href="./?t=LTE_congressional">Congressional</a>
 </div>
 
-
 <!-- Maps menu -->
 <div id="mapmenu" class="popup selectmenu">
 	<svg class="closebutton" onclick="closeNotification(this)" width="24" height="24">
@@ -510,14 +495,10 @@ if($mobile === false) {
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("germany")'; >Germany</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("canada")'>Canada</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("australia")'; >Australia</a>
-<!--
-	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("italy")'; >Italy</a>
--->
 	<a class="selectmenu-button" href="./?t=Italy_states">Italy</a>
 	<a class="selectmenu-button" href="./?t=UnitedKingdom_constituencies">United Kingdom</a>
 	<a class="selectmenu-button" href="./?t=EuropeanUnion">EU</a>
 	<a class="selectmenu-button" href="./?t=World">World</a>
-
 	<a class="selectmenu-split">Mock</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("lte")'; >LTE</a>
 </div> 
@@ -528,7 +509,6 @@ if($mobile === false) {
 		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
 		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
 	</svg>
-
 	<h3 id="notification-title"></h3>
 	<p id="notification-message"></p>
 
@@ -540,11 +520,33 @@ if($mobile === false) {
 		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
 		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
 	</svg>
-
 	<h3>Share Link</h3>
 	<p>(This feature is still in development, your link might get deleted)</p>
 	<div id="shareurl"></div>
+	<br>
+<?php 
+if($mobile === false) {
+	echo '<a id="downloadbutton" class="download-button"><i class="fas fa-download"></i>  Download</a>';
+}
+?>
+	<br>
+	<br>
 	<img id="screenshotimg"/>
+</div>
+
+<div id="loadmenu" class="popup">
+	<svg id="loadmenuclose" class="closebutton" onclick="closeNotification(this)" width="24" height="24">
+		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
+		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
+		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
+	</svg>
+	<h2>Load From File</h2>
+	<p>Select a yapms file to load</p>
+	<form action="load.php" method="post" enctype="multipart/form-data">
+		<input type="file" name"file" id="loadfile">
+		<input type="button" value="Load" onclick='loadFileMap()'>
+	</form>
+
 </div>
 
 <div id="versioninfo" class="popup">
@@ -553,17 +555,11 @@ if($mobile === false) {
 		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
 		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
 	</svg>
-
 	<h2>Version Info</h2>
 	<a id="versioninfo-text"></a>
 </div>
 
 <script>
-/*
-	document.getElementById('logo-div').innerHTML =
-	'<img id="logo" src="./res/lte.jpg">';
- */
-
 	if('serviceWorker' in navigator) {
 		navigator.serviceWorker
 		.register('./sw.js')
@@ -598,12 +594,6 @@ if($mobile === false) {
 	}
 ?>
 <script src="./src/html2canvas.min.js"></script>
-
-<script type="text/javascript">
-var infolinks_pid = 3160874;
-var infolinks_wsid = 0;
-</script>
-<script type="text/javascript" src="//resources.infolinks.com/js/infolinks_main.js"></script>
 
 </body>
 </html>

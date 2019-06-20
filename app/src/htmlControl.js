@@ -110,6 +110,12 @@ function displayChartMenu(type) {
 	chartmenu.style.display = 'flex';
 }
 
+function displayLoadMenu(type) {
+	closeAllPopups();
+	var loadmenu = document.getElementById('loadmenu');
+	loadmenu.style.display = 'block';
+}
+
 function displayCountersMenu(type) {
 	closeAllPopups();
 	var countersmenu = document.getElementById('countersmenu');

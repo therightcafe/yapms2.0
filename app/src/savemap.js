@@ -57,16 +57,21 @@ function saveMap(img) {
 			console.log(a);
 			console.log(b);
 			console.log(c);
-			//console.log('good');
+			var data = a.split(' ');
+			var url = data[0];
+			var filename = data[1];
+
 			var shareurl = document.getElementById('shareurl');
-			shareurl.setAttribute('href', a);
-			shareurl.innerHTML = a;
+			shareurl.setAttribute('href', url);
+			shareurl.innerHTML = url;
+
+			var downloadbtn = document.getElementById('downloadbutton');
+			downloadbtn.setAttribute('href', 'downloadmap.php?f=' + filename);
 		},
 		error: function(a,b,c) {
 			console.log(a);
 			console.log(b);
 			console.log(c);
-			//console.log('bad');
 		}
 	});
 }

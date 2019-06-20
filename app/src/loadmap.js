@@ -465,6 +465,16 @@ function loadSavedMap(data) {
 	});
 }
 
+function loadFileMap() {
+	var file = document.getElementById('loadfile').files[0];
+	var fileReader = new FileReader();
+	fileReader.onload = function(loadEvent) {
+		var txt = loadEvent.target.result;
+		loadSavedMap(txt);
+	}
+	fileReader.readAsText(file, 'UTF-8');
+}
+
 function enableInputDesktop() {
 	var enablePan = false;
 	var enableZoom = false;
