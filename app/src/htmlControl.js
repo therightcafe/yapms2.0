@@ -83,8 +83,10 @@ function displayShare() {
 	var share = document.getElementById('share');
 	share.style.display = 'inline';
 
+	var downloadbtn = document.getElementById('downloadbutton');
+	downloadbtn.style.display = 'none';
 	var shareurl = document.getElementById('shareurl');
-	shareurl.innerHTML = "Please wait for your share link...";
+	shareurl.innerHTML = "Please wait for your share and download link...";
 }
 
 function displayMapMenu(type) {
