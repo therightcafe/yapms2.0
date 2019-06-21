@@ -51,7 +51,6 @@ function loadMapFromId(id) {
 		case "2020_cook":
 		case "2020_inside":
 		case "2020_sabatos":
-		//case "2020_consensus":
 		case "2016_presidential":
 		case "2012_presidential":
 		case "2008_presidential":

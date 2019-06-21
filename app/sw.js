@@ -1,4 +1,4 @@
-var currentCache = 'v0.21.1';
+var currentCache = 'v0.22.1';
 
 function swLog(message) {
 	console.log('SW' + currentCache + ': ' + message);
@@ -13,6 +13,50 @@ self.addEventListener('install', function(event) {
 			return cache.addAll([
 				'./',
 				'./index.php',
+				'./?t=2016_presidential_county',
+				'./?t=2016_presidential',
+				'./?t=2012_presidential',
+				'./?t=2008_presidential',
+				'./?t=2004_presidential',
+				'./?t=2000_presidential',
+				'./?t=1996_presidential',
+				'./?t=1992_presidential',
+				'./?t=1988_presidential',
+				'./?t=1984_presidential',
+				'./?t=1980_presidential',
+				'./?t=1976_presidential',
+				'./?t=1972_presidential',
+
+				'./?t=2018_congress',
+
+				'./?t=2020_cook',
+				'./?t=2020_inside',
+				'./?t=2020_sabatos',
+				
+				'./?t=2020_presidential',
+				'./?t=2020_senatorial',
+				'./?t=2020_gubernatorial',
+				'./?t=2020_democratic_primary',
+				'./?t=2020_republican_primary',
+				'./?t=USA_county',
+				'./?t=USA_congressional',
+				'./?t=USA_congressional_2008',
+				'./?t=USA_gubernatorial',
+				'./?t=USA_senatorial',
+				'./?t=USA_takeall',
+				'./?t=USA_proportional',
+				'./?t=Germany_states',
+				'./?t=Germany_constituencies',
+				'./?t=Italy_states',
+				'./?t=UnitedKingdom_constituencies',
+				'./?t=Canada_provinces',
+				'./?t=Canada_constituencies',
+				'./?t=Australia_constituencies',
+				'./?t=Australia_states',
+				'./?t=EuropeanUnion',
+				'./?t=World',
+
+				'./index.php/?t=2020_senatorial',
 				'./html/battlechart.html',
 				'./html/description.php',
 				
