@@ -288,7 +288,7 @@ class State {
 			this.colorValue = tossupColor;
 		}
 
-		if(candidate[this.candidate].colors) {
+		if(candidates[this.candidate].colors) {
 			// get color
 			var color = candidates[this.candidate].colors[this.colorValue];
 			// set color
