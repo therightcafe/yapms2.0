@@ -288,12 +288,12 @@ class State {
 			this.colorValue = tossupColor;
 		}
 
-		// get color
-		var color = candidates[this.candidate]
-			.colors[this.colorValue];
-	
-		// set color
-		this.htmlElement.style.fill = color;
+		if(candidate[this.candidate].colors) {
+			// get color
+			var color = candidates[this.candidate].colors[this.colorValue];
+			// set color
+			this.htmlElement.style.fill = color;
+		}
 
 		var land = document.getElementById(this.name + '-land');
 		if(land != null) {

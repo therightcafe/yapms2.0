@@ -66,8 +66,10 @@ function saveMap(img) {
 			shareurl.innerHTML = url;
 
 			var downloadbtn = document.getElementById('downloadbutton');
-			downloadbtn.style.display = 'inline-block';
-			downloadbtn.setAttribute('href', 'downloadmap.php?f=' + filename);
+			if(downloadbtn) {
+				downloadbtn.style.display = 'inline-block';
+				downloadbtn.setAttribute('href', 'downloadmap.php?f=' + filename);
+			}
 		},
 		error: function(a,b,c) {
 			console.log(a);

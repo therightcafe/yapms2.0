@@ -521,16 +521,13 @@ if($mobile === false) {
 		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
 	</svg>
 	<h3>Share Link</h3>
-	<p>(This feature is still in development, your link might get deleted)</p>
 	<div id="shareurl"></div>
 	<br>
 <?php 
 if($mobile === false) {
-	echo '<a id="downloadbutton" class="download-button"><i class="fas fa-download"></i>  Download</a>';
+	echo '<a id="downloadbutton" class="download-button"><i class="fas fa-download"></i>  Download</a><br><br>';
 }
 ?>
-	<br>
-	<br>
 	<img id="screenshotimg"/>
 </div>
 
