@@ -265,7 +265,7 @@ function lightPalette() {
 
 function contrastPalette() {
 	var body = document.getElementById('application');
-	body.style.backgroundColor = '#f9f9fa';
+	body.style.backgroundColor = '#f8f9fa';
 	body.style.backgroundImage  = '';
 
 	var legend = document.getElementById('legend-div');
@@ -277,8 +277,9 @@ function contrastPalette() {
 	setTextStyle('black', 'normal');
 	setChartBorderStyle(2, 'black');
 	setSideBarColor('#cdcdcd');
-	
-	setClickButtonColor('#ded9d3');
+	setSideBarColor('#fafafa');
+
+	setClickButtonColor('#fafafa');
 	setClickButtonTextColor('#000000');
 	setMenuColor('#222222');
 	
@@ -330,8 +331,7 @@ function metallicPalette() {
 
 function toWinPalette() {
 	var body = document.getElementById('application');
-	//body.style.backgroundImage  = 'radial-gradient(#2f3136, #181922)';
-	body.style.backgroundColor = '#fffbf2';
+	body.style.backgroundColor = '#f8f9fa';
 	body.style.backgroundImage  = '';
 
 	var menu = document.getElementById('menu-div');
@@ -345,13 +345,13 @@ function toWinPalette() {
 	setMapStyle('#fffbf2', 1);
 	setTextStyle('white', 'bold');
 	setChartBorderStyle(2, '#f2eee6');
-	setSideBarColor('#f2eee6');
+	setSideBarColor('#fafafa');
 	
-	setClickButtonColor('#f2eee6');
+	setClickButtonColor('#fafafa');
 	setClickButtonTextColor('#000000');
 	setMenuColor('#000000');
 
-	setBorderStyle('#ffffff', 6.0);
+	setBorderStyle('#f8f9fa', 6.0);
 
 	chartOptions.plugins.datalabels.borderWidth = 0;
 	chartOptions.plugins.datalabels.borderRadius = 2;

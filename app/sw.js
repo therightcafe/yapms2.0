@@ -1,4 +1,4 @@
-var currentCache = 'v0.22.3';
+var currentCache = 'v0.22.5';
 
 function swLog(message) {
 	console.log('SW' + currentCache + ': ' + message);
@@ -13,6 +13,7 @@ self.addEventListener('install', function(event) {
 			return cache.addAll([
 				'./',
 				'./index.php',
+
 				'./?t=2016_presidential_county',
 				'./?t=2016_presidential',
 				'./?t=2012_presidential',
