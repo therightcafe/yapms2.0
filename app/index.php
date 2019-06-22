@@ -193,6 +193,7 @@ if($mobile === false) {
 		'</a>' ,
 		'</div>' ,
 		'<div id="sidebar-ad1">' ,
+		/*
 		'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		<ins class="adsbygoogle"
 			style="display:block"
@@ -204,6 +205,20 @@ if($mobile === false) {
 		<script>
 			(adsbygoogle = window.adsbygoogle || []).push({});
 		</script>',
+		 */
+
+		'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<ins class="adsbygoogle"
+		     style="display:block"
+		     data-ad-client="ca-pub-1660456925957249"
+		     data-ad-slot="8033943742"
+		     data-ad-format="auto"
+		     data-full-width-responsive="true"></ins>
+		<script>
+		     (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>',
+
+
 		'</div>' ,
 		'<a id="yapnews-discord-link" href="https://discord.gg/WQh5fHU" target="_blank">',
 		'<div id="yapnews-discord">',
