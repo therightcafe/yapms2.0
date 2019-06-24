@@ -110,30 +110,39 @@ function loadMapFromId(id) {
 			break;
 		case "Germany_states":
 			loadMap("./res/germany.svg", 16, 1, "congressional", "congressional", "open", null, {updateText: false});
+			loadPreset('germany')
 			break;
 		case "Germany_constituencies":
 			loadMap("./res/germany_constituencies.svg", 16, 1, "congressional", "congressional", "open", null, {updateText: false});
+			loadPreset('germany')
 			break;
 		case "France_constituencies":
 			loadMap("./res/france_constituencies.svg", 16, 0.25, "congressional", "congressional", "open", null, {updateText: false});
+			loadPreset('france')
 			break;
 		case "Italy_states":
 			loadMap("./res/italy.svg", 16, 1, "congressional", "congressional", "open", null, {updateText: false});
+			loadPreset('italy')
 			break;
 		case "UnitedKingdom_constituencies":
 			loadMap("./res/unitedkingdom.svg", 16, 0.075, "congressional", "congressional", "open", null, {updateText: false});
+			loadPreset('uk')
 			break;
 		case "Canada_provinces":
 			loadMap("./res/canada_states.svg", 38, 3, "canada_ec", "presidential", "open", null, {updateText: true});
+			loadPreset('canada')
 			break;
 		case "Canada_constituencies":
 			loadMap("./res/canada_constituencies.svg", 16, 0.075, "congressional", "congressional", "open", null, {updateText: true});
+			loadPreset('canada')
 			break;
 		case "Australia_constituencies":
 			loadMap("./res/australia_constituencies.svg", 16, 0.075, "congressional", "congressional", "open", null, {updateText: false});
+			loadPreset('australia')
 			break;
 		case "Australia_states":
 			loadMap("./res/australia.svg", 16, 0.075, "congressional", "congressional", "open", null, {updateText: false});
+			loadPreset('australia')
 			break;
 		case "EuropeanUnion":
 			loadMap("./res/eu.svg", 16, 0.25, "eu_parliament", "primary", "open", null, {updateText: false});
