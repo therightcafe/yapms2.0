@@ -385,6 +385,19 @@
 	
 	<div class="map-type-box">
 	<div class="map-type-header">
+		France
+	</div>
+	<div>
+		<a href="./app/?t=France_constituencies">
+			<div class="map-button">
+				Constituencies
+			</div>
+		</a>
+	</div>
+	</div>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
 		Italy
 	</div>
 	<div>

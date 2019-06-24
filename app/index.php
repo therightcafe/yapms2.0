@@ -512,6 +512,7 @@ if($mobile === false) {
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("australia")'; >Australia</a>
 	<a class="selectmenu-button" href="./?t=Italy_states">Italy</a>
 	<a class="selectmenu-button" href="./?t=UnitedKingdom_constituencies">United Kingdom</a>
+	<a class="selectmenu-button" href="./?t=France_constituencies">France</a>
 	<a class="selectmenu-button" href="./?t=EuropeanUnion">EU</a>
 	<a class="selectmenu-button" href="./?t=World">World</a>
 	<a class="selectmenu-split">Mock</a>
@@ -526,7 +527,6 @@ if($mobile === false) {
 	</svg>
 	<h3 id="notification-title"></h3>
 	<p id="notification-message"></p>
-
 </div>
 
 <div id="share" class="popup">

@@ -1,4 +1,4 @@
-var currentCache = 'v0.22.6';
+var currentCache = 'v0.23.0';
 
 function swLog(message) {
 	console.log('SW' + currentCache + ': ' + message);
@@ -92,9 +92,9 @@ self.addEventListener('install', function(event) {
 				'./res/canada_constituencies.svg',
 				'./res/germany.svg',
 				'./res/germany_constituencies.svg',
+				'./res/france_constituencies.svg',
 				'./res/unitedkingdom.svg',
 				'./res/italy.svg',
-				//'./res/italy_constituencies.svg',
 				'./res/australia_constituencies.svg',
 				'./res/australia.svg',
 				'./res/eu.svg',
