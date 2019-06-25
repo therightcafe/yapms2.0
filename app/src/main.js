@@ -1,5 +1,7 @@
 var currentCache = 'v0.23.2';
 
+var cookies = {};
+
 var states = [];
 var lands = [];
 var buttons = [];
@@ -1062,6 +1064,27 @@ function setChangeCandidate(oldCandidate, newCandidate) {
 		state.delegates[newCandidate] = state.delegates[oldCandidate];
 		state.delegates[oldCandidate] = undefined;
 	}
+}
+
+function appendCookie(key, value) {
+	cookies[key] = value;
+	var cookie = "";
+	var expire = new Date(Date.now() + 60 * 1000 * 60 * 12 * 7).toString();
+	cookie = key + '=' + cookies[key] + ';' + expire + ';';
+	document.cookie = cookie;
+}
+
+function loadCookies() {
+	console.log(cookies);
+	var decode = decodeURIComponent(document.cookie);
+	var loadedCookies = decode.split('; ');
+	for(var index in loadedCookies) {
+		var cookie = loadedCookies[index].split('=');
+		var key = cookie[0];
+		var result = cookie[1]
+		cookies[key] = result;
+	}
+	console.log(cookies);
 }
 
 function start() {
