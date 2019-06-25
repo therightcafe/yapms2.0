@@ -574,7 +574,7 @@ if($mobile === false) {
 <script>
 	if('serviceWorker' in navigator) {
 		navigator.serviceWorker
-		.register('./sw.js')
+		.register('../sw.js')
 		.then(function(a) {
 			console.log('SW: registered');
 		}, function(err) {

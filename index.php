@@ -27,7 +27,6 @@
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132710089-1"></script>
 	<script>
 		var host = window.location.hostname;
-		console.log(host);
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
@@ -434,5 +433,16 @@
 		<a href="https://privacypolicies.com/privacy/view/5e9b5eee7febd2d29c0ec896e1ac90ef">Privacy</a>
 	</div>
 -->
+<script>
+	if('serviceWorker' in navigator) {
+		navigator.serviceWorker
+		.register('./sw.js')
+		.then(function(a) {
+			console.log('SW: registered');
+		}, function(err) {
+			console.log('SW: register error... ', err);
+		});
+	}
+</script>
 </body>
 </html>
