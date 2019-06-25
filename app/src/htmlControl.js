@@ -1,10 +1,12 @@
 var textOn = true;
 
 // when the yapnews div gets resized, center the map
-document.getElementById("yapnews").addEventListener("transitionend",
+if(document.getElementById("yapnews")) {
+	document.getElementById("yapnews").addEventListener("transitionend",
 	function() {
 		centerMap();
 	});
+}
 
 function selectCandidateDisplay(html) {
 	var legendButtons = html.parentElement.children;
