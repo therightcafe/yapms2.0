@@ -1,4 +1,4 @@
-var currentCache = 'v0.23.8';
+var currentCache = 'v0.23.9';
 
 function swLog(message) {
 	console.log('SW' + currentCache + ': ' + message);
@@ -140,6 +140,7 @@ self.addEventListener('install', function(event) {
 				'./app/src/State.js',
 				'./app/src/Candidate.js',
 				'./app/src/yapnews.js',
+				'./app/src/deferedImages.js',
 
 				'https://fonts.googleapis.com/css?family=Roboto',
 				'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js',
