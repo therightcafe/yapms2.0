@@ -205,7 +205,6 @@ if($mobile === false) {
 		<script>
 			(adsbygoogle = window.adsbygoogle || []).push({});
 		</script>',
-		 */
 
 		'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		<ins class="adsbygoogle"
@@ -217,6 +216,9 @@ if($mobile === false) {
 		<script>
 		     (adsbygoogle = window.adsbygoogle || []).push({});
 		</script>',
+		 */
+
+ 		'<input type="hidden" name="IL_IN_ARTICLE">',
 
 
 		'</div>' ,
@@ -529,5 +531,12 @@ if($mobile === false) {
 ?>
 <script src="./src/html2canvas.min.js"></script>
 <script src="./src/deferedImages.js"></script>
+
+<script type="text/javascript">
+var infolinks_pid = 3160874;
+var infolinks_wsid = 0;
+</script>
+<script type="text/javascript" src="//resources.infolinks.com/js/infolinks_main.js"></script>
+
 </body>
 </html>
