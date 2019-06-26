@@ -1,4 +1,4 @@
-var currentCache = 'v0.23.9';
+var currentCache = 'v0.23.12';
 
 function swLog(message) {
 	console.log('SW' + currentCache + ': ' + message);
@@ -63,6 +63,7 @@ self.addEventListener('install', function(event) {
 
 				'./app/index.php/?t=2020_senatorial',
 				'./app/html/battlechart.html',
+				'./app/html/closebutton.html',
 				'./app/html/description.php',
 				
 				'./app/manifest.json',

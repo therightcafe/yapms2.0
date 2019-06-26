@@ -223,7 +223,7 @@ if($mobile === false) {
 		'<a id="yapnews-discord-link" href="https://discord.gg/WQh5fHU" target="_blank">',
 		'<div id="yapnews-discord">',
 			'Join Our Discord',
-		'</div>',
+			'</div>',
 		'</a>',
 		'<div id="yapnews-articles">' ,
 		'</div>' ,
@@ -260,11 +260,7 @@ if($mobile === false) {
 </div>
 
 <div id="miscmenu" class="popup selectmenu">
-	<svg class="closebutton" onclick="closeNotification(this)" width="24" height="24">
-		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
-		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
-		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
-	</svg>
+<?php include './html/closebutton.html'; ?>
 	<h2>Misc</h2>
 	<a class="selectmenu-button" onclick="displayVersionInfo()">Version Info</a>
 	<a class="selectmenu-button" onclick="centerMap()">Center Map</a>
@@ -274,12 +270,7 @@ if($mobile === false) {
 </div>
 
 <div id="addcandidatemenu" class="popup selectmenu">
-	<svg class="closebutton" onclick="closeNotification(this)" width="24" height="24">
-		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
-		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
-		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
-	</svg>
-	
+<?php include './html/closebutton.html'; ?>
 	<h2>Add Candidate</h2>
 	<a class="selectmenu-button">Name <input id="name" type="text"></a>
 	<a class="selectmenu-button" onclick='setColors("red")'>Red Colors</a>
@@ -301,12 +292,7 @@ if($mobile === false) {
 </div>
 
 <div id="modemenu" class="popup selectmenu">
-	<svg class="closebutton" onclick="closeNotification(this)" width="24" height="24">
-		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
-		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
-		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
-	</svg>
-	
+<?php include './html/closebutton.html'; ?>
 	<h2>Select Mode</h2>
 	<a class="selectmenu-button" id="paintmovebutton" onclick='closeNotification(this); setMode("paintmove")'><i class="fas fa-paint-brush"></i> Paint/Move</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); setMode("paint")'><i class="fas fa-paint-brush"></i> Paint</a>
@@ -317,11 +303,7 @@ if($mobile === false) {
 </div>
 
 <div id="thememenu" class="popup selectmenu">
-	<svg class="closebutton" onclick="closeNotification(this)" width="24" height="24">
-		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
-		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
-		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
-	</svg>
+<?php include './html/closebutton.html'; ?>
 	<h2>Select Theme</h2>	
 	<a class="selectmenu-button" onclick='darkPalette()'>Dark</a>
 	<a class="selectmenu-button" onclick='terminalPalette()'>Terminal</a>
@@ -332,11 +314,7 @@ if($mobile === false) {
 </div>
 
 <div id="chartmenu" class="popup selectmenu">
-	<svg class="closebutton" onclick="closeNotification(this)" width="24" height="24">
-		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
-		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
-		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
-	</svg>
+<?php include './html/closebutton.html'; ?>
 	<h2>Select Chart</h2>	
 	<a class="selectmenu-split">Charts</a>
 	<a class="selectmenu-button" onclick='setChart("horizontalbattle")'>Horizontal Battle</a>
@@ -355,11 +333,7 @@ if($mobile === false) {
 </div>
 
 <div id="presetmenu" class="popup selectmenu">
-	<svg class="closebutton" onclick="closeNotification(this)" width="24" height="24">
-		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
-		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
-		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
-	</svg>
+<?php include './html/closebutton.html'; ?>
 	<h2>Add Candidates</h2>	
 	<a class="selectmenu-split">Custom</a>
 	<a class="selectmenu-button" onclick='displayAddCandidateMenu();'>Add Custom</a>
@@ -373,22 +347,14 @@ if($mobile === false) {
 
 <!-- UK Maps -->
 <div id="mapmenu-uk" class="popup selectmenu">
-	<svg class="closebutton" onclick="closeNotification(this)" width="24" height="24">
-		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
-		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
-		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
-	</svg>
+<?php include './html/closebutton.html'; ?>
 	<h2>United Kingdom</h2>
 	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/unitedkingdom.svg", 16, 0.075, "congressional", "congressional", "open");'>United Kingdom</a>
 </div>
 
 <!-- Canada Maps -->
 <div id="mapmenu-canada" class="popup selectmenu">
-	<svg class="closebutton" onclick="closeNotification(this)" width="24" height="24">
-		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
-		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
-		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
-	</svg>
+<?php include './html/closebutton.html'; ?>
 	<h2>Canada</h2>
 	<a class="selectmenu-button" href="./?t=Canada_provinces">Canada Provinces</a>
 	<a class="selectmenu-button" href="./?t=Canada_constituencies">Canada Constituencies</a>
@@ -396,11 +362,7 @@ if($mobile === false) {
 
 <!-- German Maps -->
 <div id="mapmenu-germany" class="popup selectmenu">
-	<svg class="closebutton" onclick="closeNotification(this)" width="24" height="24">
-		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
-		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
-		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
-	</svg>
+<?php include './html/closebutton.html'; ?>
 	<h2>Germany</h2>
 	<a class="selectmenu-button" href="./?t=Germany_states">States</a>
 	<a class="selectmenu-button" href="./?t=Germany_constituencies">Constituencies</a>
@@ -408,11 +370,7 @@ if($mobile === false) {
 
 `<!-- Australia Maps -->
 <div id="mapmenu-australia" class="popup selectmenu">
-	<svg class="closebutton" onclick="closeNotification(this)" width="24" height="24">
-		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
-		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
-		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
-	</svg>
+<?php include './html/closebutton.html'; ?>
 	<h2>Australia</h2>
 	<a class="selectmenu-button" href="./?t=Australia_states">States</a>
 	<a class="selectmenu-button" href="./?t=Australia_constituencies">Constituencies</a>
@@ -420,11 +378,7 @@ if($mobile === false) {
 
 <!-- Italy Maps -->
 <div id="mapmenu-italy" class="popup selectmenu">
-	<svg class="closebutton" onclick="closeNotification(this)" width="24" height="24">
-		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
-		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
-		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
-	</svg>
+<?php include './html/closebutton.html'; ?>
 	<h2>Italy</h2>
 	<a class="selectmenu-button" href="./?t=Italy_states">States</a>
 	<!--<a class="selectmenu-button" href="./?t=Italy_constituencies">Constituencies</a>-->
@@ -432,11 +386,7 @@ if($mobile === false) {
 
 <!-- USA Maps -->
 <div id="mapmenu-usa" class="popup selectmenu">
-	<svg class="closebutton" onclick="closeNotification(this)" width="24" height="24">
-		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
-		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
-		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
-	</svg>
+<?php include './html/closebutton.html'; ?>
 	<h2>USA Maps</h2>
 	<a class="selectmenu-split">2020</a>
 	<a class="selectmenu-button" href="./?t=2020_presidential">Presidential</a>
@@ -461,11 +411,7 @@ if($mobile === false) {
 
 <!-- USA Historical Maps -->
 <div id="mapmenu-usa-historical" class="popup selectmenu">
-	<svg class="closebutton" onclick="closeNotification(this)" width="24" height="24">
-		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
-		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
-		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
-	</svg>
+<?php include './html/closebutton.html'; ?>
 	<h2>USA Historical Maps</h2>
 	<a class="selectmenu-button" href="./?t=2018_congress">Congress 2018</a>
 	<a class="selectmenu-button" href="./?t=2016_presidential_county">Presidential County 2016</a>
@@ -485,11 +431,7 @@ if($mobile === false) {
 
 <!-- Mock Maps -->
 <div id="mapmenu-lte" class="popup selectmenu">
-	<svg class="closebutton" onclick="closeNotification(this)" width="24" height="24">
-		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
-		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
-		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
-	</svg>
+<?php include './html/closebutton.html'; ?>
 	<h2>LTE</h2>
 	<a class="selectmenu-button" href="./?t=LTE_presidential">Presidential</a>
 	<a class="selectmenu-button" href="./?t=LTE_senatorial">Senatorial</a>
@@ -498,11 +440,7 @@ if($mobile === false) {
 
 <!-- Maps menu -->
 <div id="mapmenu" class="popup selectmenu">
-	<svg class="closebutton" onclick="closeNotification(this)" width="24" height="24">
-		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
-		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
-		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
-	</svg>
+<?php include './html/closebutton.html'; ?>
 	<h2>Select Map</h2>
 	<a class="selectmenu-split">Countries</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("usa")'; >USA</a>
@@ -520,21 +458,13 @@ if($mobile === false) {
 </div> 
 
 <div id="notification" class="popup">
-	<svg class="closebutton" onclick="closeNotification(this)" width="24" height="24">
-		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
-		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
-		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
-	</svg>
+<?php include './html/closebutton.html'; ?>
 	<h3 id="notification-title"></h3>
 	<p id="notification-message"></p>
 </div>
 
 <div id="share" class="popup">
-	<svg id="shareclose" class="closebutton" onclick="closeNotification(this)" width="24" height="24">
-		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
-		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
-		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
-	</svg>
+<?php include './html/closebutton.html'; ?>
 	<h3>Share Link</h3>
 	<div id="shareurl"></div>
 	<br>
@@ -547,11 +477,7 @@ if($mobile === false) {
 </div>
 
 <div id="loadmenu" class="popup">
-	<svg id="loadmenuclose" class="closebutton" onclick="closeNotification(this)" width="24" height="24">
-		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
-		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
-		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
-	</svg>
+<?php include './html/closebutton.html'; ?>
 	<h2>Load From File</h2>
 	<p>Select a yapms file to load</p>
 	<form action="load.php" method="post" enctype="multipart/form-data">
@@ -562,11 +488,7 @@ if($mobile === false) {
 </div>
 
 <div id="versioninfo" class="popup">
-	<svg id="shareclose" class="closebutton" onclick="closeNotification(this)" width="24" height="24">
-		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
-		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
-		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
-	</svg>
+<?php include './html/closebutton.html'; ?>
 	<h2>Version Info</h2>
 	<a id="versioninfo-text"></a>
 </div>
