@@ -86,7 +86,7 @@
 		?>
 	</style>
 
-	<link async rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 
 	<!-- google ads -->
 <?php
@@ -606,6 +606,6 @@ if($mobile === false) {
 	}
 ?>
 <script src="./src/html2canvas.min.js"></script>
-
+<script src="./src/deferedImages.js"></script>
 </body>
 </html>
