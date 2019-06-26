@@ -1,4 +1,4 @@
-var currentCache = 'v0.23.12';
+var currentCache = 'v0.23.13';
 
 function swLog(message) {
 	console.log('SW' + currentCache + ': ' + message);
@@ -31,6 +31,7 @@ self.addEventListener('install', function(event) {
 				'./app/?t=1980_presidential',
 				'./app/?t=1976_presidential',
 				'./app/?t=1972_presidential',
+				'./app/?t=1904_presidential',
 
 				'./app/?t=2018_congress',
 
