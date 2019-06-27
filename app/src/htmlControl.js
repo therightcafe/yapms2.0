@@ -209,7 +209,7 @@ function terminalPalette() {
 	setChartBorderStyle(2, '#ffffff');
 	setTextStyle('white', 'bold');
 	setMapStyle('white', 1.5);
-	setSideBarColor('#eeeeee');
+	setSideBarColor('black');
 
 	setClickButtonColor('#000000');
 	setClickButtonTextColor('#ffffff');
@@ -236,12 +236,12 @@ function lightPalette() {
 	setTossupColor('#696969');
 	setMapStyle('#dcdcdc', 1.5);
 
-	setSideBarColor('#2b2e33');
+	setSideBarColor('#3b3e43');
 
 	setTextStyle('white', 'normal');
 	setChartBorderStyle(2, 'black');
 	
-	setClickButtonColor('#2b2e33');
+	setClickButtonColor('#3b3e43');
 	setClickButtonTextColor('white');
 	setMenuColor('#000000');
 	
