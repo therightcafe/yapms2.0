@@ -195,6 +195,7 @@ function darkPalette() {
 	chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
 	chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
 	setChart(chartType, chartPosition);
+	countVotes();
 	verifyMap();
 	previousPalette = darkPalette;
 }
@@ -223,6 +224,7 @@ function terminalPalette() {
 	chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
 	chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
 	setChart(chartType, chartPosition);
+	countVotes();
 	verifyMap();
 	previousPalette = terminalPalette;
 }
@@ -253,6 +255,7 @@ function lightPalette() {
 	chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
 	chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
 	setChart(chartType, chartPosition);
+	countVotes();
 	verifyMap();
 	previousPalette = lightPalette;
 }
@@ -282,6 +285,7 @@ function contrastPalette() {
 	chartBarScales.yAxes[0].ticks.fontColor = '#000000';
 	chartBarScales.xAxes[0].ticks.fontColor = '#000000';
 	setChart(chartType, chartPosition);
+	countVotes();
 	verifyMap();
 	previousPalette = contrastPalette;
 }
@@ -313,6 +317,7 @@ function metallicPalette() {
 	chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
 	chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
 	setChart(chartType, chartPosition);
+	countVotes();
 	verifyMap();
 	previousPalette = metallicPalette;
 }
@@ -344,6 +349,7 @@ function toWinPalette() {
 	chartBarScales.yAxes[0].ticks.fontColor = '#000000';
 	chartBarScales.xAxes[0].ticks.fontColor = '#000000';
 	setChart(chartType, chartPosition);
+	countVotes();
 	verifyMap();
 	previousPalette = toWinPalette;
 }

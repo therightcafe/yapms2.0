@@ -6,3 +6,4 @@
 .htaccess
 .bash_history
 /app/maps/*
+/app/src/back-html2canvas.min.js
