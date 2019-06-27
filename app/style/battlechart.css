@@ -10,8 +10,7 @@
 #battlechartright {
 	display: flex;
 	flex-direction: column;
-	border: 1px solid black;
-	border-radius: 24px;
+	border: 0px solid black;
 	overflow: hidden;
 	flex: 1 1;
 	margin: 0px;

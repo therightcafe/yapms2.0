@@ -63,6 +63,7 @@ function loadMapFromId(id) {
 		case "1980_presidential":
 		case "1976_presidential":
 		case "1972_presidential":
+		case "1904_presidential":
 		case "2016_presidential_county":
 			loadPresetMap(id);
 			break;
@@ -416,9 +417,8 @@ function loadSavedMap(data) {
 			var voteCount = parseInt(stateData[stateData.length - 2]);
 			state.setVoteCount(voteCount, updateText);	
 			
-
 			// if its a primary map
-			if(save_type === "primary") {
+			if(save_type === 'primary' || save_type === 'proportional') {
 				var majorityCandidate = "Tossup";
 				var majorityVoteCount = 0;
 				var state = states.find(state => state.name === stateData[0]);

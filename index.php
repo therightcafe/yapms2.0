@@ -27,7 +27,6 @@
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132710089-1"></script>
 	<script>
 		var host = window.location.hostname;
-		console.log(host);
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
@@ -39,17 +38,6 @@
 	
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 	<link rel="stylesheet" type="text/css" href="style.css">
-
-<!--
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	<script>
-	     (adsbygoogle = window.adsbygoogle || []).push({
-		  google_ad_client: "ca-pub-1660456925957249",
-		  enable_page_level_ads: true
-	     });
-	</script>	
--->
-
 </head>
 
 <body>
@@ -434,5 +422,16 @@
 		<a href="https://privacypolicies.com/privacy/view/5e9b5eee7febd2d29c0ec896e1ac90ef">Privacy</a>
 	</div>
 -->
+<script>
+	if('serviceWorker' in navigator) {
+		navigator.serviceWorker
+		.register('./sw.js')
+		.then(function(a) {
+			console.log('SW: registered');
+		}, function(err) {
+			console.log('SW: register error... ', err);
+		});
+	}
+</script>
 </body>
 </html>

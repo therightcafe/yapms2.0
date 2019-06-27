@@ -1,6 +1,7 @@
 html {
 	background-color: black;
 	font-family: 'Roboto';
+	font-display: auto;
 	height: 100%;
 	width: 100%;
 	padding: 0px;
@@ -123,7 +124,6 @@ button {
 	margin-bottom: 10px;
 	margin-right: 10px;
 	display: none;
-	background-image: url('https://www.yapms.com/app/res/lte.jpg');
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -136,7 +136,6 @@ button {
 	margin-bottom: 10px;
 	margin-right: 10px;
 	display: none;
-	background-image: url('https://testing.yapms.com/app/res/redeagletv.png');
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
