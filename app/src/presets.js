@@ -121,7 +121,7 @@ function loadPresetMajors() {
 // French parties
 function loadPresetFrance() {
 	var lrem = new Candidate('LREM', 
-		['#FFEB00', '#FFEB00', '#FFEB00', '#FFEB00']);
+		['#ccb800', '#ccb800', '#ccb800', '#ccb800']);
 	var rn = new Candidate('RN',
 		['#0D378A', '#0D378A', '#0D378A', '#0D378A']);
 	var eelv = new Candidate('EÉLV',
@@ -153,7 +153,7 @@ function loadPresetGermany() {
 	var afd = new Candidate('AfD',
 		['#009EE0', '#009EE0', '#009EE0', '#009EE0']);
 	var fdp = new Candidate('FDP',
-		['#FFE300', '#FFE300', '#FFE300', '#FFE300']);
+		['#dec200', '#dec200', '#dec200', '#dec200']);
 	var dl = new Candidate('LINKE',
 		['#BE3075', '#BE3075', '#BE3075', '#BE3075']);
 
@@ -203,7 +203,7 @@ function loadPresetUK() {
 	var con = new Candidate('CON', 
 		['#0087DC', '#0087DC', '#0087DC', '#0087DC']);
 	var snp = new Candidate('SNP',
-		['#FFFF00', '#FFFF00', '#FFFF00', '#FFFF00']);
+		['#cccc00', '#cccc00', '#cccc00', '#cccc00']);
 	var chuk = new Candidate('CHUK',
 		['#222221', '#222221', '#222221', '#222221']);
 	var ukip = new Candidate('UKIP',

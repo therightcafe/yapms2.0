@@ -178,7 +178,7 @@ function darkPalette() {
 	setTossupColor('#6b6e73');
 	setMapStyle('#181922', 1.5);
 	setTextStyle('white', 'normal');
-	setChartBorderStyle(2, '#000000');
+	setChartBorderStyle(1, '#2b2e33');
 	setSideBarColor('#2b2e33');
 	
 	setClickButtonColor('#2b2e33');
@@ -241,7 +241,7 @@ function lightPalette() {
 	setSideBarColor('#3b3e43');
 
 	setTextStyle('white', 'normal');
-	setChartBorderStyle(2, 'black');
+	setChartBorderStyle(1, '#3b3e43');
 	
 	setClickButtonColor('#3b3e43');
 	setClickButtonTextColor('white');
@@ -269,8 +269,7 @@ function contrastPalette() {
 	setTossupColor('#36454f');
 	setMapStyle('#f8f9fa', 1.5);
 	setTextStyle('white', 'bold');
-	setChartBorderStyle(2, 'black');
-	setChartBorderStyle(2, 'white');
+	setChartBorderStyle(1, '#fafafa');
 	setSideBarColor('#fafafa');
 
 	setClickButtonColor('#fafafa');
@@ -302,7 +301,7 @@ function metallicPalette() {
 	setTossupColor('#808080');
 	setMapStyle('black', 1.5);
 	setTextStyle('white', 'normal');
-	setChartBorderStyle(2, 'black');
+	setChartBorderStyle(1, '#33353b');
 	setSideBarColor('#33353b');
 	
 	setClickButtonColor('white');
@@ -334,7 +333,7 @@ function toWinPalette() {
 	setTossupColor('#bbaa90');
 	setMapStyle('#fffbf2', 1);
 	setTextStyle('white', 'bold');
-	setChartBorderStyle(2, '#f2eee6');
+	setChartBorderStyle(1, '#fafafa');
 	setSideBarColor('#fafafa');
 	
 	setClickButtonColor('#fafafa');
