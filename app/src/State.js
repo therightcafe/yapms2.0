@@ -287,8 +287,9 @@ class State {
 		if(this.candidate === 'Tossup') {
 			this.colorValue = tossupColor;
 		}
-
-		if(candidates[this.candidate].colors) {
+		
+		if(candidates[this.candidate].colors !== undefined && 
+			candidates[this.candidate].colors !== null) {
 			// get color
 			var color = candidates[this.candidate].colors[this.colorValue];
 			// set color

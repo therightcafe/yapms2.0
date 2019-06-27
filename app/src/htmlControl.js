@@ -173,20 +173,19 @@ function darkPalette() {
 	var body = document.getElementById('application');
 	body.style.backgroundColor = '#181922';
 	body.style.backgroundImage  = '';
-	
-	var legend = document.getElementById('legend-div');
-	legend.style.borderColor = '#2f3136';
-	
+
 	setDisableColor('#212326');
-	setTossupColor('#bbb7b2');
-	setMapStyle('black', 1.5);
-	setTextStyle('black', 'normal');
-	setChartBorderStyle(2, 'black');
+	setTossupColor('#6b6e73');
+	setMapStyle('#181922', 1.5);
+	setTextStyle('white', 'normal');
+	setChartBorderStyle(2, '#000000');
 	setSideBarColor('#2b2e33');
 	
-	setClickButtonColor('#bbb7b2');
+	setClickButtonColor('#2b2e33');
+	setClickButtonColor('#ffffff');
 	setClickButtonTextColor('#000000');
 	setMenuColor('#2f3136');
+	setMenuColor('#000000');
 
 	setBorderStyle('#000000', 7.0);
 
@@ -204,11 +203,7 @@ function terminalPalette() {
 	var body = document.getElementById('application');
 	body.style.backgroundColor = '#000000';
 	body.style.backgroundImage  = '';
-	
-	var legend = document.getElementById('legend-div');
-	legend.style.borderColor = '#2f3136';
 
-	//setDisableColor('#bfbfbf');
 	setDisableColor('#bcc8d9');
 	setTossupColor('black');
 	setChartBorderStyle(2, '#ffffff');
@@ -234,24 +229,21 @@ function terminalPalette() {
 
 function lightPalette() {
 	var body = document.getElementById('application');
-	body.style.backgroundColor = '#3d4147';
+	body.style.backgroundColor = '#dcdcdc';
 	body.style.backgroundImage  = '';
-	
-	var legend = document.getElementById('legend-div');
-	legend.style.borderColor = '#202225';
 
 	setDisableColor('#212326');
-	setTossupColor('#bbb7b2');
-	setMapStyle('black', 1.5);
+	setTossupColor('#696969');
+	setMapStyle('#dcdcdc', 1.5);
 
 	setSideBarColor('#2b2e33');
 
-	setTextStyle('black', 'normal');
+	setTextStyle('white', 'normal');
 	setChartBorderStyle(2, 'black');
 	
-	setClickButtonColor('#bbb7b2');
-	setClickButtonTextColor('#000000');
-	setMenuColor('#2b2e33');
+	setClickButtonColor('#2b2e33');
+	setClickButtonTextColor('white');
+	setMenuColor('#000000');
 	
 	setBorderStyle('#000000', 6.0);
 	
@@ -269,16 +261,13 @@ function contrastPalette() {
 	var body = document.getElementById('application');
 	body.style.backgroundColor = '#f8f9fa';
 	body.style.backgroundImage  = '';
-
-	var legend = document.getElementById('legend-div');
-	legend.style.borderColor = '#151515';
 	
 	setDisableColor('#212326');
-	setTossupColor('#ded9d3');
-	setMapStyle('black', 1.5);
-	setTextStyle('black', 'normal');
+	setTossupColor('#36454f');
+	setMapStyle('#f8f9fa', 1.5);
+	setTextStyle('white', 'bold');
 	setChartBorderStyle(2, 'black');
-	setSideBarColor('#cdcdcd');
+	setChartBorderStyle(2, 'white');
 	setSideBarColor('#fafafa');
 
 	setClickButtonColor('#fafafa');
@@ -300,24 +289,21 @@ function contrastPalette() {
 function metallicPalette() {
 	var body = document.getElementById('application');
 	//body.style.backgroundImage  = 'radial-gradient(#2f3136, #181922)';
-	body.style.backgroundImage  = 'linear-gradient(#333333, #000000)';
+	body.style.backgroundImage  = 'linear-gradient(#696969, #33353b)';
 
 	var menu = document.getElementById('menu-div');
 	menu.style.backgroundColor = '#2f3136'
 	
-	var legend = document.getElementById('legend-div');
-	legend.style.borderColor = '#2f3136';
-	
 	setDisableColor('#212326');
-	setTossupColor('#bbb7b2');
+	setTossupColor('#808080');
 	setMapStyle('black', 1.5);
-	setTextStyle('black', 'normal');
+	setTextStyle('white', 'normal');
 	setChartBorderStyle(2, 'black');
 	setSideBarColor('#33353b');
 	
-	setClickButtonColor('#bbb7b2');
-	setClickButtonTextColor('#000000');
-	setMenuColor('#33353b');
+	setClickButtonColor('white');
+	setClickButtonTextColor('black');
+	setMenuColor('black');
 	
 	setBorderStyle('#000000', 6.0);
 
@@ -338,9 +324,6 @@ function toWinPalette() {
 
 	var menu = document.getElementById('menu-div');
 	menu.style.backgroundColor = '#202020';
-	
-	var legend = document.getElementById('legend-div');
-	legend.style.borderColor = '#202020';
 
 	setDisableColor('#dddddd');
 	setTossupColor('#bbaa90');
