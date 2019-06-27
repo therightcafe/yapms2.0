@@ -87,9 +87,8 @@
 	</style>
 
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-
-	<!-- google ads -->
 <?php
+/*
 if($mobile === false) {
 	echo '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<script>
@@ -100,6 +99,7 @@ if($mobile === false) {
 	</script>';
 }
 ?>
+*/
 </head>
 
 <body id="body" onresize="onResize()">
