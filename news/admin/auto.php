@@ -12,6 +12,7 @@ function autoSubmit($preTitle, $url) {
 		echo '<li><a href=' . $entry->link . ' title=' . $entry->title . '>'. $entry->title . '</a></li>' . $entry->description;
 
 		$title = $preTitle . $entry->title;
+		echo $title . '<br>';
 		$author = 'Congress';
 		$snippet = $entry->description;
 		$text = $entry->description;
