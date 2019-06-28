@@ -3,7 +3,7 @@ include 'dblogin.php';
 $sql = 'select title from articles';
 $titles = $dbh->query($sql);
 
-function autoSubmit($preTitle, $url) {
+function autoSubmit($preTitle, $url, $database) {
 	$content = file_get_contents($url);
 	$xml = new SimpleXMLElement($content);
 
@@ -32,10 +32,10 @@ function autoSubmit($preTitle, $url) {
 		if($skipUpload === false) {
 			$sql = 'insert into articles (title, author, published, upload, snippet, text, source, Featured) values (?,?,?,?,?,?,?,?)';
 			echo '<br>';
-			if($dbh === null) {
+			if($database === null) {
 				echo 'wronggg';
 			}
-			$stm = $dbh->prepare($sql);
+			$stm = $database->prepare($sql);
 
 			if($stm->execute([$title, $author, $published, date("Y-m-d H:i:s"), $snippet, $text, $source, $featured])) {
 				echo 'sql query success...<br>';
@@ -51,8 +51,8 @@ function autoSubmit($preTitle, $url) {
 	echo '</ul><br>';
 }
 
-autoSubmit('Presidential Signature: ', 'https://www.congress.gov/rss/presented-to-president.xml');
-autoSubmit('House Floor: ', 'https://www.congress.gov/rss/house-floor-today.xml');
-autoSubmit('Senate Floor: ', 'https://www.congress.gov/rss/senate-floor-today.xml');
-autoSubmit('Popular Bill: ', 'https://www.congress.gov/rss/most-viewed-bills.xml');
+autoSubmit('Presidential Signature: ', 'https://www.congress.gov/rss/presented-to-president.xml', $dbh);
+autoSubmit('House Floor: ', 'https://www.congress.gov/rss/house-floor-today.xml', $dbh);
+autoSubmit('Senate Floor: ', 'https://www.congress.gov/rss/senate-floor-today.xml', $dbh);
+autoSubmit('Popular Bill: ', 'https://www.congress.gov/rss/most-viewed-bills.xml', $dbh);
 ?>
