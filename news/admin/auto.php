@@ -9,7 +9,7 @@ function autoSubmit($preTitle, $url, $database, $titles) {
 
 	echo '<ul>';
 	foreach($xml->channel->item as $entry) {
-		echo '<li><a href=' . $entry->link . ' title=' . $entry->title . '>'. $entry->title . '</a></li>' . $entry->description;
+		echo '<li><a href=' . $entry->link . ' title=' . $entry->title . '>'. $entry->title . '</a></li>' . $entry->description . '<br>';
 
 		$title = $preTitle . $entry->title;
 		$author = 'Congress';
@@ -30,7 +30,6 @@ function autoSubmit($preTitle, $url, $database, $titles) {
 
 		if($skipUpload === false) {
 			$sql = 'insert into articles (title, author, published, upload, snippet, text, source, Featured) values (?,?,?,?,?,?,?,?)';
-			echo '<br>';
 			$stm = $database->prepare($sql);
 
 			if($stm->execute([$title, $author, $published, date("Y-m-d H:i:s"), $snippet, $text, $source, $featured])) {
