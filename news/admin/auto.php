@@ -40,7 +40,7 @@ foreach($xml->channel->item as $entry) {
 
 echo '<br> hellooo';
 
-$sql = 'select * from articles';
+$sql = 'select title from articles';
 
 $q = $dbh->query($sql);
 foreach($q as $row) {
