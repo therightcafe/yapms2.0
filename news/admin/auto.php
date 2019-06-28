@@ -42,7 +42,7 @@ echo '<br> hellooo';
 
 $sql = 'select * from articles';
 
-$q = $dbh->query($sql)
+$q = $dbh->query($sql);
 foreach($q as $row) {
 	echo $row['title'] . '<br>';
 }
