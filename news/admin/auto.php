@@ -42,13 +42,9 @@ echo '<br> hellooo';
 
 $sql = 'select * from articles';
 
-if($dbh->query($sql)) {
-	echo 'yes<br>';
-} else {
-	echo 'no<br>';
-}
+$q = $dbh->query($sql)
 foreach($q as $row) {
-	echo $row['title'] . ' aaaa <br>';
+	echo $row['title'] . '<br>';
 }
 
 
