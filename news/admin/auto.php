@@ -32,7 +32,9 @@ function autoSubmit($preTitle, $url) {
 		if($skipUpload === false) {
 			$sql = 'insert into articles (title, author, published, upload, snippet, text, source, Featured) values (?,?,?,?,?,?,?,?)';
 			echo '<br>';
-			echo $dbh;
+			if($dbh === null) {
+				echo 'wronggg';
+			}
 			$stm = $dbh->prepare($sql);
 
 			if($stm->execute([$title, $author, $published, date("Y-m-d H:i:s"), $snippet, $text, $source, $featured])) {
