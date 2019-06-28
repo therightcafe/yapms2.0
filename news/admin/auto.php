@@ -44,7 +44,7 @@ $sql = 'select * from articles';
 
 $dbh->query($sql);
 foreach($q as $row) {
-	echo $row['title'] . '<br>';
+	echo $row['title'] . ' aaaa <br>';
 }
 
 
