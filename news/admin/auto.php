@@ -21,7 +21,7 @@ foreach($xml->channel->item as $entry) {
 	$title = 'Presidential Signature: ' . $entry->title;
 	$author = 'Congress';
 	$snippet = $entry->description;
-	$text = $entry->description;
+	$text = $entry->description . '<br> <iframe src="' . $entry->link . '"></iframe>';
 	$published = strtotime($xml->channel->pubDate);
 	$published = date('Y-m-d', $published);
 	$source = $entry->link;
