@@ -41,7 +41,7 @@ foreach($xml->channel->item as $entry) {
 
 		echo '<br>';
 
-		$stm $dbh->prepare($sql);
+		$stm = $dbh->prepare($sql);
 
 		if($stm->execute([$title, $author, $published, date("Y-m-d H:i:s"), $snippet, $text, $source, $featured])) {
 			echo 'sql query success...<br>';
