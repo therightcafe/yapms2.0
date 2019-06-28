@@ -38,6 +38,8 @@ foreach($xml->channel->item as $entry) {
 	echo $sql;
 }
 
+echo '<br> hellooo';
+
 $sql = 'select * from articles';
 
 $dbh->query($sql);
