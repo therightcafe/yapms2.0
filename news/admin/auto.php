@@ -12,7 +12,6 @@ function autoSubmit($preTitle, $url, $database) {
 		echo '<li><a href=' . $entry->link . ' title=' . $entry->title . '>'. $entry->title . '</a></li>' . $entry->description;
 
 		$title = $preTitle . $entry->title;
-		echo $title . '<br>';
 		$author = 'Congress';
 		$snippet = $entry->description;
 		$text = $entry->description;
@@ -32,9 +31,6 @@ function autoSubmit($preTitle, $url, $database) {
 		if($skipUpload === false) {
 			$sql = 'insert into articles (title, author, published, upload, snippet, text, source, Featured) values (?,?,?,?,?,?,?,?)';
 			echo '<br>';
-			if($database === null) {
-				echo 'wronggg';
-			}
 			$stm = $database->prepare($sql);
 
 			if($stm->execute([$title, $author, $published, date("Y-m-d H:i:s"), $snippet, $text, $source, $featured])) {
