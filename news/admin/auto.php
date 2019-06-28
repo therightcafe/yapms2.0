@@ -3,7 +3,7 @@ include 'dblogin.php';
 $sql = 'select title from articles';
 $titles = $dbh->query($sql);
 
-function autoSubmit($preTitle, $url, $database) {
+function autoSubmit($preTitle, $url, $database, $titles) {
 	$content = file_get_contents($url);
 	$xml = new SimpleXMLElement($content);
 
@@ -48,8 +48,8 @@ function autoSubmit($preTitle, $url, $database) {
 	echo '</ul><br>';
 }
 
-autoSubmit('Presidential Signature: ', 'https://www.congress.gov/rss/presented-to-president.xml', $dbh);
-autoSubmit('House Floor: ', 'https://www.congress.gov/rss/house-floor-today.xml', $dbh);
-autoSubmit('Senate Floor: ', 'https://www.congress.gov/rss/senate-floor-today.xml', $dbh);
-autoSubmit('Popular Bill: ', 'https://www.congress.gov/rss/most-viewed-bills.xml', $dbh);
+autoSubmit('Presidential Signature: ', 'https://www.congress.gov/rss/presented-to-president.xml', $dbh, $titles);
+autoSubmit('House Floor: ', 'https://www.congress.gov/rss/house-floor-today.xml', $dbh, $titles);
+autoSubmit('Senate Floor: ', 'https://www.congress.gov/rss/senate-floor-today.xml', $dbh, $titles);
+autoSubmit('Popular Bill: ', 'https://www.congress.gov/rss/most-viewed-bills.xml', $dbh, $titles);
 ?>
