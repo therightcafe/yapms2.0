@@ -22,6 +22,7 @@ function autoSubmit($preTitle, $url, $database) {
 
 		$skipUpload = false;
 		foreach($titles as $row) {
+			echo $title . ' == ' . $row['title'] . '<br>';
 			if($title === $row['title']) {
 				$skipUpload = true;
 				break;	
