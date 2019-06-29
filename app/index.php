@@ -231,6 +231,17 @@ if($mobile === false) {
 	<a class="selectmenu-button" onclick="disableNews()">Disable News</a>
 </div>
 
+<div id="customcolormenu" class="popup selectmenu">
+<?php include './html/closebutton.html'; ?>
+	<h2>Custom Color Edit</h2>
+	<input id="custom-color-name" type="hidden">
+	<a class="selectmenu-button">Solid <input id="solidcustom" type="color"></a>
+	<a class="selectmenu-button">Likely <input id="likelycustom" type="color"></a>
+	<a class="selectmenu-button">Leaning <input id="leaningcustom" type="color"></a>
+	<a class="selectmenu-button">Tilting<input id="tiltingcustom" type="color"></a>
+	<a class="selectmenu-button" onclick="saveCustomColors(); displayAddCandidateMenu()">Set</a>
+</div>
+
 <div id="addcandidatemenu" class="popup selectmenu">
 <?php include './html/closebutton.html'; ?>
 	<h2>Add Candidate</h2>
@@ -239,6 +250,30 @@ if($mobile === false) {
 	<a class="selectmenu-button" onclick='setColors("blue")'>Blue Colors</a>
 	<a class="selectmenu-button" onclick='setColors("green")'>Green Colors</a>
 	<a class="selectmenu-button" onclick='setColors("yellow")'>Yellow Colors</a>
+	<div class="selectmenu-button-double">
+		<a class="selectmenu-button-left selectmenu-button"
+			onclick='setColors("custom1")'>Custom 1</a>	
+		<a class="selectmenu-button-right selectmenu-button fas fa-cog"
+			onclick='displayCustomColorMenu("custom1")'></a>
+	</div>
+	<div class="selectmenu-button-double">
+		<a class="selectmenu-button-left selectmenu-button"
+			onclick='setColors("custom2")'>Custom 2</a>	
+		<a class="selectmenu-button-right selectmenu-button fas fa-cog"
+			onclick='displayCustomColorMenu("custom2")'></a>
+	</div>
+	<div class="selectmenu-button-double">
+		<a class="selectmenu-button-left selectmenu-button"
+			onclick='setColors("custom3")'>Custom 3</a>	
+		<a class="selectmenu-button-right selectmenu-button fas fa-cog"
+			onclick='displayCustomColorMenu("custom3")'></a>
+	</div>
+	<div class="selectmenu-button-double">
+		<a class="selectmenu-button-left selectmenu-button"
+			onclick='setColors("custom4")'>Custom 4</a>	
+		<a class="selectmenu-button-right selectmenu-button fas fa-cog"
+			onclick='displayCustomColorMenu("custom4")'></a>
+	</div>
 	<a class="selectmenu-button">Solid <input id="solid" type="color"></a>
 	<a class="selectmenu-button">Likely <input id="likely" type="color"></a>
 	<a class="selectmenu-button">Leaning <input id="leaning" type="color"></a>

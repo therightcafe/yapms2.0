@@ -165,8 +165,21 @@ function closeAllPopups() {
 }
 
 function displayMiscMenu(type) {
+	closeAllPopups();
 	var miscmenu = document.getElementById('miscmenu');
 	miscmenu.style.display = 'flex';
+}
+
+function displayCustomColorMenu(type) {
+	closeAllPopups();
+	var customColorName = document.getElementById('custom-color-name');
+	customColorName.value = type;
+	var miscmenu = document.getElementById('customcolormenu');
+	miscmenu.style.display = 'flex';
+	document.getElementById("solidcustom").value = cookies[type + 'solid'];
+	document.getElementById("likelycustom").value = cookies[type + 'likely'];
+	document.getElementById("leaningcustom").value = cookies[type + 'leaning'];
+	document.getElementById("tiltingcustom").value = cookies[type + 'tilting'];
 }
 
 function darkPalette() {

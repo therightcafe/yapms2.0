@@ -21,6 +21,20 @@ function initCandidates() {
 // i dont think this function call in needed
 initCandidates();
 
+function saveCustomColors() {
+	var customColorName = document.getElementById('custom-color-name');
+	var name = customColorName.value;
+	var solid = document.getElementById("solidcustom").value;
+	appendCookie(name + "solid", solid);	
+	var likely = document.getElementById("likelycustom").value;
+	appendCookie(name + "likely", likely);	
+	var leaning = document.getElementById("leaningcustom").value;
+	appendCookie(name + "leaning", leaning);	
+	var tilting = document.getElementById("tiltingcustom").value;
+	appendCookie(name + "tilting", tilting);
+	setColors(name);
+}
+
 // add candidate to the list
 // update map, chart and legend
 function addCandidate(name, solid, likely, leaning, tilting) {

@@ -1,7 +1,7 @@
 .popup {
 	display: none;
 	background-color: #ffffff;
-	border: 2px solid black;
+	border: 1px solid black;
 
 	padding: 4px;	
 	z-index: 10;

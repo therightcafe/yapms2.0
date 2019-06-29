@@ -28,4 +28,18 @@
 .selectmenu-button {
 	text-decoration: none;
 	color: black;
+	text-align: center;
+}
+
+.selectmenu-button-double {
+	display: flex;
+	flex-direction: row;
+}
+
+.selectmenu-button-left {
+	flex: 1 1;
+}
+
+.selectmenu-button-right {
+	border-left:  1px solid black;
 }

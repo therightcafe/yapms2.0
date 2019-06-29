@@ -1032,6 +1032,11 @@ function setColors(palette) {
 		likely.value = '#e8c84d';
 		leaning.value = '#ffe78a';
 		tilting.value = '#b8a252';
+	} else {
+		solid.value = cookies[palette + 'solid'];
+		likely.value = cookies[palette + 'likely'];
+		leaning.value = cookies[palette + 'leaning'];
+		tilting.value = cookies[palette + 'tilting'];
 	}
 }
 
@@ -1069,7 +1074,7 @@ function setChangeCandidate(oldCandidate, newCandidate) {
 function appendCookie(key, value) {
 	cookies[key] = value;
 	var cookie = "";
-	var expire = new Date(Date.now() + 60 * 1000 * 60 * 12 * 7).toString();
+	var expire = new Date(Date.now() + 60 * 1000 * 60 * 12 * 7 * 48).toString();
 	cookie = key + '=' + cookies[key] + ';' + expire + ';';
 	document.cookie = cookie;
 }
@@ -1121,6 +1126,8 @@ function start() {
 		loadPreset("classic");
 		loadMap('./res/usa_presidential.svg', 16, 1, 'usa_ec',"presidential", "open", null, {updateText: true});
 	}
+
+	loadCookies();
 }
 
 start();
