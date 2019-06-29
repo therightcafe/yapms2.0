@@ -1,4 +1,4 @@
-var currentCache = 'v0.25.0';
+var currentCache = 'v0.25.4';
 
 var cookies = {};
 
@@ -1074,7 +1074,7 @@ function setChangeCandidate(oldCandidate, newCandidate) {
 function appendCookie(key, value) {
 	cookies[key] = value;
 	var cookie = "";
-	var expire = new Date(Date.now() + 60 * 1000 * 60 * 12 * 7).toString();
+	var expire = new Date(Date.now() + 60 * 1000 * 60 * 12 * 7 * 7).toString();
 	cookie = key + '=' + cookies[key] + '; expires=' + expire + ';';
 	document.cookie = cookie;
 }
