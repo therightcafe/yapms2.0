@@ -1075,7 +1075,7 @@ function appendCookie(key, value) {
 	cookies[key] = value;
 	var cookie = "";
 	var expire = new Date(Date.now() + 60 * 1000 * 60 * 12 * 7).toString();
-	cookie = key + '=' + cookies[key] + ';' + expire + ';';
+	cookie = key + '=' + cookies[key] + '; expires=' + expire + ';';
 	document.cookie = cookie;
 }
 
