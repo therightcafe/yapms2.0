@@ -1074,7 +1074,7 @@ function setChangeCandidate(oldCandidate, newCandidate) {
 function appendCookie(key, value) {
 	cookies[key] = value;
 	var cookie = "";
-	var expire = new Date(Date.now() + 60 * 1000 * 60 * 12 * 7 * 48).toString();
+	var expire = new Date(Date.now() + 60 * 1000 * 60 * 12 * 7).toString();
 	cookie = key + '=' + cookies[key] + ';' + expire + ';';
 	document.cookie = cookie;
 }
