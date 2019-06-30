@@ -142,6 +142,7 @@ function displayModeMenu(type) {
 }
 
 function displayAddCandidateMenu(type) {
+	customColorBackground();
 	closeAllPopups();
 	var addcandidatemenu = document.getElementById('addcandidatemenu');
 	addcandidatemenu.style.display = 'flex';

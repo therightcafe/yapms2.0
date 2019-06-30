@@ -43,3 +43,32 @@
 .selectmenu-button-right {
 	border-left:  1px solid black;
 }
+
+.selectmenu-red {
+	font-weight: bold;
+	color: white;
+	background: linear-gradient(to right, #bf1d29, #ff5865, #ff8b98, #cf8980);
+}
+
+.selectmenu-blue {
+	font-weight: bold;
+	color: white;
+	background: linear-gradient(to right, #1c408c, #577ccc, #8aafff, #949bb3);
+}
+
+.selectmenu-green {
+	font-weight: bold;
+	color: white;
+	background: linear-gradient(to right, #1c8c28, #50c85e, #8aff97, #7a997e);
+}
+
+.selectmenu-yellow {
+	font-weight: bold;
+	color: white;
+	background: linear-gradient(to right, #e6b700, #e8c84d, #ffe78a, #b8a252);
+}
+
+.selectmenu-button-bold {
+	color: white;
+	font-weight: bold;
+}

@@ -246,30 +246,30 @@ if($mobile === false) {
 <?php include './html/closebutton.html'; ?>
 	<h2>Add Candidate</h2>
 	<a class="selectmenu-button">Name <input id="name" type="text"></a>
-	<a class="selectmenu-button" onclick='setColors("red")'>Red Colors</a>
-	<a class="selectmenu-button" onclick='setColors("blue")'>Blue Colors</a>
-	<a class="selectmenu-button" onclick='setColors("green")'>Green Colors</a>
-	<a class="selectmenu-button" onclick='setColors("yellow")'>Yellow Colors</a>
+	<a class="selectmenu-button selectmenu-red" onclick='setColors("red")'>Red Colors</a>
+	<a class="selectmenu-button selectmenu-blue" onclick='setColors("blue")'>Blue Colors</a>
+	<a class="selectmenu-button selectmenu-green" onclick='setColors("green")'>Green Colors</a>
+	<a class="selectmenu-button selectmenu-yellow" onclick='setColors("yellow")'>Yellow Colors</a>
 	<div class="selectmenu-button-double">
-		<a class="selectmenu-button-left selectmenu-button"
+		<a id="custom1button" class="selectmenu-button-left selectmenu-button selectmenu-button-bold"
 			onclick='setColors("custom1")'>Custom 1</a>	
 		<a class="selectmenu-button-right selectmenu-button fas fa-cog"
 			onclick='displayCustomColorMenu("custom1")'></a>
 	</div>
 	<div class="selectmenu-button-double">
-		<a class="selectmenu-button-left selectmenu-button"
+		<a id="custom2button" class="selectmenu-button-left selectmenu-button selectmenu-button-bold"
 			onclick='setColors("custom2")'>Custom 2</a>	
 		<a class="selectmenu-button-right selectmenu-button fas fa-cog"
 			onclick='displayCustomColorMenu("custom2")'></a>
 	</div>
 	<div class="selectmenu-button-double">
-		<a class="selectmenu-button-left selectmenu-button"
+		<a id="custom3button" class="selectmenu-button-left selectmenu-button selectmenu-button-bold"
 			onclick='setColors("custom3")'>Custom 3</a>	
 		<a class="selectmenu-button-right selectmenu-button fas fa-cog"
 			onclick='displayCustomColorMenu("custom3")'></a>
 	</div>
 	<div class="selectmenu-button-double">
-		<a class="selectmenu-button-left selectmenu-button"
+		<a id="custom4button" class="selectmenu-button-left selectmenu-button selectmenu-button-bold"
 			onclick='setColors("custom4")'>Custom 4</a>	
 		<a class="selectmenu-button-right selectmenu-button fas fa-cog"
 			onclick='displayCustomColorMenu("custom4")'></a>
@@ -333,7 +333,7 @@ if($mobile === false) {
 <?php include './html/closebutton.html'; ?>
 	<h2>Add Candidates</h2>	
 	<a class="selectmenu-split">Custom</a>
-	<a class="selectmenu-button" onclick='displayAddCandidateMenu();'>Add Custom</a>
+	<a class="selectmenu-button" onclick='customColorBackground(); displayAddCandidateMenu();'>Add Custom</a>
 	<a class="selectmenu-split">Preset</a>
 	<a class="selectmenu-button" onclick='loadPreset("tossup")'>Clear</a>
 	<a class="selectmenu-button" onclick='loadPreset("classic")'>R/D</a>

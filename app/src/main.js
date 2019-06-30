@@ -1,4 +1,4 @@
-var currentCache = 'v0.25.4';
+var currentCache = 'v0.25.5';
 
 var cookies = {};
 
@@ -1080,7 +1080,13 @@ function appendCookie(key, value) {
 }
 
 function loadCookies() {
-	console.log(cookies);
+	// preload all color cookies with black
+	for(var i = 1; i < 5; ++i) {
+		cookies['custom' + i + 'solid'] = '#000000';
+		cookies['custom' + i + 'likely'] = '#000000';
+		cookies['custom' + i + 'leaning'] = '#000000';
+		cookies['custom' + i + 'tilting'] = '#000000';
+	}
 	var decode = decodeURIComponent(document.cookie);
 	var loadedCookies = decode.split('; ');
 	for(var index in loadedCookies) {
@@ -1090,6 +1096,33 @@ function loadCookies() {
 		cookies[key] = result;
 	}
 	console.log(cookies);
+}
+
+function customColorBackground() {
+	var c1 = document.getElementById('custom1button');
+	c1.style.background = 'linear-gradient(to right,' +
+		cookies['custom1solid'] + ',' +
+		cookies['custom1likely'] + ',' +
+		cookies['custom1leaning'] + ',' +
+		cookies['custom1tilting'] + ')';
+	var c2 = document.getElementById('custom2button');
+	c2.style.background = 'linear-gradient(to right,' +
+		cookies['custom2solid'] + ',' +
+		cookies['custom2likely'] + ',' +
+		cookies['custom2leaning'] + ',' +
+		cookies['custom2tilting'] + ')';
+	var c3 = document.getElementById('custom3button');
+	c3.style.background = 'linear-gradient(to right,' +
+		cookies['custom3solid'] + ',' +
+		cookies['custom3likely'] + ',' +
+		cookies['custom3leaning'] + ',' +
+		cookies['custom3tilting'] + ')';
+	var c4 = document.getElementById('custom4button');
+	c4.style.background = 'linear-gradient(to right,' +
+		cookies['custom4solid'] + ',' +
+		cookies['custom4likely'] + ',' +
+		cookies['custom4leaning'] + ',' +
+		cookies['custom4tilting'] + ')';
 }
 
 function start() {
