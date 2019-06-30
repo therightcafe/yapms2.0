@@ -191,7 +191,7 @@ function darkPalette() {
 	setDisableColor('#212326');
 	setTossupColor('#6b6e73');
 	setMapStyle('#181922', 1.5);
-	setTextStyle('white', 'normal');
+	setTextStyle('white', 'bold');
 	setChartBorderStyle(1, '#2b2e33');
 	setSideBarColor('#2b2e33');
 	
@@ -254,7 +254,7 @@ function lightPalette() {
 
 	setSideBarColor('#3b3e43');
 
-	setTextStyle('white', 'normal');
+	setTextStyle('white', 'bold');
 	setChartBorderStyle(1, '#3b3e43');
 	
 	setClickButtonColor('#3b3e43');
@@ -314,7 +314,7 @@ function metallicPalette() {
 	setDisableColor('#212326');
 	setTossupColor('#808080');
 	setMapStyle('black', 1.5);
-	setTextStyle('white', 'normal');
+	setTextStyle('white', 'bold');
 	setChartBorderStyle(1, '#33353b');
 	setSideBarColor('#33353b');
 	
@@ -506,7 +506,7 @@ function setBattleHorizontal() {
 	battlechart.style.flexDirection = 'column';
 	battlechart.style.height = '75%';
 	battlechart.style.margin = '5%';
-
+	
 	var battlechartmid = document.getElementById('battlechartmid');
 	battlechartmid.setAttribute('transform', 'rotate(90)');
 	battlechartmid.style.height = '100%';

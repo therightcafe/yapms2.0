@@ -1,4 +1,4 @@
-var currentCache = 'v0.25.6';
+var currentCache = 'v0.25.7';
 
 var cookies = {};
 
@@ -27,6 +27,7 @@ var chartPolarScales;
 var chartRadarScales;
 
 var chartLeans = true;
+var chartLabels = true;
 
 // pan object
 var panobject;
@@ -527,7 +528,7 @@ function toggleLegendLeans() {
 }
 
 function toggleChartLabels() {
-
+	chartLabels = !chartLabels;
 	if(chartOptions.plugins.datalabels.display != false) {
 		chartOptions.plugins.datalabels.display = false;
 	} else {
@@ -542,6 +543,7 @@ function toggleChartLabels() {
 function toggleChartLeans() {
 	chartLeans = !chartLeans;
 	rebuildChart();
+	updateBattleChart();
 }
 
 function setMode(set) {
