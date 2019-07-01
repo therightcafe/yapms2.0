@@ -320,7 +320,7 @@ function contrastPalette() {
 	setClickButtonTextColor('#000000');
 	setMenuColor('#222222');
 	
-	setBorderStyle('#000000', 6.0);
+	setBorderStyle('#f8f9fa', 6.0);
 
 	chartOptions.plugins.datalabels.borderWidth = 2;
 	chartOptions.plugins.datalabels.borderRadius = 4;
