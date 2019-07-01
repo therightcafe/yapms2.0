@@ -28,6 +28,7 @@ foreach($content->find('article') as $article) {
 	// if article already exists skip it
 	$skipUpload = false;
 	foreach($titles as $row) {
+		echo $title . ' == ' . $row;
 		if($title === $row) {
 			$skipUpload = true;
 			break;	
