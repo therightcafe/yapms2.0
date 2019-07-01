@@ -29,7 +29,7 @@ foreach($content->find('article') as $article) {
 	$skipUpload = false;
 	foreach($titles as $row) {
 		echo $title . ' == ' . $row['title'] . '<br>';;
-		if($title === $row) {
+		if($title === $row['title']) {
 			$skipUpload = true;
 			break;	
 		}
