@@ -64,7 +64,7 @@ foreach($content->find('article') as $article) {
 	}
 
 	$sql = 'insert into articles (title, author, published, upload, snippet, text, source, Featured) values (?,?,?,?,?,?,?,?)';
-	$stm = $database->prepare($sql);
+	$stm = $dbh->prepare($sql);
 
 	if($stm->execute([$title, $author, $published, date("Y-m-d H:i:s"), $snippet, $text, $source, $featured])) {
 		echo 'sql query success...<br>';
