@@ -539,8 +539,11 @@ function setBattleHorizontal() {
 	battlechart.style.height = '75%';
 	battlechart.style.margin = '5%';
 	
+	var battlechartmidpoly = document.getElementById('battlechartmidpoly');
+	battlechartmidpoly.setAttribute("transform", "translate(20 0) rotate(90)");
+
 	var battlechartmid = document.getElementById('battlechartmid');
-	battlechartmid.setAttribute('transform', 'rotate(90)');
+	//battlechartmid.setAttribute('transform', 'rotate(90)');
 	battlechartmid.style.height = '100%';
 	battlechartmid.style.width = '';
 
@@ -588,9 +591,12 @@ function unsetBattleHorizontal() {
 	} else {
 		battlechart.style.width = '50%';
 	}
+	
+	var battlechartmidpoly = document.getElementById('battlechartmidpoly');
+	battlechartmidpoly.setAttribute("transform", "translate(0 0) rotate(0)");
 
 	var battlechartmid = document.getElementById('battlechartmid');
-	battlechartmid.setAttribute('transform', 'rotate(0)');
+//	battlechartmid.setAttribute('transform', 'rotate(0)');
 	battlechartmid.style.height = '';
 	battlechartmid.style.width = '100%';
 
