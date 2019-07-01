@@ -229,7 +229,8 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year, onLoad, op
 		updateChart();
 		updateLegend();
 		
-		previousPalette();
+		setPalette(cookies['theme']);
+		//previousPalette();
 		
 		if(loadConfig.filename === './res/lte_house.svg') {
 			updateLTEHouse();

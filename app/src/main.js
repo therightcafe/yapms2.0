@@ -1,4 +1,4 @@
-var currentCache = 'v0.25.7';
+var currentCache = 'v0.26.0';
 
 var cookies = {};
 
@@ -688,8 +688,6 @@ function verifyMap() {
 			// the candidate the state should be controle by
 			var shouldCandidate = candidates[state.getCandidate()].name;
 
-			//alert(shouldCandidate);
-
 			// if these values differ, change the state to tossup
 			if(currentCandidate !== shouldCandidate) {
 				state.setColor('Tossup', tossupColor);
@@ -1079,6 +1077,7 @@ function appendCookie(key, value) {
 	var expire = new Date(Date.now() + 60 * 1000 * 60 * 12 * 7 * 100).toString();
 	cookie = key + '=' + cookies[key] + '; expires=' + expire + ';';
 	document.cookie = cookie;
+	console.log('append cookie: key=' + key + ' value=' + value);
 }
 
 function loadCookies() {
@@ -1089,6 +1088,7 @@ function loadCookies() {
 		cookies['custom' + i + 'leaning'] = '#000000';
 		cookies['custom' + i + 'tilting'] = '#000000';
 	}
+	cookies['theme'] = 'dark';
 	var decode = decodeURIComponent(document.cookie);
 	var loadedCookies = decode.split('; ');
 	for(var index in loadedCookies) {
@@ -1097,7 +1097,6 @@ function loadCookies() {
 		var result = cookie[1]
 		cookies[key] = result;
 	}
-	console.log(cookies);
 }
 
 function customColorBackground() {
@@ -1131,6 +1130,8 @@ function start() {
 	initCandidates();
 	initChart();
 	setChart('horizontalbattle');
+	loadCookies();
+
 	if(php_load_map === true) {
 		$.ajax({
 			url: "./maps/" + php_load_map_id,
@@ -1161,8 +1162,6 @@ function start() {
 		loadPreset("classic");
 		loadMap('./res/usa_presidential.svg', 16, 1, 'usa_ec',"presidential", "open", null, {updateText: true});
 	}
-
-	loadCookies();
 }
 
 start();
