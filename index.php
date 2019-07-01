@@ -223,59 +223,10 @@
 </script>
 -->
 	
-	<div class="map-type-box">
-	<div class="map-type-header">
-		Canada
-	</div>
-	<div>
-		<a href="./app/?t=Canada_provinces">
-			<div class="map-button">
-				Provinces
-			</div>
-		</a>
-		<a href="./app/?t=Canada_constituencies">
-			<div class="map-button">
-				Constituencies
-			</div>
-		</a>
-	</div>
-	</div>
 
 	<div class="map-type-box">
 	<div class="map-type-header">
-		Germany
-	</div>
-	<div>
-		<a href="./app/?t=Germany_states">
-			<div class="map-button">
-				States
-			</div>
-		</a>
-		<a href="./app/?t=Germany_constituencies">
-			<div class="map-button">
-				Constituencies
-			</div>
-		</a>
-		
-	</div>
-	</div>
-	
-	<div class="map-type-box">
-	<div class="map-type-header">
-		United Kingdom
-	</div>
-	<div>
-		<a href="./app/?t=UnitedKingdom_constituencies">
-			<div class="map-button">
-				Constituencies
-			</div>
-		</a>
-	</div>
-	</div>
-
-	<div class="map-type-box">
-	<div class="map-type-header">
-		USA - Historical Maps
+		USA - Historical - Post WW2
 	</div>
 	<div>	
 		<a href="./app/?t=2016_presidential">
@@ -373,7 +324,13 @@
 				1948 Presidential
 			</div>
 		</a><br>
+		</div>
+		</div>
 
+		<div class="map-type-box">
+		<div class="map-type-header">
+			USA - Historical - Pre WW2
+		</div>
 		<a href="./app/?t=1944_presidential">
 			<div class="map-button">
 				1944 Presidential
@@ -469,6 +426,58 @@
 				1864 Presidential
 			</div>
 		</a><br>
+	</div>
+	</div>
+
+	<br>
+
+	<div class="map-type-box">
+	<div class="map-type-header">
+		Canada
+	</div>
+	<div>
+		<a href="./app/?t=Canada_provinces">
+			<div class="map-button">
+				Provinces
+			</div>
+		</a>
+		<a href="./app/?t=Canada_constituencies">
+			<div class="map-button">
+				Constituencies
+			</div>
+		</a>
+	</div>
+	</div>
+
+	<div class="map-type-box">
+	<div class="map-type-header">
+		Germany
+	</div>
+	<div>
+		<a href="./app/?t=Germany_states">
+			<div class="map-button">
+				States
+			</div>
+		</a>
+		<a href="./app/?t=Germany_constituencies">
+			<div class="map-button">
+				Constituencies
+			</div>
+		</a>
+		
+	</div>
+	</div>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
+		United Kingdom
+	</div>
+	<div>
+		<a href="./app/?t=UnitedKingdom_constituencies">
+			<div class="map-button">
+				Constituencies
+			</div>
+		</a>
 	</div>
 	</div>
 	
