@@ -23,6 +23,8 @@ foreach($content->find('article') as $article) {
 		}
 	}
 
+	echo $title . '<br>';
+
 	// if article already exists skip it
 	$skipUpload = false;
 	foreach($titles as $row) {
@@ -32,6 +34,7 @@ foreach($content->find('article') as $article) {
 		}
 	}
 	if($skipUpload) {
+		echo 'skipping upload<br>';
 		continue;
 	}
 
@@ -44,10 +47,6 @@ foreach($content->find('article') as $article) {
 			}
 		}
 	}
-
-	echo $title . '<br>';
-	echo $published . '<br>';
-	echo $source . '<br><br>';
 
 	// get article text
 	$article_content = file_get_html($source);
@@ -63,9 +62,15 @@ foreach($content->find('article') as $article) {
 			}
 		}
 	}
-	
-	echo $text;
-	echo '<br><br>';
+
+	$sql = 'insert into articles (title, author, published, upload, snippet, text, source, Featured) values (?,?,?,?,?,?,?,?)';
+	$stm = $database->prepare($sql);
+
+	if($stm->execute([$title, $author, $published, date("Y-m-d H:i:s"), $snippet, $text, $source, $featured])) {
+		echo 'sql query success...<br>';
+	} else {
+		echo 'sql query failed...<br>';
+	}
 }
 
 ?>
