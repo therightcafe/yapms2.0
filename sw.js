@@ -1,4 +1,4 @@
-var currentCache = 'v0.26.0';
+var currentCache = 'v0.26.5';
 
 function swLog(message) {
 	console.log('SW' + currentCache + ': ' + message);
@@ -18,26 +18,7 @@ self.addEventListener('install', function(event) {
 				'./app/',
 				'./app/index.php',
 
-				'./app/?t=2016_presidential_county',
-				'./app/?t=2016_presidential',
-				'./app/?t=2012_presidential',
-				'./app/?t=2008_presidential',
-				'./app/?t=2004_presidential',
-				'./app/?t=2000_presidential',
-				'./app/?t=1996_presidential',
-				'./app/?t=1992_presidential',
-				'./app/?t=1988_presidential',
-				'./app/?t=1984_presidential',
-				'./app/?t=1980_presidential',
-				'./app/?t=1976_presidential',
-				'./app/?t=1972_presidential',
-				'./app/?t=1904_presidential',
-
 				'./app/?t=2018_congress',
-
-				'./app/?t=2020_cook',
-				'./app/?t=2020_inside',
-				'./app/?t=2020_sabatos',
 				
 				'./app/?t=2020_presidential',
 				'./app/?t=2020_senatorial',
@@ -62,7 +43,6 @@ self.addEventListener('install', function(event) {
 				'./app/?t=EuropeanUnion',
 				'./app/?t=World',
 
-				'./app/index.php/?t=2020_senatorial',
 				'./app/html/battlechart.html',
 				'./app/html/closebutton.html',
 				'./app/html/description.php',
@@ -122,6 +102,35 @@ self.addEventListener('install', function(event) {
 				'./app/res/presets/1984_presidential',
 				'./app/res/presets/1980_presidential',
 				'./app/res/presets/1976_presidential',
+				'./app/res/presets/1972_presidential',
+				'./app/res/presets/1968_presidential',
+				'./app/res/presets/1964_presidential',
+				'./app/res/presets/1960_presidential',
+				'./app/res/presets/1956_presidential',
+				'./app/res/presets/1952_presidential',
+				'./app/res/presets/1948_presidential',
+				'./app/res/presets/1944_presidential',
+				'./app/res/presets/1940_presidential',
+				'./app/res/presets/1936_presidential',
+				'./app/res/presets/1932_presidential',
+				'./app/res/presets/1928_presidential',
+				'./app/res/presets/1924_presidential',
+				'./app/res/presets/1920_presidential',
+				'./app/res/presets/1916_presidential',
+				'./app/res/presets/1912_presidential',
+				'./app/res/presets/1908_presidential',
+				'./app/res/presets/1904_presidential',
+				'./app/res/presets/1900_presidential',
+				'./app/res/presets/1896_presidential',
+				'./app/res/presets/1892_presidential',
+				'./app/res/presets/1888_presidential',
+				'./app/res/presets/1884_presidential',
+				'./app/res/presets/1880_presidential',
+				'./app/res/presets/1876_presidential',
+				'./app/res/presets/1872_presidential',
+				'./app/res/presets/1868_presidential',
+				'./app/res/presets/1864_presidential',
+
 				'./app/res/presets/2020_cook',
 				'./app/res/presets/2020_inside',
 				'./app/res/presets/2020_sabatos',

@@ -63,7 +63,34 @@ function loadMapFromId(id) {
 		case "1980_presidential":
 		case "1976_presidential":
 		case "1972_presidential":
+		case "1968_presidential":
+		case "1964_presidential":
+		case "1960_presidential":
+		case "1956_presidential":
+		case "1952_presidential":
+		case "1948_presidential":
+		case "1944_presidential":
+		case "1940_presidential":
+		case "1936_presidential":
+		case "1932_presidential":
+		case "1928_presidential":
+		case "1924_presidential":
+		case "1920_presidential":
+		case "1916_presidential":
+		case "1912_presidential":
+		case "1908_presidential":
 		case "1904_presidential":
+		case "1900_presidential":
+		case "1896_presidential":
+		case "1892_presidential":
+		case "1888_presidential":
+		case "1884_presidential":
+		case "1880_presidential":
+		case "1876_presidential":
+		case "1876_presidential":
+		case "1872_presidential":
+		case "1868_presidential":
+		case "1864_presidential":
 		case "2016_presidential_county":
 			loadPresetMap(id);
 			break;

@@ -424,6 +424,33 @@ if($mobile === false) {
 	<a class="selectmenu-button" href="./?t=1980_presidential">Presidential 1980</a>
 	<a class="selectmenu-button" href="./?t=1976_presidential">Presidential 1976</a>
 	<a class="selectmenu-button" href="./?t=1972_presidential">Presidential 1972</a>
+	<a class="selectmenu-button" href="./?t=1968_presidential">Presidential 1968</a>
+	<a class="selectmenu-button" href="./?t=1964_presidential">Presidential 1964</a>
+	<a class="selectmenu-button" href="./?t=1960_presidential">Presidential 1960</a>
+	<a class="selectmenu-button" href="./?t=1956_presidential">Presidential 1956</a>
+	<a class="selectmenu-button" href="./?t=1952_presidential">Presidential 1952</a>
+	<a class="selectmenu-button" href="./?t=1948_presidential">Presidential 1948</a>
+	<a class="selectmenu-button" href="./?t=1944_presidential">Presidential 1944</a>
+	<a class="selectmenu-button" href="./?t=1940_presidential">Presidential 1940</a>
+	<a class="selectmenu-button" href="./?t=1936_presidential">Presidential 1936</a>
+	<a class="selectmenu-button" href="./?t=1932_presidential">Presidential 1932</a>
+	<a class="selectmenu-button" href="./?t=1928_presidential">Presidential 1928</a>
+	<a class="selectmenu-button" href="./?t=1924_presidential">Presidential 1924</a>
+	<a class="selectmenu-button" href="./?t=1920_presidential">Presidential 1920</a>
+	<a class="selectmenu-button" href="./?t=1916_presidential">Presidential 1916</a>
+	<a class="selectmenu-button" href="./?t=1912_presidential">Presidential 1912</a>
+	<a class="selectmenu-button" href="./?t=1908_presidential">Presidential 1908</a>
+	<a class="selectmenu-button" href="./?t=1904_presidential">Presidential 1904</a>
+	<a class="selectmenu-button" href="./?t=1900_presidential">Presidential 1900</a>
+	<a class="selectmenu-button" href="./?t=1896_presidential">Presidential 1896</a>
+	<a class="selectmenu-button" href="./?t=1892_presidential">Presidential 1892</a>
+	<a class="selectmenu-button" href="./?t=1888_presidential">Presidential 1888</a>
+	<a class="selectmenu-button" href="./?t=1884_presidential">Presidential 1884</a>
+	<a class="selectmenu-button" href="./?t=1880_presidential">Presidential 1880</a>
+	<a class="selectmenu-button" href="./?t=1876_presidential">Presidential 1876</a>
+	<a class="selectmenu-button" href="./?t=1872_presidential">Presidential 1872</a>
+	<a class="selectmenu-button" href="./?t=1868_presidential">Presidential 1868</a>
+	<a class="selectmenu-button" href="./?t=1864_presidential">Presidential 1864</a>
 </div>
 
 <!-- Mock Maps -->
