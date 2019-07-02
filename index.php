@@ -38,14 +38,6 @@
 	
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 	<link rel="stylesheet" type="text/css" href="style.css">
-
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	<script>
-	     (adsbygoogle = window.adsbygoogle || []).push({
-		  google_ad_client: "ca-pub-1660456925957249",
-		  enable_page_level_ads: true
-	     });
-	</script>
 </head>
 
 <body>
@@ -217,18 +209,6 @@
 
 	<input type="hidden" name="IL_IN_ARTICLE"> 
 <br>
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-1660456925957249"
-     data-ad-slot="9877032120"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
 	<div class="map-type-box">
 	<div class="map-type-header">
 		USA - Historical - Post WW2

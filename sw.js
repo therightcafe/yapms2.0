@@ -1,4 +1,4 @@
-var currentCache = 'v0.26.9';
+var currentCache = 'v0.26.10';
 
 function swLog(message) {
 	console.log('SW' + currentCache + ': ' + message);

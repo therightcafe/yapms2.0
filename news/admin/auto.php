@@ -28,19 +28,18 @@ function autoSubmit($preTitle, $url, $database, $titles) {
 			}
 		}
 
-		if($skipUpload === false) {
-			$sql = 'insert into articles (title, author, published, upload, snippet, text, source, Featured) values (?,?,?,?,?,?,?,?)';
-			$stm = $database->prepare($sql);
-
-			if($stm->execute([$title, $author, $published, date("Y-m-d H:i:s"), $snippet, $text, $source, $featured])) {
-				echo 'sql query success...<br>';
-			} else {
-				echo 'sql query failed...<br>';
-			}
-
-			echo $sql;
-		} else {
+		if($skipUpload) {
 			echo 'skipping upload<br>';
+			continue;
+		}
+
+		$sql = 'insert into articles (title, author, published, upload, snippet, text, source, Featured) values (?,?,?,?,?,?,?,?)';
+		$stm = $database->prepare($sql);
+
+		if($stm->execute([$title, $author, $published, date("Y-m-d H:i:s"), $snippet, $text, $source, $featured])) {
+			echo 'sql query success...<br>';
+		} else {
+			echo 'sql query failed...<br>';
 		}
 	}
 	echo '</ul><br>';
