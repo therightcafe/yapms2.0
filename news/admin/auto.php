@@ -48,5 +48,5 @@ function autoSubmit($preTitle, $url, $database, $titles) {
 autoSubmit('Presidential Signature: ', 'https://www.congress.gov/rss/presented-to-president.xml', $dbh, $titles);
 autoSubmit('House Floor: ', 'https://www.congress.gov/rss/house-floor-today.xml', $dbh, $titles);
 autoSubmit('Senate Floor: ', 'https://www.congress.gov/rss/senate-floor-today.xml', $dbh, $titles);
-autoSubmit('Popular Bill: ', 'https://www.congress.gov/rss/most-viewed-bills.xml', $dbh, $titles);
+autoSubmit('', 'https://www.congress.gov/rss/most-viewed-bills.xml', $dbh, $titles);
 ?>
