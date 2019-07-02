@@ -179,12 +179,9 @@ if($mobile === false) {
 			'YAPNews' , 
 		'</a>' ,
 		'</div>' ,
-
-		'<script data-cfasync="false" type="text/javascript" src="//p356288.clksite.com/adServe/banners?tid=356288_698467_0"></script>',
-
-		//'<div id="sidebar-ad1">' ,
- 		//'<input type="hidden" name="IL_IN_ARTICLE">',
-		//'</div>' ,
+		'<div id="sidebar-ad1">' ,
+ 		'<input type="hidden" name="IL_IN_ARTICLE">',
+		'</div>' ,
 		'<a id="yapnews-discord-link" href="https://discord.gg/WQh5fHU" target="_blank">',
 		'<div id="yapnews-discord">',
 			'Join Our Discord',
@@ -566,7 +563,5 @@ if($mobile === false) {
 	<script type="text/javascript" src="//resources.infolinks.com/js/infolinks_main.js"></script>';
 }
 ?>
-<script data-cfasync='false' type='text/javascript' src='//p356288.clksite.com/adServe/banners?tid=356288_698467_1&type=shadowbox&size=38'></script>
-
 </body>
 </html>
