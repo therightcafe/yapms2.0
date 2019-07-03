@@ -1,4 +1,4 @@
-var dynamicCache = 'v0.26.23';
+var dynamicCache = 'd0.26.23';
 var staticCache = 's0.0.4';
 
 function swLog(cache, message) {
@@ -81,6 +81,18 @@ self.addEventListener('install', function(event) {
 				'./app/res/presets/1868_presidential',
 				'./app/res/presets/1864_presidential',
 
+				'./app/res/presets/2020_cook',
+				'./app/res/presets/2020_inside',
+				'./app/res/presets/2020_sabatos',
+				
+				'./app/data/gubernatorial_2018',
+				'./app/data/gubernatorial_2020',
+				'./app/data/gubernatorial_current',
+				'./app/data/gubernatorial_open',
+				'./app/data/senatorial_2020',
+				'./app/data/senatorial_current',
+				'./app/data/senatorial_open',
+
 				'https://fonts.googleapis.com/css?family=Roboto',
 				'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js',
 				'https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0',
@@ -88,6 +100,8 @@ self.addEventListener('install', function(event) {
 				'https://code.jquery.com/jquery-3.4.1.min.js',
 				'https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js',
 				'https://use.fontawesome.com/releases/v5.7.2/css/all.css'
+				
+				'./app/manifest.json',
 			]);
 		}));
 	event.waitUntil(
@@ -128,16 +142,6 @@ self.addEventListener('install', function(event) {
 				'./app/html/battlechart.html',
 				'./app/html/closebutton.html',
 				'./app/html/description.php',
-				
-				'./app/manifest.json',
-
-				'./app/data/gubernatorial_2018',
-				'./app/data/gubernatorial_2020',
-				'./app/data/gubernatorial_current',
-				'./app/data/gubernatorial_open',
-				'./app/data/senatorial_2020',
-				'./app/data/senatorial_current',
-				'./app/data/senatorial_open',
 
 				'./app/style/battlechart.css',
 				'./app/style/legend.css',
@@ -145,10 +149,6 @@ self.addEventListener('install', function(event) {
 				'./app/style/mobile.css',
 				'./app/style/popup.css',
 				'./app/style/style.css',
-
-				'./app/res/presets/2020_cook',
-				'./app/res/presets/2020_inside',
-				'./app/res/presets/2020_sabatos',
 
 				'./app/src/main.js',
 				'./app/src/mobile.js',
