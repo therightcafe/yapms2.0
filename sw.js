@@ -1,15 +1,45 @@
-var currentCache = 'v0.26.15';
+var dynamicCache = 'v0.26.20';
+var staticCache = 's0.0.3';
 
-function swLog(message) {
-	console.log('SW' + currentCache + ': ' + message);
+function swLog(cache, message) {
+	console.log('SW ' + cache + ': ' + message);
 }
 
-self.skipWaiting();
-
 self.addEventListener('install', function(event) {
+	self.skipWaiting();
 	event.waitUntil(
-		caches.open(currentCache).then(function(cache) {
-			swLog('installing');
+		caches.open(staticCache).then(function(cache) {
+			swLog(staticCache, 'installing');
+			return cache.addAll([
+				'./app/res/usa_presidential.svg',
+				'./app/res/usa_1972_presidential.svg',
+				'./app/res/usa_congressional_2008.svg',
+				'./app/res/usa_congressional_2018.svg',
+				'./app/res/usa_dem_primary.svg',
+				'./app/res/usa_rep_primary.svg',
+				'./app/res/usa_gubernatorial.svg',
+				'./app/res/usa_no_districts.svg',
+				'./app/res/usa_senate.svg',
+				'./app/res/usa_county.svg',
+				'./app/res/canada_states.svg',
+				'./app/res/canada_constituencies.svg',
+				'./app/res/germany.svg',
+				'./app/res/germany_constituencies.svg',
+				'./app/res/france_constituencies.svg',
+				'./app/res/unitedkingdom.svg',
+				'./app/res/italy.svg',
+				'./app/res/australia_constituencies.svg',
+				'./app/res/australia.svg',
+				'./app/res/eu.svg',
+				'./app/res/world.svg',
+				'./app/res/lte_president.svg',
+				'./app/res/lte_senate.svg',
+				'./app/res/lte_house.svg'
+			]);
+		}));
+	event.waitUntil(
+		caches.open(dynamicCache).then(function(cache) {
+			swLog(dynamicCache, 'installing');
 			return cache.addAll([
 				'./',
 				'./index.php',
@@ -64,30 +94,6 @@ self.addEventListener('install', function(event) {
 				'./app/style/popup.css',
 				'./app/style/style.css',
 
-				'./app/res/usa_presidential.svg',
-				'./app/res/usa_1972_presidential.svg',
-				'./app/res/usa_congressional_2008.svg',
-				'./app/res/usa_congressional_2018.svg',
-				'./app/res/usa_dem_primary.svg',
-				'./app/res/usa_rep_primary.svg',
-				'./app/res/usa_gubernatorial.svg',
-				'./app/res/usa_no_districts.svg',
-				'./app/res/usa_senate.svg',
-				'./app/res/usa_county.svg',
-				'./app/res/canada_states.svg',
-				'./app/res/canada_constituencies.svg',
-				'./app/res/germany.svg',
-				'./app/res/germany_constituencies.svg',
-				'./app/res/france_constituencies.svg',
-				'./app/res/unitedkingdom.svg',
-				'./app/res/italy.svg',
-				'./app/res/australia_constituencies.svg',
-				'./app/res/australia.svg',
-				'./app/res/eu.svg',
-				'./app/res/world.svg',
-				'./app/res/lte_president.svg',
-				'./app/res/lte_senate.svg',
-				'./app/res/lte_house.svg',
 
 				'./app/res/presets/current_congress',
 				'./app/res/presets/2016_presidential_county',
@@ -170,12 +176,11 @@ self.addEventListener('fetch', function(event) {
 	event.respondWith(
 		caches.match(event.request)
 			.then(function(response) {
-
 				if(response) {
-					swLog('fetch cache ' + event.request.url);
+					swLog('Cache' , 'fetch ' + event.request.url);
 					return response;
 				} else {
-					swLog('fetch web ' + event.request.url);
+					swLog('Web', 'fetch ' + event.request.url);
 					return fetch(event.request);
 				}
 			})
@@ -188,12 +193,14 @@ self.addEventListener('fetch', function(event) {
 
 // clear old versions of the cache
 self.addEventListener('activate', function(event) {
-	swLog('activate cache ' + currentCache);
 	event.waitUntil(
 		caches.keys().then(function(cacheNames) {
 			cacheNames.forEach(function(cacheName) {
-				if(cacheName !== currentCache) {
-					swLog('clear cache ' + cacheName);
+				if(cacheName === dynamicCache ||
+					cacheName === staticCache) {
+					swLog(cacheName, 'keep');
+				} else {
+					swLog(cacheName, 'delete');
 					return caches.delete(cacheName);
 				}
 			});

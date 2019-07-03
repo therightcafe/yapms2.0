@@ -519,6 +519,7 @@ if($mobile === false) {
 
 <script>
 	if('serviceWorker' in navigator) {
+		console.log('Attempting to register service worker');
 		navigator.serviceWorker
 		.register('../sw.js')
 		.then(function(a) {
