@@ -99,9 +99,9 @@ self.addEventListener('install', function(event) {
 				'https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.5.0/dist/svg-pan-zoom.min.js',
 				'https://code.jquery.com/jquery-3.4.1.min.js',
 				'https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js',
-				'https://use.fontawesome.com/releases/v5.7.2/css/all.css'
+				'https://use.fontawesome.com/releases/v5.7.2/css/all.css',
 				
-				'./app/manifest.json',
+				'./app/manifest.json'
 			]);
 		}));
 	event.waitUntil(
