@@ -1,5 +1,5 @@
-var dynamicCache = 'v0.26.21';
-var staticCache = 's0.0.3';
+var dynamicCache = 'v0.26.22';
+var staticCache = 's0.0.4';
 
 function swLog(cache, message) {
 	console.log('SW ' + cache + ': ' + message);
@@ -34,7 +34,60 @@ self.addEventListener('install', function(event) {
 				'./app/res/world.svg',
 				'./app/res/lte_president.svg',
 				'./app/res/lte_senate.svg',
-				'./app/res/lte_house.svg'
+				'./app/res/lte_house.svg',
+				
+				'./app/res/lte.jpg',
+				'./app/res/redeagletv.png',
+
+				'./app/res/presets/current_congress',
+				'./app/res/presets/2016_presidential_county',
+				'./app/res/presets/2016_presidential',
+				'./app/res/presets/2012_presidential',
+				'./app/res/presets/2008_presidential',
+				'./app/res/presets/2004_presidential',
+				'./app/res/presets/2000_presidential',
+				'./app/res/presets/1996_presidential',
+				'./app/res/presets/1992_presidential',
+				'./app/res/presets/1988_presidential',
+				'./app/res/presets/1984_presidential',
+				'./app/res/presets/1980_presidential',
+				'./app/res/presets/1976_presidential',
+				'./app/res/presets/1972_presidential',
+				'./app/res/presets/1968_presidential',
+				'./app/res/presets/1964_presidential',
+				'./app/res/presets/1960_presidential',
+				'./app/res/presets/1956_presidential',
+				'./app/res/presets/1952_presidential',
+				'./app/res/presets/1948_presidential',
+				'./app/res/presets/1944_presidential',
+				'./app/res/presets/1940_presidential',
+				'./app/res/presets/1936_presidential',
+				'./app/res/presets/1932_presidential',
+				'./app/res/presets/1928_presidential',
+				'./app/res/presets/1924_presidential',
+				'./app/res/presets/1920_presidential',
+				'./app/res/presets/1916_presidential',
+				'./app/res/presets/1912_presidential',
+				'./app/res/presets/1908_presidential',
+				'./app/res/presets/1904_presidential',
+				'./app/res/presets/1900_presidential',
+				'./app/res/presets/1896_presidential',
+				'./app/res/presets/1892_presidential',
+				'./app/res/presets/1888_presidential',
+				'./app/res/presets/1884_presidential',
+				'./app/res/presets/1880_presidential',
+				'./app/res/presets/1876_presidential',
+				'./app/res/presets/1872_presidential',
+				'./app/res/presets/1868_presidential',
+				'./app/res/presets/1864_presidential',
+
+				'https://fonts.googleapis.com/css?family=Roboto',
+				'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js',
+				'https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0',
+				'https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.5.0/dist/svg-pan-zoom.min.js',
+				'https://code.jquery.com/jquery-3.4.1.min.js',
+				'https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js',
+				'https://use.fontawesome.com/releases/v5.7.2/css/all.css'
 			]);
 		}));
 	event.waitUntil(
@@ -49,7 +102,6 @@ self.addEventListener('install', function(event) {
 				'./app/index.php',
 
 				'./app/?t=2018_congress',
-				
 				'./app/?t=2020_presidential',
 				'./app/?t=2020_senatorial',
 				'./app/?t=2020_gubernatorial',
@@ -94,55 +146,9 @@ self.addEventListener('install', function(event) {
 				'./app/style/popup.css',
 				'./app/style/style.css',
 
-
-				'./app/res/presets/current_congress',
-				'./app/res/presets/2016_presidential_county',
-				'./app/res/presets/2016_presidential',
-				'./app/res/presets/2012_presidential',
-				'./app/res/presets/2008_presidential',
-				'./app/res/presets/2004_presidential',
-				'./app/res/presets/2000_presidential',
-				'./app/res/presets/1996_presidential',
-				'./app/res/presets/1992_presidential',
-				'./app/res/presets/1988_presidential',
-				'./app/res/presets/1984_presidential',
-				'./app/res/presets/1980_presidential',
-				'./app/res/presets/1976_presidential',
-				'./app/res/presets/1972_presidential',
-				'./app/res/presets/1968_presidential',
-				'./app/res/presets/1964_presidential',
-				'./app/res/presets/1960_presidential',
-				'./app/res/presets/1956_presidential',
-				'./app/res/presets/1952_presidential',
-				'./app/res/presets/1948_presidential',
-				'./app/res/presets/1944_presidential',
-				'./app/res/presets/1940_presidential',
-				'./app/res/presets/1936_presidential',
-				'./app/res/presets/1932_presidential',
-				'./app/res/presets/1928_presidential',
-				'./app/res/presets/1924_presidential',
-				'./app/res/presets/1920_presidential',
-				'./app/res/presets/1916_presidential',
-				'./app/res/presets/1912_presidential',
-				'./app/res/presets/1908_presidential',
-				'./app/res/presets/1904_presidential',
-				'./app/res/presets/1900_presidential',
-				'./app/res/presets/1896_presidential',
-				'./app/res/presets/1892_presidential',
-				'./app/res/presets/1888_presidential',
-				'./app/res/presets/1884_presidential',
-				'./app/res/presets/1880_presidential',
-				'./app/res/presets/1876_presidential',
-				'./app/res/presets/1872_presidential',
-				'./app/res/presets/1868_presidential',
-				'./app/res/presets/1864_presidential',
-
 				'./app/res/presets/2020_cook',
 				'./app/res/presets/2020_inside',
 				'./app/res/presets/2020_sabatos',
-				
-				'./app/res/lte.jpg',
-				'./app/res/redeagletv.png',
 
 				'./app/src/main.js',
 				'./app/src/mobile.js',
@@ -158,14 +164,6 @@ self.addEventListener('install', function(event) {
 				'./app/src/Candidate.js',
 				'./app/src/yapnews.js',
 				'./app/src/deferedImages.js',
-
-				'https://fonts.googleapis.com/css?family=Roboto',
-				'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js',
-				'https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0',
-				'https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.5.0/dist/svg-pan-zoom.min.js',
-				'https://code.jquery.com/jquery-3.4.1.min.js',
-				'https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js',
-				'https://use.fontawesome.com/releases/v5.7.2/css/all.css'
 			]);
 		})
 	);
