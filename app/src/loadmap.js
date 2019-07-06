@@ -297,8 +297,8 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year, onLoad, op
 				state.setVoteCount(optionState.voteCount, true);
 				state.setColor(optionState.candidate, optionState.colorValue);
 			}
-			console.log(states);
 			countVotes();
+			updateChart();
 			updateLegend();
 		} else {
 

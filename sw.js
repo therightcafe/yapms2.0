@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.26.31';
-var staticCache = 's0.0.10';
+var dynamicCache = 'd0.26.32';
+var staticCache = 's0.0.11';
 
 function swLog(cache, message) {
 	console.log('SW ' + cache + ': ' + message);
