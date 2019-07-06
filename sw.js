@@ -1,8 +1,8 @@
-var dynamicCache = 'd0.27.0';
-var staticCache = 's0.1.0';
+var dynamicCache = 'd0.27.1';
+var staticCache = 's0.1.1';
 
 function swLog(cache, message) {
-	console.log('SW ' + cache + ': ' + message);
+	console.log('SW ' + cache + ': ' + message + ' ( ' + dynamicCache + ' / ' + staticCache + ' )');
 }
 
 self.addEventListener('install', function(event) {
