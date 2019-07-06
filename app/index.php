@@ -189,9 +189,6 @@ if($mobile === false) {
 			'YAPNews' , 
 		'</a>' ,
 		'</div>' ,
-		'<div id="sidebar-ad1">' ,
- 		'<input type="hidden" name="IL_IN_ARTICLE">',
-		'</div>' ,
 		'<a id="yapnews-discord-link" href="https://discord.gg/WQh5fHU" target="_blank">',
 		'<div id="yapnews-discord">',
 			'Join Our Discord',
@@ -232,7 +229,7 @@ if($mobile === false) {
 </div>
 
 <div id="miscmenu" class="popup selectmenu">
-<?php include './html/closebutton.html'; ?>
+	<object type="image/svg+xml" data="./html/closebutton.svg">Help</object>
 	<h2>Misc</h2>
 	<a class="selectmenu-button" onclick="displayVersionInfo()">Version Info</a>
 	<a class="selectmenu-button" onclick="centerMap()">Center Map</a>
@@ -564,15 +561,5 @@ if($mobile === false) {
 ?>
 <script src="./src/html2canvas.min.js"></script>
 <script src="./src/deferedImages.js"></script>
-
-<?php
-if($mobile === false) {
-	echo '<script type="text/javascript">
-	var infolinks_pid = 3160874;
-	var infolinks_wsid = 0;
-	</script>
-	<script type="text/javascript" src="//resources.infolinks.com/js/infolinks_main.js"></script>';
-}
-?>
 </body>
 </html>

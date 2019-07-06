@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.27.3';
-var staticCache = 's0.1.4';
+var dynamicCache = 'd0.27.4';
+var staticCache = 's0.1.5';
 
 function swLog(cache, message) {
 	console.log('SW ' + cache + ': ' + message + ' ( ' + dynamicCache + ' / ' + staticCache + ' )');
@@ -140,7 +140,7 @@ self.addEventListener('install', function(event) {
 				'./app/?t=World',
 
 				'./app/html/battlechart.html',
-				'./app/html/closebutton.html',
+				'./app/html/closebutton.svg',
 				'./app/html/description.php',
 
 				'./app/style/battlechart.css',
