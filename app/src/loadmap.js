@@ -290,7 +290,6 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year, onLoad, op
 		}
 
 		if(options.states) {
-			console.log(options.states);
 			for(var stateIndex = 0, length = options.states.length; stateIndex < length; ++stateIndex) {
 				var state = states[stateIndex];
 				var optionState = options.states[stateIndex];
