@@ -22,7 +22,7 @@
 	<meta name="theme-color" content="#ffffff"/>
 	
 	<!-- CSSs (1st is Font Awesome) -->
-	<link rel="preload" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" as="style">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	<link rel="icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
 	<link rel="shortcut icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
 	<link rel="manifest" href="./manifest.json">
@@ -112,6 +112,10 @@
 
 	<button class="click-button" onclick="displayThemeMenu()" style="white-space: nowrap;">
 		<i class="fas fa-palette"></i> Themes
+	</button>
+
+	<button id="takeallbutton" class="click-button" onclick="toTakeAll()" style="white-space: nowrap; display: none;">
+		<i class="fas fa-sliders-h"></i> Take All	
 	</button>
 
 	<button class="click-button" onclick="share()" style="white-space: nowrap;">

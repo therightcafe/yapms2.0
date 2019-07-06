@@ -288,6 +288,29 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year, onLoad, op
 				onLoad();
 			}
 		}
+
+		if(options.states) {
+			console.log(options.states);
+			for(var stateIndex = 0, length = options.states.length; stateIndex < length; ++stateIndex) {
+				var state = states[stateIndex];
+				var optionState = options.states[stateIndex];
+				state.setVoteCount(optionState.voteCount, true);
+				state.setColor(optionState.candidate, optionState.colorValue);
+			}
+			console.log(states);
+			countVotes();
+			updateLegend();
+		} else {
+
+		}
+
+		// display the take all button for usa proportional maps
+		var takeAllButton = document.getElementById('takeallbutton');
+		if(filename === './res/usa_no_districts.svg' && type === 'proportional') {
+			takeAllButton.style.display = 'block';
+		} else {
+			takeAllButton.style.display = 'none';
+		}
 	});
 }
 

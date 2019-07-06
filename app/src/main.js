@@ -70,6 +70,10 @@ var previousPalette = function() {
 
 var panObject = null;
 
+function toTakeAll() {
+	loadMap(loadConfig.filename, loadConfig.fontsize, loadConfig.strokewidth, loadConfig.dataid, "presidential", "open", null, {updateText: mapOptions.updateText, states: states});
+}
+
 function share() {
 	var svg = document.getElementById('svgdata');
 	var mapdiv = document.getElementById('map-div');
