@@ -99,7 +99,7 @@
 	</button>
 
 	<button class="click-button" onclick="displayMapMenu()" style="white-space: nowrap;">
-		<i class="far fa-map"></i> Maps
+		<i class="fas fa-map"></i> Maps
 	</button>
 
 	<button id="modesbutton" class="click-button" onclick="displayModeMenu()" style="white-space: nowrap;">
@@ -114,9 +114,11 @@
 		<i class="fas fa-palette"></i> Themes
 	</button>
 
-	<button id="takeallbutton" class="click-button" onclick="toTakeAll()" style="white-space: nowrap; display: none;">
+	<a href="https://www.yapms.com/privacypolicy.html" target="_blank">
+	<button id="takeallbutton" class="click-button" style="white-space: nowrap; display: none;">
 		<i class="fas fa-sliders-h"></i> Take All	
 	</button>
+	</a>
 
 	<button class="click-button" onclick="share()" style="white-space: nowrap;">
 		<i class="fas fa-share-alt"></i> Share
@@ -135,7 +137,11 @@ if($mobile === false) {
 	</button>
 
 	<button class="click-button" onclick="displayMiscMenu()" style="white-space: nowrap;">
-		<i class="far fa-clipboard"></i> Misc
+		<i class="fas fa-clipboard"></i> Misc
+	</button>
+
+	<button class="click-button" onclick='location.href = "https://www.yapms.com/privacypolicy.html"' style="white-space: nowrap;">
+		<i class="fas fa-user-secret"></i> Privacy Policy
 	</button>
 </div>
 
