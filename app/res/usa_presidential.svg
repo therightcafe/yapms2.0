@@ -60,20 +60,20 @@
   <path id="WI" d="m541.4 109.9 2.9 0.5 2.9-0.6 7.4-3.2 2.9-1.9 2.1-0.8 1.9 1.5-1.1 1.1-1.9 3.1-0.6 1.9 1 0.6 1.8-1 1.1-0.2 2.7 0.8 0.6 1.1 1.1 0.2 0.6-1.1 4 5.3 8.2 1.2 8.2 2.2 2.6 1.1 12.3 2.6 1.6 2.3 3.6 1.2 1.7 10.2 1.6 1.4 1.5 0.9-1.1 2.3-1.8 1.6-2.1 4.7-1.3 2.4 0.2 1.8 1.5 0.3 1.1-1.9 1.5-0.8 0.8-2.3 1.9-1.8 2.7-4 4.2-6.3 0.8-0.5 0.3 1-0.2 2.3-2.9 6.8-2.7 5.7-0.5 3.2-0.6 2.6 0.8 1.3-0.2 2.7-1.9 2.4-0.5 1.8 0.6 3.6 0.6 3.4-1.5 2.6-0.8 2.9-1 3.1 1.1 2.4 0.6 6.1 1.6 4.5-0.2 3-15.9 1.8-17.5 1h-12.7l-0.7-1.5-2.9-0.4-2.6-1.3-2.3-3.7-0.3-3.6 2-2.9-0.5-1.4-2.1-2.2-0.8-3.3-0.6-6.8-2.1-2.5-7-4.5-3.8-5.4-3.4-1-2.2-2.8h-3.2l-2.9-3.3-0.5-6.5 0.1-3.8 1.5-3.1-0.8-3.2-2.5-2.8 1.8-5.4 5.2-3.8 1.6-1.9-0.2-8.1 0.2-2.8 2.4-2.8z"/>
   <path id="WV" d="m758.9 254.3 5.8-6 2.6-0.8 1.6-1.5 1.5-2.2 1.1 0.3 3.1-0.2 4.6-3.6 1.5-0.5 1.3 1 2.6 1.2 3 3-0.4 4.3-5.4-2.6-4.8-1.8-0.1 5.9-2.6 5.7-2.9 2.4-0.8 2.3-3 0.5-1.7 8.1-2.8 0.2-1.1-1-1.2-2-2.2 0.5-0.5 5.1-1.8 5.1-5 11 0.9 1.4-0.1 2-2.2 2.5-1.6-0.4-3.1 2.3-2.8-0.8-1.8 4.9-3.8 1-2.5-1.3-2.5 1.9-2.3 0.7-3.2-0.8-3.8-4.5-3.5-2.2-2.5-2.5-2.9-3.7-0.5-2.3-2.8-1.7-0.6-1.3-0.2-5.6 0.3 0.1 2.4-0.2 1.8-1v-2.2l1.7-1.5 0.1-5.2 0.9-3.6 1.1-0.7 0.4 0.3 1 1.1 1.7 0.5 1.1-1.3-1-3.1v-1.6l3.1-4.6 1.2-1.3 2 0.5 2.6-1.8 3.1-3.4 2.4-4.1 0.2-5.6 0.5-4.8v-4.9l-1.1-3 0.9-1.3 0.8-0.7 4.3 19.3 4.3-0.8 11.2-1.3z"/>
   <path id="WY" d="m353 161.9-1.5 25.4-4.4 44-2.7-0.3-83.3-9.1-27.9-3 2-12 6.9-41 3.8-24.2 1.3-11.2 48.2 7 59.1 6.5z"/>
-  <rect id="DC" x="869" y="424.4" width="53" height="20"/>
-  <rect id="MD-button" x="869" y="399.4" width="53" height="20"/>
-  <rect id="DE-button" x="869" y="374.4" width="53" height="20"/>
-  <rect id="NJ-button" x="869" y="349.4" width="53" height="20"/>
-  <rect id="CT-button" x="869" y="324.4" width="53" height="20"/>
-  <rect id="RI-button" x="869" y="299.4" width="53" height="20"/>
-  <rect id="MA-button" x="869" y="274.4" width="53" height="20"/>
-  <rect id="VT-button" x="869" y="249.4" width="53" height="20"/>
-  <rect id="NH-button" x="869" y="224.4" width="53" height="20"/>
-  <rect id="HI-button" x="250" y="553" width="50" height="20"/>
-  <rect id="ME-AL" x="736.018" y="10.0353" width="81" height="90.2902"/>
+  <rect id="DC" x="869" y="424.4" width="53" height="20" rx="3" ry="3"/>
+  <rect id="MD-button" x="869" y="399.4" width="53" height="20" rx="3" ry="3"/>
+  <rect id="DE-button" x="869" y="374.4" width="53" height="20" rx="3" ry="3"/>
+  <rect id="NJ-button" x="869" y="349.4" width="53" height="20" rx="3" ry="3"/>
+  <rect id="CT-button" x="869" y="324.4" width="53" height="20" rx="3" ry="3"/>
+  <rect id="RI-button" x="869" y="299.4" width="53" height="20" rx="3" ry="3"/>
+  <rect id="MA-button" x="869" y="274.4" width="53" height="20" rx="3" ry="3"/>
+  <rect id="VT-button" x="869" y="249.4" width="53" height="20" rx="3" ry="3"/>
+  <rect id="NH-button" x="869" y="224.4" width="53" height="20" rx="3" ry="3"/>
+  <rect id="HI-button" x="250" y="553" width="50" height="20" rx="3" ry="3"/>
+  <rect id="ME-AL" x="736.018" y="10.0353" width="81" height="90.2902" rx="4" ry="4"/>
   <rect id="ME-D1" x="742" y="44" width="69" height="20"/>
   <rect id="ME-D2" x="742" y="71" width="69" height="20"/>
-  <rect id="NE-AL" x="582.022" y="9.96421" width="147" height="61.0358"/>
+  <rect id="NE-AL" x="582.022" y="9.96421" width="147" height="61.0358" rx="4" ry="4"/>
   <rect id="NE-D1" x="658" y="17" width="67" height="20"/>
   <rect id="NE-D2" x="587" y="44" width="67" height="20"/>
   <rect id="NE-D3" x="658" y="44" width="67" height="20"/>
@@ -82,15 +82,15 @@
   <path id="NE-D2-land" d="m469.598 228.152 3.33943 8.96545 8.57987-3.06754-1.12735-5.45679z"/>
  </g>
  <g id="text">
-  <text id="NY-text" x="818.16394" y="153.05663"><tspan id="tspan73" x="818.16394" y="153.05663">NY</tspan><tspan id="tspan75" x="818.16394" y="168.05663">29</tspan></text>
-  <text id="PA-text" x="782.07806" y="209.66608"><tspan id="tspan78" x="782.07806" y="209.66608">PA</tspan><tspan id="tspan80" x="782.07806" y="224.66608">20</tspan></text>
-  <text id="OH-text" x="698.93951" y="240.423"><tspan id="tspan83" x="698.93951" y="240.423">OH</tspan><tspan id="tspan85" x="698.93951" y="255.423">18</tspan></text>
-  <text id="VA-text" x="787.45361" y="282.26245"><tspan id="tspan88" x="787.45361" y="282.26245">VA</tspan><tspan id="tspan90" x="787.45361" y="297.26245">13</tspan></text>
+  <text id="NY-text" x="818.16394" y="153.05663"><tspan id="tspan73" x="818.16394" y="153.05663">NY</tspan> <tspan id="tspan75" x="818.16394" y="168.05663">29</tspan></text>
+  <text id="PA-text" x="782.07806" y="209.66608"><tspan id="tspan78" x="782.07806" y="209.66608">PA</tspan> <tspan id="tspan80" x="782.07806" y="224.66608">20</tspan></text>
+  <text id="OH-text" x="698.93951" y="240.423"><tspan id="tspan83" x="698.93951" y="240.423">OH</tspan> <tspan id="tspan85" x="698.93951" y="255.423">18</tspan></text>
+  <text id="VA-text" x="787.45361" y="282.26245"><tspan id="tspan88" x="787.45361" y="282.26245">VA</tspan> <tspan id="tspan90" x="787.45361" y="297.26245">13</tspan></text>
   <text id="NC-text" x="788.30316" y="332.69342" xml:space="preserve"><tspan id="tspan93" x="788.30316" y="332.69342">NC</tspan><tspan id="tspan95" x="788.30316" y="347.69342">15</tspan></text>
-  <text id="SC-text" x="760.30951" y="377.11313"><tspan id="tspan98" x="760.30951" y="377.11313">SC</tspan><tspan id="tspan100" x="760.30951" y="392.11313">9</tspan></text>
-  <text id="GA-text" x="715.9754" y="409.59967"><tspan id="tspan103" x="715.9754" y="409.59967">GA</tspan><tspan id="tspan105" x="715.9754" y="424.59967">16</tspan></text>
-  <text id="FL-text" x="763.95477" y="501.80151"><tspan id="tspan108" x="763.95477" y="501.80151">FL</tspan><tspan id="tspan110" x="763.95477" y="516.80151">29</tspan></text>
-  <text id="AL-text" x="653.29108" y="413.86169"><tspan id="tspan8988-2-7" x="653.29108" y="413.86169">AL </tspan><tspan id="tspan316" x="653.29108" y="428.86169">9</tspan></text>
+  <text id="SC-text" x="760.30951" y="377.11313"><tspan id="tspan98" x="760.30951" y="377.11313">SC</tspan> <tspan id="tspan100" x="760.30951" y="392.11313">9</tspan></text>
+  <text id="GA-text" x="715.9754" y="409.59967"><tspan id="tspan103" x="715.9754" y="409.59967">GA</tspan> <tspan id="tspan105" x="715.9754" y="424.59967">16</tspan></text>
+  <text id="FL-text" x="763.95477" y="501.80151"><tspan id="tspan108" x="763.95477" y="501.80151">FL</tspan> <tspan id="tspan110" x="763.95477" y="516.80151">29</tspan></text>
+  <text id="AL-text" x="653.29108" y="413.86169"><tspan id="tspan8988-2-7" x="653.29108" y="413.86169">AL </tspan> <tspan id="tspan316" x="653.29108" y="428.86169">9</tspan></text>
   <text id="MS-text" x="599.49976" y="417.56348" xml:space="preserve"><tspan id="tspan8988-2-9" x="599.49976" y="417.56348">MS </tspan><tspan id="tspan314" x="599.49976" y="432.56348">6</tspan></text>
   <text id="LA-text" x="543.47321" y="442.68225" xml:space="preserve"><tspan id="tspan8988-2-2" x="543.47321" y="442.68225">LA </tspan><tspan id="tspan312" x="543.47321" y="457.68225">8</tspan></text>
   <text id="TX-text" x="425.24323" y="451.78485" xml:space="preserve"><tspan id="tspan8988-2-97" x="425.24323" y="451.78485">TX </tspan><tspan id="tspan308" x="425.24323" y="466.78485">38</tspan></text>
