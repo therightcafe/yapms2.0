@@ -32,45 +32,6 @@ function enableFullscreen() {
 	}
 }
 
-function toggleText() {
-	var texts = document.querySelectorAll('[id$="text"]');
-
-	textOn = !textOn;
-
-	for(var index = 0; index < texts.length; ++index) {
-		var text = texts[index];
-
-		if(text.id.includes('button')) {
-			continue;
-		}
-	
-		if(text.style.display === '') {
-			text.style.display = 'none';
-		} else {
-			text.style.display = '';
-		}
-	}
-}
-
-// make sure that text is properly toggled
-function verifyTextToggle() {
-	var texts = document.querySelectorAll('[id$="text"]');
-
-	for(var index = 0; index < texts.length; ++index) {
-		var text = texts[index];
-
-		if(text.id.includes('button')) {
-			continue;
-		}
-
-		if(textOn == false) {
-			text.style.display = 'none';
-		} else if(textOn == true) {
-			text.style.display = '';
-		}
-	}
-}
-
 function displayNotification(title, text) {
 	var notification = document.getElementById('notification');
 	var messageHTML = notification.querySelector('#notification-message');

@@ -34,7 +34,7 @@
 	flex: 1 1;
 	flex-basis: 0%;
 	background: #bf1d29;
-	transition: flex-basis 1s;
+	transition: flex-basis 175ms linear;
 	z-index: 1;
 	min-height: 0px;
 }
@@ -43,7 +43,7 @@
 	flex: 1 1;
 	flex-basis: 0%;
 	background: #bbb7b2;
-	transition: flex-basis 1s;
+	transition: flex-basis 175ms linear;
 	overflow: hidden;
 }
 
@@ -53,7 +53,7 @@
 	flex: 1 1;
 	flex-basis: 0%;
 	background: #1c408c;
-	transition: flex-basis 1s;
+	transition: flex-basis 175ms linear;
 	z-index: 1;
 	min-height: 0;
 	overflow: visible;
@@ -64,6 +64,6 @@
 	background: #8aafff;
 	flex: 1 1;
 	flex-basis: 0%;
-	transition: flex-basis 1s;
+	transition: flex-basis 175ms linear;
 	min-height: 0;
 }

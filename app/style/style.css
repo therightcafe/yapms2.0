@@ -77,7 +77,7 @@ button {
 }
 
 #outlines path {
-	transition: all 125ms linear;
+	transition: all 100ms linear;
 }
 
 #text {

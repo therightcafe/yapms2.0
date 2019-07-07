@@ -15,17 +15,9 @@
 	overflow-y: auto;
 }
 
-.closebutton {
-	position: absolute;
-	left: 10px;
-	top: 10px;
-	fill: red;
-	transition: all 200ms;
-}
-
-.closebutton:hover {
-	fill: pink;
-	transition: all 200ms;
+/* make the close button stay on the left */
+.popup object {
+	float: left;
 }
 
 .setbutton {

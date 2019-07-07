@@ -95,109 +95,109 @@ function loadMapFromId(id) {
 			loadPresetMap(id);
 			break;
 		case "2020_presidential_popular":
-			loadMap("./res/usa_presidential.svg", 16, 1, "usa_voting_pop", "usapopular", "open", null, {updateText: false});
+			loadMap("./res/usa_presidential.svg", 16, 1, "usa_voting_pop", "usapopular", "open", {updateText: false});
 			break;
 		case "2020_presidential":
-			loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open", null, {updateText: true});
+			loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open", {updateText: true});
 			break;
 		case "1972_presidential":
-			loadMap("./res/usa_1972_presidential.svg", 16, 1, "usa_1972_ec", "presidential", "open", null, {updateText: true});
+			loadMap("./res/usa_1972_presidential.svg", 16, 1, "usa_1972_ec", "presidential", "open", {updateText: true});
 			break;
 		case "2020_senatorial":
-			loadMap("./res/usa_senate.svg", 16, 1, "usa_senate", "senatorial", "2020", null, {updateText: false});
+			loadMap("./res/usa_senate.svg", 16, 1, "usa_senate", "senatorial", "2020", {updateText: false});
 			break;
 		case "2020_gubernatorial":
-			loadMap("./res/usa_gubernatorial.svg", 16, 1, "usa_gubernatorial", "gubernatorial", "2020", null, {updateText: false});
+			loadMap("./res/usa_gubernatorial.svg", 16, 1, "usa_gubernatorial", "gubernatorial", "2020", {updateText: false});
 			break;
 		case "2020_democratic_primary":
-			loadMap("./res/usa_dem_primary.svg", 16, 1, "dem_primary", "primary", "open", null, {updateText: false});
+			loadMap("./res/usa_dem_primary.svg", 16, 1, "dem_primary", "primary", "open", {updateText: false});
 			break;
 		case "2020_republican_primary":
-			loadMap("./res/usa_rep_primary.svg", 16, 1, "rep_primary", "primary", "open",null, {updateText: false});
+			loadMap("./res/usa_rep_primary.svg", 16, 1, "rep_primary", "primary", "open",{updateText: false});
 			break;
 		case "USA_county":
-			loadMap("./res/usa_county.svg", 16, 0.075, "congressional", "congressional", "open", null, {updateText: false});
+			loadMap("./res/usa_county.svg", 16, 0.075, "congressional", "congressional", "open", {updateText: false});
 			break;
 		case "USA_congressional":
-			loadMap("./res/usa_congressional_2018.svg", 16, 0.075, "congressional", "congressional", "open", null, {updateText: false});
+			loadMap("./res/usa_congressional_2018.svg", 16, 0.075, "congressional", "congressional", "open", {updateText: false});
 			break;
 		case "USA_congressional_2008":
-			loadMap("./res/usa_congressional_2008.svg", 16, 0.005, "congressional", "congressional", "open", null, {updateText: false});
+			loadMap("./res/usa_congressional_2008.svg", 16, 0.005, "congressional", "congressional", "open", {updateText: false});
 			break;
 		case "USA_gubernatorial":
-			loadMap("./res/usa_gubernatorial.svg", 16, 1.5, "usa_gubernatorial", "gubernatorial", "open", null, {updateText: false});
+			loadMap("./res/usa_gubernatorial.svg", 16, 1.5, "usa_gubernatorial", "gubernatorial", "open", {updateText: false});
 			break;
 		case "USA_senatorial":
-			loadMap("./res/usa_senate.svg", 16, 1.5, "usa_senate", "senatorial", "open", null, {updateText: false});
+			loadMap("./res/usa_senate.svg", 16, 1.5, "usa_senate", "senatorial", "open", {updateText: false});
 			break;
 		case "USA_takeall":
-			loadMap("./res/usa_no_districts.svg", 16, 1, "usa_no_districts_ec", "presidential", "open", null, {updateText: true});
+			loadMap("./res/usa_no_districts.svg", 16, 1, "usa_no_districts_ec", "presidential", "open", {updateText: true});
 			break;
 		case "USA_proportional":
-			loadMap("./res/usa_no_districts.svg", 16, 1, "usa_no_districts_ec", "proportional", "open", null, {updateText: true});
+			loadMap("./res/usa_no_districts.svg", 16, 1, "usa_no_districts_ec", "proportional", "open", {updateText: true});
 			break;
 		case "Germany_states":
-			loadMap("./res/germany.svg", 16, 1, "congressional", "congressional", "open", null, {updateText: false});
+			loadMap("./res/germany.svg", 16, 1, "congressional", "congressional", "open", {updateText: false});
 			loadPreset('germany')
 			break;
 		case "Germany_constituencies":
-			loadMap("./res/germany_constituencies.svg", 16, 1, "congressional", "congressional", "open", null, {updateText: false});
+			loadMap("./res/germany_constituencies.svg", 16, 1, "congressional", "congressional", "open", {updateText: false});
 			loadPreset('germany')
 			break;
 		case "France_constituencies":
-			loadMap("./res/france_constituencies.svg", 16, 0.25, "congressional", "congressional", "open", null, {updateText: false});
+			loadMap("./res/france_constituencies.svg", 16, 0.25, "congressional", "congressional", "open", {updateText: false});
 			loadPreset('france')
 			break;
 		case "Italy_states":
-			loadMap("./res/italy.svg", 16, 1, "congressional", "congressional", "open", null, {updateText: false});
+			loadMap("./res/italy.svg", 16, 1, "congressional", "congressional", "open", {updateText: false});
 			loadPreset('italy')
 			break;
 		case "Spain_constituencies":
-			loadmap("./res/spain_constituencies.svg", 16, 1, "spain_constituencies", "proportional", "open", null, {updateText: true});
+			loadmap("./res/spain_constituencies.svg", 16, 1, "spain_constituencies", "proportional", "open", {updateText: true});
 			break;
 		case "UnitedKingdom_constituencies":
-			loadMap("./res/unitedkingdom.svg", 16, 0.075, "congressional", "congressional", "open", null, {updateText: false});
+			loadMap("./res/unitedkingdom.svg", 16, 0.075, "congressional", "congressional", "open", {updateText: false});
 			loadPreset('uk')
 			break;
 		case "Canada_provinces":
-			loadMap("./res/canada_states.svg", 38, 3, "canada_ec", "presidential", "open", null, {updateText: true});
+			loadMap("./res/canada_states.svg", 38, 2, "congressional", "congressional", "open", {updateText: false});
 			loadPreset('canada')
 			break;
 		case "Canada_constituencies":
-			loadMap("./res/canada_constituencies.svg", 16, 0.075, "congressional", "congressional", "open", null, {updateText: true});
+			loadMap("./res/canada_constituencies.svg", 16, 0.075, "congressional", "congressional", "open", {updateText: true});
 			loadPreset('canada')
 			break;
 		case "Australia_constituencies":
-			loadMap("./res/australia_constituencies.svg", 16, 0.075, "congressional", "congressional", "open", null, {updateText: false});
+			loadMap("./res/australia_constituencies.svg", 16, 0.075, "congressional", "congressional", "open", {updateText: false});
 			loadPreset('australia')
 			break;
 		case "Australia_states":
-			loadMap("./res/australia.svg", 16, 0.075, "congressional", "congressional", "open", null, {updateText: false});
+			loadMap("./res/australia.svg", 16, 0.075, "congressional", "congressional", "open", {updateText: false});
 			loadPreset('australia')
 			break;
 		case "EuropeanUnion":
-			loadMap("./res/eu.svg", 16, 0.25, "eu_parliament", "primary", "open", null, {updateText: false});
+			loadMap("./res/eu.svg", 16, 0.25, "eu_parliament", "primary", "open", {updateText: false});
 			break;
 		case "World":
-			loadMap("./res/world.svg", 38, 0.5, "congressional", "congressional", "open", null, {updateText: false});
+			loadMap("./res/world.svg", 38, 0.5, "congressional", "congressional", "open", {updateText: false});
 			break;
 		case "LTE_presidential":
-			loadMap("./res/lte_president.svg", 30, 1, "lte_ec", "presidential", "open", null, {updateText: true});
+			loadMap("./res/lte_president.svg", 30, 1, "lte_ec", "presidential", "open", {updateText: true});
 			break;
 		case "LTE_senatorial":
-			loadMap("./res/lte_senate.svg", 35, 1, "ltesenate", "senatorial", "open", null, {updateText: false});
+			loadMap("./res/lte_senate.svg", 35, 1, "ltesenate", "senatorial", "open", {updateText: false});
 			break;
 		case "LTE_congressional":
-			loadMap("./res/lte_house.svg", 35, 1, "congressional", "congressional", "open", null, {updateText: false});
+			loadMap("./res/lte_house.svg", 35, 1, "congressional", "congressional", "open", {updateText: false});
 			break;
 		default:
-			loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open", null, {updateText: true});
+			loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open", {updateText: true});
 			break;
 	}
 }
 
 // loads the svg element into the HTML
-function loadMap(filename, fontsize, strokewidth, dataid, type, year, onLoad, options) {
+function loadMap(filename, fontsize, strokewidth, dataid, type, year, options) {
 	save_filename = filename;
 	save_dataid = dataid;
 	save_type = type;
@@ -278,15 +278,16 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year, onLoad, op
 
 		if(type === 'senatorial' && year !== 'open') {
 			blockPresets = true;
-			loadSenateFile(dataname, onLoad);
+			loadSenateFile(dataname);
 		} else if(type === 'gubernatorial' && year !== 'open') {
 			blockPresets = true;
-			loadGubernatorialFile(dataname, onLoad);
+			loadGubernatorialFile(dataname);
 		} else {
 			mapHTML.style.visibility = 'visible';
-			if(typeof onLoad === 'function') {
-				onLoad();
-			}
+		}
+
+		if(options.onLoad) {
+			options.onLoad();
 		}
 
 		if(options.states) {
@@ -299,8 +300,6 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year, onLoad, op
 			countVotes();
 			updateChart();
 			updateLegend();
-		} else {
-
 		}
 
 		// display the take all button for usa proportional maps
@@ -313,7 +312,7 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year, onLoad, op
 	});
 }
 
-function loadGubernatorialFile(gubernatorialfile, onLoad) {
+function loadGubernatorialFile(gubernatorialfile) {
 
 	if(gubernatorialfile.includes('open') == false) {
 	}
@@ -358,7 +357,13 @@ function loadGubernatorialFile(gubernatorialfile, onLoad) {
 			}
 		}
 
-		finishDataLoad(onLoad);
+		countVotes();
+		updateLegend();
+		updateChart();
+		updateLegend();
+
+		var mapHTML = document.getElementById('map-div');
+		mapHTML.style.visibility = 'visible';
 	});
 }
 
@@ -419,33 +424,20 @@ function loadSenateFile(senatefile, onLoad) {
 			}
 		}
 
-		finishDataLoad(onLoad);
+		countVotes();
+		updateLegend();
+		updateChart();
+		updateLegend();
+
+		var mapHTML = document.getElementById('map-div');
+		mapHTML.style.visibility = 'visible';
 	});
-}
-
-function finishDataLoad(onLoad) {
-
-	if(onLoad !== undefined && onLoad !== null) {
-		onLoad();
-	}
-	
-	verifyMap();
-	verifyPaintIndex();
-	chart.generateLegend();
-	countVotes();
-	updateLegend();
-	updateChart();
-	updateLegend();
-	verifyTextToggle();
-
-	var mapHTML = document.getElementById('map-div');
-	mapHTML.style.visibility = 'visible';
 }
 
 function loadSavedMap(data) {
 	var lines = data.split('\n');
 	var meta = lines[0].split(' ');
-	loadMap(meta[0], meta[1], meta[2], meta[3], meta[4], meta[5], function() {
+	loadMap(meta[0], meta[1], meta[2], meta[3], meta[4], meta[5], {onLoad: function() {
 		console.log("Loading saved map...");
 
 		// --- RUN THIS AFTER THE MAP HAS BEEN LOADED ---
@@ -523,8 +515,8 @@ function loadSavedMap(data) {
 		updateChart();
 		updateLegend();
 		updateLTEHouse();
-	},
-		{
+	}
+		,
 		updateText: meta[7]
 	});
 }

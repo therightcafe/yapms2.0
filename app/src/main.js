@@ -71,7 +71,7 @@ var previousPalette = function() {
 var panObject = null;
 
 function toTakeAll() {
-	loadMap(loadConfig.filename, loadConfig.fontsize, loadConfig.strokewidth, loadConfig.dataid, "presidential", "open", null, {updateText: mapOptions.updateText, states: states});
+	loadMap(loadConfig.filename, loadConfig.fontsize, loadConfig.strokewidth, loadConfig.dataid, "presidential", "open", {updateText: mapOptions.updateText, states: states});
 }
 
 function share() {
@@ -710,7 +710,7 @@ function verifyMap() {
 
 // sets all states to white
 function clearMap() {
-	loadMap(loadConfig.filename, loadConfig.fontsize, loadConfig.strokewidth, loadConfig.dataid, loadConfig.type, loadConfig.year, null, {updateText: mapOptions.updateText});
+	loadMap(loadConfig.filename, loadConfig.fontsize, loadConfig.strokewidth, loadConfig.dataid, loadConfig.type, loadConfig.year, {updateText: mapOptions.updateText});
 }
 
 // iterate over each state and delegate votes to the candidate
@@ -1148,7 +1148,7 @@ function start() {
 			},
 			error: function(a, b, c) {
 				console.log("Did not find saved map...");
-				loadMap('./res/usa_presidential.svg', 16, 1, 'usa_ec',"presidential", "open", null, {updateText: true});
+				loadMap('./res/usa_presidential.svg', 16, 1, 'usa_ec',"presidential", "open", {updateText: true});
 
 				var notification = document.getElementById('notification');
 				var message = notification.querySelector('#notification-message');
@@ -1164,7 +1164,7 @@ function start() {
 		loadMapFromId(php_load_map_id);
 	} else {
 		loadPreset("classic");
-		loadMap('./res/usa_presidential.svg', 16, 1, 'usa_ec',"presidential", "open", null, {updateText: true});
+		loadMap('./res/usa_presidential.svg', 16, 1, 'usa_ec',"presidential", "open", {updateText: true});
 	}
 }
 

@@ -229,7 +229,7 @@ if($mobile === false) {
 </div>
 
 <div id="miscmenu" class="popup selectmenu">
-	<object type="image/svg+xml" data="./html/closebutton.svg">Help</object>
+	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2>Misc</h2>
 	<a class="selectmenu-button" onclick="displayVersionInfo()">Version Info</a>
 	<a class="selectmenu-button" onclick="centerMap()">Center Map</a>
@@ -239,7 +239,7 @@ if($mobile === false) {
 </div>
 
 <div id="customcolormenu" class="popup selectmenu">
-<?php include './html/closebutton.html'; ?>
+	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2>Custom Color Edit</h2>
 	<input id="custom-color-name" type="hidden">
 	<a class="selectmenu-button">Solid <input id="solidcustom" type="color"></a>
@@ -250,7 +250,7 @@ if($mobile === false) {
 </div>
 
 <div id="addcandidatemenu" class="popup selectmenu">
-<?php include './html/closebutton.html'; ?>
+	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2>Add Candidate</h2>
 	<a class="selectmenu-button">Name <input id="name" type="text"></a>
 	<a class="selectmenu-button selectmenu-red" onclick='setColors("red")'>Red Colors</a>
@@ -296,7 +296,7 @@ if($mobile === false) {
 </div>
 
 <div id="modemenu" class="popup selectmenu">
-<?php include './html/closebutton.html'; ?>
+	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2>Select Mode</h2>
 	<a class="selectmenu-button" id="paintmovebutton" onclick='closeNotification(this); setMode("paintmove")'><i class="fas fa-paint-brush"></i> Paint/Move</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); setMode("paint")'><i class="fas fa-paint-brush"></i> Paint</a>
@@ -307,7 +307,7 @@ if($mobile === false) {
 </div>
 
 <div id="thememenu" class="popup selectmenu">
-<?php include './html/closebutton.html'; ?>
+	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2>Select Theme</h2>	
 	<a class="selectmenu-button" onclick='darkPalette()'>Dark</a>
 	<a class="selectmenu-button" onclick='terminalPalette()'>Terminal</a>
@@ -318,7 +318,7 @@ if($mobile === false) {
 </div>
 
 <div id="chartmenu" class="popup selectmenu">
-<?php include './html/closebutton.html'; ?>
+	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2>Select Chart</h2>	
 	<a class="selectmenu-split">Charts</a>
 	<a class="selectmenu-button" onclick='setChart("horizontalbattle")'>Horizontal Battle</a>
@@ -337,7 +337,7 @@ if($mobile === false) {
 </div>
 
 <div id="presetmenu" class="popup selectmenu">
-<?php include './html/closebutton.html'; ?>
+	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2>Add Candidates</h2>	
 	<a class="selectmenu-split">Custom</a>
 	<a class="selectmenu-button" onclick='customColorBackground(); displayAddCandidateMenu();'>Add Custom</a>
@@ -351,14 +351,14 @@ if($mobile === false) {
 
 <!-- UK Maps -->
 <div id="mapmenu-uk" class="popup selectmenu">
-<?php include './html/closebutton.html'; ?>
+	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2>United Kingdom</h2>
 	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/unitedkingdom.svg", 16, 0.075, "congressional", "congressional", "open");'>United Kingdom</a>
 </div>
 
 <!-- Canada Maps -->
 <div id="mapmenu-canada" class="popup selectmenu">
-<?php include './html/closebutton.html'; ?>
+	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2>Canada</h2>
 	<a class="selectmenu-button" href="./?t=Canada_provinces">Canada Provinces</a>
 	<a class="selectmenu-button" href="./?t=Canada_constituencies">Canada Constituencies</a>
@@ -366,7 +366,7 @@ if($mobile === false) {
 
 <!-- German Maps -->
 <div id="mapmenu-germany" class="popup selectmenu">
-<?php include './html/closebutton.html'; ?>
+	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2>Germany</h2>
 	<a class="selectmenu-button" href="./?t=Germany_states">States</a>
 	<a class="selectmenu-button" href="./?t=Germany_constituencies">Constituencies</a>
@@ -374,7 +374,7 @@ if($mobile === false) {
 
 `<!-- Australia Maps -->
 <div id="mapmenu-australia" class="popup selectmenu">
-<?php include './html/closebutton.html'; ?>
+	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2>Australia</h2>
 	<a class="selectmenu-button" href="./?t=Australia_states">States</a>
 	<a class="selectmenu-button" href="./?t=Australia_constituencies">Constituencies</a>
@@ -382,7 +382,7 @@ if($mobile === false) {
 
 <!-- Italy Maps -->
 <div id="mapmenu-italy" class="popup selectmenu">
-<?php include './html/closebutton.html'; ?>
+	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2>Italy</h2>
 	<a class="selectmenu-button" href="./?t=Italy_states">States</a>
 	<!--<a class="selectmenu-button" href="./?t=Italy_constituencies">Constituencies</a>-->
@@ -390,7 +390,7 @@ if($mobile === false) {
 
 <!-- USA Maps -->
 <div id="mapmenu-usa" class="popup selectmenu">
-<?php include './html/closebutton.html'; ?>
+	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2>USA Maps</h2>
 	<a class="selectmenu-split">2020</a>
 	<a class="selectmenu-button" href="./?t=2020_presidential">Presidential</a>
@@ -415,7 +415,7 @@ if($mobile === false) {
 
 <!-- USA Historical Maps -->
 <div id="mapmenu-usa-historical" class="popup selectmenu">
-<?php include './html/closebutton.html'; ?>
+	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2>USA Historical Maps</h2>
 	<a class="selectmenu-button" href="./?t=2018_congress">Congress 2018</a>
 	<a class="selectmenu-button" href="./?t=2016_presidential_county">Presidential County 2016</a>
@@ -462,7 +462,7 @@ if($mobile === false) {
 
 <!-- Mock Maps -->
 <div id="mapmenu-lte" class="popup selectmenu">
-<?php include './html/closebutton.html'; ?>
+	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2>LTE</h2>
 	<a class="selectmenu-button" href="./?t=LTE_presidential">Presidential</a>
 	<a class="selectmenu-button" href="./?t=LTE_senatorial">Senatorial</a>
@@ -471,7 +471,7 @@ if($mobile === false) {
 
 <!-- Maps menu -->
 <div id="mapmenu" class="popup selectmenu">
-<?php include './html/closebutton.html'; ?>
+	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2>Select Map</h2>
 	<a class="selectmenu-split">Countries</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("usa")'; >USA</a>
@@ -489,13 +489,13 @@ if($mobile === false) {
 </div> 
 
 <div id="notification" class="popup">
-<?php include './html/closebutton.html'; ?>
+	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h3 id="notification-title"></h3>
 	<p id="notification-message"></p>
 </div>
 
 <div id="share" class="popup">
-<?php include './html/closebutton.html'; ?>
+	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h3>Share Link</h3>
 	<div id="shareurl"></div>
 	<br>
@@ -508,7 +508,7 @@ if($mobile === false) {
 </div>
 
 <div id="loadmenu" class="popup">
-<?php include './html/closebutton.html'; ?>
+	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2>Load From File</h2>
 	<p>Select a yapms file to load</p>
 	<form action="load.php" method="post" enctype="multipart/form-data">
@@ -519,7 +519,7 @@ if($mobile === false) {
 </div>
 
 <div id="versioninfo" class="popup">
-<?php include './html/closebutton.html'; ?>
+	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2>Version Info</h2>
 	<a id="versioninfo-text"></a>
 </div>

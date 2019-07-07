@@ -100,7 +100,6 @@ function addCandidate(name, solid, likely, leaning, tilting) {
 	updateChart();
 	chart.generateLegend();
 	updateLegend();
-	verifyTextToggle();
 }
 
 function setCandidate(e) {

@@ -59,7 +59,6 @@ function loadPreset(value) {
 	updateChart();
 	chart.generateLegend();
 	updateLegend();
-	verifyTextToggle();
 }
 
 // republicans vs democrats
