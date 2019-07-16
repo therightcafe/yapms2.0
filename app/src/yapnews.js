@@ -7,7 +7,7 @@ $.ajax({
 		var articles = document.getElementById("yapnews-articles");
 
 		if(articles === null) {
-			alert('fail');
+			//alert('fail');
 			return;
 		}
 
