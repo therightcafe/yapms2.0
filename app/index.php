@@ -221,6 +221,8 @@ if($mobile === false) {
 			</h3>
 			<span><input type="checkbox" id="popularvote-automargins" onclick="autoMarginsOnClick();" checked>Auto Margins</span>
 		</div>',
+		'<div id="yapnews-articles">
+		</div>' ,
 	'</div>';
 }
 ?>
