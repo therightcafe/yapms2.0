@@ -5,6 +5,10 @@ function numberWithCommas(number) {
 }
 
 function verifyPopularVote() {
+	if(mobile) {
+		return false;
+	}
+
 	if(enablePopularVote) {
 		var element = document.getElementById('sidebar-popularvote');
 		element.style.display = 'block';
