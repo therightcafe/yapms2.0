@@ -1,33 +1,3 @@
-#yapnews {
-	overflow-y: auto;
-	display: inline-flex;
-	flex-direction: column;
-	transition: all 500ms;
-}
-
-#yapnews-header {
-	font-family: Times;
-	font-size: 28px;
-	margin: 10px;
-	padding-bottom: 10px;
-	border-bottom: 1px solid #cccccc;
-}
-
-#yapnews-discord-link {
-	text-decoration: none;
-}
-
-#yapnews-discord {
-	background: #7289da;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	border-radius: 12px;
-	border: 2px solid white;
-	font-weight: bold;
-	text-decoration: none;
-	color: white;
-}
-
 #yapnews-close {
 	background-color: #cccccc;
 	position: absolute;

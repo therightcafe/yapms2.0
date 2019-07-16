@@ -84,6 +84,7 @@
 			include './style/battlechart.css';
 			include './style/yapnews.css';
 			include './style/sidebar.css';
+			include './style/yapnews.css';
 		?>
 	</style>
 
