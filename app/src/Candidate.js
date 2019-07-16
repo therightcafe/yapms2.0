@@ -100,6 +100,8 @@ function addCandidate(name, solid, likely, leaning, tilting) {
 	updateChart();
 	chart.generateLegend();
 	updateLegend();
+
+	countPopularVote();
 }
 
 function setCandidate(e) {
@@ -163,6 +165,7 @@ function deleteCandidate(e) {
 	updateLegend();
 	verifyMap();
 	updateChart();
+	countPopularVote();
 }
 
 function deleteCandidateByName(name) {
@@ -188,6 +191,7 @@ function deleteCandidateByName(name) {
 	updateLegend();
 	verifyMap();
 	updateChart();
+	countPopularVote();
 }
 
 function deleteCandidateByNameConfirm(name) {

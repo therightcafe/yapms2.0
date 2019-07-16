@@ -80,6 +80,10 @@ button {
 	transition: all 100ms linear;
 }
 
+#outlines rect {
+	transition: all 100ms linear;
+}
+
 #text {
 	font-size: 16px;
 	font-weight: medium;

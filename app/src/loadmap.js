@@ -5,6 +5,8 @@ var save_year;
 var save_fontsize;
 var save_strokewidth;
 
+var enablePopularVote = false;
+
 function loadCurrentCongress() {
 	$.ajax({
 		url: "./res/presets/current_congress",
@@ -95,10 +97,10 @@ function loadMapFromId(id) {
 			loadPresetMap(id);
 			break;
 		case "2020_presidential_popular":
-			loadMap("./res/usa_presidential.svg", 16, 1, "usa_voting_pop", "usapopular", "open", {updateText: false});
+			loadMap("./res/usa_presidential.svg", 16, 1, "usa_voting_pop", "usapopular", "open", {updateText: false, enablePopularVote: true});
 			break;
 		case "2020_presidential":
-			loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open", {updateText: true});
+			loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open", {updateText: true, voters: 'usa_voting_pop', enablePopularVote: true});
 			break;
 		case "1972_presidential":
 			loadMap("./res/usa_1972_presidential.svg", 16, 1, "usa_1972_ec", "presidential", "open", {updateText: true});
@@ -205,6 +207,9 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year, options) {
 	save_fontsize = fontsize;
 	save_strokewidth = strokewidth;
 
+	enablePopularVote = options.enablePopularVote;
+	verifyPopularVote();
+
 //	var mapmenu = document.getElementById('mapmenu');
 //	mapmenu.style.display = 'none';
 
@@ -300,6 +305,17 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year, options) {
 			countVotes();
 			updateChart();
 			updateLegend();
+		}
+
+		if(options.voters) {
+			for(var stateIndex = 0, length = states.length; stateIndex < length; ++stateIndex) {
+				var state = states[stateIndex];
+				state.voters = data[options.voters][state.name];
+				state.popularVote = {};
+				state.popularVote['Tossup'] = state.voters;
+			}
+
+			countPopularVote();
 		}
 
 		// display the take all button for usa proportional maps

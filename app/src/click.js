@@ -62,6 +62,10 @@ function landClick(clickElement) {
 	var id = clickElement.getAttribute('id');
 	var split = id.split('-');
 	var stateName = split[0];
+	var districtName = split[1];
+
+	//console.log(split[0] + '-' + split[1]);
+	//console.log(states[split[0] + '-' + split[1]]);
 
 	var AL;
 	var districts = [];
@@ -69,6 +73,7 @@ function landClick(clickElement) {
 	// get each district
 	states.forEach(function(state, index) {
 		if(state.name.includes(stateName)) {
+			console.log(state);
 			districts.push(state);
 
 			if(state.name.includes('AL')) {
@@ -92,6 +97,7 @@ function landClick(clickElement) {
 	countVotes();
 	updateChart();
 	updateLegend();
+	countPopularVote();
 }
 
 function stateClick(clickElement, e) {
@@ -130,6 +136,8 @@ function stateClick(clickElement, e) {
 
 function stateClickPaint(state, id) {
 	state.incrementCandidateColor(paintIndex);
+	viewPopularVote(state);
+	countPopularVote();
 }
 
 function stateClickPaintProportional(state, id) {

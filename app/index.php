@@ -83,6 +83,7 @@
 			include './style/style.css';
 			include './style/battlechart.css';
 			include './style/yapnews.css';
+			include './style/sidebar.css';
 		?>
 	</style>
 
@@ -114,11 +115,9 @@
 		<i class="fas fa-palette"></i> Themes
 	</button>
 
-	<a href="https://www.yapms.com/privacypolicy.html" target="_blank">
 	<button id="takeallbutton" class="click-button" style="white-space: nowrap; display: none;">
 		<i class="fas fa-sliders-h"></i> Take All	
 	</button>
-	</a>
 
 	<button class="click-button" onclick="share()" style="white-space: nowrap;">
 		<i class="fas fa-share-alt"></i> Share
@@ -140,9 +139,11 @@ if($mobile === false) {
 		<i class="fas fa-clipboard"></i> Misc
 	</button>
 
-	<button class="click-button" onclick='location.href = "https://www.yapms.com/privacypolicy.html"' style="white-space: nowrap;">
+	<a href="https://www.yapms.com/privacypolicy.html" target="_blank">
+	<button class="click-button" style="white-space: nowrap;">
 		<i class="fas fa-user-secret"></i> Privacy Policy
 	</button>
+	</a>
 </div>
 
 
@@ -168,7 +169,7 @@ if($mobile === false) {
 	<div id="map-div">
 
 	</div>
-<?php
+<!--
 if($mobile === false) {
 	echo '<div id="yapnews-close" onclick="toggleYAPNews()">',
 		'<svg class="yapnews-close-svg" width="8" height="24">',
@@ -177,10 +178,53 @@ if($mobile === false) {
 		'</svg>',
 		'</div>';
 }
-?>
+-->
 </div>
 </div>
 <?php
+if($mobile === false) {
+	echo '<div id="sidebar">' ,
+		'<div id="sidebar-header">
+			YAPms  
+		</div>' ,
+		'<a id="sidebar-discord-link" href="https://discord.gg/WQh5fHU" target="_blank">
+		<div id="sidebar-discord">
+			Join Our Discord
+			</div>
+		</a>',
+		'<div id="sidebar-popularvote">
+			<h3>
+				<span>
+				State Popular Vote
+				</span>
+			</h3>
+			<div id="popularvote-message">
+				Select a State
+			</div>
+			<div id="popularvote-state-title">
+			</div>
+			<div id="popularvote-ranges">
+			</div>
+		</div>',
+		'<div id="sidebar-national-popularvote">
+			<h3>
+				<span>
+				National Popular Vote
+				</span>
+			</h3>
+			<div id="national-popularvote-ranges">
+			</div>
+		</div>',
+		'<div id="sidebar-popularvote-settings">
+			<h3>
+				Settings
+			</h3>
+			<span><input type="checkbox" id="popularvote-automargins" onclick="autoMarginsOnClick();" checked>Auto Margins</span>
+		</div>',
+	'</div>';
+}
+?>
+<!--
 if($mobile === false) {
 	echo '<div id="yapnews">' ,
 		'<div id="yapnews-header">' ,
@@ -198,7 +242,7 @@ if($mobile === false) {
 		'</div>' ,
 	'</div>';
 }
-?>
+-->
 
 <div id="demdel" class="popup">
 	<h3 id="demdel-message"></h3>
@@ -551,6 +595,7 @@ if($mobile === false) {
 <script src="./src/battlechart.js"></script>
 <script src="./src/presets.js"></script>
 <script src="./src/click.js"></script>
+<script src="./src/popularvote.js"></script>
 <script src="./src/main.js"></script>
 <?php 
 	if($mobile === true) {

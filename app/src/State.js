@@ -12,6 +12,9 @@ class State {
 		this.resetVoteCount();
 		this.disabled = false;
 		this.locked = false;
+		this.voters = 0;
+		this.popularVote = {};
+		this.turnout = 100;
 	}
 
 	resetVoteCount() {
@@ -305,10 +308,18 @@ class State {
 		if(button != null) {
 			button.style.fill = color;
 		}
+		
+		for(var key in candidates) {
+			if(key === candidate) {
+				this.popularVote[key] = this.voters;
+			} else {
+				this.popularVote[key] = 0;
+			}
+		}
 	}
 
 	// directly change the color of a state (add error checking pls)
-	setColor(candidate, colorValue) {
+	setColor(candidate, colorValue, setPopularVote) {
 		if(this.disabled) {
 			return;
 		}
@@ -335,6 +346,18 @@ class State {
 		var button = document.getElementById(this.name + '-button');
 		if(button != null) {
 			button.style.fill = color;
+		}
+
+		if(setPopularVote) {
+			for(var key in candidates) {
+				if(key === candidate) {
+					this.popularVote[key] = this.voters;
+				} else {
+					this.popularVote[key] = 0;
+				}
+			}
+
+			viewPopularVote(this);
 		}
 	}
 };

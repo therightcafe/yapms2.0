@@ -363,6 +363,24 @@
 				1912 Presidential
 			</div>
 		</a><br>
+		
+		<a href="./app/?t=1908_presidential">
+			<div class="map-button">
+				1908 Presidential
+			</div>
+		</a>
+		
+		<a href="./app/?t=1904_presidential">
+			<div class="map-button">
+				1904 Presidential
+			</div>
+		</a>
+		
+		<a href="./app/?t=1900_presidential">
+			<div class="map-button">
+				1900 Presidential
+			</div>
+		</a><br>
 
 		<a href="./app/?t=1896_presidential">
 			<div class="map-button">
