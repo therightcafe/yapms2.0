@@ -5,6 +5,7 @@
 	transition: all 500ms;
 	border-left: 1px solid black;
 	min-width: 300px;
+	width: 20vw;
 	background: #fafafa;
 }
 
