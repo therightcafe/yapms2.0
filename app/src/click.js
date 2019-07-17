@@ -111,7 +111,8 @@ function stateClick(clickElement, e) {
 			} else if(mapType === 'usapopular') {
 				stateClickPaintProportional(state, id);	
 			} else {
-				stateClickPaint(state, id);
+				var skipAtLargeCount = state.name.includes('-AL');
+				stateClickPaint(state, id, {skipAtLargeCount: skipAtLargeCount});
 			}
 			break;
 		case 'ec':
@@ -128,10 +129,10 @@ function stateClick(clickElement, e) {
 	updateLTEHouse();
 }
 
-function stateClickPaint(state, id) {
+function stateClickPaint(state, id, options) {
 	state.incrementCandidateColor(paintIndex);
 	viewPopularVote(state);
-	countPopularVote();
+	countPopularVote(options);
 }
 
 function stateClickPaintProportional(state, id) {
