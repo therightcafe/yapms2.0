@@ -101,7 +101,7 @@ function viewPopularVote(state) {
 	while(ranges.firstChild) {
 		ranges.removeChild(ranges.firstChild);
 	}
-	
+
 	if(state.name.includes('-AL')) {
 		title.innerHTML = "Select a disctrict to set popular vote";
 		return;
@@ -276,7 +276,7 @@ function viewPopularVote(state) {
 	ranges.appendChild(displayTossup);
 }
 
-function countPopularVote() {
+function countPopularVote(options) {
 	if(verifyPopularVote() === false) {
 		return;
 	}
@@ -311,9 +311,9 @@ function countPopularVote() {
 			
 				if(state.name.includes('-') && state.name.includes('AL') === false) {
 					var mainName = state.name.split('-')[0];
-					var district = parseInt(state.name.split('-')[1]);
+					var district = state.name.split('-')[1];
 					if(typeof splitState[mainName] === 'undefined') {
-						splitState[mainName] = []; 
+						splitState[mainName] = {}; 
 					}
 
 					if(typeof splitState[mainName][district] === 'undefined') {
@@ -328,30 +328,39 @@ function countPopularVote() {
 		}
 	}
 
-	for(var stateKey in splitState) {
-		var winCount = 0;
-		var winCandidate = "Tossup";
-		for(var candidate in candidates) {
-			var votes = 0;
-			for(var districtKey in splitState[stateKey]) {
-				votes += splitState[stateKey][districtKey][candidate];
+	var autoMarginsAL = document.getElementById('popularvote-automargins').checked;
+	if(options) {
+		autoMarginsAL = !options.skipAtLargeCount;
+	}
+	if(autoMarginsAL) {
+		for(var stateKey in splitState) {
+			var winCount = 0;
+			var winCandidate = "Tossup";
+			for(var candidate in candidates) {
+				if(candidate === 'Tossup')
+					continue;
+				var votes = 0;
+				for(var districtKey in splitState[stateKey]) {
+					if(splitState[stateKey][districtKey][candidate]) {
+						votes += splitState[stateKey][districtKey][candidate];
+					}
+				}
+				
+				if(votes > winCount) {
+					winCount = votes;
+					winCandidate = candidate;
+				}
 			}
-			if(votes > winCount) {
-				winCount = votes;
-				winCandidate = candidate;
+
+			var state = states.filter(obj => {
+				return obj.name === stateKey + '-AL';	
+			})[0];
+
+			if(winCount === 0) {
+				state.setColor('Tossup', 0, true);
+			} else {
+				state.setColor(winCandidate, 0, true);
 			}
-		}
-
-		var state = states.filter(obj => {
-			return obj.name === stateKey + '-AL';	
-		})[0];
-
-		if(winCount === 0) {
-			state.popularVote = 0;
-			state.setColor('Tossup', 0);
-		} else {
-			state.popularVote = winCount;
-			state.setColor(winCandidate, 0);
 		}
 	}
 

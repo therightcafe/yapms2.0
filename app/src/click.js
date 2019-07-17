@@ -54,7 +54,6 @@ function buttonClickDelete(clickElement) {
 }
 
 function landClick(clickElement) {
-
 	if(mode === 'move') {
 		return;
 	}
@@ -64,18 +63,13 @@ function landClick(clickElement) {
 	var stateName = split[0];
 	var districtName = split[1];
 
-	//console.log(split[0] + '-' + split[1]);
-	//console.log(states[split[0] + '-' + split[1]]);
-
 	var AL;
 	var districts = [];
 
 	// get each district
 	states.forEach(function(state, index) {
 		if(state.name.includes(stateName)) {
-			console.log(state);
 			districts.push(state);
-
 			if(state.name.includes('AL')) {
 				AL = state;
 			}
@@ -86,7 +80,7 @@ function landClick(clickElement) {
 		// check if each district has the same candidate and color value
 		AL.incrementCandidateColor(paintIndex);
 		districts.forEach(function(district) {
-			district.setColor(AL.getCandidate(), AL.getColorValue());
+			district.setColor(AL.getCandidate(), AL.getColorValue(), true);
 		});
 	} else if(mode === 'delete') {
 		districts.forEach(function(district) {
@@ -97,7 +91,7 @@ function landClick(clickElement) {
 	countVotes();
 	updateChart();
 	updateLegend();
-	countPopularVote();
+	countPopularVote({skipAtLargeCount: true});
 }
 
 function stateClick(clickElement, e) {

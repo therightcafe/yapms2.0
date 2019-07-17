@@ -308,11 +308,12 @@ class State {
 		if(button != null) {
 			button.style.fill = color;
 		}
-		
+
 		for(var key in candidates) {
 			if(key === candidate) {
 				this.popularVote[key] = this.voters;
 			} else {
+				console.log(this);
 				this.popularVote[key] = 0;
 			}
 		}
@@ -356,8 +357,6 @@ class State {
 					this.popularVote[key] = 0;
 				}
 			}
-
-			viewPopularVote(this);
 		}
 	}
 };
