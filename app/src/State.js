@@ -314,7 +314,6 @@ class State {
 				if(key === candidate) {
 					this.popularVote[key] = this.voters * (this.turnout / 100.0);
 				} else {
-					console.log(this);
 					this.popularVote[key] = 0;
 				}
 			}

@@ -199,7 +199,6 @@ function viewPopularVote(state) {
 				total += parseInt(this.value);
 
 				max = state.voters * (state.turnout / 100.0);
-				console.log(max + ' - ' + total);
 				if(total > max) {
 					var diff = total - max;
 					total -= diff;
@@ -296,9 +295,6 @@ function calculateAutoMarginAL(stateName) {
 	var atLarge = states.filter(obj => {
 		return obj.name.includes(stateName + '-AL');
 	})[0];
-
-	console.log(allDistricts);
-	console.log(atLarge);
 
 	var firstCount = 0;
 	var firstCandidate = "Tossup";
