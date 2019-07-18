@@ -127,6 +127,9 @@
 if($mobile === false) {
 	echo '<button class="click-button" onclick="displayLoadMenu()" style="white-space: nowrap;">
 		<i class="fas fa-upload"></i> Load
+		</button>',
+	'<button class="click-button" onclick="toggleYAPNews()" style="white-space: nowrap;">
+		<i class="fas fa-bars"></i> Sidebar
 		</button>';
 }
 ?>
@@ -144,6 +147,7 @@ if($mobile === false) {
 		<i class="fas fa-user-secret"></i> Privacy Policy
 	</button>
 	</a>
+
 </div>
 
 <div id="application-sidebar-div">
@@ -169,16 +173,6 @@ if($mobile === false) {
 	<div id="map-div">
 
 	</div>
-<!--
-if($mobile === false) {
-	echo '<div id="yapnews-close" onclick="toggleYAPNews()">',
-		'<svg class="yapnews-close-svg" width="8" height="24">',
-			'<line id="yapnews-close-l1" x1="1" y1="0" x2="8" y2="12" stroke="#333333" stroke-width="2"/>',
-			'<line id="yapnews-close-l2" x1="1" y1="24" x2="8" y2="12" stroke="#333333" stroke-width="2"/>',
-		'</svg>',
-		'</div>';
-}
--->
 </div>
 <?php
 if($mobile === false) {
