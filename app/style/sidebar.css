@@ -2,7 +2,6 @@
 	overflow-y: auto;
 	display: inline-flex;
 	flex-direction: column;
-	transition: all 500ms;
 	border-left: 1px solid black;
 	min-width: 300px;
 	width: 20vw;
@@ -105,4 +104,13 @@
 #sidebar-popularvote-settings h3 {
 	border-bottom: 1px solid black;	
 	margin: 5px;
+}
+
+.sidebar-hover-popup div {
+	display: none;
+}
+
+.sidebar-hover-popup:hover div {
+	display: block;	
+	color: green;
 }

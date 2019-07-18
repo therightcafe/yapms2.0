@@ -254,7 +254,7 @@ class State {
 
 	// only incrememnt though the colors of the specified candidate
 	// if the state isn't this candidates color, start at solid
-	incrementCandidateColor(candidate) {
+	incrementCandidateColor(candidate, setPopularVote) {
 		if(this.disabled) {
 			return;
 		}
@@ -309,12 +309,14 @@ class State {
 			button.style.fill = color;
 		}
 
-		for(var key in candidates) {
-			if(key === candidate) {
-				this.popularVote[key] = this.voters;
-			} else {
-				console.log(this);
-				this.popularVote[key] = 0;
+		if(setPopularVote) {
+			for(var key in candidates) {
+				if(key === candidate) {
+					this.popularVote[key] = this.voters * (this.turnout / 100.0);
+				} else {
+					console.log(this);
+					this.popularVote[key] = 0;
+				}
 			}
 		}
 	}
@@ -352,7 +354,7 @@ class State {
 		if(setPopularVote) {
 			for(var key in candidates) {
 				if(key === candidate) {
-					this.popularVote[key] = this.voters;
+					this.popularVote[key] = this.voters * (this.turnout / 100.0);
 				} else {
 					this.popularVote[key] = 0;
 				}

@@ -76,6 +76,9 @@ function landClick(clickElement) {
 		}
 	});
 
+	// make the popular vote calculator point to the AL
+	viewPopularVote(AL);
+
 	if(mode === 'paint' || mode === 'paintmove') {
 		// check if each district has the same candidate and color value
 		AL.incrementCandidateColor(paintIndex);
@@ -91,7 +94,7 @@ function landClick(clickElement) {
 	countVotes();
 	updateChart();
 	updateLegend();
-	countPopularVote({skipAtLargeCount: true});
+	countPopularVote();
 }
 
 function stateClick(clickElement, e) {
@@ -111,8 +114,7 @@ function stateClick(clickElement, e) {
 			} else if(mapType === 'usapopular') {
 				stateClickPaintProportional(state, id);	
 			} else {
-				var skipAtLargeCount = state.name.includes('-AL');
-				stateClickPaint(state, id, {skipAtLargeCount: skipAtLargeCount});
+				stateClickPaint(state, id);
 			}
 			break;
 		case 'ec':
@@ -130,7 +132,16 @@ function stateClick(clickElement, e) {
 }
 
 function stateClickPaint(state, id, options) {
-	state.incrementCandidateColor(paintIndex);
+	var setPopularVote = document.getElementById('popularvote-clicksetpv').checked;
+	state.incrementCandidateColor(paintIndex, setPopularVote);
+
+	if(state.name.includes('-D')) {
+		var autoMargins = document.getElementById('popularvote-automargins').checked;
+		if(autoMargins) {
+			calculateAutoMarginAL(state.name.split('-')[0]);
+		}
+	}
+
 	viewPopularVote(state);
 	countPopularVote(options);
 }

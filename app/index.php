@@ -94,7 +94,6 @@
 <body id="body" onresize="onResize()">
 
 <div id="yapms">
-
 <div id="menu-div">
 	<button class="click-button" onclick="clearMap()" style="white-space: nowrap;">
 		<i class="fas fa-window-close"></i> Clear
@@ -147,7 +146,7 @@ if($mobile === false) {
 	</a>
 </div>
 
-
+<div id="application-sidebar-div">
 <div id="application">
 	<div id="legend-div">
 	</div>
@@ -180,7 +179,6 @@ if($mobile === false) {
 		'</div>';
 }
 -->
-</div>
 </div>
 <?php
 if($mobile === false) {
@@ -220,13 +218,25 @@ if($mobile === false) {
 			<h3>
 				Settings
 			</h3>
-			<span><input type="checkbox" id="popularvote-automargins" onclick="autoMarginsOnClick();" checked>Auto Margins</span>
+			<span class="sidebar-hover-popup"><input type="checkbox" id="popularvote-automargins" onclick="autoMarginsOnClick();" checked>Auto Margins
+				<div>
+					Setting the popular vote will also set the color of a state
+				</div>
+			</span>
+			<br>
+			<span class="sidebar-hover-popup"><input type="checkbox" id="popularvote-clicksetpv" checked>Click Sets PV
+				<div>
+					Clicking on a state will alter the popular vote of the state
+				</div>
+			</span>
 		</div>',
 		'<div id="yapnews-articles">
 		</div>' ,
 	'</div>';
 }
 ?>
+</div>
+</div>
 <!--
 if($mobile === false) {
 	echo '<div id="yapnews">' ,

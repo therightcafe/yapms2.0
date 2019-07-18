@@ -42,39 +42,7 @@ function autoMarginsOnClick() {
 	// loop through all states and set the margins
 	for(var index in states) {
 		var state = states[index];
-
-		var win = 0;
-		var winCandidate = "Tossup";
-		var secondWin = 0;
-		var secondWinCandidate = "Tossup";
-		for(var candidate in candidates) {
-			var votes = state.popularVote[candidate];
-			if(votes > win) {
-				secondWin = win;
-				secondWinCandidate = winCandidate;
-				win = votes;
-				winCandidate = candidate;
-			} else if(votes > secondWin) {
-				secondWin = votes;
-				secondWinCandidate = candidate;
-			}
-		}
-
-		var combine = win + secondWin;
-		var margin = ((win / combine) * 100) - 50;
-		if(winCandidate === 'Tossup') {
-			state.setColor('Tossup', 0);
-		} else {
-			if(margin < 5.0) {
-				state.setColor(winCandidate, 3);
-			} else if(margin < 10.0) {
-				state.setColor(winCandidate, 2);
-			} else if(margin < 15.0) {
-				state.setColor(winCandidate, 1);
-			} else {
-				state.setColor(winCandidate, 0);
-			}
-		}
+		calculateAutoMargin(state);
 	}
 }
 
@@ -120,12 +88,19 @@ function viewPopularVote(state) {
 	turnoutRange.setAttribute('step', 0.1);
 	turnoutRange.setAttribute('value', state.turnout);
 
+	var max  = state.voters * (state.turnout / 100.0);
+	var total = 0;
+
 	turnoutRange.onchange = (function() {
 		return function() {
 			var turnout = document.getElementById('popularvote-turnout').value;
 			state.turnout = turnout;
+			
+			var autoMargins = document.getElementById('popularvote-automargins').checked;
 
-			state.setColor('Tossup', 0, true);
+			if(autoMargins) {
+				state.setColor('Tossup', 0, true);
+			}
 
 			for(var key in candidates) {
 				if(key === 'Tossup') {
@@ -133,10 +108,20 @@ function viewPopularVote(state) {
 				}
 				var range = document.getElementById('popular-range-' + key);
 				range.setAttribute('max', (state.voters * (turnout / 100.0)));
+				range.value = 0;
+				// call on input to reset prevValue to 0
+				range.oninput();
+				var rangeDisplay = document.getElementById('popular-display-' + key);
+				rangeDisplay.innerHTML = key + ' - 0 - 0%';
 			}
 
 			var displayTurnout = document.getElementById('popularvote-turnout-display');
 			displayTurnout.innerHTML = 'Turnout - ' + this.value + '%';
+
+			var displayTossup = document.getElementById('popular-display-Tossup');
+			displayTossup.innerHTML = 'Tossup - ' + numberWithCommas((state.voters * (turnout / 100.0)).toFixed(0)) + ' - 100%';
+			
+			total = 0;
 
 			countPopularVote();
 		}
@@ -151,9 +136,6 @@ function viewPopularVote(state) {
 
 	ranges.append(displayTurnout);
 	ranges.appendChild(turnoutRange);
-
-	var max  = state.voters * (state.turnout / 100.0);
-	var total = 0;
 
 	for(var key in candidates) {
 		if(key === 'Tossup')
@@ -175,7 +157,6 @@ function viewPopularVote(state) {
 		display.innerHTML = key + ' - ' + numberWithCommas(range.value) + ' - ' +
 			((state.popularVote[key] / max) * 100).toFixed(2) + '%';
 
-
 		range.onchange = (function() {
 			return function(b) {
 				var totalVotes = 0;
@@ -191,41 +172,11 @@ function viewPopularVote(state) {
 
 				var autoMargins = document.getElementById('popularvote-automargins').checked;
 				if(autoMargins) {
-					// Calculate the margin of victory
-					var win = 0;
-					var winCandidate = "Tossup";
-					var secondWin = 0;
-					var secondWinCandidate = "Tossup";
-					for(var candidate in candidates) {
-						// don't compare margins with the no vote
-						if(candidate === 'Tossup')
-							continue;
-						var votes = state.popularVote[candidate];
-						if(votes > win) {
-							secondWin = win;
-							secondWinCandidate = winCandidate;
-							win = votes;
-							winCandidate = candidate;
-						} else if(votes > secondWin) {
-							secondWin = votes;
-							secondWinCandidate = candidate;
-						}
-					}
+					calculateAutoMargin(state);
 
-					var combine = win + secondWin;
-					var margin = (((win - secondWin) / combine) * 100);
-					if(winCandidate === 'Tossup') {
-						state.setColor('Tossup', 0);
-					} else {
-						if(margin < 5.0) {
-							state.setColor(winCandidate, 3);
-						} else if(margin < 10.0) {
-							state.setColor(winCandidate, 2);
-						} else if(margin < 15.0) {
-							state.setColor(winCandidate, 1);
-						} else {
-							state.setColor(winCandidate, 0);
-						}
+					if(state.name.includes('-D')) {
+						var name = state.name.split('-')[0];
+						calculateAutoMarginAL(name);
 					}
 				}
 
@@ -248,7 +199,7 @@ function viewPopularVote(state) {
 				total += parseInt(this.value);
 
 				max = state.voters * (state.turnout / 100.0);
-
+				console.log(max + ' - ' + total);
 				if(total > max) {
 					var diff = total - max;
 					total -= diff;
@@ -276,7 +227,7 @@ function viewPopularVote(state) {
 	ranges.appendChild(displayTossup);
 }
 
-function countPopularVote(options) {
+function countPopularVote() {
 	if(verifyPopularVote() === false) {
 		return;
 	}
@@ -328,46 +279,105 @@ function countPopularVote(options) {
 		}
 	}
 
-	var autoMarginsAL = document.getElementById('popularvote-automargins').checked;
-	if(options) {
-		autoMarginsAL = !options.skipAtLargeCount;
-	}
-	if(autoMarginsAL) {
-		for(var stateKey in splitState) {
-			var winCount = 0;
-			var winCandidate = "Tossup";
-			for(var candidate in candidates) {
-				if(candidate === 'Tossup')
-					continue;
-				var votes = 0;
-				for(var districtKey in splitState[stateKey]) {
-					if(splitState[stateKey][districtKey][candidate]) {
-						votes += splitState[stateKey][districtKey][candidate];
-					}
-				}
-				
-				if(votes > winCount) {
-					winCount = votes;
-					winCandidate = candidate;
-				}
-			}
-
-			var state = states.filter(obj => {
-				return obj.name === stateKey + '-AL';	
-			})[0];
-
-			if(winCount === 0) {
-				state.setColor('Tossup', 0, true);
-			} else {
-				state.setColor(winCandidate, 0, true);
-			}
-		}
-	}
-
 	for(var candidate in popularVote) {
 		var display = document.createElement('DIV');
 		display.setAttribute('id', 'national-popular-display-' + candidate);
 		display.innerHTML = candidate + ' - ' + numberWithCommas(popularVote[candidate]);
 		ranges.appendChild(display);
+	}
+}
+
+function calculateAutoMarginAL(stateName) {
+	var allDistricts = states.filter(obj => {
+		return obj.name.includes(stateName) &&
+			obj.name.includes('-AL') === false;
+	});
+
+	var atLarge = states.filter(obj => {
+		return obj.name.includes(stateName + '-AL');
+	})[0];
+
+	console.log(allDistricts);
+	console.log(atLarge);
+
+	var firstCount = 0;
+	var firstCandidate = "Tossup";
+	var secondCount = 0;
+	var secondCandidate = "Tossup";
+	for(var candidate in candidates) {
+		if(candidate === 'Tossup')
+			continue;
+
+		var votes = 0;
+		for(var key in allDistricts) {
+			if(allDistricts[key].popularVote[candidate]) {
+				votes += allDistricts[key].popularVote[candidate];
+			}
+		}
+
+		if(votes > firstCount) {
+			secondCount = firstCount;
+			secondCandidate = firstCandidate;
+			firstCount = votes;
+			firstCandidate = candidate;
+		} else if(votes > secondCount) {
+			secondCount = votes;
+			secondCandidate = candidate;
+		}
+	}
+
+	var combine = firstCount + secondCount;
+	var margin = (((firstCount - secondCount) / combine) * 100);
+
+	if(firstCandidate === 'Tossup') {
+		atLarge.setColor('Tossup', 0, false);
+	} else {
+		if(margin < 5.0) {
+			atLarge.setColor(firstCandidate, 3, false);
+		} else if(margin < 10.0) {
+			atLarge.setColor(firstCandidate, 2, false);
+		} else if(margin < 15.0) {
+			atLarge.setColor(firstCandidate, 1, false);
+		} else {
+			atLarge.setColor(firstCandidate, 0, false);
+		}
+	}
+}
+
+function calculateAutoMargin(state) {
+	var win = 0;
+	var winCandidate = "Tossup";
+	var secondWin = 0;
+	var secondWinCandidate = "Tossup";
+	for(var candidate in candidates) {
+		// don't compare margins with the no vote
+		if(candidate === 'Tossup')
+			continue;
+		var votes = state.popularVote[candidate];
+		if(votes > win) {
+			secondWin = win;
+			secondWinCandidate = winCandidate;
+			win = votes;
+			winCandidate = candidate;
+		} else if(votes > secondWin) {
+			secondWin = votes;
+			secondWinCandidate = candidate;
+		}
+	}
+
+	var combine = win + secondWin;
+	var margin = (((win - secondWin) / combine) * 100);
+	if(winCandidate === 'Tossup') {
+		state.setColor('Tossup', 0);
+	} else {
+		if(margin < 5.0) {
+			state.setColor(winCandidate, 3, false);
+		} else if(margin < 10.0) {
+			state.setColor(winCandidate, 2, false);
+		} else if(margin < 15.0) {
+			state.setColor(winCandidate, 1, false);
+		} else {
+			state.setColor(winCandidate, 0, false);
+		}
 	}
 }
