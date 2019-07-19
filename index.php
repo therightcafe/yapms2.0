@@ -147,9 +147,11 @@
 	</div>
 	</div>
 
+	<br>
+
 	<div class="map-type-box">	
 	<div class="map-type-header">
-		USA - Blank Maps	
+		USA - Open Maps
 	</div>
 		
 	<div>
@@ -164,21 +166,29 @@
 				Gubernatorial
 			</div>
 		</a>
+
+		<br>
 		
 		<a href="./app/?t=USA_congressional">
 			<div class="map-button">
 				Congressional
 			</div>
 		</a>
-
-		<br>
 		
 		<a href="./app/?t=USA_county">
 			<div class="map-button">
 				Counties
 			</div>
 		</a>
-
+	</div>
+	</div>
+	
+	<div class="map-type-box">	
+	<div class="map-type-header">
+		USA - Other Maps	
+	</div>
+		
+	<div>
 		<a href="./app/?t=USA_takeall">
 			<div class="map-button">
 				Take All
