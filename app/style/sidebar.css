@@ -63,7 +63,7 @@
 #sidebar-popularvote h3 {
 	margin: 5px;
 	padding: 0px;
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid #aaaaaa;
 }
 
 #popularvote-state-title {
@@ -86,7 +86,7 @@
 #sidebar-national-popularvote h3 {
 	margin: 5px;
 	padding: 0px;
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid #aaaaaa;
 }
 
 #national-popularvote-ranges {
@@ -103,15 +103,20 @@
 }
 
 #sidebar-popularvote-settings h3 {
-	border-bottom: 1px solid black;	
+	border-bottom: 1px solid #aaaaaa;	
 	margin: 5px;
 }
 
 .sidebar-hover-popup div {
+	position: static;
+	width: 90%;
+	margin: auto;
+	background: white;
+	color: green;
+	border: 1px solid black;
 	display: none;
 }
 
 .sidebar-hover-popup:hover div {
 	display: block;	
-	color: green;
 }

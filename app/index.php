@@ -298,7 +298,6 @@ if($mobile === false) {
 	<a class="selectmenu-button" onclick="centerMap()">Center Map</a>
 	<a class="selectmenu-button" onclick="toggleLTELogo()">LTE Logo</a>
 	<a class="selectmenu-button" onclick="toggleRedEagleLogo()">RedEagle Logo</a>
-	<a class="selectmenu-button" onclick="disableNews()">Disable News</a>
 </div>
 
 <div id="customcolormenu" class="popup selectmenu">

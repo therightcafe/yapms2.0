@@ -1,4 +1,4 @@
-var currentCache = 'v0.33.3';
+var currentCache = 'v0.33.5';
 
 var cookies = {};
 
@@ -968,18 +968,6 @@ function updateLegend() {
 			selectCandidateDisplay(html.parentElement);
 		}
 	}
-}
-
-function disableNews() {
-	var yapnews = document.getElementById('yapnews');
-	if(yapnews !== null) {
-		yapnews.style.display = 'none';
-	}
-	var yapnewsclose = document.getElementById('yapnews-close');
-	if(yapnewsclose !== null) {
-		yapnewsclose.style.display = 'none';
-	}
-	centerMap();
 }
 
 function centerMap() {

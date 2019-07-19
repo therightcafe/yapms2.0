@@ -281,7 +281,7 @@ function countPopularVote() {
 	for(var candidate in popularVote) {
 		var display = document.createElement('DIV');
 		display.setAttribute('id', 'national-popular-display-' + candidate);
-		display.innerHTML = candidate + ' - ' + numberWithCommas(popularVote[candidate]);
+		display.innerHTML = candidate + ' - ' + numberWithCommas(popularVote[candidate].toFixed(0));
 		ranges.appendChild(display);
 	}
 }
