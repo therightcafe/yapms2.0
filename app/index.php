@@ -127,9 +127,6 @@
 if($mobile === false) {
 	echo '<button class="click-button" onclick="displayLoadMenu()" style="white-space: nowrap;">
 		<i class="fas fa-upload"></i> Load
-		</button>',
-	'<button class="click-button" onclick="toggleYAPNews()" style="white-space: nowrap;">
-		<i class="fas fa-bars"></i> Sidebar
 		</button>';
 }
 ?>
@@ -143,10 +140,19 @@ if($mobile === false) {
 	</button>
 
 	<a href="https://www.yapms.com/privacypolicy.html" target="_blank">
-	<button class="click-button" style="white-space: nowrap;">
+	<button class="click-button" style="white-space: nowrap; margin-left: auto;">
 		<i class="fas fa-user-secret"></i> Privacy Policy
 	</button>
 	</a>
+
+<?php
+/* margin-left: auto; moves the button all the way to the right */
+if($mobile === false) {
+	echo '<button class="click-button" onclick="toggleYAPNews()" style="white-space: nowrap; margin-left: auto;">
+		<i class="fas fa-bars"></i> Toggle Sidebar
+		</button>';
+}
+?>
 
 </div>
 
