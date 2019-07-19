@@ -13,6 +13,7 @@
 	font-size: 28px;
 	margin: 10px;
 	padding-bottom: 10px;
+	border-bottom: 1px solid #aaaaaa;
 }
 
 #sidebar-discord-link {
