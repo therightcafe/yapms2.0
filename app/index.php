@@ -229,6 +229,12 @@ if($mobile === false) {
 					Clicking on a state will alter the popular vote of the state
 				</div>
 			</span>
+			<br>
+			<span class="sidebar-hover-popup"><input type="checkbox" id="popularvote-avoidalmargins" checked>District Clicks
+				<div>
+					Clicking on a district in Nebraska or Maine will not calculate the margin for the AL vote.	
+				</div>
+			</span>
 		</div>',
 		'<div id="yapnews-articles">
 		</div>' ,
@@ -551,6 +557,14 @@ if($mobile === false) {
 	<p id="notification-message"></p>
 </div>
 
+<div id="notification-update-serviceworker" class="popup">
+	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
+	<h3>New Version Installed</h3>
+	<p>Click reload to start using the update</p>
+	<button class="yes-button" onclick='closeNotification(this); location.reload();'>Reload</button>
+	<button class="no-button" onclick="closeNotification(this);">Skip</button>
+</div>
+
 <div id="share" class="popup">
 	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h3>Share Link</h3>
@@ -590,6 +604,24 @@ if($mobile === false) {
 			console.log('SW: registered');
 		}, function(err) {
 			console.log('SW: register error... ', err);
+		});
+
+		navigator.serviceWorker
+		.register('../sw.js')
+		.then(reg => {
+			reg.addEventListener('updatefound', () => {
+				newWorker = reg.installing;
+				newWorker.addEventListener('statechange', () => {
+					switch(newWorker.state) {
+						case 'installed':
+						if(navigator.serviceWorker.controller) {
+							displayUpdateServiceWorker();
+						}
+						break;
+						default:
+					}
+				});
+			});
 		});
 	}
 </script>

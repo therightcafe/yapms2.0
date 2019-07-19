@@ -137,7 +137,8 @@ function stateClickPaint(state, id, options) {
 
 	if(state.name.includes('-D')) {
 		var autoMargins = document.getElementById('popularvote-automargins').checked;
-		if(autoMargins) {
+		var avoidALMargins = document.getElementById('popularvote-avoidalmargins').checked;
+		if(autoMargins && avoidALMargins === false) {
 			calculateAutoMarginAL(state.name.split('-')[0]);
 		}
 	}

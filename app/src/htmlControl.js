@@ -32,6 +32,11 @@ function enableFullscreen() {
 	}
 }
 
+function displayUpdateServiceWorker() {
+	var notification = document.getElementById('notification-update-serviceworker');
+	notification.style.display = 'inline';
+}
+
 function displayNotification(title, text) {
 	var notification = document.getElementById('notification');
 	var messageHTML = notification.querySelector('#notification-message');
