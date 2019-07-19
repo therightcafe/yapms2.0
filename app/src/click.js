@@ -132,19 +132,24 @@ function stateClick(clickElement, e) {
 }
 
 function stateClickPaint(state, id, options) {
-	var setPopularVote = document.getElementById('popularvote-clicksetpv').checked;
-	state.incrementCandidateColor(paintIndex, setPopularVote);
 
-	if(state.name.includes('-D')) {
-		var autoMargins = document.getElementById('popularvote-automargins').checked;
-		var avoidALMargins = document.getElementById('popularvote-avoidalmargins').checked;
-		if(autoMargins && avoidALMargins === false) {
-			calculateAutoMarginAL(state.name.split('-')[0]);
+	if(mobile === false) {
+		var setPopularVote = document.getElementById('popularvote-clicksetpv').checked;
+		state.incrementCandidateColor(paintIndex, setPopularVote);
+
+		if(state.name.includes('-D')) {
+			var autoMargins = document.getElementById('popularvote-automargins').checked;
+			var avoidALMargins = document.getElementById('popularvote-avoidalmargins').checked;
+			if(autoMargins && avoidALMargins === false) {
+				calculateAutoMarginAL(state.name.split('-')[0]);
+			}
 		}
-	}
 
-	viewPopularVote(state);
-	countPopularVote(options);
+		viewPopularVote(state);
+		countPopularVote(options);
+	} else {
+		state.incrementCandidateColor(paintIndex);
+	}
 }
 
 function stateClickPaintProportional(state, id) {
