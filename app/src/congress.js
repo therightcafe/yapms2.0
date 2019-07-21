@@ -36,10 +36,10 @@ function setCongressOnHover() {
 						obj.District === district;
 				});
 
+				console.log(districtData);
+
 				return function() {
 					var element = document.getElementById('sidebar-congress');
-
-
 					element.innerHTML = stateName + '-' + district +
 						' ' + districtData.Representative;
 				}
