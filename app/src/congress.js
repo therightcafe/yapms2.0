@@ -34,9 +34,7 @@ function setCongressOnHover() {
 				var districtData = data.filter(obj => {
 					return obj.State === stateName &&
 						obj.District === district;
-				});
-
-				console.log(districtData);
+				})[0];
 
 				return function() {
 					var element = document.getElementById('sidebar-congress');
