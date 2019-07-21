@@ -237,7 +237,7 @@ if($mobile === false) {
 			</span>
 		</div>',
 		'<div id="sidebar-congress">
-			<div id="sidebar-congress-disctrict">
+			<div id="sidebar-congress-district">
 			</div><br>
 			<div id="sidebar-congress-representative">
 			</div><br>
