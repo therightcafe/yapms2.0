@@ -20,6 +20,7 @@ function setCongressOnHover() {
 	}
 
 	db_getCongress(function(data) {
+		console.log(data);
 		for(var stateIndex = 0, length = states.length; stateIndex < length; ++stateIndex) {
 			var state = states[stateIndex];
 
