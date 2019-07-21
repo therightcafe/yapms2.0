@@ -36,6 +36,8 @@ function setCongressOnHover() {
 						obj.District === district;
 				})[0];
 
+				console.log(districtData);
+
 				return function() {
 					var element = document.getElementById('sidebar-congress');
 					element.innerHTML = stateName + '-' + district +
