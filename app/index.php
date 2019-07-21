@@ -236,6 +236,9 @@ if($mobile === false) {
 				</div>
 			</span>
 		</div>',
+		'<div id="sidebar-congress">
+			Congress...
+		</div>',
 		'<div id="yapnews-articles">
 		</div>' ,
 	'</div>';
@@ -642,15 +645,21 @@ if($mobile === false) {
 <script src="./src/presets.js"></script>
 <script src="./src/click.js"></script>
 <script src="./src/popularvote.js"></script>
+<script src="./src/congress.js"></script>
 <script src="./src/main.js"></script>
 <?php 
 	if($mobile === true) {
 		echo '<script src="./src/mobile.js"></script>';
 	} else {
-		echo '<script src="./src/yapnews.js"></script>';
+		echo '<script src="./src/yapnews.js"></script>
+			<script src="./src/db_congress.js"></script>';
 	}
 ?>
 <script src="./src/html2canvas.min.js"></script>
 <script src="./src/deferedImages.js"></script>
+
+<script>
+	getCongress();
+</script>
 </body>
 </html>

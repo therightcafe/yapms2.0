@@ -6,6 +6,7 @@ var save_fontsize;
 var save_strokewidth;
 
 var enablePopularVote = false;
+var enableCongress = false;
 
 function loadCurrentCongress() {
 	$.ajax({
@@ -14,8 +15,9 @@ function loadCurrentCongress() {
 		processData: false,
 		contentType: false,
 		success: function(a, b, c) {
+			enableCongress = true;
 			console.log("Found preset map...");
-			loadSavedMap(a);
+			loadSavedMap(a, {enableCongress: true});
 		},
 		error: function(a, b, c) {
 			console.log("Did not find preset map...");
@@ -138,6 +140,9 @@ function loadMapFromId(id) {
 		case "USA_proportional":
 			loadMap("./res/usa_no_districts.svg", 16, 1, "usa_no_districts_ec", "proportional", "open", {updateText: true});
 			break;
+		case "USA_pre_civilwar":
+			loadMap("./res/usa_pre_civilwar.svg", 16, 1, "usa_pre_civilwar_ec", "presidential", "open", {updateText: true});
+			break;
 		case "Germany_states":
 			loadMap("./res/germany.svg", 16, 1, "congressional", "congressional", "open", {updateText: false});
 			loadPreset('germany')
@@ -209,6 +214,8 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year, options) {
 
 	enablePopularVote = options.enablePopularVote;
 	verifyPopularVote();
+	enableCongress = options.enableCongress;
+	verifyCongress();
 
 //	var mapmenu = document.getElementById('mapmenu');
 //	mapmenu.style.display = 'none';
@@ -450,10 +457,16 @@ function loadSenateFile(senatefile, onLoad) {
 	});
 }
 
-function loadSavedMap(data) {
+function loadSavedMap(data, options) {
 	var lines = data.split('\n');
 	var meta = lines[0].split(' ');
-	loadMap(meta[0], meta[1], meta[2], meta[3], meta[4], meta[5], {onLoad: function() {
+	if(options) {
+		enableCongress = options.enableCongress;
+	} else {
+		enableCongress = false;
+	}
+	loadMap(meta[0], meta[1], meta[2], meta[3], meta[4], meta[5], {enableCongress: enableCongress,
+		onLoad: function() {
 		console.log("Loading saved map...");
 
 		// --- RUN THIS AFTER THE MAP HAS BEEN LOADED ---
@@ -531,6 +544,7 @@ function loadSavedMap(data) {
 		updateChart();
 		updateLegend();
 		updateLTEHouse();
+		setCongressOnHover();
 	}
 		,
 		updateText: meta[7]
@@ -561,8 +575,6 @@ function enableInputDesktop() {
 		contain: false,
 		panEnabled: true,
 		zoomEnabled: true,
-		//panEnabled: enablePan,
-		//zoomEnabled: enableZoom,
 		dblClickZoomEnabled: false,
 		maxZoom: 100,
 		zoomScaleSensitivity: 0.06
