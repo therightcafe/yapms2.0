@@ -237,7 +237,12 @@ if($mobile === false) {
 			</span>
 		</div>',
 		'<div id="sidebar-congress">
-			Congress...
+			<div id="sidebar-congress-disctrict">
+			</div><br>
+			<div id="sidebar-congress-representative">
+			</div><br>
+			<div id="sidebar-congress-party">
+			</div><br>
 		</div>',
 		'<div id="yapnews-articles">
 		</div>' ,

@@ -27,21 +27,27 @@ function setCongressOnHover() {
 			state.htmlElement.onmouseover = (function() {
 				var stateName = state.name.split('-')[0];
 				var district = state.name.split('-')[1];
-				if(district === 'AL') {
-					district = '0';
-				}
 
-				district = parseInt(district).toString();
+				// Convert district to a number
+				// AL -> 0, 01 -> 1, 02 -> 2
+				var districtIndex = district;
+				if(districtIndex === 'AL') {
+					districtIndex = '0';
+				}
+				districtIndex = parseInt(districtIndex).toString();
 
 				var districtData = data.filter(obj => {
 					return obj.State === stateName &&
-						obj.District === district;
+						obj.District === districtIndex;
 				})[0];
 
 				return function() {
-					var element = document.getElementById('sidebar-congress');
-					element.innerHTML = stateName + '-' + district +
-						' ' + districtData.Representative;
+					var element = document.getElementById('sidebar-congress-district');
+					element.innerHTML = 'District: ' + stateName + '-' + district +
+					element = document.getElementById('sidebar-congress-representative');
+					element.innerHTML = 'Representative: ' + districtData.Representative;
+					element = document.getElementById('sidebar-congress-party');
+					element.innerHTML = 'Party: ' + districtData.Party;
 				}
 			})();
 		}
