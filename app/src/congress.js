@@ -31,13 +31,12 @@ function setCongressOnHover() {
 					district = '0';
 				}
 
+				district = parseInt(district).toString();
+
 				var districtData = data.filter(obj => {
 					return obj.State === stateName &&
 						obj.District === district;
 				})[0];
-
-				console.log(stateName + '-' + district);
-				console.log(districtData);
 
 				return function() {
 					var element = document.getElementById('sidebar-congress');
