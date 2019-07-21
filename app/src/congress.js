@@ -30,13 +30,14 @@ function setCongressOnHover() {
 					district = '0';
 				}
 
+				var districtData = data.filter(obj => {
+					return obj.State === stateName &&
+						obj.District === district;
+				});
+
 				return function() {
 					var element = document.getElementById('sidebar-congress');
 
-					var districtData = data.filter(obj => {
-						return obj.State === stateName &&
-							obj.District === district;
-					});
 
 					element.innerHTML = stateName + '-' + district +
 						' ' + districtData.Representative;
@@ -52,7 +53,7 @@ function db_getCongress(onLoad) {
 		type: 'GET',
 		success : function(data) {
 			var obj = jQuery.parseJSON(data);
-			onLoad(data);
+			onLoad(obj);
 		},
 		error : function(a, b, c) {
 			console.log(a);
