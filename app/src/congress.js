@@ -36,7 +36,7 @@ function setCongressOnHover() {
 						obj.District === district;
 				})[0];
 
-				console.log(stateName);
+				console.log(stateName + '-' + district);
 				console.log(districtData);
 
 				return function() {
