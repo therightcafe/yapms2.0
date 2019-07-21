@@ -651,15 +651,10 @@ if($mobile === false) {
 	if($mobile === true) {
 		echo '<script src="./src/mobile.js"></script>';
 	} else {
-		echo '<script src="./src/yapnews.js"></script>
-			<script src="./src/db_congress.js"></script>';
+		echo '<script src="./src/yapnews.js"></script>';
 	}
 ?>
 <script src="./src/html2canvas.min.js"></script>
 <script src="./src/deferedImages.js"></script>
-
-<script>
-	getCongress();
-</script>
 </body>
 </html>
