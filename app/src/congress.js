@@ -43,11 +43,11 @@ function setCongressOnHover() {
 
 				return function() {
 					var element = document.getElementById('sidebar-congress-district');
-					element.innerHTML = 'District: ' + stateName + '-' + district;
+					element.innerHTML = stateName + '-' + district;
 					element = document.getElementById('sidebar-congress-representative');
-					element.innerHTML = 'Representative: ' + districtData.Representative;
+					element.innerHTML = districtData.Representative;
 					element = document.getElementById('sidebar-congress-party');
-					element.innerHTML = 'Party: ' + districtData.Party;
+					element.innerHTML = districtData.Party;
 				}
 			})();
 		}

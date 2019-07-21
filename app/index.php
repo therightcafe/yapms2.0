@@ -237,10 +237,14 @@ if($mobile === false) {
 			</span>
 		</div>',
 		'<div id="sidebar-congress">
+			<h3><span>District</span></h3>
+			<div>District: </div>
 			<div id="sidebar-congress-district">
 			</div><br>
+			<div>Representative: </div>
 			<div id="sidebar-congress-representative">
 			</div><br>
+			<div>Party: </div>
 			<div id="sidebar-congress-party">
 			</div><br>
 		</div>',

@@ -120,3 +120,16 @@
 .sidebar-hover-popup:hover div {
 	display: block;	
 }
+
+#sidebar-congress {
+	background: #f8f9fa;
+	font-family: 'Roboto';
+	font-size: 20px;
+	border: 1px solid black;
+	margin: 5px;
+}
+
+#sidebar-congress h3 {
+	border-bottom: 1px solid #aaaaaa;	
+	margin: 5px;
+}
