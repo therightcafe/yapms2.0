@@ -30,6 +30,9 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 	} else if($_GET["t"] === 'USA_congressional') {
 		echo '<meta name="description" content="United States congressional map">';
 		echo '<title>YAPms - USA Congressional</title>';
+	} else if($_GET["t"] === '2018_congress') {
+		echo '<meta name="description" content="United States 2018 congressional map">';
+		echo '<title>YAPms - USA 2018 Congressional</title>';
 	} else {
 		echo '<meta name="description" content="Presidential, Senatorial, Congressional, Guberntorial, and Democratic Primary, political map simulator.">';
 		echo '<title>YAPms - Interactive Maps</title>';

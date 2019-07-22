@@ -148,6 +148,20 @@
 	</div>
 
 	<br>
+	
+	<div class="map-type-box">	
+	<div class="map-type-header">
+		USA - Current
+	</div>
+		
+	<div>
+		<a href="./app/?t=2018_congress">
+			<div class="map-button">
+				Congressional 2018
+			</div>
+		</a>
+	</div>
+	</div>
 
 	<div class="map-type-box">	
 	<div class="map-type-header">
