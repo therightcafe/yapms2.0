@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.34.1';
-var staticCache = 's0.6.1';
+var dynamicCache = 'd0.34.2';
+var staticCache = 's0.6.2';
 
 function swLog(cache, message) {
 	console.log('SW ' + cache + ': ' + message + ' ( ' + dynamicCache + ' / ' + staticCache + ' )');
@@ -35,6 +35,8 @@ self.addEventListener('install', function(event) {
 				'./app/res/lte_president.svg',
 				'./app/res/lte_senate.svg',
 				'./app/res/lte_house.svg',
+
+				'./app/req_congress.php',
 				
 				'./app/res/lte.jpg',
 				'./app/res/redeagletv.png',
