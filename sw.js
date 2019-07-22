@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.34.4';
-var staticCache = 's0.6.4';
+var dynamicCache = 'd0.34.5';
+var staticCache = 's0.6.5';
 
 function swLog(cache, message) {
 	console.log('SW ' + cache + ': ' + message + ' ( ' + dynamicCache + ' / ' + staticCache + ' )');
@@ -151,6 +151,8 @@ self.addEventListener('install', function(event) {
 				'./app/style/mobile.css',
 				'./app/style/popup.css',
 				'./app/style/style.css',
+				'./app/style/sidebar.css',
+				'./app/style/menu.css',
 
 				'./app/src/main.js',
 				'./app/src/mobile.js',

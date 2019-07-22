@@ -4,7 +4,8 @@
 	flex-direction: column;
 	border-left: 1px solid black;
 	min-width: 312px;
-	width: 20vw;
+	max-width: 312px;
+	width: 312px;
 	background: #fafafa;
 }
 
