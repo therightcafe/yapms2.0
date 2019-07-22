@@ -89,6 +89,15 @@
 	</style>
 
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-1660456925957249",
+          enable_page_level_ads: true
+     });
+</script>
+
 </head>
 
 <body id="body" onresize="onResize()">
@@ -186,6 +195,17 @@ if($mobile === false) {
 		'<div id="sidebar-header">
 			YAPms  
 		</div>' ,
+'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- sidebar-ad5 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1660456925957249"
+     data-ad-slot="8033943742"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>',
 		'<a id="sidebar-discord-link" href="https://discord.gg/WQh5fHU" target="_blank">
 		<div id="sidebar-discord">
 			Join Our Discord
