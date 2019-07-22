@@ -31,6 +31,21 @@
 	padding: 10px;
 }
 
+#sidebar-reddit-link {
+	text-decoration: none;
+}
+
+#sidebar-reddit {
+	background: #ff4500;
+	border-radius: 12px;
+	border: 2px solid white;
+	font-weight: bold;
+	text-decoration: none;
+	color: white;
+	display: inline-flex;
+	padding: 10px;
+}
+
 #sidebar-close {
 	background-color: #cccccc;
 	position: absolute;

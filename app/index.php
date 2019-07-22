@@ -206,11 +206,18 @@ if($mobile === false) {
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>',
-		'<a id="sidebar-discord-link" href="https://discord.gg/WQh5fHU" target="_blank">
+		'<span>
+		<a id="sidebar-discord-link" href="https://discord.gg/WQh5fHU" target="_blank">
 		<div id="sidebar-discord">
-			Join Our Discord
+			Discord
 			</div>
-		</a>',
+		</a>
+		<a id="sidebar-reddit-link" href="https://www.reddit.com/r/YAPms/">
+		<div id="sidebar-reddit">
+			Reddit
+		</div>
+		</a>
+		</span>',
 		'<div id="sidebar-popularvote">
 			<h3>
 				<span>
@@ -257,10 +264,7 @@ if($mobile === false) {
 			</span>
 		</div>',
 		'<div id="sidebar-congress">
-			<h3><span>District</span></h3>
-			<div>District: </div>
-			<div id="sidebar-congress-district">
-			</div><br>
+			<h3><span id="sidebar-congress-district">District</span></h3>
 			<div>Representative: </div>
 			<div id="sidebar-congress-representative">
 			</div><br>

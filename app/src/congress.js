@@ -43,7 +43,7 @@ function setCongressOnHover() {
 
 				return function() {
 					var element = document.getElementById('sidebar-congress-district');
-					element.innerHTML = stateName + '-' + district;
+					element.innerHTML = 'District: ' + stateName + '-' + district;
 					element = document.getElementById('sidebar-congress-representative');
 					element.innerHTML = districtData.Representative;
 					element = document.getElementById('sidebar-congress-party');
