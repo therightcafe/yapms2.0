@@ -1,5 +1,5 @@
 function verifyCongress() {
-	if(mobile || enableCongress === false) {
+	if(mobile) {
 		return false;
 	}
 	
@@ -7,11 +7,11 @@ function verifyCongress() {
 
 	if(enableCongress) {
 		element.style.display = 'block';
+		return true;
 	} else {
 		element.style.display = 'none';
+		return false;
 	}
-
-	return true;
 }
 
 function setCongressOnHover() {
@@ -43,7 +43,7 @@ function setCongressOnHover() {
 
 				return function() {
 					var element = document.getElementById('sidebar-congress-district');
-					element.innerHTML = 'District: ' + stateName + '-' + district;
+					element.innerHTML = stateName + '-' + district;
 					element = document.getElementById('sidebar-congress-representative');
 					element.innerHTML = districtData.Representative;
 					element = document.getElementById('sidebar-congress-party');

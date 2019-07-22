@@ -465,6 +465,7 @@ function loadSavedMap(data, options) {
 	} else {
 		enableCongress = false;
 	}
+	
 	loadMap(meta[0], meta[1], meta[2], meta[3], meta[4], meta[5], {enableCongress: enableCongress,
 		onLoad: function() {
 		console.log("Loading saved map...");
