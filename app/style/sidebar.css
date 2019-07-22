@@ -16,6 +16,10 @@
 	border-bottom: 1px solid #aaaaaa;
 }
 
+#sidebar-ad {
+	max-width: 300px;
+}
+
 #sidebar-discord-link {
 	text-decoration: none;
 }

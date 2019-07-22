@@ -7,7 +7,7 @@
 <?php
 	include './html/description.php';
 ?>
-	<meta name="keywords" content="Map,Election,Political,Interactive,Simulator,Electoral,270,2020">
+	<meta name="keywords" content="Map,Election,Political,Interactive,Simulator,Electoral,270,2020,USA,Presidential">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<meta property="og:title" content="YAPms - Yet Another Political Map Simulator">
@@ -195,7 +195,8 @@ if($mobile === false) {
 		'<div id="sidebar-header">
 			YAPms  
 		</div>' ,
-'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+'<div id="sidebar-ad">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- sidebar-ad5 -->
 <ins class="adsbygoogle"
      style="display:block"
@@ -205,14 +206,15 @@ if($mobile === false) {
      data-full-width-responsive="true"></ins>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
-</script>',
+</script>
+</div>',
 		'<span>
 		<a id="sidebar-discord-link" href="https://discord.gg/WQh5fHU" target="_blank">
 		<div id="sidebar-discord">
 			Discord
 			</div>
 		</a>
-		<a id="sidebar-reddit-link" href="https://www.reddit.com/r/YAPms/">
+		<a id="sidebar-reddit-link" href="https://www.reddit.com/r/YAPms/" target="_blank">
 		<div id="sidebar-reddit">
 			Reddit
 		</div>
@@ -277,25 +279,6 @@ if($mobile === false) {
 ?>
 </div>
 </div>
-<!--
-if($mobile === false) {
-	echo '<div id="yapnews">' ,
-		'<div id="yapnews-header">' ,
-		'<a href="https://www.yapms.com/news" target="_blank" ', 
-		'style="color:inherit; text-decoration: none;">' ,
-			'YAPNews' , 
-		'</a>' ,
-		'</div>' ,
-		'<a id="yapnews-discord-link" href="https://discord.gg/WQh5fHU" target="_blank">',
-		'<div id="yapnews-discord">',
-			'Join Our Discord',
-			'</div>',
-		'</a>',
-		'<div id="yapnews-articles">' ,
-		'</div>' ,
-	'</div>';
-}
--->
 
 <div id="demdel" class="popup">
 	<h3 id="demdel-message"></h3>
@@ -679,11 +662,11 @@ if($mobile === false) {
 <script src="./src/congress.js"></script>
 <script src="./src/main.js"></script>
 <?php 
-	if($mobile === true) {
-		echo '<script src="./src/mobile.js"></script>';
-	} else {
-		echo '<script src="./src/yapnews.js"></script>';
-	}
+if($mobile === true) {
+	echo '<script src="./src/mobile.js"></script>';
+} else {
+	echo '<script src="./src/yapnews.js"></script>';
+}
 ?>
 <script src="./src/html2canvas.min.js"></script>
 <script src="./src/deferedImages.js"></script>
