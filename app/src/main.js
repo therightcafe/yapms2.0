@@ -1,4 +1,4 @@
-var currentCache = 'v0.34.6';
+var currentCache = 'v0.34.7';
 
 var cookies = {};
 
@@ -1152,7 +1152,7 @@ function start() {
 		loadMapFromId(php_load_map_id);
 	} else {
 		loadPreset("classic");
-		loadMap('./res/usa_presidential.svg', 16, 1, 'usa_ec',"presidential", "open", {updateText: true});
+		loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open", {updateText: true, voters: 'usa_voting_pop', enablePopularVote: true});
 	}
 }
 
