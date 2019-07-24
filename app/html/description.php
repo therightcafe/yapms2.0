@@ -37,5 +37,9 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		echo '<meta name="description" content="Presidential, Senatorial, Congressional, Guberntorial, and Democratic Primary, political map simulator.">';
 		echo '<title>YAPms - Interactive Maps</title>';
 	}
+} else {
+	echo '<meta name="description" content="Presidential, Senatorial, Congressional, Guberntorial, and Democratic Primary, political map simulator.">';
+	echo '<title>YAPms - Interactive Maps</title>';
+
 }
 ?>
