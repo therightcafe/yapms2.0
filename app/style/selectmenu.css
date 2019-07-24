@@ -10,10 +10,10 @@
 }
 
 .selectmenu a {
-	border-top: 1px solid black;
-	background-color: #ffffff;
+	background-color: #eeeeee;
 	padding: 12px;
-	margin-top: 1px;
+	margin-top: 4px;
+	border-radius: 10px;
 }
 
 .selectmenu .selectmenu-button:hover {
