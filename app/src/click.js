@@ -134,13 +134,28 @@ function stateClick(clickElement, e) {
 function stateClickPaint(state, id, options) {
 
 	if(mobile === false) {
-		var setPopularVote = document.getElementById('popularvote-clicksetpv').checked;
+		var setPopularVoteElement = document.getElementById('popularvote-clicksetpv');
+		var setPopularVote = false;
+		if(setPopularVoteElement) {
+			setPopularVote = setPopularVoteElement.checked;
+		}
+
 		state.incrementCandidateColor(paintIndex, setPopularVote);
 
 		if(state.name.includes('-D')) {
-			var autoMargins = document.getElementById('popularvote-automargins').checked;
-			var avoidALMargins = document.getElementById('popularvote-avoidalmargins').checked;
-			if(autoMargins && avoidALMargins === false) {
+			var autoMarginsElement = document.getElementById('popularvote-automargins');
+			var autoMargins = false;
+			if(autoMarginsElement) {
+				autoMargins = autoMarginsElement.checked;
+			}
+
+			var avoidALMarginsElement = document.getElementById('popularvote-avoidalmargins').checked;
+			var avoidALMargins = false;
+			if(avoidAlMarginsElement) {
+				avoidALMargins = avoidALMarginsElement.checked;
+			}
+
+			if(autoMargins === true && avoidALMargins === false) {
 				calculateAutoMarginAL(state.name.split('-')[0]);
 			}
 		}
