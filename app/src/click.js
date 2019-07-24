@@ -151,7 +151,7 @@ function stateClickPaint(state, id, options) {
 
 			var avoidALMarginsElement = document.getElementById('popularvote-avoidalmargins').checked;
 			var avoidALMargins = false;
-			if(avoidAlMarginsElement) {
+			if(avoidALMarginsElement) {
 				avoidALMargins = avoidALMarginsElement.checked;
 			}
 
