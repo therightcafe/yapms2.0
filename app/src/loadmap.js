@@ -268,6 +268,7 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year, options) {
 		countVotes();
 		updateChart();
 		updateLegend();
+		setCongressOnHover();
 		
 		setPalette(cookies['theme']);
 		//previousPalette();
@@ -543,7 +544,6 @@ function loadSavedMap(data, options) {
 		updateChart();
 		updateLegend();
 		updateLTEHouse();
-		setCongressOnHover();
 	}
 		,
 		updateText: meta[7]

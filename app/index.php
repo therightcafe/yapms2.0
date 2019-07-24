@@ -481,13 +481,13 @@ if($mobile === false) {
 	<a class="selectmenu-button" href="./?t=2020_democratic_primary">Democratic</a>
 	<a class="selectmenu-button" href="./?t=2020_republican_primary">Republican</a>
 	<a class="selectmenu-split">Open</a>
+	<a class="selectmenu-button" href="./?t=USA_senatorial">Senatorial</a>
+	<a class="selectmenu-button" href="./?t=USA_congressional">Congressional</a>
+	<a class="selectmenu-button" href="./?t=USA_gubernatorial">Gubernatorial</a>
+	<a class="selectmenu-button" href="./?t=USA_county">County</a>
 	<a class="selectmenu-button" href="./?t=USA_takeall">Presidential Take All</a>
 	<a class="selectmenu-button" href="./?t=USA_proportional">Presidential Proportional</a>
-	<a class="selectmenu-button" href="./?t=USA_senatorial">Senatorial</a>
-	<a class="selectmenu-button" href="./?t=USA_gubernatorial">Gubernatorial</a>
-	<a class="selectmenu-button" href="./?t=USA_congressional">Congressional Present</a>
 	<a class="selectmenu-button" href="./?t=USA_congressional_2008">Congressional 2008</a>
-	<a class="selectmenu-button" href="./?t=USA_county">County</a>
 </div>
 
 <!-- USA Historical Maps -->

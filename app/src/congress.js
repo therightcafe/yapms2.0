@@ -2,7 +2,7 @@ function verifyCongress() {
 	if(mobile) {
 		return false;
 	}
-	
+
 	var element = document.getElementById('sidebar-congress');
 
 	if(enableCongress) {
@@ -15,6 +15,7 @@ function verifyCongress() {
 }
 
 function setCongressOnHover() {
+
 	if(verifyCongress() === false) {
 		return;
 	}
