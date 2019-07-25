@@ -252,7 +252,6 @@ function initChart() {
 				} else if(key !== 'Tossup') {
 					// after adding all the candidates, add the add candidate button
 					var legendDelete = document.createElement('div');
-					legendDelete.setAttribute('id', 'addcandidate-button');
 					legendDelete.setAttribute('class', 'legend-delete');
 					legendDelete.setAttribute('onclick', 'deleteCandidateByNameConfirm("' + candidate.name + '")');
 					legendDelete.style.background = 'none';
@@ -281,7 +280,6 @@ function initChart() {
 
 			// after adding all the candidates, add the add candidate button
 			var legendElement = document.createElement('div');
-			legendElement.setAttribute('id', 'addcandidate-button');
 			legendElement.setAttribute('class', 'legend-button');
 			legendElement.setAttribute(
 				'onclick', 'displayAddCandidateMenu();');
