@@ -96,8 +96,9 @@ function loadMapFromId(id) {
 		case "1868_presidential":
 		case "1864_presidential":
 		case "2016_presidential_county":
-			loadPresetMap(id);
 			break;
+		case "Maine_county":
+			loadMap("./res/usa_counties/" +  id + ".svg", 16, 1, "congressional", "congressional", "open", {updateText: false});
 			break;
 		case "2020_presidential":
 			loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open", {updateText: true, voters: 'usa_voting_pop', enablePopularVote: true});
@@ -146,7 +147,7 @@ function loadMapFromId(id) {
 			loadPreset('germany')
 			break;
 		case "Germany_constituencies":
-			loadMap("./res/germany_constituencies.svg", 16, 1, "congressional", "congressional", "open", {updateText: false});
+			loadMap("./res/germany_constituencies.svg", 16, 0.5, "congressional", "congressional", "open", {updateText: false});
 			loadPreset('germany')
 			break;
 		case "France_constituencies":
@@ -158,7 +159,8 @@ function loadMapFromId(id) {
 			loadPreset('italy')
 			break;
 		case "Spain_constituencies":
-			loadmap("./res/spain_constituencies.svg", 16, 1, "spain_constituencies", "proportional", "open", {updateText: true});
+			loadMap("./res/spain_constituencies.svg", 16, 0.5, "spain_constituencies", "proportional", "open", {updateText: false});
+			loadPreset('spain');
 			break;
 		case "UnitedKingdom_constituencies":
 			loadMap("./res/unitedkingdom.svg", 16, 0.075, "congressional", "congressional", "open", {updateText: false});

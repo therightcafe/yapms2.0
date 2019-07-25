@@ -1,4 +1,4 @@
-var currentCache = 'v0.34.14';
+var currentCache = 'v0.34.15';
 
 var cookies = {};
 
@@ -736,6 +736,7 @@ function countVotes() {
 						state.delegates[key] = state.voteCount;	
 					}
 				}
+
 				if(isNaN(state.delegates[key])) {
 					console.log(state);
 				}

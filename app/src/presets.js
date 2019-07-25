@@ -51,6 +51,9 @@ function loadPreset(value) {
 		case 'australia':
 			loadPresetAustralia();
 			break;
+		case 'spain':
+			loadPresetSpain();
+			break;
 	}
 	
 	verifyMap();
@@ -285,4 +288,46 @@ function loadPresetAustralia() {
 	candidates['GRN'] = grn;
 	candidates['LAB'] = lab;
 	toggleLegendLeans()
+}
+
+// Spanish Parties
+function loadPresetSpain() {
+	var psoe = new Candidate('PSOE',
+		['#EF1C27', '#EF1C27', '#EF1C27', '#EF1C27']);
+	var pp = new Candidate('PP',
+		['#1D84CE', '#1D84CE', '#1D84CE', '#1D84CE']);
+	var cs = new Candidate('CS',
+		['#EB6109', '#EB6109', '#EB6109', '#EB6109']);
+	var unidas = new Candidate('Unidas Podemos',
+		['#7B4977', '#7B4977', '#7B4977', '#7B4977']);
+	var vox = new Candidate('Vox',
+		['#63BE21', '#63BE21', '#63BE21', '#63BE21']);
+	var erc = new Candidate('ERC-Sobiranistes',
+		['#FFB232', '#FFB232', '#FFB232', '#FFB232']);
+	var jxcat = new Candidate('JxCat-Junts',
+		['#ED5975', '#ED5975', '#ED5975', '#ED5975']);
+	var eajpnv = new Candidate('EAJ/PNV',
+		['#4AAE4A', '#4AAE4A', '#4AAE4A', '#4AAE4A']);
+	var eh = new Candidate('EH Bildu',
+		['#B5CF18', '#B5CF18', '#B5CF18', '#B5CF18']);
+	var compromis = new Candidate('Compromís 2019',
+		['#EC8953', '#EC8953', '#EC8953', '#EC8953']);
+	var cca = new Candidate('CCa-PNC',
+		['#FFD700', '#FFD700', '#FFD700', '#FFD700']);
+	var prc = new Candidate('PRC',
+		['#C2CE0C', '#C2CE0C', '#C2CE0C', '#C2CE0C']);
+
+	candidates['PSOE'] = psoe;
+	candidates['PP'] = pp;
+	candidates['CS'] = cs;
+	candidates['Unidas Podemos'] = unidas;
+	candidates['Vox'] = vox;
+	candidates['ERC-Sobiranistes'] = erc;
+	candidates['JxCat-Junts'] = jxcat;
+	candidates['EAJ/PNV'] = eajpnv;
+	candidates['EH Bildu'] = eh;
+	candidates['Compromís 2019'] = compromis;
+	candidates['CCa-PNC'] = cca;
+	candidates['PRC'] = prc;
+	toggleLegendLeans();
 }

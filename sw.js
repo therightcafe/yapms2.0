@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.34.14';
-var staticCache = 's0.6.11';
+var dynamicCache = 'd0.34.15';
+var staticCache = 's0.6.12';
 
 function swLog(cache, message) {
 	console.log('SW ' + cache + ': ' + message + ' ( ' + dynamicCache + ' / ' + staticCache + ' )');
@@ -32,6 +32,7 @@ self.addEventListener('install', function(event) {
 				'./app/res/australia.svg',
 				'./app/res/eu.svg',
 				'./app/res/world.svg',
+				'./app/res/spain_constituencies.svg',
 				'./app/res/lte_president.svg',
 				'./app/res/lte_senate.svg',
 				'./app/res/lte_house.svg',
