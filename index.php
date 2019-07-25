@@ -510,6 +510,19 @@
 	
 	<div class="map-type-box">
 	<div class="map-type-header">
+		Spain
+	</div>
+	<div>
+		<a href="./app/?t=Spain_constituencies">
+			<div class="map-button">
+				Constituencies
+			</div>
+		</a>
+	</div>
+	</div>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
 		France
 	</div>
 	<div>
