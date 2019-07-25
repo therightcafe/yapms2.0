@@ -1,4 +1,4 @@
-var dynamicCache = 'd0.34.15';
+var dynamicCache = 'd0.34.16';
 var staticCache = 's0.6.12';
 
 function swLog(cache, message) {
@@ -133,6 +133,7 @@ self.addEventListener('install', function(event) {
 				'./app/?t=USA_proportional',
 				'./app/?t=Germany_states',
 				'./app/?t=Germany_constituencies',
+				'./app/?t=Spain_constituencies',
 				'./app/?t=Italy_states',
 				'./app/?t=UnitedKingdom_constituencies',
 				'./app/?t=Canada_provinces',
