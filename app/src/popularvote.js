@@ -134,7 +134,7 @@ function viewPopularVote(state) {
 		}
 	})();
 
-	ranges.append(displayTurnout);
+	ranges.appendChild(displayTurnout);
 	ranges.appendChild(turnoutRange);
 
 	for(var key in candidates) {
@@ -164,7 +164,10 @@ function viewPopularVote(state) {
 					if(candidate === 'Tossup')
 						continue;
 					var range = document.getElementById('popular-range-' + candidate);
-					var rangeValue = parseInt(range.value);
+					var rangeValue = 0;
+					if(range) {
+						rangeValue = parseInt(range.value);
+					}
 					state.popularVote[candidate] = rangeValue;
 					totalVotes += rangeValue;
 				}

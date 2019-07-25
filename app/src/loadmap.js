@@ -96,6 +96,7 @@ function loadMapFromId(id) {
 		case "1868_presidential":
 		case "1864_presidential":
 		case "2016_presidential_county":
+			loadPresetMap(id);
 			break;
 		case "Maine_county":
 			loadMap("./res/usa_counties/" +  id + ".svg", 16, 1, "congressional", "congressional", "open", {updateText: false});

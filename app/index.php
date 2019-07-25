@@ -124,7 +124,7 @@
 		<i class="fas fa-palette"></i> Themes
 	</button>
 
-	<button id="takeallbutton" class="click-button" style="white-space: nowrap; display: none;">
+	<button id="takeallbutton" class="click-button" onclick="toTakeAll()" style="white-space: nowrap; display: none;">
 		<i class="fas fa-sliders-h"></i> Take All	
 	</button>
 
@@ -148,7 +148,7 @@ if($mobile === false) {
 		<i class="fas fa-clipboard"></i> Misc
 	</button>
 
-	<a href="https://www.yapms.com/privacypolicy.html" target="_blank">
+	<a class="click-button" href="https://www.yapms.com/privacypolicy.html" target="_blank">
 	<button class="click-button" style="white-space: nowrap; margin-left: auto;">
 		<i class="fas fa-user-secret"></i> Privacy Policy
 	</button>
