@@ -1,4 +1,4 @@
-var currentCache = 'v0.35.3';
+var currentCache = 'v0.35.4';
 
 var cookies = {};
 
@@ -143,12 +143,13 @@ window.onerror = function(message, source, lineno, colno, error) {
 	//alert(message + ' ' + source + ' ' + lineno + ' ' + colno);
 	if(typeof gtag !== 'undefined') {
 		console.log('Error');
-		gtag('event', 'exception', {
+		/*gtag('event', 'exception', {
 			'description': message + ' ' + source + ' ' + lineno + ' ' + colno + ' ' + currentCache
 		});
+		*/
 		gtag('event', 'error', {
 			'event_category': 'error',
-			'event_label': message + ' ' + source + ' ' + lineno + ' ' + colno + ' ' + currentCache
+			'event_label': message + ', ' + source + ', ' + lineno + ', ' + currentCache + ', (' + window.navigator.userAgent + ')';
 		});
 	}
 }

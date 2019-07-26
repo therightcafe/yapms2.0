@@ -167,7 +167,7 @@
 	<div class="map-type-header">
 		USA - Open Maps
 	</div>
-		
+
 	<div>
 		<a href="./app/?t=USA_senatorial">
 			<div class="map-button">
