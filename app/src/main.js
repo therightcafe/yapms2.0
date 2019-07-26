@@ -1,4 +1,4 @@
-var currentCache = 'v0.35.4';
+var currentCache = 'v0.35.5';
 
 var cookies = {};
 
@@ -149,7 +149,7 @@ window.onerror = function(message, source, lineno, colno, error) {
 		*/
 		gtag('event', 'error', {
 			'event_category': 'error',
-			'event_label': message + ', ' + source + ', ' + lineno + ', ' + currentCache + ', (' + window.navigator.userAgent + ')';
+			'event_label': message + ', ' + source + ', ' + lineno + ', ' + currentCache + ', (' + window.navigator.userAgent + ')'
 		});
 	}
 }
