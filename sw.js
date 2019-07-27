@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.35.5';
-var staticCache = 's0.7.3';
+var dynamicCache = 'd0.35.7';
+var staticCache = 's0.7.5';
 
 function swLog(cache, message) {
 	console.log('SW ' + cache + ': ' + message + ' ( ' + dynamicCache + ' / ' + staticCache + ' )');
@@ -42,7 +42,8 @@ self.addEventListener('install', function(event) {
 				'./app/res/lte.jpg',
 				'./app/res/redeagletv.png',
 
-				'./app/res/presets/current_congress',
+				'./app/res/presets/Current_house',
+				'./app/res/presets/Current_senate',
 				'./app/res/presets/2016_presidential_county',
 				'./app/res/presets/2016_presidential',
 				'./app/res/presets/2012_presidential',
@@ -118,7 +119,8 @@ self.addEventListener('install', function(event) {
 				'./app/',
 				'./app/index.php',
 
-				'./app/?t=2018_congress',
+				'./app/?t=Current_house',
+				'./app/?t=Current_senate',
 				'./app/?t=2020_presidential',
 				'./app/?t=2020_senatorial',
 				'./app/?t=2020_gubernatorial',

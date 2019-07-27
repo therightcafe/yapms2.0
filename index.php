@@ -155,9 +155,15 @@
 	</div>
 		
 	<div>
-		<a href="./app/?t=2018_congress">
+		<a href="./app/?t=Current_house">
 			<div class="map-button">
-				Congressional 2018
+				House
+			</div>
+		</a>
+		
+		<a href="./app/?t=Current_senate">
+			<div class="map-button">
+				Senate
 			</div>
 		</a>
 	</div>

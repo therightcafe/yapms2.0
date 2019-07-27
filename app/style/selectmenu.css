@@ -13,7 +13,6 @@
 	background-color: #eeeeee;
 	padding: 12px;
 	margin-top: 4px;
-	border-radius: 10px;
 }
 
 .selectmenu .selectmenu-button:hover {
@@ -24,12 +23,14 @@
 .selectmenu .selectmenu-split {
 	background-color: #000000;
 	color: white;
+	border-radius: 10px;
 }
 
 .selectmenu-button {
 	text-decoration: none;
 	color: black;
 	text-align: center;
+	border-radius: 10px;
 }
 
 .selectmenu-button-double {
@@ -39,10 +40,13 @@
 
 .selectmenu-button-left {
 	flex: 1 1;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
 }
 
 .selectmenu-button-right {
-	border-left:  1px solid black;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
 }
 
 .selectmenu-red {

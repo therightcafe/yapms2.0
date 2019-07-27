@@ -8,27 +8,15 @@ var save_strokewidth;
 var enablePopularVote = false;
 var enableCongress = false;
 
-function loadCurrentCongress() {
-	$.ajax({
-		url: "./res/presets/current_congress",
-		type: "POST",
-		processData: false,
-		contentType: false,
-		success: function(a, b, c) {
-			enableCongress = true;
-			console.log("Found preset map...");
-			loadSavedMap(a, {enableCongress: true});
-		},
-		error: function(a, b, c) {
-			console.log("Did not find preset map...");
-			loadMap("../res/usa_congressional_2018.svg", 16, 0.075, "congressional", "congressional", "open", null, {updateText: false});
-		}
-	});
-}
-
-function loadPresetMap(preset) {
+function loadPresetMap(preset, options) {
 	// Remove all candidates, and load the ones for the map
 	initCandidates();
+
+	var enableHouse = false;
+
+	if(options) {
+		enableHouse = options.enableCongress;
+	}
 
 	$.ajax({
 		url: "./res/presets/" + preset,
@@ -37,7 +25,7 @@ function loadPresetMap(preset) {
 		contentType: false,
 		success: function(a, b, c) {
 			console.log("Found preset map...");
-			loadSavedMap(a);
+			loadSavedMap(a, {enableCongress: enableHouse});
 		},
 		error: function(a, b, c) {
 			console.log("Did not find preset map...");
@@ -49,9 +37,10 @@ function loadPresetMap(preset) {
 // Load map based off of php t parameter
 function loadMapFromId(id) {
 	switch(id) {
-		case "2018_congress":
-			loadCurrentCongress();
+		case "Current_house":
+			loadPresetMap(id, {enableCongress: true});
 			break;
+		case "Current_senate":
 		case "2020_cook":
 		case "2020_inside":
 		case "2020_sabatos":
@@ -163,6 +152,9 @@ function loadMapFromId(id) {
 			loadMap("./res/spain_constituencies.svg", 16, 0.5, "spain_constituencies", "proportional", "open", {updateText: false});
 			loadPreset('spain');
 			break;
+		case "Turkey_provinces":
+			loadMap("./res/turkey_provinces.svg", 16, 0.5, "congressional", "congressional", "open", {updateText: false});
+			break;
 		case "UnitedKingdom_constituencies":
 			loadMap("./res/unitedkingdom.svg", 16, 0.075, "congressional", "congressional", "open", {updateText: false});
 			loadPreset('uk')
@@ -218,16 +210,12 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year, options) {
 	enableCongress = options.enableCongress;
 	verifyCongress();
 
-//	var mapmenu = document.getElementById('mapmenu');
-//	mapmenu.style.display = 'none';
-
 	var mapHTML = document.getElementById('map-div');
 	mapHTML.style.visibility = 'hidden';
 
 	totalVotes = 0;
 
 	/* TURNING OFF LABELS BREAKS THE LEANS ON THE GRAPH */
-
 	mapType = type;
 	mapYear = year;
 	strokeMultiplier = strokewidth;

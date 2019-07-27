@@ -1,4 +1,4 @@
-var currentCache = 'v0.35.5';
+var currentCache = 'v0.35.6';
 
 var cookies = {};
 
@@ -105,8 +105,6 @@ function share() {
 	var applicationHeight = document.getElementById('application').offsetHeight;
 
 	displayShare();
-
-	//return;
 
 	html2canvas(document.getElementById('application'), {async: false, logging: true}).then(function(canvas) {
 		if(canvas) {

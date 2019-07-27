@@ -481,6 +481,9 @@ if($mobile === false) {
 	<a class="selectmenu-split">Primaries</a>
 	<a class="selectmenu-button" href="./?t=2020_democratic_primary">Democratic</a>
 	<a class="selectmenu-button" href="./?t=2020_republican_primary">Republican</a>
+	<a class="selectmenu-split">Current</a>
+	<a class="selectmenu-button" href="./?t=Current_house">House</a>
+	<a class="selectmenu-button" href="./?t=Current_senate">Senate</a>
 	<a class="selectmenu-split">Open</a>
 	<a class="selectmenu-button" href="./?t=USA_senatorial">Senatorial</a>
 	<a class="selectmenu-button" href="./?t=USA_congressional">Congressional</a>
@@ -495,7 +498,6 @@ if($mobile === false) {
 <div id="mapmenu-usa-historical" class="popup selectmenu">
 	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2>USA Historical Maps</h2>
-	<a class="selectmenu-button" href="./?t=2018_congress">Congress 2018</a>
 	<a class="selectmenu-button" href="./?t=2016_presidential_county">Presidential County 2016</a>
 	<a class="selectmenu-button" href="./?t=2016_presidential">Presidential 2016</a>
 	<a class="selectmenu-button" href="./?t=2012_presidential">Presidential 2012</a>
