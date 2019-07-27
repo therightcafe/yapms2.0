@@ -19,7 +19,7 @@ function loadPresetMap(preset, options) {
 	}
 
 	$.ajax({
-		url: "./res/presets/" + preset + '.yapms',
+		url: "./res/presets/" + preset,
 		type: "POST",
 		processData: false,
 		contentType: false,

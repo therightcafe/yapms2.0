@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.35.9';
-var staticCache = 's0.7.7';
+var dynamicCache = 'd0.35.11';
+var staticCache = 's0.7.11';
 
 function swLog(cache, message) {
 	console.log('SW ' + cache + ': ' + message + ' ( ' + dynamicCache + ' / ' + staticCache + ' )');
@@ -49,7 +49,7 @@ self.addEventListener('install', function(event) {
 				'./app/res/presets/2012_presidential',
 				'./app/res/presets/2008_presidential',
 				'./app/res/presets/2004_presidential',
-				'./app/res/presets/2000_presidential.yapms',
+				'./app/res/presets/2000_presidential',
 				'./app/res/presets/1996_presidential',
 				'./app/res/presets/1992_presidential',
 				'./app/res/presets/1988_presidential',
