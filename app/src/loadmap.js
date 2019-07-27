@@ -205,10 +205,12 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year, options) {
 	save_fontsize = fontsize;
 	save_strokewidth = strokewidth;
 
-	enablePopularVote = options.enablePopularVote;
-	verifyPopularVote();
-	enableCongress = options.enableCongress;
-	verifyCongress();
+	if(options) {
+		enablePopularVote = options.enablePopularVote;
+		verifyPopularVote();
+		enableCongress = options.enableCongress;
+		verifyCongress();
+	}
 
 	var mapHTML = document.getElementById('map-div');
 	mapHTML.style.visibility = 'hidden';
