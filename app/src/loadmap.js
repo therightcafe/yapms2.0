@@ -137,7 +137,7 @@ function loadMapFromId(id) {
 			loadPreset('germany')
 			break;
 		case "Germany_constituencies":
-			loadMap("./res/germany_constituencies.svg", 16, 0.5, "congressional", "congressional", "open", {updateText: false});
+			loadMap("./res/germany_constituencies.svg", 16, 0.25, "congressional", "congressional", "open", {updateText: false});
 			loadPreset('germany')
 			break;
 		case "France_constituencies":
@@ -149,7 +149,7 @@ function loadMapFromId(id) {
 			loadPreset('italy')
 			break;
 		case "Spain_constituencies":
-			loadMap("./res/spain_constituencies.svg", 16, 0.5, "spain_constituencies", "proportional", "open", {updateText: false});
+			loadMap("./res/spain_constituencies.svg", 16, 0.25, "spain_constituencies", "proportional", "open", {updateText: false});
 			loadPreset('spain');
 			break;
 		case "Turkey_provinces":
@@ -179,7 +179,7 @@ function loadMapFromId(id) {
 			loadMap("./res/eu.svg", 16, 0.25, "eu_parliament", "primary", "open", {updateText: false});
 			break;
 		case "World":
-			loadMap("./res/world.svg", 38, 0.5, "congressional", "congressional", "open", {updateText: false});
+			loadMap("./res/world.svg", 38, 0.25, "congressional", "congressional", "open", {updateText: false});
 			break;
 		case "LTE_presidential":
 			loadMap("./res/lte_president.svg", 30, 1, "lte_ec", "presidential", "open", {updateText: true});

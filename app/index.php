@@ -438,8 +438,8 @@ if($mobile === false) {
 <div id="mapmenu-canada" class="popup selectmenu">
 	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2>Canada</h2>
-	<a class="selectmenu-button" href="./?t=Canada_provinces">Canada Provinces</a>
-	<a class="selectmenu-button" href="./?t=Canada_constituencies">Canada Constituencies</a>
+	<a class="selectmenu-button" href="./?t=Canada_provinces">Provinces</a>
+	<a class="selectmenu-button" href="./?t=Canada_constituencies">Constituencies</a>
 </div>
 
 <!-- German Maps -->
@@ -614,39 +614,6 @@ if($mobile === false) {
 	<a id="versioninfo-text"></a>
 </div>
 
-<script>
-	if('serviceWorker' in navigator) {
-		console.log('Attempting to register service worker');
-		/*
-		navigator.serviceWorker
-		.register('../sw.js')
-		.then(function(a) {
-			console.log('SW: registered');
-		}, function(err) {
-			console.log('SW: register error... ', err);
-		});
-		 */
-
-		navigator.serviceWorker
-		.register('../sw.js')
-		.then(reg => {
-			reg.addEventListener('updatefound', () => {
-				newWorker = reg.installing;
-				newWorker.addEventListener('statechange', () => {
-					switch(newWorker.state) {
-						case 'installed':
-						if(navigator.serviceWorker.controller) {
-							displayUpdateServiceWorker();
-						}
-						break;
-						default:
-					}
-				});
-			});
-		});
-	}
-</script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0"></script> 
 <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.5.0/dist/svg-pan-zoom.min.js"></script>
@@ -673,5 +640,28 @@ if($mobile === true) {
 ?>
 <script src="./src/html2canvas.min.js"></script>
 <script src="./src/deferedImages.js"></script>
+<script>
+	if('serviceWorker' in navigator) {
+		console.log('Attempting to register service worker');
+		navigator.serviceWorker
+		.register('../sw.js')
+		.then(reg => {
+			reg.addEventListener('updatefound', () => {
+				newWorker = reg.installing;
+				newWorker.addEventListener('statechange', () => {
+					switch(newWorker.state) {
+						case 'installed':
+						if(navigator.serviceWorker.controller) {
+							displayUpdateServiceWorker();
+						}
+						break;
+						default:
+					}
+				});
+			});
+		});
+	}
+</script>
+
 </body>
 </html>
