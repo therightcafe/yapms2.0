@@ -223,9 +223,9 @@
 
 		<br>
 
-		<a href="./app/?t=1972_presidential">
+		<a href="./app/?t=USA_split_maine">
 			<div class="map-button">
-				1972
+				Split Maine
 			</div>
 		</a>
 

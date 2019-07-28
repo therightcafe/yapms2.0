@@ -484,13 +484,14 @@ if($mobile === false) {
 	<a class="selectmenu-split">Current</a>
 	<a class="selectmenu-button" href="./?t=Current_house">House</a>
 	<a class="selectmenu-button" href="./?t=Current_senate">Senate</a>
-	<a class="selectmenu-split">Open</a>
+	<a class="selectmenu-split">Blank</a>
 	<a class="selectmenu-button" href="./?t=USA_senatorial">Senatorial</a>
 	<a class="selectmenu-button" href="./?t=USA_congressional">Congressional</a>
 	<a class="selectmenu-button" href="./?t=USA_gubernatorial">Gubernatorial</a>
 	<a class="selectmenu-button" href="./?t=USA_county">County</a>
-	<a class="selectmenu-button" href="./?t=USA_takeall">Presidential Take All</a>
-	<a class="selectmenu-button" href="./?t=USA_proportional">Presidential Proportional</a>
+	<a class="selectmenu-button" href="./?t=USA_proportional">Presidential<br>Proportional</a>
+	<a class="selectmenu-button" href="./?t=USA_takeall">Presidential<br>Take All</a>
+	<a class="selectmenu-button" href="./?t=USA_split_maine">Presidential<br>Split Maine</a>
 	<a class="selectmenu-button" href="./?t=USA_congressional_2008">Congressional 2008</a>
 </div>
 

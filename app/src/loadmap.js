@@ -93,7 +93,7 @@ function loadMapFromId(id) {
 		case "2020_presidential":
 			loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open", {updateText: true, voters: 'usa_voting_pop', enablePopularVote: true});
 			break;
-		case "1972_presidential":
+		case "USA_split_maine":
 			loadMap("./res/usa_1972_presidential.svg", 16, 1, "usa_1972_ec", "presidential", "open", {updateText: true});
 			break;
 		case "2020_senatorial":
