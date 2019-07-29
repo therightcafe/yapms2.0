@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.38.12';
-var staticCache = 's0.10.12';
+var dynamicCache = 'd0.38.15';
+var staticCache = 's0.10.15';
 
 function swLog(cache, message) {
 	console.log('SW ' + cache + ': ' + message + ' ( ' + dynamicCache + ' / ' + staticCache + ' )');
@@ -82,7 +82,7 @@ self.addEventListener('install', function(event) {
 			return cache.addAll([
 				'./',
 				'./index.php',
-				'./index.php?o=offline',
+				'./index.php/?o=offline',
 				'./style.css',
 
 				'./app/',
