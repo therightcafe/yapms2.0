@@ -169,6 +169,7 @@ self.addEventListener('fetch', function(event) {
 					return fetch(event.request)
 					.then(function(response) {
 						if(response) {
+							swLog('Web', 'caching ' + event.request.url);
 							return caches.open('flycache').then((cache) => {
 								cache.put(event.request, response.clone());
 								return response;
