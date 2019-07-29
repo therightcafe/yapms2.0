@@ -30,7 +30,6 @@
 
 	<?php
 	$mobile = false;
-	$offline = false;
 		
 		if(strpos($_SERVER['HTTP_USER_AGENT'], 'Mobi')) {
 			$mobile = true;	
@@ -64,10 +63,6 @@
 				'var php_load_type_map = false;' .
 				'var php_load_map_id = 0;' .
 			     '</script>';
-		}
-
-		if(isset($_GET["o"]) && $_GET["o"] === 'true') {
-			$offline = true;
 		}
 	?>
 
@@ -650,12 +645,6 @@ if($mobile === true) {
 	echo '<script src="./src/mobile.js"></script>';
 } else {
 	echo '<script src="./src/yapnews.js"></script>';
-}
-
-if($offline === true) {
-	echo '<script>
-		displayNotification("Offline", "unable to load selected map");
-	</script>';
 }
 ?>
 <script src="./src/html2canvas.min.js"></script>
