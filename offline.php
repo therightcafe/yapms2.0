@@ -37,13 +37,7 @@
 	<link rel="shortcut icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
 	
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-
-<style>
-<?php
-	include './style.css';
-?>
-</style>
-
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
@@ -67,6 +61,8 @@
 				<a style="color:blue;" href="mailto:bugreport@yapms.com">bugreport@yapms.com</a> 
 			</p>
 		</div>
+
+		<br>
 
 		<div class="infobox link" onclick="history.back()">
 			Back
