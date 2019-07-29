@@ -195,9 +195,10 @@ self.addEventListener('fetch', function(event) {
 				if(response) {
 					swLog('Cache' , 'fetch ' + event.request.url);
 					return response;
-				} else if(event.request.url.includes('yapms.com') === true &&
-						event.request.url.includes('req_articles') === false) {
+				} else if(event.request.url.includes('yapms.com/app/') === true &&
+						event.request.url.includes('yapms.com/app/req_articles.php') === false) {
 					swLog('Web', 'fetch+cache ' + event.request.url);
+					swLog('test', event.request);
 					//return fetch(event.request);
 					return fetch(event.request)
 					.then(function(response) {
