@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.38.2';
-var staticCache = 's0.10.1';
+var dynamicCache = 'd0.38.3';
+var staticCache = 's0.10.3';
 
 function swLog(cache, message) {
 	console.log('SW ' + cache + ': ' + message + ' ( ' + dynamicCache + ' / ' + staticCache + ' )');
@@ -71,9 +71,7 @@ self.addEventListener('install', function(event) {
 			]);
 			
 			for(var i = 1864; i < 2016; i += 4) {
-				cache.add('./app/res/presets/' + i + '_presidential').catch(function(err) {
-					swLog('error ' + err);
-				});
+				cache.add('./app/res/presets/' + i + '_presidential');
 			}
 
 			return cache;
@@ -146,9 +144,7 @@ self.addEventListener('install', function(event) {
 			]);
 
 			for(var i = 1864; i < 2016; i += 4) {
-				cache.add('./app/?t=' + i + '_presidential').catch(function(err) {
-					swLog('error ' + err);
-				});
+				cache.add('./app/?t=' + i + '_presidential');
 			}
 
 			return cache;
