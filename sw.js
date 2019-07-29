@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.38.6';
-var staticCache = 's0.10.6';
+var dynamicCache = 'd0.38.8';
+var staticCache = 's0.10.8';
 
 function swLog(cache, message) {
 	console.log('SW ' + cache + ': ' + message + ' ( ' + dynamicCache + ' / ' + staticCache + ' )');
@@ -86,6 +86,7 @@ self.addEventListener('install', function(event) {
 
 				'./app/',
 				'./app/index.php',
+				'./app/offline.php',
 
 				'./app/?t=Current_house',
 				'./app/?t=Current_senate',
@@ -166,10 +167,14 @@ self.addEventListener('fetch', function(event) {
 					swLog('Web', 'fetch+cache ' + event.request.url);
 					return fetch(event.request)
 					.then(function(response) {
-						return caches.open('flycache').then((cache) => {
-							cache.put(event.request, response.clone());
-							return response;
-						});
+						if(response) {
+							return caches.open('flycache').then((cache) => {
+								cache.put(event.request, response.clone());
+								return response;
+							});
+						} else {
+							return caches.match('./app/offline.php');
+						}
 					}).catch(function(err){ 
 						swLog('error ' + err);
 					});
