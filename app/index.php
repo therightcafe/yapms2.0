@@ -450,12 +450,20 @@ if($mobile === false) {
 	<a class="selectmenu-button" href="./?t=Germany_constituencies">Constituencies</a>
 </div>
 
-`<!-- Australia Maps -->
+<!-- Australia Maps -->
 <div id="mapmenu-australia" class="popup selectmenu">
 	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2>Australia</h2>
 	<a class="selectmenu-button" href="./?t=Australia_states">States</a>
 	<a class="selectmenu-button" href="./?t=Australia_constituencies">Constituencies</a>
+</div>
+
+<!-- Netherlands Maps -->
+<div id="mapmenu-netherlands" class="popup selectmenu">
+	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
+	<h2>Netherlands</h2>
+	<a class="selectmenu-button" href="./?t=Netherlands_provinces">Provinces</a>
+	<a class="selectmenu-button" href="./?t=Netherlands_gemeenten">Gemeeten</a>
 </div>
 
 <!-- Italy Maps -->
@@ -560,6 +568,7 @@ if($mobile === false) {
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("germany")'; >Germany</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("canada")'>Canada</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("australia")'; >Australia</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("netherlands")'; >Netherlands</a>
 	<a class="selectmenu-button" href="./?t=Spain_constituencies">Spain</a>
 	<a class="selectmenu-button" href="./?t=Italy_states">Italy</a>
 	<a class="selectmenu-button" href="./?t=UnitedKingdom_constituencies">United Kingdom</a>

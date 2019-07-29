@@ -571,6 +571,25 @@
 		</a>
 	</div>
 	</div>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
+		Netherlands	
+	</div>
+	<div>
+		<a href="./app/?t=Netherlands_provinces">
+			<div class="map-button">
+				Provinces
+			</div>
+		</a>
+		
+		<a href="./app/?t=Netherlands_gemeenten">
+			<div class="map-button">
+				Gemeeten
+			</div>
+		</a>
+	</div>
+	</div>
 
 	<script>
 		if('serviceWorker' in navigator) {

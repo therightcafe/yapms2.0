@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.36.2';
-var staticCache = 's0.8.2';
+var dynamicCache = 'd0.37.1';
+var staticCache = 's0.9.1';
 
 function swLog(cache, message) {
 	console.log('SW ' + cache + ': ' + message + ' ( ' + dynamicCache + ' / ' + staticCache + ' )');
@@ -36,12 +36,7 @@ self.addEventListener('install', function(event) {
 				'./app/res/italy.svg',
 				'./app/res/australia_constituencies.svg',
 				'./app/res/australia.svg',
-				'./app/res/eu.svg',
-				'./app/res/world.svg',
 				'./app/res/spain_constituencies.svg',
-				'./app/res/lte_president.svg',
-				'./app/res/lte_senate.svg',
-				'./app/res/lte_house.svg',
 
 				'./app/req_congress.php',
 				
@@ -127,7 +122,6 @@ self.addEventListener('install', function(event) {
 
 				'./app/?t=Current_house',
 				'./app/?t=Current_senate',
-				'./app/?t=2000_presidential',
 
 				'./app/?t=2020_presidential',
 				'./app/?t=2020_senatorial',
@@ -150,8 +144,6 @@ self.addEventListener('install', function(event) {
 				'./app/?t=Canada_constituencies',
 				'./app/?t=Australia_constituencies',
 				'./app/?t=Australia_states',
-				'./app/?t=EuropeanUnion',
-				'./app/?t=World',
 
 				'./app/html/battlechart.html',
 				'./app/html/closebutton.svg',
@@ -198,7 +190,6 @@ self.addEventListener('fetch', function(event) {
 				} else if(event.request.url.includes('yapms.com/app/') === true &&
 						event.request.url.includes('yapms.com/app/req_articles.php') === false) {
 					swLog('Web', 'fetch+cache ' + event.request.url);
-					console.log(event.request.domain);
 					return fetch(event.request)
 					.then(function(response) {
 						return caches.open('flycache').then((cache) => {
