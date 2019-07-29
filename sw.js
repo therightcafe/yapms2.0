@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.38.15';
-var staticCache = 's0.10.15';
+var dynamicCache = 'd0.38.16';
+var staticCache = 's0.10.16';
 
 function swLog(cache, message) {
 	console.log('SW ' + cache + ': ' + message + ' ( ' + dynamicCache + ' / ' + staticCache + ' )');
@@ -174,7 +174,7 @@ self.addEventListener('fetch', function(event) {
 						});
 					}).catch(function(err){ 
 						swLog('Offline', 'error - ' + err);
-						return caches.match('./index.php?o=offline');
+						return caches.match('./index.php/?o=offline');
 					});
 				} else {
 					swLog('Web', 'fetch ' + event.request.url);
