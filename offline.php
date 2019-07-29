@@ -37,7 +37,13 @@
 	<link rel="shortcut icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
 	
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-	<link rel="stylesheet" type="text/css" href="style.css">
+
+<style>
+<?php
+	include './style.css';
+?>
+</style>
+
 </head>
 
 <body>
