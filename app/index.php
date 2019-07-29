@@ -66,7 +66,7 @@
 			     '</script>';
 		}
 
-		if(isset($_GET["offline"]) && $_GET["offline"] === 'true') {
+		if(isset($_GET["o"]) && $_GET["o"] === 'true') {
 			$offline = true;
 		}
 	?>
