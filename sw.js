@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.37.1';
-var staticCache = 's0.9.1';
+var dynamicCache = 'd0.38.0';
+var staticCache = 's0.10.0';
 
 function swLog(cache, message) {
 	console.log('SW ' + cache + ': ' + message + ' ( ' + dynamicCache + ' / ' + staticCache + ' )');
@@ -16,7 +16,7 @@ self.addEventListener('install', function(event) {
 	event.waitUntil(
 		caches.open(staticCache).then(function(cache) {
 			swLog(staticCache, 'installing');
-			return cache.addAll([
+			cache.addAll([
 				'./app/res/usa_presidential.svg',
 				'./app/res/usa_1972_presidential.svg',
 				'./app/res/usa_congressional_2008.svg',
@@ -46,45 +46,6 @@ self.addEventListener('install', function(event) {
 				'./app/res/presets/Current_house',
 				'./app/res/presets/Current_senate',
 				'./app/res/presets/2016_presidential_county',
-				'./app/res/presets/2016_presidential',
-				'./app/res/presets/2012_presidential',
-				'./app/res/presets/2008_presidential',
-				'./app/res/presets/2004_presidential',
-				'./app/res/presets/2000_presidential',
-				'./app/res/presets/1996_presidential',
-				'./app/res/presets/1992_presidential',
-				'./app/res/presets/1988_presidential',
-				'./app/res/presets/1984_presidential',
-				'./app/res/presets/1980_presidential',
-				'./app/res/presets/1976_presidential',
-				'./app/res/presets/1972_presidential',
-				'./app/res/presets/1968_presidential',
-				'./app/res/presets/1964_presidential',
-				'./app/res/presets/1960_presidential',
-				'./app/res/presets/1956_presidential',
-				'./app/res/presets/1952_presidential',
-				'./app/res/presets/1948_presidential',
-				'./app/res/presets/1944_presidential',
-				'./app/res/presets/1940_presidential',
-				'./app/res/presets/1936_presidential',
-				'./app/res/presets/1932_presidential',
-				'./app/res/presets/1928_presidential',
-				'./app/res/presets/1924_presidential',
-				'./app/res/presets/1920_presidential',
-				'./app/res/presets/1916_presidential',
-				'./app/res/presets/1912_presidential',
-				'./app/res/presets/1908_presidential',
-				'./app/res/presets/1904_presidential',
-				'./app/res/presets/1900_presidential',
-				'./app/res/presets/1896_presidential',
-				'./app/res/presets/1892_presidential',
-				'./app/res/presets/1888_presidential',
-				'./app/res/presets/1884_presidential',
-				'./app/res/presets/1880_presidential',
-				'./app/res/presets/1876_presidential',
-				'./app/res/presets/1872_presidential',
-				'./app/res/presets/1868_presidential',
-				'./app/res/presets/1864_presidential',
 
 				'./app/res/presets/2020_cook',
 				'./app/res/presets/2020_inside',
@@ -108,11 +69,17 @@ self.addEventListener('install', function(event) {
 
 				'./app/manifest.json'
 			]);
+			
+			for(var i = 1864; i < 2016; i += 4) {
+				cache.add('./app/res/presets/' + i + '_presidential');
+			}
+
+			return cache;
 		}));
 	event.waitUntil(
 		caches.open(dynamicCache).then(function(cache) {
 			swLog(dynamicCache, 'installing');
-			return cache.addAll([
+			cache.addAll([
 				'./',
 				'./index.php',
 				'./style.css',
@@ -175,6 +142,12 @@ self.addEventListener('install', function(event) {
 				'./app/src/congress.js',
 				'./app/src/deferedImages.js',
 			]);
+
+			for(var i = 1864; i < 2016; i += 4) {
+				cache.add('./app/?t=' + i + '_presidential');
+			}
+
+			return cache;
 		})
 	);
 });

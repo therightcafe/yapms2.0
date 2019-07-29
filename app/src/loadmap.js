@@ -20,7 +20,7 @@ function loadPresetMap(preset, options) {
 
 	$.ajax({
 		url: "./res/presets/" + preset,
-		type: "POST",
+		type: "GET",
 		processData: false,
 		contentType: false,
 		success: function(a, b, c) {
