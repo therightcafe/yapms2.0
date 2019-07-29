@@ -176,11 +176,11 @@ self.addEventListener('fetch', function(event) {
 							});
 						} else {
 							swLog('Web', 'Offline ' + event.request.url);
-							return caches.match('https://www.yapms.com/app/offline.php');
+							return caches.match('./app/offline.php');
 						}
 					}).catch(function(err){ 
 						swLog('error ' + err);
-						return caches.match('https://www.yapms.com/app/offline.php');
+						return caches.match('./app/offline.php');
 					});
 				} else {
 					swLog('Web', 'fetch ' + event.request.url);
