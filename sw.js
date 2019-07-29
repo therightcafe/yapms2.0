@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.38.4';
-var staticCache = 's0.10.4';
+var dynamicCache = 'd0.38.5';
+var staticCache = 's0.10.5';
 
 function swLog(cache, message) {
 	console.log('SW ' + cache + ': ' + message + ' ( ' + dynamicCache + ' / ' + staticCache + ' )');
@@ -16,7 +16,7 @@ self.addEventListener('install', function(event) {
 	event.waitUntil(
 		caches.open(staticCache).then(function(cache) {
 			swLog(staticCache, 'installing');
-			cache.addAll([
+			return cache.addAll([
 				'./app/res/usa_presidential.svg',
 				'./app/res/usa_1972_presidential.svg',
 				'./app/res/usa_congressional_2008.svg',
@@ -68,18 +68,18 @@ self.addEventListener('install', function(event) {
 				'https://use.fontawesome.com/releases/v5.7.2/css/all.css',
 
 				'./app/manifest.json'
-			]);
-			
-			for(var i = 1864; i < 2016; i += 4) {
-				cache.add('./app/res/presets/' + i + '_presidential');
-			}
-
-			return cache;
+			]).then(function() {
+				for(var i = 1864; i < 2016; i += 4) {
+					cache.add('./app/res/presets/' + i + '_presidential');
+				}
+				
+				return cache;
+			});
 		}));
 	event.waitUntil(
 		caches.open(dynamicCache).then(function(cache) {
 			swLog(dynamicCache, 'installing');
-			cache.addAll([
+			return cache.addAll([
 				'./',
 				'./index.php',
 				'./style.css',
@@ -141,15 +141,13 @@ self.addEventListener('install', function(event) {
 				'./app/src/popularvote.js',
 				'./app/src/congress.js',
 				'./app/src/deferedImages.js',
-			]).catch(function(err) {
-				swLog('error ' + err);
+			]).then(function() {
+				for(var i = 1864; i < 2016; i += 4) {
+					cache.add('./app/?t=' + i + '_presidential');
+				}
+
+				return cache;
 			});
-
-			for(var i = 1864; i < 2016; i += 4) {
-				cache.add('./app/?t=' + i + '_presidential');
-			}
-
-			return cache;
 		})
 	);
 });
