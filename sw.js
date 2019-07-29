@@ -195,7 +195,7 @@ self.addEventListener('fetch', function(event) {
 				if(response) {
 					swLog('Cache' , 'fetch ' + event.request.url);
 					return response;
-				} else if(event.request.url.includes('yapms.com/res')) {
+				} else if(event.request.url.includes('yapms.com')) {
 					swLog('Web', 'fetch+cache ' + event.request.url);
 					//return fetch(event.request);
 					return fetch(event.request)
