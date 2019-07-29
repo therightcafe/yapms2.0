@@ -195,8 +195,8 @@ self.addEventListener('fetch', function(event) {
 				if(response) {
 					swLog('Cache' , 'fetch ' + event.request.url);
 					return response;
-				} else {
-					swLog('Web', 'fetch ' + event.request.url);
+				} else if(event.request.url.includes('yapms.com/res')) {
+					swLog('Web', 'fetch+cache ' + event.request.url);
 					//return fetch(event.request);
 					return fetch(event.request)
 					.then(function(response) {
@@ -207,6 +207,9 @@ self.addEventListener('fetch', function(event) {
 					}).catch(function(err){ 
 						swLog('error ' + err);
 					});
+				} else {
+					swLog('Web', 'fetch ' + event.request.url);
+					return fetch(event.request);
 				}
 			})
 			.catch(function(err) {
