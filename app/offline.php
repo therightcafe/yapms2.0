@@ -1,679 +1,612 @@
 <!DOCTYPE html>
 <?php echo '<?xml version="1.0" encoding="UTF-8" standalone="no"?>' ?>
 <html class="noSelect" lang="en">
-
 <head>
 	<meta charset="UTF-8">
-<?php
-	include './html/description.php';
-?>
-	<meta name="keywords" content="Map,Election,Political,Interactive,Simulator,Electoral,270,2020,USA,Presidential">
+	<meta name="description" content="Presidential, Senatorial, Congressional, Guberntorial and Primary political map simulator.">
+	<meta name="keywords" content="Map,Election,Political,Interactive,Simulator,Electoral,270,2020">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+	
 	<meta property="og:title" content="YAPms - Yet Another Political Map Simulator">
 	<meta property="og:description" content="Interactive Political Maps">
 	<meta property="og:image:type" content="image/jpeg">
 	<meta property="og:site_name" content="yapms.com">
 
+	<meta property="og:image" content="http://www.yapms.com/app/res/yapms-96.png">
+	<meta property="og:image:secure_url" content="https://www.yapms.com/app/res/yapms-96.png">
+
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="yapms.com">
 	<meta name="twitter:description" content="Interactive Political Maps">
 
-	<meta name="theme-color" content="#ffffff"/>
+	<meta property="twitter:image" content="https://www.yapms.com/app/res/yapms-96.png">
+
+	<title>YAPms - Yet Another Political Map Simulator</title>
 	
-	<!-- CSSs (1st is Font Awesome) -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-	<link rel="icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
-	<link rel="apple-touch-icon" href="./res/yapms-192.png"/>
-	<link rel="shortcut icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
-	<link rel="manifest" href="./manifest.json">
-
-	<?php
-		$mobile = false;
-		
-		if(strpos($_SERVER['HTTP_USER_AGENT'], 'Mobi')) {
-			$mobile = true;	
-			echo '<script>var mobile = true</script>';
-		} else {
-			$mobile = false;	
-			echo '<script>var mobile = false</script>';
-		};
-
-		if(isset($_GET["m"]) && !empty($_GET["m"]) &&
-			is_numeric($_GET["m"])) {
-			echo '<script>' .
-				'var php_load_map = true;' .
-				'var php_load_type_map = false;' .
-				'var php_load_map_id = '.$_GET["m"].';' .
-				'</script>';	
-
-			echo '<meta property="og:image" content="http://www.yapms.com/app/maps/' . $_GET["m"] . '.png">';
-			echo '<meta property="og:image:secure_url" content="https://www.yapms.com/app/maps/' . $_GET["m"] . '.png">';
-			echo '<meta name="twitter:image" content="https://www.yapms.com/app/maps/' . $_GET["m"] . '.png">';
-		} else if(isset($_GET["t"]) && !empty($_GET["t"])) {
-			echo '<script>' .
-				'var php_load_map = false;' .
-				'var php_load_type_map = true;' .
-				'var php_load_map_id = "' . $_GET["t"] . '";' .
-			     '</script>';
-				
-		} else {
-			echo '<script>' .
-				'var php_load_map = false;' .
-				'var php_load_type_map = false;' .
-				'var php_load_map_id = 0;' .
-			     '</script>';
-		}
-	?>
-
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132710089-1"></script>
 	<script>
+		var host = window.location.hostname;
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
 		gtag('config', 'UA-132710089-1');
 	</script>
-
-	<style>
-		<?php
-			include './style/menu.css';
-			include './style/selectmenu.css';
-			include './style/popup.css';
-			include './style/legend.css';
-			include './style/style.css';
-			include './style/battlechart.css';
-			include './style/yapnews.css';
-			include './style/sidebar.css';
-			include './style/yapnews.css';
-		?>
-	</style>
-
+	
+	<link rel="icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
+	
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({
-          google_ad_client: "ca-pub-1660456925957249",
-          enable_page_level_ads: true
-     });
-</script>
-
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<body id="body" onresize="onResize()">
-
-<div id="yapms">
-<div id="menu-div">
-	<button class="click-button" onclick="clearMap()" style="white-space: nowrap;">
-		<i class="fas fa-window-close"></i> Clear
-	</button>
-
-	<button class="click-button" onclick="displayMapMenu()" style="white-space: nowrap;">
-		<i class="fas fa-map"></i> Maps
-	</button>
-
-	<button id="modesbutton" class="click-button" onclick="displayModeMenu()" style="white-space: nowrap;">
-		<i class="fas fa-cog"></i> Modes (<i class="fas fa-paint-brush"></i> Paint/Move)
-	</button>
-
-	<button class="click-button" onclick="displayChartMenu()" style="white-space: nowrap;">
-		<i class="fas fa-chart-pie"></i> Charts
-	</button>
-
-	<button class="click-button" onclick="displayThemeMenu()" style="white-space: nowrap;">
-		<i class="fas fa-palette"></i> Themes
-	</button>
-
-	<button id="takeallbutton" class="click-button" onclick="toTakeAll()" style="white-space: nowrap; display: none;">
-		<i class="fas fa-sliders-h"></i> Take All	
-	</button>
-
-	<button class="click-button" onclick="share()" style="white-space: nowrap;">
-		<i class="fas fa-share-alt"></i> Share
-	</button>
-
-<?php
-if($mobile === false) {
-	echo '<button class="click-button" onclick="displayLoadMenu()" style="white-space: nowrap;">
-		<i class="fas fa-upload"></i> Load
-		</button>';
-}
-?>
-
-	<button class="click-button" onclick="enableFullscreen()" style="white-space: nowrap;">
-		<i class="fas fa-expand-arrows-alt"></i> Fullscreen	
-	</button>
-
-	<button class="click-button" onclick="displayMiscMenu()" style="white-space: nowrap;">
-		<i class="fas fa-clipboard"></i> Misc
-	</button>
-
-	<a class="click-button" href="https://www.yapms.com/privacypolicy.html" target="_blank">
-	<button class="click-button" style="white-space: nowrap; margin-left: auto;">
-		<i class="fas fa-user-secret"></i> Privacy Policy
-	</button>
-	</a>
-
-<?php
-/* margin-left: auto; moves the button all the way to the right */
-if($mobile === false) {
-	echo '<button class="click-button" onclick="toggleYAPNews()" style="white-space: nowrap; margin-left: auto;">
-		<i class="fas fa-bars"></i> Toggle Sidebar
-		</button>';
-}
-?>
-
-</div>
-
-<div id="application-sidebar-div">
-<div id="application">
-	<div id="legend-div">
-	</div>
-
-	<div id="chart-div">
-		<div id="chart">
-		<canvas id="chart-canvas" width="100" height="100"></canvas>
+<body>
+	<div id="info">
+		<div id="topbar">
+			<h1> YAPms - Yet Another Political Map Simulator </h1>
 		</div>
 
-		<?php
-			include 'html/battlechart.html';
-		?>
+		<div id="welcome" class="infobox">
 
-		<div id="logo-redeagle-div">
-		</div>
-		<div id="logo-div">
-		</div>
-	</div>
+			<p>
+				YAPms is a tool for creating and sharing political maps
+			</p>
 
-	<div id="map-div">
-		This Map Is Bad
-	</div>
-</div>
-<?php
-if($mobile === false) {
-	echo '<div id="sidebar">' ,
-		'<div id="sidebar-header">
-			YAPms  
-		</div>' ,
-'<div id="sidebar-ad">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- sidebar-ad5 -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:300px;height:300px"
-     data-ad-client="ca-pub-1660456925957249"
-     data-ad-slot="8033943742"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>',
-		'<span>
-		<a id="sidebar-discord-link" href="https://discord.gg/WQh5fHU" target="_blank">
-		<div id="sidebar-discord">
-			Discord
+			<p>
+				<b>Supported Browsers:</b>
+				Chrome, Firefox and Opera
+			</p>
+			
+			<p> 
+				<b>Contact Email:</b>
+				<a style="color:blue;" href="mailto:bugreport@yapms.com">bugreport@yapms.com</a> 
+			</p>
+		</div>
+		
+		<br>
+
+		<a href="https://play.google.com/store/apps/details?id=com.fishstudio.yapms&hl=en_GB">
+			<div class="infobox link">
+				Download Android App
 			</div>
 		</a>
-		<a id="sidebar-reddit-link" href="https://www.reddit.com/r/YAPms/" target="_blank">
-		<div id="sidebar-reddit">
-			Reddit
-		</div>
+
+		<a href="https://discord.gg/WQh5fHU">
+			<div class="infobox link">
+				Join Our Discord
+			</div>
 		</a>
-		</span>',
-		'<span>
-			Offline
-		</span>',
-		'<div id="sidebar-popularvote">
-			<h3>
-				<span>
-				State Popular Vote
-				</span>
-			</h3>
-			<div id="popularvote-message">
-				Select a State
-			</div>
-			<div id="popularvote-state-title">
-			</div>
-			<div id="popularvote-ranges">
-			</div>
-		</div>',
-		'<div id="sidebar-national-popularvote">
-			<h3>
-				<span>
-				National Popular Vote
-				</span>
-			</h3>
-			<div id="national-popularvote-ranges">
-			</div>
-		</div>',
-		'<div id="sidebar-popularvote-settings">
-			<h3>
-				Settings
-			</h3>
-			<span class="sidebar-hover-popup"><input type="checkbox" id="popularvote-automargins" onclick="autoMarginsOnClick();" checked>Auto Margins
-				<div>
-					Setting the popular vote will also set the color of a state
-				</div>
-			</span>
-			<br>
-			<span class="sidebar-hover-popup"><input type="checkbox" id="popularvote-clicksetpv" checked>Click Sets PV
-				<div>
-					Clicking on a state will alter the popular vote of the state
-				</div>
-			</span>
-			<br>
-			<span class="sidebar-hover-popup"><input type="checkbox" id="popularvote-avoidalmargins" checked>District Clicks
-				<div>
-					Clicking on a district in Nebraska or Maine will not calculate the margin for the AL vote.	
-				</div>
-			</span>
-		</div>',
-		'<div id="sidebar-congress">
-			<h3><span id="sidebar-congress-district">District</span></h3>
-			<div id="sidebar-congress-representative">
-			</div><br>
-			<div id="sidebar-congress-party">
-			</div><br>
-		</div>',
-		'<div id="yapnews-articles">
-		</div>' ,
-	'</div>';
-}
-?>
-</div>
-</div>
 
-<div id="demdel" class="popup">
-	<h3 id="demdel-message"></h3>
-	<div id="demdel-ranges">
+		<div class="infobox">
+			<p>
+				Unable to load map, please select a new one.
+			</p>
+		</div>
 	</div>
-	<input id="demdel-state-name" type="hidden">
+
 	<br>
-	<button class="setbutton" onclick="setDelegates(this)">set</button>
-</div>
 
-<div id="ecedit" class="popup">
-	<h3 id="ecedit-message"></h3>
-	<input id="state-ec" type="number" name="value" min="1" max="10000" step="1">
-	<input id="state-id" type="hidden">
-	<button class="setbutton" onclick="setEC(this);">set</button>
-</div>
-
-<div id="candidateedit" class="popup">
-	<h3 id="candidateedit-message"></h3>
-	Name <input id="candidate-name" type="text" name="name"><br><br>
-	Solid <input id="candidate-solid" type="color"><br>
-	Likely <input id="candidate-likely" type="color"><br>
-	Lean <input id="candidate-lean" type="color"><br>
-	Tilt <input id="candidate-tilt" type="color"><br><br>
-	<input id="candidate-originalName" type="hidden">
-	<button class="setbutton" onclick="setCandidate(this)">set</button>
-	<!--<button id="deletecandidate" onclick="deleteCandidate(this)">delete</button>-->
-</div>
-
-<div id="miscmenu" class="popup selectmenu">
-	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
-	<h2>Misc</h2>
-	<a class="selectmenu-button" onclick="displayVersionInfo()">Version Info</a>
-	<a class="selectmenu-button" onclick="centerMap()">Center Map</a>
-	<a class="selectmenu-button" onclick="toggleLTELogo()">LTE Logo</a>
-	<a class="selectmenu-button" onclick="toggleRedEagleLogo()">RedEagle Logo</a>
-</div>
-
-<div id="customcolormenu" class="popup selectmenu">
-	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
-	<h2>Custom Color Edit</h2>
-	<input id="custom-color-name" type="hidden">
-	<a class="selectmenu-button">Solid <input id="solidcustom" type="color"></a>
-	<a class="selectmenu-button">Likely <input id="likelycustom" type="color"></a>
-	<a class="selectmenu-button">Leaning <input id="leaningcustom" type="color"></a>
-	<a class="selectmenu-button">Tilting<input id="tiltingcustom" type="color"></a>
-	<a class="selectmenu-button" onclick="saveCustomColors(); displayAddCandidateMenu()">Set</a>
-</div>
-
-<div id="addcandidatemenu" class="popup selectmenu">
-	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
-	<h2>Add Candidate</h2>
-	<a class="selectmenu-button">Name <input id="name" type="text"></a>
-	<a class="selectmenu-button selectmenu-red" onclick='setColors("red")'>Red Colors</a>
-	<a class="selectmenu-button selectmenu-blue" onclick='setColors("blue")'>Blue Colors</a>
-	<a class="selectmenu-button selectmenu-green" onclick='setColors("green")'>Green Colors</a>
-	<a class="selectmenu-button selectmenu-yellow" onclick='setColors("yellow")'>Yellow Colors</a>
-	<div class="selectmenu-button-double">
-		<a id="custom1button" class="selectmenu-button-left selectmenu-button selectmenu-button-bold"
-			onclick='setColors("custom1")'>Custom 1</a>	
-		<a class="selectmenu-button-right selectmenu-button fas fa-cog"
-			onclick='displayCustomColorMenu("custom1")'></a>
+	<div class="map-type-box">	
+	<div class="map-type-header">
+		USA - 2020 Maps	
 	</div>
-	<div class="selectmenu-button-double">
-		<a id="custom2button" class="selectmenu-button-left selectmenu-button selectmenu-button-bold"
-			onclick='setColors("custom2")'>Custom 2</a>	
-		<a class="selectmenu-button-right selectmenu-button fas fa-cog"
-			onclick='displayCustomColorMenu("custom2")'></a>
+
+	<div>	
+		<a href="./app/?t=2020_presidential">
+			<div class="map-button">
+				Presidential
+			</div>
+		</a>
+
+		<a href="./app/?t=2020_gubernatorial">
+			<div class="map-button">
+				Gubernatorial
+			</div>
+		</a>
+		
+		<a href="./app/?t=2020_senatorial">
+			<div class="map-button">
+				Senatorial
+			</div>
+		</a>
+
+		<br>	
+
+		<a href="./app/?t=2020_democratic_primary">
+			<div class="map-button">
+				Democratic Primary
+			</div>
+		</a>
+
+		<a href="./app/?t=2020_republican_primary">
+			<div class="map-button">
+				Republican Primary
+			</div>
+		</a>
 	</div>
-	<div class="selectmenu-button-double">
-		<a id="custom3button" class="selectmenu-button-left selectmenu-button selectmenu-button-bold"
-			onclick='setColors("custom3")'>Custom 3</a>	
-		<a class="selectmenu-button-right selectmenu-button fas fa-cog"
-			onclick='displayCustomColorMenu("custom3")'></a>
 	</div>
-	<div class="selectmenu-button-double">
-		<a id="custom4button" class="selectmenu-button-left selectmenu-button selectmenu-button-bold"
-			onclick='setColors("custom4")'>Custom 4</a>	
-		<a class="selectmenu-button-right selectmenu-button fas fa-cog"
-			onclick='displayCustomColorMenu("custom4")'></a>
+	
+	<div class="map-type-box">	
+	<div class="map-type-header">
+		USA - 2020 Forecasts
 	</div>
-	<a class="selectmenu-button">Solid <input id="solid" type="color"></a>
-	<a class="selectmenu-button">Likely <input id="likely" type="color"></a>
-	<a class="selectmenu-button">Leaning <input id="leaning" type="color"></a>
-	<a class="selectmenu-button">Tilting<input id="tilting" type="color"></a>
-	<a class="selectmenu-button" onclick="addCandidate(); closeNotification(this);">Add</a>
-</div>
+	<div>
+		<a href="./app/?t=2020_cook">
+			<div class="map-button">
+				Cook Political Report
+			</div>
+		</a>
 
-<div id="deletecandidateconfirm" class="popup">
-	<h2>Delete Candidate?</h2>
-	<input id="delete-candidate-name" type="hidden">
-	<button class="yes-button" onclick='deleteCandidateByName(document.getElementById("delete-candidate-name").value); closeNotification(this);'>Yes</button>
-	<button class="no-button" onclick="closeNotification(this);">No</button>
-</div>
+		<a href="./app/?t=2020_inside">
+			<div class="map-button">
+				Inside Elections
+			</div>
+		</a>
 
-<div id="modemenu" class="popup selectmenu">
-	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
-	<h2>Select Mode</h2>
-	<a class="selectmenu-button" id="paintmovebutton" onclick='closeNotification(this); setMode("paintmove")'><i class="fas fa-paint-brush"></i> Paint/Move</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); setMode("paint")'><i class="fas fa-paint-brush"></i> Paint</a>
-	<a class="selectmenu-button" id="movebutton" onclick='closeNotification(this); setMode("move")'><i class="fas fa-arrows-alt"></i> Move</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); setMode("delete")'><i class="fas fa-eraser"></i> Disable State</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); setMode("ec")'><i class="far fa-edit"></i> EC Edit</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); setMode("candidate")'><i class="fas fa-user-edit"></i> Edit Candidate</a>
-</div>
+		<br>
 
-<div id="thememenu" class="popup selectmenu">
-	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
-	<h2>Select Theme</h2>	
-	<a class="selectmenu-button" onclick='darkPalette()'>Dark</a>
-	<a class="selectmenu-button" onclick='terminalPalette()'>Terminal</a>
-	<a class="selectmenu-button" onclick='lightPalette()'>Light</a>
-	<a class="selectmenu-button" onclick='contrastPalette()'>Contrast</a>
-	<a class="selectmenu-button" onclick='metallicPalette()'>Metallic</a>
-	<a class="selectmenu-button" onclick='toWinPalette()'>Default</a>
-</div>
+		<a href="./app/?t=2020_sabatos">
+			<div class="map-button">
+				Sabatos Crystal Ball
+			</div>
+		</a>
+	</div>
+	</div>
 
-<div id="chartmenu" class="popup selectmenu">
-	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
-	<h2>Select Chart</h2>	
-	<a class="selectmenu-split">Charts</a>
-	<a class="selectmenu-button" onclick='setChart("horizontalbattle")'>Horizontal Battle</a>
-	<a class="selectmenu-button" onclick='setChart("verticalbattle")'>Vertical Battle</a>
-	<a class="selectmenu-button" onclick='setChart("pie")'>Side Pie</a>
-	<a class="selectmenu-button" onclick='setChart("pie","bottom")'>Bottom Pie</a>
-	<a class="selectmenu-button" onclick='setChart("doughnut")'>Side Doughnut</a>
-	<a class="selectmenu-button" onclick='setChart("doughnut", "bottom")'>Bottom Doughnut</a>
-	<a class="selectmenu-button" onclick='setChart("horizontalBar")'>Side Bar</a>
-	<a class="selectmenu-button" onclick='setChart("none")'>None</a>
-	<a class="selectmenu-split">Chart Settings</a>
-	<a class="selectmenu-button" onclick='toggleLegendCounter()'>Legend Counter</a>
-	<a class="selectmenu-button" onclick='toggleChartLabels()'>Chart Labels</a>
-	<a class="selectmenu-button" onclick='toggleChartLeans()'>Chart Leans</a>
-	<a class="selectmenu-button" onclick='toggleLegendLeans()'>Legend Leans</a>
-</div>
-
-<div id="presetmenu" class="popup selectmenu">
-	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
-	<h2>Add Candidates</h2>	
-	<a class="selectmenu-split">Custom</a>
-	<a class="selectmenu-button" onclick='customColorBackground(); displayAddCandidateMenu();'>Add Custom</a>
-	<a class="selectmenu-split">Preset</a>
-	<a class="selectmenu-button" onclick='loadPreset("tossup")'>Clear</a>
-	<a class="selectmenu-button" onclick='loadPreset("classic")'>R/D</a>
-	<a class="selectmenu-button" onclick='loadPreset("libertarian")'>R/D/L</a>
-	<a class="selectmenu-button" onclick='loadPreset("green")'>R/D/G</a>
-	<a class="selectmenu-button" onclick='loadPreset("majors")'>R/D/G/L</a>
-</div>
-
-<!-- UK Maps -->
-<div id="mapmenu-uk" class="popup selectmenu">
-	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
-	<h2>United Kingdom</h2>
-	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/unitedkingdom.svg", 16, 0.075, "congressional", "congressional", "open");'>United Kingdom</a>
-</div>
-
-<!-- Canada Maps -->
-<div id="mapmenu-canada" class="popup selectmenu">
-	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
-	<h2>Canada</h2>
-	<a class="selectmenu-button" href="./?t=Canada_provinces">Provinces</a>
-	<a class="selectmenu-button" href="./?t=Canada_constituencies">Constituencies</a>
-</div>
-
-<!-- German Maps -->
-<div id="mapmenu-germany" class="popup selectmenu">
-	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
-	<h2>Germany</h2>
-	<a class="selectmenu-button" href="./?t=Germany_states">States</a>
-	<a class="selectmenu-button" href="./?t=Germany_constituencies">Constituencies</a>
-</div>
-
-<!-- Australia Maps -->
-<div id="mapmenu-australia" class="popup selectmenu">
-	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
-	<h2>Australia</h2>
-	<a class="selectmenu-button" href="./?t=Australia_states">States</a>
-	<a class="selectmenu-button" href="./?t=Australia_constituencies">Constituencies</a>
-</div>
-
-<!-- Netherlands Maps -->
-<div id="mapmenu-netherlands" class="popup selectmenu">
-	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
-	<h2>Netherlands</h2>
-	<a class="selectmenu-button" href="./?t=Netherlands_provinces">Provinces</a>
-	<a class="selectmenu-button" href="./?t=Netherlands_gemeenten">Gemeeten</a>
-</div>
-
-<!-- Italy Maps -->
-<div id="mapmenu-italy" class="popup selectmenu">
-	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
-	<h2>Italy</h2>
-	<a class="selectmenu-button" href="./?t=Italy_states">States</a>
-	<!--<a class="selectmenu-button" href="./?t=Italy_constituencies">Constituencies</a>-->
-</div>
-
-<!-- USA Maps -->
-<div id="mapmenu-usa" class="popup selectmenu">
-	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
-	<h2>USA Maps</h2>
-	<a class="selectmenu-split">2020</a>
-	<a class="selectmenu-button" href="./?t=2020_presidential">Presidential</a>
-	<a class="selectmenu-button" href="./?t=2020_senatorial">Senatorial</a>
-	<a class="selectmenu-button" href="./?t=2020_gubernatorial">Gubernatorial</a>
-	<a class="selectmenu-split">Forecasts</a>
-	<a class="selectmenu-button" href="./?t=2020_cook">Cook Political Report</a>
-	<a class="selectmenu-button" href="./?t=2020_inside">Inside Elections</a>
-	<a class="selectmenu-button" href="./?t=2020_sabatos">Sabatos Crystal Ball</a>
-	<a class="selectmenu-split">Primaries</a>
-	<a class="selectmenu-button" href="./?t=2020_democratic_primary">Democratic</a>
-	<a class="selectmenu-button" href="./?t=2020_republican_primary">Republican</a>
-	<a class="selectmenu-split">Current</a>
-	<a class="selectmenu-button" href="./?t=Current_house">House</a>
-	<a class="selectmenu-button" href="./?t=Current_senate">Senate</a>
-	<a class="selectmenu-split">Blank</a>
-	<a class="selectmenu-button" href="./?t=USA_senatorial">Senatorial</a>
-	<a class="selectmenu-button" href="./?t=USA_congressional">Congressional</a>
-	<a class="selectmenu-button" href="./?t=USA_gubernatorial">Gubernatorial</a>
-	<a class="selectmenu-button" href="./?t=USA_county">County</a>
-	<a class="selectmenu-button" href="./?t=USA_proportional">Presidential<br>Proportional</a>
-	<a class="selectmenu-button" href="./?t=USA_takeall">Presidential<br>Take All</a>
-	<a class="selectmenu-button" href="./?t=USA_split_maine">Presidential<br>Split Maine</a>
-	<a class="selectmenu-button" href="./?t=USA_congressional_2008">Congressional 2008</a>
-</div>
-
-<!-- USA Historical Maps -->
-<div id="mapmenu-usa-historical" class="popup selectmenu">
-	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
-	<h2>USA Historical Maps</h2>
-	<a class="selectmenu-button" href="./?t=2016_presidential_county">Presidential County 2016</a>
-	<a class="selectmenu-button" href="./?t=2016_presidential">Presidential 2016</a>
-	<a class="selectmenu-button" href="./?t=2012_presidential">Presidential 2012</a>
-	<a class="selectmenu-button" href="./?t=2008_presidential">Presidential 2008</a>
-	<a class="selectmenu-button" href="./?t=2004_presidential">Presidential 2004</a>
-	<a class="selectmenu-button" href="./?t=2000_presidential">Presidential 2000</a>
-	<a class="selectmenu-button" href="./?t=1996_presidential">Presidential 1996</a>
-	<a class="selectmenu-button" href="./?t=1992_presidential">Presidential 1992</a>
-	<a class="selectmenu-button" href="./?t=1988_presidential">Presidential 1988</a>
-	<a class="selectmenu-button" href="./?t=1984_presidential">Presidential 1984</a>
-	<a class="selectmenu-button" href="./?t=1980_presidential">Presidential 1980</a>
-	<a class="selectmenu-button" href="./?t=1976_presidential">Presidential 1976</a>
-	<a class="selectmenu-button" href="./?t=1972_presidential">Presidential 1972</a>
-	<a class="selectmenu-button" href="./?t=1968_presidential">Presidential 1968</a>
-	<a class="selectmenu-button" href="./?t=1964_presidential">Presidential 1964</a>
-	<a class="selectmenu-button" href="./?t=1960_presidential">Presidential 1960</a>
-	<a class="selectmenu-button" href="./?t=1956_presidential">Presidential 1956</a>
-	<a class="selectmenu-button" href="./?t=1952_presidential">Presidential 1952</a>
-	<a class="selectmenu-button" href="./?t=1948_presidential">Presidential 1948</a>
-	<a class="selectmenu-button" href="./?t=1944_presidential">Presidential 1944</a>
-	<a class="selectmenu-button" href="./?t=1940_presidential">Presidential 1940</a>
-	<a class="selectmenu-button" href="./?t=1936_presidential">Presidential 1936</a>
-	<a class="selectmenu-button" href="./?t=1932_presidential">Presidential 1932</a>
-	<a class="selectmenu-button" href="./?t=1928_presidential">Presidential 1928</a>
-	<a class="selectmenu-button" href="./?t=1924_presidential">Presidential 1924</a>
-	<a class="selectmenu-button" href="./?t=1920_presidential">Presidential 1920</a>
-	<a class="selectmenu-button" href="./?t=1916_presidential">Presidential 1916</a>
-	<a class="selectmenu-button" href="./?t=1912_presidential">Presidential 1912</a>
-	<a class="selectmenu-button" href="./?t=1908_presidential">Presidential 1908</a>
-	<a class="selectmenu-button" href="./?t=1904_presidential">Presidential 1904</a>
-	<a class="selectmenu-button" href="./?t=1900_presidential">Presidential 1900</a>
-	<a class="selectmenu-button" href="./?t=1896_presidential">Presidential 1896</a>
-	<a class="selectmenu-button" href="./?t=1892_presidential">Presidential 1892</a>
-	<a class="selectmenu-button" href="./?t=1888_presidential">Presidential 1888</a>
-	<a class="selectmenu-button" href="./?t=1884_presidential">Presidential 1884</a>
-	<a class="selectmenu-button" href="./?t=1880_presidential">Presidential 1880</a>
-	<a class="selectmenu-button" href="./?t=1876_presidential">Presidential 1876</a>
-	<a class="selectmenu-button" href="./?t=1872_presidential">Presidential 1872</a>
-	<a class="selectmenu-button" href="./?t=1868_presidential">Presidential 1868</a>
-	<a class="selectmenu-button" href="./?t=1864_presidential">Presidential 1864</a>
-</div>
-
-<!-- Mock Maps -->
-<div id="mapmenu-lte" class="popup selectmenu">
-	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
-	<h2>LTE</h2>
-	<a class="selectmenu-button" href="./?t=LTE_presidential">Presidential</a>
-	<a class="selectmenu-button" href="./?t=LTE_senatorial">Senatorial</a>
-	<a class="selectmenu-button" href="./?t=LTE_congressional">Congressional</a>
-</div>
-
-<!-- Maps menu -->
-<div id="mapmenu" class="popup selectmenu">
-	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
-	<h2>Select Map</h2>
-	<a class="selectmenu-split">Countries</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("usa")'; >USA</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("usa-historical")'; >USA Historical</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("germany")'; >Germany</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("canada")'>Canada</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("australia")'; >Australia</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("netherlands")'; >Netherlands</a>
-	<a class="selectmenu-button" href="./?t=Spain_constituencies">Spain</a>
-	<a class="selectmenu-button" href="./?t=Italy_states">Italy</a>
-	<a class="selectmenu-button" href="./?t=UnitedKingdom_constituencies">United Kingdom</a>
-	<a class="selectmenu-button" href="./?t=France_constituencies">France</a>
-	<a class="selectmenu-button" href="./?t=EuropeanUnion">EU</a>
-	<a class="selectmenu-button" href="./?t=World">World</a>
-	<a class="selectmenu-split">Mock</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("lte")'; >LTE</a>
-</div> 
-
-<div id="notification" class="popup">
-	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
-	<h3 id="notification-title"></h3>
-	<p id="notification-message"></p>
-</div>
-
-<div id="notification-update-serviceworker" class="popup">
-	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
-	<h3>New Version Installed</h3>
-	<p>Click reload to start using the update</p>
-	<button class="yes-button" onclick='closeNotification(this); location.reload();'>Reload</button>
-	<button class="no-button" onclick="closeNotification(this);">Skip</button>
-</div>
-
-<div id="share" class="popup">
-	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
-	<h3>Share Link</h3>
-	<div id="shareurl"></div>
 	<br>
-<?php 
-if($mobile === false) {
-	echo '<a id="downloadbutton" class="download-button"><i class="fas fa-download"></i>  Download</a><br><br>';
-}
-?>
-	<img id="screenshotimg"/>
-</div>
+	
+	<div class="map-type-box">	
+	<div class="map-type-header">
+		USA - Current
+	</div>
+		
+	<div>
+		<a href="./app/?t=Current_house">
+			<div class="map-button">
+				House
+			</div>
+		</a>
+		
+		<a href="./app/?t=Current_senate">
+			<div class="map-button">
+				Senate
+			</div>
+		</a>
+	</div>
+	</div>
 
-<div id="loadmenu" class="popup">
-	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
-	<h2>Load From File</h2>
-	<p>Select a yapms file to load</p>
-	<form action="load.php" method="post" enctype="multipart/form-data">
-		<input type="file" name"file" id="loadfile">
-		<input type="button" value="Load" onclick='loadFileMap()'>
-	</form>
+	<div class="map-type-box">	
+	<div class="map-type-header">
+		USA - Open Maps
+	</div>
 
-</div>
+	<div>
+		<a href="./app/?t=USA_senatorial">
+			<div class="map-button">
+				Senatorial
+			</div>
+		</a>
+		
+		<a href="./app/?t=USA_gubernatorial">
+			<div class="map-button">
+				Gubernatorial
+			</div>
+		</a>
 
-<div id="versioninfo" class="popup">
-	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
-	<h2>Version Info</h2>
-	<a id="versioninfo-text"></a>
-</div>
+		<br>
+		
+		<a href="./app/?t=USA_congressional">
+			<div class="map-button">
+				Congressional
+			</div>
+		</a>
+		
+		<a href="./app/?t=USA_county">
+			<div class="map-button">
+				Counties
+			</div>
+		</a>
+	</div>
+	</div>
+	
+	<div class="map-type-box">	
+	<div class="map-type-header">
+		USA - Other Maps	
+	</div>
+		
+	<div>
+		<a href="./app/?t=USA_takeall">
+			<div class="map-button">
+				Take All
+			</div>
+		</a>
+		
+		<a href="./app/?t=USA_proportional">
+			<div class="map-button">
+				Proportional
+			</div>
+		</a>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0"></script> 
-<script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.5.0/dist/svg-pan-zoom.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
-<script src="./src/Candidate.js"></script>
-<script src="./src/loadmap.js"></script>
-<script src="./src/savemap.js"></script>
-<script src="./src/data.js"></script>
-<script src="./src/State.js"></script>
-<script src="./src/htmlControl.js"></script>
-<script src="./src/battlechart.js"></script>
-<script src="./src/presets.js"></script>
-<script src="./src/click.js"></script>
-<script src="./src/popularvote.js"></script>
-<script src="./src/congress.js"></script>
-<script src="./src/main.js"></script>
-<?php 
-if($mobile === true) {
-	echo '<script src="./src/mobile.js"></script>';
-} else {
-	echo '<script src="./src/yapnews.js"></script>';
-}
-?>
-<script src="./src/html2canvas.min.js"></script>
-<script src="./src/deferedImages.js"></script>
-<script>
-	if('serviceWorker' in navigator) {
-		console.log('Attempting to register service worker');
-		navigator.serviceWorker
-		.register('../sw.js')
-		.then(reg => {
-			reg.addEventListener('updatefound', () => {
-				newWorker = reg.installing;
-				newWorker.addEventListener('statechange', () => {
-					switch(newWorker.state) {
-						case 'installed':
-						if(navigator.serviceWorker.controller) {
-							displayUpdateServiceWorker();
-						}
-						break;
-						default:
-					}
-				});
+		<br>
+
+		<a href="./app/?t=USA_split_maine">
+			<div class="map-button">
+				Split Maine
+			</div>
+		</a>
+
+		<a href="./app/?t=USA_congressional_2008">
+			<div class="map-button">
+				Congressional 2008
+			</div>
+		</a>
+	</div>
+	</div>
+
+	<br>
+
+	<div class="map-type-box">
+	<div class="map-type-header">
+		USA - Historical - Post WW2
+	</div>
+	<div>	
+		<a href="./app/?t=2016_presidential">
+			<div class="map-button">
+				2016 Presidential
+			</div>
+		</a>
+		<a href="./app/?t=2012_presidential">
+			<div class="map-button">
+				2012 Presidential
+			</div>
+		</a>
+		<a href="./app/?t=2008_presidential">
+			<div class="map-button">
+				2008 Presidential
+			</div>
+		</a>
+		<br>
+		<a href="./app/?t=2004_presidential">
+			<div class="map-button">
+				2004 Presidential
+			</div>
+		</a>
+		<a href="./app/?t=2000_presidential">
+			<div class="map-button">
+				2000 Presidential
+			</div>
+		</a>
+		<a href="./app/?t=1996_presidential">
+			<div class="map-button">
+				1996 Presidential
+			</div>
+		</a>
+		<br>
+		<a href="./app/?t=1992_presidential">
+			<div class="map-button">
+				1992 Presidential
+			</div>
+		</a>
+		<a href="./app/?t=1988_presidential">
+			<div class="map-button">
+				1988 Presidential
+			</div>
+		</a>
+		<a href="./app/?t=1984_presidential">
+			<div class="map-button">
+				1984 Presidential
+			</div>
+		</a><br>
+
+		<a href="./app/?t=1980_presidential">
+			<div class="map-button">
+				1980 Presidential
+			</div>
+		</a>
+		<a href="./app/?t=1976_presidential">
+			<div class="map-button">
+				1976 Presidential
+			</div>
+		</a>
+		<a href="./app/?t=1972_presidential">
+			<div class="map-button">
+				1972 Presidential
+			</div>
+		</a><br>
+
+		<a href="./app/?t=1968_presidential">
+			<div class="map-button">
+				1968 Presidential
+			</div>
+		</a>
+		<a href="./app/?t=1964_presidential">
+			<div class="map-button">
+				1964 Presidential
+			</div>
+		</a>
+		<a href="./app/?t=1960_presidential">
+			<div class="map-button">
+				1960 Presidential
+			</div>
+		</a><br>
+
+		<a href="./app/?t=1956_presidential">
+			<div class="map-button">
+				1956 Presidential
+			</div>
+		</a>
+		<a href="./app/?t=1952_presidential">
+			<div class="map-button">
+				1952 Presidential
+			</div>
+		</a>
+		<a href="./app/?t=1948_presidential">
+			<div class="map-button">
+				1948 Presidential
+			</div>
+		</a><br>
+		</div>
+		</div>
+
+		<div class="map-type-box">
+		<div class="map-type-header">
+			USA - Historical - Pre WW2
+		</div>
+		<a href="./app/?t=1944_presidential">
+			<div class="map-button">
+				1944 Presidential
+			</div>
+		</a>
+		<a href="./app/?t=1940_presidential">
+			<div class="map-button">
+				1940 Presidential
+			</div>
+		</a>
+		<a href="./app/?t=1936_presidential">
+			<div class="map-button">
+				1936 Presidential
+			</div>
+		</a><br>
+
+		<a href="./app/?t=1932_presidential">
+			<div class="map-button">
+				1932 Presidential
+			</div>
+		</a>
+		<a href="./app/?t=1928_presidential">
+			<div class="map-button">
+				1928 Presidential
+			</div>
+		</a>
+		<a href="./app/?t=1924_presidential">
+			<div class="map-button">
+				1924 Presidential
+			</div>
+		</a><br>
+
+		<a href="./app/?t=1920_presidential">
+			<div class="map-button">
+				1920 Presidential
+			</div>
+		</a>
+		<a href="./app/?t=1916_presidential">
+			<div class="map-button">
+				1916 Presidential
+			</div>
+		</a>
+		<a href="./app/?t=1912_presidential">
+			<div class="map-button">
+				1912 Presidential
+			</div>
+		</a><br>
+		
+		<a href="./app/?t=1908_presidential">
+			<div class="map-button">
+				1908 Presidential
+			</div>
+		</a>
+		
+		<a href="./app/?t=1904_presidential">
+			<div class="map-button">
+				1904 Presidential
+			</div>
+		</a>
+		
+		<a href="./app/?t=1900_presidential">
+			<div class="map-button">
+				1900 Presidential
+			</div>
+		</a><br>
+
+		<a href="./app/?t=1896_presidential">
+			<div class="map-button">
+				1896 Presidential
+			</div>
+		</a>
+		<a href="./app/?t=1892_presidential">
+			<div class="map-button">
+				1892 Presidential
+			</div>
+		</a>
+		<a href="./app/?t=1888_presidential">
+			<div class="map-button">
+				1888 Presidential
+			</div>
+		</a><br>
+
+		<a href="./app/?t=1884_presidential">
+			<div class="map-button">
+				1884 Presidential
+			</div>
+		</a>
+		<a href="./app/?t=1880_presidential">
+			<div class="map-button">
+				1880 Presidential
+			</div>
+		</a>
+		<a href="./app/?t=1876_presidential">
+			<div class="map-button">
+				1876 Presidential
+			</div>
+		</a><br>
+
+		<a href="./app/?t=1872_presidential">
+			<div class="map-button">
+				1872 Presidential
+			</div>
+		</a>
+		<a href="./app/?t=1868_presidential">
+			<div class="map-button">
+				1868 Presidential
+			</div>
+		</a>
+		<a href="./app/?t=1864_presidential">
+			<div class="map-button">
+				1864 Presidential
+			</div>
+		</a><br>
+	</div>
+	</div>
+
+	<br>
+
+	<div class="map-type-box">
+	<div class="map-type-header">
+		Canada
+	</div>
+	<div>
+		<a href="./app/?t=Canada_provinces">
+			<div class="map-button">
+				Provinces
+			</div>
+		</a>
+		<a href="./app/?t=Canada_constituencies">
+			<div class="map-button">
+				Constituencies
+			</div>
+		</a>
+	</div>
+	</div>
+
+	<div class="map-type-box">
+	<div class="map-type-header">
+		Germany
+	</div>
+	<div>
+		<a href="./app/?t=Germany_states">
+			<div class="map-button">
+				States
+			</div>
+		</a>
+		<a href="./app/?t=Germany_constituencies">
+			<div class="map-button">
+				Constituencies
+			</div>
+		</a>
+		
+	</div>
+	</div>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
+		United Kingdom
+	</div>
+	<div>
+		<a href="./app/?t=UnitedKingdom_constituencies">
+			<div class="map-button">
+				Constituencies
+			</div>
+		</a>
+	</div>
+	</div>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
+		Spain
+	</div>
+	<div>
+		<a href="./app/?t=Spain_constituencies">
+			<div class="map-button">
+				Constituencies
+			</div>
+		</a>
+	</div>
+	</div>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
+		France
+	</div>
+	<div>
+		<a href="./app/?t=France_constituencies">
+			<div class="map-button">
+				Constituencies
+			</div>
+		</a>
+	</div>
+	</div>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
+		Italy
+	</div>
+	<div>
+		<a href="./app/?t=Italy_states">
+			<div class="map-button">
+				States
+			</div>
+		</a>
+	</div>
+	</div>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
+		Australia
+	</div>
+	<div>
+		<a href="./app/?t=Australia_states">
+			<div class="map-button">
+				States
+			</div>
+		</a>
+		
+		<a href="./app/?t=Australia_constituencies">
+			<div class="map-button">
+				Constituencies
+			</div>
+		</a>
+	</div>
+	</div>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
+		Netherlands	
+	</div>
+	<div>
+		<a href="./app/?t=Netherlands_provinces">
+			<div class="map-button">
+				Provinces
+			</div>
+		</a>
+		
+		<a href="./app/?t=Netherlands_gemeenten">
+			<div class="map-button">
+				Gemeeten
+			</div>
+		</a>
+	</div>
+	</div>
+
+	<script>
+		if('serviceWorker' in navigator) {
+			navigator.serviceWorker
+			.register('./sw.js')
+			.then(function(a) {
+				console.log('SW: registered');
+			}, function(err) {
+				console.log('SW: register error... ', err);
 			});
-		});
-	}
-</script>
-
+		}
+	</script>
 </body>
 </html>
