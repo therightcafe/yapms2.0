@@ -30,7 +30,7 @@
 
 	<?php
 	$mobile = false;
-	$offline = true;
+	$offline = false;
 		
 		if(strpos($_SERVER['HTTP_USER_AGENT'], 'Mobi')) {
 			$mobile = true;	
