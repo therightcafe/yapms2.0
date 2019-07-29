@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.38.35';
-var staticCache = 's0.10.35';
+var dynamicCache = 'd0.38.36';
+var staticCache = 's0.10.36';
 
 function swLog(cache, message) {
 	console.log('SW ' + cache + ': ' + message + ' ( ' + dynamicCache + ' / ' + staticCache + ' )');
@@ -19,7 +19,6 @@ self.addEventListener('install', function(event) {
 			return cache.addAll([
 				'./app/res/usa_presidential.svg',
 				'./app/res/usa_1972_presidential.svg',
-				'./app/res/usa_congressional_2008.svg',
 				'./app/res/usa_congressional_2018.svg',
 				'./app/res/usa_dem_primary.svg',
 				'./app/res/usa_rep_primary.svg',
@@ -99,7 +98,6 @@ self.addEventListener('install', function(event) {
 				'./app/?t=2020_republican_primary',
 				'./app/?t=USA_county',
 				'./app/?t=USA_congressional',
-				'./app/?t=USA_congressional_2008',
 				'./app/?t=USA_gubernatorial',
 				'./app/?t=USA_senatorial',
 				'./app/?t=USA_takeall',
