@@ -180,6 +180,7 @@ self.addEventListener('fetch', function(event) {
 						}
 					}).catch(function(err){ 
 						swLog('error ' + err);
+						return caches.match('https://www.yapms.com/app/offline.php');
 					});
 				} else {
 					swLog('Web', 'fetch ' + event.request.url);
