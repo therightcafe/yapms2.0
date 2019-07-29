@@ -198,7 +198,7 @@ self.addEventListener('fetch', function(event) {
 				} else if(event.request.url.includes('yapms.com/app/') === true &&
 						event.request.url.includes('yapms.com/app/req_articles.php') === false) {
 					swLog('Web', 'fetch+cache ' + event.request.url);
-					console.log(event.request);
+					console.log(event.request.domain);
 					return fetch(event.request)
 					.then(function(response) {
 						return caches.open('flycache').then((cache) => {
