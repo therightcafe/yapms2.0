@@ -82,6 +82,7 @@ self.addEventListener('install', function(event) {
 			return cache.addAll([
 				'./',
 				'./index.php',
+				'./offline.php',
 				'./style.css',
 
 				'./app/',
@@ -173,7 +174,7 @@ self.addEventListener('fetch', function(event) {
 								return response;
 							});
 						} else {
-							return caches.match('./app/offline.php');
+							return caches.match('offline.php');
 						}
 					}).catch(function(err){ 
 						swLog('error ' + err);
