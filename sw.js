@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.38.18';
-var staticCache = 's0.10.18';
+var dynamicCache = 'd0.38.20';
+var staticCache = 's0.10.20';
 
 function swLog(cache, message) {
 	console.log('SW ' + cache + ': ' + message + ' ( ' + dynamicCache + ' / ' + staticCache + ' )');
@@ -82,11 +82,11 @@ self.addEventListener('install', function(event) {
 			return cache.addAll([
 				'./',
 				'./index.php',
-				'./index.php/?o=offline',
 				'./style.css',
 
 				'./app/',
 				'./app/index.php',
+				'./app/?t=2020_presidential&offline=true',
 
 				'./app/?t=Current_house',
 				'./app/?t=Current_senate',
@@ -174,7 +174,7 @@ self.addEventListener('fetch', function(event) {
 						});
 					}).catch(function(err){ 
 						swLog('Offline', 'error - ' + err);
-						return caches.match('./index.php/?o=offline');
+						return caches.match('./app/?t=2020_presidential&offline=true');
 					});
 				} else {
 					swLog('Web', 'fetch ' + event.request.url);

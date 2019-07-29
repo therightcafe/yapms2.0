@@ -37,12 +37,7 @@
 	<link rel="shortcut icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
 	
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-	<style>
-<?php
-	include './style.css';
-?>
-	</style>
-	<!--<link rel="stylesheet" type="text/css" href="style.css">-->
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
@@ -81,20 +76,6 @@
 				Join Our Discord
 			</div>
 		</a>
-<?php
-if(isset($_GET['o'])) {
-	if($_GET['o'] === 'offline') {
-		echo '
-		<br>
-		<div class="infobox">
-			<p>
-				Please select a different map
-			</p>
-		</div>
-		';
-	}
-}
-?>
 	</div>
 
 	<br>
