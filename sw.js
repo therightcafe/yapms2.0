@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.38.3';
-var staticCache = 's0.10.3';
+var dynamicCache = 'd0.38.4';
+var staticCache = 's0.10.4';
 
 function swLog(cache, message) {
 	console.log('SW ' + cache + ': ' + message + ' ( ' + dynamicCache + ' / ' + staticCache + ' )');
@@ -141,7 +141,9 @@ self.addEventListener('install', function(event) {
 				'./app/src/popularvote.js',
 				'./app/src/congress.js',
 				'./app/src/deferedImages.js',
-			]);
+			]).catch(function(err) {
+				swLog('error ' + err);
+			});
 
 			for(var i = 1864; i < 2016; i += 4) {
 				cache.add('./app/?t=' + i + '_presidential');
