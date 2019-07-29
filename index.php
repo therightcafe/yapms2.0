@@ -77,7 +77,7 @@
 			</div>
 		</a>
 <?php
-if(isset($_GET['o']) {
+if(isset($_GET['o'])) {
 	if($_GET['o'] === 'offline') {
 		echo '
 		<br>
