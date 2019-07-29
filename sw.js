@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.38.5';
-var staticCache = 's0.10.5';
+var dynamicCache = 'd0.38.6';
+var staticCache = 's0.10.6';
 
 function swLog(cache, message) {
 	console.log('SW ' + cache + ': ' + message + ' ( ' + dynamicCache + ' / ' + staticCache + ' )');
@@ -90,6 +90,7 @@ self.addEventListener('install', function(event) {
 				'./app/?t=Current_house',
 				'./app/?t=Current_senate',
 
+				'./app/?t=2016_presidential_county',
 				'./app/?t=2020_presidential',
 				'./app/?t=2020_senatorial',
 				'./app/?t=2020_gubernatorial',
