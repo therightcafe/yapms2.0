@@ -66,6 +66,10 @@
 				<b>Contact Email:</b>
 				<a style="color:blue;" href="mailto:bugreport@yapms.com">bugreport@yapms.com</a> 
 			</p>
+
+			<div class="infobox link" onclick="history.back()">
+				Back
+			</div>	
 		</div>
 	</div>
 </body>
