@@ -174,7 +174,7 @@ self.addEventListener('fetch', function(event) {
 								return response;
 							});
 						} else {
-							return caches.match('offline.php');
+							return caches.match('https://www.yapms.com/app/offline.php');
 						}
 					}).catch(function(err){ 
 						swLog('error ' + err);
