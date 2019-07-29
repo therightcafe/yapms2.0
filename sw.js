@@ -82,7 +82,6 @@ self.addEventListener('install', function(event) {
 			return cache.addAll([
 				'./',
 				'./index.php',
-				'./offline.php',
 				'./style.css',
 
 				'./app/',
