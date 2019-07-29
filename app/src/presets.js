@@ -54,6 +54,9 @@ function loadPreset(value) {
 		case 'spain':
 			loadPresetSpain();
 			break;
+		case 'netherlands':
+			loadPresetNetherlands();
+			break;
 	}
 	
 	verifyMap();
@@ -329,5 +332,49 @@ function loadPresetSpain() {
 	candidates['Compromís 2019'] = compromis;
 	candidates['CCa-PNC'] = cca;
 	candidates['PRC'] = prc;
+	toggleLegendLeans();
+}
+
+// Dutch Parties
+function loadPresetNetherlands() {
+	var fvd = new Candidate('FvD',
+		['#841818','#841818','#841818','#841818']);
+	var vvd = new Candidate('VVD',
+		['#21276A','#21276A','#21276A','#21276A']);
+	var cda = new Candidate('CDA',
+		['#007C5E','#007C5E','#007C5E','#007C5E']);
+	var gl = new Candidate('GL',
+		['#83BD00','#83BD00','#83BD00','#83BD00']);
+	var pvda = new Candidate('PvdA',
+		['#E12B1A','#E12B1A','#E12B1A','#E12B1A']);
+	var d66 = new Candidate('D66',
+		['#00B13D','#00B13D','#00B13D','#00B13D']);
+	var pvv = new Candidate('PVV',
+		['#21468B','#21468B','#21468B','#21468B']);
+	var sp = new Candidate('SP',
+		['#EE161F','#EE161F','#EE161F','#EE161F']);
+	var cu = new Candidate('CU',
+		['#00A7EB','#00A7EB','#00A7EB','#00A7EB']);
+	var pvdd = new Candidate('PvdD',
+		['#006B28','#006B28','#006B28','#006B28']);
+	var a50 = new Candidate('50+',
+		['#932390','#932390','#932390','#932390']);
+	var sgp = new Candidate('SGP',
+		['#E95D0F','#E95D0F','#E95D0F','#E95D0F']);
+	var denk = new Candidate('DENK',
+		['#00A7EB','#00A7EB','#00A7EB','#00A7EB']);
+
+	candidates['FvD'] = fvd;
+	candidates['VVD'] = vvd;
+	candidates['CDA'] = cda;
+	candidates['GL'] = gl;
+	candidates['PvdA'] = pvda;
+	candidates['D66'] = d66;
+	candidates['PVV'] = pvv;
+	candidates['SP'] = sp;
+	candidates['CU'] = cu;
+	candidates['PvdD'] = pvdd;
+	candidates['50+'] = a50;
+	candidates['DENK'] = denk;
 	toggleLegendLeans();
 }

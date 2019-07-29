@@ -144,6 +144,14 @@ function loadMapFromId(id) {
 			loadMap("./res/france_constituencies.svg", 16, 0.25, "congressional", "congressional", "open", {updateText: false});
 			loadPreset('france')
 			break;
+		case "Netherlands_provinces":
+			loadMap("./res/netherlands_provinces.svg", 16, 0.15, "netherlands_provinces", "proportional", "open", {updateText: false});
+			loadPreset('netherlands');
+			break;
+		case "Netherlands_gemeenten":
+			loadMap("./res/netherlands_gemeenten.svg", 16, 0.15, "congressional", "congressional", "open", {updateText: false});
+			loadPreset('netherlands');
+			break;
 		case "Italy_states":
 			loadMap("./res/italy.svg", 16, 1, "congressional", "congressional", "open", {updateText: false});
 			loadPreset('italy')

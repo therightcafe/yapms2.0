@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.36.1';
-var staticCache = 's0.8.1';
+var dynamicCache = 'd0.36.2';
+var staticCache = 's0.8.2';
 
 function swLog(cache, message) {
 	console.log('SW ' + cache + ': ' + message + ' ( ' + dynamicCache + ' / ' + staticCache + ' )');
@@ -7,6 +7,12 @@ function swLog(cache, message) {
 
 self.addEventListener('install', function(event) {
 	self.skipWaiting();
+	event.waitUntil(
+		caches.open(staticCache).then(function(cache) {
+			swLog('flycatch', 'installing');
+			return cache.addAll([
+			]);
+		}));
 	event.waitUntil(
 		caches.open(staticCache).then(function(cache) {
 			swLog(staticCache, 'installing');
@@ -191,7 +197,16 @@ self.addEventListener('fetch', function(event) {
 					return response;
 				} else {
 					swLog('Web', 'fetch ' + event.request.url);
-					return fetch(event.request);
+					//return fetch(event.request);
+					return fetch(event.request)
+					.then(function(response) {
+						return caches.open('flycache').then((cache) => {
+							cache.put(event.request, response.clone());
+							return response;
+						});
+					}).catch(function(err){ 
+						swLog('error ' + err);
+					});
 				}
 			})
 			.catch(function(err) {
