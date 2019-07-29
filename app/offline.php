@@ -219,6 +219,9 @@ if($mobile === false) {
 		</div>
 		</a>
 		</span>',
+		'<span>
+			Offline
+		</span>',
 		'<div id="sidebar-popularvote">
 			<h3>
 				<span>
