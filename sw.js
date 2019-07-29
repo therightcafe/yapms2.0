@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.38.11';
-var staticCache = 's0.10.11';
+var dynamicCache = 'd0.38.12';
+var staticCache = 's0.10.12';
 
 function swLog(cache, message) {
 	console.log('SW ' + cache + ': ' + message + ' ( ' + dynamicCache + ' / ' + staticCache + ' )');
@@ -82,11 +82,11 @@ self.addEventListener('install', function(event) {
 			return cache.addAll([
 				'./',
 				'./index.php',
+				'./index.php?o=offline',
 				'./style.css',
 
 				'./app/',
 				'./app/index.php',
-				'./app/offline.php',
 
 				'./app/?t=Current_house',
 				'./app/?t=Current_senate',
@@ -167,19 +167,14 @@ self.addEventListener('fetch', function(event) {
 					swLog('Web', 'fetch+cache ' + event.request.url);
 					return fetch(event.request)
 					.then(function(response) {
-						if(response) {
-							swLog('Web', 'caching ' + event.request.url);
-							return caches.open('flycache').then((cache) => {
-								cache.put(event.request, response.clone());
-								return response;
-							});
-						} else {
-							swLog('Web', 'Offline ' + event.request.url);
-							return caches.match('./app/offline.php');
-						}
+						swLog('Web', 'caching ' + event.request.url);
+						return caches.open('flycache').then((cache) => {
+							cache.put(event.request, response.clone());
+							return response;
+						});
 					}).catch(function(err){ 
-						swLog('error ' + err);
-						return caches.match('./app/offline.php');
+						swLog('Offline', 'error - ' + err);
+						return caches.match('./index.php?o=offline');
 					});
 				} else {
 					swLog('Web', 'fetch ' + event.request.url);

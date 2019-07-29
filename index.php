@@ -76,6 +76,20 @@
 				Join Our Discord
 			</div>
 		</a>
+<?php
+if(isset($_GET['o']) {
+	if($_GET['o'] === 'offline') {
+		echo '
+		<br>
+		<div class="infobox">
+			<p>
+				Please select a different map
+			</p>
+		</div>
+		';
+	}
+}
+?>
 	</div>
 
 	<br>
