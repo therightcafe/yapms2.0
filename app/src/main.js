@@ -48,6 +48,7 @@ var blockPresets = false;
 
 var legendCounter = true;
 var legendLeans = true;
+var maxColorValues = 1;
 
 var loadConfig = {
 	filename: '', 
@@ -69,6 +70,14 @@ var previousPalette = function() {
 };
 
 var panObject = null;
+
+document.onkeydown = function(e) {
+	e = e
+}
+
+document.onkeyup = function(e) {
+	
+}
 
 function toTakeAll() {
 	loadMap(loadConfig.filename, loadConfig.fontsize, loadConfig.strokewidth, loadConfig.dataid, "presidential", "open", {updateText: mapOptions.updateText, states: states});
@@ -152,6 +161,15 @@ window.onerror = function(message, source, lineno, colno, error) {
 	}
 }
 
+function autoFill(stateIndex) {
+	if(keyStates[70]) {
+		states[stateIndex].incrementCandidateColor(paintIndex);
+		countVotes();
+		updateChart();
+		updateLegend();
+	}
+}
+
 // reads through the SVG and sets up states and buttons
 function initData(dataid) {
 	// clear any previously loaded data
@@ -174,13 +192,30 @@ function initData(dataid) {
 		} else if(name.includes('-button')) {
 			// don't include buttons as states
 			htmlElement.setAttribute('onclick', 'buttonClick(this)');
+			if(save_type === 'congressional' ||
+			save_type === 'presidential' ||
+			save_type === 'gubernatorial') {
+				htmlElement.setAttribute('onmouseover', 'if(keyStates[70]){buttonClick(this);}');
+			}
 			buttons.push(htmlElement);
 		} else if(name.includes('-land')) {
 			htmlElement.setAttribute('onclick', 'landClick(this)');
+			if(save_type === 'congressional' ||
+			save_type === 'presidential' ||
+			save_type === 'gubernatorial') {
+				htmlElement.setAttribute('onmouseover', 'if(keyStates[70]){landClick(this);}');
+			}
 			lands.push(htmlElement);
 		} else {
 			htmlElement.setAttribute('onclick', 'stateClick(this)');
 			states.push(new State(name, htmlElement, dataid));
+			var stateIndex = states.length - 1;
+
+			if(save_type === 'congressional' ||
+			save_type === 'presidential' ||
+			save_type === 'gubernatorial') {
+				htmlElement.setAttribute('onmouseover', 'if(keyStates[70]){stateClick(this);}');
+			}
 		}
 	}
 
@@ -279,6 +314,7 @@ function initChart() {
 
 			// after adding all the candidates, add the add candidate button
 			var legendElement = document.createElement('div');
+			legendElement.setAttribute('id', 'legend-addcandidate-button');
 			legendElement.setAttribute('class', 'legend-button');
 			legendElement.setAttribute(
 				'onclick', 'displayAddCandidateMenu();');

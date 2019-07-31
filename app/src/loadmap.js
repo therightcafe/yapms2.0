@@ -183,6 +183,9 @@ function loadMapFromId(id) {
 			loadMap("./res/australia.svg", 16, 0.075, "congressional", "congressional", "open", {updateText: false});
 			loadPreset('australia')
 			break;
+		case "Brazil_deputies":
+			loadMap("./res/brazil_states.svg", 16, 50, "brazil_deputies", "proportional", "open", {updateText: false});
+			break;
 		case "EuropeanUnion":
 			loadMap("./res/eu.svg", 16, 0.25, "eu_parliament", "primary", "open", {updateText: false});
 			break;
@@ -218,6 +221,12 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year, options) {
 		verifyPopularVote();
 		enableCongress = options.enableCongress;
 		verifyCongress();
+	}
+
+	if(filename === './res/usa_congressional_2018.svg') {
+		hoverFill = true;
+	} else {
+		hoverFill = false;
 	}
 
 	var mapHTML = document.getElementById('map-div');

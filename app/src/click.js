@@ -1,3 +1,5 @@
+var hoverFill = false;
+
 function buttonClick(clickElement) {
 	if(mode === 'move') {
 		return;

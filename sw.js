@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.38.36';
-var staticCache = 's0.10.36';
+var dynamicCache = 'd0.38.38';
+var staticCache = 's0.10.38';
 
 function swLog(cache, message) {
 	console.log('SW ' + cache + ': ' + message + ' ( ' + dynamicCache + ' / ' + staticCache + ' )');
@@ -140,6 +140,7 @@ self.addEventListener('install', function(event) {
 				'./app/src/yapnews.js',
 				'./app/src/popularvote.js',
 				'./app/src/congress.js',
+				'./app/src/keyboard.js',
 				'./app/src/deferedImages.js',
 			]).then(function() {
 				for(var i = 1864; i < 2016; i += 4) {

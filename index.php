@@ -590,6 +590,19 @@
 		</a>
 	</div>
 	</div>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
+		Brazil	
+	</div>
+	<div>
+		<a href="./app/?t=Brazil_deputies">
+			<div class="map-button">
+				Deputies
+			</div>
+		</a>
+	</div>
+	</div>
 
 	<script>
 		if('serviceWorker' in navigator) {

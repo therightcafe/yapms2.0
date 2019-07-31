@@ -141,10 +141,6 @@ if($mobile === false) {
 }
 ?>
 
-	<button class="click-button" onclick="enableFullscreen()" style="white-space: nowrap;">
-		<i class="fas fa-expand-arrows-alt"></i> Fullscreen	
-	</button>
-
 	<button class="click-button" onclick="displayMiscMenu()" style="white-space: nowrap;">
 		<i class="fas fa-clipboard"></i> Misc
 	</button>
@@ -158,9 +154,12 @@ if($mobile === false) {
 <?php
 /* margin-left: auto; moves the button all the way to the right */
 if($mobile === false) {
-	echo '<button class="click-button" onclick="toggleYAPNews()" style="white-space: nowrap; margin-left: auto;">
-		<i class="fas fa-bars"></i> Toggle Sidebar
-		</button>';
+	echo '<button class="click-button" onclick="togglePresentationMode()" style="white-space: nowrap; margin-left: auto;">
+<i class="fab fa-youtube"></i> Presentation
+</button>
+<button class="click-button" onclick="toggleYAPNews()" style="white-space: nowrap;">
+<i class="fas fa-bars"></i> Sidebar
+</button>';
 }
 ?>
 
@@ -175,11 +174,9 @@ if($mobile === false) {
 		<div id="chart">
 		<canvas id="chart-canvas" width="100" height="100"></canvas>
 		</div>
-
 		<?php
 			include 'html/battlechart.html';
 		?>
-
 		<div id="logo-redeagle-div">
 		</div>
 		<div id="logo-div">
@@ -311,6 +308,7 @@ if($mobile === false) {
 	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2>Misc</h2>
 	<a class="selectmenu-button" onclick="displayVersionInfo()">Version Info</a>
+	<a class="selectmenu-button" onclick="enableFullscreen()">Fullscreen</a>
 	<a class="selectmenu-button" onclick="centerMap()">Center Map</a>
 	<a class="selectmenu-button" onclick="toggleLTELogo()">LTE Logo</a>
 	<a class="selectmenu-button" onclick="toggleRedEagleLogo()">RedEagle Logo</a>
@@ -569,6 +567,7 @@ if($mobile === false) {
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("canada")'>Canada</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("australia")'; >Australia</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("netherlands")'; >Netherlands</a>
+	<a class="selectmenu-button" href="./?t=Brazil_deputies">Brazil</a>
 	<a class="selectmenu-button" href="./?t=Spain_constituencies">Spain</a>
 	<a class="selectmenu-button" href="./?t=Italy_states">Italy</a>
 	<a class="selectmenu-button" href="./?t=UnitedKingdom_constituencies">United Kingdom</a>
@@ -639,6 +638,7 @@ if($mobile === false) {
 <script src="./src/click.js"></script>
 <script src="./src/popularvote.js"></script>
 <script src="./src/congress.js"></script>
+<script src="./src/keyboard.js"></script>
 <script src="./src/main.js"></script>
 <?php 
 if($mobile === true) {

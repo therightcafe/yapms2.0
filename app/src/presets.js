@@ -378,3 +378,17 @@ function loadPresetNetherlands() {
 	candidates['DENK'] = denk;
 	toggleLegendLeans();
 }
+
+// Brazilian Parties
+function loadPresetBrazil() {
+	var psl = new Candidate('PSL',
+		['#203B78','#203B78','#203B78','#203B78']);
+	var pp = new Candidate('PP',
+		['#7DC9FF','#7DC9FF','#7DC9FF','#7DC9FF']);
+	var pl = new Candidate('',
+		['#0F0073','#0F0073','#0F0073','#0F0073']);
+	var psd = new Candidate('PSD',
+		['#FFA500','#FFA500','#FFA500','#FFA500']);
+	var mdb = new Candidate('MDB',
+		['#30914D','#30914D','#30914D','#30914D']);
+}

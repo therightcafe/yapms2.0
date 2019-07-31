@@ -4,12 +4,12 @@
 	z-index: 2;
 	pointer-events: none;
 	top: 0px;
+	margin-top: 4px;
 }
 
 .legend-button {
 	display: inline-block;
 	cursor: pointer;
-	margin-top: 4px;
 	margin-left: 3px;
 	margin-right: 0px;
 	vertical-align: top;
@@ -21,7 +21,6 @@
 .legend-delete {
 	display: inline-block;
 	cursor: pointer;
-	margin-top: 4px;
 	margin-left: 0px;
 	margin-right: 3px;
 	vertical-align: top;

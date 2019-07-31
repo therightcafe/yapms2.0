@@ -1,4 +1,5 @@
 var textOn = true;
+var presentationMode = false;
 
 // when the yapnews div gets resized, center the map
 if(document.getElementById("yapnews")) {
@@ -748,6 +749,65 @@ function setChart(type, position) {
 	chart = new Chart(ctx, {type: type, data: chartData, options: chartOptions});
 	countVotes();
 	updateChart();
+}
+
+function togglePresentationMode() {
+	var menubar = document.getElementById('menu-div');
+	var sidebar = document.getElementById('sidebar');
+	var legend = document.getElementById('legend-div');
+
+	presentationMode = !presentationMode;
+
+	if(presentationMode) {
+		if(menubar) {
+			menubar.style.display = 'none';
+		}
+		if(sidebar) {
+			sidebar.style.display = 'none';
+		}
+		if(legend) {
+			legend.style.marginTop = '8px';
+		}
+
+		var addButton = document.getElementById('legend-addcandidate-button');
+		if(addButton) {
+			addButton.style.display = 'none';
+		}
+
+		var removeButtons = document.getElementsByClassName('legend-delete');
+		for(var index = 0; index < removeButtons.length; ++index) {
+			var button = removeButtons[index];
+			button.style.display = 'none';
+		}
+
+	} else {
+		if(menubar) {
+			menubar.style.display = 'inline-flex';
+		}
+		if(sidebar) {
+			sidebar.style.display = 'inline-flex';
+		}
+		if(legend) {
+			legend.style.marginTop = '4px';
+		}
+		
+		var addButton = document.getElementById('legend-addcandidate-button');
+		if(addButton) {
+			addButton.style.display = 'inline-block';
+		}
+		
+		var removeButtons = document.getElementsByClassName('legend-delete');
+		for(var index = 0; index < removeButtons.length; ++index) {
+			var button = removeButtons[index];
+			button.style.display = 'inline-block';
+		}
+	}
+
+	centerMap();
+
+	if(presentationMode) {
+		displayNotification('Presentation Mode', 'Press the spacebar to exit presentation mode');
+	}
 }
 
 function toggleYAPNews() {
