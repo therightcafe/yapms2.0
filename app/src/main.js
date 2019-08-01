@@ -205,7 +205,6 @@ function initData(dataid) {
 			if(save_type === 'congressional' ||
 			save_type === 'presidential' ||
 			save_type === 'gubernatorial') {
-				console.log(save_type);
 				htmlElement.setAttribute('onmouseover', 'if(keyStates[70]){landClick(this, {setSolid: true});}');
 			}
 			lands.push(htmlElement);
@@ -213,10 +212,12 @@ function initData(dataid) {
 			htmlElement.setAttribute('onclick', 'stateClick(this)');
 			states.push(new State(name, htmlElement, dataid));
 			var stateIndex = states.length - 1;
+			console.log('before');
 			if(save_type === 'congressional' ||
 			save_type === 'presidential' ||
 			save_type === 'gubernatorial') {
 				htmlElement.setAttribute('onmouseover', 'if(keyStates[70]){stateClick(this, {setSolid: true});}');
+				console.log('after');
 			}
 		}
 	}
