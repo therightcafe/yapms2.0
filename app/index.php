@@ -268,6 +268,14 @@ if($mobile === false) {
 			<div id="sidebar-congress-party">
 			</div><br>
 		</div>',
+		'<div id="sidebar-help">
+			<h3>Help</h3>
+			<ul>
+				<li>
+					Hold down F to quickly fill in states
+				</li>
+			</ul>
+		</div>',
 		'<div id="yapnews-articles">
 		</div>' ,
 	'</div>';

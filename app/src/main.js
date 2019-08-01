@@ -1,4 +1,4 @@
-var currentCache = 'v0.38.3';
+var currentCache = 'v0.40.0';
 
 var cookies = {};
 
@@ -48,7 +48,7 @@ var blockPresets = false;
 
 var legendCounter = true;
 var legendLeans = true;
-var maxColorValues = 1;
+var maxColorValues = 4;
 
 var loadConfig = {
 	filename: '', 
@@ -195,7 +195,7 @@ function initData(dataid) {
 			if(save_type === 'congressional' ||
 			save_type === 'presidential' ||
 			save_type === 'gubernatorial') {
-				htmlElement.setAttribute('onmouseover', 'if(keyStates[70]){buttonClick(this);}');
+				htmlElement.setAttribute('onmouseover', 'if(keyStates[70]){buttonClick(this, {setSolid: true});}');
 			}
 			buttons.push(htmlElement);
 		} else if(name.includes('-land')) {
@@ -203,7 +203,7 @@ function initData(dataid) {
 			if(save_type === 'congressional' ||
 			save_type === 'presidential' ||
 			save_type === 'gubernatorial') {
-				htmlElement.setAttribute('onmouseover', 'if(keyStates[70]){landClick(this);}');
+				htmlElement.setAttribute('onmouseover', 'if(keyStates[70]){landClick(this, {setSolid: true});}');
 			}
 			lands.push(htmlElement);
 		} else {
@@ -214,7 +214,7 @@ function initData(dataid) {
 			if(save_type === 'congressional' ||
 			save_type === 'presidential' ||
 			save_type === 'gubernatorial') {
-				htmlElement.setAttribute('onmouseover', 'if(keyStates[70]){stateClick(this);}');
+				htmlElement.setAttribute('onmouseover', 'if(keyStates[70]){stateClick(this, {setSolid: true});}');
 			}
 		}
 	}

@@ -57,6 +57,9 @@ function loadPreset(value) {
 		case 'netherlands':
 			loadPresetNetherlands();
 			break;
+		case 'brazil':
+			loadPresetBrazil();
+			break;
 	}
 	
 	verifyMap();
@@ -385,10 +388,80 @@ function loadPresetBrazil() {
 		['#203B78','#203B78','#203B78','#203B78']);
 	var pp = new Candidate('PP',
 		['#7DC9FF','#7DC9FF','#7DC9FF','#7DC9FF']);
-	var pl = new Candidate('',
+	var pl = new Candidate('PL',
 		['#0F0073','#0F0073','#0F0073','#0F0073']);
 	var psd = new Candidate('PSD',
 		['#FFA500','#FFA500','#FFA500','#FFA500']);
 	var mdb = new Candidate('MDB',
 		['#30914D','#30914D','#30914D','#30914D']);
+	var prb = new Candidate('PRB',
+		['#00E6A8','#00E6A8','#00E6A8','#00E6A8']);
+	var psdb = new Candidate('PSDB',
+		['#0080FF','#0080FF','#0080FF','#0080FF']);
+	var dem = new Candidate('DEM',
+		['#8CC63E','#8CC63E','#8CC63E','#8CC63E']);
+	var sd = new Candidate('SD',
+		['#FF9C2B','#FF9C2B','#FF9C2B','#FF9C2B']);
+	var pode = new Candidate('PODE',
+		['#2DA933','#2DA933','#2DA933','#2DA933']);
+	var ptb = new Candidate('PTB',
+		['#7B7B7B','#7B7B7B','#7B7B7B','#7B7B7B']);
+	var psc = new Candidate('PSC',
+		['#009118','#009118','#009118','#009118']);
+	var novo = new Candidate('NOVO',
+		['#FF4D00','#FF4D00','#FF4D00','#FF4D00']);
+	var patri = new Candidate('PATRI',
+		['#CCAA00','#CCAA00','#CCAA00','#CCAA00']);
+	
+	candidates['PSL'] = psl;
+	candidates['PP'] = pp;
+	candidates['PL'] = pl;
+	candidates['PSD'] = psd;
+	candidates['MDB'] = mdb;
+	candidates['PRB'] = prb;
+	candidates['PSDB'] = psdb;
+	//candidates['DEM'] = dem;
+	//candidates['SD'] = sd;
+	//candidates['PODE'] = pode;
+	//candidates['PTB'] = ptb;
+	//candidates['PSC'] = psc;
+	//candidates['NOVO'] = novo;
+	//candidates['PATRI'] = patri;
+
+	var pt = new Candidate('PT',
+		['#CC0000','#CC0000','#CC0000','#CC0000']);
+	var psb = new Candidate('PSB',
+		['#FFCC00','#FFCC00','#FFCC00','#FFCC00']);
+	var pdt = new Candidate('PDT',
+		['#FF0000','#FF0000','#FF0000','#FF0000']);
+	var psol = new Candidate('PSOL',
+		['#700000','#700000','#700000','#700000']);
+	var pcdob = new Candidate('PCdoB',
+		['#A30000','#A30000','#A30000','#A30000']);
+	var cidadania = new Candidate('CIDADANIA',
+		['#FF9191','#FF9191','#FF9191','#FF9191']);
+	var pmn = new Candidate('PMN',
+		['#DD3333','#DD3333','#DD3333','#DD3333']);
+	var rede = new Candidate('REDE',
+		['#00C2BB','#00C2BB','#00C2BB','#00C2BB']);
+
+	candidates['PT'] = pt;
+	candidates['PSB'] = psb;
+	candidates['PDT'] = pdt;
+	candidates['PSOL'] = psol;
+	//candidates['PCdoB'] = pcdob;
+	//candidates['CIDADANIA'] = cidadania;
+	//candidates['PMN'] = pmn;
+	//candidates['REDE'] = rede;
+
+	var pros = new Candidate('PROS',
+		['#FF5460','#FF5460','#FF5460','#FF5460']);
+	var avante = new Candidate('AVANTE',
+		['#ED5F36','#ED5F36','#ED5F36','#ED5F36']);
+	var pv = new Candidate('PV',
+		['#006600','#006600','#006600','#006600']);
+
+	candidates['PROS'] = pros;
+	candidates['AVANTE'] = avante;
+	//candidates['PV'] = pv;
 }

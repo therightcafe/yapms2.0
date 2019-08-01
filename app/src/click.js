@@ -1,13 +1,14 @@
 var hoverFill = false;
 
-function buttonClick(clickElement) {
+function buttonClick(clickElement, options) {
 	if(mode === 'move') {
 		return;
 	} else if(mode === 'paint' || mode === 'paintmove') {
 		if(mapType === 'primary' || mapType === 'proportional') {
 			buttonClickPaintProportional(clickElement);
 		} else {
-			buttonClickPaint(clickElement);
+
+			buttonClickPaint(clickElement, options);
 		}
 	} else if(mode === 'ec') {
 		buttonClickEC(clickElement);
@@ -20,10 +21,10 @@ function buttonClick(clickElement) {
 	updateLegend();
 }
 
-function buttonClickPaint(clickElement) {
+function buttonClickPaint(clickElement, options) {
 	var id = clickElement.getAttribute('id').split('-')[0];
 	var state = states.find(state => state.name === id);
-	stateClickPaint(state);
+	stateClickPaint(state, options);
 	//state.incrementCandidateColor(paintIndex);
 }
 
@@ -55,9 +56,14 @@ function buttonClickDelete(clickElement) {
 	state.toggleDisable();
 }
 
-function landClick(clickElement) {
+function landClick(clickElement, options) {
 	if(mode === 'move') {
 		return;
+	}
+
+	var setSolid = false;
+	if(options) {
+		setSolid = options.setSolid;
 	}
 
 	var id = clickElement.getAttribute('id');
@@ -83,7 +89,11 @@ function landClick(clickElement) {
 
 	if(mode === 'paint' || mode === 'paintmove') {
 		// check if each district has the same candidate and color value
-		AL.incrementCandidateColor(paintIndex);
+		if(setSolid === false) {
+			AL.incrementCandidateColor(paintIndex);
+		} else {
+			AL.setColor(paintIndex, 0);
+		}
 		districts.forEach(function(district) {
 			district.setColor(AL.getCandidate(), AL.getColorValue(), true);
 		});
@@ -99,13 +109,13 @@ function landClick(clickElement) {
 	countPopularVote();
 }
 
-function stateClick(clickElement, e) {
-	var id = clickElement.getAttribute('id');
+function stateClick(clickElement, options) {
 	// first element is the state
 	// second element might be button
 	//var split = id.split('-');
 	// get state where state.name equals the id attribute
 	//var state = states.find(state => state.name === split[0]);
+	var id = clickElement.getAttribute('id');
 	var state = states.find(state => state.name === id);
 
 	switch(mode) {
@@ -116,14 +126,14 @@ function stateClick(clickElement, e) {
 			} else if(mapType === 'usapopular') {
 				stateClickPaintProportional(state, id);	
 			} else {
-				stateClickPaint(state, id);
+				stateClickPaint(state, options);
 			}
 			break;
 		case 'ec':
-			stateClickEC(state, id);
+			stateClickEC(state);
 			break;
 		case 'delete':
-			stateClickDelete(state, id);
+			stateClickDelete(state);
 			break;
 	}
 
@@ -133,7 +143,7 @@ function stateClick(clickElement, e) {
 	updateLTEHouse();
 }
 
-function stateClickPaint(state, id, options) {
+function stateClickPaint(state, options) {
 
 	if(mobile === false) {
 		var setPopularVoteElement = document.getElementById('popularvote-clicksetpv');
@@ -142,7 +152,16 @@ function stateClickPaint(state, id, options) {
 			setPopularVote = setPopularVoteElement.checked;
 		}
 
-		state.incrementCandidateColor(paintIndex, setPopularVote);
+		var setSolid = false;
+		if(options) {
+			setSolid = options.setSolid;
+		}
+
+		if(setSolid) {
+			state.setColor(paintIndex, 0, setPopularVote);
+		} else {
+			state.incrementCandidateColor(paintIndex, setPopularVote);
+		}
 
 		if(state.name.includes('-D')) {
 			var autoMarginsElement = document.getElementById('popularvote-automargins');
@@ -249,19 +268,19 @@ function stateClickPaintProportional(state, id) {
 	ranges.appendChild(displayTossup);
 }
 
-function stateClickDelete(state, id) {
+function stateClickDelete(state) {
 	state.toggleDisable();
 }
 
-function stateClickEC(state, id) {
+function stateClickEC(state) {
 	if(state.disabled === false) {
 		var ecedit = document.getElementById('ecedit');
 		var eceditText = document.getElementById('ecedit-message');
 		var input = document.getElementById('state-ec');
 		var stateId = document.getElementById('state-id');
-		eceditText.innerHTML = 'Set ' + id + ' electoral college';
+		eceditText.innerHTML = 'Set ' + state.name + ' electoral college';
 		input.value = state.voteCount;
-		stateId.value = id;
+		stateId.value = state.name;
 		ecedit.style.display = 'inline';
 	}
 }
