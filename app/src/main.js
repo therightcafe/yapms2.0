@@ -216,7 +216,7 @@ function initData(dataid) {
 			if(save_type === 'congressional' ||
 			save_type === 'presidential' ||
 			save_type === 'gubernatorial') {
-				htmlElement.setAttribute('onmouseover', 'if(keyStates[70]){stateClick(this, {setSolid: true});}');
+				htmlElement.setAttribute('onmouseover', 'if(keyStates[70]){stateClick(this, {setSolid: true});} console.log("test");');
 				console.log('after');
 			}
 		}
