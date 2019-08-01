@@ -180,6 +180,8 @@ function initData(dataid) {
 	// get list of all html state elements
 	var htmlElements = document.getElementById('outlines').children;
 
+	alert(save_type);
+
 	// iterate over each element
 	for(var index = 0, length = htmlElements.length; index < length; ++index) {
 		var htmlElement = htmlElements[index];
@@ -210,7 +212,6 @@ function initData(dataid) {
 			htmlElement.setAttribute('onclick', 'stateClick(this)');
 			states.push(new State(name, htmlElement, dataid));
 			var stateIndex = states.length - 1;
-
 			if(save_type === 'congressional' ||
 			save_type === 'presidential' ||
 			save_type === 'gubernatorial') {
