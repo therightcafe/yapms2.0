@@ -205,6 +205,7 @@ function initData(dataid) {
 			if(save_type === 'congressional' ||
 			save_type === 'presidential' ||
 			save_type === 'gubernatorial') {
+				console.log(save_type);
 				htmlElement.setAttribute('onmouseover', 'if(keyStates[70]){landClick(this, {setSolid: true});}');
 			}
 			lands.push(htmlElement);
