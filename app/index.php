@@ -145,19 +145,20 @@ if($mobile === false) {
 		<i class="fas fa-clipboard"></i> Misc
 	</button>
 
+	<button class="click-button" style="white-space: nowrap;">
 	<a class="click-button" href="https://www.yapms.com/privacypolicy.html" target="_blank">
-	<button class="click-button" style="white-space: nowrap; margin-left: auto;">
 		<i class="fas fa-user-secret"></i> Privacy Policy
-	</button>
 	</a>
+	</button>
 
 <?php
 /* margin-left: auto; moves the button all the way to the right */
 if($mobile === false) {
-	echo '<button class="click-button" onclick="togglePresentationMode()" style="white-space: nowrap; margin-left: auto;">
+	echo '
+<!--<button class="click-button" onclick="togglePresentationMode()" style="white-space: nowrap; margin-left: auto;">
 <i class="fab fa-youtube"></i> Presentation
-</button>
-<button class="click-button" onclick="toggleYAPNews()" style="white-space: nowrap;">
+</button>-->
+<button class="click-button" onclick="toggleYAPNews()" style="white-space: nowrap; margin-left: auto;">
 <i class="fas fa-bars"></i> Sidebar
 </button>';
 }
@@ -268,11 +269,29 @@ if($mobile === false) {
 			<div id="sidebar-congress-party">
 			</div><br>
 		</div>',
-		'<div id="sidebar-help">
-			<h3>Help</h3>
+		'<div id="sidebar-shortcuts">
+			<h3>Shortcuts</h3>
 			<ul>
 				<li>
-					Hold down F to quickly fill in states
+					(F) Hold down to quickly fill in states
+				</li>
+				<li>
+					(1) Paint/Move
+				</li>
+				<li>
+					(2) Paint
+				</li>
+				<li>
+					(3) Move
+				</li>
+				<li>
+					(4) Disable State
+				</li>
+				<li>
+					(5) EC Edit
+				</li>
+				<li>
+					(6) Edit Candidate
 				</li>
 			</ul>
 		</div>',

@@ -116,7 +116,7 @@
 
 #sidebar-popularvote-settings {
 	font-family: 'Roboto';
-	font-size: 20px;
+	font-size: 16px;
 	border: 1px solid black;
 	margin: 5px;
 	background: #f8f9fa;
@@ -154,7 +154,7 @@
 	margin: 5px;
 }
 
-#sidebar-help {
+#sidebar-shortcuts {
 	background: #f8f9fa;
 	font-family: 'Roboto';
 	font-size: 16px;
@@ -162,12 +162,15 @@
 	margin: 5px;
 }
 
-#sidebar-help h3 {
+#sidebar-shortcuts h3 {
 	border-bottom: 1px solid #aaaaaa;	
 	margin: 5px;
 }
 
-#sidebar-help ul {
-	margin: 10px;
+#sidebar-shortcuts ul {
+	margin: 8px;
 	padding: 0px;
+	text-align: left;
+	list-style: none;
+	list-style-position: inside;
 }

@@ -27,6 +27,8 @@
 	color: #000000;
 	cursor: pointer;
 	margin-right: 1px;
+	text-decoration: none;
+	height: 100%;
 }
 
 .click-button:hover {
