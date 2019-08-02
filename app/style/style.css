@@ -68,7 +68,7 @@ button {
 	-webkit-user-select: all;
         -khtml-user-select: all;
 	-moz-user-select: all;
-	-ms-user-select: all;
+	-ms-user-select: text;
 	user-select: all;
 }
 
