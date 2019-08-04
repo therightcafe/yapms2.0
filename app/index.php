@@ -695,6 +695,5 @@ if($mobile === true) {
 		});
 	}
 </script>
-<script src="cdvfile://localhost/assets/www/cordova.js"></script>
 </body>
 </html>
