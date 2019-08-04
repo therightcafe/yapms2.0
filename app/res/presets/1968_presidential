@@ -1,55 +1,55 @@
-./res/usa_no_districts.svg 16 1 usa_no_districts_ec proportional open 4 true
+./res/usa_no_districts.svg 16 1 usa_no_districts_ec presidential open 4 true
 Richard%Nixon #bf1d29 #ff5865 #ff8b98 #cf8980
 Hubert%Humphrey #1c408c #577ccc #8aafff #949bb3
 George%Wallace #e6b700 #e8c84d #ffe78a #b8a252
-AK Richard%Nixon 0 0 3 0 0 3 f
-HI Hubert%Humphrey 0 0 0 4 0 4 f
-AL George%Wallace 0 0 0 0 10 10 f
-AR George%Wallace 0 0 0 0 6 6 f
-AZ Richard%Nixon 0 0 5 0 0 5 f
-CA Richard%Nixon 0 0 40 0 0 40 f
-CO Richard%Nixon 0 0 6 0 0 6 f
-CT Hubert%Humphrey 0 0 0 8 0 8 f
-DE Richard%Nixon 0 0 3 0 0 3 f
-FL Richard%Nixon 0 0 14 0 0 14 f
-GA George%Wallace 0 0 0 0 12 12 f
-IA Richard%Nixon 0 0 9 0 0 9 f
-ID Richard%Nixon 0 0 4 0 0 4 f
-IL Richard%Nixon 0 0 26 0 0 26 f
-IN Richard%Nixon 0 0 13 0 0 13 f
-KS Richard%Nixon 0 0 7 0 0 7 f
-KY Richard%Nixon 0 0 9 0 0 9 f
-LA George%Wallace 0 0 0 0 10 10 f
-MA Hubert%Humphrey 0 0 0 14 0 14 f
-MD Hubert%Humphrey 0 0 0 10 0 10 f
-ME Hubert%Humphrey 0 0 0 4 0 4 f
-MI Hubert%Humphrey 0 0 0 21 0 21 f
-MN Hubert%Humphrey 0 0 0 10 0 10 f
-MO Richard%Nixon 0 0 12 0 0 12 f
-MS George%Wallace 0 0 0 0 7 7 f
-MT Richard%Nixon 0 0 4 0 0 4 f
-NC Richard%Nixon 0 0 12 0 1 13 f
-ND Richard%Nixon 0 0 4 0 0 4 f
-NH Richard%Nixon 0 0 4 0 0 4 f
-NJ Richard%Nixon 0 0 17 0 0 17 f
-NM Richard%Nixon 0 0 4 0 0 4 f
-NV Richard%Nixon 0 0 3 0 0 3 f
-NY Hubert%Humphrey 0 0 0 43 0 43 f
-OH Richard%Nixon 0 0 26 0 0 26 f
-OK Richard%Nixon 0 0 8 0 0 8 f
-OR Richard%Nixon 0 0 6 0 0 6 f
-PA Hubert%Humphrey 0 0 0 29 0 29 f
-RI Hubert%Humphrey 0 0 0 4 0 4 f
-SC Richard%Nixon 0 0 8 0 0 8 f
-SD Richard%Nixon 0 0 4 0 0 4 f
-TN Richard%Nixon 0 0 11 0 0 11 f
-TX Hubert%Humphrey 0 0 0 25 0 25 f
-UT Richard%Nixon 0 0 4 0 0 4 f
-VA Richard%Nixon 0 0 12 0 0 12 f
-VT Richard%Nixon 0 0 3 0 0 3 f
-WA Hubert%Humphrey 0 0 0 9 0 9 f
-WI Richard%Nixon 0 0 12 0 0 12 f
-WV Hubert%Humphrey 0 0 0 7 0 7 f
-WY Richard%Nixon 0 0 3 0 0 3 f
-DC Hubert%Humphrey 0 0 0 3 0 3 f
-NE Richard%Nixon 0 0 5 0 0 5 f
+AK Richard%Nixon 0 3 3 f
+HI Hubert%Humphrey 0 4 4 f
+AL George%Wallace 0 10 10 f
+AR George%Wallace 0 6 6 f
+AZ Richard%Nixon 0 5 5 f
+CA Richard%Nixon 0 40 40 f
+CO Richard%Nixon 0 6 6 f
+CT Hubert%Humphrey 0 8 8 f
+DE Richard%Nixon 0 3 3 f
+FL Richard%Nixon 0 14 14 f
+GA George%Wallace 0 12 12 f
+IA Richard%Nixon 0 9 9 f
+ID Richard%Nixon 0 4 4 f
+IL Richard%Nixon 0 26 26 f
+IN Richard%Nixon 0 13 13 f
+KS Richard%Nixon 0 7 7 f
+KY Richard%Nixon 0 9 9 f
+LA George%Wallace 0 10 10 f
+MA Hubert%Humphrey 0 14 14 f
+MD Hubert%Humphrey 0 10 10 f
+ME Hubert%Humphrey 0 4 4 f
+MI Hubert%Humphrey 0 21 21 f
+MN Hubert%Humphrey 0 10 10 f
+MO Richard%Nixon 0 12 12 f
+MS George%Wallace 0 7 7 f
+MT Richard%Nixon 0 4 4 f
+NC Richard%Nixon 0 13 13 f
+ND Richard%Nixon 0 4 4 f
+NH Richard%Nixon 0 4 4 f
+NJ Richard%Nixon 0 17 17 f
+NM Richard%Nixon 0 4 4 f
+NV Richard%Nixon 0 3 3 f
+NY Hubert%Humphrey 0 43 43 f
+OH Richard%Nixon 0 26 26 f
+OK Richard%Nixon 0 8 8 f
+OR Richard%Nixon 0 6 6 f
+PA Hubert%Humphrey 0 29 29 f
+RI Hubert%Humphrey 0 4 4 f
+SC Richard%Nixon 0 8 8 f
+SD Richard%Nixon 0 4 4 f
+TN Richard%Nixon 0 11 11 f
+TX Hubert%Humphrey 0 25 25 f
+UT Richard%Nixon 0 4 4 f
+VA Richard%Nixon 0 12 12 f
+VT Richard%Nixon 0 3 3 f
+WA Hubert%Humphrey 0 9 9 f
+WI Richard%Nixon 0 12 12 f
+WV Hubert%Humphrey 0 7 7 f
+WY Richard%Nixon 0 3 3 f
+DC Hubert%Humphrey 0 3 3 f
+NE Richard%Nixon 0 5 5 f

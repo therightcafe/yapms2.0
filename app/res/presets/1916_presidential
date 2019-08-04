@@ -1,54 +1,54 @@
-./res/usa_no_districts.svg 16 1 usa_no_districts_ec proportional open 3 true
+./res/usa_no_districts.svg 16 1 usa_no_districts_ec presidential open 3 true
 Woodrow%Wilson #1c408c #577ccc #8aafff #949bb3
 Charles%Evans%Hughes #bf1d29 #ff5865 #ff8b98 #cf8980
-AK Tossup 2 0 0 0 0 t
-HI Tossup 2 0 0 0 0 t
-AL Woodrow%Wilson 0 0 12 0 12 f
-AR Woodrow%Wilson 0 0 9 0 9 f
-AZ Woodrow%Wilson 0 0 3 0 3 f
-CA Woodrow%Wilson 0 0 13 0 13 f
-CO Woodrow%Wilson 0 0 6 0 6 f
-CT Charles%Evans%Hughes 0 0 0 7 7 f
-DE Charles%Evans%Hughes 0 0 0 3 3 f
-FL Woodrow%Wilson 0 0 6 0 6 f
-GA Woodrow%Wilson 0 0 14 0 14 f
-IA Charles%Evans%Hughes 0 0 0 13 13 f
-ID Woodrow%Wilson 0 0 4 0 4 f
-IL Charles%Evans%Hughes 0 0 0 29 29 f
-IN Charles%Evans%Hughes 0 0 0 15 15 f
-KS Woodrow%Wilson 0 0 10 0 10 f
-KY Woodrow%Wilson 0 0 13 0 13 f
-LA Woodrow%Wilson 0 0 10 0 10 f
-MA Charles%Evans%Hughes 0 0 0 18 18 f
-MD Woodrow%Wilson 0 0 8 0 8 f
-ME Charles%Evans%Hughes 0 0 0 6 6 f
-MI Charles%Evans%Hughes 0 0 0 15 15 f
-MN Charles%Evans%Hughes 0 0 0 12 12 f
-MO Woodrow%Wilson 0 0 18 0 18 f
-MS Woodrow%Wilson 0 0 10 0 10 f
-MT Woodrow%Wilson 0 0 4 0 4 f
-NC Woodrow%Wilson 0 0 12 0 12 f
-ND Woodrow%Wilson 0 0 5 0 5 f
-NH Woodrow%Wilson 0 0 4 0 4 f
-NJ Charles%Evans%Hughes 0 0 0 14 14 f
-NM Woodrow%Wilson 0 0 3 0 3 f
-NV Woodrow%Wilson 0 0 3 0 3 f
-NY Charles%Evans%Hughes 0 0 0 45 45 f
-OH Woodrow%Wilson 0 0 24 0 24 f
-OK Woodrow%Wilson 0 0 10 0 10 f
-OR Charles%Evans%Hughes 0 0 0 5 5 f
-PA Charles%Evans%Hughes 0 0 0 38 38 f
-RI Charles%Evans%Hughes 0 0 0 5 5 f
-SC Woodrow%Wilson 0 0 9 0 9 f
-SD Charles%Evans%Hughes 0 0 0 5 5 f
-TN Woodrow%Wilson 0 0 12 0 12 f
-TX Woodrow%Wilson 0 0 20 0 20 f
-UT Woodrow%Wilson 0 0 4 0 4 f
-VA Woodrow%Wilson 0 0 12 0 12 f
-VT Charles%Evans%Hughes 0 0 0 4 4 f
-WA Woodrow%Wilson 0 0 7 0 7 f
-WI Charles%Evans%Hughes 0 0 0 13 13 f
-WV Charles%Evans%Hughes 0 0 1 7 8 f
-WY Woodrow%Wilson 0 0 3 0 3 f
-DC Tossup 2 0 0 0 0 t
-NE Woodrow%Wilson 0 0 8 0 8 f
+AK Tossup 2 0 0 t
+HI Tossup 2 0 0 t
+AL Woodrow%Wilson 0 12 12 f
+AR Woodrow%Wilson 0 9 9 f
+AZ Woodrow%Wilson 0 3 3 f
+CA Woodrow%Wilson 0 13 13 f
+CO Woodrow%Wilson 0 6 6 f
+CT Charles%Evans%Hughes 0 7 7 f
+DE Charles%Evans%Hughes 0 3 3 f
+FL Woodrow%Wilson 0 6 6 f
+GA Woodrow%Wilson 0 14 14 f
+IA Charles%Evans%Hughes 0 13 13 f
+ID Woodrow%Wilson 0 4 4 f
+IL Charles%Evans%Hughes 0 29 29 f
+IN Charles%Evans%Hughes 0 15 15 f
+KS Woodrow%Wilson 0 10 10 f
+KY Woodrow%Wilson 0 13 13 f
+LA Woodrow%Wilson 0 10 10 f
+MA Charles%Evans%Hughes 0 18 18 f
+MD Woodrow%Wilson 0 8 8 f
+ME Charles%Evans%Hughes 0 6 6 f
+MI Charles%Evans%Hughes 0 15 15 f
+MN Charles%Evans%Hughes 0 12 12 f
+MO Woodrow%Wilson 0 18 18 f
+MS Woodrow%Wilson 0 10 10 f
+MT Woodrow%Wilson 0 4 4 f
+NC Woodrow%Wilson 0 12 12 f
+ND Woodrow%Wilson 0 5 5 f
+NH Woodrow%Wilson 0 4 4 f
+NJ Charles%Evans%Hughes 0 14 14 f
+NM Woodrow%Wilson 0 3 3 f
+NV Woodrow%Wilson 0 3 3 f
+NY Charles%Evans%Hughes 0 45 45 f
+OH Woodrow%Wilson 0 24 24 f
+OK Woodrow%Wilson 0 10 10 f
+OR Charles%Evans%Hughes 0 5 5 f
+PA Charles%Evans%Hughes 0 38 38 f
+RI Charles%Evans%Hughes 0 5 5 f
+SC Woodrow%Wilson 0 9 9 f
+SD Charles%Evans%Hughes 0 5 5 f
+TN Woodrow%Wilson 0 12 12 f
+TX Woodrow%Wilson 0 20 20 f
+UT Woodrow%Wilson 0 4 4 f
+VA Woodrow%Wilson 0 12 12 f
+VT Charles%Evans%Hughes 0 4 4 f
+WA Woodrow%Wilson 0 7 7 f
+WI Charles%Evans%Hughes 0 13 13 f
+WV Charles%Evans%Hughes 0 8 8 f
+WY Woodrow%Wilson 0 3 3 f
+DC Tossup 2 0 0 t
+NE Woodrow%Wilson 0 8 8 f

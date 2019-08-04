@@ -1,54 +1,54 @@
-./res/usa_no_districts.svg 16 1 usa_no_districts_ec proportional open 3 true
+./res/usa_no_districts.svg 16 1 usa_no_districts_ec presidential open 3 true
 Theodore%Roosevelt #bf1d29 #ff5865 #ff8b98 #cf8980
 Alton%B.%Parker #1c408c #577ccc #8aafff #949bb3
-AK Tossup 2 0 0 0 0 t
-HI Tossup 2 0 0 0 0 t
-AL Alton%B.%Parker 0 0 0 11 11 f
-AR Alton%B.%Parker 0 0 0 9 9 f
-AZ Tossup 2 0 0 0 0 t
-CA Theodore%Roosevelt 0 0 10 0 10 f
-CO Theodore%Roosevelt 0 0 5 0 5 f
-CT Theodore%Roosevelt 0 0 7 0 7 f
-DE Theodore%Roosevelt 0 0 3 0 3 f
-FL Alton%B.%Parker 0 0 0 5 5 f
-GA Alton%B.%Parker 0 0 0 13 13 f
-IA Theodore%Roosevelt 0 0 13 0 13 f
-ID Theodore%Roosevelt 0 0 3 0 3 f
-IL Theodore%Roosevelt 0 0 27 0 27 f
-IN Theodore%Roosevelt 0 0 15 0 15 f
-KS Theodore%Roosevelt 0 0 10 0 10 f
-KY Alton%B.%Parker 0 0 0 13 13 f
-LA Alton%B.%Parker 0 0 0 9 9 f
-MA Theodore%Roosevelt 0 0 16 0 16 f
-MD Alton%B.%Parker 0 0 1 7 8 f
-ME Theodore%Roosevelt 0 0 6 0 6 f
-MI Theodore%Roosevelt 0 0 14 0 14 f
-MN Theodore%Roosevelt 0 0 11 0 11 f
-MO Theodore%Roosevelt 0 0 18 0 18 f
-MS Alton%B.%Parker 0 0 0 10 10 f
-MT Theodore%Roosevelt 0 0 3 0 3 f
-NC Alton%B.%Parker 0 0 0 12 12 f
-ND Theodore%Roosevelt 0 0 4 0 4 f
-NH Theodore%Roosevelt 0 0 4 0 4 f
-NJ Theodore%Roosevelt 0 0 12 0 12 f
-NM Tossup 2 0 0 0 0 t
-NV Theodore%Roosevelt 0 0 3 0 3 f
-NY Theodore%Roosevelt 0 0 39 0 39 f
-OH Theodore%Roosevelt 0 0 23 0 23 f
-OK Tossup 2 0 0 0 0 t
-OR Theodore%Roosevelt 0 0 4 0 4 f
-PA Theodore%Roosevelt 0 0 34 0 34 f
-RI Theodore%Roosevelt 0 0 4 0 4 f
-SC Alton%B.%Parker 0 0 0 9 9 f
-SD Theodore%Roosevelt 0 0 4 0 4 f
-TN Alton%B.%Parker 0 0 0 12 12 f
-TX Alton%B.%Parker 0 0 0 18 18 f
-UT Theodore%Roosevelt 0 0 3 0 3 f
-VA Alton%B.%Parker 0 0 0 12 12 f
-VT Theodore%Roosevelt 0 0 4 0 4 f
-WA Theodore%Roosevelt 0 0 5 0 5 f
-WI Theodore%Roosevelt 0 0 13 0 13 f
-WV Theodore%Roosevelt 0 0 7 0 7 f
-WY Theodore%Roosevelt 0 0 3 0 3 f
-DC Tossup 2 0 0 0 0 t
-NE Theodore%Roosevelt 0 0 8 0 8 f
+AK Tossup 2 0 0 t
+HI Tossup 2 0 0 t
+AL Alton%B.%Parker 0 11 11 f
+AR Alton%B.%Parker 0 9 9 f
+AZ Tossup 2 0 0 t
+CA Theodore%Roosevelt 0 10 10 f
+CO Theodore%Roosevelt 0 5 5 f
+CT Theodore%Roosevelt 0 7 7 f
+DE Theodore%Roosevelt 0 3 3 f
+FL Alton%B.%Parker 0 5 5 f
+GA Alton%B.%Parker 0 13 13 f
+IA Theodore%Roosevelt 0 13 13 f
+ID Theodore%Roosevelt 0 3 3 f
+IL Theodore%Roosevelt 0 27 27 f
+IN Theodore%Roosevelt 0 15 15 f
+KS Theodore%Roosevelt 0 10 10 f
+KY Alton%B.%Parker 0 13 13 f
+LA Alton%B.%Parker 0 9 9 f
+MA Theodore%Roosevelt 0 16 16 f
+MD Alton%B.%Parker 0 8 8 f
+ME Theodore%Roosevelt 0 6 6 f
+MI Theodore%Roosevelt 0 14 14 f
+MN Theodore%Roosevelt 0 11 11 f
+MO Theodore%Roosevelt 0 18 18 f
+MS Alton%B.%Parker 0 10 10 f
+MT Theodore%Roosevelt 0 3 3 f
+NC Alton%B.%Parker 0 12 12 f
+ND Theodore%Roosevelt 0 4 4 f
+NH Theodore%Roosevelt 0 4 4 f
+NJ Theodore%Roosevelt 0 12 12 f
+NM Tossup 2 0 0 t
+NV Theodore%Roosevelt 0 3 3 f
+NY Theodore%Roosevelt 0 39 39 f
+OH Theodore%Roosevelt 0 23 23 f
+OK Tossup 2 0 0 t
+OR Theodore%Roosevelt 0 4 4 f
+PA Theodore%Roosevelt 0 34 34 f
+RI Theodore%Roosevelt 0 4 4 f
+SC Alton%B.%Parker 0 9 9 f
+SD Theodore%Roosevelt 0 4 4 f
+TN Alton%B.%Parker 0 12 12 f
+TX Alton%B.%Parker 0 18 18 f
+UT Theodore%Roosevelt 0 3 3 f
+VA Alton%B.%Parker 0 12 12 f
+VT Theodore%Roosevelt 0 4 4 f
+WA Theodore%Roosevelt 0 5 5 f
+WI Theodore%Roosevelt 0 13 13 f
+WV Theodore%Roosevelt 0 7 7 f
+WY Theodore%Roosevelt 0 3 3 f
+DC Tossup 2 0 0 t
+NE Theodore%Roosevelt 0 8 8 f
