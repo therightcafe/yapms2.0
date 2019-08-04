@@ -212,7 +212,7 @@ function darkPalette() {
 }
 
 function greyscalePalette() {
-	appendCookie('theme', 'dark2');
+	appendCookie('theme', 'greyscale');
 	var body = document.getElementById('application');
 	body.style.backgroundColor = '#252525';
 	body.style.backgroundImage  = '';
