@@ -228,7 +228,7 @@ function greyscalePalette() {
 	setClickButtonTextColor('#FFFFFF');
 	setMenuColor('#101010');
 
-	setBorderStyle('#000000', 7.0);
+	setBorderStyle('#252525', 7.0);
 
 	chartOptions.plugins.datalabels.borderWidth = 2;
 	chartOptions.plugins.datalabels.borderRadius = 4;
