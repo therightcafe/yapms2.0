@@ -334,14 +334,6 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year, options) {
 
 			countPopularVote();
 		}
-
-		// display the take all button for usa proportional maps
-		var takeAllButton = document.getElementById('takeallbutton');
-		if(filename === './res/usa_no_districts.svg' && type === 'proportional') {
-			takeAllButton.style.display = 'block';
-		} else {
-			takeAllButton.style.display = 'none';
-		}
 	});
 }
 

@@ -125,10 +125,6 @@
 		<i class="fas fa-palette"></i> Themes
 	</button>
 
-	<button id="takeallbutton" class="click-button" onclick="toTakeAll()" style="white-space: nowrap; display: none;">
-		<i class="fas fa-sliders-h"></i> Take All	
-	</button>
-
 	<button class="click-button" onclick="share()" style="white-space: nowrap;">
 		<i class="fas fa-share-alt"></i> Share
 	</button>

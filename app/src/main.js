@@ -1,4 +1,4 @@
-var currentCache = 'v0.40.9';
+var currentCache = 'v0.40.10';
 
 var cookies = {};
 
@@ -70,10 +70,6 @@ var previousPalette = function() {
 };
 
 var panObject = null;
-
-function toTakeAll() {
-	loadMap(loadConfig.filename, loadConfig.fontsize, loadConfig.strokewidth, loadConfig.dataid, "presidential", "open", {updateText: mapOptions.updateText, states: states});
-}
 
 function share() {
 	var svg = document.getElementById('svgdata');
