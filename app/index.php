@@ -413,6 +413,7 @@ if($mobile === false) {
 	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2>Select Theme</h2>	
 	<a class="selectmenu-button" onclick='darkPalette()'>Dark</a>
+	<a class="selectmenu-button" onclick='greyscalePalette()'>Greyscale</a>
 	<a class="selectmenu-button" onclick='terminalPalette()'>Terminal</a>
 	<a class="selectmenu-button" onclick='lightPalette()'>Light</a>
 	<a class="selectmenu-button" onclick='contrastPalette()'>Contrast</a>
@@ -698,6 +699,6 @@ if($mobile === true) {
 		});
 	}
 </script>
-
+<script src="cdvfile://localhost/assets/www/cordova.js"></script>
 </body>
 </html>

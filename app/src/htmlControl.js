@@ -155,6 +155,9 @@ function setPalette(palette) {
 		case 'dark':
 			darkPalette();
 			break;
+		case 'greyscale':
+			greyscalePalette();
+			break;
 		case 'light':
 			lightPalette();
 			break;
@@ -190,10 +193,40 @@ function darkPalette() {
 	setSideBarColor('#2b2e33');
 	
 	setClickButtonColor('#2b2e33');
-	setClickButtonColor('#ffffff');
-	setClickButtonTextColor('#000000');
+	setClickButtonColor('#2B2E33');
+	setClickButtonTextColor('#FFFFFF');
 	setMenuColor('#2f3136');
 	setMenuColor('#000000');
+
+	setBorderStyle('#000000', 7.0);
+
+	chartOptions.plugins.datalabels.borderWidth = 2;
+	chartOptions.plugins.datalabels.borderRadius = 4;
+
+	chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
+	chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
+	setChart(chartType, chartPosition);
+	countVotes();
+	verifyMap();
+	previousPalette = darkPalette;
+}
+
+function greyscalePalette() {
+	appendCookie('theme', 'dark2');
+	var body = document.getElementById('application');
+	body.style.backgroundColor = '#252525';
+	body.style.backgroundImage  = '';
+
+	setDisableColor('#212326');
+	setTossupColor('#888888');
+	setMapStyle('#181922', 1.5);
+	setTextStyle('white', 'bold');
+	setChartBorderStyle(1, '#1b1b1b');
+	setSideBarColor('#454545');
+	
+	setClickButtonColor('#454545');
+	setClickButtonTextColor('#FFFFFF');
+	setMenuColor('#101010');
 
 	setBorderStyle('#000000', 7.0);
 
@@ -316,8 +349,8 @@ function metallicPalette() {
 	setChartBorderStyle(1, '#33353b');
 	setSideBarColor('#33353b');
 	
-	setClickButtonColor('white');
-	setClickButtonTextColor('black');
+	setClickButtonColor('#33353b');
+	setClickButtonTextColor('#FFFFFF');
 	setMenuColor('black');
 	
 	setBorderStyle('#000000', 6.0);
@@ -343,7 +376,7 @@ function toWinPalette() {
 	menu.style.backgroundColor = '#202020';
 
 	setDisableColor('#dddddd');
-	setTossupColor('#bbaa90');
+	setTossupColor('#9E8767');
 	setMapStyle('#fffbf2', 1);
 	setTextStyle('white', 'bold');
 	setChartBorderStyle(1, '#fafafa');
