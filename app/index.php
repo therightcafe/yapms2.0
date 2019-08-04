@@ -86,6 +86,7 @@
 			include './style/yapnews.css';
 			include './style/sidebar.css';
 			include './style/yapnews.css';
+			include './style/bottomad.css';
 		?>
 	</style>
 
@@ -297,7 +298,26 @@ if($mobile === false) {
 }
 ?>
 </div>
+<?
+if($mobile) {
+echo '
+<div id="bottomad">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- bottom-mobile-ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1660456925957249"
+     data-ad-slot="4502065250"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>';
+}
+?>
 </div>
+
 
 <div id="demdel" class="popup">
 	<h3 id="demdel-message"></h3>
