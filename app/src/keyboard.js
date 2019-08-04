@@ -6,10 +6,11 @@ $("html").keydown(function(event) {
 
 $("html").keyup(function(event) {
 	keyStates[event.which] = false;
-	
+/*
 	if(event.which === 32) {
 		togglePresentationMode();
 	}
+*/
 });
 
 $("html").mouseleave(function(event) {

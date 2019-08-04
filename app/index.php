@@ -154,10 +154,11 @@ if($mobile === false) {
 <?php
 /* margin-left: auto; moves the button all the way to the right */
 if($mobile === false) {
-	echo '<button class="click-button" onclick="togglePresentationMode()" style="white-space: nowrap; margin-left: auto;">
+	echo '
+<!--<button class="click-button" onclick="togglePresentationMode()" style="white-space: nowrap; margin-left: auto;">
 <i class="fab fa-youtube"></i> Presentation
-</button>
-<button class="click-button" onclick="toggleYAPNews()" style="white-space: nowrap;">
+</button>-->
+<button class="click-button" onclick="toggleYAPNews()" style="white-space: nowrap; margin-left: auto;">
 <i class="fas fa-bars"></i> Sidebar
 </button>';
 }
@@ -394,6 +395,7 @@ if($mobile === false) {
 	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2>Select Theme</h2>	
 	<a class="selectmenu-button" onclick='darkPalette()'>Dark</a>
+	<a class="selectmenu-button" onclick='greyscalePalette()'>Greyscale</a>
 	<a class="selectmenu-button" onclick='terminalPalette()'>Terminal</a>
 	<a class="selectmenu-button" onclick='lightPalette()'>Light</a>
 	<a class="selectmenu-button" onclick='contrastPalette()'>Contrast</a>

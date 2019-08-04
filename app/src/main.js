@@ -1,4 +1,4 @@
-var currentCache = 'v0.40.1';
+var currentCache = 'v0.40.5';
 
 var cookies = {};
 
@@ -1113,7 +1113,7 @@ function loadCookies() {
 		cookies['custom' + i + 'leaning'] = '#000000';
 		cookies['custom' + i + 'tilting'] = '#000000';
 	}
-	cookies['theme'] = 'dark';
+	cookies['theme'] = 'default';
 	var decode = decodeURIComponent(document.cookie);
 	var loadedCookies = decode.split('; ');
 	for(var index in loadedCookies) {
