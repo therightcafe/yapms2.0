@@ -77,6 +77,7 @@
 
 	<style>
 		<?php
+			include './style/fonts.css';
 			include './style/menu.css';
 			include './style/selectmenu.css';
 			include './style/popup.css';
@@ -89,7 +90,7 @@
 		?>
 	</style>
 
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+	<!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">-->
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
