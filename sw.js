@@ -1,4 +1,4 @@
-var dynamicCache = 'd0.40.13';
+var dynamicCache = 'd0.40.14';
 var staticCache = 's0.11.9';
 
 function swLog(cache, message) {
@@ -162,7 +162,8 @@ self.addEventListener('fetch', function(event) {
 					swLog('Cache' , 'fetch ' + event.request.url);
 					return response;
 				} else if(event.request.url.includes('yapms.com/app/') === true &&
-						event.request.url.includes('yapms.com/app/req_articles.php') === false) {
+						event.request.url.includes('yapms.com/app/req_articles.php') === false &&
+						event.request.url.includes('yapms.com/app/?m=') === false) {
 					swLog('Web', 'fetch+cache ' + event.request.url);
 					return fetch(event.request)
 					.then(function(response) {
