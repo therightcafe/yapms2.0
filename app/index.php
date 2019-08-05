@@ -620,13 +620,13 @@ if($mobile === false) {
 	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h3>Share Link</h3>
 	<div id="shareurl"></div>
-	<br>
 <?php 
 if($mobile === false) {
-	echo '<a id="downloadbutton" class="download-button"><i class="fas fa-download"></i>  Download</a><br><br>';
+	echo '<a id="downloadbutton" class="download-button"><i class="fas fa-download"></i>  Download<br><br></a>';
 }
 ?>
 	<img id="screenshotimg"/>
+	<object id="loading-animation" type="image/svg+xml" data="./html/loading.svg" >Error</object>
 	<div id="captcha-notice">This site is protected by reCAPTCHA and the Google
 	<a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and
 	<a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply. </div>

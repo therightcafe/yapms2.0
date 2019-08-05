@@ -30,3 +30,7 @@
 	font-weight: bold;
 	border: 1px solid black;
 }
+
+#loading-animation {
+	float: none;
+}

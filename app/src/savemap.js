@@ -77,6 +77,11 @@ function saveMap(img, token) {
 			if(button) {
 				button.setAttribute('onclick', 'share()');
 			}
+
+			var loadingAnimation = document.getElementById('loading-animation');
+			if(loadingAnimation) {
+				loadingAnimation.style.display = 'none';
+			}
 		},
 		error: function(a,b,c) {
 			console.log(a);

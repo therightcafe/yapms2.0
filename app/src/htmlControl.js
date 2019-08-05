@@ -58,7 +58,13 @@ function displayShare() {
 	}
 
 	var shareurl = document.getElementById('shareurl');
-	shareurl.innerHTML = "Please wait for your share and download link...";
+	//shareurl.innerHTML = "Please wait for your share and download link...";
+	shareurl.innerHTML = '';
+
+	var loadingAnimation = document.getElementById('loading-animation');
+	if(loadingAnimation) {
+		loadingAnimation.style.display = '';
+	}
 }
 
 function displayMapMenu(type) {
