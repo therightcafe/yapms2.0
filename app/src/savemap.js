@@ -11,6 +11,7 @@ function saveMap(img, token) {
 	formData.append("year", save_year);
 	formData.append("fontsize", save_fontsize);
 	formData.append("strokewidth", save_strokewidth);
+	console.log('token: ' + token);
 	formData.append("captcha", token);
 
 	formData.append("updateText", mapOptions.updateText);

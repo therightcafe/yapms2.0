@@ -78,7 +78,6 @@ function share() {
 	}
 
 	grecaptcha.execute('6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo', {action: 'share'}).then(function(token) {
-	alert(token);
 
 	var svg = document.getElementById('svgdata');
 	var mapdiv = document.getElementById('map-div');
