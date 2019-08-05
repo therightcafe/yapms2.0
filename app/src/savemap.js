@@ -1,4 +1,4 @@
-function saveMap(img) {
+function saveMap(img, token) {
 	var mapHTML = document.getElementById('map-div');
 
 	var formData = new FormData();
@@ -11,7 +11,7 @@ function saveMap(img) {
 	formData.append("year", save_year);
 	formData.append("fontsize", save_fontsize);
 	formData.append("strokewidth", save_strokewidth);
-	formData.append("captcha", grecaptcha.getResponse());
+	formData.append("captcha", token);
 
 	formData.append("updateText", mapOptions.updateText);
 

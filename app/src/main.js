@@ -133,7 +133,7 @@ function share() {
 			i.src = img;
 			i.style.width = '40vw';
 			i.style.height = 'auto';
-			saveMap(img);
+			saveMap(img, token);
 		} else {
 			var shareurl = document.getElementById('shareurl');
 			shareurl.innerHTML = "Your browser does not have HTML5, and cannot support his feature";
