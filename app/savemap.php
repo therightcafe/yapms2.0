@@ -75,7 +75,7 @@ if($file) {
 
 	fwrite($file, $writeData);
 	fclose($file);
-	echo 'https://www.yapms.com/app/?m=' . $filename . ' ' . $mapnumber;
+	echo 'https://www.yapms.com/app/?m=' . $filename . ' / ' . $mapnumber;
 	echo $filename;
 }
 ?>
