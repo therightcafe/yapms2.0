@@ -74,12 +74,11 @@ var panObject = null;
 function share() {
 
 	if(grecaptcha) {
-		var res = grecaptcha.execute('6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo',
+		grecaptcha.execute('6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo',
 		{action: 'pageload'}).then(function(token) {
-
+			console.log(token);
 		});
 		console.log('yes captcha');
-		console.log(res);
 	} else {
 		console.log('no captcha');
 		return;
