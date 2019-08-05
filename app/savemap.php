@@ -11,16 +11,9 @@ try {
 	die();
 }
 
-$sql = 'Declare @n as int;
-set @n = (select value from number);
-if @n = 5 begin 
-	set @n = 0;
-	end
-else begin
-	set @n = @n + 1;
-	end
-update number set value = @n;';
-
+$sql = 'select value from number; 
+select @v = value from number;
+update number set value = @v + 1;';
 $q = $dbh->query($sql);
 $mapnumber = 0;
 foreach($q as $row) {
