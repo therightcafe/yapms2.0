@@ -1,4 +1,4 @@
-var currentCache = 'v0.40.22';
+var currentCache = 'v0.40.23';
 
 var cookies = {};
 
@@ -72,17 +72,18 @@ var previousPalette = function() {
 var panObject = null;
 
 function share() {
+	displayShare();
+
 	if(grecaptcha) {
 	} else {
 		return;
 	}
 
-	// disable button for two seconds to prevent spam
+	// disable button to prevent spam
 	var button = document.getElementById('share-button');
-	button.setAttribute('onclick', '');
-	setTimeout(function() {
-		button.setAttribute('onclick', 'share()');
-	}, 2000);
+	if(button) {
+		button.setAttribute('onclick', '');
+	}
 
 	grecaptcha.execute('6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo', {action: 'share'}).then(function(token) {
 
@@ -114,8 +115,6 @@ function share() {
 
 	var applicationWidth = document.getElementById('application').offsetWidth;
 	var applicationHeight = document.getElementById('application').offsetHeight;
-
-	displayShare();
 
 	html2canvas(document.getElementById('application'), {async: false, logging: true}).then(function(canvas) {
 		if(canvas) {

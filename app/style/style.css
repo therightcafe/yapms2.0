@@ -181,3 +181,12 @@ button {
 	stroke-width: 1.5;
 	color: red;
 }
+
+#captcha-notice {
+	font-size: 12px;
+	color: #666666;
+}
+
+.grecaptcha-badge {
+	visibility: hidden;
+}

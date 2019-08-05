@@ -72,11 +72,20 @@ function saveMap(img, token) {
 				downloadbtn.style.display = 'inline-block';
 				downloadbtn.setAttribute('href', 'downloadmap.php?f=' + filename);
 			}
+			
+			var button = document.getElementById('share-button');
+			if(button) {
+				button.setAttribute('onclick', 'share()');
+			}
 		},
 		error: function(a,b,c) {
 			console.log(a);
 			console.log(b);
 			console.log(c);
+			var button = document.getElementById('share-button');
+			if(button) {
+				button.setAttribute('onclick', 'share()');
+			}
 		}
 	});
 }
