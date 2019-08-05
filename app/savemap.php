@@ -5,7 +5,7 @@ $verify = file_get_contents('https://www.google.com/recaptcha/api/siteverify?sec
 $isVerified = json_decode($verify);
 $if($isVerified->success === false) {
 	echo 'reCaptcha has detected that you might be a bot';
-	return;
+	die();
 }
 
 require '../../external/db_mapnumber.php';
