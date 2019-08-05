@@ -87,6 +87,7 @@ function share() {
 
 	grecaptcha.execute('6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo', {action: 'share'}).then(function(token) {
 
+	/*
 	var svg = document.getElementById('svgdata');
 	var mapdiv = document.getElementById('map-div');
 	var mapwidth = mapdiv.offsetWidth;
@@ -95,33 +96,22 @@ function share() {
 	svg.setAttribute('width', mapwidth);
 	svg.setAttribute('height', mapheight);
 
-	var svgtext = document.getElementById('text');
-	var oldfontsize;
-	// set font size and family to something that will render
-	if(svgtext !== null) {
-		//svgtext.style.fontFamily = 'arial';
-		oldfontsize = svgtext.style.fontSize;
-		//svgtext.style.fontSize = '15px';
-	}
-
-	var yapnewsClose = document.getElementById('yapnews-close');
-	if(yapnewsClose !== null) {
-		yapnewsClose.style.display = 'none';
-	}
-
-	var chartdiv = document.getElementById('chart-div');
-	//var oldborder = chartdiv.style.border;
-	//chartdiv.style.border = 'none';
-
 	var applicationWidth = document.getElementById('application').offsetWidth;
 	var applicationHeight = document.getElementById('application').offsetHeight;
-
+	*/
 	html2canvas(document.getElementById('application'), {logging: true, useCORS: true, allowTaint: true, proxy: true, onclone: function(clone) {
 		console.log(clone);	
 		var svgtext = clone.getElementById('text');
 		if(svgtext) {
 			svgtext.style.fontFamily = 'arial';
 			svgtext.style.fontSize = '15px';
+		}
+
+		var svg = clone.getElementById('svgdata');
+		var mapdiv = clone.getElementById('map-div');
+		if(svg && mapdiv) {
+			svg.setAttribute('width', mapdiv.offsetWidth);
+			svg.setAttribute('height', mapdiv.offsetHeight);
 		}
 	}}).then(function(canvas) {
 		if(canvas) {
@@ -131,16 +121,13 @@ function share() {
 			canvas.style.height = 0;	
 			canvas.style.display = 'none';
 			// set the text back
+			/*
 			if(svgtext !== null) {
-				svgtext.style.fontFamily = '';
-				svgtext.style.fontSize = oldfontsize;
 				svg.removeAttribute('width');
 				svg.removeAttribute('height');
 			}
+			*/
 
-			if(yapnewsClose !== null) {
-				yapnewsClose.style.display = 'inline-flex';
-			}
 			var img = canvas.toDataURL('image/png');
 			notification.removeChild(canvas);
 			var i = document.getElementById('screenshotimg');
