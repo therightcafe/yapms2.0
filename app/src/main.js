@@ -99,10 +99,10 @@ function share() {
 	var oldfontsize;
 	// set font size and family to something that will render
 	if(svgtext !== null) {
-		//svgtext.style.fontFamily = 'arial';
+		svgtext.style.fontFamily = 'arial';
 		//oldfontsize = svgtext.style.fontSize;
-		//svgtext.style.fontSize = '15px';
-		svgtext.style.fontFamily = 'Roboto';
+		svgtext.style.fontSize = '15px';
+	//	svgtext.style.fontFamily = 'Roboto';
 	}
 
 	var yapnewsClose = document.getElementById('yapnews-close');
