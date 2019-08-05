@@ -102,13 +102,12 @@ function share() {
 		}
 	}}).then(function(canvas) {
 		if(canvas) {
-			console.log(canvas.parentElement);
-			//notification.appendChild(canvas);
+			notification.appendChild(canvas);
 			canvas.style.width = 0;
 			canvas.style.height = 0;	
 			canvas.style.display = 'none';
 			var img = canvas.toDataURL('image/png');
-			//notification.removeChild(canvas);
+			notification.removeChild(canvas);
 			var i = document.getElementById('screenshotimg');
 			i.src = img;
 			i.style.width = '40vw';
