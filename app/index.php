@@ -622,10 +622,10 @@ if($mobile === false) {
 	<div id="shareurl"></div>
 <?php 
 if($mobile === false) {
-	echo '<a id="downloadbutton" class="download-button"><i class="fas fa-download"></i>  Download<br><br></a>';
+	echo '<div><a id="downloadbutton" class="download-button"><i class="fas fa-download"></i>  Download</a></div>';
 }
 ?>
-	<img id="screenshotimg"/>
+	<div><img id="screenshotimg"/></div>
 	<object id="loading-animation" type="image/svg+xml" data="./html/loading.svg" >Error</object>
 	<div id="captcha-notice">This site is protected by reCAPTCHA and the Google
 	<a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and
