@@ -1,7 +1,7 @@
 <?php
 require '../../external/secret_key.php';
 $response = $_POST["captcha"];
-$verify = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret={$secret}&response={$response}');
+$verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$secret}&response={$response}");
 $isVerified = json_decode($verify);
 
 if($isVerified->success === false) {
