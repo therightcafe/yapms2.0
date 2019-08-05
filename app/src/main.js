@@ -116,7 +116,9 @@ function share() {
 	var applicationWidth = document.getElementById('application').offsetWidth;
 	var applicationHeight = document.getElementById('application').offsetHeight;
 
-	html2canvas(document.getElementById('application'), {async: false, logging: true, useCORS: true, allowTaint: true}).then(function(canvas) {
+	html2canvas(document.getElementById('application'), {logging: true, useCORS: true, allowTaint: true, proxy: true, onclone: function(clone) {
+		console.log(clone);	
+	}}).then(function(canvas) {
 		if(canvas) {
 			console.log(canvas.parentElement);
 			notification.appendChild(canvas);
