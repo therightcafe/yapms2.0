@@ -58,9 +58,16 @@ function displayShare() {
 	}
 
 	var shareurl = document.getElementById('shareurl');
-	//shareurl.innerHTML = "Please wait for your share and download link...";
-	shareurl.innerHTML = '';
+	if(shareurl) {
+		shareurl.style.display = 'none';
+		shareurl.innerHTML = '';
+	}
 
+	var image = document.getElementById('screenshotimg');
+	if(image) {
+		image.style.display = 'none';
+	}
+		
 	var loadingAnimation = document.getElementById('loading-animation');
 	if(loadingAnimation) {
 		loadingAnimation.style.display = '';

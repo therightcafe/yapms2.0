@@ -66,11 +66,17 @@ function saveMap(img, token) {
 			var shareurl = document.getElementById('shareurl');
 			shareurl.setAttribute('href', url);
 			shareurl.innerHTML = url;
+			shareurl.style.display = '';
 
 			var downloadbtn = document.getElementById('downloadbutton');
 			if(downloadbtn) {
 				downloadbtn.style.display = 'inline-block';
 				downloadbtn.setAttribute('href', 'downloadmap.php?f=' + filename);
+			}
+
+			var image = document.getElementById('screenshotimg');
+			if(image) {
+				image.style.display = '';
 			}
 			
 			var button = document.getElementById('share-button');
