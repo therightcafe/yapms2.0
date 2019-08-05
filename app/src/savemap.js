@@ -64,8 +64,19 @@ function saveMap(img, token) {
 			var filename = data[1];
 
 			var shareurl = document.getElementById('shareurl');
-			shareurl.setAttribute('href', url);
-			shareurl.innerHTML = url;
+			if(url === 'reCaptcha_Failed') {
+				shareurl.setAttribute('href', url);
+				shareurl.innerHTML = 'reCaptcha Failed: possible solution is to restart your web-browser;
+
+			} else if(url === 'reCaptcha_Bot_Detected') {
+				shareurl.setAttribute('href', url);
+				shareurl.innerHTML = 'reCaptcha Failed: suspicious activity detected';
+				
+			} else {
+				shareurl.setAttribute('href', url);
+				shareurl.innerHTML = url;
+			}
+			
 			shareurl.style.display = '';
 
 			var downloadbtn = document.getElementById('downloadbutton');
