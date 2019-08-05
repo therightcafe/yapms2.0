@@ -73,10 +73,11 @@ var panObject = null;
 
 function share() {
 	if(grecaptcha) {
-		grecaptcha.execute('6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo', {action: 'share'});
 	} else {
 		return;
 	}
+
+	grecaptcha.execute('6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo', {action: 'share'}).then(function(token) {
 
 	var svg = document.getElementById('svgdata');
 	var mapdiv = document.getElementById('map-div');
@@ -137,6 +138,7 @@ function share() {
 			var shareurl = document.getElementById('shareurl');
 			shareurl.innerHTML = "Your browser does not have HTML5, and cannot support his feature";
 		}
+	});
 	});
 }
 
