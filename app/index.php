@@ -91,7 +91,7 @@
 		 */
 ?>
 	</style>
-	<link rel="preload" href="./style/fonts.css" as="style" onload='this.re = "stylesheet"'>
+	<link rel="preload" href="./style/fonts.css" as="style" onload='this.rel = "stylesheet"'>
 	<link rel="preload" href="./style/menu.css" as="style" onload='this.rel = "stylesheet"'>
 	<link rel="preload" href="./style/selectmenu.css" as="style" onload='this.rel = "stylesheet"'>
 	<link rel="preload" href="./style/popup.css" as="style" onload='this.rel = "stylesheet"'>
