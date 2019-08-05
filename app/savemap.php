@@ -11,7 +11,12 @@ try {
 	die();
 }
 
-$sql = 'select value from number; update number set value = value + 1;';
+$sql = 'select value from number;
+select value
+	case 
+	when value > 5 then update number set value = 0
+	else update number set value = value + 1
+from number;';
 $q = $dbh->query($sql);
 $mapnumber = 0;
 foreach($q as $row) {
