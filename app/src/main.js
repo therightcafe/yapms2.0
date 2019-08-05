@@ -118,6 +118,7 @@ function share() {
 
 	html2canvas(document.getElementById('application'), {async: false, logging: true, useCORS: true, allowTaint: true}).then(function(canvas) {
 		if(canvas) {
+			console.log(canvas.parentElement);
 			notification.appendChild(canvas);
 			canvas.style.width = 0;
 			canvas.style.height = 0;	
