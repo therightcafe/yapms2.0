@@ -102,6 +102,8 @@ function share() {
 		//svgtext.style.fontFamily = 'arial';
 		//oldfontsize = svgtext.style.fontSize;
 		//svgtext.style.fontSize = '15px';
+		svgtext.setAttribute('font-family', window.getComputedStyle(svgtext, null).getPropertyValue('font-family'));
+		svgtext.replaceWith(svgtext);
 	}
 
 	var yapnewsClose = document.getElementById('yapnews-close');
