@@ -77,8 +77,8 @@
 
 	<style>
 <?php
-		include './style/fonts.css';
 		/*
+			include './style/fonts.css';
 			include './style/menu.css';
 			include './style/selectmenu.css';
 			include './style/popup.css';
