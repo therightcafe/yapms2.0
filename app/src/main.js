@@ -99,9 +99,9 @@ function share() {
 	var oldfontsize;
 	// set font size and family to something that will render
 	if(svgtext !== null) {
-		svgtext.style.fontFamily = 'arial';
+		//svgtext.style.fontFamily = 'arial';
 		//oldfontsize = svgtext.style.fontSize;
-		svgtext.style.fontSize = '15px';
+		//svgtext.style.fontSize = '15px';
 	//	svgtext.style.fontFamily = 'Roboto';
 	}
 
@@ -117,7 +117,7 @@ function share() {
 	var applicationWidth = document.getElementById('application').offsetWidth;
 	var applicationHeight = document.getElementById('application').offsetHeight;
 
-	html2canvas(document.getElementById('application'), {async: false, logging: true}).then(function(canvas) {
+	html2canvas(document.getElementById('application'), {async: false, logging: true, useCORS: true, allowTaint: true}).then(function(canvas) {
 		if(canvas) {
 			notification.appendChild(canvas);
 			canvas.style.width = 0;
