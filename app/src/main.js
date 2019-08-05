@@ -72,15 +72,9 @@ var previousPalette = function() {
 var panObject = null;
 
 function share() {
-
 	if(grecaptcha) {
-		grecaptcha.execute('6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo',
-		{action: 'pageload'}).then(function(token) {
-			console.log(token);
-		});
-		console.log('yes captcha');
+		grecaptcha.execute('6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo', {action: 'share'});
 	} else {
-		console.log('no captcha');
 		return;
 	}
 
