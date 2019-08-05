@@ -123,6 +123,7 @@ function share() {
 			canvas.style.width = 0;
 			canvas.style.height = 0;	
 			canvas.style.display = 'none';
+			canvas.style.fontFamily = 'Roboto';
 			// set the text back
 			if(svgtext !== null) {
 		//		svgtext.style.fontFamily = '';
