@@ -87,7 +87,7 @@ function share() {
 
 	grecaptcha.execute('6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo', {action: 'share'}).then(function(token) {
 
-	html2canvas(document.getElementById('application'), {logging: true, useCORS: true, allowTaint: true, proxy: true, onclone: function(clone) {
+	html2canvas(document.getElementById('application'), {logging: true, onclone: function(clone) {
 		// remove the custom fonts from the clone
 		var svgtext = clone.getElementById('text');
 		if(svgtext) {
