@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.40.27';
-var staticCache = 's0.11.9';
+var dynamicCache = 'd0.40.28';
+var staticCache = 's0.11.10';
 
 function swLog(cache, message) {
 	console.log('SW ' + cache + ': ' + message + ' ( ' + dynamicCache + ' / ' + staticCache + ' )');
@@ -58,7 +58,12 @@ self.addEventListener('install', function(event) {
 				'./app/data/senatorial_current',
 				'./app/data/senatorial_open',
 
-				'https://fonts.googleapis.com/css?family=Roboto',
+				'./app/res/fonts/roboto/roboto-v20-latin-regular.eot',
+				'./app/res/fonts/roboto/roboto-v20-latin-regular.svg',
+				'./app/res/fonts/roboto/roboto-v20-latin-regular.ttf',
+				'./app/res/fonts/roboto/roboto-v20-latin-regular.woff',
+				'./app/res/fonts/roboto/roboto-v20-latin-regular.woff2',
+
 				'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js',
 				'https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0',
 				'https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.5.0/dist/svg-pan-zoom.min.js',
@@ -124,6 +129,7 @@ self.addEventListener('install', function(event) {
 				'./app/style/style.css',
 				'./app/style/sidebar.css',
 				'./app/style/menu.css',
+				'./app/style/fonts.css',
 
 				'./app/src/main.js',
 				'./app/src/mobile.js',
