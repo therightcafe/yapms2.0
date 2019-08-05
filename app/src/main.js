@@ -1,4 +1,4 @@
-var currentCache = 'v0.40.21';
+var currentCache = 'v0.40.22';
 
 var cookies = {};
 
@@ -79,7 +79,6 @@ function share() {
 
 	// disable button for two seconds to prevent spam
 	var button = document.getElementById('share-button');
-	button.style.display = 'none';
 	button.setAttribute('onclick', '');
 	setTimeout(function() {
 		button.setAttribute('onclick', 'share()');
