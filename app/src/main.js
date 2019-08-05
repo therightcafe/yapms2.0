@@ -100,6 +100,10 @@ function share() {
 			svg.setAttribute('width', mapdiv.offsetWidth);
 			svg.setAttribute('height', mapdiv.offsetHeight);
 		}
+		var pointer = clone.getElementById('battlechartmidpoly');
+		if(pointer) {
+			pointer.style.transform = '';
+		}
 	}}).then(function(canvas) {
 		if(canvas) {
 			notification.appendChild(canvas);
