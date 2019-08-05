@@ -87,26 +87,13 @@ function share() {
 
 	grecaptcha.execute('6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo', {action: 'share'}).then(function(token) {
 
-	/*
-	var svg = document.getElementById('svgdata');
-	var mapdiv = document.getElementById('map-div');
-	var mapwidth = mapdiv.offsetWidth;
-	var mapheight = mapdiv.offsetHeight;
-		
-	svg.setAttribute('width', mapwidth);
-	svg.setAttribute('height', mapheight);
-
-	var applicationWidth = document.getElementById('application').offsetWidth;
-	var applicationHeight = document.getElementById('application').offsetHeight;
-	*/
 	html2canvas(document.getElementById('application'), {logging: true, useCORS: true, allowTaint: true, proxy: true, onclone: function(clone) {
-		console.log(clone);	
+		// remove the custom fonts from the clone
 		var svgtext = clone.getElementById('text');
 		if(svgtext) {
 			svgtext.style.fontFamily = 'arial';
 			svgtext.style.fontSize = '15px';
 		}
-
 		var svg = clone.getElementById('svgdata');
 		var mapdiv = clone.getElementById('map-div');
 		if(svg && mapdiv) {
@@ -116,20 +103,12 @@ function share() {
 	}}).then(function(canvas) {
 		if(canvas) {
 			console.log(canvas.parentElement);
-			notification.appendChild(canvas);
+			//notification.appendChild(canvas);
 			canvas.style.width = 0;
 			canvas.style.height = 0;	
 			canvas.style.display = 'none';
-			// set the text back
-			/*
-			if(svgtext !== null) {
-				svg.removeAttribute('width');
-				svg.removeAttribute('height');
-			}
-			*/
-
 			var img = canvas.toDataURL('image/png');
-			notification.removeChild(canvas);
+			//notification.removeChild(canvas);
 			var i = document.getElementById('screenshotimg');
 			i.src = img;
 			i.style.width = '40vw';
