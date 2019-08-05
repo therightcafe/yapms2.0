@@ -11,7 +11,7 @@ try {
 	die();
 }
 
-$sql = 'select value from number; update number set value = case when (value < 5) then (value + 1) else 0 end;';
+$sql = 'select value from number; update number set value = case when (value < 125000) then (value + 1) else 0 end;';
 
 $q = $dbh->query($sql);
 $mapnumber = 0;
