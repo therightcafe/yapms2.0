@@ -19,7 +19,7 @@ if @n = 5 begin
 else begin
 	set @n = @n + 1;
 	end
-update number set value = @n;'
+update number set value = @n;';
 
 $q = $dbh->query($sql);
 $mapnumber = 0;
