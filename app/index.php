@@ -91,15 +91,15 @@
 		 */
 ?>
 	</style>
-	<link rel="stylesheet" href="./style/fonts.css" type="text/css" as="style">
-	<link rel="stylesheet" href="./style/menu.css" type="text/css" as="style">
-	<link rel="stylesheet" href="./style/selectmenu.css" type="text/css" as="style">
-	<link rel="stylesheet" href="./style/popup.css" type="text/css" as="style">
-	<link rel="stylesheet" href="./style/legend.css" type="text/css" as="style">
-	<link rel="stylesheet" href="./style/style.css" type="text/css" as="style">
-	<link rel="stylesheet" href="./style/battlechart.css" type="text/css" as="style">
-	<link rel="stylesheet" href="./style/yapnews.css" type="text/css" as="style">
-	<link rel="stylesheet" href="./style/sidebar.css" type="text/css" as="style">
+	<link rel="preload" href="./style/fonts.css" type="text/css" as="style">
+	<link rel="preload" href="./style/menu.css" type="text/css" as="style">
+	<link rel="preload" href="./style/selectmenu.css" type="text/css" as="style">
+	<link rel="preload" href="./style/popup.css" type="text/css" as="style">
+	<link rel="preload" href="./style/legend.css" type="text/css" as="style">
+	<link rel="preload" href="./style/style.css" type="text/css" as="style">
+	<link rel="preload" href="./style/battlechart.css" type="text/css" as="style">
+	<link rel="preload" href="./style/yapnews.css" type="text/css" as="style">
+	<link rel="preload" href="./style/sidebar.css" type="text/css" as="style">
 	<!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">-->
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
