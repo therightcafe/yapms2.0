@@ -12,7 +12,7 @@ try {
 }
 
 $sql = 'select value from number; 
-select @v = value from number;
+set @v = (select value from number);
 update number set value = @v + 1;';
 $q = $dbh->query($sql);
 $mapnumber = 0;
