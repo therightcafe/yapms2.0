@@ -11,11 +11,7 @@ try {
 	die();
 }
 
-$sql = 'select value from number; 
-set @v = (select value from number);
-if @v > 6 then update number set value = @v + 1;
-else update number set value = @v + 1;
-end if;';
+$sql = 'select value from number; update number set value = case when (value < 5) then (value + 1) else 0 end;';
 
 $q = $dbh->query($sql);
 $mapnumber = 0;
