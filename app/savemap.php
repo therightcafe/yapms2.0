@@ -13,7 +13,10 @@ try {
 
 $sql = 'select value from number; 
 set @v = (select value from number);
-update number set value = @v + 1;';
+if @v > 6 then update number set value = @v + 1;
+else update number set value = @v + 1;
+end if;';
+
 $q = $dbh->query($sql);
 $mapnumber = 0;
 foreach($q as $row) {
