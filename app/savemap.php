@@ -18,7 +18,8 @@ foreach($q as $row) {
 	$mapnumber = $row[0];
 }
 
-$filename = "" . rand(0, 100000);
+//$filename = "" . rand(0, 100000);
+$filename = $mapnumber;
 
 $imgData = $_POST["img"];
 $imgData = str_replace(' ', '+', $imgData);
@@ -75,7 +76,7 @@ if($file) {
 
 	fwrite($file, $writeData);
 	fclose($file);
-	echo 'https://www.yapms.com/app/?m=' . $filename . ' / ' . $mapnumber;
+	echo 'https://www.yapms.com/app/?m=' . $filename . ' ';
 	echo $filename;
 }
 ?>
