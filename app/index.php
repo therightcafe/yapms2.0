@@ -77,6 +77,7 @@
 
 	<style>
 <?php
+		/*
 		include './style/fonts.css';
 		include './style/menu.css';
 		include './style/selectmenu.css';
@@ -87,19 +88,18 @@
 		include './style/yapnews.css';
 		include './style/sidebar.css';
 		include './style/yapnews.css';
+		 */
 ?>
 	</style>
-<!--
-	<link rel="stylesheet" href="./style/fonts.css" type="text/css">
-	<link rel="stylesheet" href="./style/menu.css" type="text/css">
-	<link rel="stylesheet" href="./style/selectmenu.css" type="text/css">
-	<link rel="stylesheet" href="./style/popup.css" type="text/css">
-	<link rel="stylesheet" href="./style/legend.css" type="text/css">
-	<link rel="stylesheet" href="./style/style.css" type="text/css">
-	<link rel="stylesheet" href="./style/battlechart.css" type="text/css">
-	<link rel="stylesheet" href="./style/yapnews.css" type="text/css">
-	<link rel="stylesheet" href="./style/sidebar.css" type="text/css">
--->
+	<link rel="stylesheet" href="./style/fonts.css" type="text/css" as="style">
+	<link rel="stylesheet" href="./style/menu.css" type="text/css" as="style">
+	<link rel="stylesheet" href="./style/selectmenu.css" type="text/css" as="style">
+	<link rel="stylesheet" href="./style/popup.css" type="text/css" as="style">
+	<link rel="stylesheet" href="./style/legend.css" type="text/css" as="style">
+	<link rel="stylesheet" href="./style/style.css" type="text/css" as="style">
+	<link rel="stylesheet" href="./style/battlechart.css" type="text/css" as="style">
+	<link rel="stylesheet" href="./style/yapnews.css" type="text/css" as="style">
+	<link rel="stylesheet" href="./style/sidebar.css" type="text/css" as="style">
 	<!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">-->
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
