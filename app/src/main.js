@@ -118,6 +118,11 @@ function share() {
 
 	html2canvas(document.getElementById('application'), {logging: true, useCORS: true, allowTaint: true, proxy: true, onclone: function(clone) {
 		console.log(clone);	
+		var svgtext = clone.getElementById('text');
+		if(svgtext) {
+			svgtext.style.fontFamily = 'arial';
+			svgtext.style.fontSize = '15px';
+		}
 	}}).then(function(canvas) {
 		if(canvas) {
 			console.log(canvas.parentElement);
