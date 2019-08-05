@@ -1,4 +1,4 @@
-var currentCache = 'v0.40.14';
+var currentCache = 'v0.40.21';
 
 var cookies = {};
 
@@ -76,6 +76,14 @@ function share() {
 	} else {
 		return;
 	}
+
+	// disable button for two seconds to prevent spam
+	var button = document.getElementById('share-button');
+	button.style.display = 'none';
+	button.setAttribute('onclick', '');
+	setTimeout(function() {
+		button.setAttribute('onclick', 'share()');
+	}, 2000);
 
 	grecaptcha.execute('6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo', {action: 'share'}).then(function(token) {
 
