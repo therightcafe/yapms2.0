@@ -72,6 +72,19 @@ var previousPalette = function() {
 var panObject = null;
 
 function share() {
+
+	if(grecaptcha) {
+		var res = grecaptcha.execute('6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo',
+		{action: 'pageload'}).then(function(token) {
+
+		});
+		console.log('yes captcha');
+		console.log(res);
+	} else {
+		console.log('no captcha');
+		return;
+	}
+
 	var svg = document.getElementById('svgdata');
 	var mapdiv = document.getElementById('map-div');
 	var mapwidth = mapdiv.offsetWidth;
@@ -1175,6 +1188,7 @@ function start() {
 		loadPreset("classic");
 		loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open", {updateText: true, voters: 'usa_voting_pop', enablePopularVote: true});
 	}
+
 }
 
 start();
