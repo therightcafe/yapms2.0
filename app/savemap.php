@@ -1,4 +1,23 @@
 <?php
+require '../../external/db_mapnumber.php';
+
+$dbh = null;
+
+try {
+	$dbh = new PDO("mysql:host=$hostname; dbname=$database;", $username, $password);
+} catch(PDOException $e) {
+	echo $hostname . " " . $database . " " . $username . " " . $password;
+	echo "Error: " . $e->getMessage();
+	die();
+}
+
+$sql = 'select value from number; update number set value = value + 1;';
+$q = $dbh->query($sql);
+$mapnumber = 0;
+foreach($q as $row) {
+	$mapnumber = $row[0];
+}
+
 $filename = "" . rand(0, 100000);
 
 $imgData = $_POST["img"];
@@ -56,7 +75,7 @@ if($file) {
 
 	fwrite($file, $writeData);
 	fclose($file);
-	echo 'https://www.yapms.com/app/?m=' . $filename . ' ';
+	echo 'https://www.yapms.com/app/?m=' . $filename . ' ' . $mapnumber;
 	echo $filename;
 }
 ?>
