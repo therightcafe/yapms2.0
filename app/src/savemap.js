@@ -66,7 +66,7 @@ function saveMap(img, token) {
 			var shareurl = document.getElementById('shareurl');
 			if(url === 'reCaptcha_Failed') {
 				shareurl.setAttribute('href', url);
-				shareurl.innerHTML = 'reCaptcha Failed: possible solution is to restart your web-browser;
+				shareurl.innerHTML = 'reCaptcha Failed: possible solution is to restart your web-browser';
 
 			} else if(url === 'reCaptcha_Bot_Detected') {
 				shareurl.setAttribute('href', url);
