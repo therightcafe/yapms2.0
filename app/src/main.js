@@ -88,7 +88,6 @@ function share() {
 	grecaptcha.execute('6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo', {action: 'share'}).then(function(token) {
 
 	var svg = document.getElementById('svgdata');
-	svg.style.fontFamily = 'Roboto';
 	var mapdiv = document.getElementById('map-div');
 	var mapwidth = mapdiv.offsetWidth;
 	var mapheight = mapdiv.offsetHeight;
@@ -103,6 +102,7 @@ function share() {
 		//svgtext.style.fontFamily = 'arial';
 		//oldfontsize = svgtext.style.fontSize;
 		//svgtext.style.fontSize = '15px';
+		svgtext.style.fontFamily = 'Roboto';
 	}
 
 	var yapnewsClose = document.getElementById('yapnews-close');
