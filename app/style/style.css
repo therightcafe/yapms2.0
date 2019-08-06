@@ -117,6 +117,11 @@ button {
 	height: 100%;
 }
 
+#application-loading-text {
+	font-family: "Arial Black";
+	font-size: 42px;
+}
+
 #application-sidebar-div {
 	display: flex;
 	flex-direction: row;
