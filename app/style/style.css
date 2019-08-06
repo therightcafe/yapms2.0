@@ -98,6 +98,7 @@ button {
 	z-index: 10;
 	overflow: hidden;
 	background: #DBC2A4;
+	background: white;
 	vertical-align: middle;
 }
 

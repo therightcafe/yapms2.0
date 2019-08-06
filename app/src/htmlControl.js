@@ -194,9 +194,7 @@ function setPalette(palette) {
 
 function darkPalette() {
 	appendCookie('theme', 'dark');
-	var body = document.getElementById('application');
-	body.style.backgroundColor = '#181922';
-	body.style.backgroundImage  = '';
+	setBackgroundColor('#181922');
 
 	setDisableColor('#212326');
 	setTossupColor('#6b6e73');
@@ -208,7 +206,6 @@ function darkPalette() {
 	setClickButtonColor('#2b2e33');
 	setClickButtonColor('#2B2E33');
 	setClickButtonTextColor('#FFFFFF');
-	setMenuColor('#2f3136');
 	setMenuColor('#000000');
 
 	setBorderStyle('#000000', 7.0);
@@ -226,9 +223,7 @@ function darkPalette() {
 
 function greyscalePalette() {
 	appendCookie('theme', 'greyscale');
-	var body = document.getElementById('application');
-	body.style.backgroundColor = '#252525';
-	body.style.backgroundImage  = '';
+	setBackgroundColor('#252525');
 
 	setDisableColor('#212326');
 	setTossupColor('#888888');
@@ -256,9 +251,7 @@ function greyscalePalette() {
 
 function terminalPalette() {
 	appendCookie('theme', 'terminal');
-	var body = document.getElementById('application');
-	body.style.backgroundColor = '#000000';
-	body.style.backgroundImage  = '';
+	setBackgroundColor('#000000');
 
 	setDisableColor('#bcc8d9');
 	setTossupColor('black');
@@ -286,9 +279,7 @@ function terminalPalette() {
 
 function lightPalette() {
 	appendCookie('theme', 'light');
-	var body = document.getElementById('application');
-	body.style.backgroundColor = '#dcdcdc';
-	body.style.backgroundImage  = '';
+	setBackgroundColor('#dcdcdc');
 
 	setDisableColor('#212326');
 	setTossupColor('#696969');
@@ -318,9 +309,7 @@ function lightPalette() {
 
 function contrastPalette() {
 	appendCookie('theme', 'contrast');
-	var body = document.getElementById('application');
-	body.style.backgroundColor = '#f8f9fa';
-	body.style.backgroundImage  = '';
+	setBackgroundColor('#f8f9fa');
 	
 	setDisableColor('#212326');
 	setTossupColor('#36454f');
@@ -348,12 +337,7 @@ function contrastPalette() {
 
 function metallicPalette() {
 	appendCookie('theme', 'metallic');
-	var body = document.getElementById('application');
-	//body.style.backgroundImage  = 'radial-gradient(#2f3136, #181922)';
-	body.style.backgroundImage  = 'linear-gradient(#696969, #33353b)';
-
-	var menu = document.getElementById('menu-div');
-	menu.style.backgroundColor = '#2f3136'
+	setBackgroundImage('linear-gradient(#696969, #33353b)');
 	
 	setDisableColor('#212326');
 	setTossupColor('#808080');
@@ -381,12 +365,7 @@ function metallicPalette() {
 
 function toWinPalette() {
 	appendCookie('theme', 'default');
-	var body = document.getElementById('application');
-	body.style.backgroundColor = '#f8f9fa';
-	body.style.backgroundImage  = '';
-
-	var menu = document.getElementById('menu-div');
-	menu.style.backgroundColor = '#202020';
+	setBackgroundColor('#f8f9fa');
 
 	setDisableColor('#dddddd');
 	setTossupColor('#9E8767');
@@ -410,6 +389,18 @@ function toWinPalette() {
 	countVotes();
 	verifyMap();
 	previousPalette = toWinPalette;
+}
+
+function setBackgroundImage(img) {
+	var body = document.getElementById('application');
+	body.style.backgroundColor = '';
+	body.style.backgroundImage  = img;
+}
+
+function setBackgroundColor(color) {
+	var body = document.getElementById('application');
+	body.style.backgroundColor = color;
+	body.style.backgroundImage  = '';
 }
 
 function setChartBorderStyle(width, color) {
