@@ -334,6 +334,9 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year, options) {
 
 			countPopularVote();
 		}
+
+		var loadScreen = document.getElementById('application-loading');
+		loadScreen.style.display = 'none';
 	});
 }
 
