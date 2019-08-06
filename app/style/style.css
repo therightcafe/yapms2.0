@@ -105,8 +105,8 @@ button {
 	display: flex;
 	flex-direction: column;
 	position: absolute;
-	width: 20vw;
-	height: 20vw;
+	width: 50vmin;
+	height: 50vmin;
 	margin: auto;
 	top: 0;
 	bottom: 0;
@@ -121,7 +121,7 @@ button {
 
 #application-loading-text {
 	font-family: "Arial Black";
-	font-size: 4vw;
+	font-size: 5vw;
 	white-space: nowrap;
 	margin-left: -100%;
 	margin-right: -100%;
