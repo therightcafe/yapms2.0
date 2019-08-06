@@ -120,6 +120,9 @@ button {
 #application-loading-text {
 	font-family: "Arial Black";
 	font-size: 42px;
+	position: absolute;
+	white-space: nowrap;
+	transform: translate(-50%);
 }
 
 #application-sidebar-div {
