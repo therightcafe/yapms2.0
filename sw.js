@@ -1,4 +1,4 @@
-var dynamicCache = 'd0.42.2';
+var dynamicCache = 'd0.42.3';
 var staticCache = 's0.12.2';
 
 function swLog(cache, message) {
