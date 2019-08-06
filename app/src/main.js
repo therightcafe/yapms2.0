@@ -1169,10 +1169,11 @@ function start() {
 
 	var link = document.createElement('link');
 	link.rel = 'stylesheet';
-	link.href = 'https://use.fontawesome.com/releases/v5.7.2/css/all.css';
+	//link.href = 'https://use.fontawesome.com/releases/v5.7.2/css/all.css';
+	link.href = './res/fontawesome/css/all.min.css';
 	link.type = 'text/css';
-	link.integrity = 'sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr';
-	link.crossorigin = 'anonymous';
+	//link.integrity = 'sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr';
+	//link.crossorigin = 'anonymous';
 	var ogLink = document.getElementsByTagName('link')[0];
 	ogLink.parentNode.insertBefore(link, ogLink);
 }
