@@ -1,4 +1,4 @@
-var dynamicCache = 'd0.41.12';
+var dynamicCache = 'd0.41.13';
 var staticCache = 's0.11.16';
 
 function swLog(cache, message) {
@@ -119,6 +119,7 @@ self.addEventListener('install', function(event) {
 
 				'./app/html/battlechart.html',
 				'./app/html/closebutton.svg',
+				'./app/html/loading.svg',
 				'./app/html/description.php',
 
 				'./app/style/battlechart.css',
