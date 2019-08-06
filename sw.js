@@ -1,5 +1,5 @@
 var dynamicCache = 'd0.41.9';
-var staticCache = 's0.11.15';
+var staticCache = 's0.11.16';
 
 function swLog(cache, message) {
 	console.log('SW ' + cache + ': ' + message + ' ( ' + dynamicCache + ' / ' + staticCache + ' )');
@@ -40,7 +40,7 @@ self.addEventListener('install', function(event) {
 				'./app/req_congress.php',
 				
 				'./app/res/lte.jpg',
-				'./app/res/redeagletv.png',
+				'./app/res/redeagletv.webp',
 
 				'./app/res/presets/Current_house',
 				'./app/res/presets/Current_senate',
