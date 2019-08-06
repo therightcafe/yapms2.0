@@ -166,7 +166,7 @@ if($mobile === false) {
 	</button>
 
 	<button class="click-button" style="white-space: nowrap;">
-	<a class="click-button" href="https://www.yapms.com/privacypolicy.html" target="_blank">
+	<a class="click-button" href="https://www.yapms.com/privacypolicy.html" target="_blank" rel="noreferrer">
 		<i class="fas fa-user-secret"></i> Privacy Policy
 	</a>
 	</button>
@@ -652,8 +652,8 @@ if($mobile === false) {
 	<object id="loading-animation" type="image/svg+xml" data="./html/loading.svg">Error</object>
 	<img id="screenshotimg"/>
 	<div id="captcha-notice">This site is protected by reCAPTCHA and the Google
-	<a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and
-	<a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply. </div>
+	<a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer">Privacy Policy</a> and
+	<a href="https://policies.google.com/terms" target="_blank" rel="noreferrer">Terms of Service</a> apply. </div>
 </div>
 
 <div id="loadmenu" class="popup">
