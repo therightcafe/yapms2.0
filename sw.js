@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.41.18';
-var staticCache = 's0.11.18';
+var dynamicCache = 'd0.41.20';
+var staticCache = 's0.11.20';
 
 function swLog(cache, message) {
 	console.log('SW ' + cache + ': ' + message + ' ( ' + dynamicCache + ' / ' + staticCache + ' )');
@@ -71,6 +71,7 @@ self.addEventListener('install', function(event) {
 				'https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js',
 
 				'https://use.fontawesome.com/releases/v5.7.2/webfonts/fa-regular-400.woff',
+				'https://use.fontawesome.com/releases/v5.7.2/webfonts/fa-regular-400.woff2',
 				'https://use.fontawesome.com/releases/v5.7.2/webfonts/fa-solid-900.woff',
 				'https://use.fontawesome.com/releases/v5.7.2/webfonts/fa-solid-900.woff2',
 				'https://use.fontawesome.com/releases/v5.7.2/css/all.css',
