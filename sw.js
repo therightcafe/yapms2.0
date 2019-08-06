@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.42.0';
-var staticCache = 's0.12.0';
+var dynamicCache = 'd0.42.1';
+var staticCache = 's0.12.1';
 
 function swLog(cache, message) {
 	console.log('SW ' + cache + ': ' + message + ' ( ' + dynamicCache + ' / ' + staticCache + ' )');
@@ -177,7 +177,8 @@ self.addEventListener('fetch', function(event) {
 					return response;
 				} else if(event.request.url.includes('yapms.com/app/') === true &&
 						event.request.url.includes('yapms.com/app/req_articles.php') === false &&
-						event.request.url.includes('yapms.com/app/?m=') === false) {
+						event.request.url.includes('yapms.com/app/?m=') === false &&
+						event.request.url.includes('yapms.com/app/savemap.php') === false) {
 					swLog('Web', 'fetch+cache ' + event.request.url);
 					return fetch(event.request)
 					.then(function(response) {
