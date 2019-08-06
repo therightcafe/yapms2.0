@@ -103,6 +103,7 @@
 -->
 	<!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">-->
 
+<link rel="preconnect" href="//fonts.gstatic.com">
 <link rel="preconnect" href="//www.google-analytics.com">
 <link rel="preconnect" href="//ssl.google-analytics.com">
 <link rel="preconnect" href="//pagead2.googlesyndication.com">
