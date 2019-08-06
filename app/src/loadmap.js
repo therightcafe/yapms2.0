@@ -337,7 +337,7 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year, options) {
 
 		// disable the load screen when the map is finished loading
 		var loadScreen = document.getElementById('application-loading');
-		//loadScreen.style.display = 'none';
+		loadScreen.style.display = 'none';
 	});
 }
 
