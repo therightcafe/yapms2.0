@@ -99,6 +99,12 @@ function saveMap(img, token) {
 			if(loadingAnimation) {
 				loadingAnimation.style.display = 'none';
 			}
+
+			console.log('Map save succeeded');
+			gtag('event', 'map_save_succeeded', {
+				'event_category': 'map_save',
+				'event_label': 'Map save succeeded'
+			});
 		},
 		error: function(a,b,c) {
 			console.log(a);
@@ -108,6 +114,12 @@ function saveMap(img, token) {
 			if(button) {
 				button.setAttribute('onclick', 'share()');
 			}
+			
+			console.log('Map save failed ' + a);
+			gtag('event', 'ma_save_failed', {
+				'event_category': 'map_save',
+				'event_label': 'Map save failed - ' + a
+			});
 		}
 	});
 }

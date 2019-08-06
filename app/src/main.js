@@ -1,4 +1,4 @@
-var currentCache = 'v0.42.3';
+var currentCache = 'v0.42.5';
 
 var cookies = {};
 
@@ -75,7 +75,9 @@ function share() {
 	displayShare();
 
 	if(grecaptcha) {
+		console.log('reCaptcha detected');
 	} else {
+		console.log('reCaptcha not detected');
 		return;
 	}
 
@@ -86,26 +88,20 @@ function share() {
 	}
 
 	grecaptcha.execute('6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo', {action: 'share'}).then(function(token) {
-
-	html2canvas(document.getElementById('application'), {logging: true, onclone: function(clone) {
-		// remove the custom fonts from the clone
-		var svgtext = clone.getElementById('text');
-		if(svgtext) {
-			svgtext.style.fontFamily = 'arial';
-			svgtext.style.fontSize = '15px';
-		}
-		var svg = clone.getElementById('svgdata');
-		var mapdiv = clone.getElementById('map-div');
-		if(svg && mapdiv) {
-			svg.setAttribute('width', mapdiv.offsetWidth);
-			svg.setAttribute('height', mapdiv.offsetHeight);
-		}
-		var pointer = clone.getElementById('battlechartmidpoly');
-		if(pointer) {
-			pointer.style.transform = '';
-		}
-	}}).then(function(canvas) {
-		if(canvas) {
+		html2canvas(document.getElementById('application'), {logging: true, onclone: function(clone) {
+			// remove the custom fonts from the clone
+			var svgtext = clone.getElementById('text');
+			if(svgtext) {
+				svgtext.style.fontFamily = 'arial';
+				svgtext.style.fontSize = '15px';
+			}
+			var svg = clone.getElementById('svgdata');
+			var mapdiv = clone.getElementById('map-div');
+			if(svg && mapdiv) {
+				svg.setAttribute('width', mapdiv.offsetWidth);
+				svg.setAttribute('height', mapdiv.offsetHeight);
+			}
+		}}).then(function(canvas) {
 			notification.appendChild(canvas);
 			canvas.style.width = 0;
 			canvas.style.height = 0;	
@@ -117,11 +113,7 @@ function share() {
 			i.style.width = '40vw';
 			i.style.height = 'auto';
 			saveMap(img, token);
-		} else {
-			var shareurl = document.getElementById('shareurl');
-			shareurl.innerHTML = "Your browser does not have HTML5, and cannot support his feature";
-		}
-	});
+		});
 	});
 }
 
@@ -129,10 +121,6 @@ window.onerror = function(message, source, lineno, colno, error) {
 	//alert(message + ' ' + source + ' ' + lineno + ' ' + colno);
 	if(typeof gtag !== 'undefined') {
 		console.log('Error');
-		/*gtag('event', 'exception', {
-			'description': message + ' ' + source + ' ' + lineno + ' ' + colno + ' ' + currentCache
-		});
-		*/
 		gtag('event', 'error', {
 			'event_category': 'error',
 			'event_label': message + ', ' + source + ', ' + lineno + ', ' + currentCache + ', (' + window.navigator.userAgent + ')'
