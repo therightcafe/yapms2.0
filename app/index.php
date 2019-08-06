@@ -103,6 +103,14 @@
 -->
 	<!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">-->
 
+<link rel="preconnect" href="//www.google-analytics.com">
+<link rel="preconnect" href="//ssl.google-analytics.com">
+<link rel="preconnect" href="//pagead2.googlesyndication.com">
+<link rel="preconnect" href="//googleads.g.doubleclick.net">
+<link rel="preconnect" href="//tpc.googlesyndication.com">
+<link rel="preconnect" href="//stats.g.doubleclick.net">
+<link rel="preconnect" href="//www.gstatic.com">
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({
