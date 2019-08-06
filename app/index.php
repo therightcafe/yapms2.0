@@ -187,7 +187,9 @@ if($mobile === false) {
 </div>
 
 <div id="application-loading">
+	<div id="application-loading-div">
 	<img id="application-loading-image" src="./res/yapms-512.png">
+	</div>
 </div>
 
 <div id="application-sidebar-div">
