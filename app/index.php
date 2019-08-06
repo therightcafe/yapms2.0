@@ -77,7 +77,6 @@
 
 	<style>
 <?php
-		/*
 		include './style/fonts.css';
 		include './style/menu.css';
 		include './style/selectmenu.css';
@@ -88,9 +87,10 @@
 		include './style/yapnews.css';
 		include './style/sidebar.css';
 		include './style/yapnews.css';
-		 */
 ?>
 	</style>
+
+<!-- get this working for all browsers
 	<link rel="preload" href="./style/fonts.css" as="style" onload='this.rel = "stylesheet"'>
 	<link rel="preload" href="./style/menu.css" as="style" onload='this.rel = "stylesheet"'>
 	<link rel="preload" href="./style/selectmenu.css" as="style" onload='this.rel = "stylesheet"'>
@@ -100,6 +100,7 @@
 	<link rel="preload" href="./style/battlechart.css" as="style" onload='this.rel = "stylesheet"'>
 	<link rel="preload" href="./style/yapnews.css" as="style" onload='this.rel = "stylesheet"'>
 	<link rel="preload" href="./style/sidebar.css" as="style" onload='this.rel = "stylesheet"'>
+-->
 	<!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">-->
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
