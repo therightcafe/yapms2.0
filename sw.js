@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.41.21';
-var staticCache = 's0.11.21';
+var dynamicCache = 'd0.41.22';
+var staticCache = 's0.11.22';
 
 function swLog(cache, message) {
 	console.log('SW ' + cache + ': ' + message + ' ( ' + dynamicCache + ' / ' + staticCache + ' )');
@@ -64,17 +64,17 @@ self.addEventListener('install', function(event) {
 				'./app/res/fonts/roboto/roboto-v20-latin-regular.woff',
 				'./app/res/fonts/roboto/roboto-v20-latin-regular.woff2',
 
+				'./app/res/fontawesome/css/all.min.css',
+				'./app/res/fontawesome/webfonts/fa-regular-400.woff',
+				'./app/res/fontawesome/webfonts/fa-regular-400.woff2',
+				'./app/res/fontawesome/webfonts/fa-solid-900.woff',
+				'./app/res/fontawesome/webfonts/fa-solid-900.woff2',
+
 				'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js',
 				'https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0',
 				'https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.5.0/dist/svg-pan-zoom.min.js',
 				'https://code.jquery.com/jquery-3.4.1.min.js',
 				'https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js',
-
-				'https://use.fontawesome.com/releases/v5.7.2/webfonts/fa-regular-400.woff',
-				'https://use.fontawesome.com/releases/v5.7.2/webfonts/fa-regular-400.woff2',
-				'https://use.fontawesome.com/releases/v5.7.2/webfonts/fa-solid-900.woff',
-				'https://use.fontawesome.com/releases/v5.7.2/webfonts/fa-solid-900.woff2',
-				'https://use.fontawesome.com/releases/v5.7.2/css/all.css',
 
 				'./app/manifest.json'
 			]).then(function() {
