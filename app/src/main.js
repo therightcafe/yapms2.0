@@ -1,4 +1,4 @@
-var currentCache = 'v0.41.12';
+var currentCache = 'v0.41.16';
 
 var cookies = {};
 
@@ -1167,6 +1167,14 @@ function start() {
 		loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open", {updateText: true, voters: 'usa_voting_pop', enablePopularVote: true});
 	}
 
+	var link = document.createElement('link');
+	link.rel = 'stylesheet';
+	link.href = 'https://use.fontawesome.com/releases/v5.7.2/css/all.css';
+	link.type = 'text/css';
+	link.integrity = 'sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr';
+	link.crossorigin = 'anonymous';
+	var ogLink = document.getElementsByTagName('link')[0];
+	ogLink.parentNode.insertBefore(link, ogLink);
 }
 
 start();
