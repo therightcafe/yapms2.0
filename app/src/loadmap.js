@@ -339,7 +339,7 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year, options) {
 		var loadScreen = document.getElementById('application-loading');
 		setTimeout(function() {
 			loadScreen.style.display = 'none';
-		}, 500);
+		}, 350);
 	});
 }
 
