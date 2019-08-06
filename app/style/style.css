@@ -102,6 +102,8 @@ button {
 }
 
 #application-loading-div {
+	display: flex;
+	flex-direction: column;
 	position: absolute;
 	width: 20vw;
 	height: 20vw;
@@ -120,9 +122,10 @@ button {
 #application-loading-text {
 	font-family: "Arial Black";
 	font-size: 42px;
-	position: absolute;
 	white-space: nowrap;
-	transform: translate(-50%);
+	margin-left: -100%;
+	margin-right: -100%;
+	text-align: center;
 }
 
 #application-sidebar-div {
