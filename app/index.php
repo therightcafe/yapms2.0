@@ -187,7 +187,7 @@ if($mobile === false) {
 </div>
 
 <div id="application-loading">
-	<object id="application-loading-animation" type="image/svg+xml" data="./html/loading.svg">Error</object>
+	<img id="application-loading-image" src="./res/yapms-512.png">
 </div>
 
 <div id="application-sidebar-div">
