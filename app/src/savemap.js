@@ -64,7 +64,7 @@ function saveMap(img, token) {
 			var filename = data[1];
 
 			var shareurl = document.getElementById('shareurl');
-			if(url === 'reCaptcha_Failed') {
+			if(url === 'reCaptcha_Failed(restart_web_browser)') {
 				shareurl.setAttribute('href', url);
 				shareurl.innerHTML = 'reCaptcha Failed: possible solution is to restart your web-browser';
 

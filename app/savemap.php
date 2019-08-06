@@ -5,7 +5,7 @@ $verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?sec
 $isVerified = json_decode($verify);
 
 if($isVerified->success === false) {
-	echo 'reCaptcha_Failed';
+	echo 'reCaptcha_Failed(restart_web_browser)';
 	die();
 }
 
