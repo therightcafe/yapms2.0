@@ -161,10 +161,11 @@ if($mobile === false) {
 
 <div id="application-loading">
 	<div id="application-loading-div">
-	<img id="application-loading-image" src="./res/yapms-512.png">
-	<span id="application-loading-text">
+	<!--<img id="application-loading-image" src="./res/yapms-512.png">-->
+	<object id="application-loading-image" type="image/svg+xml" data="./html/loading.svg"></object>
+<!--	<span id="application-loading-text">
 		Loading YAPms
-	</span>
+	</span> -->
 	</div>
 </div>
 

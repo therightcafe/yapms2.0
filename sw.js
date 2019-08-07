@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.42.6';
-var staticCache = 's0.12.6';
+var dynamicCache = 'd0.42.7';
+var staticCache = 's0.12.7';
 
 function swLog(cache, message) {
 	console.log('SW ' + cache + ': ' + message + ' ( ' + dynamicCache + ' / ' + staticCache + ' )');
@@ -69,8 +69,6 @@ self.addEventListener('install', function(event) {
 				'./app/res/fontawesome/webfonts/fa-regular-400.woff2',
 				'./app/res/fontawesome/webfonts/fa-solid-900.woff',
 				'./app/res/fontawesome/webfonts/fa-solid-900.woff2',
-
-				'./app/res/yapms-512.png',
 
 				'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js',
 				'https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0',
