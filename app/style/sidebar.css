@@ -50,37 +50,36 @@
 .sidebar-box {
 	font-family: 'Roboto';
 	font-size: 16px;
-	border: 1px solid black;
-	margin: 5px;
+	border-top: 1px solid #555555;
+	margin-top: 6px;
 	background: #f8f9fa;
 }
 
 .sidebar-box h3 {
 	margin: 5px;
 	padding: 0px;
-	border-bottom: 1px solid #aaaaaa;
+	border-bottom: 1px solid #cccccc;
 }
 
-.sidebar-hover-popup div {
-	position: static;
-	width: 90%;
-	margin: auto;
-	background: white;
-	color: green;
-	border: 1px solid black;
-	display: none;
+.sidebar-hover-popup .tooltip-text {
+	position: absolute;
+	visibility: hidden;
+	width: 250px;
+	background: #444444;
+	color: white;
+	border-radius: 6px;
+	text-align: center;
+	padding: 4px;
+	margin-left: 12px;
 }
 
-.sidebar-hover-popup:hover div {
-	display: block;	
+.sidebar-hover-popup:hover .tooltip-text {
+	pointer-events: none;
+	visibility: visible;
 }
 
 #sidebar-shortcuts {
-	background: #f8f9fa;
-	font-family: 'Roboto';
-	font-size: 16px;
-	border: 1px solid black;
-	margin: 5px;
+	border-bottom: 1px solid #555555;
 }
 
 #sidebar-shortcuts ul {

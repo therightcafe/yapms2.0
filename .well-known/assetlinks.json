@@ -1,5 +1,5 @@
 [{
   "relation": ["delegate_permission/common.handle_all_urls"],
   "target" : { "namespace": "android_app", "package_name": "com.fishstudio.yapms",
-               "sha256_cert_fingerprints": ["47:B6:95:C2:AD:5E:C9:48:EE:9C:94:6A:09:5A:61:76:B9:5C:BC:D0:93:F8:BD:91:5C:60:AC:E5:0C:7F:37:A9"] }
+               "sha256_cert_fingerprints": ["7C:F8:9B:0C:E3:45:EF:3E:40:AF:98:F6:63:BA:E5:FD:6C:6E:31:46:6B:0C:C1:80:3C:81:71:E1:7C:13:BE:BF"] }
 }]

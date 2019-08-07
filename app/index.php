@@ -244,19 +244,19 @@ if($mobile === false) {
 				Settings
 			</h3>
 			<span class="sidebar-hover-popup"><input type="checkbox" id="popularvote-automargins" onclick="autoMarginsOnClick();" checked>Auto Margins
-				<div>
+				<div class="tooltip-text">
 					Setting the popular vote will also set the color of a state
 				</div>
 			</span>
 			<br>
 			<span class="sidebar-hover-popup"><input type="checkbox" id="popularvote-clicksetpv" checked>Click Sets PV
-				<div>
+				<div class="tooltip-text">
 					Clicking on a state will alter the popular vote of the state
 				</div>
 			</span>
 			<br>
 			<span class="sidebar-hover-popup"><input type="checkbox" id="popularvote-avoidalmargins" checked>District Clicks
-				<div>
+				<div class="tooltip-text">
 					Clicking on a district in Nebraska or Maine will not calculate the margin for the AL vote.	
 				</div>
 			</span>
