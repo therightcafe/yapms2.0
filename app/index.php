@@ -204,18 +204,14 @@ if($mobile === false) {
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 </div>',
-		'<span>
-		<a id="sidebar-discord-link" href="https://discord.gg/WQh5fHU" target="_blank">
-		<div id="sidebar-discord" class="sidebar-button">
+		'<div id="sidebar-social">
+		<a id="sidebar-discord-link" href="https://discord.gg/WQh5fHU" target="_blank"><div id="sidebar-discord" class="sidebar-button">
 			Discord
-			</div>
-		</a>
-		<a id="sidebar-reddit-link" href="https://www.reddit.com/r/YAPms/" target="_blank">
-		<div id="sidebar-reddit" class="sidebar-button">
+		</div></a>
+		<a id="sidebar-reddit-link" href="https://www.reddit.com/r/YAPms/" target="_blank"><div id="sidebar-reddit" class="sidebar-button">
 			Reddit
-		</div>
-		</a>
-		</span>',
+		</div></a>
+		</div>',
 		'<div id="sidebar-popularvote" class="sidebar-box">
 			<h3>
 				<span>
@@ -264,33 +260,33 @@ if($mobile === false) {
 		'<div id="sidebar-congress" class="sidebar-box">
 			<h3><span id="sidebar-congress-district">District</span></h3>
 			<div id="sidebar-congress-representative">
-			</div><br>
+			</div>
 			<div id="sidebar-congress-party">
-			</div><br>
+			</div>
 		</div>',
 		'<div id="sidebar-shortcuts" class="sidebar-box">
 			<h3>Shortcuts</h3>
 			<ul>
 				<li>
-					(F) Hold down to quickly fill in states
+					F - Hold down to quickly fill in states
 				</li>
 				<li>
-					(1) Paint/Move
+					1 - Paint/Move
 				</li>
 				<li>
-					(2) Paint
+					2 - Paint
 				</li>
 				<li>
-					(3) Move
+					3 - Move
 				</li>
 				<li>
-					(4) Disable State
+					4 - Disable State
 				</li>
 				<li>
-					(5) EC Edit
+					5 - EC Edit
 				</li>
 				<li>
-					(6) Edit Candidate
+					6 - Edit Candidate
 				</li>
 			</ul>
 		</div>',

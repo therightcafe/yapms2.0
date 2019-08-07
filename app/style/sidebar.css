@@ -21,18 +21,26 @@
 	max-width: 300px;
 }
 
+#sidebar-social {
+	display: flex;
+	flex-direction: row;
+}
+
 .sidebar-button {
-	border-radius: 12px;
+	border-radius: 4px;
 	border: 2px solid white;
 	font-weight: bold;
 	text-decoration: none;
 	color: white;
-	display: inline-flex;
-	padding: 10px;
+	padding-top: 3px;
+	padding-bottom: 3px;
 }
 
 #sidebar-discord-link {
+	margin: 0px;
+	padding: 0px;
 	text-decoration: none;
+	flex: 1;
 }
 
 #sidebar-discord {
@@ -40,7 +48,10 @@
 }
 
 #sidebar-reddit-link {
+	margin: 0px;
+	padding: 0px;
 	text-decoration: none;
+	flex: 1;
 }
 
 #sidebar-reddit {
