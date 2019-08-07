@@ -21,11 +21,6 @@
 
 	<meta name="theme-color" content="#ffffff"/>
 	
-	<!-- CSSs (1st is Font Awesome) -->
-
-<!--
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
--->
 	<link rel="icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
 	<link rel="apple-touch-icon" href="./res/yapms-192.png"/>
 	<link rel="shortcut icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
@@ -92,30 +87,6 @@
 		include './style/yapnews.css';
 ?>
 	</style>
-
-<!-- get this working for all browsers
-	<link rel="preload" href="./style/fonts.css" as="style" onload='this.rel = "stylesheet"'>
-	<link rel="preload" href="./style/menu.css" as="style" onload='this.rel = "stylesheet"'>
-	<link rel="preload" href="./style/selectmenu.css" as="style" onload='this.rel = "stylesheet"'>
-	<link rel="preload" href="./style/popup.css" as="style" onload='this.rel = "stylesheet"'>
-	<link rel="preload" href="./style/legend.css" as="style" onload='this.rel = "stylesheet"'>
-	<link rel="preload" href="./style/style.css" as="style" onload='this.rel = "stylesheet"'>
-	<link rel="preload" href="./style/battlechart.css" as="style" onload='this.rel = "stylesheet"'>
-	<link rel="preload" href="./style/yapnews.css" as="style" onload='this.rel = "stylesheet"'>
-	<link rel="preload" href="./style/sidebar.css" as="style" onload='this.rel = "stylesheet"'>
--->
-	<!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">-->
-
-<!--
-<link rel="preconnect" href="//fonts.gstatic.com">
-<link rel="preconnect" href="//www.google-analytics.com">
-<link rel="preconnect" href="//ssl.google-analytics.com">
-<link rel="preconnect" href="//pagead2.googlesyndication.com">
-<link rel="preconnect" href="//googleads.g.doubleclick.net">
-<link rel="preconnect" href="//tpc.googlesyndication.com">
-<link rel="preconnect" href="//stats.g.doubleclick.net">
-<link rel="preconnect" href="//www.gstatic.com">
--->
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
@@ -238,17 +209,17 @@ if($mobile === false) {
 </div>',
 		'<span>
 		<a id="sidebar-discord-link" href="https://discord.gg/WQh5fHU" target="_blank">
-		<div id="sidebar-discord">
+		<div id="sidebar-discord" class="sidebar-button">
 			Discord
 			</div>
 		</a>
 		<a id="sidebar-reddit-link" href="https://www.reddit.com/r/YAPms/" target="_blank">
-		<div id="sidebar-reddit">
+		<div id="sidebar-reddit" class="sidebar-button">
 			Reddit
 		</div>
 		</a>
 		</span>',
-		'<div id="sidebar-popularvote">
+		'<div id="sidebar-popularvote" class="sidebar-box">
 			<h3>
 				<span>
 				State Popular Vote
@@ -262,7 +233,7 @@ if($mobile === false) {
 			<div id="popularvote-ranges">
 			</div>
 		</div>',
-		'<div id="sidebar-national-popularvote">
+		'<div id="sidebar-national-popularvote" class="sidebar-box">
 			<h3>
 				<span>
 				National Popular Vote
@@ -271,7 +242,7 @@ if($mobile === false) {
 			<div id="national-popularvote-ranges">
 			</div>
 		</div>',
-		'<div id="sidebar-popularvote-settings">
+		'<div id="sidebar-popularvote-settings" class="sidebar-box">
 			<h3>
 				Settings
 			</h3>
@@ -293,14 +264,14 @@ if($mobile === false) {
 				</div>
 			</span>
 		</div>',
-		'<div id="sidebar-congress">
+		'<div id="sidebar-congress" class="sidebar-box">
 			<h3><span id="sidebar-congress-district">District</span></h3>
 			<div id="sidebar-congress-representative">
 			</div><br>
 			<div id="sidebar-congress-party">
 			</div><br>
 		</div>',
-		'<div id="sidebar-shortcuts">
+		'<div id="sidebar-shortcuts" class="sidebar-box">
 			<h3>Shortcuts</h3>
 			<ul>
 				<li>
@@ -675,7 +646,6 @@ if($mobile === false) {
 		<input type="file" name"file" id="loadfile">
 		<input type="button" value="Load" onclick='loadFileMap()'>
 	</form>
-
 </div>
 
 <div id="versioninfo" class="popup">

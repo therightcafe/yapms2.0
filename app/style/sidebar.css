@@ -21,12 +21,7 @@
 	max-width: 300px;
 }
 
-#sidebar-discord-link {
-	text-decoration: none;
-}
-
-#sidebar-discord {
-	background: #7289da;
+.sidebar-button {
 	border-radius: 12px;
 	border: 2px solid white;
 	font-weight: bold;
@@ -34,6 +29,14 @@
 	color: white;
 	display: inline-flex;
 	padding: 10px;
+}
+
+#sidebar-discord-link {
+	text-decoration: none;
+}
+
+#sidebar-discord {
+	background: #7289da;
 }
 
 #sidebar-reddit-link {
@@ -42,79 +45,9 @@
 
 #sidebar-reddit {
 	background: #ff4500;
-	border-radius: 12px;
-	border: 2px solid white;
-	font-weight: bold;
-	text-decoration: none;
-	color: white;
-	display: inline-flex;
-	padding: 10px;
 }
 
-#sidebar-close {
-	background-color: #cccccc;
-	position: absolute;
-	right: 0px;
-	border-left: 1px solid black;
-	border-top: 1px solid black;
-	border-bottom: 1px solid black;
-	border-top-left-radius: 5px;
-	border-bottom-left-radius: 5px;
-	display: inline-flex;
-	cursor: pointer;
-}
-
-#sidebar-close .sidebar-close-svg {
-	flex: 1;
-	padding-left: 2px;
-	padding-top: 3px;
-	padding-bottom: 3px;
-	padding-right: 2px;
-}
-
-#sidebar-popularvote {
-	font-family: 'Roboto';
-	font-size: 20px;
-	border: 1px solid black;
-	margin: 5px;
-	background: #f8f9fa;
-}
-
-#sidebar-popularvote h3 {
-	margin: 5px;
-	padding: 0px;
-	border-bottom: 1px solid #aaaaaa;
-}
-
-#popularvote-state-title {
-	font-size: 20px;
-	margin-bottom: 10px;
-}
-
-#popularvote-ranges {
-	font-size: 18px;
-}
-
-#sidebar-national-popularvote {
-	background: #f8f9fa;
-	font-family: 'Roboto';
-	font-size: 20px;
-	border: 1px solid black;
-	margin: 5px;
-}
-
-#sidebar-national-popularvote h3 {
-	margin: 5px;
-	padding: 0px;
-	border-bottom: 1px solid #aaaaaa;
-}
-
-#national-popularvote-ranges {
-	font-size: 18px;
-
-}
-
-#sidebar-popularvote-settings {
+.sidebar-box {
 	font-family: 'Roboto';
 	font-size: 16px;
 	border: 1px solid black;
@@ -122,9 +55,10 @@
 	background: #f8f9fa;
 }
 
-#sidebar-popularvote-settings h3 {
-	border-bottom: 1px solid #aaaaaa;	
+.sidebar-box h3 {
 	margin: 5px;
+	padding: 0px;
+	border-bottom: 1px solid #aaaaaa;
 }
 
 .sidebar-hover-popup div {
@@ -141,29 +75,11 @@
 	display: block;	
 }
 
-#sidebar-congress {
-	background: #f8f9fa;
-	font-family: 'Roboto';
-	font-size: 20px;
-	border: 1px solid black;
-	margin: 5px;
-}
-
-#sidebar-congress h3 {
-	border-bottom: 1px solid #aaaaaa;	
-	margin: 5px;
-}
-
 #sidebar-shortcuts {
 	background: #f8f9fa;
 	font-family: 'Roboto';
 	font-size: 16px;
 	border: 1px solid black;
-	margin: 5px;
-}
-
-#sidebar-shortcuts h3 {
-	border-bottom: 1px solid #aaaaaa;	
 	margin: 5px;
 }
 

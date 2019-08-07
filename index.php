@@ -15,7 +15,7 @@
 	<meta property="og:image" content="http://www.yapms.com/app/res/yapms-96.png">
 	<meta property="og:image:secure_url" content="https://www.yapms.com/app/res/yapms-96.png">
 
-	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:card" content="summary">
 	<meta name="twitter:title" content="yapms.com">
 	<meta name="twitter:description" content="Interactive Political Maps">
 
