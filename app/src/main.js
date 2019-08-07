@@ -1,4 +1,4 @@
-var currentCache = 'v0.42.15';
+var currentCache = 'v0.42.21';
 
 var cookies = {};
 
@@ -427,9 +427,18 @@ function setDelegates(e) {
 		if(key === 'Tossup')
 			continue;
 		var range = document.getElementById('range-' + key);
-		state.delegates[key] = parseInt(range.value);
+		var rangeValue = 0;
+		if(range) {
+			rangeValue = parseInt(range.value);
+		} else {
+			gtag('event', 'error', {
+				'event_category': 'error',
+				'event_label': 'Could not find range element (range-' + key + ') ' + save_filename
+			});
+		}
+		state.delegates[key] = parseInt(rangeValue);
 		// subtract the delegates for each candidate
-		total -= parseInt(range.value);
+		total -= parseInt(rangeValue);
 	}
 	// set the tossup delegates to the remaining
 	state.delegates['Tossup'] = total;
@@ -442,7 +451,6 @@ function setDelegates(e) {
 			majorityVoteCount = state.delegates[key];
 		} else if(state.delegates[key] === majorityVoteCount) {
 			majorityCandidate = 'Tossup';
-			console.log('Tossup');
 		}
 	}
 	
