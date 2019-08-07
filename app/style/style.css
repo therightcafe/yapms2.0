@@ -119,15 +119,6 @@ button {
 	height: 100%;
 }
 
-#application-loading-text {
-	font-family: Bookman;
-	font-size: 5vw;
-	white-space: nowrap;
-	margin-left: -100%;
-	margin-right: -100%;
-	text-align: center;
-}
-
 #application-sidebar-div {
 	display: flex;
 	flex-direction: row;
