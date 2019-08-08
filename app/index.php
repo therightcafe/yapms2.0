@@ -195,7 +195,7 @@ if($mobile === false) {
 		'<div id="sidebar-header">
 			YAPms  
 		</div>' ,
-'<div id="sidebar-ad">
+'<!--<div id="sidebar-ad">-->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- sidebar-ad5 -->
 <ins class="adsbygoogle"
@@ -205,7 +205,7 @@ if($mobile === false) {
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-</div>',
+<!--</div>-->',
 		'<div id="sidebar-social">
 		<a id="sidebar-discord-link" href="https://discord.gg/WQh5fHU" target="_blank"><div id="sidebar-discord" class="sidebar-button">
 			Discord
