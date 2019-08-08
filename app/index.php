@@ -62,6 +62,16 @@
 				'var php_load_map_id = 0;' .
 			     '</script>';
 		}
+
+		if(mobile === false) {
+			echo '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<script>
+			     (adsbygoogle = window.adsbygoogle || []).push({
+				  google_ad_client: "ca-pub-1660456925957249",
+				  enable_page_level_ads: true
+			     });
+			</script>';
+		}
 	?>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -87,14 +97,6 @@
 		include './style/yapnews.css';
 ?>
 	</style>
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({
-          google_ad_client: "ca-pub-1660456925957249",
-          enable_page_level_ads: true
-     });
-</script>
 
 </head>
 
@@ -688,6 +690,13 @@ if($mobile === true) {
 						case 'installed':
 						if(navigator.serviceWorker.controller) {
 							displayUpdateServiceWorker();
+						}
+
+						if(typeof gtag !== 'undefined') {
+							gtag('event', 'upgrade', {
+								'event_category': 'upgrade',
+								'event_label': "Upgrade from " + currentCache
+							});
 						}
 						break;
 						default:
