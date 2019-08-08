@@ -1,9 +1,9 @@
 <?php 
 //phpInfo(); 
 if(!function_exists("gettext")) {
-	echo "not installed";
+	echo "not installed <br>";
 } else {
-	echo "installed";
+	echo "installed <br>";
 }
 
 $language = "de";
