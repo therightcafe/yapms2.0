@@ -8,7 +8,7 @@ if(!function_exists("gettext")) {
 }
 
 putenv("LANG=de");
-setlocale(LC_ALL, "de");
+setlocale(LC_ALL, "de_DE.UTF-8");
 
 $domain = "de";
 bindtextdomain($domain, "./locales");
