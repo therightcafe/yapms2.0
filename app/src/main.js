@@ -1,4 +1,4 @@
-var currentCache = 'v0.43.2';
+var currentCache = 'v0.43.5';
 
 var cookies = {};
 
@@ -87,6 +87,7 @@ function share() {
 		button.setAttribute('onclick', '');
 	}
 
+	grecaptcha.execute('6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo', {action: 'share'}).then(function(token) {
 	html2canvas(document.getElementById('application'), {logging: true, onclone: function(clone) {
 		// remove the custom fonts from the clone
 		var svgtext = clone.getElementById('text');
@@ -111,10 +112,8 @@ function share() {
 		i.src = img;
 		i.style.width = '40vw';
 		i.style.height = 'auto';
-		i.style.display = '';
-		grecaptcha.execute('6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo', {action: 'share'}).then(function(token) {
 		saveMap(img, token);
-		});
+	});
 	});
 }
 

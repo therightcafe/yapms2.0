@@ -94,6 +94,11 @@ function saveMap(img, token) {
 			if(loadingAnimation) {
 				loadingAnimation.style.display = 'none';
 			}
+		
+			var image = document.getElementById('screenshotimg');
+			if(image) {
+				image.style.display = '';
+			}
 
 			console.log('Map save succeeded');
 			gtag('event', 'map_save_succeeded', {
