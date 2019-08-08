@@ -13,5 +13,5 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Language: de\n"
 
-msgid "Privacy Policy"
+msgid "This is english"
 msgstr "This is german"
