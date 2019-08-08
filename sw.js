@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.43.1';
-var staticCache = 's0.12.8';
+var dynamicCache = 'd0.43.2';
+var staticCache = 's0.12.9';
 
 function swLog(cache, message) {
 	console.log('SW ' + cache + ': ' + message + ' ( ' + dynamicCache + ' / ' + staticCache + ' )');
@@ -39,8 +39,8 @@ self.addEventListener('install', function(event) {
 
 				'./app/req_congress.php',
 				
-				'https://www.yapms.com/app/res/lte.jpg',
-				'https://www.yapms.com/app/res/redeagletv.png',
+				'./app/res/lte.jpg',
+				'./app/res/redeagletv.png',
 
 				'./app/res/presets/Current_house',
 				'./app/res/presets/Current_senate',
