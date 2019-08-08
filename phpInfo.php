@@ -11,7 +11,7 @@ putenv("LANG=" . $language);
 setlocale(LC_ALL, $language);
 
 $domain = "messages";
-bindtextdomain($domain, "Locale");
+bindtextdomain($domain, "locale");
 textdomain($domain);
 
 echo gettext("Privacy Policy");
