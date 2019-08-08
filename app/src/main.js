@@ -1,4 +1,4 @@
-var currentCache = 'v0.43.0';
+var currentCache = 'v0.43.1';
 
 var cookies = {};
 
@@ -87,32 +87,33 @@ function share() {
 		button.setAttribute('onclick', '');
 	}
 
-	grecaptcha.execute('6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo', {action: 'share'}).then(function(token) {
-		html2canvas(document.getElementById('application'), {logging: true, onclone: function(clone) {
-			// remove the custom fonts from the clone
-			var svgtext = clone.getElementById('text');
-			if(svgtext) {
-				svgtext.style.fontFamily = 'arial';
-				svgtext.style.fontSize = '15px';
-			}
-			var svg = clone.getElementById('svgdata');
-			var mapdiv = clone.getElementById('map-div');
-			if(svg && mapdiv) {
-				svg.setAttribute('width', mapdiv.offsetWidth);
-				svg.setAttribute('height', mapdiv.offsetHeight);
-			}
-		}}).then(function(canvas) {
-			notification.appendChild(canvas);
-			canvas.style.width = 0;
-			canvas.style.height = 0;	
-			canvas.style.display = 'none';
-			var img = canvas.toDataURL('image/png');
-			notification.removeChild(canvas);
-			var i = document.getElementById('screenshotimg');
-			i.src = img;
-			i.style.width = '40vw';
-			i.style.height = 'auto';
-			saveMap(img, token);
+	html2canvas(document.getElementById('application'), {logging: true, onclone: function(clone) {
+		// remove the custom fonts from the clone
+		var svgtext = clone.getElementById('text');
+		if(svgtext) {
+			svgtext.style.fontFamily = 'arial';
+			svgtext.style.fontSize = '15px';
+		}
+		var svg = clone.getElementById('svgdata');
+		var mapdiv = clone.getElementById('map-div');
+		if(svg && mapdiv) {
+			svg.setAttribute('width', mapdiv.offsetWidth);
+			svg.setAttribute('height', mapdiv.offsetHeight);
+		}
+	}}).then(function(canvas) {
+		notification.appendChild(canvas);
+		canvas.style.width = 0;
+		canvas.style.height = 0;	
+		canvas.style.display = 'none';
+		var img = canvas.toDataURL('image/png');
+		notification.removeChild(canvas);
+		var i = document.getElementById('screenshotimg');
+		i.src = img;
+		i.style.width = '40vw';
+		i.style.height = 'auto';
+		i.style.display = '';
+		grecaptcha.execute('6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo', {action: 'share'}).then(function(token) {
+		saveMap(img, token);
 		});
 	});
 }

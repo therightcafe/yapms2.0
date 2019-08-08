@@ -84,11 +84,6 @@ function saveMap(img, token) {
 				downloadbtn.style.display = 'inline-block';
 				downloadbtn.setAttribute('href', 'downloadmap.php?f=' + filename);
 			}
-
-			var image = document.getElementById('screenshotimg');
-			if(image) {
-				image.style.display = '';
-			}
 			
 			var button = document.getElementById('share-button');
 			if(button) {
