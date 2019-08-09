@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.44.94';
-var staticCache = 's0.15.94';
+var dynamicCache = 'd0.44.95';
+var staticCache = 's0.15.95';
 
 var cookies = {
 
@@ -234,9 +234,9 @@ self.addEventListener('fetch', function(event) {
 	event.respondWith(
 		caches.match(event.request)
 			.then(function(response) {
-				if(response && event.request.url.includes('?t=')) {
-					var url = new URL(event.request.url);
-					var params = new URLSearchParams(url);
+				var url = new URL(event.request.url);
+				var params = new URLSearchParams(url);
+				if(params.has('t')) {
 					var t = params.get('t');
 					t = '2020_senatorial';
 					var m = params.get('m');
