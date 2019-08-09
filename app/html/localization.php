@@ -2,6 +2,16 @@
 session_start();
 $language = "en";
 
+if(isset($_COOKIE['testcookie'])) {
+	echo '<script>
+		alert("WE WIN");
+		</script>';
+} else {
+	echo '<script>
+		alert("badddd");
+		</script>';
+}
+
 if(isset($_COOKIE["language"])) {
 	$language = $_COOKIE["language"];
 } else if(isset($_GET["l"])) {
