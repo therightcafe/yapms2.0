@@ -580,11 +580,13 @@ function loadPage(t, m, l) {
 function setLanguage(language) {
 	appendCookie('language', language);
 	closeAllPopups();
-	var languageButton = document.getElementById('languagebutton');
-	languageButton.disabled = true;
-	/*var loadScreen = document.getElementById('application-loading');
-	loadScreen.setAttribute('style', '');*/
-	navigator.serviceWorker.controller.postMessage('localize'); 
+	if(navigator.onLine) {
+		var languageButton = document.getElementById('languagebutton');
+		languageButton.disabled = true;
+		navigator.serviceWorker.controller.postMessage('localize'); 
+	} else {
+		displayNotification('Offline', 'Unavailable while Offline');
+	}
 }
 
 function setMode(set) {

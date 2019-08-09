@@ -39,9 +39,14 @@ function displayUpdateServiceWorker() {
 }
 
 function displayLanguageMenu() {
-	closeAllPopups();
-	var menu = document.getElementById("languagemenu");
-	menu.style.display = 'flex';
+	if(navigator.onLine) {
+		closeAllPopups();
+		var menu = document.getElementById("languagemenu");
+		menu.style.display = 'flex';
+	} else {
+		closeAllPopups();
+		displayNotification('Offline', 'Unavailable while Offline');
+	}
 }
 
 function displayNotification(title, text) {
