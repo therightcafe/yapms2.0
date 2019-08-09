@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.44.90';
-var staticCache = 's0.15.90';
+var dynamicCache = 'd0.44.91';
+var staticCache = 's0.15.91';
 
 var cookies = {
 
@@ -223,6 +223,7 @@ self.addEventListener('fetch', function(event) {
 
 					url.search = params.toString();
 					req = new Request(url);
+					req = new Request('./app/?t=2020_presidential&l=de');
 					swLog('Alter', 'appending language to URL ' + url);
 					return(caches.match(req));
 				} else if(response) {
