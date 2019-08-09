@@ -41,6 +41,7 @@ function loadMapFromId(id) {
 			loadPresetMap(id, {enableCongress: true});
 			break;
 		case "Current_senate":
+		case "2024_projection":
 		case "2020_cook":
 		case "2020_inside":
 		case "2020_sabatos":

@@ -220,6 +220,12 @@
 				Proportional
 			</div>
 		</a>
+		
+		<a href="./app/?t=2024_projection">
+			<div class="map-button">
+				2024
+			</div>
+		</a>
 
 		<br>
 

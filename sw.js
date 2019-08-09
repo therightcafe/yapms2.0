@@ -1,6 +1,6 @@
-var scriptCache = 'd0.45.13';
-var indexCache = 'i0.1.13';
-var staticCache = 's0.16.12';
+var scriptCache = 'd0.46.0';
+var indexCache = 'i0.2.0';
+var staticCache = 's0.17.0';
 
 var _scriptCache = [
 	'./style.css',
@@ -141,6 +141,8 @@ self.addEventListener('install', function(event) {
 				'./app/res/presets/Current_house',
 				'./app/res/presets/Current_senate',
 				'./app/res/presets/2016_presidential_county',
+
+				'./app/res/presets/2024_projection',
 
 				'./app/res/presets/2020_cook',
 				'./app/res/presets/2020_inside',

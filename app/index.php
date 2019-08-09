@@ -546,6 +546,7 @@ if($mobile === false) {
 	<a class="selectmenu-button" href="./?t=Current_house"><?php echo _("House") ?></a>
 	<a class="selectmenu-button" href="./?t=Current_senate"><?php echo _("Senate") ?></a>
 	<a class="selectmenu-split"><?php echo _("Blank") ?></a>
+	<a class="selectmenu-button" href="./?t=2024_projection">2024</a>
 	<a class="selectmenu-button" href="./?t=USA_senatorial"><?php echo _("Senatorial") ?></a>
 	<a class="selectmenu-button" href="./?t=USA_congressional"><?php echo _("Congressional") ?></a>
 	<a class="selectmenu-button" href="./?t=USA_gubernatorial"><?php echo _("Gubernatorial") ?></a>
