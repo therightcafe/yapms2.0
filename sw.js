@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.44.91';
-var staticCache = 's0.15.91';
+var dynamicCache = 'd0.44.92';
+var staticCache = 's0.15.92';
 
 var cookies = {
 
@@ -211,19 +211,21 @@ self.addEventListener('fetch', function(event) {
 				if(response && event.request.url.includes('?t=')) {
 					var url = new URL(event.request.url);
 					var params = new URLSearchParams(url);
-					params.delete('t');
-					params.delete('m');
-					params.delete('l');
-
-					if(params.has('t'))
-						params.append('t', params.get('t'));
-					if(params.has('m'))
-						params.append('m', params.get('m'));
-					params.append('l', 'de');
-
-					url.search = params.toString();
+					var t = params.get('t');
+					var m = params.get('m');
+					var l = 'en';
+					if(cookies['language']) {
+						l = cookies['language'];
+					}
+					l = 'de';
+					url = './app/?';
+					if(t) {
+						url += 't=' + t + '&';
+					} else if(m) {
+						url += 'm=' + m + '&';
+					}
+					url += 'l=' + l;
 					req = new Request(url);
-					req = new Request('./app/?t=2020_presidential&l=de');
 					swLog('Alter', 'appending language to URL ' + url);
 					return(caches.match(req));
 				} else if(response) {
