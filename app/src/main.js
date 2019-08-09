@@ -579,6 +579,8 @@ function loadPage(t, m, l) {
 
 function setLanguage(language) {
 	appendCookie('language', language);
+	var loadScreen = document.getElementById('application-loading');
+	loadScreen.style.display = 'absolute';
 	navigator.serviceWorker.controller.postMessage('localize'); 
 }
 
