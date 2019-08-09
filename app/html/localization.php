@@ -2,7 +2,7 @@
 session_start();
 $language = "en";
 
-if(isset($_COOKIE["language"]) {
+if(isset($_COOKIE["language"])) {
 	$language = $_COOKIE["language"];
 } else if(isset($_GET["l"])) {
 	$language = $_GET["l"];	
