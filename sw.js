@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.44.88';
-var staticCache = 's0.15.88';
+var dynamicCache = 'd0.44.90';
+var staticCache = 's0.15.90';
 
 var cookies = {
 
@@ -138,7 +138,8 @@ self.addEventListener('install', function(event) {
 				'./app/src/congress.js',
 				'./app/src/keyboard.js',
 				'./app/src/deferedImages.js',
-
+				
+				'./app/?l=en',
 				'./app/index.php?l=en&l=en',
 				'./app/?t=Current_house&l=en&l=en',
 				'./app/?t=Current_senate&l=en',
@@ -165,6 +166,7 @@ self.addEventListener('install', function(event) {
 				'./app/?t=Australia_states&l=en',
 				'./app/?t=Brazil_deputies&l=en',
 				
+				'./app/?l=de',
 				'./app/index.php?l=de',
 				'./app/?t=Current_house&l=de',
 				'./app/?t=Current_senate&l=de',
