@@ -579,18 +579,7 @@ function loadPage(t, m, l) {
 
 function setLanguage(language) {
 	appendCookie('language', language);
-
-	var url = 'https://testing.yapms.com/app/?';
-
-	if(GET['t']) {
-		url += 't=' + GET['t'] + '&';
-	}
-
-	if(GET['m']) {
-		url += 'm=' + GET['m'] + '&';
-	}
-
-	window.location.href = url;
+	location.reload();
 }
 
 function setMode(set) {
@@ -1111,6 +1100,10 @@ function appendCookie(key, value) {
 	cookie = key + '=' + cookies[key] + '; expires=' + expire + ';';
 	document.cookie = cookie;
 	console.log('append cookie: key=' + key + ' value=' + value);
+
+	if('serviceWorker' in navigator) {
+		//navigator.serviceWorker.controller.postMessage('c ' + key + ' ' + value); 
+	}
 }
 
 function loadCookies() {

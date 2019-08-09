@@ -706,6 +706,15 @@ if($mobile === true) {
 		navigator.serviceWorker
 		.register('../sw.js')
 		.then(reg => {
+			var decode = decodeURIComponent(document.cookie);
+			var loadedCookies = decode.split('; ');
+			for(var index in loadedCookies) {
+				var cookie = loadedCookies[index].split('=');
+				var key = cookie[0];
+				var result = cookie[1]
+				cookies[key] = result;
+				navigator.serviceWorker.controller.postMessage('c ' + key + ' ' + result); 
+			}
 			reg.addEventListener('updatefound', () => {
 				newWorker = reg.installing;
 				newWorker.addEventListener('statechange', () => {

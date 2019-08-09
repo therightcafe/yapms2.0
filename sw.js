@@ -1,9 +1,20 @@
-var dynamicCache = 'd0.44.7';
-var staticCache = 's0.15.5';
+var dynamicCache = 'd0.44.16';
+var staticCache = 's0.15.16';
+
+var cookies = {
+
+};
 
 function swLog(cache, message) {
 	console.log('SW ' + cache + ': ' + message + ' ( ' + dynamicCache + ' / ' + staticCache + ' )');
 }
+
+self.addEventListener('message', function(event) {
+	var split = event.data.split(' ');
+	if(split[0] = 'c') {
+		cookies[split[1]] = split[2];
+	}
+});
 
 self.addEventListener('install', function(event) {
 	self.skipWaiting();
@@ -81,7 +92,7 @@ self.addEventListener('install', function(event) {
 				for(var i = 1864; i < 2016; i += 4) {
 					cache.add('./app/res/presets/' + i + '_presidential');
 				}
-				
+
 				return cache;
 			});
 		}));
@@ -95,39 +106,11 @@ self.addEventListener('install', function(event) {
 				'./style.css',
 
 				'./app/',
-				'./app/index.php',
-
-				'./app/?t=Current_house',
-				'./app/?t=Current_senate',
-
-				'./app/?t=2016_presidential_county',
-				'./app/?t=2020_presidential',
-				'./app/?t=2020_senatorial',
-				'./app/?t=2020_gubernatorial',
-				'./app/?t=2020_democratic_primary',
-				'./app/?t=2020_republican_primary',
-				'./app/?t=USA_county',
-				'./app/?t=USA_congressional',
-				'./app/?t=USA_gubernatorial',
-				'./app/?t=USA_senatorial',
-				'./app/?t=USA_takeall',
-				'./app/?t=USA_proportional',
-				'./app/?t=Germany_states',
-				'./app/?t=Germany_constituencies',
-				'./app/?t=Spain_constituencies',
-				'./app/?t=Italy_states',
-				'./app/?t=UnitedKingdom_constituencies',
-				'./app/?t=Canada_provinces',
-				'./app/?t=Canada_constituencies',
-				'./app/?t=Australia_constituencies',
-				'./app/?t=Australia_states',
 
 				'./app/html/battlechart.html',
 				'./app/html/closebutton.svg',
 				'./app/html/loading.svg',
-				'./app/html/description.php',
-				'./app/html/localization.php',
-
+/*
 				'./app/style/battlechart.css',
 				'./app/style/legend.css',
 				'./app/style/selectmenu.css',
@@ -137,7 +120,7 @@ self.addEventListener('install', function(event) {
 				'./app/style/sidebar.css',
 				'./app/style/menu.css',
 				'./app/style/fonts.css',
-
+*/
 				'./app/src/main.js',
 				'./app/src/mobile.js',
 				'./app/src/presets.js',
@@ -154,15 +137,38 @@ self.addEventListener('install', function(event) {
 				'./app/src/popularvote.js',
 				'./app/src/congress.js',
 				'./app/src/keyboard.js',
-				'./app/src/deferedImages.js',
-
-				'./locales/de/LC_MESSAGES/de.mo',
-				'./locales/de/LC_MESSAGES/de.po',
-				'./locales/en/LC_MESSAGES/en.mo',
-				'./locales/en/LC_MESSAGES/en.po',
+				'./app/src/deferedImages.js'
 			]).then(function() {
-				for(var i = 1864; i < 2016; i += 4) {
-					cache.add('./app/?t=' + i + '_presidential');
+				var langs = ['en', 'de'];
+				for(var i = 0; i < langs.length; ++i) {
+					var lang = '&l=' + langs[i];
+					for(var i = 1864; i < 2016; i += 4) {
+						cache.add('./app/?t=' + i + '_presidential' + lang);
+					}
+					cache.add('./app/index.php?' + lang);
+					cache.add('./app/?t=Current_house' + lang);
+					cache.add('./app/?t=Current_senate' + lang);
+					cache.add('./app/?t=2016_presidential_county' + lang);
+					cache.add('./app/?t=2020_presidential' + lang);
+					cache.add('./app/?t=2020_senatorial' + lang);
+					cache.add('./app/?t=2020_gubernatorial' + lang);
+					cache.add('./app/?t=2020_democratic_primary' + lang);
+					cache.add('./app/?t=2020_republican_primary' + lang);
+					cache.add('./app/?t=USA_county' + lang);
+					cache.add('./app/?t=USA_congressional' + lang);
+					cache.add('./app/?t=USA_gubernatorial' + lang);
+					cache.add('./app/?t=USA_senatorial' + lang);
+					cache.add('./app/?t=USA_takeall' + lang);
+					cache.add('./app/?t=USA_proportional' + lang);
+					cache.add('./app/?t=Germany_states' + lang);
+					cache.add('./app/?t=Germany_constituencies' + lang);
+					cache.add('./app/?t=Spain_constituencies' + lang);
+					cache.add('./app/?t=Italy_states' + lang);
+					cache.add('./app/?t=UnitedKingdom_constituencies' + lang);
+					cache.add('./app/?t=Canada_provinces' + lang);
+					cache.add('./app/?t=Canada_constituencies' + lang);
+					cache.add('./app/?t=Australia_constituencies' + lang);
+					cache.add('./app/?t=Australia_states' + lang);
 				}
 
 				return cache;
@@ -173,6 +179,9 @@ self.addEventListener('install', function(event) {
 
 // first see if request is in cache, then check web
 self.addEventListener('fetch', function(event) {
+	if(event.request.url.includes('/app/?t=')) {
+		event.request.url = event.request.url + '&l=' + cookies['language'];
+	}
 	event.respondWith(
 		caches.match(event.request)
 			.then(function(response) {
