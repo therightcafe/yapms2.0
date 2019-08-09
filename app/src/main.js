@@ -557,7 +557,29 @@ function toggleChartLeans() {
 	updateBattleChart();
 }
 
+function loadPage(t, m, l) {
+	var url = 'https://testing.yapms.com/app/?';
+
+	if(t) {
+		url += 't=' + t + '&';
+	}
+
+	if(m) {
+		url += 'm=' + m + '&';
+	}
+
+	if(l) {
+		url += 'l=' + l;
+	} else {
+		url += 'l=en';
+	}
+	
+	window.location.href = url;
+}
+
 function setLanguage(language) {
+	appendCookie(language);
+
 	var url = 'https://testing.yapms.com/app/?';
 
 	if(GET['t']) {
@@ -567,10 +589,6 @@ function setLanguage(language) {
 	if(GET['m']) {
 		url += 'm=' + GET['m'] + '&';
 	}
-
-	url += 'l=' + language;
-
-	alert(url);
 
 	window.location.href = url;
 }
