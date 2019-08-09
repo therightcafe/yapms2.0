@@ -1,5 +1,5 @@
-var scriptCache = 'd0.45.0';
-var indexCache = 'i0.1.0';
+var scriptCache = 'd0.45.1';
+var indexCache = 'i0.1.1';
 var staticCache = 's0.16.0';
 
 var _scriptCache = [
@@ -84,12 +84,13 @@ self.addEventListener('message', function(event) {
 					}
 					return cache;
 				});
-			});
-			clients.matchAll().then(clients => {
-				clients.forEach(client => {
-					if(client.id === clientID) {
-						client.postMessage("reload");
-					}
+			}).then(function() {
+				clients.matchAll().then(clients => {
+					clients.forEach(client => {
+						if(client.id === clientID) {
+							client.postMessage("reload");
+						}
+					});
 				});
 			});
 		});
