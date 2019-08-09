@@ -1,4 +1,4 @@
-var currentCache = 'v0.44.0';
+var currentCache = 'v0.44.1';
 
 var cookies = {};
 
@@ -555,6 +555,24 @@ function toggleChartLeans() {
 	chartLeans = !chartLeans;
 	rebuildChart();
 	updateBattleChart();
+}
+
+function setLanguage(language) {
+	var url = 'https://testing.yapms.com/app/?';
+
+	if(GET['t']) {
+		url += 't=' + GET['t'] + '&';
+	}
+
+	if(GET['m']) {
+		url += 'm=' + GET['m'] + '&';
+	}
+
+	url += 'l=' + language;
+
+	alert(url);
+
+	window.location.href = url;
 }
 
 function setMode(set) {

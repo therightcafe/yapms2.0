@@ -64,7 +64,7 @@
 			     '</script>';
 		}
 
-		if(mobile === false) {
+		if($mobile === false) {
 			echo '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 			<script>
 			     (adsbygoogle = window.adsbygoogle || []).push({
@@ -73,6 +73,14 @@
 			     });
 			</script>';
 		}
+
+		echo '<script>
+			var GET = {' .
+			'"t": "' . $_GET["t"] . '",' .
+			'"m": "' . $_GET["m"] . '",' .
+			'"l": "' . $_GET["l"] . '",' .
+			'};
+		</script>'
 	?>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -139,6 +147,10 @@ if($mobile === false) {
 
 	<button class="click-button" onclick="displayMiscMenu()" style="white-space: nowrap;">
 	<i class="fas fa-clipboard"></i> <?php echo _("Misc") ?>
+	</button>
+
+	<button class="click-button" onclick="displayLanguageMenu()" style="white-space: nowrap;">
+	<i class="fas fa-globe"></i> <?php echo _("Language") ?>
 	</button>
 
 	<button class="click-button" style="white-space: nowrap;">
@@ -464,31 +476,31 @@ if($mobile === false) {
 <div id="mapmenu-canada" class="popup selectmenu">
 	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2>Canada</h2>
-	<a class="selectmenu-button" href="./?t=Canada_provinces"><?php _("Provinces") ?></a>
-	<a class="selectmenu-button" href="./?t=Canada_constituencies"><?php _("Constituencies") ?></a>
+	<a class="selectmenu-button" href="./?t=Canada_provinces"><?php echo _("Provinces") ?></a>
+	<a class="selectmenu-button" href="./?t=Canada_constituencies"><?php echo _("Constituencies") ?></a>
 </div>
 
 <!-- German Maps -->
 <div id="mapmenu-germany" class="popup selectmenu">
 	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2>Germany</h2>
-	<a class="selectmenu-button" href="./?t=Germany_states"><?php _("States") ?></a>
-	<a class="selectmenu-button" href="./?t=Germany_constituencies"><?php _("Constituencies") ?></a>
+	<a class="selectmenu-button" href="./?t=Germany_states"><?php echo _("States") ?></a>
+	<a class="selectmenu-button" href="./?t=Germany_constituencies"><?php echo _("Constituencies") ?></a>
 </div>
 
 <!-- Australia Maps -->
 <div id="mapmenu-australia" class="popup selectmenu">
 	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2>Australia</h2>
-	<a class="selectmenu-button" href="./?t=Australia_states"><?php _("States") ?></a>
-	<a class="selectmenu-button" href="./?t=Australia_constituencies"><?php _("Constituencies") ?></a>
+	<a class="selectmenu-button" href="./?t=Australia_states"><?php echo _("States") ?></a>
+	<a class="selectmenu-button" href="./?t=Australia_constituencies"><?php echo _("Constituencies") ?></a>
 </div>
 
 <!-- Netherlands Maps -->
 <div id="mapmenu-netherlands" class="popup selectmenu">
 	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2>Netherlands</h2>
-	<a class="selectmenu-button" href="./?t=Netherlands_provinces"><?php _("Provinces") ?></a>
+	<a class="selectmenu-button" href="./?t=Netherlands_provinces"><?php echo _("Provinces") ?></a>
 	<a class="selectmenu-button" href="./?t=Netherlands_gemeenten">Gemeeten</a>
 </div>
 
@@ -605,6 +617,13 @@ if($mobile === false) {
 	<a class="selectmenu-split">Mock</a>
 	<a class="selectmenu-button" onclick='closeNotification(this); displayCountryMenu("lte")'; >LTE</a>
 </div> 
+
+<div id="languagemenu" class="popup selectmenu">
+	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
+	<h2><?php echo _("Select Language") ?></h2>
+	<a class="selectmenu-button" onclick='setLanguage("en")'>English</a>
+	<a class="selectmenu-button" onclick='setLanguage("de")'>Deutsche</a>
+</div>
 
 <div id="notification" class="popup">
 	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>

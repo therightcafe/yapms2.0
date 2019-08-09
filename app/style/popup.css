@@ -24,7 +24,8 @@
 }
 
 .popup h2 {
-	padding: 5px;
+	padding-right: 12px;
+	padding-left: 12px;
 	margin: 0px;
 	white-space: nowrap;
 }

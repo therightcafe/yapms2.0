@@ -38,6 +38,12 @@ function displayUpdateServiceWorker() {
 	notification.style.display = 'inline';
 }
 
+function displayLanguageMenu() {
+	closeAllPopups();
+	var menu = document.getElementById("languagemenu");
+	menu.style.display = 'flex';
+}
+
 function displayNotification(title, text) {
 	var notification = document.getElementById('notification');
 	var messageHTML = notification.querySelector('#notification-message');
