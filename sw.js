@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.44.100';
-var staticCache = 's0.15.100';
+var dynamicCache = 'd0.44.101';
+var staticCache = 's0.15.101';
 
 var cookies = {
 
@@ -245,8 +245,10 @@ self.addEventListener('fetch', function(event) {
 						return caches.match('./offline.php');
 					});
 				} else {
-					swLog('Web', 'fetch ' + event.request.url);
-					return fetch(event.request);
+					swLog('Web', 'fetch ' + req.url);
+					return fetch(req.request);
+					//swLog('Web', 'fetch ' + event.request.url);
+					//return fetch(event.request);
 				}
 			})
 			.catch(function(err) {
