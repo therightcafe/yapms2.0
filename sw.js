@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.44.95';
-var staticCache = 's0.15.95';
+var dynamicCache = 'd0.44.96';
+var staticCache = 's0.15.96';
 
 var cookies = {
 
@@ -231,32 +231,28 @@ self.addEventListener('install', function(event) {
 
 // first see if request is in cache, then check web
 self.addEventListener('fetch', function(event) {
+	var url = new URL(event.request.url);
+	var params = new URLSearchParams(url);
+
+	var t = params.get('t');
+	var m = params.get('m');
+	var l = 'de';
+
+	var realURL = "./app/?";
+	if(t) {
+		realURL += 't=' + t;
+	} else if(m) {
+		realURL += 'm=' + m;
+	}
+
+	realURL += '&l=' + l;
+
+	var req = new Request(url);
+
 	event.respondWith(
-		caches.match(event.request)
+		caches.match(req)
 			.then(function(response) {
-				var url = new URL(event.request.url);
-				var params = new URLSearchParams(url);
-				if(params.has('t')) {
-					var t = params.get('t');
-					t = '2020_senatorial';
-					var m = params.get('m');
-					var l = 'en';
-					if(cookies['language']) {
-						l = cookies['language'];
-					}
-					l = 'de';
-					url = './app/?';
-					if(t) {
-						url += 't=' + t + '&';
-					} else if(m) {
-						url += 'm=' + m + '&';
-					}
-					url += 'l=' + l;
-					var req = new Request(url);
-					swLog('Alter', 'appending language to URL ' + url);
-					//return(caches.match(req));
-					return fetch(req);
-				} else if(response) {
+				if(response) {
 					swLog('Cache' , 'fetch ' + event.request.url);
 					return response;
 				} else if(event.request.url.includes('yapms.com/app/') === true &&
