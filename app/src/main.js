@@ -581,7 +581,8 @@ function setLanguage(language) {
 	appendCookie('language', language);
 	var params = new URLSearchParams(window.location.search);
 	params.set('l', language);
-	var url = window.location.hostname + window.location.pathname + '?' + params.toString();
+	var url = window.location.pathname + '?' + params.toString();
+	url = 'https://testing.yapms.com' + url;
 	alert(url);
 	window.location.href = url;
 	/*
