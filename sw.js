@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.43.8';
-var staticCache = 's0.12.9';
+var dynamicCache = 'd0.44.0';
+var staticCache = 's0.15.0';
 
 function swLog(cache, message) {
 	console.log('SW ' + cache + ': ' + message + ' ( ' + dynamicCache + ' / ' + staticCache + ' )');
@@ -126,6 +126,7 @@ self.addEventListener('install', function(event) {
 				'./app/html/closebutton.svg',
 				'./app/html/loading.svg',
 				'./app/html/description.php',
+				'./app/html/localization.php',
 
 				'./app/style/battlechart.css',
 				'./app/style/legend.css',
@@ -154,6 +155,11 @@ self.addEventListener('install', function(event) {
 				'./app/src/congress.js',
 				'./app/src/keyboard.js',
 				'./app/src/deferedImages.js',
+
+				'./locales/de/LC_MESSAGES/de.mo',
+				'./locales/de/LC_MESSAGES/de.po',
+				'./locales/en/LC_MESSAGES/en.mo',
+				'./locales/en/LC_MESSAGES/en.po',
 			]).then(function() {
 				for(var i = 1864; i < 2016; i += 4) {
 					cache.add('./app/?t=' + i + '_presidential');
