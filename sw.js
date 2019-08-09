@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.44.16';
-var staticCache = 's0.15.16';
+var dynamicCache = 'd0.44.20';
+var staticCache = 's0.15.20';
 
 var cookies = {
 
@@ -139,9 +139,9 @@ self.addEventListener('install', function(event) {
 				'./app/src/keyboard.js',
 				'./app/src/deferedImages.js'
 			]).then(function() {
-				var langs = ['en', 'de'];
+				var langs = ['&l=en', '&l=de', ''];
 				for(var i = 0; i < langs.length; ++i) {
-					var lang = '&l=' + langs[i];
+					var lang = langs[i];
 					for(var i = 1864; i < 2016; i += 4) {
 						cache.add('./app/?t=' + i + '_presidential' + lang);
 					}
