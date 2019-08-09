@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.44.21';
-var staticCache = 's0.15.21';
+var dynamicCache = 'd0.44.63';
+var staticCache = 's0.15.63';
 
 var cookies = {
 
@@ -9,11 +9,20 @@ function swLog(cache, message) {
 	console.log('SW ' + cache + ': ' + message + ' ( ' + dynamicCache + ' / ' + staticCache + ' )');
 }
 
+function messageClient(msg) {
+	clients.matchAll().then(clients => {
+		clients.forEach(client => {
+			client.postMessage('SW: ' + msg);
+		});
+	});
+}
+
 self.addEventListener('message', function(event) {
 	var split = event.data.split(' ');
 	if(split[0] = 'c') {
 		cookies[split[1]] = split[2];
 	}
+	console.log(event.data);
 });
 
 self.addEventListener('install', function(event) {
@@ -128,42 +137,37 @@ self.addEventListener('install', function(event) {
 				'./app/src/popularvote.js',
 				'./app/src/congress.js',
 				'./app/src/keyboard.js',
-				'./app/src/deferedImages.js'
-			]).then(function() {
-				var langs = ['&l=en', '&l=de', ''];
-				for(var i = 0; i < langs.length; ++i) {
-					var lang = langs[i];
-					swLog(dynamicCache, 'loading language ' + lang);
-					for(var i = 1864; i < 2016; i += 4) {
-						cache.add('./app/?t=' + i + '_presidential' + lang);
-					}
-					cache.add('./app/index.php?' + lang);
-					cache.add('./app/?t=Current_house' + lang);
-					cache.add('./app/?t=Current_senate' + lang);
-					cache.add('./app/?t=2016_presidential_county' + lang);
-					cache.add('./app/?t=2020_presidential' + lang);
-					cache.add('./app/?t=2020_senatorial' + lang);
-					cache.add('./app/?t=2020_gubernatorial' + lang);
-					cache.add('./app/?t=2020_democratic_primary' + lang);
-					cache.add('./app/?t=2020_republican_primary' + lang);
-					cache.add('./app/?t=USA_county' + lang);
-					cache.add('./app/?t=USA_congressional' + lang);
-					cache.add('./app/?t=USA_gubernatorial' + lang);
-					cache.add('./app/?t=USA_senatorial' + lang);
-					cache.add('./app/?t=USA_takeall' + lang);
-					cache.add('./app/?t=USA_proportional' + lang);
-					cache.add('./app/?t=Germany_states' + lang);
-					cache.add('./app/?t=Germany_constituencies' + lang);
-					cache.add('./app/?t=Spain_constituencies' + lang);
-					cache.add('./app/?t=Italy_states' + lang);
-					cache.add('./app/?t=UnitedKingdom_constituencies' + lang);
-					cache.add('./app/?t=Canada_provinces' + lang);
-					cache.add('./app/?t=Canada_constituencies' + lang);
-					cache.add('./app/?t=Australia_constituencies' + lang);
-					cache.add('./app/?t=Australia_states' + lang);
-					cache.add('./app/?t=Brazil_deputies' + lang);
-				}
+				'./app/src/deferedImages.js',
 
+				'./app/index.php?',
+				'./app/?t=Current_house',
+				'./app/?t=Current_senate',
+				'./app/?t=2016_presidential_county',
+				'./app/?t=2020_presidential',
+				'./app/?t=2020_senatorial',
+				'./app/?t=2020_gubernatorial',
+				'./app/?t=2020_democratic_primary',
+				'./app/?t=2020_republican_primary',
+				'./app/?t=USA_county',
+				'./app/?t=USA_congressional',
+				'./app/?t=USA_gubernatorial',
+				'./app/?t=USA_senatorial',
+				'./app/?t=USA_takeall',
+				'./app/?t=USA_proportional',
+				'./app/?t=Germany_states',
+				'./app/?t=Germany_constituencies',
+				'./app/?t=Spain_constituencies',
+				'./app/?t=Italy_states',
+				'./app/?t=UnitedKingdom_constituencies',
+				'./app/?t=Canada_provinces',
+				'./app/?t=Canada_constituencies',
+				'./app/?t=Australia_constituencies',
+				'./app/?t=Australia_states',
+				'./app/?t=Brazil_deputies'
+			]).then(function() {
+				for(var i = 1864; i < 2016; i += 4) {
+					cache.add('./app/?t=' + i + '_presidential');
+				}
 				return cache;
 			});
 		})
@@ -172,9 +176,6 @@ self.addEventListener('install', function(event) {
 
 // first see if request is in cache, then check web
 self.addEventListener('fetch', function(event) {
-	if(event.request.url.includes('/app/?t=')) {
-		event.request.url = event.request.url + '&l=' + cookies['language'];
-	}
 	event.respondWith(
 		caches.match(event.request)
 			.then(function(response) {

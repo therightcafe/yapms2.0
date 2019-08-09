@@ -703,6 +703,11 @@ if($mobile === true) {
 <script>
 	if('serviceWorker' in navigator) {
 		console.log('Attempting to register service worker');
+
+		navigator.serviceWorker.addEventListener('message', function(event) {
+			console.log(event.data);
+		});
+
 		navigator.serviceWorker
 		.register('../sw.js')
 		.then(reg => {

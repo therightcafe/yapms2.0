@@ -2,10 +2,11 @@
 session_start();
 $language = "en";
 
-if(isset($_COOKIE["language"])) {
-	$language = $_COOKIE["language"];
-} else if(isset($_GET["l"])) {
+
+if(isset($_GET["l"])) {
 	$language = $_GET["l"];	
+} else if(isset($_COOKIE["language"])) {
+	$language = $_COOKIE["language"];
 }
 
 putenv("LANG=$language");
