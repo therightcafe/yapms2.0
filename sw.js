@@ -1,28 +1,97 @@
-var dynamicCache = 'd0.44.102';
-var staticCache = 's0.15.102';
+var scriptCache = 'd0.44.116';
+var indexCache = 'i0.0.2';
+var staticCache = 's0.15.105';
 
-var cookies = {
+var _scriptCache = [
+	'./style.css',
 
-};
+	'./app/html/battlechart.html',
+	'./app/html/closebutton.svg',
+	'./app/html/loading.svg',
+
+	'./app/src/main.js',
+	'./app/src/mobile.js',
+	'./app/src/presets.js',
+	'./app/src/loadmap.js',
+	'./app/src/savemap.js',
+	'./app/src/htmlControl.js',
+	'./app/src/html2canvas.min.js',
+	'./app/src/data.js',
+	'./app/src/click.js',
+	'./app/src/battlechart.js',
+	'./app/src/State.js',
+	'./app/src/Candidate.js',
+	'./app/src/yapnews.js',
+	'./app/src/popularvote.js',
+	'./app/src/congress.js',
+	'./app/src/keyboard.js',
+	'./app/src/deferedImages.js'
+];
+
+var _indexCache = [
+	'./',
+	'./index.php',
+	'./offline.php',
+
+	'./app/',
+	'./app/index.php',
+	'./app/?t=Current_house',
+	'./app/?t=Current_senate',
+	'./app/?t=2016_presidential_county',
+	'./app/?t=2020_presidential',
+	'./app/?t=2020_senatorial',
+	'./app/?t=2020_gubernatorial',
+	'./app/?t=2020_democratic_primary',
+	'./app/?t=2020_republican_primary',
+	'./app/?t=USA_county',
+	'./app/?t=USA_congressional',
+	'./app/?t=USA_gubernatorial',
+	'./app/?t=USA_senatorial',
+	'./app/?t=USA_takeall',
+	'./app/?t=USA_proportional',
+	'./app/?t=Germany_states',
+	'./app/?t=Germany_constituencies',
+	'./app/?t=Spain_constituencies',
+	'./app/?t=Italy_states',
+	'./app/?t=UnitedKingdom_constituencies',
+	'./app/?t=Canada_provinces',
+	'./app/?t=Canada_constituencies',
+	'./app/?t=Australia_constituencies',
+	'./app/?t=Australia_states',
+	'./app/?t=Brazil_deputies'
+];
 
 function swLog(cache, message) {
-	console.log('SW ' + cache + ': ' + message + ' ( ' + dynamicCache + ' / ' + staticCache + ' )');
-}
-
-function messageClient(msg) {
-	clients.matchAll().then(clients => {
-		clients.forEach(client => {
-			client.postMessage('SW: ' + msg);
-		});
-	});
+	console.log('SW ' + cache + ': ' + message + ' ( ' + scriptCache + ' / ' + staticCache + ' / ' + indexCache + ' )');
 }
 
 self.addEventListener('message', function(event) {
-	var split = event.data.split(' ');
-	if(split[0] = 'c') {
-		cookies[split[1]] = split[2];
+	var clientID = event.source.id;
+	swLog('Message', event.data);
+	if(event.data === 'localize') {
+		caches.keys().then(function(cacheNames) {
+			cacheNames.forEach(function(cacheName) {
+				if(cacheName === indexCache) {
+					swLog(cacheName, 'delete');
+					return caches.delete(cacheName);
+				}
+			});
+			caches.open(indexCache).then(function(cache) {
+				swLog(indexCache, 'installing');
+				return cache.addAll(_indexCache).then(function() {
+					for(var i = 1864; i < 2016; i += 4) {
+						cache.add('./app/?t=' + i + '_presidential');
+					}
+					return cache;
+				});
+			});
+			clients.matchAll().then(clients => {
+				clients.forEach(client => {
+					client.postMessage("reload");
+				});
+			});
+		});
 	}
-	console.log(event.data);
 });
 
 self.addEventListener('install', function(event) {
@@ -107,92 +176,15 @@ self.addEventListener('install', function(event) {
 			});
 		}));
 	event.waitUntil(
-		caches.open(dynamicCache).then(function(cache) {
-			swLog(dynamicCache, 'installing');
-			return cache.addAll([
-				'./',
-				'./index.php',
-				'./offline.php',
-				'./style.css',
-
-				'./app/',
-
-				'./app/html/battlechart.html',
-				'./app/html/closebutton.svg',
-				'./app/html/loading.svg',
-
-				'./app/src/main.js',
-				'./app/src/mobile.js',
-				'./app/src/presets.js',
-				'./app/src/loadmap.js',
-				'./app/src/savemap.js',
-				'./app/src/htmlControl.js',
-				'./app/src/html2canvas.min.js',
-				'./app/src/data.js',
-				'./app/src/click.js',
-				'./app/src/battlechart.js',
-				'./app/src/State.js',
-				'./app/src/Candidate.js',
-				'./app/src/yapnews.js',
-				'./app/src/popularvote.js',
-				'./app/src/congress.js',
-				'./app/src/keyboard.js',
-				'./app/src/deferedImages.js',
-				
-				'./app/?l=en',
-				'./app/index.php?l=en&l=en',
-				'./app/?t=Current_house&l=en&l=en',
-				'./app/?t=Current_senate&l=en',
-				'./app/?t=2016_presidential_county&l=en',
-				'./app/?t=2020_presidential&l=en',
-				'./app/?t=2020_senatorial&l=en',
-				'./app/?t=2020_gubernatorial&l=en',
-				'./app/?t=2020_democratic_primary&l=en',
-				'./app/?t=2020_republican_primary&l=en',
-				'./app/?t=USA_county&l=en',
-				'./app/?t=USA_congressional&l=en',
-				'./app/?t=USA_gubernatorial&l=en',
-				'./app/?t=USA_senatorial&l=en',
-				'./app/?t=USA_takeall&l=en',
-				'./app/?t=USA_proportional&l=en',
-				'./app/?t=Germany_states&l=en',
-				'./app/?t=Germany_constituencies&l=en',
-				'./app/?t=Spain_constituencies&l=en',
-				'./app/?t=Italy_states&l=en',
-				'./app/?t=UnitedKingdom_constituencies&l=en',
-				'./app/?t=Canada_provinces&l=en',
-				'./app/?t=Canada_constituencies&l=en',
-				'./app/?t=Australia_constituencies&l=en',
-				'./app/?t=Australia_states&l=en',
-				'./app/?t=Brazil_deputies&l=en',
-				
-				'./app/?l=de',
-				'./app/index.php?l=de',
-				'./app/?t=Current_house&l=de',
-				'./app/?t=Current_senate&l=de',
-				'./app/?t=2016_presidential_county&l=de',
-				'./app/?t=2020_presidential&l=de',
-				'./app/?t=2020_senatorial&l=de',
-				'./app/?t=2020_gubernatorial&l=de',
-				'./app/?t=2020_democratic_primary&l=de',
-				'./app/?t=2020_republican_primary&l=de',
-				'./app/?t=USA_county&l=de',
-				'./app/?t=USA_congressional&l=de',
-				'./app/?t=USA_gubernatorial&l=de',
-				'./app/?t=USA_senatorial&l=de',
-				'./app/?t=USA_takeall&l=de',
-				'./app/?t=USA_proportional&l=de',
-				'./app/?t=Germany_states&l=de',
-				'./app/?t=Germany_constituencies&l=de',
-				'./app/?t=Spain_constituencies&l=de',
-				'./app/?t=Italy_states&l=de',
-				'./app/?t=UnitedKingdom_constituencies&l=de',
-				'./app/?t=Canada_provinces&l=de',
-				'./app/?t=Canada_constituencies&l=de',
-				'./app/?t=Australia_constituencies&l=de',
-				'./app/?t=Australia_states&l=de',
-				'./app/?t=Brazil_deputies&l=de'
-			]).then(function() {
+		caches.open(scriptCache).then(function(cache) {
+			swLog(scriptCache, 'installing');
+			return cache.addAll(_scriptCache);
+		})
+	);
+	event.waitUntil(
+		caches.open(indexCache).then(function(cache) {
+			swLog(indexCache, 'installing');
+			return cache.addAll(_indexCache).then(function() {
 				for(var i = 1864; i < 2016; i += 4) {
 					cache.add('./app/?t=' + i + '_presidential');
 				}
@@ -204,26 +196,8 @@ self.addEventListener('install', function(event) {
 
 // first see if request is in cache, then check web
 self.addEventListener('fetch', function(event) {
-	var url = new URL(event.request.url);
-	var params = new URLSearchParams(url);
-
-	var t = params.get('t');
-	var m = params.get('m');
-	var l = 'de';
-
-	var realURL = "./app/?";
-	if(t) {
-		realURL += 't=' + t;
-	} else if(m) {
-		realURL += 'm=' + m;
-	}
-
-	realURL += '&l=' + l;
-
-	var req = new Request(url);
-
 	event.respondWith(
-		caches.match(req)
+		caches.match(event.request)
 			.then(function(response) {
 				if(response) {
 					swLog('Cache' , 'fetch ' + event.request.url);
@@ -232,15 +206,12 @@ self.addEventListener('fetch', function(event) {
 						event.request.url.includes('yapms.com/app/req_articles.php') === false &&
 						event.request.url.includes('yapms.com/app/?m=') === false &&
 						event.request.url.includes('yapms.com/app/savemap.php') === false) {
-					//swLog('Web', 'fetch+cache ' + event.request.url);
-					swLog('Web', 'fetch+cache ' + req.url);
-					//return fetch(event.request)
-					return fetch(req)
+					swLog('Web', 'fetch+cache ' + event.request.url);
+					return fetch(event.request)
 					.then(function(response) {
 						swLog('Web', 'caching ' + event.request.url);
 						return caches.open('flycache').then((cache) => {
-							//cache.put(event.request, response.clone());
-							cache.put(req, response.clone());
+							cache.put(event.request, response.clone());
 							return response;
 						});
 					}).catch(function(err){ 
@@ -248,10 +219,8 @@ self.addEventListener('fetch', function(event) {
 						return caches.match('./offline.php');
 					});
 				} else {
-					swLog('Web', 'fetch ' + req.url);
-					return fetch(req);
-					//swLog('Web', 'fetch ' + event.request.url);
-					//return fetch(event.request);
+					swLog('Web', 'fetch ' + event.request.url);
+					return fetch(event.request);
 				}
 			})
 			.catch(function(err) {
@@ -266,14 +235,17 @@ self.addEventListener('activate', function(event) {
 	event.waitUntil(
 		caches.keys().then(function(cacheNames) {
 			cacheNames.forEach(function(cacheName) {
-				if(cacheName === dynamicCache ||
-					cacheName === staticCache) {
+				if(cacheName === scriptCache ||
+					cacheName === staticCache ||
+					cacheName === indexCache) {
 					swLog(cacheName, 'keep');
 				} else {
 					swLog(cacheName, 'delete');
 					return caches.delete(cacheName);
 				}
 			});
+		}).then(function() {
+			self.clients.claim();
 		})
 	);
 });

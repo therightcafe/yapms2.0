@@ -579,7 +579,7 @@ function loadPage(t, m, l) {
 
 function setLanguage(language) {
 	appendCookie('language', language);
-	location.reload();
+	navigator.serviceWorker.controller.postMessage('localize'); 
 }
 
 function setMode(set) {
@@ -1101,9 +1101,9 @@ function appendCookie(key, value) {
 	document.cookie = cookie;
 	console.log('append cookie: key=' + key + ' value=' + value);
 
-	if('serviceWorker' in navigator) {
+//	if('serviceWorker' in navigator) {
 		//navigator.serviceWorker.controller.postMessage('c ' + key + ' ' + value); 
-	}
+//	}
 }
 
 function loadCookies() {
