@@ -579,20 +579,7 @@ function loadPage(t, m, l) {
 
 function setLanguage(language) {
 	appendCookie('language', language);
-	var params = new URLSearchParams(window.location.search);
-	params.set('l', language);
-	var url = window.location.pathname + '?' + params.toString();
-	url = 'https://testing.yapms.com' + url;
-	alert(url);
-	window.location.href = url;
-	/*
-	url.replace(/&l=de/g, '');
-	url.replace(/\&l\=en/g, '');
-	alert(url);
-	url += '&l=' + language;
-	window.location.href = url;
-	*/
-	//location.reload();
+	location.reload();
 }
 
 function setMode(set) {

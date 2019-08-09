@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.44.70';
-var staticCache = 's0.15.70';
+var dynamicCache = 'd0.44.71';
+var staticCache = 's0.15.71';
 
 var cookies = {
 
