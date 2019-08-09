@@ -133,6 +133,7 @@ self.addEventListener('install', function(event) {
 				var langs = ['&l=en', '&l=de', ''];
 				for(var i = 0; i < langs.length; ++i) {
 					var lang = langs[i];
+					swLog(dynamicCache, 'loading language ' + lang);
 					for(var i = 1864; i < 2016; i += 4) {
 						cache.add('./app/?t=' + i + '_presidential' + lang);
 					}
