@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.44.84';
-var staticCache = 's0.15.84';
+var dynamicCache = 'd0.44.85';
+var staticCache = 's0.15.85';
 
 var cookies = {
 
@@ -223,6 +223,8 @@ self.addEventListener('fetch', function(event) {
 				if(response) {
 					if(alter) {
 						swLog('Alter', 'appending language to URL ' + url);
+					} else {
+						swLog('NO Alter', 'appending language to URL ' + url);
 					}
 					swLog('Cache' , 'fetch ' + event.request.url);
 					return response;
