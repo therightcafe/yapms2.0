@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.44.65';
-var staticCache = 's0.15.65';
+var dynamicCache = 'd0.44.67';
+var staticCache = 's0.15.67';
 
 var cookies = {
 
@@ -176,8 +176,18 @@ self.addEventListener('install', function(event) {
 
 // first see if request is in cache, then check web
 self.addEventListener('fetch', function(event) {
+
+	var req = event.request;
+
+	if(event.request.url.includes('?t=')) {
+		var url = new URL(event.request.url);
+		var params = new URLSearchParams(url);
+		params.set('l', cookies['language']);
+		req = new Request(url);
+	}
+
 	event.respondWith(
-		caches.match(event.request)
+		caches.match(req)
 			.then(function(response) {
 				if(response) {
 					swLog('Cache' , 'fetch ' + event.request.url);
