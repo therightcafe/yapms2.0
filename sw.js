@@ -158,7 +158,7 @@ self.addEventListener('install', function(event) {
 				'./app/?t=Germany_constituencies&l=en',
 				'./app/?t=Spain_constituencies&l=en',
 				'./app/?t=Italy_states&l=en',
-				'./app/?t=UnitedKingdom_constituencies',l=en',
+				'./app/?t=UnitedKingdom_constituencies&l=en',
 				'./app/?t=Canada_provinces&l=en',
 				'./app/?t=Canada_constituencies&l=en',
 				'./app/?t=Australia_constituencies&l=en',
