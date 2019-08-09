@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.44.96';
-var staticCache = 's0.15.96';
+var dynamicCache = 'd0.44.100';
+var staticCache = 's0.15.100';
 
 var cookies = {
 
@@ -138,33 +138,6 @@ self.addEventListener('install', function(event) {
 				'./app/src/congress.js',
 				'./app/src/keyboard.js',
 				'./app/src/deferedImages.js',
-				
-				'./app/',
-				'./app/index.php',
-				'./app/?t=Current_house',
-				'./app/?t=Current_senate',
-				'./app/?t=2016_presidential_county',
-				'./app/?t=2020_presidential',
-				'./app/?t=2020_senatorial',
-				'./app/?t=2020_gubernatorial',
-				'./app/?t=2020_democratic_primary',
-				'./app/?t=2020_republican_primary',
-				'./app/?t=USA_county',
-				'./app/?t=USA_congressional',
-				'./app/?t=USA_gubernatorial',
-				'./app/?t=USA_senatorial',
-				'./app/?t=USA_takeall',
-				'./app/?t=USA_proportional',
-				'./app/?t=Germany_states',
-				'./app/?t=Germany_constituencies',
-				'./app/?t=Spain_constituencies',
-				'./app/?t=Italy_states',
-				'./app/?t=UnitedKingdom_constituencies',
-				'./app/?t=Canada_provinces',
-				'./app/?t=Canada_constituencies',
-				'./app/?t=Australia_constituencies',
-				'./app/?t=Australia_states',
-				'./app/?t=Brazil_deputies',
 				
 				'./app/?l=en',
 				'./app/index.php?l=en&l=en',
