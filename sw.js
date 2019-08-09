@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.44.82';
-var staticCache = 's0.15.82';
+var dynamicCache = 'd0.44.83';
+var staticCache = 's0.15.83';
 
 var cookies = {
 
@@ -211,7 +211,8 @@ self.addEventListener('fetch', function(event) {
 		var params = new URLSearchParams(url);
 		params.set('t', params.get('t'));
 		params.set('m', params.get('m'));
-		params.set('l', cookies['language']);
+		//params.set('l', cookies['language']);
+		params.set('l', 'de');
 		url.search = params.toString();
 		req = new Request(url);
 	}
