@@ -1,6 +1,6 @@
-var scriptCache = 'd0.44.116';
-var indexCache = 'i0.0.2';
-var staticCache = 's0.15.105';
+var scriptCache = 'd0.45.0';
+var indexCache = 'i0.1.0';
+var staticCache = 's0.16.0';
 
 var _scriptCache = [
 	'./style.css',
@@ -87,7 +87,9 @@ self.addEventListener('message', function(event) {
 			});
 			clients.matchAll().then(clients => {
 				clients.forEach(client => {
-					client.postMessage("reload");
+					if(client.id === clientID) {
+						client.postMessage("reload");
+					}
 				});
 			});
 		});
