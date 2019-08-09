@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.44.85';
-var staticCache = 's0.15.85';
+var dynamicCache = 'd0.44.86';
+var staticCache = 's0.15.86';
 
 var cookies = {
 
@@ -202,30 +202,21 @@ self.addEventListener('install', function(event) {
 
 // first see if request is in cache, then check web
 self.addEventListener('fetch', function(event) {
-
 	var req = event.request;
-	var alter = false;
-	if(event.request.url.includes('?t=')) {
-		alter = true;
-		var url = new URL(event.request.url);
-		var params = new URLSearchParams(url);
-		params.set('t', params.get('t'));
-		params.set('m', params.get('m'));
-		//params.set('l', cookies['language']);
-		params.set('l', 'de');
-		url.search = params.toString();
-		req = new Request(url);
-	}
-
 	event.respondWith(
 		caches.match(req)
 			.then(function(response) {
-				if(response) {
-					if(alter) {
-						swLog('Alter', 'appending language to URL ' + url);
-					} else {
-						swLog('NO Alter', 'appending language to URL ' + url);
-					}
+				if(event.request.url.includes('?t=')) {
+					var url = new URL(event.request.url);
+					var params = new URLSearchParams(url);
+					params.set('t', params.get('t'));
+					params.set('m', params.get('m'));
+					params.set('l', 'de');
+					url.search = params.toString();
+					req = new Request(url);
+					swLog('Alter', 'appending language to URL ' + url);
+					return(caches.match(req));
+				} else if(response) {
 					swLog('Cache' , 'fetch ' + event.request.url);
 					return response;
 				} else if(event.request.url.includes('yapms.com/app/') === true &&
