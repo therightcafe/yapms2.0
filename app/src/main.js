@@ -1,4 +1,4 @@
-var currentCache = 'v0.45.0';
+var currentCache = 'v0.45.13';
 
 var cookies = {};
 
@@ -578,6 +578,10 @@ function loadPage(t, m, l) {
 }
 
 function setLanguage(language) {
+	gtag('event', 'set_language', {
+		'event_category': 'language',
+		'event_label': 'Set language to ' + language
+	});
 	appendCookie('language', language);
 	closeAllPopups();
 	if(navigator.onLine) {
