@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.44.80';
-var staticCache = 's0.15.80';
+var dynamicCache = 'd0.44.81';
+var staticCache = 's0.15.81';
 
 var cookies = {
 
@@ -204,20 +204,23 @@ self.addEventListener('install', function(event) {
 self.addEventListener('fetch', function(event) {
 
 	var req = event.request;
-
+	var alter = false;
 	if(event.request.url.includes('?t=')) {
+		alter = true;
 		var url = new URL(event.request.url);
 		var params = new URLSearchParams(url);
 		params.set('l', cookies['language']);
 		url.search = params.toString();
 		req = new Request(url);
-		swLog('Alter', 'appending language to URL ' + url);
 	}
 
 	event.respondWith(
 		caches.match(req)
 			.then(function(response) {
 				if(response) {
+					if(alter) {
+						swLog('Alter', 'appending language to URL ' + url);
+					}
 					swLog('Cache' , 'fetch ' + event.request.url);
 					return response;
 				} else if(event.request.url.includes('yapms.com/app/') === true &&
