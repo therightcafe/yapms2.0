@@ -149,7 +149,7 @@ if($mobile === false) {
 	<i class="fas fa-clipboard"></i> <?php echo _("Misc") ?>
 	</button>
 
-	<button class="click-button" onclick="displayLanguageMenu()" style="white-space: nowrap;">
+	<button id="languagebutton" class="click-button" onclick="displayLanguageMenu()" style="white-space: nowrap;">
 	<i class="fas fa-globe"></i> <?php echo _("Language") ?>
 	</button>
 
