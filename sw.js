@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.44.20';
-var staticCache = 's0.15.20';
+var dynamicCache = 'd0.44.21';
+var staticCache = 's0.15.21';
 
 var cookies = {
 
@@ -47,6 +47,7 @@ self.addEventListener('install', function(event) {
 				'./app/res/australia_constituencies.svg',
 				'./app/res/australia.svg',
 				'./app/res/spain_constituencies.svg',
+				'./app/res/brazil_states.svg',
 
 				'./app/req_congress.php',
 				
@@ -110,17 +111,7 @@ self.addEventListener('install', function(event) {
 				'./app/html/battlechart.html',
 				'./app/html/closebutton.svg',
 				'./app/html/loading.svg',
-/*
-				'./app/style/battlechart.css',
-				'./app/style/legend.css',
-				'./app/style/selectmenu.css',
-				'./app/style/mobile.css',
-				'./app/style/popup.css',
-				'./app/style/style.css',
-				'./app/style/sidebar.css',
-				'./app/style/menu.css',
-				'./app/style/fonts.css',
-*/
+
 				'./app/src/main.js',
 				'./app/src/mobile.js',
 				'./app/src/presets.js',
@@ -169,6 +160,7 @@ self.addEventListener('install', function(event) {
 					cache.add('./app/?t=Canada_constituencies' + lang);
 					cache.add('./app/?t=Australia_constituencies' + lang);
 					cache.add('./app/?t=Australia_states' + lang);
+					cache.add('./app/?t=Brazil_deputies' + lang);
 				}
 
 				return cache;
