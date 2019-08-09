@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.44.92';
-var staticCache = 's0.15.92';
+var dynamicCache = 'd0.44.93';
+var staticCache = 's0.15.93';
 
 var cookies = {
 
@@ -204,14 +204,14 @@ self.addEventListener('install', function(event) {
 
 // first see if request is in cache, then check web
 self.addEventListener('fetch', function(event) {
-	var req = event.request;
 	event.respondWith(
-		caches.match(req)
+		caches.match(event.request)
 			.then(function(response) {
 				if(response && event.request.url.includes('?t=')) {
 					var url = new URL(event.request.url);
 					var params = new URLSearchParams(url);
 					var t = params.get('t');
+					t = '2020_senatorial';
 					var m = params.get('m');
 					var l = 'en';
 					if(cookies['language']) {
@@ -225,9 +225,10 @@ self.addEventListener('fetch', function(event) {
 						url += 'm=' + m + '&';
 					}
 					url += 'l=' + l;
-					req = new Request(url);
+					var req = new Request(url);
 					swLog('Alter', 'appending language to URL ' + url);
-					return(caches.match(req));
+					//return(caches.match(req));
+					return fetch(req);
 				} else if(response) {
 					swLog('Cache' , 'fetch ' + event.request.url);
 					return response;
