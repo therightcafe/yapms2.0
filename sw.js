@@ -1,6 +1,6 @@
-var scriptCache = 'd0.45.11';
-var indexCache = 'i0.1.2';
-var staticCache = 's0.16.0';
+var scriptCache = 'd0.45.12';
+var indexCache = 'i0.1.12';
+var staticCache = 's0.16.12';
 
 var _scriptCache = [
 	'./style.css',

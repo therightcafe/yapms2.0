@@ -1,12 +1,27 @@
 <!DOCTYPE html>
+<?php
+	include './html/localization.php';
+?>
 <?php echo '<?xml version="1.0" encoding="UTF-8" standalone="no"?>' ?>
-<html class="noSelect" lang="en">
+<html class="noSelect" lang="<?php echo _("GETLANGUAGE") ?>">
 
 <head>
 	<meta charset="UTF-8">
 <?php
-	include './html/localization.php';
 	include './html/description.php';
+
+	echo 
+	'<script>
+	var language = {' .
+		'"Mode": "' . _("Mode") . '",' .	
+		'"Mode-Option1": "' . _("Mode-Option1") . '",' .
+		'"Mode-Option2": "' . _("Mode-Option2") . '",' .
+		'"Mode-Option3": "' . _("Mode-Option3") . '",' .
+		'"Mode-Option4": "' . _("Mode-Option4") . '",' .
+		'"Mode-Option5": "' . _("Mode-Option5") . '",' .
+		'"Mode-Option6": "' . _("Mode-Option6") . '"' .
+	'};
+	</script>';
 ?>
 	<meta name="keywords" content="Map,Election,Political,Interactive,Simulator,Electoral,270,2020,USA,Presidential">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">

@@ -5,6 +5,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: de\n"
 
+msgid "GETLANGUAGE"
+msgstr "en"
+
 # CHART MENU
 msgid "Chart-Option1"
 msgstr "Horizontal Battle"
