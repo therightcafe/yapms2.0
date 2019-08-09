@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.44.101';
-var staticCache = 's0.15.101';
+var dynamicCache = 'd0.44.102';
+var staticCache = 's0.15.102';
 
 var cookies = {
 
@@ -232,12 +232,15 @@ self.addEventListener('fetch', function(event) {
 						event.request.url.includes('yapms.com/app/req_articles.php') === false &&
 						event.request.url.includes('yapms.com/app/?m=') === false &&
 						event.request.url.includes('yapms.com/app/savemap.php') === false) {
-					swLog('Web', 'fetch+cache ' + event.request.url);
-					return fetch(event.request)
+					//swLog('Web', 'fetch+cache ' + event.request.url);
+					swLog('Web', 'fetch+cache ' + req.url);
+					//return fetch(event.request)
+					return fetch(req)
 					.then(function(response) {
 						swLog('Web', 'caching ' + event.request.url);
 						return caches.open('flycache').then((cache) => {
-							cache.put(event.request, response.clone());
+							//cache.put(event.request, response.clone());
+							cache.put(req, response.clone());
 							return response;
 						});
 					}).catch(function(err){ 
@@ -246,7 +249,7 @@ self.addEventListener('fetch', function(event) {
 					});
 				} else {
 					swLog('Web', 'fetch ' + req.url);
-					return fetch(req.request);
+					return fetch(req);
 					//swLog('Web', 'fetch ' + event.request.url);
 					//return fetch(event.request);
 				}
