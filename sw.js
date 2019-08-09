@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.44.86';
-var staticCache = 's0.15.86';
+var dynamicCache = 'd0.44.87';
+var staticCache = 's0.15.87';
 
 var cookies = {
 
@@ -209,9 +209,16 @@ self.addEventListener('fetch', function(event) {
 				if(event.request.url.includes('?t=')) {
 					var url = new URL(event.request.url);
 					var params = new URLSearchParams(url);
-					params.set('t', params.get('t'));
-					params.set('m', params.get('m'));
-					params.set('l', 'de');
+					params.delete('t');
+					params.delete('m');
+					params.delete('l');
+
+					if(params.has('t'))
+						params.append('t', params.get('t'));
+					if(params.has('m'))
+						params.append('m', params.get('m'));
+					params.append('l', 'de');
+
 					url.search = params.toString();
 					req = new Request(url);
 					swLog('Alter', 'appending language to URL ' + url);
