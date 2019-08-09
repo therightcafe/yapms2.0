@@ -630,30 +630,27 @@ function setMode(set) {
 	}
 
 	if(set === 'paintmove') {
-		modeText = '<i class="fas fa-paint-brush"></i> Paint/Move';
+		modeText = '<i class="fas fa-paint-brush"></i> ' + language["Mode-Option1"];
 		panObject.enablePan();
 		panObject.enableZoom();
 	} else if(set === 'paint') {
-		modeText = '<i class="fas fa-paint-brush"></i> Paint';
+		modeText = '<i class="fas fa-paint-brush"></i> ' + language["Mode-Option2"];
 	} else if(set === 'move') {
-		modeText = '<i class="fas fa-arrows-alt"></i> Move';
+		modeText = '<i class="fas fa-arrows-alt"></i> ' + language["Mode-Option3"];
 		panObject.enablePan();
 		panObject.enableZoom();
 	} else if(set === 'ec') {
-		modeText = '<i class="fas fa-edit"></i> EC Edit';
+		modeText = '<i class="fas fa-edit"></i> ' + language["Mode-Option4"];
 		notificationText = "Click on a state to set its electoral college";
 	} else if(set === 'delete') {
-		modeText = '<i class="fas fa-eraser"></i> Disable State';
+		modeText = '<i class="fas fa-eraser"></i> ' + language["Mode-Option5"];
 		notificationText = "Click on a state to disable/enable it";
 	} else if(set === 'candidate') {
-		modeText = '<i class="fas fa-user-edit"></i> Edit Candidate';
+		modeText = '<i class="fas fa-user-edit"></i> ' + language["Mode-Option6"];
 		notificationText = "Click on a candidate in the legend to edit their name and color";
-	} else if(set === 'deletecandidate') {
-		modeText = '<i class="fas fa-user-edit"></i> Delete Candidate';
-		notificationText = "Click on a candidate to delete them";
 	}
 
-	modeHTML.innerHTML = '<i class="fas fa-cog"></i> Modes (' + modeText + ')';
+	modeHTML.innerHTML = '<i class="fas fa-cog"></i> ' + language["Mode"] + ' (' + modeText + ')';
 
 	var notification = document.getElementById('notification');
 	if(mode === 'paint' || mode === 'move' || mode === 'paintmove') {

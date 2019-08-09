@@ -1,0 +1,79 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
+
+# CHART MENU
+msgid "Chart-Option1"
+msgstr "Horizontal Battle"
+
+msgid "Chart-Option2"
+msgstr "Vertical Battle"
+
+msgid "Chart-Option3"
+msgstr "Side Pie"
+
+msgid "Chart-Option4"
+msgstr "Bottom Pie"
+
+msgid "Chart-Option5"
+msgstr "Side Doughnut"
+
+msgid "Chart-Option6"
+msgstr "Bottom Doughnut"
+
+msgid "Chart-Option7"
+msgstr "Side Bar"
+
+msgid "Chart-Option8"
+msgstr "None"
+
+msgid "Chart-Setting1"
+msgstr "Legend Counter"
+
+msgid "Chart-Setting2"
+msgstr "Chart Labels"
+
+msgid "Chart-Setting3"
+msgstr "Chart Leans"
+
+msgid "Chart-Setting4"
+msgstr "Legend Leans"
+
+# MODE MENU
+msgid "Mode-Option1"
+msgstr "Paint / Move"
+
+msgid "Mode-Option2"
+msgstr "Paint"
+
+msgid "Mode-Option3"
+msgstr "Move"
+
+msgid "Mode-Option4"
+msgstr "Disable State"
+
+msgid "Mode-Option5"
+msgstr "EC Edit"
+
+msgid "Mode-Option6"
+msgstr "Candidate Edit"
+
+# LOAD MENU
+msgid "Load-Menu-Message"
+msgstr "Select a yapms file to load"
+
+# POPULAR VOTE
+msgid "Shortcut-F"
+msgstr "Hold down to quickly fill in districts"
+
+msgid "Settings-Option1"
+msgstr "Auto Margins"
+
+msgid "Settings-Option2"
+msgstr "Auto Popular Vote"
+
+msgid "Settings-Option3"
+msgstr "Avoid Auto AL"

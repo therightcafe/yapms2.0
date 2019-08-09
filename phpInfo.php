@@ -15,7 +15,7 @@ bindtextdomain($domain, "./locales");
 bind_textdomain_codeset($domain, 'UTF-8');
 textdomain($domain);
 
-echo _("aaa");
+echo _("Map");
 
 echo '<br>';
 echo LC_ALL . '<br>';
