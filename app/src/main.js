@@ -578,7 +578,7 @@ function loadPage(t, m, l) {
 }
 
 function setLanguage(language) {
-	appendCookie(language);
+	appendCookie('language', language);
 
 	var url = 'https://testing.yapms.com/app/?';
 
