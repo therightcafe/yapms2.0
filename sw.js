@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.44.87';
-var staticCache = 's0.15.87';
+var dynamicCache = 'd0.44.88';
+var staticCache = 's0.15.88';
 
 var cookies = {
 
@@ -206,7 +206,7 @@ self.addEventListener('fetch', function(event) {
 	event.respondWith(
 		caches.match(req)
 			.then(function(response) {
-				if(event.request.url.includes('?t=')) {
+				if(response && event.request.url.includes('?t=')) {
 					var url = new URL(event.request.url);
 					var params = new URLSearchParams(url);
 					params.delete('t');
