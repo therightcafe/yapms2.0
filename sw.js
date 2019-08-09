@@ -1,5 +1,5 @@
-var dynamicCache = 'd0.44.73';
-var staticCache = 's0.15.73';
+var dynamicCache = 'd0.44.75';
+var staticCache = 's0.15.75';
 
 var cookies = {
 
@@ -206,7 +206,7 @@ self.addEventListener('fetch', function(event) {
 	var req = event.request;
 
 	if(event.request.url.includes('?t=')) {
-		swLog('Alter', 'error - ' + err);
+		swLog('Alter', 'altering url to include language ' + cookies['language']);
 		var url = new URL(event.request.url);
 		var params = new URLSearchParams(url);
 		params.set('l', cookies['language']);
