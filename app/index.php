@@ -730,7 +730,7 @@ if($mobile === false) {
 	<div class="selectmenu-section" id="shareurl"></div>
 <?php 
 if($mobile === false) {
-	echo '<div class="selectmenu-button" id="downloadbutton"><i class="fas fa-download"></i>  ' . _("Download") . '</div>';
+	echo '<a class="selectmenu-button" id="downloadbutton"><i class="fas fa-download"></i>  ' . _("Download") . '</a>';
 }
 ?>
 	<img class="selectmenu-section" id="screenshotimg"/>
@@ -757,9 +757,13 @@ if($mobile === false) {
 </div>
 
 <div id="versioninfo" class="popup">
+	<div class="selectmenu-header">
 	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2><?php echo _("Version Info") ?></h2>
-	<a id="versioninfo-text"></a>
+	</div>
+	<div class="selectmenu-content">
+	<a class="selectmenu-section" id="versioninfo-text"></a>
+	</div>
 </div>
 
 <script src="https://www.google.com/recaptcha/api.js?render=6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo"></script>
