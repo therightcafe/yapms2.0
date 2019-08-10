@@ -1,4 +1,4 @@
-var currentCache = 'v0.46.10';
+var currentCache = 'v0.46.11';
 
 var cookies = {};
 
@@ -676,10 +676,10 @@ function setMode(set) {
 		panObject.enablePan();
 		panObject.enableZoom();
 	} else if(set === 'ec') {
-		modeText = '<i class="fas fa-edit"></i> ' + language["Mode-Option4"];
+		modeText = '<i class="fas fa-edit"></i> ' + language["Mode-Option5"];
 		notificationText = "Click on a state to set its electoral college";
 	} else if(set === 'delete') {
-		modeText = '<i class="fas fa-eraser"></i> ' + language["Mode-Option5"];
+		modeText = '<i class="fas fa-eraser"></i> ' + language["Mode-Option4"];
 		notificationText = "Click on a state to disable/enable it";
 	} else if(set === 'candidate') {
 		modeText = '<i class="fas fa-user-edit"></i> ' + language["Mode-Option6"];
