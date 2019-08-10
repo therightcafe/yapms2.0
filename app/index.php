@@ -457,12 +457,12 @@ if($mobile === false) {
 	<h2><?php echo _("Select Mode") ?></h2>
 	</div>
 	<div class="selectmenu-content">
-	<a class="selectmenu-button" id="paintmovebutton" onclick='closeNotification(this); setMode("paintmove")'><i class="fas fa-paint-brush"></i> <?php echo _("Mode-Option1") ?></a>
-	<a class="selectmenu-button" onclick='closeNotification(this); setMode("paint")'><i class="fas fa-paint-brush"></i> <?php echo _("Mode-Option2") ?></a>
-	<a class="selectmenu-button" id="movebutton" onclick='closeNotification(this); setMode("move")'><i class="fas fa-arrows-alt"></i> <?php echo _("Mode-Option3") ?></a>
-	<a class="selectmenu-button" onclick='closeNotification(this); setMode("delete")'><i class="fas fa-eraser"></i> <?php echo _("Mode-Option4") ?></a>
-	<a class="selectmenu-button" onclick='closeNotification(this); setMode("ec")'><i class="far fa-edit"></i> <?php echo _("Mode-Option5") ?></a>
-	<a class="selectmenu-button" onclick='closeNotification(this); setMode("candidate")'><i class="fas fa-user-edit"></i> <?php echo _("Mode-Option6") ?></a>
+	<a class="selectmenu-button" id="paintmovebutton" onclick='closeAllPopups(); setMode("paintmove")'><i class="fas fa-paint-brush"></i> <?php echo _("Mode-Option1") ?></a>
+	<a class="selectmenu-button" onclick='closeAllPopups(); setMode("paint")'><i class="fas fa-paint-brush"></i> <?php echo _("Mode-Option2") ?></a>
+	<a class="selectmenu-button" id="movebutton" onclick='closeAllPopups(); setMode("move")'><i class="fas fa-arrows-alt"></i> <?php echo _("Mode-Option3") ?></a>
+	<a class="selectmenu-button" onclick='closeAllPopups(); setMode("delete")'><i class="fas fa-eraser"></i> <?php echo _("Mode-Option4") ?></a>
+	<a class="selectmenu-button" onclick='closeAllPopups(); setMode("ec")'><i class="far fa-edit"></i> <?php echo _("Mode-Option5") ?></a>
+	<a class="selectmenu-button" onclick='closeAllPopups(); setMode("candidate")'><i class="fas fa-user-edit"></i> <?php echo _("Mode-Option6") ?></a>
 	</div>
 </div>
 
@@ -512,7 +512,7 @@ if($mobile === false) {
 	<h2>United Kingdom</h2>
 	</div>
 	<div class="selectmenu-content">
-	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/unitedkingdom.svg", 16, 0.075, "congressional", "congressional", "open");'>United Kingdom</a>
+	<a class="selectmenu-button" onclick='closeAllPopups(); loadMap("./res/unitedkingdom.svg", 16, 0.075, "congressional", "congressional", "open");'>United Kingdom</a>
 	</div>
 </div>
 
@@ -708,7 +708,7 @@ if($mobile === false) {
 	</div>
 </div>
 
-<div id="notification-update-serviceworker" class="popup">
+<div id="notification-update-serviceworker" class="popup selectmenu">
 	<div class="selectmenu-header">
 	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2>New Version Installed</h2>

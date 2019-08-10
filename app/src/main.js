@@ -1,4 +1,4 @@
-var currentCache = 'v0.46.7';
+var currentCache = 'v0.46.10';
 
 var cookies = {};
 
@@ -699,15 +699,6 @@ function setMode(set) {
 		message.innerHTML = notificationText;
 	}
 }
-
-function closeNotification(e) {
-	e.parentElement.style.display = 'none';
-}
-
-function closeShare(e) {
-	e.parentElement.style.display = 'none';
-}
-
 
 // if paint index is invalid, change it to tossup
 // ( WORK IN PROGRESS)
