@@ -104,24 +104,21 @@ function addCandidate(name, solid, likely, leaning, tilting) {
 	countPopularVote();
 }
 
-function setCandidate(e) {
-	// hide the popup window
-	e.parentElement.style.display = 'none';
+function setCandidate() {
+	closeAllPopups();
 
-	var candidateid = e.parentElement.querySelector('#candidate-originalName').value;
-	var newname = e.parentElement.querySelector('#candidate-name').value;
-	var solidColor = e.parentElement.querySelector('#candidate-solid').value;
-	var likelyColor = e.parentElement.querySelector('#candidate-likely').value;
-	var leanColor = e.parentElement.querySelector('#candidate-lean').value;
-	var tiltcolor = e.parentElement.querySelector('#candidate-tilt').value;
+	var candidateid = document.getElementById('candidate-originalName').value;
+	var newname = document.getElementById('candidate-name').value;
+	var solidColor = document.getElementById('candidate-solid').value;
+	var likelyColor = document.getElementById('candidate-likely').value;
+	var leanColor = document.getElementById('candidate-lean').value;
+	var tiltcolor = document.getElementById('candidate-tilt').value;
 
 	// only rename the property if the name changed
 	if(newname !== candidateid) {
 		Object.defineProperty(candidates, newname,
 			Object.getOwnPropertyDescriptor(candidates, candidateid));
-
 		setChangeCandidate(candidateid, newname);
-
 		delete candidates[candidateid];
 	}
 
@@ -195,6 +192,7 @@ function deleteCandidateByName(name) {
 }
 
 function deleteCandidateByNameConfirm(name) {
+	closeAllPopups();
 	var popup = document.getElementById("deletecandidateconfirm");
 	var hidden = document.getElementById("delete-candidate-name");
 	hidden.value = name;

@@ -4,7 +4,7 @@
 	border: 1px solid black;
 	border-radius: 10px;
 
-	padding: 4px;	
+	padding: 0px;	
 	z-index: 10;
 
 	position: absolute;
@@ -13,7 +13,7 @@
 	max-height: 80%;
 	transform: translate(-50%, -50%);
 
-	overflow-y: auto;
+	overflow-y: hidden;
 }
 
 /* make the close button stay on the left */

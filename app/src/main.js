@@ -1,4 +1,4 @@
-var currentCache = 'v0.46.0';
+var currentCache = 'v0.46.5';
 
 var cookies = {};
 
@@ -480,11 +480,11 @@ function clearDelegates() {
 
 function setEC(e) {
 	// hide the popup window
-	e.parentElement.style.display = 'none';
+	closeAllPopups();
 
 	// get the stateId and input value
-	var stateId = e.parentElement.querySelector('#state-id').value;
-	var input = e.parentElement.querySelector('#state-ec').value;
+	var stateId = document.getElementById('state-id').value;
+	var input = document.getElementById('state-ec').value;
 
 	// get the state and set its new vote count
 	states.forEach(function(element) {

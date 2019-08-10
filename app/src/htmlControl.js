@@ -92,6 +92,7 @@ function displayMapMenu(type) {
 }
 
 function displayCountryMenu(type) {
+	closeAllPopups();
 	var mapmenu = document.getElementById('mapmenu-' + type);
 	mapmenu.style.display = 'flex';
 }
@@ -434,11 +435,6 @@ function setMenuColor(color) {
 		button = clickButtons[index];
 		button.style.borderColor = color;
 	}
-	
-	var yapnewsClose = document.getElementById('yapnews-close');
-	if(yapnewsClose !== null) {
-	yapnewsClose.style.borderColor = color;
-	}
 }
 
 function setClickButtonTextColor(color) {
@@ -446,15 +442,6 @@ function setClickButtonTextColor(color) {
 	for(var index = 0; index < clickButtons.length; ++index) {
 		button = clickButtons[index];
 		button.style.color = color;
-	}
-
-	var l1 = document.getElementById('yapnews-close-l1');
-	if(l1 !== null) {
-		l1.setAttribute('stroke', color);
-	}
-	var l2 = document.getElementById('yapnews-close-l2');
-	if(l2 !== null) {
-	l2.setAttribute('stroke', color);
 	}
 }
 
@@ -464,16 +451,10 @@ function setClickButtonColor(color) {
 		button = clickButtons[index];
 		button.style.backgroundColor = color;
 	}
-
-	var yapnewsClose = document.getElementById('yapnews-close');
-	if(yapnewsClose !== null) {
-		yapnewsClose.style.backgroundColor = color;
-	}
 }
 
 function setDisableColor(color) {
 	TOSSUP.colors[1] = color;
-	//verifyMap();
 }
 
 function setTossupColor(color) {

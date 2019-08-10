@@ -1,4 +1,4 @@
-var scriptCache = 'd0.46.0';
+var scriptCache = 'd0.46.5';
 var indexCache = 'i0.2.0';
 var staticCache = 's0.17.0';
 
@@ -39,6 +39,9 @@ var _indexCache = [
 	'./app/?t=Current_senate',
 	'./app/?t=2016_presidential_county',
 	'./app/?t=2020_presidential',
+	'./app/?t=2020_cook',
+	'./app/?t=2020_inside',
+	'./app/?t=2020_sabatos',
 	'./app/?t=2020_senatorial',
 	'./app/?t=2020_gubernatorial',
 	'./app/?t=2020_democratic_primary',
@@ -58,7 +61,8 @@ var _indexCache = [
 	'./app/?t=Canada_constituencies',
 	'./app/?t=Australia_constituencies',
 	'./app/?t=Australia_states',
-	'./app/?t=Brazil_deputies'
+	'./app/?t=Brazil_deputies',
+	'./app/?t=France_constituencies'
 ];
 
 function swLog(cache, message) {
@@ -232,7 +236,7 @@ self.addEventListener('fetch', function(event) {
 				}
 			})
 			.catch(function(err) {
-				swLog('error ' + err + ' ' + event.request.url);
+				swLog('Error ', err + ' ' + event.request.url);
 			})
 		);
 	}
