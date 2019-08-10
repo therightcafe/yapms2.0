@@ -1,4 +1,4 @@
-var currentCache = 'v0.46.11';
+var currentCache = 'v0.47.0';
 
 var cookies = {};
 
@@ -578,16 +578,21 @@ function loadPage(t, m, l) {
 }
 
 function setLanguage(language) {
-	gtag('event', 'set_language', {
-		'event_category': 'language',
-		'event_label': 'Set language to ' + language
-	});
-	appendCookie('language', language);
 	closeAllPopups();
 	if(navigator.onLine) {
-		var languageButton = document.getElementById('languagebutton');
-		languageButton.disabled = true;
-		navigator.serviceWorker.controller.postMessage('localize'); 
+		if(navigator.serviceWorker) {
+			gtag('event', 'set_language', {
+				'event_category': 'language',
+				'event_label': 'Set language to ' + language
+			});
+			appendCookie('language', language);
+			var languageButton = document.getElementById('languagebutton');
+			languageButton.disabled = true;
+			navigator.serviceWorker.controller.postMessage('localize'); 
+		} else {
+			displayNotification('Error', 'Unable to set language');
+		}
+		
 	} else {
 		displayNotification('Offline', 'Unavailable while Offline');
 	}
