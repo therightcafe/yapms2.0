@@ -402,7 +402,7 @@ if($mobile === false) {
 	<h2><?php echo _("Add Candidate") ?></h2>
 	</div>
 	<div class="selectmenu-content">
-	<a class="selectmenu-button"><?php echo _("Name") ?><input id="name" type="text"></a>
+	<a class="selectmenu-section"><?php echo _("Name") ?><input id="name" type="text"></a>
 	<a class="selectmenu-button selectmenu-red" onclick='setColors("red")'><?php echo _("Red Colors") ?></a>
 	<a class="selectmenu-button selectmenu-blue" onclick='setColors("blue")'><?php echo _("Blue Colors") ?></a>
 	<a class="selectmenu-button selectmenu-green" onclick='setColors("green")'><?php echo _("Green Colors") ?></a>
@@ -431,10 +431,10 @@ if($mobile === false) {
 		<a class="selectmenu-button-right selectmenu-button fas fa-cog"
 			onclick='displayCustomColorMenu("custom4")'></a>
 	</div>
-	<a class="selectmenu-button"><?php echo _("Solid") ?> <input id="solid" type="color"></a>
-	<a class="selectmenu-button"><?php echo _("Likely") ?> <input id="likely" type="color"></a>
-	<a class="selectmenu-button"><?php echo _("Leaning") ?> <input id="leaning" type="color"></a>
-	<a class="selectmenu-button"><?php echo _("Tilt") ?> <input id="tilting" type="color"></a>
+	<a class="selectmenu-section"><?php echo _("Solid") ?> <input id="solid" type="color"></a>
+	<a class="selectmenu-section"><?php echo _("Likely") ?> <input id="likely" type="color"></a>
+	<a class="selectmenu-section"><?php echo _("Leaning") ?> <input id="leaning" type="color"></a>
+	<a class="selectmenu-section"><?php echo _("Tilt") ?> <input id="tilting" type="color"></a>
 	<a class="selectmenu-button" onclick="addCandidate(); closeAllPopups();"><?php echo _("Add") ?></a>
 	</div>
 </div>
