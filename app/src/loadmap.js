@@ -88,8 +88,8 @@ function loadMapFromId(id) {
 		case "2016_presidential_county":
 			loadPresetMap(id);
 			break;
-		case "Maine_county":
-			loadMap("./res/usa_counties/" +  id + ".svg", 16, 1, "congressional", "congressional", "open", {updateText: false});
+		case "USA_Canada":
+			loadMap("./res/usa_canada.svg", 16, 0.01, "congressional", "congressional", "open", {updateText: false});
 			break;
 		case "2020_presidential":
 			loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open", {updateText: true, voters: 'usa_voting_pop', enablePopularVote: true});
@@ -173,11 +173,11 @@ function loadMapFromId(id) {
 			loadPreset('canada')
 			break;
 		case "Canada_constituencies":
-			loadMap("./res/canada_constituencies.svg", 16, 0.075, "congressional", "congressional", "open", {updateText: true});
+			loadMap("./res/canada_constituencies.svg", 16, 0.1, "congressional", "congressional", "open", {updateText: true});
 			loadPreset('canada')
 			break;
 		case "Australia_constituencies":
-			loadMap("./res/australia_constituencies.svg", 16, 0.075, "congressional", "congressional", "open", {updateText: false});
+			loadMap("./res/australia_constituencies.svg", 16, 0.5, "congressional", "congressional", "open", {updateText: false});
 			loadPreset('australia')
 			break;
 		case "Australia_states":

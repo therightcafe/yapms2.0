@@ -79,16 +79,6 @@
 			     '</script>';
 		}
 
-		if($mobile === false) {
-			echo '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<script>
-			     (adsbygoogle = window.adsbygoogle || []).push({
-				  google_ad_client: "ca-pub-1660456925957249",
-				  enable_page_level_ads: true
-			     });
-			</script>';
-		}
-
 		echo '<script>
 			var GET = {' .
 			'"t": "' . $_GET["t"] . '",' .
@@ -97,6 +87,14 @@
 			'};
 		</script>'
 	?>
+
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+	     (adsbygoogle = window.adsbygoogle || []).push({
+		  google_ad_client: "ca-pub-1660456925957249",
+		  enable_page_level_ads: true
+	     });
+	</script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132710089-1"></script>
@@ -128,63 +126,59 @@
 
 <div id="yapms">
 <div id="menu-div">
-	<button class="click-button" onclick="clearMap()" style="white-space: nowrap;">
+	<div class="click-button" onclick="clearMap()" style="white-space: nowrap;">
 	<i class="fas fa-window-close"></i> <?php echo _("Clear") ?>
-	</button>
+	</div>
 
-	<button class="click-button" onclick="displayMapMenu()" style="white-space: nowrap;">
+	<div class="click-button" onclick="displayMapMenu()" style="white-space: nowrap;">
 	<i class="fas fa-map"></i> <?php echo _("Map") ?>
-	</button>
+	</div>
 
-	<button id="modesbutton" class="click-button" onclick="displayModeMenu()" style="white-space: nowrap;">
+	<div id="modesbutton" class="click-button" onclick="displayModeMenu()" style="white-space: nowrap;">
 	<i class="fas fa-cog"></i> <?php echo _("Mode") ?> (<i class="fas fa-paint-brush"></i> <?php echo _("Mode-Option1") ?>)
-	<div class="highlight">Modes Available<br>Paint<br>Set Electoral College<br>Disable States</div>
-	</button>
+	</div>
 
-	<button class="click-button" onclick="displayChartMenu()" style="white-space: nowrap;">
+	<div class="click-button" onclick="displayChartMenu()" style="white-space: nowrap;">
 	<i class="fas fa-chart-pie"></i> <?php echo _("Chart") ?> 
-	</button>
+	</div>
 
-	<button class="click-button" onclick="displayThemeMenu()" style="white-space: nowrap;">
+	<div class="click-button" onclick="displayThemeMenu()" style="white-space: nowrap;">
 	<i class="fas fa-palette"></i> <?php echo _("Theme") ?> 
-	</button>
+	</div>
 
-	<button class="click-button" id="share-button" onclick="share()" style="white-space: nowrap;">
+	<div class="click-button" id="share-button" onclick="share()" style="white-space: nowrap;">
 		<i class="fas fa-share-alt"></i> <?php echo _("Share") ?>
-	</button>
+	</div>
 
 <?php
 if($mobile === false) {
-	echo '<button class="click-button" onclick="displayLoadMenu()" style="white-space: nowrap;">
+	echo '<div class="click-button" onclick="displayLoadMenu()" style="white-space: nowrap;">
 		<i class="fas fa-upload"></i> ' .  _("Load") .
-		'</button>';
+		'</div>';
 }
 ?>
 
-	<button class="click-button" onclick="displayMiscMenu()" style="white-space: nowrap;">
+	<div class="click-button" onclick="displayMiscMenu()" style="white-space: nowrap;">
 	<i class="fas fa-clipboard"></i> <?php echo _("Misc") ?>
-	</button>
+	</div>
 
-	<button id="languagebutton" class="click-button" onclick="displayLanguageMenu()" style="white-space: nowrap;">
+	<div id="languagebutton" class="click-button" onclick="displayLanguageMenu()" style="white-space: nowrap;">
 	<i class="fas fa-globe"></i> <?php echo _("Language") ?>
-	</button>
+	</div>
 
-	<button class="click-button" style="white-space: nowrap;">
+	<div class="click-button" style="white-space: nowrap;">
 	<a class="click-button" href="https://www.yapms.com/privacypolicy.html" target="_blank" rel="noreferrer">
 	<i class="fas fa-user-secret"></i> <?php echo _("Privacy Policy") ?>
 	</a>
-	</button>
+	</div>
 
 <?php
 /* margin-left: auto; moves the button all the way to the right */
 if($mobile === false) {
 	echo '
-<!--<button class="click-button" onclick="togglePresentationMode()" style="white-space: nowrap; margin-left: auto;">
-<i class="fab fa-youtube"></i> Presentation
-</button>-->
-<button class="click-button" onclick="toggleYAPNews()" style="white-space: nowrap; margin-left: auto;">
+<div class="click-button" onclick="toggleYAPNews()" style="white-space: nowrap; margin-left: auto;">
 <i class="fas fa-bars"></i> ' . _("Sidebar") .
-'</button>';
+'</div>';
 }
 ?>
 
@@ -675,12 +669,12 @@ test
 	</div>
 	<div class="selectmenu-content">
 	<a class="selectmenu-split"><?php echo _("Countries") ?></a>
-	<a class="selectmenu-button" onclick='displayCountryMenu("usa")'; >USA</a>
-	<a class="selectmenu-button" onclick='displayCountryMenu("usa-historical")'; >USA <?php echo _("Historical") ?></a>
-	<a class="selectmenu-button" onclick='displayCountryMenu("germany")'; ><?php echo _("Germany") ?></a>
+	<a class="selectmenu-button" onclick='displayCountryMenu("usa")'>USA</a>
+	<a class="selectmenu-button" onclick='displayCountryMenu("usa-historical")'>USA <?php echo _("Historical") ?></a>
+	<a class="selectmenu-button" onclick='displayCountryMenu("germany")'><?php echo _("Germany") ?></a>
 	<a class="selectmenu-button" onclick='displayCountryMenu("canada")'><?php echo _("Canada") ?></a>
-	<a class="selectmenu-button" onclick='displayCountryMenu("australia")'; ><?php echo _("Australia") ?></a>
-	<a class="selectmenu-button" onclick='displayCountryMenu("netherlands")'; ><?php echo _("Netherlands") ?></a>
+	<a class="selectmenu-button" onclick='displayCountryMenu("australia")'><?php echo _("Australia") ?></a>
+	<a class="selectmenu-button" onclick='displayCountryMenu("netherlands")'><?php echo _("Netherlands") ?></a>
 	<a class="selectmenu-button" href="./?t=Brazil_deputies"><?php echo _("Brazil") ?></a>
 	<a class="selectmenu-button" href="./?t=Spain_constituencies"><?php echo _("Spain") ?></a>
 	<a class="selectmenu-button" href="./?t=Italy_states"><?php echo _("Italy") ?></a>
@@ -688,8 +682,9 @@ test
 	<a class="selectmenu-button" href="./?t=France_constituencies"><?php echo _("France") ?></a>
 	<a class="selectmenu-button" href="./?t=EuropeanUnion"><?php echo _("EU") ?></a>
 	<a class="selectmenu-button" href="./?t=World"><?php echo _("World") ?></a>
-	<a class="selectmenu-split">Mock</a>
-	<a class="selectmenu-button" onclick='displayCountryMenu("lte")'; >LTE</a>
+	<a class="selectmenu-split">Other</a>
+	<a class="selectmenu-button" href='./?t=USA_Canada'>USA/<?php echo _("Canada") ?></a>
+	<a class="selectmenu-button" onclick='displayCountryMenu("lte")'>LTE</a>
 	</div>
 </div> 
 

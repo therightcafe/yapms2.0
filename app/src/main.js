@@ -1,4 +1,4 @@
-var currentCache = 'v0.47.0';
+var currentCache = 'v0.47.22';
 
 var cookies = {};
 
@@ -153,7 +153,7 @@ function initData(dataid) {
 		htmlElement.setAttribute('style', 'inherit');
 		var name = htmlElement.getAttribute('id');
 		if(name === null || name.includes('*lines*') || name.includes("*ignore*") ||
-			name.includes("_ignore_")) {
+			name.includes("_ignore_") || name.includes('othertext')) {
 			// do nothing with it paths that
 			// have these ids
 		} else if(name.includes('-button')) {

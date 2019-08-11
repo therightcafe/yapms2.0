@@ -23,6 +23,14 @@
 
 	<title>YAPms - Yet Another Political Map Simulator</title>
 	
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+	     (adsbygoogle = window.adsbygoogle || []).push({
+		  google_ad_client: "ca-pub-1660456925957249",
+		  enable_page_level_ads: true
+	     });
+	</script>;
+
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132710089-1"></script>
 	<script>
@@ -605,6 +613,19 @@
 		<a href="./app/?t=Brazil_deputies">
 			<div class="map-button">
 				Deputies
+			</div>
+		</a>
+	</div>
+	</div>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
+		Other
+	</div>
+	<div>
+		<a href="./app/?t=USA_Canada">
+			<div class="map-button">
+				USA / Canada
 			</div>
 		</a>
 	</div>

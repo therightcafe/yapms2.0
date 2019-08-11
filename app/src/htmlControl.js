@@ -208,6 +208,8 @@ function darkPalette() {
 	appendCookie('theme', 'dark');
 	setBackgroundColor('#181922');
 
+	setOtherText('white');
+
 	setDisableColor('#212326');
 	setTossupColor('#6b6e73');
 	setMapStyle('#181922', 1.5);
@@ -236,6 +238,8 @@ function darkPalette() {
 function greyscalePalette() {
 	appendCookie('theme', 'greyscale');
 	setBackgroundColor('#252525');
+	
+	setOtherText('white');
 
 	setDisableColor('#212326');
 	setTossupColor('#888888');
@@ -265,6 +269,8 @@ function terminalPalette() {
 	appendCookie('theme', 'terminal');
 	setBackgroundColor('#000000');
 
+	setOtherText('white');
+
 	setDisableColor('#bcc8d9');
 	setTossupColor('black');
 	setChartBorderStyle(2, '#ffffff');
@@ -292,6 +298,8 @@ function terminalPalette() {
 function lightPalette() {
 	appendCookie('theme', 'light');
 	setBackgroundColor('#dcdcdc');
+	
+	setOtherText('black');
 
 	setDisableColor('#212326');
 	setTossupColor('#696969');
@@ -322,7 +330,9 @@ function lightPalette() {
 function contrastPalette() {
 	appendCookie('theme', 'contrast');
 	setBackgroundColor('#f8f9fa');
-	
+
+	setOtherText('black');
+
 	setDisableColor('#212326');
 	setTossupColor('#36454f');
 	setMapStyle('#f8f9fa', 1.5);
@@ -350,6 +360,8 @@ function contrastPalette() {
 function metallicPalette() {
 	appendCookie('theme', 'metallic');
 	setBackgroundImage('linear-gradient(#696969, #33353b)');
+	
+	setOtherText('white');
 	
 	setDisableColor('#212326');
 	setTossupColor('#808080');
@@ -379,6 +391,8 @@ function toWinPalette() {
 	appendCookie('theme', 'default');
 	setBackgroundColor('#f8f9fa');
 
+	setOtherText('black');
+
 	setDisableColor('#dddddd');
 	setTossupColor('#9E8767');
 	setMapStyle('#fffbf2', 1);
@@ -401,6 +415,13 @@ function toWinPalette() {
 	countVotes();
 	verifyMap();
 	previousPalette = toWinPalette;
+}
+
+function setOtherText(color) {
+	var text = document.getElementById('othertext');
+	if(text) {
+		text.setAttribute('fill', color);
+	}
 }
 
 function setBackgroundImage(img) {

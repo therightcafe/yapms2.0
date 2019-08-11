@@ -6,8 +6,9 @@
 .selectmenu-content {
 	display: flex;
 	flex-direction: column;
-	overflow-y: scroll;
-	padding-left: 4px;
+	overflow-y: auto;
+	padding-left: 3px;
+	padding-right: 3px;
 	margin-bottom: 6px;
 }
 

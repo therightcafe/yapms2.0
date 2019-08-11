@@ -1,6 +1,6 @@
-var scriptCache = 'd0.47.6';
-var indexCache = 'i0.2.11';
-var staticCache = 's0.17.0';
+var scriptCache = 'd0.47.22';
+var indexCache = 'i0.2.22';
+var staticCache = 's0.17.22';
 
 var _scriptCache = [
 	'./style.css',
@@ -52,6 +52,7 @@ var _indexCache = [
 	'./app/?t=USA_senatorial',
 	'./app/?t=USA_takeall',
 	'./app/?t=USA_proportional',
+	'./app/?t=USA_Canada',
 	'./app/?t=Germany_states',
 	'./app/?t=Germany_constituencies',
 	'./app/?t=Spain_constituencies',
@@ -116,6 +117,7 @@ self.addEventListener('install', function(event) {
 		caches.open(staticCache).then(function(cache) {
 			swLog(staticCache, 'installing');
 			return cache.addAll([
+				'./app/res/usa_canada.svg',
 				'./app/res/usa_presidential.svg',
 				'./app/res/usa_1972_presidential.svg',
 				'./app/res/usa_congressional_2018.svg',

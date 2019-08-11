@@ -1,7 +1,7 @@
 #menu-div {
 	z-index: 3;
 	background-color: #2f3136;
-	text-align: left;
+	text-align: center;
 
 	position: relative;
 
@@ -11,137 +11,19 @@
 
 	overflow-y: hidden;
 	overflow-x: auto;
-	
-	border-bottom: 1px solid black;
-}
 
-#menu-div-left {
-	display: inline-flex;
+	padding-bottom: 1px;	
 }
 
 .click-button {
 	font-family: Arial;
-	font-size: 18px;
+	font-size: 16px;
 	background-color: #f2eee6;
-	border: none;
 	color: #000000;
 	cursor: pointer;
 	margin-right: 1px;
-	text-decoration: none;
 	height: 100%;
-}
-
-.click-button:hover {
-	background-color: #aaaaaa;
-}
-
-.dropdown {
-	position: relative;
-	display: block;
-}
-
-#addcandidatebutton {
-	white-space: nowrap;
-}
-
-#addCandidateDropDown {
-	min-width: 10px;
-}
-
-#addCandidateDropDown .dropdown-content {
-	display: inline-flex;
-}
-
-#addCandidateDropDown input {
-	border: none;
-	width: 100%;
-}
-
-.toggle-dropdown {
-	position: relative;
-}
-
-.dropdown-button {
-	background-color: inherit;
-	color: #ffffff;
-	cursor: pointer;
-	font-weight: 500;
-	border: none;
-}
-
-.dropdown-button:hover {
-	background-color: #252525;
-}
-
-.dropdown-content {
-	display: none;
-	position: absolute;
-	background-color: #ffffff;
-	min-width: 140px;
-}
-
-#menu-right .dropdown-content {
-	right: 0px;
-	left: auto;
-}
-
-.dropdown-content a {
-	padding: 4px;
-	cursor: pointer;
+	padding-left: 4px;
+	padding-right: 4px;
 	text-decoration: none;
-	display: block;
-}
-
-.dropdown-content a:hover {
-	background-color: #eeeeee;
-}
-
-.dropdown:hover .dropdown-content {
-	display: block;
-}
-
-.yes-button {
-	border: none;
-	background-color: green;
-	color: white;
-	padding: 10px;
-	margin: 5px;
-	font-weight: bold;
-	cursor: pointer;
-}
-
-.no-button {
-	border: none;
-	background-color: red;
-	color: white;
-	padding: 10px;
-	margin: 5px;
-	font-weight: bold;
-	cursor: pointer;
-}
-
-.download-button {
-	border: none;
-	background-color: red;
-	color: white;
-	padding: 10px;
-	margin: 5px;
-	text-decoration: none;
-	font-weight: bold;
-	cursor: pointer;
-}
-
-.highlight { 
-	font-size: 13px;
-	position: fixed;
-	background-color: rgba(0, 0, 0, 0.5);
-	color: white;
-	border-radius: 6px;
-	margin-top: 7px;
-	padding: 5px;
-	text-align: left;
-}
-
-.highlight:hover {
-	display: none;
 }
