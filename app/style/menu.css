@@ -130,3 +130,18 @@
 	font-weight: bold;
 	cursor: pointer;
 }
+
+.highlight { 
+	font-size: 13px;
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+	border-radius: 6px;
+	margin-top: 7px;
+	padding: 5px;
+	text-align: left;
+}
+
+.highlight:hover {
+	display: none;
+}

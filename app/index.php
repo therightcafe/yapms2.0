@@ -138,6 +138,7 @@
 
 	<button id="modesbutton" class="click-button" onclick="displayModeMenu()" style="white-space: nowrap;">
 	<i class="fas fa-cog"></i> <?php echo _("Mode") ?> (<i class="fas fa-paint-brush"></i> <?php echo _("Mode-Option1") ?>)
+	<div class="highlight">Modes Available<br>Paint<br>Set Electoral College<br>Disable States</div>
 	</button>
 
 	<button class="click-button" onclick="displayChartMenu()" style="white-space: nowrap;">
@@ -227,9 +228,11 @@ if($mobile === false) {
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- sidebar-ad5 -->
 <ins class="adsbygoogle"
-     style="display:inline-block;width:300px;height:300px"
-     data-ad-client="ca-pub-1660456925957249"
-     data-ad-slot="8033943742"></ins>
+	style="display:block"
+	data-ad-client="ca-pub-1660456925957249"
+	data-ad-slot="8033943742"
+	data-ad-format="auto"
+	data-full-width-responsive="true"></ins>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
@@ -328,6 +331,11 @@ if($mobile === false) {
 }
 ?>
 </div>
+<!--
+<div id="mobilead">
+test
+</div>
+-->
 </div>
 
 <div id="demdel" class="popup">
