@@ -5,7 +5,7 @@
 	border-left: 1px solid black;
 	min-width: 312px;
 	max-width: 312px;
-	width: 312px;
+	width: 348px;
 	background: #fafafa;
 }
 
@@ -18,7 +18,7 @@
 }
 
 #sidebar-ad {
-	max-width: 300px;
+	max-width: 336px;
 }
 
 #sidebar-social {
