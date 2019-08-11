@@ -3,8 +3,8 @@
 	display: inline-flex;
 	flex-direction: column;
 	border-left: 1px solid black;
-	min-width: 312px;
-	max-width: 312px;
+	min-width: 336px;
+	max-width: 336px;
 	width: 348px;
 	background: #fafafa;
 }
