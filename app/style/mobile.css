@@ -135,4 +135,5 @@ button {
 	min-height: 52px;
 	max-height: 52px;
 	height: 52px;
+	overflow: hidden;
 }
