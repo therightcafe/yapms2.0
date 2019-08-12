@@ -1206,11 +1206,13 @@ function start() {
 	var ogLink = document.getElementsByTagName('link')[0];
 	ogLink.parentNode.insertBefore(link, ogLink);
 
+	/*
 	setTimeout(function() {
 	if(!adsbygoogle.loaded) {
 		var ad = document.getElementById('sidebar-ad');
 		ad.style.display = 'none';
 	}}, 5000);
+	*/
 }
 
 start();

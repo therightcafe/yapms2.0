@@ -88,12 +88,17 @@
 		</script>'
 	?>
 
+	<script async="async" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<script>
-	     (adsbygoogle = window.adsbygoogle || []).push({
-		  google_ad_client: "ca-pub-1660456925957249",
-		  enable_page_level_ads: true
-	     });
+		(adsbygoogle = window.adsbygoogle || []).push({
+		google_ad_client: "ca-pub-1660456925957249",
+		enable_page_level_ads: true});
+
+		window.googletag = window.googletag || {cmd: []};	
+		googletag.cmd.push(function() {
+			googletag.defineSlot('/ca-pub-1660456925957249/8033943742', [336,280], 'sidebar-ad');
+		});
 	</script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -218,9 +223,9 @@ if($mobile === false) {
 		'<div id="sidebar-header">
 			YAPms  
 		</div>' ,
-'<div id="sidebar-ad">
+		'<div id="sidebar-ad">
+		<!--
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- sidebar-ad5 -->
 <ins class="adsbygoogle"
      style="display:inline-block;width:336px;height:280px"
      data-ad-client="ca-pub-1660456925957249"
@@ -228,6 +233,7 @@ if($mobile === false) {
 <script>
 	(adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+-->
 </div>',
 		'<div id="sidebar-social">
 		<a id="sidebar-discord-link" href="https://discord.gg/WQh5fHU" target="_blank"><div id="sidebar-discord" class="sidebar-button">
