@@ -226,7 +226,9 @@ if($mobile === false) {
      data-ad-client="ca-pub-1660456925957249"
      data-ad-slot="8033943742"></ins>
 <script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
+	if((adsbygoogle = window.adsbygoogle || []).push({}) === 2) {
+		console.log("BLOCKED");
+	}
 </script>
 </div>',
 		'<div id="sidebar-social">
