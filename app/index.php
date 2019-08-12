@@ -331,9 +331,11 @@ if($mobile) {
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- mobile-ad -->
 <ins class="adsbygoogle"
-     style="display:inline-block;width:320px;height:50px"
+     style="display:block"
      data-ad-client="ca-pub-1660456925957249"
-     data-ad-slot="8771249229"></ins>
+     data-ad-slot="8771249229"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
