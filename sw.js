@@ -1,6 +1,6 @@
-var scriptCache = 'd0.47.30';
-var indexCache = 'i0.2.30';
-var staticCache = 's0.17.22';
+var scriptCache = 'd0.47.35';
+var indexCache = 'i0.2.35';
+var staticCache = 's0.17.31';
 
 var _scriptCache = [
 	'./style.css',
@@ -70,12 +70,10 @@ function swLog(cache, message) {
 	console.log('SW ' + cache + ': ' + message + ' ( ' + scriptCache + ' / ' + staticCache + ' / ' + indexCache + ' )');
 }
 
-self.blockLocalize = false;
 self.addEventListener('message', function(event) {
 	var clientID = event.source.id;
 	swLog('Message', event.data);
-	if(event.data === 'localize' && blockLocalize === false) {
-		self.blockLocalize = true;
+	if(event.data === 'localize') {
 		caches.keys().then(function(cacheNames) {
 			cacheNames.forEach(function(cacheName) {
 				if(cacheName === indexCache) {
@@ -95,7 +93,6 @@ self.addEventListener('message', function(event) {
 				clients.matchAll().then(clients => {
 					clients.forEach(client => {
 						if(client.id === clientID) {
-							self.blockLocalize = false;
 							client.postMessage("reload");
 						}
 					});

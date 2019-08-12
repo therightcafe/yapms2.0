@@ -7,7 +7,7 @@ try {
 	$dbh = new PDO("mysql:host=$hostname; dbname=$database;", $username, $password);
 } 
 catch(PDOException $e) {
-	echo "Error: " . $e->getMessage();
+	echo "req_article Error: " . $e->getMessage();
 	die();
 }
 
