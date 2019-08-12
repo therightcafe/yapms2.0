@@ -1,4 +1,4 @@
-var currentCache = 'v0.47.31';
+var currentCache = 'v0.47.33';
 
 var cookies = {};
 
@@ -580,17 +580,17 @@ function loadPage(t, m, l) {
 function setLanguage(language) {
 	closeAllPopups();
 	if(navigator.onLine) {
-		if(navigator.serviceWorker) {
+		appendCookie('language', language);
+		if(navigator.serviceWorker && navigator.serviceWorker.controller) {
 			gtag('event', 'set_language', {
 				'event_category': 'language',
 				'event_label': 'Set language to ' + language
 			});
-			appendCookie('language', language);
 			var languageButton = document.getElementById('languagebutton');
 			languageButton.disabled = true;
 			navigator.serviceWorker.controller.postMessage('localize'); 
 		} else {
-			displayNotification('Error', 'Unable to set language');
+			displayNotification('Error', 'Unable to set language<br>Try restarting your web browser<br>Try enabling cookies');
 		}
 		
 	} else {
