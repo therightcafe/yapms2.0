@@ -1205,6 +1205,11 @@ function start() {
 	//link.crossorigin = 'anonymous';
 	var ogLink = document.getElementsByTagName('link')[0];
 	ogLink.parentNode.insertBefore(link, ogLink);
+
+	if(!adsbygoogle.loaded) {
+		var ad = document.getElementById('sidebar-ad');
+		ad.style.display = 'none';
+	}
 }
 
 start();
