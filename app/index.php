@@ -88,17 +88,11 @@
 		</script>'
 	?>
 
-	<script async="async" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<script>
 		(adsbygoogle = window.adsbygoogle || []).push({
 		google_ad_client: "ca-pub-1660456925957249",
 		enable_page_level_ads: true});
-
-		window.googletag = window.googletag || {cmd: []};	
-		googletag.cmd.push(function() {
-			googletag.defineSlot('/ca-pub-1660456925957249/8033943742', [336,280], 'sidebar-ad');
-		});
 	</script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -224,7 +218,6 @@ if($mobile === false) {
 			YAPms  
 		</div>' ,
 		'<div id="sidebar-ad">
-		<!--
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"
      style="display:inline-block;width:336px;height:280px"
@@ -233,7 +226,6 @@ if($mobile === false) {
 <script>
 	(adsbygoogle = window.adsbygoogle || []).push({});
 </script>
--->
 </div>',
 		'<div id="sidebar-social">
 		<a id="sidebar-discord-link" href="https://discord.gg/WQh5fHU" target="_blank"><div id="sidebar-discord" class="sidebar-button">
@@ -329,11 +321,21 @@ if($mobile === false) {
 }
 ?>
 </div>
-<!--
-<div id="mobilead">
-test
-</div>
--->
+<?php
+if($mobile) {
+	echo '<div id="mobilead">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- mobile-ad -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:320px;height:50px"
+     data-ad-client="ca-pub-1660456925957249"
+     data-ad-slot="8771249229"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>';
+}
+?>
 </div>
 
 <div id="demdel" class="popup">

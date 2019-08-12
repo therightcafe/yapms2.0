@@ -1,4 +1,4 @@
-var currentCache = 'v0.47.40';
+var currentCache = 'v0.47.41';
 
 var cookies = {};
 
@@ -1206,13 +1206,11 @@ function start() {
 	var ogLink = document.getElementsByTagName('link')[0];
 	ogLink.parentNode.insertBefore(link, ogLink);
 
-	/*
 	setTimeout(function() {
 	if(!adsbygoogle.loaded) {
 		var ad = document.getElementById('sidebar-ad');
 		ad.style.display = 'none';
 	}}, 5000);
-	*/
 }
 
 start();
