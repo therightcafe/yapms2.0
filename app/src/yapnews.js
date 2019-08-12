@@ -2,12 +2,16 @@ $.ajax({
 	url: 'req_articles.php',
 	type: 'GET',
 	success : function(data) {
+		if(data.includes("req_article Error:")) {
+			console.log(data);
+			return;
+		}
+
 		var obj = jQuery.parseJSON(data);
 
 		var articles = document.getElementById("yapnews-articles");
 
 		if(articles === null) {
-			//alert('fail');
 			return;
 		}
 
