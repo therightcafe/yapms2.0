@@ -331,6 +331,7 @@ if($mobile) {
      style="display:inline-block;"
      data-ad-client="ca-pub-1660456925957249"
      data-ad-slot="8771249229"
+</ins>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>';
