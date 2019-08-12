@@ -116,6 +116,10 @@
 		include './style/yapnews.css';
 		include './style/sidebar.css';
 		include './style/yapnews.css';
+
+		if($mobile) {
+			include './style/mobile.css';
+		}
 ?>
 	</style>
 
