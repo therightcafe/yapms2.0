@@ -137,3 +137,8 @@ button {
 	height: 52px;
 	overflow: hidden;
 }
+
+.adslot_mobile {
+	height: 50px;
+	width: 320px;
+}

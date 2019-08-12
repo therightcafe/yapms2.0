@@ -221,16 +221,14 @@ if($mobile === false) {
 		'<div id="sidebar-header">
 			YAPms  
 		</div>' ,
-		'<div id="sidebar-ad">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
+		'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle adslot_sidebar"
      style="display:inline-block;width:336px;height:280px"
      data-ad-client="ca-pub-1660456925957249"
      data-ad-slot="8033943742"></ins>
 <script>
 	(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>',
+</script>',
 		'<div id="sidebar-social">
 		<a id="sidebar-discord-link" href="https://discord.gg/WQh5fHU" target="_blank"><div id="sidebar-discord" class="sidebar-button">
 			Discord
@@ -327,19 +325,15 @@ if($mobile === false) {
 </div>
 <?php
 if($mobile) {
-	echo '<div id="mobile-ad">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	echo '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- mobile-ad -->
-<ins class="adsbygoogle"
-     style="display:block"
+<ins class="adsbygoogle adslot_mobile"
+     style="display:inline-block;"
      data-ad-client="ca-pub-1660456925957249"
      data-ad-slot="8771249229"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>';
+</script>';
 }
 ?>
 </div>
