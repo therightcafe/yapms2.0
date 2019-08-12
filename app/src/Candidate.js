@@ -136,9 +136,8 @@ function setCandidate() {
 	updateChart();
 }
 
-function deleteCandidate(e) {
-	// hide the popup window
-	e.parentElement.style.display = 'none';
+function deleteCandidate() {
+	closeAllPopups();
 
 	var candidateid = e.parentElement.querySelector('#candidate-originalName').value;
 	for(var index = 0; index < states.length; ++index) {

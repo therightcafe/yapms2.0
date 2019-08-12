@@ -290,11 +290,14 @@ class State {
 		if(this.candidate === 'Tossup') {
 			this.colorValue = tossupColor;
 		}
+
+		var color = TOSSUP.colors[tossupColor];
 		
-		if(candidates[this.candidate].colors !== undefined && 
+		if(this.candidate in candidates &&
+			candidates[this.candidate].colors !== undefined && 
 			candidates[this.candidate].colors !== null) {
 			// get color
-			var color = candidates[this.candidate].colors[this.colorValue];
+			color = candidates[this.candidate].colors[this.colorValue];
 			// set color
 			this.htmlElement.style.fill = color;
 		}

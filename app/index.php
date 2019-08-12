@@ -691,7 +691,7 @@ test
 <div id="languagemenu" class="popup selectmenu">
 	<div class="selectmenu-header">
 	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
-	<h2><?php echo _("Select Language") ?></h2>
+	<h2><?php echo _("Select Language") ?> (Beta)</h2>
 	</div>
 	<div class="selectmenu-content">
 	<a class="selectmenu-button" onclick='setLanguage("en")'>English</a>
