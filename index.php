@@ -29,7 +29,7 @@
 		  google_ad_client: "ca-pub-1660456925957249",
 		  enable_page_level_ads: true
 	     });
-	</script>;
+	</script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132710089-1"></script>
