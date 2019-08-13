@@ -339,12 +339,14 @@ if($mobile) {
 ?>
 </div>
 
-<div id="demdel" class="popup">
+<div id="demdel" class="popup selectmenu">
+	<div class="selectmenu-header">
+	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2 id="demdel-message"></h2>
-	<div id="demdel-ranges">
+	</div>
+	<div id="demdel-ranges" class="selectmenu-content">
 	</div>
 	<input id="demdel-state-name" type="hidden">
-	<br>
 	<button class="setbutton" onclick="setDelegates(this)">set</button>
 </div>
 

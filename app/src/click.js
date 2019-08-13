@@ -193,8 +193,9 @@ function stateClickPaintProportional(state, id) {
 		alert("FAIL");
 	}
 
+	closeAllPopups();
 	var demdel = document.getElementById('demdel');
-	demdel.style.display = 'inline';
+	demdel.style.display = 'flex';
 	var message = document.getElementById('demdel-message');
 	if(state.name !== 'SU') {
 		message.innerHTML = state.name + ' - ' + state.voteCount + ' delegates';
