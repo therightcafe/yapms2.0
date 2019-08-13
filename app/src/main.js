@@ -1,4 +1,4 @@
-var currentCache = 'v0.48.0';
+var currentCache = 'v0.51.0';
 
 var cookies = {};
 
