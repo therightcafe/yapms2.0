@@ -565,11 +565,11 @@ if($mobile) {
 
 <!-- Netherlands Maps -->
 <div id="mapmenu-netherlands" class="popup selectmenu">
-	<div class="selectmenu-content">
+	<div class="selectmenu-header">
 	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2>Netherlands</h2>
 	</div>
-	<div class="selectmenu-header">
+	<div class="selectmenu-content">
 	<a class="selectmenu-button" href="./?t=Netherlands_provinces"><?php echo _("Provinces") ?></a>
 	<a class="selectmenu-button" href="./?t=Netherlands_gemeenten">Gemeeten</a>
 	</div>
