@@ -1,4 +1,4 @@
-var currentCache = 'v0.51.0';
+var currentCache = 'v0.51.1';
 
 var cookies = {};
 
@@ -1205,22 +1205,6 @@ function start() {
 	//link.crossorigin = 'anonymous';
 	var ogLink = document.getElementsByTagName('link')[0];
 	ogLink.parentNode.insertBefore(link, ogLink);
-
-	setTimeout(function() {
-		console.log('timeout gooo');
-		console.log(adsbygoogle);
-		if(!adsbygoogle.loaded) {
-			console.log('no ads');
-			var ad = document.getElementById('sidebar-ad');
-			if(ad) {
-				ad.style.display = 'none';
-			}
-			ad = document.getElementById('mobile-ad');
-			if(ad) {
-				ad.style.display = 'none';
-			}
-		}
-	}, 2000);
 }
 
 start();
