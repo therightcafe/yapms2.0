@@ -90,7 +90,7 @@
 
 	<div class="map-type-box">	
 	<div class="map-type-header">
-		USA<br>2020 National Elections Maps	
+		USA - 2020 National Elections Maps	
 	</div>
 
 	<div>	
@@ -124,7 +124,7 @@
 	
 	<div class="map-type-box">	
 	<div class="map-type-header">
-		USA<br>2020 Presidential Primaries
+		USA - 2020 Presidential Primaries
 	</div>
 	<div>
 		<a href="./app/?t=2020_democratic_primary">
@@ -145,7 +145,7 @@
 	
 	<div class="map-type-box">	
 	<div class="map-type-header">
-		USA<br>2020 Presidential Forecasts
+		USA - 2020 Presidential Forecasts
 	</div>
 	<div>
 		<a href="./app/?t=2020_cook">
@@ -174,7 +174,7 @@
 	
 	<div class="map-type-box">	
 	<div class="map-type-header">
-		USA<br>Current Congressional Maps
+		USA - Current Congressional Maps
 	</div>
 		
 	<div>
@@ -194,7 +194,7 @@
 
 	<div class="map-type-box">	
 	<div class="map-type-header">
-		USA<br>Open Maps
+		USA - Open Maps
 	</div>
 
 	<div>
@@ -228,7 +228,7 @@
 	
 	<div class="map-type-box">	
 	<div class="map-type-header">
-		USA<br>Other presidential maps	
+		USA - Other presidential maps	
 	</div>
 		
 	<div>
@@ -238,17 +238,17 @@
 			</div>
 		</a>
 		
-		<a href="./app/?t=2024_projection">
+		<a href="./app/?t=USA_proportional">
 			<div class="map-button">
-				2024 Estimates
+				Presidential Proportional
 			</div>
 		</a>
 
 		<br>
 		
-		<a href="./app/?t=USA_proportional">
+		<a href="./app/?t=2024_projection">
 			<div class="map-button">
-				Presidential Proportional
+				2024 Estimates
 			</div>
 		</a>
 
@@ -264,7 +264,7 @@
 
 	<div class="map-type-box">
 	<div class="map-type-header">
-		USA<br>Historical Presidential
+		USA - Historical Presidential
 	</div>
 	<div>	
 		<a href="./app/?t=2016_presidential">
@@ -471,7 +471,7 @@
 
 	<div class="map-type-box">
 	<div class="map-type-header">
-		USA<br>Historical Counties
+		USA - Historical Counties
 	</div>
 		
 		<a href="./app/?t=2016_presidential_county">
@@ -493,7 +493,7 @@
 
 	<div class="map-type-box">
 	<div class="map-type-header">
-		USA<br>Historical Open Maps
+		USA - Historical Open Maps
 	</div>
 		
 		<a href="./app/?t=USA_congressional">
