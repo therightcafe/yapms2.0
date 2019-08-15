@@ -100,9 +100,9 @@
 			</div>
 		</a>
 		
-		<a href="./app/?t=2020_senatorial">
+		<a href="./app/?t=2020_gubernatorial">
 			<div class="map-button">
-				Senatorial
+				Gubernatorial
 			</div>
 		</a>
 		
@@ -114,9 +114,9 @@
 			</div>
 		</a>
 
-		<a href="./app/?t=2020_gubernatorial">
+		<a href="./app/?t=2020_senatorial">
 			<div class="map-button">
-				Gubernatorial
+				Senatorial
 			</div>
 		</a>
 	</div>
@@ -132,7 +132,9 @@
 				Democratic Primary
 			</div>
 		</a>
-
+		
+		<br>
+		
 		<a href="./app/?t=2020_republican_primary">
 			<div class="map-button">
 				Republican Primary
@@ -236,17 +238,17 @@
 			</div>
 		</a>
 		
-		<a href="./app/?t=USA_proportional">
+		<a href="./app/?t=2024_projection">
 			<div class="map-button">
-				Presidential Proportional
+				2024 Estimates
 			</div>
 		</a>
 
 		<br>
 		
-		<a href="./app/?t=2024_projection">
+		<a href="./app/?t=USA_proportional">
 			<div class="map-button">
-				2024 Estimates
+				Presidential Proportional
 			</div>
 		</a>
 
@@ -262,7 +264,7 @@
 
 	<div class="map-type-box">
 	<div class="map-type-header">
-		USA - Historical Presidential - Post WW2
+		USA - Historical Presidential
 	</div>
 	<div>	
 		<a href="./app/?t=2016_presidential">
@@ -280,7 +282,6 @@
 				2008
 			</div>
 		</a>
-		<br>
 		<a href="./app/?t=2004_presidential">
 			<div class="map-button">
 				2004
@@ -290,13 +291,12 @@
 			<div class="map-button">
 				2000
 			</div>
-		</a>
+		</a><br>
 		<a href="./app/?t=1996_presidential">
 			<div class="map-button">
 				1996
 			</div>
 		</a>
-		<br>
 		<a href="./app/?t=1992_presidential">
 			<div class="map-button">
 				1992
@@ -311,13 +311,13 @@
 			<div class="map-button">
 				1984
 			</div>
-		</a><br>
+		</a>
 
 		<a href="./app/?t=1980_presidential">
 			<div class="map-button">
 				1980
 			</div>
-		</a>
+		</a><br>
 		<a href="./app/?t=1976_presidential">
 			<div class="map-button">
 				1976
@@ -327,7 +327,7 @@
 			<div class="map-button">
 				1972
 			</div>
-		</a><br>
+		</a>
 
 		<a href="./app/?t=1968_presidential">
 			<div class="map-button">
@@ -344,7 +344,6 @@
 				1960
 			</div>
 		</a><br>
-
 		<a href="./app/?t=1956_presidential">
 			<div class="map-button">
 				1956
@@ -359,14 +358,7 @@
 			<div class="map-button">
 				1948
 			</div>
-		</a><br>
-		</div>
-		</div>
-
-	<div class="map-type-box">
-	<div class="map-type-header">
-		USA - Historical - Pre WW2
-	</div>
+		</a>
 		<a href="./app/?t=1944_presidential">
 			<div class="map-button">
 				1944
@@ -376,13 +368,12 @@
 			<div class="map-button">
 				1940
 			</div>
-		</a>
+		</a><br>
 		<a href="./app/?t=1936_presidential">
 			<div class="map-button">
 				1936
 			</div>
-		</a><br>
-
+		</a>
 		<a href="./app/?t=1932_presidential">
 			<div class="map-button">
 				1932
@@ -397,13 +388,12 @@
 			<div class="map-button">
 				1924
 			</div>
-		</a><br>
-
+		</a>
 		<a href="./app/?t=1920_presidential">
 			<div class="map-button">
 				1920
 			</div>
-		</a>
+		</a><br>
 		<a href="./app/?t=1916_presidential">
 			<div class="map-button">
 				1916
@@ -413,8 +403,7 @@
 			<div class="map-button">
 				1912
 			</div>
-		</a><br>
-		
+		</a>
 		<a href="./app/?t=1908_presidential">
 			<div class="map-button">
 				1908
@@ -432,7 +421,6 @@
 				1900
 			</div>
 		</a><br>
-
 		<a href="./app/?t=1896_presidential">
 			<div class="map-button">
 				1896
@@ -447,8 +435,7 @@
 			<div class="map-button">
 				1888
 			</div>
-		</a><br>
-
+		</a>
 		<a href="./app/?t=1884_presidential">
 			<div class="map-button">
 				1884
@@ -458,13 +445,12 @@
 			<div class="map-button">
 				1880
 			</div>
-		</a>
+		</a><br>
 		<a href="./app/?t=1876_presidential">
 			<div class="map-button">
 				1876
 			</div>
-		</a><br>
-
+		</a>
 		<a href="./app/?t=1872_presidential">
 			<div class="map-button">
 				1872
@@ -504,8 +490,6 @@
 		
 	</div>
 	</div>
-
-	<br>
 
 	<div class="map-type-box">
 	<div class="map-type-header">
@@ -612,6 +596,8 @@
 		
 	</div>
 	</div>
+
+	<br>
 	
 	<div class="map-type-box">
 	<div class="map-type-header">
