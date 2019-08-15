@@ -90,7 +90,7 @@
 
 	<div class="map-type-box">	
 	<div class="map-type-header">
-		USA - 2020 National Elections Maps	
+		USA<br>2020 National Elections Maps	
 	</div>
 
 	<div>	
@@ -124,7 +124,7 @@
 	
 	<div class="map-type-box">	
 	<div class="map-type-header">
-		USA - 2020 Presidential Primaries
+		USA<br>2020 Presidential Primaries
 	</div>
 	<div>
 		<a href="./app/?t=2020_democratic_primary">
@@ -145,7 +145,7 @@
 	
 	<div class="map-type-box">	
 	<div class="map-type-header">
-		USA - 2020 Presidential Forecasts
+		USA<br>2020 Presidential Forecasts
 	</div>
 	<div>
 		<a href="./app/?t=2020_cook">
@@ -174,7 +174,7 @@
 	
 	<div class="map-type-box">	
 	<div class="map-type-header">
-		USA - Current Congressional Maps
+		USA<br>Current Congressional Maps
 	</div>
 		
 	<div>
@@ -194,7 +194,7 @@
 
 	<div class="map-type-box">	
 	<div class="map-type-header">
-		USA - Open Maps
+		USA<br>Open Maps
 	</div>
 
 	<div>
@@ -228,7 +228,7 @@
 	
 	<div class="map-type-box">	
 	<div class="map-type-header">
-		USA - Other presidential maps	
+		USA<br>Other presidential maps	
 	</div>
 		
 	<div>
@@ -264,7 +264,7 @@
 
 	<div class="map-type-box">
 	<div class="map-type-header">
-		USA - Historical Presidential
+		USA<br>Historical Presidential
 	</div>
 	<div>	
 		<a href="./app/?t=2016_presidential">
@@ -471,7 +471,7 @@
 
 	<div class="map-type-box">
 	<div class="map-type-header">
-		USA - Historical Counties
+		USA<br>Historical Counties
 	</div>
 		
 		<a href="./app/?t=2016_presidential_county">
@@ -493,7 +493,7 @@
 
 	<div class="map-type-box">
 	<div class="map-type-header">
-		USA - Historical Open Maps
+		USA<br>Historical Open Maps
 	</div>
 		
 		<a href="./app/?t=USA_congressional">
