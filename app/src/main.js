@@ -1174,7 +1174,7 @@ function start() {
 
 	if(php_load_map === true) {
 		$.ajax({
-			url: "./maps/" + php_load_map_id,
+			url: "./maps/" + php_load_map_id + '.gz',
 			type: "POST",
 			headers: {},
 			success: function(a, b, c) {
