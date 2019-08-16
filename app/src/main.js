@@ -1177,9 +1177,7 @@ function start() {
 			url: "./maps/" + php_load_map_id,
 			type: "POST",
 			headers: { 
-			'Accept-Encoding': 'gzip',
-			'Content-type': 'text/plain',
-			'Content-encoding': 'gzip'},
+			'Content-Encoding': 'gzip' },
 			success: function(a, b, c) {
 				console.log("Found saved map...");
 				try {
