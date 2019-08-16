@@ -612,9 +612,9 @@ function loadFileMap() {
 	var file = document.getElementById('loadfile').files[0];
 	var fileReader = new FileReader();
 	fileReader.onload = function(loadEvent) {
-		var txt = loadEvent.target.result;
+		var a = loadEvent.target.result;
 		try {
-			loadSavedMap_new(a);
+			loadSavedMap_new();
 		} catch(e) {
 			console.log('New file load failed, attempting old');
 			loadSavedMap_old(a);
