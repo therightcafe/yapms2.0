@@ -1179,8 +1179,6 @@ function start() {
 			success: function(a, b, c) {
 				console.log("Found saved map...");
 				try {
-					var data = pako.ungzip(a, {to: 'string'});
-					console.log(data);
 					loadSavedMap_new(a);
 				} catch(e) {
 					console.log('New file load failed, attempting old');
