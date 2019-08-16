@@ -46,7 +46,8 @@ if($file) {
 	fclose($file);
 }
 
-$file = fopen("./maps/" . $filename, 'w');
+//$file = fopen("./maps/" . $filename, 'w');
+$file = gzopen("./maps/". $filename, 'w9');
 if($file) {
 	$data;
 	$data['filename'] = $_POST['filename'];
@@ -88,9 +89,12 @@ if($file) {
 		$data['states'][$state['name']]['votecount'] = $state['voteCount'];
 		$data['states'][$state['name']]['disabled'] = $state['disabled'];
 	}
+	
 
-	fwrite($file, json_encode($data));
-	fclose($file);
+	gzwrite($file, json_encode($data));
+	gzclose($file);
+	//fwrite($file, json_encode($data));
+	//fclose($file);
 	echo 'https://www.yapms.com/app/?m=' . $filename . ' ';
 	echo $filename;
 }
