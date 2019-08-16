@@ -523,8 +523,8 @@ if($mobile) {
 	<h2><?php echo _("Canada") ?></h2>
 	</div>
 	<div class="selectmenu-content">
-	<a class="selectmenu-button" href="./?t=Canada_provinces"><?php echo _("Provinces") ?></a>
-	<a class="selectmenu-button" href="./?t=Canada_constituencies"><?php echo _("Constituencies") ?></a>
+	<a class="selectmenu-button" href="./?t=Canada_provinces"><i class="fas fa-chevron-square"></i> <?php echo _("Provinces") ?></a>
+	<a class="selectmenu-button" href="./?t=Canada_constituencies"><i class="fas fa-chevron-down"></i> <?php echo _("Constituencies") ?></a>
 	</div>
 </div>
 
@@ -535,8 +535,8 @@ if($mobile) {
 	<h2><?php echo _("Germany") ?></h2>
 	</div>
 	<div class="selectmenu-content">
-	<a class="selectmenu-button" href="./?t=Germany_states"><?php echo _("States") ?></a>
-	<a class="selectmenu-button" href="./?t=Germany_constituencies"><?php echo _("Constituencies") ?></a>
+	<a class="selectmenu-button" href="./?t=Germany_states"><i class="fas fa-chevron-square"></i> <?php echo _("States") ?></a>
+	<a class="selectmenu-button" href="./?t=Germany_constituencies"><i class="fas fa-chevron-down"></i> <?php echo _("Constituencies") ?></a>
 	</div>
 </div>
 
@@ -547,8 +547,8 @@ if($mobile) {
 	<h2><?php echo _("Australia") ?></h2>
 	</div>
 	<div class="selectmenu-content">
-	<a class="selectmenu-button" href="./?t=Australia_states"><?php echo _("States") ?></a>
-	<a class="selectmenu-button" href="./?t=Australia_constituencies"><?php echo _("Constituencies") ?></a>
+	<a class="selectmenu-button" href="./?t=Australia_states"><i class="fas fa-chevron-square"></i> <?php echo _("States") ?></a>
+	<a class="selectmenu-button" href="./?t=Australia_constituencies"><i class="fas fa-chevron-down"></i> <?php echo _("Constituencies") ?></a>
 	</div>
 </div>
 
@@ -559,8 +559,8 @@ if($mobile) {
 	<h2><?php echo _("Netherlands") ?></h2>
 	</div>
 	<div class="selectmenu-content">
-	<a class="selectmenu-button" href="./?t=Netherlands_provinces"><?php echo _("Provinces") ?></a>
-	<a class="selectmenu-button" href="./?t=Netherlands_gemeenten"><?php echo _("Gemeeten") ?></a>
+	<a class="selectmenu-button" href="./?t=Netherlands_provinces"><i class="fas fa-chevron-circle-down"></i> <?php echo _("Provinces") ?></a>
+	<a class="selectmenu-button" href="./?t=Netherlands_gemeenten"><i class="fas fa-chevron-down"></i> <?php echo _("Gemeeten") ?></a>
 	</div>
 </div>
 
@@ -571,7 +571,7 @@ if($mobile) {
 	<h2><?php echo _("United Kingdom") ?></h2>
 	</div>
 	<div class="selectmenu-content">
-	<a class="selectmenu-button" onclick='closeAllPopups(); loadMap("./res/unitedkingdom.svg", 16, 0.075, "congressional", "congressional", "open");'><?php echo _("Constituencies") ?></a>
+	<a class="selectmenu-button" onclick='closeAllPopups(); loadMap("./res/unitedkingdom.svg", 16, 0.075, "congressional", "congressional", "open");'><i class="fas fa-chevron-down"></i> <?php echo _("Constituencies") ?></a>
 	</div>
 </div>
 
@@ -583,29 +583,30 @@ if($mobile) {
 	</div>
 	<div class="selectmenu-content">
 	<a class="selectmenu-split"><?php echo _("2020 National Elections") ?></a>
-	<a class="selectmenu-button" href="./?t=2020_presidential"><?php echo _("Presidential") ?></a>
-	<a class="selectmenu-button" href="./?t=2020_senatorial"><?php echo _("Senatorial") ?></a>
-	<a class="selectmenu-button" href="./?t=2020_gubernatorial"><?php echo _("Gubernatorial") ?></a>
+	<a class="selectmenu-button" href="./?t=2020_presidential"><i class="fas fa-user"></i> <?php echo _("Presidential") ?></a>
+	<a class="selectmenu-button" href="./?t=2020_senatorial"><i class="fas fa-chevron-up"></i> <?php echo _("Senatorial") ?></a>
+	<a class="selectmenu-button" href="./?t=USA_congressional"><i class="fas fa-chevron-down"></i> <?php echo _("Congressional") ?></a>
+	<a class="selectmenu-button" href="./?t=2020_gubernatorial"><i class="fas fa-square"></i> <?php echo _("Gubernatorial") ?></a>
 	<a class="selectmenu-split"><?php echo _("2020 Presidential Forecasts") ?></a>
 	<a class="selectmenu-button" href="./?t=2020_cook">Cook Political Report</a>
 	<a class="selectmenu-button" href="./?t=2020_inside">Inside Elections</a>
 	<a class="selectmenu-button" href="./?t=2020_sabatos">Sabatos Crystal Ball</a>
 	<a class="selectmenu-split"><?php echo _("2020 Presidential Primaries") ?></a>
-	<a class="selectmenu-button" href="./?t=2020_democratic_primary"><?php echo _("Democratic") ?></a>
-	<a class="selectmenu-button" href="./?t=2020_republican_primary"><?php echo _("Republican") ?></a>
+	<a class="selectmenu-button" href="./?t=2020_democratic_primary"><i class="fas fa-democrat"></i> <?php echo _("Democratic") ?></a>
+	<a class="selectmenu-button" href="./?t=2020_republican_primary"><i class="fas fa-republican"></i> <?php echo _("Republican") ?></a>
 	<a class="selectmenu-split"><?php echo _("Current") ?></a>
-	<a class="selectmenu-button" href="./?t=Current_house"><?php echo _("House") ?></a>
-	<a class="selectmenu-button" href="./?t=Current_senate"><?php echo _("Senate") ?></a>
+	<a class="selectmenu-button" href="./?t=Current_house"><i class="fas fa-chevron-down"></i><?php echo _("House of Representatives") ?></a>
+	<a class="selectmenu-button" href="./?t=Current_senate"><i class="fas fa-chevron-up"></i> <?php echo _("Senate") ?></a>
 	<a class="selectmenu-split"><?php echo _("Blank maps") ?></a>
-	<a class="selectmenu-button" href="./?t=2024_projection">2024</a>
-	<a class="selectmenu-button" href="./?t=USA_gubernatorial"><?php echo _("Governors (1 per state)") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_senatorial"><?php echo _("Senate (2 per state)") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_congressional"><?php echo _("House of Representatives") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_county"><?php echo _("County") ?></a>
+	<a class="selectmenu-button" href="./?t=USA_gubernatorial"><i class="fas fa-square"></i><?php echo _("Governors/States") ?></a>
+	<a class="selectmenu-button" href="./?t=USA_senatorial"><i class="fas fa-chevron-up"></i> <?php echo _("Senate") ?></a>
+	<a class="selectmenu-button" href="./?t=USA_congressional"><i class="fas fa-chevron-down"></i><?php echo _("House of Representatives") ?></a>
+	<a class="selectmenu-button" href="./?t=USA_county"><i class="fas fa-border-all"></i> <?php echo _("County") ?></a>
 	<a class="selectmenu-split"><?php echo _("Other presidential maps") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_proportional"><?php echo _("Proportional") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_takeall"><?php echo _("Take All") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_split_maine"><?php echo _("Split Maine") ?></a>
+	<a class="selectmenu-button" href="./?t=USA_proportional"><i class="fas fa-user-circle"></i> <?php echo _("Proportional") ?></a>
+	<a class="selectmenu-button" href="./?t=USA_takeall"><i class="fas fa-user"></i> <?php echo _("Take All") ?></a>
+	<a class="selectmenu-button" href="./?t=2024_projection"><i class="fas fa-user"></i> <?php echo _("2024 estimates") ?></a>
+	<a class="selectmenu-button" href="./?t=USA_split_maine"><i class="fas fa-user"></i> <?php echo _("Split Maine") ?></a>
 	</div>
 </div>
 
@@ -616,7 +617,7 @@ if($mobile) {
 	<h2><?php echo _("USA Historical Maps") ?></h2>
 	</div>
 	<div class="selectmenu-content">
-	<a class="selectmenu-split"><?php echo _("Presidential Maps") ?></a>
+	<a class="selectmenu-split"><i class="fas fa-user"></i> <?php echo _("Presidential Maps") ?></a>
 	<a class="selectmenu-button" href="./?t=2016_presidential">2016</a>
 	<a class="selectmenu-button" href="./?t=2012_presidential">2012</a>
 	<a class="selectmenu-button" href="./?t=2008_presidential">2008</a>
@@ -656,10 +657,10 @@ if($mobile) {
 	<a class="selectmenu-button" href="./?t=1872_presidential">1872</a>
 	<a class="selectmenu-button" href="./?t=1868_presidential">1868</a>
 	<a class="selectmenu-button" href="./?t=1864_presidential">1864</a>
-	<a class="selectmenu-split"><?php echo _("Presidential counties maps") ?></a>
-	<a class="selectmenu-button" href="./?t=2016_presidential_county">2016</a>
+	<a class="selectmenu-split"><i class="fas fa-border-all"></i> <?php echo _("Presidential counties maps") ?></a>
+	<a class="selectmenu-button" href="./?t=2016_presidential_county"><i class="fas fa-border-all"></i> 2016</a>
 	<a class="selectmenu-split"><?php echo _("Historical blank maps") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_congressional_2008"><?php echo _("Congressional") ?> 2001-2010</a>
+	<a class="selectmenu-button" href="./?t=USA_congressional_2008"><?php echo _("Congressional") ?> 2006-2010</a>
 	<a class="selectmenu-button" href="./?t=USA_congressional"><?php echo _("Congressional") ?> 2011-2020</a>
 	</div>
 </div>
