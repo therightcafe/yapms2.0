@@ -583,7 +583,7 @@ if($mobile) {
 	</div>
 	<div class="selectmenu-content">
 	<a class="selectmenu-split"><?php echo _("2020 National Elections") ?></a>
-	<a class="selectmenu-button" href="./?t=2020_presidential"><i class="fas fa-user"></i> <?php echo _("Presidential") ?></a>
+	<a class="selectmenu-button" href="./?t=2020_presidential"><i class="fas fa-paint-user"></i> <?php echo _("Presidential") ?></a>
 	<a class="selectmenu-button" href="./?t=2020_senatorial"><i class="fas fa-chevron-up"></i> <?php echo _("Senatorial") ?></a>
 	<a class="selectmenu-button" href="./?t=USA_congressional"><i class="fas fa-chevron-down"></i> <?php echo _("Congressional") ?></a>
 	<a class="selectmenu-button" href="./?t=2020_gubernatorial"><i class="fas fa-square"></i> <?php echo _("Gubernatorial") ?></a>
