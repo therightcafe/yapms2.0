@@ -245,7 +245,7 @@
 		
 		<a href="./app/?t=USA_proportional">
 			<div class="map-button">
-				<i class="fas fa-chevron-circle-down"></i>  Presidential Proportional
+				<i class="far fa-user-circle"></i>  Presidential Proportional
 			</div>
 		</a>
 
@@ -500,7 +500,7 @@
 
 	<div class="map-type-box">
 	<div class="map-type-header">
-		<img src="app/res/flags/usa.png" height="20px"> Historical Counties
+		<img src="app/res/flags/usa.png" height="20px"> <i class="fas fa-border-all"></i> Historical Counties
 	</div>
 		
 		<a href="./app/?t=2016_presidential_county">
