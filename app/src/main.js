@@ -1174,9 +1174,8 @@ function start() {
 
 	if(php_load_map === true) {
 		$.ajax({
-			url: "./maps/" + php_load_map_id + '.gz',
+			url: "./maps/" + php_load_map_id,
 			type: "POST",
-			headers: {},
 			success: function(a, b, c) {
 				console.log("Found saved map...");
 				try {
