@@ -87,7 +87,7 @@ function share() {
 		button.setAttribute('onclick', '');
 	}
 
-	grecaptcha.execute('6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo', {action: 'share'}).then(function(token) {
+	//grecaptcha.execute('6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo', {action: 'share'}).then(function(token) {
 	html2canvas(document.getElementById('application'), {logging: true, onclone: function(clone) {
 		// remove the custom fonts from the clone
 		var svgtext = clone.getElementById('text');
@@ -112,9 +112,9 @@ function share() {
 		i.src = img;
 		i.style.width = '40vw';
 		i.style.height = 'auto';
-		saveMap(img, token);
+		saveMap(img, 'token');
 	});
-	});
+	//});
 }
 
 window.onerror = function(message, source, lineno, colno, error) {
@@ -277,7 +277,6 @@ function initChart() {
 				}
 			}
 		
-
 			// after adding all the candidates, add the add candidate button
 			var legendElement = document.createElement('div');
 			legendElement.setAttribute('id', 'legend-addcandidate-button');
@@ -296,6 +295,18 @@ function initChart() {
 			var legendColorDiv = document.createElement('div');
 			legendColorDiv.setAttribute('class', 'legend-color-div');
 			legendElement.appendChild(legendColorDiv);
+			
+			var legendTooltip = document.createElement('div');
+			legendTooltip.setAttribute('id', 'legend-tooltip');
+			legendDiv.appendChild(legendTooltip);
+			var legendText = document.createElement('div');
+			legendText.setAttribute('id', 'legendtooltip-text');	
+			legendText.setAttribute('class', 'legend-button-text');	
+			legendText.style.padding = '0px';
+			legendText.innerHTML = 'Select a candidate';
+			legendTooltip.appendChild(legendText);
+			
+
 		},
 		// do not display the build in legend for the chart
 		legend: {
@@ -1107,10 +1118,6 @@ function appendCookie(key, value) {
 	cookie = key + '=' + cookies[key] + '; expires=' + expire + ';';
 	document.cookie = cookie;
 	console.log('append cookie: key=' + key + ' value=' + value);
-
-//	if('serviceWorker' in navigator) {
-		//navigator.serviceWorker.controller.postMessage('c ' + key + ' ' + value); 
-//	}
 }
 
 function loadCookies() {
@@ -1173,7 +1180,12 @@ function start() {
 			contentType: false,
 			success: function(a, b, c) {
 				console.log("Found saved map...");
-				loadSavedMap(a);
+				try {
+					loadSavedMap_new(a);
+				} catch(e) {
+					console.log('New file load failed, attempting old');
+					loadSavedMap_old(a);
+				}
 			},
 			error: function(a, b, c) {
 				console.log("Did not find saved map...");

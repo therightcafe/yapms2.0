@@ -260,99 +260,107 @@
 	<div>	
 		<a href="./app/?t=2016_presidential">
 			<div class="map-button">
-				2016 Presidential
+				2016
 			</div>
 		</a>
 		<a href="./app/?t=2012_presidential">
 			<div class="map-button">
-				2012 Presidential
+				2012
 			</div>
 		</a>
 		<a href="./app/?t=2008_presidential">
 			<div class="map-button">
-				2008 Presidential
+				2008
 			</div>
 		</a>
-		<br>
 		<a href="./app/?t=2004_presidential">
 			<div class="map-button">
-				2004 Presidential
+				2004
 			</div>
 		</a>
 		<a href="./app/?t=2000_presidential">
 			<div class="map-button">
-				2000 Presidential
-			</div>
-		</a>
-		<a href="./app/?t=1996_presidential">
-			<div class="map-button">
-				1996 Presidential
+				2000
 			</div>
 		</a>
 		<br>
+		<a href="./app/?t=1996_presidential">
+			<div class="map-button">
+				1996
+			</div>
+		</a>
 		<a href="./app/?t=1992_presidential">
 			<div class="map-button">
-				1992 Presidential
+				1992
 			</div>
 		</a>
 		<a href="./app/?t=1988_presidential">
 			<div class="map-button">
-				1988 Presidential
+				1988
 			</div>
 		</a>
 		<a href="./app/?t=1984_presidential">
 			<div class="map-button">
-				1984 Presidential
-			</div>
-		</a><br>
-
-		<a href="./app/?t=1980_presidential">
-			<div class="map-button">
-				1980 Presidential
+				1984
 			</div>
 		</a>
+		<a href="./app/?t=1980_presidential">
+			<div class="map-button">
+				1980
+			</div>
+		</a>
+		<br>
 		<a href="./app/?t=1976_presidential">
 			<div class="map-button">
-				1976 Presidential
+				1976
 			</div>
 		</a>
 		<a href="./app/?t=1972_presidential">
 			<div class="map-button">
-				1972 Presidential
+				1972
 			</div>
-		</a><br>
-
+		</a>
 		<a href="./app/?t=1968_presidential">
 			<div class="map-button">
-				1968 Presidential
+				1968
 			</div>
 		</a>
 		<a href="./app/?t=1964_presidential">
 			<div class="map-button">
-				1964 Presidential
+				1964
 			</div>
 		</a>
 		<a href="./app/?t=1960_presidential">
 			<div class="map-button">
-				1960 Presidential
+				1960
 			</div>
-		</a><br>
-
+		</a>
+		<br>
 		<a href="./app/?t=1956_presidential">
 			<div class="map-button">
-				1956 Presidential
+				1956
 			</div>
 		</a>
 		<a href="./app/?t=1952_presidential">
 			<div class="map-button">
-				1952 Presidential
+				1952
 			</div>
 		</a>
 		<a href="./app/?t=1948_presidential">
 			<div class="map-button">
-				1948 Presidential
+				1948
 			</div>
-		</a><br>
+		</a>
+		<a href="./app/?t=1944_presidential">
+			<div class="map-button">
+				1944
+			</div>
+		</a>
+		<a href="./app/?t=1940_presidential">
+			<div class="map-button">
+				1940
+			</div>
+		</a>
 		</div>
 		</div>
 
@@ -360,117 +368,102 @@
 		<div class="map-type-header">
 			USA - Historical - Pre WW2
 		</div>
-		<a href="./app/?t=1944_presidential">
-			<div class="map-button">
-				1944 Presidential
-			</div>
-		</a>
-		<a href="./app/?t=1940_presidential">
-			<div class="map-button">
-				1940 Presidential
-			</div>
-		</a>
 		<a href="./app/?t=1936_presidential">
 			<div class="map-button">
-				1936 Presidential
+				1936
 			</div>
-		</a><br>
-
+		</a>
 		<a href="./app/?t=1932_presidential">
 			<div class="map-button">
-				1932 Presidential
+				1932
 			</div>
 		</a>
 		<a href="./app/?t=1928_presidential">
 			<div class="map-button">
-				1928 Presidential
+				1928
 			</div>
 		</a>
 		<a href="./app/?t=1924_presidential">
 			<div class="map-button">
-				1924 Presidential
-			</div>
-		</a><br>
-
-		<a href="./app/?t=1920_presidential">
-			<div class="map-button">
-				1920 Presidential
+				1924
 			</div>
 		</a>
+		<a href="./app/?t=1920_presidential">
+			<div class="map-button">
+				1920
+			</div>
+		</a>
+		<br>
 		<a href="./app/?t=1916_presidential">
 			<div class="map-button">
-				1916 Presidential
+				1916
 			</div>
 		</a>
 		<a href="./app/?t=1912_presidential">
 			<div class="map-button">
-				1912 Presidential
+				1912
 			</div>
-		</a><br>
-		
+		</a>
 		<a href="./app/?t=1908_presidential">
 			<div class="map-button">
-				1908 Presidential
+				1908
 			</div>
 		</a>
-		
 		<a href="./app/?t=1904_presidential">
 			<div class="map-button">
-				1904 Presidential
+				1904
 			</div>
 		</a>
-		
 		<a href="./app/?t=1900_presidential">
 			<div class="map-button">
-				1900 Presidential
+				1900
 			</div>
-		</a><br>
-
+		</a>
+		<br>
 		<a href="./app/?t=1896_presidential">
 			<div class="map-button">
-				1896 Presidential
+				1896
 			</div>
 		</a>
 		<a href="./app/?t=1892_presidential">
 			<div class="map-button">
-				1892 Presidential
+				1892
 			</div>
 		</a>
 		<a href="./app/?t=1888_presidential">
 			<div class="map-button">
-				1888 Presidential
+				1888
 			</div>
-		</a><br>
-
+		</a>
 		<a href="./app/?t=1884_presidential">
 			<div class="map-button">
-				1884 Presidential
+				1884
 			</div>
 		</a>
 		<a href="./app/?t=1880_presidential">
 			<div class="map-button">
-				1880 Presidential
+				1880
 			</div>
 		</a>
+		<br>
 		<a href="./app/?t=1876_presidential">
 			<div class="map-button">
-				1876 Presidential
+				1876
 			</div>
-		</a><br>
-
+		</a>
 		<a href="./app/?t=1872_presidential">
 			<div class="map-button">
-				1872 Presidential
+				1872
 			</div>
 		</a>
 		<a href="./app/?t=1868_presidential">
 			<div class="map-button">
-				1868 Presidential
+				1868
 			</div>
 		</a>
 		<a href="./app/?t=1864_presidential">
 			<div class="map-button">
-				1864 Presidential
+				1864
 			</div>
 		</a><br>
 	</div>

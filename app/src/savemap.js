@@ -28,6 +28,7 @@ function saveMap(img, token) {
 		};
 		candidateData.push(obj);
 	}
+
 	formData.append("candidates", JSON.stringify({
 		candidate_data: candidateData
 	}));
@@ -41,16 +42,15 @@ function saveMap(img, token) {
 			delegates: state.delegates,
 			voteCount: state.voteCount,
 			colorValue: state.colorValue,
-			disabled: state.disabled.toString()[0]
+			disabled: state.disabled
 		};
 		stateData.push(obj);
 	}
 	formData.append("states", JSON.stringify({
 		state_data: stateData
 	}));
-
 	$.ajax({
-		url: "./savemap.php",
+		url: "./savemap_new.php",
 		type: "POST",
 		data: formData,
 		processData: false,
@@ -103,7 +103,7 @@ function saveMap(img, token) {
 			console.log('Map save succeeded');
 			gtag('event', 'map_save_succeeded', {
 				'event_category': 'map_save',
-				'event_label': 'Map save succeeded'
+				'event_label': 'Map save succeeded ' + currentCache 
 			});
 		},
 		error: function(a,b,c) {

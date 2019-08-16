@@ -25,7 +25,7 @@ function loadPresetMap(preset, options) {
 		contentType: false,
 		success: function(a, b, c) {
 			console.log("Found preset map...");
-			loadSavedMap(a, {enableCongress: enableHouse});
+			loadSavedMap_old(a, {enableCongress: enableHouse});
 		},
 		error: function(a, b, c) {
 			console.log("Did not find preset map...");
@@ -299,52 +299,55 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year, options) {
 			}
 		}
 
+		var finishOptions = function() {
+			if(options.onLoad) {
+				options.onLoad();
+			}
+
+			if(options.states) {
+				for(var stateIndex = 0, length = options.states.length; stateIndex < length; ++stateIndex) {
+					var state = states[stateIndex];
+					var optionState = options.states[stateIndex];
+					state.setVoteCount(optionState.voteCount, true);
+					state.setColor(optionState.candidate, optionState.colorValue);
+				}
+				countVotes();
+				updateChart();
+				updateLegend();
+			}
+
+			if(options.voters) {
+				for(var stateIndex = 0, length = states.length; stateIndex < length; ++stateIndex) {
+					var state = states[stateIndex];
+					state.voters = data[options.voters][state.name];
+					state.popularVote = {};
+					state.popularVote['Tossup'] = state.voters;
+				}
+
+				countPopularVote();
+			}
+
+			// disable the load screen when the map is finished loading
+			var loadScreen = document.getElementById('application-loading');
+			setTimeout(function() {
+				loadScreen.style.display = 'none';
+			}, 350);
+		}
+
 		if(type === 'senatorial' && year !== 'open') {
 			blockPresets = true;
-			loadSenateFile(dataname);
+			loadSenateFile(dataname, finishOptions);
 		} else if(type === 'gubernatorial' && year !== 'open') {
 			blockPresets = true;
-			loadGubernatorialFile(dataname);
+			loadGubernatorialFile(dataname, finishOptions);
 		} else {
 			mapHTML.style.visibility = 'visible';
+			finishOptions();
 		}
-
-		if(options.onLoad) {
-			options.onLoad();
-		}
-
-		if(options.states) {
-			for(var stateIndex = 0, length = options.states.length; stateIndex < length; ++stateIndex) {
-				var state = states[stateIndex];
-				var optionState = options.states[stateIndex];
-				state.setVoteCount(optionState.voteCount, true);
-				state.setColor(optionState.candidate, optionState.colorValue);
-			}
-			countVotes();
-			updateChart();
-			updateLegend();
-		}
-
-		if(options.voters) {
-			for(var stateIndex = 0, length = states.length; stateIndex < length; ++stateIndex) {
-				var state = states[stateIndex];
-				state.voters = data[options.voters][state.name];
-				state.popularVote = {};
-				state.popularVote['Tossup'] = state.voters;
-			}
-
-			countPopularVote();
-		}
-
-		// disable the load screen when the map is finished loading
-		var loadScreen = document.getElementById('application-loading');
-		setTimeout(function() {
-			loadScreen.style.display = 'none';
-		}, 350);
 	});
 }
 
-function loadGubernatorialFile(gubernatorialfile) {
+function loadGubernatorialFile(gubernatorialfile, onLoad) {
 
 	if(gubernatorialfile.includes('open') == false) {
 	}
@@ -358,10 +361,12 @@ function loadGubernatorialFile(gubernatorialfile) {
 
 		var loadMode = 'candidate';
 		var lines = data.split('\n');
+
 		// if the last element is empty remove it
 		if(lines[lines.length - 1] === '') {
 			lines.pop();
 		}
+
 		for(var index = 0; index < lines.length; ++index) {
 			var line = lines[index].trim();
 			if(loadMode === 'candidate') {
@@ -383,7 +388,6 @@ function loadGubernatorialFile(gubernatorialfile) {
 					state.setColor('Tossup', 2);
 				} else {
 					state.setColor(candidate, 0);
-					//state.toggleDisable();
 					state.toggleLock();
 				}
 			}
@@ -396,6 +400,8 @@ function loadGubernatorialFile(gubernatorialfile) {
 
 		var mapHTML = document.getElementById('map-div');
 		mapHTML.style.visibility = 'visible';
+
+		onLoad();
 	});
 }
 
@@ -463,10 +469,53 @@ function loadSenateFile(senatefile, onLoad) {
 
 		var mapHTML = document.getElementById('map-div');
 		mapHTML.style.visibility = 'visible';
+
+		onLoad();
 	});
 }
 
-function loadSavedMap(data, options) {
+function loadSavedMap_new(data, options) {
+	var obj = JSON.parse(data);	
+	if(options) {
+		enableCongress = options.enableCongress;
+	} else {
+		enableCongress = false;
+	}
+
+	loadMap(obj['filename'], obj['fontsize'], obj['strokewidth'], obj['dataid'],
+			obj['type'], obj['year'], {enableCongress: enableCongress,
+	onLoad: function() {
+		console.log(obj);
+		for(var candidateName in obj.candidates) {
+			var candidate = obj.candidates[candidateName];
+			addCandidate(candidateName, candidate['solid'], candidate['likely'], candidate['lean'], candidate['tilt']);
+		}
+
+		for(var stateName in obj.states) {
+			var stateData = obj.states[stateName];
+			var state = states.filter(state => state.name === stateName)[0];
+			state.setVoteCount(stateData['votecount'], obj['updatetext']);
+			state.setColor(stateData['candidate'], stateData['colorvalue']);
+			state.delegates = stateData['delegates'];
+			if(obj['type'] !== 'gubernatorial' &&
+				obj['type'] !== 'senatorial') {
+				if(stateData['disabled']) {
+					state.toggleDisable();
+				}
+			}
+		}
+
+		countVotes();
+		updateLegend();
+		updateChart();
+		updateLegend();
+
+		var mapHTML = document.getElementById('map-div');
+		mapHTML.style.visibility = 'visible';
+	}});
+}
+
+function loadSavedMap_old(data, options) {
 	var lines = data.split('\n');
 	var meta = lines[0].split(' ');
 	if(options) {
@@ -565,7 +614,12 @@ function loadFileMap() {
 	var fileReader = new FileReader();
 	fileReader.onload = function(loadEvent) {
 		var txt = loadEvent.target.result;
-		loadSavedMap(txt);
+		try {
+			loadSavedMap_new(a);
+		} catch(e) {
+			console.log('New file load failed, attempting old');
+			loadSavedMap_old(a);
+		}
 	}
 	fileReader.readAsText(file, 'UTF-8');
 }

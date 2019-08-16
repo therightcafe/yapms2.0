@@ -83,7 +83,6 @@
 			var GET = {' .
 			'"t": "' . $_GET["t"] . '",' .
 			'"m": "' . $_GET["m"] . '",' .
-			'"l": "' . $_GET["l"] . '",' .
 			'};
 		</script>'
 	?>
@@ -195,9 +194,7 @@ if($mobile === false) {
 
 <div id="application-sidebar-div">
 <div id="application">
-	<div id="legend-div">
-	</div>
-
+	<div id="legend-div"></div>
 	<div id="chart-div">
 		<div id="chart">
 		<canvas id="chart-canvas" width="100" height="100"></canvas>
@@ -210,10 +207,7 @@ if($mobile === false) {
 		<div id="logo-div">
 		</div>
 	</div>
-
-	<div id="map-div">
-
-	</div>
+	<div id="map-div"></div>
 </div>
 <?php
 if($mobile === false) {
