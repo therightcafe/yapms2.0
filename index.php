@@ -46,6 +46,12 @@
 	
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	
+	<style>
+		<?php
+		include './style/fonts.css';
+		?>
+	</style>
 </head>
 
 <body>
