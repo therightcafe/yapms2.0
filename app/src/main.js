@@ -87,7 +87,7 @@ function share() {
 		button.setAttribute('onclick', '');
 	}
 
-	//grecaptcha.execute('6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo', {action: 'share'}).then(function(token) {
+	grecaptcha.execute('6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo', {action: 'share'}).then(function(token) {
 	html2canvas(document.getElementById('application'), {logging: true, onclone: function(clone) {
 		// remove the custom fonts from the clone
 		var svgtext = clone.getElementById('text');
@@ -114,7 +114,7 @@ function share() {
 		i.style.height = 'auto';
 		saveMap(img, 'token');
 	});
-	//});
+	});
 }
 
 window.onerror = function(message, source, lineno, colno, error) {
