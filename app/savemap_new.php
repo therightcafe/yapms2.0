@@ -46,8 +46,8 @@ if($file) {
 	fclose($file);
 }
 
-//$file = fopen("./maps/" . $filename, 'w');
-$file = gzopen("./maps/". $filename . '.gz', 'wb9');
+$file = fopen("./maps/" . $filename, 'w');
+//$file = gzopen("./maps/". $filename . '.gz', 'wb9');
 if($file) {
 	$data;
 	$data['filename'] = $_POST['filename'];
@@ -91,10 +91,10 @@ if($file) {
 	}
 	
 
-	gzwrite($file, json_encode($data));
-	gzclose($file);
-	//fwrite($file, json_encode($data));
-	//fclose($file);
+//	gzwrite($file, json_encode($data));
+//	gzclose($file);
+	fwrite($file, json_encode($data));
+	fclose($file);
 	echo 'https://www.yapms.com/app/?m=' . $filename . ' ';
 	echo $filename;
 }
