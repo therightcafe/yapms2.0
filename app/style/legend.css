@@ -53,7 +53,7 @@
 
 #legend-tooltip {
 	display: block;
-	position: absolute;
+	position: relative;
 	color: white;
 	border-radius: 6px;
 	margin-top: 6px;
