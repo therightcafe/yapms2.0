@@ -583,7 +583,7 @@ if($mobile) {
 	</div>
 	<div class="selectmenu-content">
 	<a class="selectmenu-split"><?php echo _("2020 National Elections") ?></a>
-	<a class="selectmenu-button" href="./?t=2020_presidential"><i class="fas fa-paint-user"></i> <?php echo _("Presidential") ?></a>
+	<a class="selectmenu-button" href="./?t=2020_presidential"><i class="fas fa-user"></i> <?php echo _("Presidential") ?></a>
 	<a class="selectmenu-button" href="./?t=2020_senatorial"><i class="fas fa-chevron-up"></i> <?php echo _("Senatorial") ?></a>
 	<a class="selectmenu-button" href="./?t=USA_congressional"><i class="fas fa-chevron-down"></i> <?php echo _("Congressional") ?></a>
 	<a class="selectmenu-button" href="./?t=2020_gubernatorial"><i class="fas fa-square"></i> <?php echo _("Gubernatorial") ?></a>
@@ -595,15 +595,15 @@ if($mobile) {
 	<a class="selectmenu-button" href="./?t=2020_democratic_primary"><i class="fas fa-democrat"></i> <?php echo _("Democratic") ?></a>
 	<a class="selectmenu-button" href="./?t=2020_republican_primary"><i class="fas fa-republican"></i> <?php echo _("Republican") ?></a>
 	<a class="selectmenu-split"><?php echo _("Current") ?></a>
-	<a class="selectmenu-button" href="./?t=Current_house"><i class="fas fa-chevron-down"></i><?php echo _("House of Representatives") ?></a>
+	<a class="selectmenu-button" href="./?t=Current_house"><i class="fas fa-chevron-down"></i> <?php echo _("House of Representatives") ?></a>
 	<a class="selectmenu-button" href="./?t=Current_senate"><i class="fas fa-chevron-up"></i> <?php echo _("Senate") ?></a>
 	<a class="selectmenu-split"><?php echo _("Blank maps") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_gubernatorial"><i class="fas fa-square"></i><?php echo _("Governors/States") ?></a>
+	<a class="selectmenu-button" href="./?t=USA_gubernatorial"><i class="fas fa-square"></i> <?php echo _("Governors/States") ?></a>
 	<a class="selectmenu-button" href="./?t=USA_senatorial"><i class="fas fa-chevron-up"></i> <?php echo _("Senate") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_congressional"><i class="fas fa-chevron-down"></i><?php echo _("House of Representatives") ?></a>
+	<a class="selectmenu-button" href="./?t=USA_congressional"><i class="fas fa-chevron-down"></i> <?php echo _("House of Representatives") ?></a>
 	<a class="selectmenu-button" href="./?t=USA_county"><i class="fas fa-border-all"></i> <?php echo _("County") ?></a>
 	<a class="selectmenu-split"><?php echo _("Other presidential maps") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_proportional"><i class="fas fa-user-circle"></i> <?php echo _("Proportional") ?></a>
+	<a class="selectmenu-button" href="./?t=USA_proportional"><i class="far fa-user-circle"></i> <?php echo _("Proportional") ?></a>
 	<a class="selectmenu-button" href="./?t=USA_takeall"><i class="fas fa-user"></i> <?php echo _("Take All") ?></a>
 	<a class="selectmenu-button" href="./?t=2024_projection"><i class="fas fa-user"></i> <?php echo _("2024 estimates") ?></a>
 	<a class="selectmenu-button" href="./?t=USA_split_maine"><i class="fas fa-user"></i> <?php echo _("Split Maine") ?></a>
