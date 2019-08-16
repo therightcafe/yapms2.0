@@ -1176,8 +1176,10 @@ function start() {
 		$.ajax({
 			url: "./maps/" + php_load_map_id,
 			type: "POST",
-			processData: false,
-			contentType: false,
+			headers: { 
+			'Accept-Encoding': 'gzip',
+			'Content-type': 'text/plain',
+			'Content-encoding': 'gzip'},
 			success: function(a, b, c) {
 				console.log("Found saved map...");
 				try {
