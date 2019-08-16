@@ -96,7 +96,7 @@
 
 	<div class="map-type-box">	
 	<div class="map-type-header">
-		USA - 2020 National Elections Maps	
+		<img href="/app/res/flags/usa.png" height="20px"> 2020 National Elections Maps	
 	</div>
 
 	<div>	
@@ -130,7 +130,7 @@
 	
 	<div class="map-type-box">	
 	<div class="map-type-header">
-		USA - 2020 Presidential Primaries
+		<img href="/app/res/flags/usa.png" height="20px"> 2020 Presidential Primaries
 	</div>
 	<div>
 		<a href="./app/?t=2020_democratic_primary">
@@ -151,7 +151,7 @@
 	
 	<div class="map-type-box">	
 	<div class="map-type-header">
-		USA - 2020 Presidential Forecasts
+		<img href="/app/res/flags/usa.png" height="20px"> 2020 Presidential Forecasts
 	</div>
 	<div>
 		<a href="./app/?t=2020_cook">
@@ -180,7 +180,7 @@
 	
 	<div class="map-type-box">	
 	<div class="map-type-header">
-		USA - Current Congressional Maps
+		<img href="/app/res/flags/usa.png" height="20px"> Current Congressional Maps
 	</div>
 		
 	<div>
@@ -200,7 +200,7 @@
 
 	<div class="map-type-box">	
 	<div class="map-type-header">
-		USA - Open Maps
+		<img href="/app/res/flags/usa.png" height="20px"> Open Maps
 	</div>
 
 	<div>
@@ -234,7 +234,7 @@
 	
 	<div class="map-type-box">	
 	<div class="map-type-header">
-		USA - Other presidential maps	
+		<img href="/app/res/flags/usa.png" height="20px"> Other presidential maps	
 	</div>
 		
 	<div>
@@ -270,7 +270,7 @@
 
 	<div class="map-type-box">
 	<div class="map-type-header">
-		USA - Historical Presidential
+		<img href="/app/res/flags/usa.png" height="20px"> Historical Presidential
 	</div>
 	<div class="map-type-header">
 		Post - WW2
@@ -497,7 +497,7 @@
 
 	<div class="map-type-box">
 	<div class="map-type-header">
-		USA - Historical Counties
+		<img href="/app/res/flags/usa.png" height="20px"> Historical Counties
 	</div>
 		
 		<a href="./app/?t=2016_presidential_county">
@@ -519,7 +519,7 @@
 
 	<div class="map-type-box">
 	<div class="map-type-header">
-		USA - Historical Open Maps
+		<img href="/app/res/flags/usa.png" height="20px"> Historical Open Maps
 	</div>
 		
 		<a href="./app/?t=USA_congressional">
@@ -543,7 +543,7 @@
 	
 	<div class="map-type-box">
 	<div class="map-type-header">
-		Australia
+		<img href="/app/res/flags/aus.png" height="20px"> Australia
 	</div>
 	<div>
 		<a href="./app/?t=Australia_states">
@@ -562,7 +562,7 @@
 	
 	<div class="map-type-box">
 	<div class="map-type-header">
-		Brazil	
+		<img href="/app/res/flags/bra.png" height="20px"> Brazil	
 	</div>
 	<div>
 		<a href="./app/?t=Brazil_deputies">
@@ -575,7 +575,7 @@
 
 	<div class="map-type-box">
 	<div class="map-type-header">
-		Canada
+		<img href="/app/res/flags/can.png" height="20px"> Canada
 	</div>
 	<div>
 		<a href="./app/?t=Canada_provinces">
@@ -593,7 +593,7 @@
 	
 	<div class="map-type-box">
 	<div class="map-type-header">
-		France
+		<img href="/app/res/flags/fra.png" height="20px"> France
 	</div>
 	<div>
 		<a href="./app/?t=France_constituencies">
@@ -606,7 +606,7 @@
 
 	<div class="map-type-box">
 	<div class="map-type-header">
-		Germany
+		<img href="/app/res/flags/ger.png" height="20px"> Germany
 	</div>
 	<div>
 		<a href="./app/?t=Germany_states">
@@ -627,7 +627,7 @@
 	
 	<div class="map-type-box">
 	<div class="map-type-header">
-		Italy
+		<img href="/app/res/flags/ita.png" height="20px"> Italy
 	</div>
 	<div>
 		<a href="./app/?t=Italy_states">
@@ -640,7 +640,7 @@
 	
 	<div class="map-type-box">
 	<div class="map-type-header">
-		Netherlands	
+		<img href="/app/res/flags/ned.png" height="20px"> Netherlands	
 	</div>
 	<div>
 		<a href="./app/?t=Netherlands_provinces">
@@ -659,7 +659,7 @@
 	
 	<div class="map-type-box">
 	<div class="map-type-header">
-		Spain
+		<img href="/app/res/flags/esp.png" height="20px"> Spain
 	</div>
 	<div>
 		<a href="./app/?t=Spain_constituencies">
@@ -672,7 +672,7 @@
 	
 	<div class="map-type-box">
 	<div class="map-type-header">
-		United Kingdom
+		<img href="/app/res/flags/ukd.png" height="20px"> United Kingdom
 	</div>
 	<div>
 		<a href="./app/?t=UnitedKingdom_constituencies">
@@ -685,12 +685,12 @@
 	
 	<div class="map-type-box">
 	<div class="map-type-header">
-		Other
+		Joined countries
 	</div>
 	<div>
 		<a href="./app/?t=USA_Canada">
 			<div class="map-button">
-				<i class="fas fa-square"></i> USA / Canada states
+				<i class="fas fa-square"></i> <img href="/app/res/flags/usa.png" height="20px">/<img href="/app/res/flags/can.png" height="20px"> states
 			</div>
 		</a>
 	</div>
