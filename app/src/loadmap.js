@@ -614,7 +614,7 @@ function loadFileMap() {
 	fileReader.onload = function(loadEvent) {
 		var a = loadEvent.target.result;
 		try {
-			loadSavedMap_new();
+			loadSavedMap_new(a);
 		} catch(e) {
 			console.log('New file load failed, attempting old');
 			loadSavedMap_old(a);
