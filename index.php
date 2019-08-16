@@ -62,12 +62,12 @@
 
 			<p>
 				<b>Supported Browsers:</b>
-				Chrome, Firefox and Opera
+				<i class="fab fa-chrome"></i> Chrome, <i class="fab fa-firefox"></i> Firefox and <i class="fab fa-opera"></i> Opera
 			</p>
 			
 			<p> 
 				<b>Contact Email:</b>
-				<a style="color:blue;" href="mailto:bugreport@yapms.com">bugreport@yapms.com</a> 
+				<i class="fas fa-envelope-open-text"></i> <a style="color:blue;" href="mailto:bugreport@yapms.com">bugreport@yapms.com</a> 
 			</p>
 		</div>
 		
@@ -75,13 +75,13 @@
 
 		<a href="https://play.google.com/store/apps/details?id=com.fishstudio.yapms&hl=en_GB">
 			<div class="infobox link">
-				Download Android App
+				<i class="fab fa-android"></i> Download Android App
 			</div>
 		</a>
 
 		<a href="https://discord.gg/WQh5fHU">
 			<div class="infobox link">
-				Join Our Discord
+				<i class="fab fa-discord"></i> Join Our Discord
 			</div>
 		</a>
 	</div>
@@ -96,13 +96,13 @@
 	<div>	
 		<a href="./app/?t=2020_presidential">
 			<div class="map-button">
-				Presidential
+				<i class="fas fa-user"></i> Presidential
 			</div>
 		</a>
 		
 		<a href="./app/?t=2020_gubernatorial">
 			<div class="map-button">
-				Gubernatorial
+				<i class="fas fa-square"></i> Gubernatorial
 			</div>
 		</a>
 		
@@ -110,13 +110,13 @@
 		
 		<a href="./app/?t=USA_congressional">
 			<div class="map-button">
-				Congressional
+				<i class="fas fa-chevron-down"></i> Congressional
 			</div>
 		</a>
 
 		<a href="./app/?t=2020_senatorial">
 			<div class="map-button">
-				Senatorial
+				<i class="fas fa-chevron-up"></i> Senatorial
 			</div>
 		</a>
 	</div>
@@ -180,13 +180,13 @@
 	<div>
 		<a href="./app/?t=Current_senate">
 			<div class="map-button">
-				Senate
+				<i class="fas fa-chevron-up"></i> Senate
 			</div>
 		</a>
 		
 		<a href="./app/?t=Current_house">
 			<div class="map-button">
-				House of Representatives
+				<i class="fas fa-chevron-down"></i> House of Representatives
 			</div>
 		</a>
 	</div>
@@ -200,13 +200,13 @@
 	<div>
 		<a href="./app/?t=USA_senatorial">
 			<div class="map-button">
-				Senate
+				<i class="fas fa-chevron-up"></i> Senate
 			</div>
 		</a>
 		
 		<a href="./app/?t=USA_congressional">
 			<div class="map-button">
-				House of Representatives
+				<i class="fas fa-chevron-down"></i> House of Representatives
 			</div>
 		</a>
 
@@ -214,13 +214,13 @@
 		
 		<a href="./app/?t=USA_gubernatorial">
 			<div class="map-button">
-				States/Governors
+				<i class="fas fa-square"></i> States/Governors
 			</div>
 		</a>
 		
 		<a href="./app/?t=USA_county">
 			<div class="map-button">
-				Counties
+				<i class="fas fa-border-all"></i> Counties
 			</div>
 		</a>
 	</div>
@@ -234,13 +234,13 @@
 	<div>
 		<a href="./app/?t=USA_takeall">
 			<div class="map-button">
-				Presidential Take All
+				<i class="fas fa-user"></i> Presidential Take All
 			</div>
 		</a>
 		
 		<a href="./app/?t=USA_proportional">
 			<div class="map-button">
-				Presidential Proportional
+				<i class="fas fa-chevron-circle-down"></i>  Presidential Proportional
 			</div>
 		</a>
 
@@ -248,13 +248,13 @@
 		
 		<a href="./app/?t=2024_projection">
 			<div class="map-button">
-				2024 Estimates
+				<i class="far fa-user"></i> 2024 Estimates
 			</div>
 		</a>
 
 		<a href="./app/?t=USA_split_maine">
 			<div class="map-button">
-				Presidential (split Maine)
+				<i class="fas fa-user"></i> Presidential (split Maine)
 			</div>
 		</a>
 	</div>
@@ -496,7 +496,7 @@
 		
 		<a href="./app/?t=2016_presidential_county">
 			<div class="map-button">
-				2016 Presidential
+				<i class="fas fa-user"></i> 2016 Presidential
 			</div>
 		</a>
 			
@@ -504,7 +504,7 @@
 		
 		<a href="./app/?t=2012_presidential_county">
 			<div class="map-button">
-				2012 Presidential
+				<i class="fas fa-user"></i> 2012 Presidential
 			</div>
 		</a>
 		
@@ -518,7 +518,7 @@
 		
 		<a href="./app/?t=USA_congressional">
 			<div class="map-button">
-				Congress 2011-2020
+				<i class="fas fa-chevron-down"></i> Congress 2011-2020
 			</div>
 		</a>
 			
@@ -526,7 +526,7 @@
 		
 		<a href="./app/?t=USA_congressional_2008">
 			<div class="map-button">
-				Congress 2006-2010
+				<i class="fas fa-chevron-down"></i> Congress 2006-2010
 			</div>
 		</a>
 		
@@ -542,13 +542,13 @@
 	<div>
 		<a href="./app/?t=Australia_states">
 			<div class="map-button">
-				States
+				<i class="fas fa-square"></i> States
 			</div>
 		</a>
 		
 		<a href="./app/?t=Australia_constituencies">
 			<div class="map-button">
-				Constituencies
+				<i class="fas fa-chevron-down"></i> Constituencies
 			</div>
 		</a>
 	</div>
@@ -561,7 +561,7 @@
 	<div>
 		<a href="./app/?t=Brazil_deputies">
 			<div class="map-button">
-				Deputies
+				<i class="fas fa-chevron-circle-down"></i> Deputies
 			</div>
 		</a>
 	</div>
@@ -574,12 +574,12 @@
 	<div>
 		<a href="./app/?t=Canada_provinces">
 			<div class="map-button">
-				Provinces
+				<i class="fas fa-square"></i> Provinces
 			</div>
 		</a>
 		<a href="./app/?t=Canada_constituencies">
 			<div class="map-button">
-				Constituencies
+				<i class="fas fa-chevron-down"></i> Constituencies
 			</div>
 		</a>
 	</div>
@@ -592,7 +592,7 @@
 	<div>
 		<a href="./app/?t=France_constituencies">
 			<div class="map-button">
-				Constituencies
+				<i class="fas fa-chevron-down"></i> Constituencies
 			</div>
 		</a>
 	</div>
@@ -605,12 +605,12 @@
 	<div>
 		<a href="./app/?t=Germany_states">
 			<div class="map-button">
-				States
+				<i class="fas fa-square"></i> States
 			</div>
 		</a>
 		<a href="./app/?t=Germany_constituencies">
 			<div class="map-button">
-				Constituencies
+				<i class="fas fa-chevron-down"></i> Constituencies
 			</div>
 		</a>
 		
@@ -639,13 +639,13 @@
 	<div>
 		<a href="./app/?t=Netherlands_provinces">
 			<div class="map-button">
-				Provinces
+				<i class="fas fa-chevron-circle-down"></i> Provinces
 			</div>
 		</a>
 		
 		<a href="./app/?t=Netherlands_gemeenten">
 			<div class="map-button">
-				Gemeeten
+				<i class="fas fa-chevron-down"></i> Gemeeten
 			</div>
 		</a>
 	</div>
@@ -658,7 +658,7 @@
 	<div>
 		<a href="./app/?t=Spain_constituencies">
 			<div class="map-button">
-				Constituencies
+				<i class="fas fa-chevron-circle-down"></i> Constituencies
 			</div>
 		</a>
 	</div>
@@ -671,7 +671,7 @@
 	<div>
 		<a href="./app/?t=UnitedKingdom_constituencies">
 			<div class="map-button">
-				Constituencies
+				<i class="fas fa-chevron-down"></i> Constituencies
 			</div>
 		</a>
 	</div>
@@ -684,7 +684,7 @@
 	<div>
 		<a href="./app/?t=USA_Canada">
 			<div class="map-button">
-				USA / Canada joint map
+				<i class="fas fa-square"></i> USA / Canada states
 			</div>
 		</a>
 	</div>
