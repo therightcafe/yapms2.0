@@ -200,13 +200,13 @@
 	<div>
 		<a href="./app/?t=USA_senatorial">
 			<div class="map-button">
-				Senate (2 per state)
+				Senate
 			</div>
 		</a>
 		
 		<a href="./app/?t=USA_gubernatorial">
 			<div class="map-button">
-				Governors (1 per state)
+				States/Governors
 			</div>
 		</a>
 
@@ -264,7 +264,7 @@
 
 	<div class="map-type-box">
 	<div class="map-type-header">
-		USA - Historical Presidential
+		USA - Historical Presidential<br>Post - WW2
 	</div>
 	<div>	
 		<a href="./app/?t=2016_presidential">
@@ -369,6 +369,11 @@
 				1940
 			</div>
 		</a><br>
+	</div>
+	<div class="map-type-header">
+		USA - Historical Presidential<br>Pre - WW2
+	</div>
+	<div>		
 		<a href="./app/?t=1936_presidential">
 			<div class="map-button">
 				1936
@@ -465,9 +470,21 @@
 			<div class="map-button">
 				1864
 			</div>
-		</a><br>
-		</div>
-		</div>
+		</a><!--
+
+	ADD 1860 HERE
+
+	--><br>
+	</div>
+	<div class="map-type-header">
+		USA - Historical Presidential<br>Pre - Civil War
+	</div><!--
+
+	ADD ELECTIONS HERE
+
+	-->
+	</div>
+	</dib>
 
 	<div class="map-type-box">
 	<div class="map-type-header">
