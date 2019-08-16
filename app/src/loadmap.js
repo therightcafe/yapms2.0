@@ -511,6 +511,11 @@ function loadSavedMap_new(data, options) {
 
 		var mapHTML = document.getElementById('map-div');
 		mapHTML.style.visibility = 'visible';
+		
+		gtag('event', 'load', {
+			'event_category': 'load_map',
+			'event_label': 'loaded saved map new version ' + currentCache
+		});
 	}});
 }
 
@@ -602,6 +607,11 @@ function loadSavedMap_old(data, options) {
 		updateChart();
 		updateLegend();
 		updateLTEHouse();
+		
+		gtag('event', 'load', {
+			'event_category': 'load_map',
+			'event_label': 'loaded saved map old version ' + currentCache
+		});
 	}
 		,
 		updateText: meta[7]
