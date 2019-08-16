@@ -5,6 +5,6 @@
 	header('Expired: 0');
 	header('Cache-Control: must-revalidate');
 	header('Pragma: public');
-	header('Content-Length: ' . filesize('./maps/' . $filename));
-	readfile('./maps/' . $filename);
+	header('Content-Length: ' . filesize('./maps/' . $filename . '.txt'));
+	readfile('./maps/' . $filename . '.txt');
 ?>
