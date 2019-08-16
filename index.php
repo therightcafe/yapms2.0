@@ -204,17 +204,17 @@
 			</div>
 		</a>
 		
-		<a href="./app/?t=USA_gubernatorial">
+		<a href="./app/?t=USA_congressional">
 			<div class="map-button">
-				States/Governors
+				House of Representatives
 			</div>
 		</a>
 
 		<br>
 		
-		<a href="./app/?t=USA_congressional">
+		<a href="./app/?t=USA_gubernatorial">
 			<div class="map-button">
-				House of Representatives
+				States/Governors
 			</div>
 		</a>
 		
@@ -264,7 +264,10 @@
 
 	<div class="map-type-box">
 	<div class="map-type-header">
-		USA - Historical Presidential<br>Post - WW2
+		USA - Historical Presidential
+	</div>
+	<div class="map-type-header">
+		Post - WW2
 	</div>
 	<div>	
 		<a href="./app/?t=2016_presidential">
@@ -371,7 +374,7 @@
 		</a><br>
 	</div>
 	<div class="map-type-header">
-		USA - Historical Presidential<br>Pre - WW2
+		Pre - WW2
 	</div>
 	<div>		
 		<a href="./app/?t=1936_presidential">
@@ -477,7 +480,7 @@
 	--><br>
 	</div>
 	<div class="map-type-header">
-		USA - Historical Presidential<br>Pre - Civil War
+		Pre - Civil War
 	</div><!--
 
 	ADD ELECTIONS HERE
