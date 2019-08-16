@@ -47,7 +47,7 @@ if($file) {
 }
 
 //$file = fopen("./maps/" . $filename, 'w');
-$file = gzopen("./maps/". $filename . '.gz', 'w9');
+$file = gzopen("./maps/". $filename . '.gz', 'wb9');
 if($file) {
 	$data;
 	$data['filename'] = $_POST['filename'];
