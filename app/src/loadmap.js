@@ -283,7 +283,6 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year, options) {
 		setCongressOnHover();
 		
 		setPalette(cookies['theme']);
-		//previousPalette();
 		
 		if(loadConfig.filename === './res/lte_house.svg') {
 			updateLTEHouse();
