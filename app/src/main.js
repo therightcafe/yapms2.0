@@ -112,7 +112,7 @@ function share() {
 		i.src = img;
 		i.style.width = '40vw';
 		i.style.height = 'auto';
-		saveMap(img, 'token');
+		saveMap(img, token);
 	});
 	});
 }
