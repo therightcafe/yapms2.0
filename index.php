@@ -526,7 +526,7 @@
 		
 		<a href="./app/?t=USA_congressional_2008">
 			<div class="map-button">
-				Congress 2001-2010
+				Congress 2006-2010
 			</div>
 		</a>
 		
