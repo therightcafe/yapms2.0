@@ -46,7 +46,7 @@ if($file) {
 	fclose($file);
 }
 
-$file = fopen("./maps/" . $filename, 'w');
+$file = fopen("./maps/" . $filename . '.txt', 'w');
 //$file = gzopen("./maps/". $filename . '.gz', 'wb9');
 if($file) {
 	$data;
