@@ -1,10 +1,9 @@
 <?php
-//require '../../external/secret_key.php';
-//$response = $_POST["captcha"];
-//$verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$secret}&response={$response}");
-//$isVerified = json_decode($verify);
+require '../../external/secret_key.php';
+$response = $_POST["captcha"];
+$verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$secret}&response={$response}");
+$isVerified = json_decode($verify);
 
-/*
 if($isVerified->success === false) {
 	echo 'reCaptcha_Failed(restart_web_browser)';
 	die();
@@ -14,8 +13,7 @@ if($isVerified->score < 0.5) {
 	echo 'reCaptcha_Bot_Detected';
 	die();
 }
- */
-/*
+
 require '../../external/db_mapnumber.php';
 $dbh = null;
 try {
@@ -33,10 +31,9 @@ $mapnumber = 0;
 foreach($q as $row) {
 	$mapnumber = $row[0];
 }
- */
 
-$filename = "" . rand(0, 100000);
-//$filename = $mapnumber;
+//$filename = "" . rand(0, 100000);
+$filename = $mapnumber;
 
 $imgData = $_POST["img"];
 $imgData = str_replace(' ', '+', $imgData);
@@ -72,25 +69,24 @@ if($file) {
 
 	$writeData .= count($candidate_data["candidate_data"]) . " " . $_POST["updateText"] . PHP_EOL;
 
-	foreach($candidate_data["candidate_data"] as $v) {
-		$v["name"] = str_replace(' ', '%', $v["name"]);
+	foreach($candidate_data["candidate_data"] as $candidate) {
 		if($v["name"] !== "Tossup") {
-			$data['candidates'][$v['name']]['solid'] = $v['solid'];
-			$data['candidates'][$v['name']]['likely'] = $v['likely'];
-			$data['candidates'][$v['name']]['lean'] = $v['lean'];
-			$data['candidates'][$v['name']]['tilt'] = $v['tilt'];
+			$data['candidates'][$candidate['name']]['solid'] = $candidate['solid'];
+			$data['candidates'][$candidate['name']]['likely'] = $candidate['likely'];
+			$data['candidates'][$candidate['name']]['lean'] = $candidate['lean'];
+			$data['candidates'][$candidate['name']]['tilt'] = $candidate['tilt'];
 		}
 	}
 
 	$state_data = json_decode($_POST["states"], true);
 
-	foreach($state_data["state_data"] as $v) {
+	foreach($state_data["state_data"] as $state) {
 		$v["candidate"] = str_replace(' ', '%', $v["candidate"]);
-		$data['states'][$v['name']]['candidate'] = $v['candidate'];
-		$data['states'][$v['name']]['colorvalue'] = $v['colorValue'];
-		$data['states'][$v['name']]['delegates'] = $v['delegates'];
-		$data['states'][$v['name']]['votecount'] = $v['voteCount'];
-		$data['states'][$v['name']]['disabled'] = $v['disabled'];
+		$data['states'][$state['name']]['candidate'] = $state['candidate'];
+		$data['states'][$state['name']]['colorvalue'] = $state['colorValue'];
+		$data['states'][$state['name']]['delegates'] = $state['delegates'];
+		$data['states'][$state['name']]['votecount'] = $state['voteCount'];
+		$data['states'][$state['name']]['disabled'] = $state['disabled'];
 	}
 
 	fwrite($file, json_encode($data));
