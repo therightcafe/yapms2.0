@@ -29,7 +29,7 @@ function loadPresetMap(preset, options) {
 		},
 		error: function(a, b, c) {
 			console.log("Did not find preset map...");
-			loadMap("../res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open", null, {updateText: true});
+			loadMap("../res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open", {updateText: true});
 		}
 	});
 }
@@ -225,12 +225,6 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year, options) {
 		verifyCongress();
 	}
 
-	if(filename === './res/usa_congressional_2018.svg') {
-		hoverFill = true;
-	} else {
-		hoverFill = false;
-	}
-
 	var mapHTML = document.getElementById('map-div');
 	mapHTML.style.visibility = 'hidden';
 
@@ -291,11 +285,7 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year, options) {
 		blockPresets = false;
 
 		if(mode !== 'paint' && mode !== 'move' && mode !== 'paintmove') {
-			if(mobile) {
-				setMode('paint');
-			} else {
-				setMode('paintmove');
-			}
+			setMode('paint');
 		}
 
 		var finishOptions = function() {

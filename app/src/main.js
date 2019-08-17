@@ -39,7 +39,8 @@ var maxColorValue = 2;
 var chartBorderWidth = 2;
 var chartBorderColor = '#000000';
 
-var mode = 'paintmove';
+var lockedMap = false;
+var mode = 'paint';
 
 var mapType = 'presidential';
 var mapYear = 'open';
@@ -253,7 +254,7 @@ function initChart() {
 					// after adding all the candidates, add the add candidate button
 					var legendDelete = document.createElement('div');
 					legendDelete.setAttribute('class', 'legend-delete');
-					legendDelete.setAttribute('onclick', 'deleteCandidateByNameConfirm("' + candidate.name + '")');
+					legendDelete.setAttribute('onclick', 'displayCandidateEditMenu("' + candidate.name + '")');
 					legendDelete.style.background = 'none';
 					legendDiv.appendChild(legendDelete);
 					var legendDeleteText = document.createElement('div');
@@ -261,7 +262,8 @@ function initChart() {
 					legendDeleteText.style.backgroundColor = candidate.colors[0];
 					
 					legendDeleteText.style.padding = '0px';
-					legendDeleteText.innerHTML = 'x';
+					legendDeleteText.style.fontSize = '14px';
+					legendDeleteText.innerHTML = '<i class="fas fa-cog"></i>';
 					legendDelete.appendChild(legendDeleteText);
 				}
 
@@ -609,6 +611,21 @@ function setLanguage(language) {
 	}
 }
 
+function toggleLockMap() {
+	var lockButton = document.getElementById('lockbutton');
+	if(lockedMap) {
+		lockButton.style.opacity = '1';
+		panObject.enablePan();
+		panObject.enableZoom();
+		lockedMap = false;
+	} else {
+		lockButton.style.opacity = '0.5';
+		panObject.disablePan();
+		panObject.disableZoom();
+		lockedMap = true;
+	}
+}
+
 function setMode(set) {
 	console.log('mode ' +  mode + ' | set ' + set + 
 		' | mapType ' + mapType + ' | mapYear ' + mapYear);
@@ -676,33 +693,29 @@ function setMode(set) {
 	var modeText;
 	var notificationText;
 
-	if(mobile === false) {
-		panObject.disablePan();
-		panObject.disableZoom();
+	var modeButtons = document.getElementsByClassName('mode-button');
+	for(var index = 0; index < modeButtons.length; ++index) {
+		var button = modeButtons[index];
+		if(button) {
+			button.style.opacity = '1';
+		}
 	}
 
-	if(set === 'paintmove') {
-		modeText = '<i class="fas fa-paint-brush"></i> ' + language["Mode-Option1"];
-		panObject.enablePan();
-		panObject.enableZoom();
-	} else if(set === 'paint') {
+	if(set === 'paint') {
 		modeText = '<i class="fas fa-paint-brush"></i> ' + language["Mode-Option2"];
-	} else if(set === 'move') {
-		modeText = '<i class="fas fa-arrows-alt"></i> ' + language["Mode-Option3"];
-		panObject.enablePan();
-		panObject.enableZoom();
+		var button = document.getElementById('modebutton-paint');
+		button.style.opacity = '0.5';
 	} else if(set === 'ec') {
 		modeText = '<i class="fas fa-edit"></i> ' + language["Mode-Option5"];
 		notificationText = "Click on a state to set its electoral college";
+		var button = document.getElementById('modebutton-ec');
+		button.style.opacity = '0.5';
 	} else if(set === 'delete') {
 		modeText = '<i class="fas fa-eraser"></i> ' + language["Mode-Option4"];
 		notificationText = "Click on a state to disable/enable it";
-	} else if(set === 'candidate') {
-		modeText = '<i class="fas fa-user-edit"></i> ' + language["Mode-Option6"];
-		notificationText = "Click on a candidate in the legend to edit their name and color";
+		var button = document.getElementById('modebutton-delete');
+		button.style.opacity = '0.5';
 	}
-
-	modeHTML.innerHTML = '<i class="fas fa-cog"></i> ' + language["Mode"] + ' (' + modeText + ')';
 
 	var notification = document.getElementById('notification');
 	if(mode === 'paint' || mode === 'move' || mode === 'paintmove') {
@@ -1176,18 +1189,18 @@ function start() {
 		$.ajax({
 			url: "./maps/" + php_load_map_id + '.txt',
 			type: "POST",
-			success: function(a, b, c) {
-				console.log("Found saved map...");
+			success: function(data) {
+				console.log("Map Load: Found saved map");
 				try {
-				//	var data = pako.ungzip(a, {to:'string'});
-					loadSavedMap_new(a);
+					console.log('Map Load: Attemping new file load');
+					loadSavedMap_new(data);
 				} catch(e) {
-					console.log('New file load failed, attempting old');
-					loadSavedMap_old(a);
+					console.log('Map Load: Attemping old file load');
+					loadSavedMap_old(data);
 				}
 			},
 			error: function(a, b, c) {
-				console.log("Did not find saved map...");
+				console.log("Map Load: Did not find saved map");
 				loadMap('./res/usa_presidential.svg', 16, 1, 'usa_ec',"presidential", "open", {updateText: true});
 
 				var notification = document.getElementById('notification');
