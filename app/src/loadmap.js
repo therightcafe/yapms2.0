@@ -251,7 +251,7 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year, options) {
 		year: year,
 	}
 
-	mapOptions = options;
+	mapOptions.updateText = options.updateText;
 
 	console.log('Loading ' + filename);
 	$('#map-div').load(filename, function(a) {
@@ -473,18 +473,13 @@ function loadSenateFile(senatefile, onLoad) {
 	});
 }
 
-function loadSavedMap_new(data, options) {
+function loadSavedMap_new(data) {
 	var obj = JSON.parse(data);	
-	if(options) {
-		enableCongress = options.enableCongress;
-	} else {
-		enableCongress = false;
-	}
 
 	loadMap(obj['filename'], obj['fontsize'], obj['strokewidth'], obj['dataid'],
-			obj['type'], obj['year'], {enableCongress: enableCongress,
-	onLoad: function() {
-		console.log(obj);
+			obj['type'], obj['year'],
+	{	updateText: obj['updatetext'],
+		onLoad: function() {
 		for(var candidateName in obj.candidates) {
 			if(candidateName === 'Tossup') {
 				continue;
