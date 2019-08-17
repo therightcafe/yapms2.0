@@ -90,18 +90,21 @@ function share() {
 
 	grecaptcha.execute('6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo', {action: 'share'}).then(function(token) {
 	html2canvas(document.getElementById('application'), {logging: true, onclone: function(clone) {
+		console.log('clone 1');
 		// remove the custom fonts from the clone
 		var svgtext = clone.getElementById('text');
 		if(svgtext) {
 			svgtext.style.fontFamily = 'arial';
 			svgtext.style.fontSize = '15px';
 		}
+		console.log('clone 2');
 		var svg = clone.getElementById('svgdata');
 		var mapdiv = clone.getElementById('map-div');
 		if(svg && mapdiv) {
 			svg.setAttribute('width', mapdiv.offsetWidth);
 			svg.setAttribute('height', mapdiv.offsetHeight);
 		}
+		console.log('clone 3');
 	}}).then(function(canvas) {
 		notification.appendChild(canvas);
 		canvas.style.width = 0;
