@@ -69,7 +69,7 @@ class State {
 		totalVotes += diff;
 
 		// update the html text display
-		if(updateText) {
+		if(updateText === true) {
 			var stateText = document.getElementById(this.name + '-text');
 			var text = this.name + ' ' + value;
 			if(stateText !== null) {

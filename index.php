@@ -320,7 +320,6 @@
 				1984
 			</div>
 		</a>
-
 		<a href="./app/?t=1980_presidential">
 			<div class="map-button">
 				1980
@@ -336,7 +335,6 @@
 				1972
 			</div>
 		</a>
-
 		<a href="./app/?t=1968_presidential">
 			<div class="map-button">
 				1968
@@ -383,7 +381,7 @@
 	<div class="map-type-header">
 		Pre - WW2
 	</div>
-	<div>		
+	<div>
 		<a href="./app/?t=1936_presidential">
 			<div class="map-button">
 				1936
@@ -424,13 +422,11 @@
 				1908
 			</div>
 		</a>
-		
 		<a href="./app/?t=1904_presidential">
 			<div class="map-button">
 				1904
 			</div>
 		</a>
-		
 		<a href="./app/?t=1900_presidential">
 			<div class="map-button">
 				1900

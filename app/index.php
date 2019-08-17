@@ -83,7 +83,6 @@
 			var GET = {' .
 			'"t": "' . $_GET["t"] . '",' .
 			'"m": "' . $_GET["m"] . '",' .
-			'"l": "' . $_GET["l"] . '",' .
 			'};
 		</script>'
 	?>
@@ -137,9 +136,35 @@
 	<i class="fas fa-map"></i> <?php echo _("Map") ?>
 	</div>
 
-	<div id="modesbutton" class="click-button" onclick="displayModeMenu()" style="white-space: nowrap;">
-	<i class="fas fa-cog"></i> <?php echo _("Mode") ?> (<i class="fas fa-paint-brush"></i> <?php echo _("Mode-Option1") ?>)
+	<div id="modebutton-paint" class="click-button mode-button" onclick='setMode("paint")' style='opacity: 0.5'>
+		<i class="fas fa-paint-brush"></i>
+		<div class="tooltip-menu">
+			Paint
+		</div>
 	</div>
+	<div id="modebutton-delete" class="click-button mode-button" onclick='setMode("delete")'>
+		<i class="fas fa-eraser"></i>
+		<div class="tooltip-menu">
+			Disable	
+		</div>
+	</div>
+	<div id="modebutton-ec" class="click-button mode-button" onclick='setMode("ec")'>
+		<i class="fas fa-edit"></i>
+		<div class="tooltip-menu">
+			EC Edit
+		</div>
+	</div>
+
+<?php
+	if($mobile === false) {
+	echo '<div id="lockbutton" class="click-button lock-button" onclick="toggleLockMap()">
+		<i class="fas fa-lock"></i>
+		<div class="tooltip-menu">
+			Lock Map
+		</div>
+		</div>';
+	}
+?>
 
 	<div class="click-button" onclick="displayChartMenu()" style="white-space: nowrap;">
 	<i class="fas fa-chart-pie"></i> <?php echo _("Chart") ?> 
@@ -195,9 +220,7 @@ if($mobile === false) {
 
 <div id="application-sidebar-div">
 <div id="application">
-	<div id="legend-div">
-	</div>
-
+	<div id="legend-div"></div>
 	<div id="chart-div">
 		<div id="chart">
 		<canvas id="chart-canvas" width="100" height="100"></canvas>
@@ -210,10 +233,7 @@ if($mobile === false) {
 		<div id="logo-div">
 		</div>
 	</div>
-
-	<div id="map-div">
-
-	</div>
+	<div id="map-div"></div>
 </div>
 <?php
 if($mobile === false) {
@@ -375,6 +395,7 @@ if($mobile) {
 	<a class="selectmenu-button">Tilt <input id="candidate-tilt" type="color"></a>
 	<input id="candidate-originalName" type="hidden">
 	<a class="selectmenu-button" onclick="setCandidate()">Apply</a>
+	<a class="selectmenu-button" onclick='deleteCandidate()'>Delete</a>
 	</div>
 </div>
 

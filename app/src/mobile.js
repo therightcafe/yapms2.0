@@ -10,21 +10,10 @@
 	for(var index = 0; index < clickButtons.length; ++index) {
 		clickButtons[index].style.padding = '7px';
 	}
-
-/*
-	var themeButton = document.getElementById('themebutton');
-	themeButton.style.display = 'none';
-
-	var chartButton = document.getElementById('chartbutton');
-	chartButton.style.display = 'none';
-
-	var counterButton = document.getElementById('counterbutton');
-	counterButton.style.display = 'none';
-
-	var miscButton = document.getElementById('miscbutton');
-	miscButton.style.display = 'none';
-
-	var addCandidateButton = document.getElementById('addcandidatebutton');
-	addCandidateButton.innerHTML = 'Add';
-*/
+	
+	var modeButtons = document.getElementsByClassName('mode-button');
+	for(var index = 0; index < modeButtons.length; ++index) {
+		modeButtons[index].style.paddingLeft = '12px';
+		modeButtons[index].style.paddingRight = '12px';
+	}
 })();
