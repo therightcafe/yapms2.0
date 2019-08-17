@@ -35,7 +35,7 @@ function enableFullscreen() {
 
 function displayCandidateEditMenu(candidate) {
 	var candidateedit = document.getElementById('candidateedit');
-	candidateedit.style.display = 'inline';
+	candidateedit.style.display = 'flex';
 	var nameinput = document.getElementById('candidate-name');
 	nameinput.value = candidate;
 	var solidinput = document.getElementById('candidate-solid');

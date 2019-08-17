@@ -383,6 +383,7 @@ if($mobile) {
 </div>
 
 <div id="candidateedit" class="popup selectmenu">
+	<input id="candidate-originalName" type="hidden">
 	<div class="selectmenu-header">
 	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2 id="candidateedit-message"></h2>
@@ -393,7 +394,6 @@ if($mobile) {
 	<a class="selectmenu-button">Likely <input id="candidate-likely" type="color"></a>
 	<a class="selectmenu-button">Lean <input id="candidate-lean" type="color"></a>
 	<a class="selectmenu-button">Tilt <input id="candidate-tilt" type="color"></a>
-	<input id="candidate-originalName" type="hidden">
 	<a class="selectmenu-button" onclick="setCandidate()">Apply</a>
 	<a class="selectmenu-button" onclick='deleteCandidate()'>Delete</a>
 	</div>
