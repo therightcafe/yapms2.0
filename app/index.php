@@ -57,7 +57,7 @@
 			echo '<script>' .
 				'var php_load_map = true;' .
 				'var php_load_type_map = false;' .
-				'var php_load_map_id = '.$_GET["m"].';' .
+				'var php_load_map_id = "' .$_GET["m"] . '";' .
 				'</script>';	
 
 			echo '<meta property="og:image" content="http://www.yapms.com/app/maps/' . $_GET["m"] . '.png">';
@@ -74,7 +74,7 @@
 			echo '<script>' .
 				'var php_load_map = false;' .
 				'var php_load_type_map = false;' .
-				'var php_load_map_id = 0;' .
+				'var php_load_map_id = '0';' .
 			     '</script>';
 		}
 
