@@ -53,8 +53,7 @@
 			echo '<script>var mobile = false</script>';
 		};
 
-		if(isset($_GET["m"]) && !empty($_GET["m"]) &&
-			is_numeric($_GET["m"])) {
+		if(isset($_GET["m"]) && !empty($_GET["m"])) {
 			echo '<script>' .
 				'var php_load_map = true;' .
 				'var php_load_type_map = false;' .
