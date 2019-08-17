@@ -1,5 +1,3 @@
-var hoverFill = false;
-
 function buttonClick(clickElement, options) {
 	if(mode === 'move') {
 		return;
@@ -143,7 +141,24 @@ function stateClick(clickElement, options) {
 	updateLTEHouse();
 }
 
+var tooltipTimeout = null;
+
 function stateClickPaint(state, options) {
+
+	if(state.candidate === 'Tossup' && paintIndex === 'Tossup') {
+		var tooltip = document.getElementById('legend-tooltip');
+		if(tooltip) {
+			tooltip.style.opacity = 0.7;
+
+			if(tooltipTimeout) {
+				window.clearTimeout(tooltipTimeout);
+			}
+
+			tooltipTimeout = setTimeout(function() {
+				tooltip.style.opacity = 0.0;
+			}, 3000);
+		}
+	}
 
 	if(mobile === false) {
 		var setPopularVoteElement = document.getElementById('popularvote-clicksetpv');

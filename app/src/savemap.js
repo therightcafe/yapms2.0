@@ -1,10 +1,8 @@
 function saveMap(img, token) {
 	var mapHTML = document.getElementById('map-div');
-
 	var formData = new FormData();
 
 	formData.append("img", img);
-
 	formData.append("filename", save_filename);
 	formData.append("dataid", save_dataid);
 	formData.append("type", save_type);
@@ -13,11 +11,13 @@ function saveMap(img, token) {
 	formData.append("strokewidth", save_strokewidth);
 	console.log('token: ' + token);
 	formData.append("captcha", token);
-
 	formData.append("updateText", mapOptions.updateText);
 
 	var candidateData = [];
 	for(var key in candidates) {
+		if(key === 'Tossup') {
+			continue;
+		}
 		var candidate = candidates[key];
 		var obj = {
 			name: candidate.name,
@@ -28,6 +28,7 @@ function saveMap(img, token) {
 		};
 		candidateData.push(obj);
 	}
+
 	formData.append("candidates", JSON.stringify({
 		candidate_data: candidateData
 	}));
@@ -41,16 +42,15 @@ function saveMap(img, token) {
 			delegates: state.delegates,
 			voteCount: state.voteCount,
 			colorValue: state.colorValue,
-			disabled: state.disabled.toString()[0]
+			disabled: state.disabled
 		};
 		stateData.push(obj);
 	}
 	formData.append("states", JSON.stringify({
 		state_data: stateData
 	}));
-
 	$.ajax({
-		url: "./savemap.php",
+		url: "./savemap_new.php",
 		type: "POST",
 		data: formData,
 		processData: false,
@@ -103,7 +103,7 @@ function saveMap(img, token) {
 			console.log('Map save succeeded');
 			gtag('event', 'map_save_succeeded', {
 				'event_category': 'map_save',
-				'event_label': 'Map save succeeded'
+				'event_label': 'Map save succeeded ' + currentCache 
 			});
 		},
 		error: function(a,b,c) {

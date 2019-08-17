@@ -138,8 +138,7 @@ function setCandidate() {
 
 function deleteCandidate() {
 	closeAllPopups();
-
-	var candidateid = e.parentElement.querySelector('#candidate-originalName').value;
+	var candidateid = document.getElementById('candidate-originalName').value;
 	for(var index = 0; index < states.length; ++index) {
 		state = states[index];
 		// set the candidate to tossup
