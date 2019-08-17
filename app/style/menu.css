@@ -39,7 +39,7 @@
 }
 
 .lock-button:hover .tooltip-menu {
-	opacity: 1;
+	display: block;
 }
 
 .mode-button {
@@ -52,11 +52,11 @@
 }
 
 .mode-button:hover .tooltip-menu {
-	opacity: 1;
+	display: block;
 }
 
 .tooltip-menu {
-	opacity: 0;
+	display: none;
 	position: fixed;
 	background-color: black;
 	color: white;
@@ -64,5 +64,4 @@
 	margin-top: 6px;
 	padding: 7px;
 	border-radius: 8px;
-	transition: opacity 250ms;
 }
