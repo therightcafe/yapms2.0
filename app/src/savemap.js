@@ -1,10 +1,9 @@
 function saveMap(img, token) {
+	alert('test save');
 	var mapHTML = document.getElementById('map-div');
-
 	var formData = new FormData();
 
 	formData.append("img", img);
-
 	formData.append("filename", save_filename);
 	formData.append("dataid", save_dataid);
 	formData.append("type", save_type);
@@ -13,10 +12,7 @@ function saveMap(img, token) {
 	formData.append("strokewidth", save_strokewidth);
 	console.log('token: ' + token);
 	formData.append("captcha", token);
-
-	alert('test');
 	formData.append("updateText", mapOptions.updateText);
-	alert('test2');
 
 	var candidateData = [];
 	for(var key in candidates) {
