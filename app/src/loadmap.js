@@ -465,12 +465,12 @@ function loadSenateFile(senatefile, onLoad) {
 
 function loadSavedMap_new(data) {
 	var obj = JSON.parse(data);	
-
 	console.log('UPDATE TEXT ??? ' + obj['updateText']);
 	loadMap(obj['filename'], obj['fontsize'], obj['strokewidth'], obj['dataid'],
 			obj['type'], obj['year'],
 	{	updateText: obj['updatetext'],
 		onLoad: function() {
+		mapOptions.updateText = obj['updatetext'];
 		for(var candidateName in obj.candidates) {
 			if(candidateName === 'Tossup') {
 				continue;

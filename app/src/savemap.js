@@ -1,5 +1,4 @@
 function saveMap(img, token) {
-	alert('test save');
 	var mapHTML = document.getElementById('map-div');
 	var formData = new FormData();
 
