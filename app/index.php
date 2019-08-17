@@ -136,13 +136,7 @@
 	<i class="fas fa-map"></i> <?php echo _("Map") ?>
 	</div>
 
-<!--
-	<div id="modesbutton" class="click-button" onclick="displayModeMenu()" style="white-space: nowrap;">
-	<i class="fas fa-cog"></i> <?php echo _("Mode") ?> (<i class="fas fa-paint-brush"></i> <?php echo _("Mode-Option1") ?>)
-	</div>
--->
-
-	<div id="modebutton-paint" class="click-button mode-button" onclick='setMode("paint")'>
+	<div id="modebutton-paint" class="click-button mode-button" onclick='setMode("paint")' style='opacity: 0.5'>
 		<i class="fas fa-paint-brush"></i>
 		<div class="tooltip-menu">
 			Paint
