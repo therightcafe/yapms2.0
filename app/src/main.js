@@ -1,4 +1,4 @@
-var currentCache = 'v0.52.11';
+var currentCache = 'v0.52.12';
 
 var cookies = {};
 
@@ -101,6 +101,10 @@ function share() {
 		if(svg && mapdiv) {
 			svg.setAttribute('width', mapdiv.offsetWidth);
 			svg.setAttribute('height', mapdiv.offsetHeight);
+		}
+		var notification = clone.getElementById('legend-tooltip');
+		if(notification) {
+			notification.style.display = 'none';
 		}
 	}}).then(function(canvas) {
 		notification.appendChild(canvas);
