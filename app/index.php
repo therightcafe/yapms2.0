@@ -74,7 +74,7 @@
 			echo '<script>' .
 				'var php_load_map = false;' .
 				'var php_load_type_map = false;' .
-				'var php_load_map_id = '0';' .
+				'var php_load_map_id = "0";' .
 			     '</script>';
 		}
 
