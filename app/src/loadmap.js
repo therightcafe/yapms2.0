@@ -486,6 +486,9 @@ function loadSavedMap_new(data, options) {
 	onLoad: function() {
 		console.log(obj);
 		for(var candidateName in obj.candidates) {
+			if(candidateName === 'Tossup') {
+				continue;
+			}
 			var candidate = obj.candidates[candidateName];
 			addCandidate(candidateName, candidate['solid'], candidate['likely'], candidate['lean'], candidate['tilt']);
 		}

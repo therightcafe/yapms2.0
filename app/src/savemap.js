@@ -18,6 +18,9 @@ function saveMap(img, token) {
 
 	var candidateData = [];
 	for(var key in candidates) {
+		if(key === 'Tossup') {
+			continue;
+		}
 		var candidate = candidates[key];
 		var obj = {
 			name: candidate.name,
