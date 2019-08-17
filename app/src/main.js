@@ -611,6 +611,21 @@ function setLanguage(language) {
 	}
 }
 
+function setLockMap(set) {
+	var lockButton = document.getElementById('lockbutton');
+	if(set === true) {
+		lockButton.style.opacity = '0.5';
+		panObject.disablePan();
+		panObject.disableZoom();
+		lockedMap = true;
+	} else {
+		lockButton.style.opacity = '1';
+		panObject.enablePan();
+		panObject.enableZoom();
+		lockedMap = false;
+	}
+}
+
 function toggleLockMap() {
 	var lockButton = document.getElementById('lockbutton');
 	if(lockedMap) {
@@ -771,6 +786,7 @@ function verifyMap() {
 // sets all states to white
 function clearMap() {
 	loadMap(loadConfig.filename, loadConfig.fontsize, loadConfig.strokewidth, loadConfig.dataid, loadConfig.type, loadConfig.year, {updateText: mapOptions.updateText});
+	setLockMap(false);
 }
 
 // iterate over each state and delegate votes to the candidate
