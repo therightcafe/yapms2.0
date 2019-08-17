@@ -711,6 +711,7 @@ if($mobile) {
 	<a class="selectmenu-button" href="./?t=Spain_constituencies"><?php echo _("Spain") ?></a>
 	<a class="selectmenu-button" href="./?t=Italy_states"><?php echo _("Italy") ?></a>
 	<a class="selectmenu-button" href="./?t=UnitedKingdom_constituencies"><?php echo _("United Kingdom") ?></a>
+	<a class="selectmenu-button" href="./?t=Ireland_constituencies"><?php echo _("Ireland") ?></a>
 	<a class="selectmenu-button" href="./?t=France_constituencies"><?php echo _("France") ?></a>
 	<a class="selectmenu-button" href="./?t=EuropeanUnion"><?php echo _("EU") ?></a>
 	<a class="selectmenu-button" href="./?t=World"><?php echo _("World") ?></a>
