@@ -14,7 +14,9 @@ function saveMap(img, token) {
 	console.log('token: ' + token);
 	formData.append("captcha", token);
 
+	alert('test');
 	formData.append("updateText", mapOptions.updateText);
+	alert('test2');
 
 	var candidateData = [];
 	for(var key in candidates) {
