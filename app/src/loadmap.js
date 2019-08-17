@@ -548,6 +548,7 @@ function loadSavedMap_old(data, options) {
 			var stateName = stateData[0];
 			var state = states[stateIndex];
 			var updateText = (meta[7] === 'true');
+			mapOptions.updateText = updateText;
 
 			var voteCount = parseInt(stateData[stateData.length - 2]);
 			state.setVoteCount(voteCount, updateText);	
