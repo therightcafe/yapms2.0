@@ -613,6 +613,19 @@
 	
 	<div class="map-type-box">
 	<div class="map-type-header">
+		Ireland
+	</div>
+	<div>
+		<a href="./app/?t=Ireland_constituencies">
+			<div class="map-button">
+				Constituencies
+			</div>
+		</a>
+	</div>
+	</div>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
 		Other
 	</div>
 	<div>
