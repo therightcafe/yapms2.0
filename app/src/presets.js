@@ -61,7 +61,7 @@ function loadPreset(value) {
 			loadPresetBrazil();
 			break;
 		case 'ireland':
-			loadPresetsIreland();
+			loadPresetIreland();
 			break;
 	}
 	
@@ -469,33 +469,33 @@ function loadPresetBrazil() {
 	//candidates['PV'] = pv;
 }
 
-function loadPresetsIreland() {
-	var finegael= new Candidate('Fine Gael',
+function loadPresetIreland() {
+	var finegael= new Candidate('FG',
 		['#6699FF','#6699FF','#6699FF','#6699FF']);
-	var fiannafail = new Candidate('Fianna Fáil',
+	var fiannafail = new Candidate('FF',
 		['#66BB66','#66BB66','#66BB66','#66BB66']);
-	var sinnfein = new Candidate('Sinn Féin',
+	var sinnfein = new Candidate('SF',
 		['#326760','#326760','#326760','#326760']);
-	var labour = new Candidate('Labour',
+	var labour = new Candidate('Lab',
 		['#CC0000','#CC0000','#CC0000','#CC0000']);
 	var aaapbp = new Candidate('AAA-PBP',
 		['#E5E500','#E5E500','#E5E500','#E5E500']);
-	var inds4change = new Candidate('Inds. 4 Change',
+	var inds4change = new Candidate('I4C',
 		['#FFC0CB','#FFC0CB','#FFC0CB','#FFC0CB']);
-	var socialdemocrats = new Candidate('Social Democrats',
+	var socialdemocrats = new Candidate('SD',
 		['#752F8B','#752F8B','#752F8B','#752F8B']);
-	var green = new Candidate('Green Party',
+	var green = new Candidate('GP',
 		['#99CC33','#99CC33','#99CC33','#99CC33']);
-	var indy = new Candidate('Independent',
+	var indy = new Candidate('Ind',
 		['#CCCCCC','#CCCCCC','#CCCCCC','#CCCCCC']);
 
-	candidates['Fine Gael'] = finegael;
-	candidates['Fianna Fáil'] = fiannafail;
-	candidates['Sinn Féin'] = sinnfein;
-	candidates['Labour'] = labour;
+	candidates['FG'] = finegael;
+	candidates['FF'] = fiannafail;
+	candidates['SF'] = sinnfein;
+	candidates['Lab'] = labour;
 	candidates['AAA-PBP'] = aaapbp;
-	candidates['Inds. 4 Change'] = inds4change;
-	candidates['Social Democrats'] = socialdemocrats;
-	candidates['Green Party'] = green;
-	candidates['Independent'] = indy;
+	candidates['I4C'] = inds4change;
+	candidates['SD'] = socialdemocrats;
+	candidates['GP'] = green;
+	candidates['Ind'] = indy;
 }
