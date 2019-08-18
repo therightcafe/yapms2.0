@@ -127,7 +127,6 @@ function saveMap(img, token) {
 function saveMap_new(img, token) {
 	var mapHTML = document.getElementById('map-div');
 	var data = {};
-	data['img'] = img;
 	data['filename'] = save_filename;
 	data['dataid'] = save_dataid;
 	data['type'] = save_type;
@@ -141,6 +140,7 @@ function saveMap_new(img, token) {
 	var formData = new FormData();
 	console.log('token: ' + token);
 	formData.append("captcha", token);
+	formData.append("img", img);
 
 	var candidateData = [];
 	for(var key in candidates) {
@@ -165,9 +165,6 @@ function saveMap_new(img, token) {
 		data['states'][state.name]['colorvalue'] = state.colorValue;
 		data['states'][state.name]['disabled'] = state.disabled;
 	}
-
-	console.log("FSDFSDFDSLKSKDLF");
-	console.log(data);
 
 	formData.append("data", JSON.stringify(data));
 
