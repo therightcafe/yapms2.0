@@ -1,4 +1,4 @@
-var currentCache = 'v0.53.7';
+var currentCache = 'v0.54.0';
 
 var cookies = {};
 
@@ -1216,7 +1216,7 @@ function start() {
 
 	if(php_load_map === true) {
 		$.ajax({
-			url: 'http://70.35.195.194/maps/' + php_load_map_id + '.txt',
+			url: './maps/' + php_load_map_id + '.txt',
 			type: "POST",
 			success: function(data) {
 				console.log("Map Load: Found saved map");
