@@ -1,5 +1,5 @@
-var scriptCache = 'd0.52.15';
-var indexCache = 'i0.52.15';
+var scriptCache = 'd0.52.16';
+var indexCache = 'i0.52.16';
 var staticCache = 's0.52.11';
 
 var _scriptCache = [
@@ -216,7 +216,8 @@ self.addEventListener('fetch', function(event) {
 				} else if(event.request.url.includes('yapms.com/app/') === true &&
 						event.request.url.includes('yapms.com/app/req_articles.php') === false &&
 						event.request.url.includes('yapms.com/app/?m=') === false &&
-						event.request.url.includes('yapms.com/app/savemap.php') === false) {
+						event.request.url.includes('yapms.com/app/savemap.php') === false &&
+						event.request.url.includes('yapms.com/app/savemap_new.php') === false) {
 					swLog('Web', 'fetch+cache ' + event.request.url);
 					return fetch(event.request)
 					.then(function(response) {
