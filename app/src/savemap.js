@@ -123,3 +123,125 @@ function saveMap(img, token) {
 		}
 	});
 }
+
+function saveMap_new(img, token) {
+	var mapHTML = document.getElementById('map-div');
+	var data = {};
+	data['img'] = img;
+	data['filename'] = save_filename;
+	data['dataid'] = save_dataid;
+	data['type'] = save_type;
+	data['year'] = save_year;
+	data['fontsize'] = save_fontsize;
+	data['strokewidth'] = save_strokewidth;
+	data['updatetext'] = mapOptions.updateText;
+	data['candidates'] = {};
+	data['states'] = {};
+
+	var formData = new FormData();
+	console.log('token: ' + token);
+	formData.append("captcha", token);
+
+	var candidateData = [];
+	for(var key in candidates) {
+		if(key === 'Tossup') {
+			continue;
+		}
+		var candidate = candidates[key];
+		data['candidates'][candidate.name] = {};
+		data['candidates'][candidate.name]['solid'] = candidate.colors[0];
+		data['candidates'][candidate.name]['likely'] = candidate.colors[1];
+		data['candidates'][candidate.name]['lean'] = candidate.colors[2];
+		data['candidates'][candidate.name]['tilt'] = candidate.colors[3];
+	}
+
+	var stateData = [];
+	for(var stateIndex = 0; stateIndex < states.length; ++stateIndex) {
+		var state = states[stateIndex];
+		data['states'][state.name] = {};
+		data['states'][state.name]['candidate'] = state.candidate;
+		data['states'][state.name]['delegates'] = state.delegates;
+		data['states'][state.name]['votecount'] = state.voteCount;
+		data['states'][state.name]['colorvalue'] = state.colorValue;
+		data['states'][state.name]['disabled'] = state.disabled;
+	}
+
+	console.log("FSDFSDFDSLKSKDLF");
+	console.log(data);
+
+	formData.append("data", JSON.stringify(data));
+
+	$.ajax({
+		url: "./savemap_simple.php",
+		type: "POST",
+		data: formData,
+		processData: false,
+		contentType: false,
+		success: function(a,b,c) {
+			console.log(a);
+			console.log(b);
+			console.log(c);
+			var data = a.split(' ');
+			var url = data[0];
+			var filename = data[1];
+
+			var shareurl = document.getElementById('shareurl');
+			if(url === 'reCaptcha_Failed(restart_web_browser)') {
+				shareurl.setAttribute('href', url);
+				shareurl.innerHTML = 'reCaptcha Failed: possible solution is to restart your web-browser';
+
+			} else if(url === 'reCaptcha_Bot_Detected') {
+				shareurl.setAttribute('href', url);
+				shareurl.innerHTML = 'reCaptcha Failed: suspicious activity detected';
+				
+			} else {
+				shareurl.setAttribute('href', url);
+				shareurl.innerHTML = url;
+			}
+			
+			shareurl.style.display = '';
+
+			var downloadbtn = document.getElementById('downloadbutton');
+			if(downloadbtn) {
+				downloadbtn.style.display = 'inline-block';
+				downloadbtn.setAttribute('href', 'downloadmap.php?f=' + filename);
+			}
+			
+			var button = document.getElementById('share-button');
+			if(button) {
+				button.setAttribute('onclick', 'share()');
+			}
+
+			var loadingAnimation = document.getElementById('loading-animation');
+			if(loadingAnimation) {
+				loadingAnimation.style.display = 'none';
+			}
+		
+			var image = document.getElementById('screenshotimg');
+			if(image) {
+				image.style.display = '';
+			}
+
+			console.log('Map save succeeded');
+			gtag('event', 'map_save_succeeded', {
+				'event_category': 'map_save',
+				'event_label': 'Map save succeeded ' + currentCache 
+			});
+		},
+		error: function(a,b,c) {
+			console.log(a);
+			console.log(b);
+			console.log(c);
+			var button = document.getElementById('share-button');
+			if(button) {
+				button.setAttribute('onclick', 'share()');
+			}
+			
+			console.log('Map save failed ' + a);
+			gtag('event', 'ma_save_failed', {
+				'event_category': 'map_save',
+				'event_label': 'Map save failed - ' + a
+			});
+		}
+	});
+}
