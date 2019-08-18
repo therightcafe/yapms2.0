@@ -49,7 +49,7 @@ function saveMap(img, token) {
 		state_data: stateData
 	}));
 	$.ajax({
-		url: "./savemap_new.php",
+		url: "./savemap_test.php",
 		type: "POST",
 		data: formData,
 		processData: false,
