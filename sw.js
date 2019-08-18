@@ -1,5 +1,5 @@
-var scriptCache = 'd0.54.0';
-var indexCache = 'i0.54.0';
+var scriptCache = 'd0.54.1';
+var indexCache = 'i0.54.1';
 var staticCache = 's0.52.11';
 
 var _scriptCache = [
@@ -178,6 +178,7 @@ self.addEventListener('install', function(event) {
 				'https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js',
 
 				'./app/manifest.json'
+				'./manifest.json'
 			]).then(function() {
 				for(var i = 1864; i < 2016; i += 4) {
 					cache.add('./app/res/presets/' + i + '_presidential');
