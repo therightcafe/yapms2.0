@@ -347,9 +347,10 @@ if($mobile) {
 	echo '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- mobile-ad -->
 <ins class="adsbygoogle adslot_mobile"
-     style="display:inline-block;"
-     data-ad-client="ca-pub-1660456925957249"
-     data-ad-slot="8771249229"
+	style="display:inline-block;"
+	data-full-width-responsive="true"
+	data-ad-client="ca-pub-1660456925957249"
+	data-ad-slot="8771249229"
 </ins>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
