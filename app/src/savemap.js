@@ -164,9 +164,6 @@ function saveMap_new(img, token) {
 		data['states'][state.name]['disabled'] = state.disabled;
 	}
 
-	console.log("FSDFSDFDSLKSKDLF");
-	console.log(data);
-
 	formData.append("data", JSON.stringify(data));
 
 	$.ajax({
