@@ -1,5 +1,4 @@
 function saveMap(img, token) {
-	var mapHTML = document.getElementById('map-div');
 	var formData = new FormData();
 
 	formData.append("img", img);
@@ -125,9 +124,12 @@ function saveMap(img, token) {
 }
 
 function saveMap_new(img, token) {
-	var mapHTML = document.getElementById('map-div');
+	var formData = new FormData();
+	console.log('token: ' + token);
+	formData.append("captcha", token);
+	formdata.append("img", img);
+	
 	var data = {};
-	data['img'] = img;
 	data['filename'] = save_filename;
 	data['dataid'] = save_dataid;
 	data['type'] = save_type;
@@ -137,10 +139,6 @@ function saveMap_new(img, token) {
 	data['updatetext'] = mapOptions.updateText;
 	data['candidates'] = {};
 	data['states'] = {};
-
-	var formData = new FormData();
-	console.log('token: ' + token);
-	formData.append("captcha", token);
 
 	var candidateData = [];
 	for(var key in candidates) {
