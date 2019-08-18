@@ -46,7 +46,7 @@ if($file) {
 	fclose($file);
 }
 
-$file = fopen("./maps/" . $filename, 'w');
+$file = fopen("./maps/" . $filename . ".txt", 'w');
 if($file) {
 	$writeData = $_POST["filename"] . " "
 		. $_POST["fontsize"] . " " 
