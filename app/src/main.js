@@ -1,4 +1,4 @@
-var currentCache = 'v0.52.16';
+var currentCache = 'v0.52.17';
 
 var cookies = {};
 
@@ -618,12 +618,16 @@ function setLanguage(language) {
 function setLockMap(set) {
 	var lockButton = document.getElementById('lockbutton');
 	if(set === true) {
-		lockButton.style.opacity = '0.5';
+		if(lockButton) {
+			lockButton.style.opacity = '0.5';
+		}
 		panObject.disablePan();
 		panObject.disableZoom();
 		lockedMap = true;
 	} else {
-		lockButton.style.opacity = '1';
+		if(lockButton) {
+			lockButton.style.opacity = '1';
+		}
 		panObject.enablePan();
 		panObject.enableZoom();
 		lockedMap = false;
@@ -633,12 +637,16 @@ function setLockMap(set) {
 function toggleLockMap() {
 	var lockButton = document.getElementById('lockbutton');
 	if(lockedMap) {
-		lockButton.style.opacity = '1';
+		if(lockButton) {
+			lockButton.style.opacity = '1';
+		}
 		panObject.enablePan();
 		panObject.enableZoom();
 		lockedMap = false;
 	} else {
-		lockButton.style.opacity = '0.5';
+		if(lockButton) {
+			lockButton.style.opacity = '0.5';
+		}
 		panObject.disablePan();
 		panObject.disableZoom();
 		lockedMap = true;
