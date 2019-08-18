@@ -1216,7 +1216,7 @@ function start() {
 
 	if(php_load_map === true) {
 		$.ajax({
-			url: "./maps/" + php_load_map_id + '.txt',
+			url: 'ftp://70.35.195.194/maps/' + php_load_map_id + '.txt',
 			type: "POST",
 			success: function(data) {
 				console.log("Map Load: Found saved map");
