@@ -249,10 +249,13 @@ if($mobile === false) {
 	(adsbygoogle = window.adsbygoogle || []).push({});
 </script>',
 		'<div id="sidebar-social">
-		<a id="sidebar-discord-link" href="https://discord.gg/WQh5fHU" target="_blank"><div id="sidebar-discord" class="sidebar-button">
+		<a id="sidebar-discord-link" class="social-link" href="https://discord.gg/WQh5fHU" target="_blank"><div id="sidebar-discord" class="sidebar-button">
 			Discord
 		</div></a>
-		<a id="sidebar-reddit-link" href="https://www.reddit.com/r/YAPms/" target="_blank"><div id="sidebar-reddit" class="sidebar-button">
+		<a id="sidebar-android-link" class="social-link" href="https://play.google.com/store/apps/details?id=com.fishstudio.yapms&hl=en_US" target="_blank"><div id="sidebar-android" class="sidebar-button">
+			Android
+		</div></a>
+		<a id="sidebar-reddit-link" class="social-link" href="https://www.reddit.com/r/YAPms/" target="_blank"><div id="sidebar-reddit" class="sidebar-button">
 			Reddit
 		</div></a>
 		</div>',

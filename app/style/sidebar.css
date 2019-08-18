@@ -36,7 +36,7 @@
 	padding-bottom: 3px;
 }
 
-#sidebar-discord-link {
+.social-link {
 	margin: 0px;
 	padding: 0px;
 	text-decoration: none;
@@ -47,15 +47,12 @@
 	background: #7289da;
 }
 
-#sidebar-reddit-link {
-	margin: 0px;
-	padding: 0px;
-	text-decoration: none;
-	flex: 1;
-}
-
 #sidebar-reddit {
 	background: #ff4500;
+}
+
+#sidebar-android {
+	background: #7db343;
 }
 
 .sidebar-box {

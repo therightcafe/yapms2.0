@@ -73,20 +73,24 @@
 		
 		<br>
 
-		<a href="https://play.google.com/store/apps/details?id=com.fishstudio.yapms&hl=en_GB">
-			<div class="infobox link">
-				Download Android App
+		<a href="https://discord.gg/WQh5fHU">
+			<div class="infobox link discord">
+				Discord
 			</div>
 		</a>
-
-		<a href="https://discord.gg/WQh5fHU">
-			<div class="infobox link">
-				Join Our Discord
+		
+		<a href="https://play.google.com/store/apps/details?id=com.fishstudio.yapms&hl=en_US">
+			<div class="infobox link android">
+				Android
+			</div>
+		</a>
+		
+		<a href="https://www.reddit.com/r/YAPms/">
+			<div class="infobox link reddit">
+				Reddit
 			</div>
 		</a>
 	</div>
-
-	<br>
 
 	<div class="map-type-box">	
 	<div class="map-type-header">
@@ -99,27 +103,22 @@
 				Presidential
 			</div>
 		</a>
-
 		<a href="./app/?t=2020_gubernatorial">
 			<div class="map-button">
 				Gubernatorial
 			</div>
 		</a>
-		
 		<a href="./app/?t=2020_senatorial">
 			<div class="map-button">
 				Senatorial
 			</div>
 		</a>
-
-		<br>	
-
+		<br>
 		<a href="./app/?t=2020_democratic_primary">
 			<div class="map-button">
 				Democratic Primary
 			</div>
 		</a>
-
 		<a href="./app/?t=2020_republican_primary">
 			<div class="map-button">
 				Republican Primary
@@ -138,15 +137,12 @@
 				Cook Political Report
 			</div>
 		</a>
-
 		<a href="./app/?t=2020_inside">
 			<div class="map-button">
 				Inside Elections
 			</div>
 		</a>
-
 		<br>
-
 		<a href="./app/?t=2020_sabatos">
 			<div class="map-button">
 				Sabatos Crystal Ball
@@ -154,8 +150,6 @@
 		</a>
 	</div>
 	</div>
-
-	<br>
 	
 	<div class="map-type-box">	
 	<div class="map-type-header">
@@ -165,13 +159,13 @@
 	<div>
 		<a href="./app/?t=Current_house">
 			<div class="map-button">
-				House
+				Congressional
 			</div>
 		</a>
-		
+		<br>	
 		<a href="./app/?t=Current_senate">
 			<div class="map-button">
-				Senate
+				Senatorial
 			</div>
 		</a>
 	</div>
@@ -188,21 +182,17 @@
 				Senatorial
 			</div>
 		</a>
-		
 		<a href="./app/?t=USA_gubernatorial">
 			<div class="map-button">
 				Gubernatorial
 			</div>
 		</a>
-
-		<br>
-		
+		<br>	
 		<a href="./app/?t=USA_congressional">
 			<div class="map-button">
 				Congressional
 			</div>
 		</a>
-		
 		<a href="./app/?t=USA_county">
 			<div class="map-button">
 				Counties
@@ -222,27 +212,22 @@
 				Take All
 			</div>
 		</a>
-		
 		<a href="./app/?t=USA_proportional">
 			<div class="map-button">
 				Proportional
 			</div>
 		</a>
-		
 		<a href="./app/?t=2024_projection">
 			<div class="map-button">
 				2024
 			</div>
 		</a>
-
 		<br>
-
 		<a href="./app/?t=USA_split_maine">
 			<div class="map-button">
 				Split Maine
 			</div>
 		</a>
-
 		<a href="./app/?t=USA_congressional_2008">
 			<div class="map-button">
 				Congressional 2008
@@ -255,7 +240,7 @@
 
 	<div class="map-type-box">
 	<div class="map-type-header">
-		USA - Historical - Post WW2
+		USA - Post WW2
 	</div>
 	<div>	
 		<a href="./app/?t=2016_presidential">
@@ -356,18 +341,19 @@
 				1944
 			</div>
 		</a>
+		</div>
+	</div>
+
+	<div class="map-type-box">
+	<div class="map-type-header">
+		USA - Pre WW2
+	</div>
+	<div>
 		<a href="./app/?t=1940_presidential">
 			<div class="map-button">
 				1940
 			</div>
 		</a>
-		</div>
-		</div>
-
-		<div class="map-type-box">
-		<div class="map-type-header">
-			USA - Historical - Pre WW2
-		</div>
 		<a href="./app/?t=1936_presidential">
 			<div class="map-button">
 				1936
@@ -388,12 +374,12 @@
 				1924
 			</div>
 		</a>
+		<br>
 		<a href="./app/?t=1920_presidential">
 			<div class="map-button">
 				1920
 			</div>
 		</a>
-		<br>
 		<a href="./app/?t=1916_presidential">
 			<div class="map-button">
 				1916
@@ -414,12 +400,12 @@
 				1904
 			</div>
 		</a>
+		<br>
 		<a href="./app/?t=1900_presidential">
 			<div class="map-button">
 				1900
 			</div>
 		</a>
-		<br>
 		<a href="./app/?t=1896_presidential">
 			<div class="map-button">
 				1896
@@ -440,12 +426,12 @@
 				1884
 			</div>
 		</a>
+		<br>
 		<a href="./app/?t=1880_presidential">
 			<div class="map-button">
 				1880
 			</div>
 		</a>
-		<br>
 		<a href="./app/?t=1876_presidential">
 			<div class="map-button">
 				1876
@@ -465,7 +451,7 @@
 			<div class="map-button">
 				1864
 			</div>
-		</a><br>
+		</a>
 	</div>
 	</div>
 
