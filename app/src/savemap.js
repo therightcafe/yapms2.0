@@ -56,8 +56,6 @@ function saveMap(img, token) {
 		contentType: false,
 		success: function(a,b,c) {
 			console.log(a);
-			console.log(b);
-			console.log(c);
 			var data = a.split(' ');
 			var url = data[0];
 			var filename = data[1];
@@ -125,7 +123,6 @@ function saveMap(img, token) {
 
 function saveMap_new(img, token) {
 	var formData = new FormData();
-	console.log('token: ' + token);
 	formData.append("captcha", token);
 	formData.append("img", img);
 	
@@ -179,8 +176,6 @@ function saveMap_new(img, token) {
 		contentType: false,
 		success: function(a,b,c) {
 			console.log(a);
-			console.log(b);
-			console.log(c);
 			var data = a.split(' ');
 			var url = data[0];
 			var filename = data[1];
@@ -222,7 +217,7 @@ function saveMap_new(img, token) {
 				image.style.display = '';
 			}
 
-			console.log('Map save succeeded');
+			console.log('Map save NEW succeeded');
 			gtag('event', 'map_save_succeeded', {
 				'event_category': 'map_save',
 				'event_label': 'Map save NEW succeeded ' + currentCache 
@@ -237,7 +232,7 @@ function saveMap_new(img, token) {
 				button.setAttribute('onclick', 'share()');
 			}
 			
-			console.log('Map save failed ' + a);
+			console.log('Map save NEW failed ' + a);
 			gtag('event', 'ma_save_failed', {
 				'event_category': 'map_save',
 				'event_label': 'Map save NEW failed - ' + a
