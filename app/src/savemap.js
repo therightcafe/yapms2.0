@@ -127,7 +127,7 @@ function saveMap_new(img, token) {
 	var formData = new FormData();
 	console.log('token: ' + token);
 	formData.append("captcha", token);
-	formdata.append("img", img);
+	formData.append("img", img);
 	
 	var data = {};
 	data['filename'] = save_filename;
