@@ -20,6 +20,12 @@
 	<meta name="twitter:description" content="Interactive Political Maps">
 
 	<meta property="twitter:image" content="https://www.yapms.com/app/res/yapms-96.png">
+	
+	<meta name="theme-color" content="#ffffff"/>
+	<link rel="icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
+	<link rel="apple-touch-icon" href="./res/yapms-192.png"/>
+	<link rel="shortcut icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
+	<link rel="manifest" href="./manifest.json">
 
 	<title>YAPms - Yet Another Political Map Simulator</title>
 	
