@@ -33,7 +33,7 @@ foreach($q as $row) {
 }
 
 //$filename = "" . rand(0, 100000);
-$filename = $mapnumber;
+$filename = base_convert(''.$mapnumber, 10, 36);
 
 $imgData = $_POST["img"];
 $imgData = str_replace(' ', '+', $imgData);
