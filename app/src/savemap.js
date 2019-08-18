@@ -225,7 +225,7 @@ function saveMap_new(img, token) {
 			console.log('Map save succeeded');
 			gtag('event', 'map_save_succeeded', {
 				'event_category': 'map_save',
-				'event_label': 'Map save succeeded ' + currentCache 
+				'event_label': 'Map save NEW succeeded ' + currentCache 
 			});
 		},
 		error: function(a,b,c) {
@@ -240,7 +240,7 @@ function saveMap_new(img, token) {
 			console.log('Map save failed ' + a);
 			gtag('event', 'ma_save_failed', {
 				'event_category': 'map_save',
-				'event_label': 'Map save failed - ' + a
+				'event_label': 'Map save NEW failed - ' + a
 			});
 		}
 	});
