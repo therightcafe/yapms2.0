@@ -1,4 +1,4 @@
-var currentCache = 'v0.54.12';
+var currentCache = 'v0.54.13';
 
 var cookies = {};
 
@@ -107,13 +107,16 @@ function share() {
 			notification.style.display = 'none';
 		}
 		var editButtons = clone.getElementsByClassName('legend-delete');
-		for(var index = 0; index < editButtons.length; ++index) {
+		for(var index = 0, length = editButtons.length; index < length; ++index) {
 			var element = editButtons[index];
 			if(element) {
 				element.style.display = 'none';
 			}
 		}
-		
+		var addCandidate = clone.getElementById('legend-addcandidate-button');
+		if(addCandidate) {
+			addCandidate.style.display = 'none';
+		}
 	}}).then(function(canvas) {
 		notification.appendChild(canvas);
 		canvas.style.width = 0;
