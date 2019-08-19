@@ -1,4 +1,4 @@
-var currentCache = 'v0.54.2';
+var currentCache = 'v0.54.4';
 
 var cookies = {};
 
@@ -159,7 +159,7 @@ function initData(dataid) {
 		htmlElement.setAttribute('style', 'inherit');
 		var name = htmlElement.getAttribute('id');
 		if(name === null || name.includes('*lines*') || name.includes("*ignore*") ||
-			name.includes("_ignore_") || name.includes('othertext')) {
+			name.includes("_ignore_") || name.includes('othertext') || name === 'text') {
 			// do nothing with it paths that
 			// have these ids
 		} else if(name.includes('-button')) {
@@ -683,7 +683,8 @@ function setMode(set) {
 	}
 
 	if(mapType === 'senatorial') {
-		if(set === 'delete' || set === 'ec') {
+		//if(set === 'delete' || set === 'ec') {
+		if(set === 'ec') {
 			title.innerHTML = 'Sorry';
 			message.innerHTML = 'This mode is not available while editing a senatorial map';
 			notification.style.display = 'inline';
@@ -698,16 +699,6 @@ function setMode(set) {
 		if(set === 'ec') {
 			title.innerHTML = 'Sorry';
 			message.innerHTML = 'This mode is not available while editing a congressional map';
-			notification.style.display = 'inline';
-			console.log('denied');
-			return;
-		}
-	}
-
-	if(mapType === 'primary') {
-		if(set === 'delete') {
-			title.innerHTML = 'Sorry';
-			message.innerHTML = 'This mode is not available while editing a proportional map';
 			notification.style.display = 'inline';
 			console.log('denied');
 			return;

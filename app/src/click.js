@@ -208,6 +208,10 @@ function stateClickPaintProportional(state, id) {
 		alert("FAIL");
 	}
 
+	if(state.disabled) {
+		return;
+	}
+
 	closeAllPopups();
 	var demdel = document.getElementById('demdel');
 	demdel.style.display = 'flex';

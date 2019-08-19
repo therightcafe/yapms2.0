@@ -1,5 +1,5 @@
-var scriptCache = 'd0.54.3';
-var indexCache = 'i0.54.3';
+var scriptCache = 'd0.54.4';
+var indexCache = 'i0.54.4';
 var staticCache = 's0.52.11';
 
 var _scriptCache = [
@@ -177,7 +177,7 @@ self.addEventListener('install', function(event) {
 				'https://code.jquery.com/jquery-3.4.1.min.js',
 				'https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js',
 
-				'./app/manifest.json'
+				'./app/manifest.json',
 				'./manifest.json'
 			]).then(function() {
 				for(var i = 1864; i < 2016; i += 4) {
