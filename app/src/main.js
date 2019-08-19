@@ -1,4 +1,4 @@
-var currentCache = 'v0.54.8';
+var currentCache = 'v0.54.9';
 
 var cookies = {};
 
@@ -1207,6 +1207,7 @@ function start() {
 	loadCookies();
 
 	if(php_load_map === true) {
+		console.log('Save Search - yapms.org');
 		$.ajax({
 			//url: './maps/' + php_load_map_id + '.txt',
 			url: 'https://yapms.org/maps/' + php_load_map_id + '.txt',
@@ -1222,6 +1223,33 @@ function start() {
 				}
 			},
 			error: function(a, b, c) {
+				console.log('Save Search - yapms.com');
+				$.ajax({
+					url: './maps/' + php_load_map_id + '.txt',
+					type: "POST",
+					success: function(data) {
+						console.log("Map Load: Found saved map");
+						try {
+							console.log('Map Load: Attemping new file load');
+							loadSavedMap_new(data);
+						} catch(e) {
+							console.log('Map Load: Attemping old file load');
+							loadSavedMap_old(data);
+						}
+					},
+					error: function(a, b, c) {
+						console.log("Map Load: Did not find saved map");
+						loadMap('./res/usa_presidential.svg', 16, 1, 'usa_ec',"presidential", "open", {updateText: true});
+
+						var notification = document.getElementById('notification');
+						var message = notification.querySelector('#notification-message');
+						var title = notification.querySelector('#notification-title');
+						title.innerHTML = 'Sorry';
+						message.innerHTML = 'The map you are looking for does not exist.<br><br>This feature is still in development and it may have been deleted.';
+						notification.style.display = 'inline';
+					}
+				});
+				/*
 				console.log("Map Load: Did not find saved map");
 				loadMap('./res/usa_presidential.svg', 16, 1, 'usa_ec',"presidential", "open", {updateText: true});
 
@@ -1231,6 +1259,7 @@ function start() {
 				title.innerHTML = 'Sorry';
 				message.innerHTML = 'The map you are looking for does not exist.<br><br>This feature is still in development and it may have been deleted.';
 				notification.style.display = 'inline';
+				*/
 			}
 		});
 
