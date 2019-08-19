@@ -694,7 +694,8 @@ function setMode(set) {
 	}
 
 	if(mapType === 'congressional') {
-		if(set === 'delete' || set === 'ec') {
+		//if(set === 'delete' || set === 'ec') {
+		if(set === 'ec') {
 			title.innerHTML = 'Sorry';
 			message.innerHTML = 'This mode is not available while editing a congressional map';
 			notification.style.display = 'inline';
