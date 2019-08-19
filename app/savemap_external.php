@@ -54,14 +54,33 @@ if($file) {
 	gzclose($file);
 }
 
+$filepath = "./maps/{$filename}.txt.gz";
+$connection = ftp_connect("ftp://70.35.195.194/");
+
+if(ftp_login($connection, "yapms", $mapstore_pass)) {
+	if(ftp_put($connection, $filepath, $filepath, FTP_BINARY)) {
+		echo 'https://www.yapms.com/app/?m=' . $filename . ' ';
+		echo $filename;
+	} else {
+		echo 'Save_Failed';
+	}
+}
+
+ftp_close($connection);
+
 //$file = fopen("./maps/" . $filename . '.txt', 'w');
+/*
 $file = fopen("ftp://yapms:{$mapstore_pass}@70.35.195.194/maps/{$filename}.txt.gz", 'w');
 if($file) {
 	fwrite($file, file_get_contents("./maps/{$filename}.txt.gz"));
 	//gzwrite($file, $_POST["data"]);
 	fclose($file);
 	//gzclose($file);
+	
+	unlink("./maps/{$filename}.txt.gz");
+
 	echo 'https://www.yapms.com/app/?m=' . $filename . ' ';
 	echo $filename;
 }
+ */
 ?>
