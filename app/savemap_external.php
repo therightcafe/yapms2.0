@@ -62,15 +62,17 @@ if(ftp_login($connection, "yapms", $mapstore_pass)) {
 	if(ftp_put($connection, $filepath, $filepath, FTP_BINARY)) {
 		echo 'https://www.yapms.com/app/?m=' . $filename . ' ';
 		echo $filename;
+		unlink("./maps/{$filename}.txt.gz");
 	} else {
 		echo 'Save_Failed';
+		unlink("./maps/{$filename}.txt.gz");
 	}
 } else {
 	echo 'Login_Failed';
+	unlink("./maps/{$filename}.txt.gz");
 }
 
 ftp_close($connection);
-//unlink("./maps/{$filename}.txt.gz");
 
 //$file = fopen("./maps/" . $filename . '.txt', 'w');
 /*
