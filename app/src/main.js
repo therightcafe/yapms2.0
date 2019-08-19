@@ -1,4 +1,4 @@
-var currentCache = 'v0.54.11';
+var currentCache = 'v0.54.12';
 
 var cookies = {};
 
@@ -106,6 +106,14 @@ function share() {
 		if(notification) {
 			notification.style.display = 'none';
 		}
+		var editButtons = clone.getElementsByClassName('legend-delete');
+		for(var index = 0; index < editButtons.length; ++index) {
+			var element = editButtons[index];
+			if(element) {
+				element.style.display = 'none';
+			}
+		}
+		
 	}}).then(function(canvas) {
 		notification.appendChild(canvas);
 		canvas.style.width = 0;
