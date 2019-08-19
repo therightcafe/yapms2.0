@@ -60,9 +60,12 @@
 				'var php_load_map_id = "' .$_GET["m"] . '";' .
 				'</script>';	
 
-			echo '<meta property="og:image" content="http://www.yapms.com/app/maps/' . $_GET["m"] . '.png">';
-			echo '<meta property="og:image:secure_url" content="https://www.yapms.com/app/maps/' . $_GET["m"] . '.png">';
-			echo '<meta name="twitter:image" content="https://www.yapms.com/app/maps/' . $_GET["m"] . '.png">';
+			//echo '<meta property="og:image" content="https://www.yapms.com/app/maps/' . $_GET["m"] . '.png">';
+			//echo '<meta property="og:image:secure_url" content="https://www.yapms.com/app/maps/' . $_GET["m"] . '.png">';
+			//echo '<meta name="twitter:image" content="https://www.yapms.com/app/maps/' . $_GET["m"] . '.png">';
+			echo '<meta property="og:image" content="https://yapms.org/maps/' . $_GET["m"] . '.png">';
+			echo '<meta property="og:image:secure_url" content="https://yapms.org/maps/' . $_GET["m"] . '.png">';
+			echo '<meta name="twitter:image" content="https://yapms.org/maps/' . $_GET["m"] . '.png">';
 		} else if(isset($_GET["t"]) && !empty($_GET["t"])) {
 			echo '<script>' .
 				'var php_load_map = false;' .
