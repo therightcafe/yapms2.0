@@ -39,7 +39,7 @@ $imgData = str_replace(' ', '+', $imgData);
 $imgData = substr($imgData, strpos($imgData, ",")+1);
 $imgData = base64_decode($imgData);
 
-require '../../mapstore_pass.php';
+require '../../external/mapstore_pass.php';
 
 //$file = fopen("./maps/" . $filename . ".png", 'w');
 $file = fopen("ftps://yapms@{$mapstore_pass}@70.35.195.194/maps/{$filename}.png", 'w');
