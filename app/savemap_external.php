@@ -49,7 +49,7 @@ if($file) {
 }
 
 //$file = fopen("./maps/" . $filename . '.txt', 'w');
-$file = gzopen("ftp://yapms:{$mapstore_pass}@70.35.195.194/maps/{$filename}.txt.gz", 'w');
+$file = gzopen("ftp://yapms:{$mapstore_pass}@70.35.195.194/maps/{$filename}.tgz", 'w');
 if($file) {
 	//fwrite($file, $_POST["data"]);
 	gzwrite($file, $_POST["data"]);
