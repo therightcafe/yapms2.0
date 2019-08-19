@@ -1,4 +1,4 @@
-var currentCache = 'v0.54.9';
+var currentCache = 'v0.54.10';
 
 var cookies = {};
 
@@ -1225,7 +1225,7 @@ function start() {
 			error: function(a, b, c) {
 				console.log('Save Search - yapms.com');
 				$.ajax({
-					url: './maps/' + php_load_map_id + '.txt',
+					url: 'https://www.yapms.com/app/maps/' + php_load_map_id + '.txt',
 					type: "POST",
 					success: function(data) {
 						console.log("Map Load: Found saved map");
