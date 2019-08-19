@@ -55,7 +55,8 @@ if($file) {
 }
 
 $filepath = "./maps/{$filename}.txt.gz";
-$connection = ftp_connect("ftp://70.35.195.194/");
+//$connection = ftp_connect("ftp://70.35.195.194");
+$connection = ftp_connect("70.35.195.194");
 
 if(ftp_login($connection, "yapms", $mapstore_pass)) {
 	if(ftp_put($connection, $filepath, $filepath, FTP_BINARY)) {
@@ -64,6 +65,8 @@ if(ftp_login($connection, "yapms", $mapstore_pass)) {
 	} else {
 		echo 'Save_Failed';
 	}
+} else {
+	echo 'Login_Failed';
 }
 
 ftp_close($connection);
