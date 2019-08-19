@@ -42,14 +42,14 @@ $imgData = base64_decode($imgData);
 require '../../external/mapstore_pass.php';
 
 //$file = fopen("./maps/" . $filename . ".png", 'w');
-$file = fopen("ftp://yapms@{$mapstore_pass}@70.35.195.194/maps/{$filename}.png", 'w');
+$file = fopen("ftp://yapms:{$mapstore_pass}@70.35.195.194/maps/{$filename}.png", 'w');
 if($file) {
 	fwrite($file, $imgData);
 	fclose($file);
 }
 
 //$file = fopen("./maps/" . $filename . '.txt', 'w');
-$file = fopen("ftp://yapms@{$mapstore_pass}@70.35.195.194/maps/{$filename}.txt", 'w');
+$file = fopen("ftp://yapms:{$mapstore_pass}@70.35.195.194/maps/{$filename}.txt", 'w');
 if($file) {
 	fwrite($file, $_POST["data"]);
 	fclose($file);
