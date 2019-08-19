@@ -489,12 +489,12 @@ function loadSavedMap_new(data) {
 			state.setVoteCount(stateData['votecount'], obj['updatetext']);
 			state.setColor(stateData['candidate'], stateData['colorvalue']);
 			state.delegates = stateData['delegates'];
-			if(obj['type'] !== 'gubernatorial' &&
-				obj['type'] !== 'senatorial') {
+			//if(obj['type'] !== 'gubernatorial' &&
+			//	obj['type'] !== 'senatorial') {
 				if(stateData['disabled']) {
 					state.toggleDisable();
 				}
-			}
+			//}
 		}
 
 		countVotes();
