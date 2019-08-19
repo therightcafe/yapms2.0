@@ -70,6 +70,7 @@ if(ftp_login($connection, "yapms", $mapstore_pass)) {
 }
 
 ftp_close($connection);
+unlink("./maps/{$filename}.txt.gz");
 
 //$file = fopen("./maps/" . $filename . '.txt', 'w');
 /*
