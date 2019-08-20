@@ -115,11 +115,11 @@ function loadMapFromId(id) {
 			loadMap("./res/usa_county.svg", 16, 0.075, "congressional", "congressional", "open", {updateText: false});
 			break;
 		case "USA_congressional":
-		case "USA_house":
+		case "USA_2020_house":
 			loadMap("./res/usa_congressional_2018.svg", 16, 0.075, "congressional", "congressional", "open", {updateText: false, enableCongress: true});
 			break;
 		case "USA_congressional_2008":
-		case "USA_house_2008":
+		case "USA_2008_house":
 			loadMap("./res/usa_congressional_2008.svg", 16, 0.005, "congressional", "congressional", "open", {updateText: false});
 			break;
 		case "USA_gubernatorial":

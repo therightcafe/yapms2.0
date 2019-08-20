@@ -14,30 +14,33 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		echo '<meta name="description" content="United States 2020 governors interactive election map"><title>USA - 2020 Governors Election</title>';
 		break;
 		case 'USA_2020_cook':
-		echo '<meta name="description" content="United States 2020 Cook Political Report forecast"><title>USA - Cook Political Report Election Forecast</title>';
+		echo '<meta name="description" content="United States 2020 Cook Political Report forecast"><title>USA - 2020 Cook Political Report Election Forecast</title>';
 		break;
 		case 'USA_2020_inside':
-		echo '<meta name="description" content="United States 2020 Inside Elections forecast"><title>USA - Inside Elections Election Forecast</title>';
+		echo '<meta name="description" content="United States 2020 Inside Elections forecast"><title>USA - 2020 Inside Elections Election Forecast</title>';
 		break;
 		case 'USA_2020_sabatos':
-		echo '<meta name="description" content="United States 2020 Sabatos Crystal Ball forecast"><title>USA - Sabatos Crystal Ball Election Forecast</title>';
+		echo '<meta name="description" content="United States 2020 Sabatos Crystal Ball forecast"><title>USA - 2020 Sabatos Crystal Ball Election Forecast</title>';
 		break;
 		case 'USA_2020_democratic_primary':
-		echo '<meta name="description" content="United States 2020 interactive democratic primary map"><title>USA - Democratic Primary Election</title>';
+		echo '<meta name="description" content="United States 2020 interactive democratic primary map"><title>USA - 2020 Democratic Primary Election</title>';
 		break;
 		case 'USA_2020_republican_primary':
-		echo '<meta name="description" content="United States 2020 interactive republican primary map"><title>USA - Republican Primary Election</title>';
+		echo '<meta name="description" content="United States 2020 interactive republican primary map"><title>USA - 2020 Republican Primary Election</title>';
 		break;
 		case 'USA_county':
 		echo '<meta name="description" content="United States interactive county election map"><title>USA - County Election</title>';
 		break;
 		case 'USA_congressional':
-		case 'USA_house':
-		echo '<meta name="description" content="United States interactive house election map"><title>USA - House Election</title>';
+		case 'USA_2020_house':
+		echo '<meta name="description" content="United States 2020 interactive house election map"><title>USA - 2020 House Election</title>';
 		break;
 		case 'USA_2018_congress':
 		case 'USA_2018_house':
-		echo '<meta name="description" content="United States 2018 interactive house election map"><title>USA - 2018 House Election</title>';
+		echo '<meta name="description" content="United States 2008 interactive house election map"><title>USA - 2018 House Election</title>';
+		break;
+		case 'USA_2008_house':
+		echo '<meta name="description" content="United States 2008 interactive house election map"><title>USA - 2008 House Election</title>';
 		break;
 		case 'USA_2024_projection':
 		echo '<meta name="description" content="United States 2024 interactive electoral college projection map"><title>USA - 2024 Electoral College Projection</title>';

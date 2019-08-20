@@ -613,7 +613,7 @@ if($mobile) {
 	<a class="selectmenu-button" href="./?t=USA_2020_presidential"><?php echo _("Presidential") ?></a>
 	<a class="selectmenu-button" href="./?t=USA_2020_senate"><?php echo _("Senate") ?></a>
 	<a class="selectmenu-button" href="./?t=USA_2020_governors"><?php echo _("Governors") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_house"><?php echo _("House") ?></a>
+	<a class="selectmenu-button" href="./?t=USA_2020_house"><?php echo _("House") ?></a>
 	<a class="selectmenu-split"><?php echo _("Forecasts") ?></a>
 	<a class="selectmenu-button" href="./?t=USA_2020_cook">Cook Political Report</a>
 	<a class="selectmenu-button" href="./?t=USA_2020_inside">Inside Elections</a>
@@ -644,7 +644,7 @@ if($mobile) {
 	</div>
 	<div class="selectmenu-content">
 	<a class="selectmenu-split"><?php echo _("Blank") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_house_2008"><?php echo _("Congressional") ?> 2008</a>
+	<a class="selectmenu-button" href="./?t=USA_2008_house"><?php echo _("Congressional") ?> 2008</a>
 	<a class="selectmenu-split"><?php echo _("Results") ?></a>
 	<a class="selectmenu-button" href="./?t=USA_2016_presidential_county"><?php echo _("Presidential") . " " . _("County") ?> 2016</a>
 	<a class="selectmenu-button" href="./?t=USA_2016_presidential"><?php echo _("Presidential") ?> 2016</a>

@@ -1,6 +1,6 @@
-var scriptCache = 'd0.54.23';
-var indexCache = 'i0.54.23';
-var staticCache = 's0.52.11';
+var scriptCache = 'd0.55.0';
+var indexCache = 'i0.55.0';
+var staticCache = 's0.55.0';
 
 var _scriptCache = [
 	'./style.css',
@@ -35,17 +35,17 @@ var _indexCache = [
 
 	'./app/',
 	'./app/index.php',
-	'./app/?t=Current_house',
-	'./app/?t=Current_senate',
-	'./app/?t=2016_presidential_county',
-	'./app/?t=2020_presidential',
-	'./app/?t=2020_cook',
-	'./app/?t=2020_inside',
-	'./app/?t=2020_sabatos',
-	'./app/?t=2020_senate',
-	'./app/?t=2020_governors',
-	'./app/?t=2020_democratic_primary',
-	'./app/?t=2020_republican_primary',
+	'./app/?t=USA_current_house',
+	'./app/?t=USA_current_senate',
+	'./app/?t=USA_2016_presidential_county',
+	'./app/?t=USA_2020_presidential',
+	'./app/?t=USA_2020_cook',
+	'./app/?t=USA_2020_inside',
+	'./app/?t=USA_2020_sabatos',
+	'./app/?t=USA_2020_senate',
+	'./app/?t=USA_2020_governors',
+	'./app/?t=USA_2020_democratic_primary',
+	'./app/?t=USA_2020_republican_primary',
 	'./app/?t=USA_county',
 	'./app/?t=USA_house',
 	'./app/?t=USA_governors',
@@ -141,15 +141,15 @@ self.addEventListener('install', function(event) {
 				'./app/res/lte.jpg',
 				'./app/res/redeagletv.png',
 
-				'./app/res/presets/Current_house',
-				'./app/res/presets/Current_senate',
-				'./app/res/presets/2016_presidential_county',
+				'./app/res/presets/USA_current_house',
+				'./app/res/presets/USA_current_senate',
+				'./app/res/presets/USA_2016_presidential_county',
 
-				'./app/res/presets/2024_projection',
+				'./app/res/presets/USA_2024_projection',
 
-				'./app/res/presets/2020_cook',
-				'./app/res/presets/2020_inside',
-				'./app/res/presets/2020_sabatos',
+				'./app/res/presets/USA_2020_cook',
+				'./app/res/presets/USA_2020_inside',
+				'./app/res/presets/USA_2020_sabatos',
 				
 				'./app/data/gubernatorial_2018',
 				'./app/data/gubernatorial_2020',
@@ -181,7 +181,7 @@ self.addEventListener('install', function(event) {
 				'./manifest.json'
 			]).then(function() {
 				for(var i = 1864; i < 2016; i += 4) {
-					cache.add('./app/res/presets/' + i + '_presidential');
+					cache.add('./app/res/presets/USA_' + i + '_presidential');
 				}
 
 				return cache;
