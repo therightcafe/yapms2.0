@@ -199,7 +199,7 @@ function saveMap_new(img, token) {
 			var downloadbtn = document.getElementById('downloadbutton');
 			if(downloadbtn) {
 				downloadbtn.style.display = 'inline-block';
-				downloadbtn.setAttribute('href', 'downloadmap.php?f=' + filename);
+				downloadbtn.setAttribute('href', 'https://yapms.org/downloadmap.php?f=' + filename);
 			}
 			
 			var button = document.getElementById('share-button');
