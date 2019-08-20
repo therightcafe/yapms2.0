@@ -1,5 +1,5 @@
-var scriptCache = 'd0.54.17';
-var indexCache = 'i0.54.17';
+var scriptCache = 'd0.54.18';
+var indexCache = 'i0.54.18';
 var staticCache = 's0.52.11';
 
 var _scriptCache = [
@@ -42,14 +42,14 @@ var _indexCache = [
 	'./app/?t=2020_cook',
 	'./app/?t=2020_inside',
 	'./app/?t=2020_sabatos',
-	'./app/?t=2020_senatorial',
-	'./app/?t=2020_gubernatorial',
+	'./app/?t=2020_senate',
+	'./app/?t=2020_governors',
 	'./app/?t=2020_democratic_primary',
 	'./app/?t=2020_republican_primary',
 	'./app/?t=USA_county',
-	'./app/?t=USA_congressional',
-	'./app/?t=USA_gubernatorial',
-	'./app/?t=USA_senatorial',
+	'./app/?t=USA_house',
+	'./app/?t=USA_governors',
+	'./app/?t=USA_senate',
 	'./app/?t=USA_takeall',
 	'./app/?t=USA_proportional',
 	'./app/?t=USA_Canada',
