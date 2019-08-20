@@ -5,6 +5,6 @@
 	header('Expired: 0');
 	header('Cache-Control: must-revalidate');
 	header('Pragma: public');
-	header('Content-Length: ' . filesize('./maps/' . $filename . '.txt'));
-	readfile('./maps/' . $filename . '.txt');
+	header('Content-Length: ' . filesize('./maps/' . $filename . '.txt.gz'));
+	readfile('https://yapms.org/maps/' . $filename . '.txt.gz');
 ?>
