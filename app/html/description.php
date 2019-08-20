@@ -6,10 +6,12 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 	} else {
 	switch($_GET['t']) {
 		case '2020_senatorial':
-		echo '<meta name="description" content="United States 2020 senatorial election map"><title>2020 Senatorial</title>';
+		case '2020_senate':
+		echo '<meta name="description" content="United States 2020 senate election map"><title>2020 Senate</title>';
 		break;
 		case '2020_gubernatorial':
-		echo '<meta name="description" content="United States 2020 gubernatorial election map"><title>2020 Gubernatorial</title>';
+		case '2020_governors':
+		echo '<meta name="description" content="United States 2020 governors election map"><title>2020 Governors</title>';
 		break;
 		case '2020_cook':
 		echo '<meta name="description" content="United States 2020 Cook Political Report forecast"><title>Cook Political Report</title>';
@@ -30,10 +32,12 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		echo '<meta name="description" content="United States county map"><title>USA County</title>';
 		break;
 		case 'USA_congressional':
-		echo '<meta name="description" content="United States congressional map"><title>USA Congressional</title>';
+		case 'USA_house':
+		echo '<meta name="description" content="United States house map"><title>USA House</title>';
 		break;
 		case '2018_congress':
-		echo '<meta name="description" content="United States 2018 congressional map"><title>USA 2018 Congressional</title>';
+		case '2018_house':
+		echo '<meta name="description" content="United States 2018 house map"><title>USA 2018 House</title>';
 		break;
 		case '2024_projection':
 		echo '<meta name="description" content="United States 2024 electoral college projection"><title>USA 2024 Electoral College Projection</title>';

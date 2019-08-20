@@ -98,9 +98,11 @@ function loadMapFromId(id) {
 			loadMap("./res/usa_1972_presidential.svg", 16, 1, "usa_1972_ec", "presidential", "open", {updateText: true});
 			break;
 		case "2020_senatorial":
+		case "2020_senate":
 			loadMap("./res/usa_senate.svg", 16, 1, "usa_senate", "senatorial", "2020", {updateText: false});
 			break;
 		case "2020_gubernatorial":
+		case "2020_governors":
 			loadMap("./res/usa_gubernatorial.svg", 16, 1, "usa_gubernatorial", "gubernatorial", "2020", {updateText: false});
 			break;
 		case "2020_democratic_primary":
@@ -113,15 +115,19 @@ function loadMapFromId(id) {
 			loadMap("./res/usa_county.svg", 16, 0.075, "congressional", "congressional", "open", {updateText: false});
 			break;
 		case "USA_congressional":
+		case "USA_house":
 			loadMap("./res/usa_congressional_2018.svg", 16, 0.075, "congressional", "congressional", "open", {updateText: false, enableCongress: true});
 			break;
 		case "USA_congressional_2008":
+		case "USA_house_2008":
 			loadMap("./res/usa_congressional_2008.svg", 16, 0.005, "congressional", "congressional", "open", {updateText: false});
 			break;
 		case "USA_gubernatorial":
+		case "USA_governors":
 			loadMap("./res/usa_gubernatorial.svg", 16, 1.5, "usa_gubernatorial", "gubernatorial", "open", {updateText: false});
 			break;
 		case "USA_senatorial":
+		case "USA_senate":
 			loadMap("./res/usa_senate.svg", 16, 1.5, "usa_senate", "senatorial", "open", {updateText: false});
 			break;
 		case "USA_takeall":

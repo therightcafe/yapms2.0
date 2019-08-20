@@ -3,7 +3,7 @@
 <html class="noSelect" lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="description" content="United States Presidential, Senatorial, Congressional, Guberntorial and Primary interactive maps. United Kingdom, Canada, Germany maps and more.">
+	<meta name="description" content="United States Presidential, Senate, House, Governors and Primary interactive maps. United Kingdom, Canada, Germany maps and more.">
 	<meta name="keywords" content="Map,Election,Political,Interactive,Simulator,Electoral,270,2020">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
@@ -109,14 +109,14 @@
 				Presidential
 			</div>
 		</a>
-		<a href="./app/?t=2020_gubernatorial">
+		<a href="./app/?t=2020_governors">
 			<div class="map-button">
-				Gubernatorial
+				Governors
 			</div>
 		</a>
-		<a href="./app/?t=2020_senatorial">
+		<a href="./app/?t=2020_senate">
 			<div class="map-button">
-				Senatorial
+				Senate
 			</div>
 		</a>
 		<br>
@@ -165,13 +165,13 @@
 	<div>
 		<a href="./app/?t=Current_house">
 			<div class="map-button">
-				Congressional
+				House
 			</div>
 		</a>
 		<br>	
 		<a href="./app/?t=Current_senate">
 			<div class="map-button">
-				Senatorial
+				Senate
 			</div>
 		</a>
 	</div>
@@ -179,29 +179,29 @@
 
 	<div class="map-type-box">	
 	<div class="map-type-header">
-		USA - Open Maps
+		USA - Blank Maps
 	</div>
 
 	<div>
-		<a href="./app/?t=USA_senatorial">
+		<a href="./app/?t=USA_senate">
 			<div class="map-button">
-				Senatorial
+				Senate
 			</div>
 		</a>
-		<a href="./app/?t=USA_gubernatorial">
+		<a href="./app/?t=USA_governors">
 			<div class="map-button">
-				Gubernatorial
+				Governors
 			</div>
 		</a>
 		<br>	
-		<a href="./app/?t=USA_congressional">
+		<a href="./app/?t=USA_house">
 			<div class="map-button">
-				Congressional
+				House
 			</div>
 		</a>
 		<a href="./app/?t=USA_county">
 			<div class="map-button">
-				Counties
+				County
 			</div>
 		</a>
 	</div>
@@ -234,9 +234,9 @@
 				Split Maine
 			</div>
 		</a>
-		<a href="./app/?t=USA_congressional_2008">
+		<a href="./app/?t=USA_house_2008">
 			<div class="map-button">
-				Congressional 2008
+				House 2008
 			</div>
 		</a>
 	</div>

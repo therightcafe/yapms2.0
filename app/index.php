@@ -611,8 +611,9 @@ if($mobile) {
 	<div class="selectmenu-content">
 	<a class="selectmenu-split">2020</a>
 	<a class="selectmenu-button" href="./?t=2020_presidential"><?php echo _("Presidential") ?></a>
-	<a class="selectmenu-button" href="./?t=2020_senatorial"><?php echo _("Senatorial") ?></a>
-	<a class="selectmenu-button" href="./?t=2020_gubernatorial"><?php echo _("Gubernatorial") ?></a>
+	<a class="selectmenu-button" href="./?t=2020_senate"><?php echo _("Senate") ?></a>
+	<a class="selectmenu-button" href="./?t=2020_governors"><?php echo _("Governors") ?></a>
+	<a class="selectmenu-button" href="./?t=USA_house"><?php echo _("House") ?></a>
 	<a class="selectmenu-split"><?php echo _("Forecasts") ?></a>
 	<a class="selectmenu-button" href="./?t=2020_cook">Cook Political Report</a>
 	<a class="selectmenu-button" href="./?t=2020_inside">Inside Elections</a>
@@ -624,15 +625,14 @@ if($mobile) {
 	<a class="selectmenu-button" href="./?t=Current_house"><?php echo _("House") ?></a>
 	<a class="selectmenu-button" href="./?t=Current_senate"><?php echo _("Senate") ?></a>
 	<a class="selectmenu-split"><?php echo _("Blank") ?></a>
-	<a class="selectmenu-button" href="./?t=2024_projection">2024 Projection</a>
-	<a class="selectmenu-button" href="./?t=USA_senatorial"><?php echo _("Senatorial") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_congressional"><?php echo _("Congressional") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_gubernatorial"><?php echo _("Gubernatorial") ?></a>
+	<a class="selectmenu-button" href="./?t=USA_senate"><?php echo _("Senate") ?></a>
+	<a class="selectmenu-button" href="./?t=USA_governors"><?php echo _("Governors") ?></a>
 	<a class="selectmenu-button" href="./?t=USA_county"><?php echo _("County") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_proportional"><?php echo _("Presidential Proportional") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_takeall"><?php echo _("Presidential Take All") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_split_maine"><?php echo _("Presidential Split Maine") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_congressional_2008"><?php echo _("Congressional") ?> 2008</a>
+	<a class="selectmenu-split"><?php echo _("Other") ?></a>
+	<a class="selectmenu-button" href="./?t=2024_projection">2024 Projection</a>
+	<a class="selectmenu-button" href="./?t=USA_proportional"><?php echo _("Proportional") ?></a>
+	<a class="selectmenu-button" href="./?t=USA_takeall"><?php echo _("Take All") ?></a>
+	<a class="selectmenu-button" href="./?t=USA_split_maine"><?php echo _("Split Maine") ?></a>
 	</div>
 </div>
 
@@ -643,6 +643,9 @@ if($mobile) {
 	<h2>USA Historical Maps</h2>
 	</div>
 	<div class="selectmenu-content">
+	<a class="selectmenu-split"><?php echo _("Blank") ?></a>
+	<a class="selectmenu-button" href="./?t=USA_house_2008"><?php echo _("Congressional") ?> 2008</a>
+	<a class="selectmenu-split"><?php echo _("Results") ?></a>
 	<a class="selectmenu-button" href="./?t=2016_presidential_county"><?php echo _("Presidential") . " " . _("County") ?> 2016</a>
 	<a class="selectmenu-button" href="./?t=2016_presidential"><?php echo _("Presidential") ?> 2016</a>
 	<a class="selectmenu-button" href="./?t=2012_presidential"><?php echo _("Presidential") ?> 2012</a>
