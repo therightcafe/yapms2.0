@@ -42,7 +42,7 @@ $imgData = base64_decode($imgData);
 require '../../external/mapstore_pass.php';
 
 //$file = fopen("./maps/" . $filename . ".png", 'w');
-$file = fopen("ftp://yapms:{$mapstore_pass}@70.35.195.194/maps/{$filename}.png", 'w');
+$file = fopen("ftp://yapms:{$mapstore_pass}@74.208.19.50/maps/{$filename}.png", 'w');
 if($file) {
 	fwrite($file, $imgData);
 	fclose($file);
@@ -54,7 +54,7 @@ if($file) {
 	gzclose($file);
 }
 
-$file = fopen("ftp://yapms:{$mapstore_pass}@70.35.195.194/maps/{$filename}.txt.gz", 'w');
+$file = fopen("ftp://yapms:{$mapstore_pass}@74.208.19.50/maps/{$filename}.txt.gz", 'w');
 if($file) {
 	fwrite($file, file_get_contents("./maps/{$filename}.txt.gz"));
 	fclose($file);
