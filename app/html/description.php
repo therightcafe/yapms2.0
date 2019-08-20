@@ -31,6 +31,12 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		case 'USA_county':
 		echo '<meta name="description" content="United States interactive county election map"><title>USA - County Election</title>';
 		break;
+		case 'USA_governors':
+		echo '<meta name="description" content="United States interactive governors election map"><title>USA - Governors Election</title>';
+		break;
+		case 'USA_senate':
+		echo '<meta name="description" content="United States interactive senate election map"><title>USA - Senate Election</title>';
+		break;
 		case 'USA_congressional':
 		case 'USA_2020_house':
 		echo '<meta name="description" content="United States 2020 interactive house election map"><title>USA - 2020 House Election</title>';
