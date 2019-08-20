@@ -111,11 +111,11 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		echo '<meta name="description" content="World election map"><title>World Map</title>';
 		break;
 		default:
-		echo '<meta name="description" content="United States Presidential, Senatorial, Congressional, Guberntorial and Primary interactive election maps. United Kingdom, Canada, Germany election maps."><title>Interactive Political Election Maps</title>';
+		echo '<meta name="description" content="United States Presidential, Senatorial, Congressional, Guberntorial and Primary interactive election maps. United Kingdom, Canada, Germany election maps."><title>YAPms - Interactive Political Election Maps</title>';
 		break;
 	}
 	}
 } else {
-	echo '<meta name="description" content="United States Presidential, Senatorial, Congressional, Guberntorial and Primary interactive election maps. United Kingdom, Canada, Germany election maps."><title>Interactive Political Election Maps</title>';
+	echo '<meta name="description" content="United States Presidential, Senatorial, Congressional, Guberntorial and Primary interactive election maps. United Kingdom, Canada, Germany election maps."><title>YAPms - Interactive Political Election Maps</title>';
 }
 ?>
