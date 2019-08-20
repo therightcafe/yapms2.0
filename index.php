@@ -3,7 +3,7 @@
 <html class="noSelect" lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="description" content="Presidential, Senatorial, Congressional, Guberntorial and Primary political map simulator.">
+	<meta name="description" content="United States Presidential, Senatorial, Congressional, Guberntorial and Primary interactive maps. United Kingdom, Canada, Germany maps and more.">
 	<meta name="keywords" content="Map,Election,Political,Interactive,Simulator,Electoral,270,2020">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
