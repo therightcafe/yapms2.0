@@ -3,8 +3,8 @@
 <html class="noSelect" lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="description" content="United States Presidential, Senate, House, Governors and Primary interactive maps. United Kingdom, Canada, Germany maps and more.">
-	<meta name="keywords" content="Map,Election,Political,Interactive,Simulator,Electoral,270,2020">
+	<meta name="description" content="United States Presidential, Senate, House, Governors and Primary interactive election maps. United Kingdom, Canada, Germany election maps.">
+	<meta name="keywords" content="Map,Election,Political,Interactive,Simulator,Electoral,270,2020,Forecast,Historical">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<meta property="og:title" content="YAPms - Yet Another Political Map Simulator">
