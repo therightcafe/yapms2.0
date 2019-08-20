@@ -7,20 +7,20 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 	switch($_GET['t']) {
 		case '2020_senatorial':
 		case '2020_senate':
-		echo '<meta name="description" content="United States 2020 interactive senate election map"><title>2020 Senate Election</title>';
+		echo '<meta name="description" content="United States 2020 interactive senate election map"><title>USA 2020 Senate Election</title>';
 		break;
 		case '2020_gubernatorial':
 		case '2020_governors':
-		echo '<meta name="description" content="United States 2020 governors interactive election map"><title>2020 Governors Election</title>';
+		echo '<meta name="description" content="United States 2020 governors interactive election map"><title>USA 2020 Governors Election</title>';
 		break;
 		case '2020_cook':
-		echo '<meta name="description" content="United States 2020 Cook Political Report forecast"><title>Cook Political Report - Election Forecast</title>';
+		echo '<meta name="description" content="United States 2020 Cook Political Report forecast"><title>Cook Political Report - USA Election Forecast</title>';
 		break;
 		case '2020_inside':
-		echo '<meta name="description" content="United States 2020 Inside Elections forecast"><title>Inside Elections - Election Forecast</title>';
+		echo '<meta name="description" content="United States 2020 Inside Elections forecast"><title>Inside Elections - USA Election Forecast</title>';
 		break;
 		case '2020_sabatos':
-		echo '<meta name="description" content="United States 2020 Sabatos Crystal Ball forecast"><title>Sabatos Crystal Ball - Election Forecast</title>';
+		echo '<meta name="description" content="United States 2020 Sabatos Crystal Ball forecast"><title>Sabatos Crystal Ball - USA Election Forecast</title>';
 		break;
 		case '2020_democratic_primary':
 		echo '<meta name="description" content="United States 2020 interactive democratic primary map"><title>Democratic Primary Election</title>';
