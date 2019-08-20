@@ -1,6 +1,6 @@
 <?php
 if (isset($_GET["t"]) && !empty($_GET["t"])) {
-	if(strpos($_GET['t'], '_presidential')) {
+	if(strpos($_GET['t'], '_presidential') && !strpos($_GET['t'], '_county')) {
 		$year = substr($_GET['t'], 4, 4);
 		echo "<meta name=\"description\" content=\"United States {$year} presidential interactive election map\"><title>USA - {$year} Presidential Election</title>";
 	} else {
@@ -30,6 +30,9 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		break;
 		case 'USA_county':
 		echo '<meta name="description" content="United States interactive county election map"><title>USA - County Election</title>';
+		break;
+		case 'USA_2016_presidential_county':
+		echo '<meta name="description" content="United States interactive 2016 county election map"><title>USA - 2016 County Election</title>';
 		break;
 		case 'USA_governors':
 		echo '<meta name="description" content="United States interactive governors election map"><title>USA - Governors Election</title>';
