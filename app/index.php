@@ -562,7 +562,7 @@ if($mobile) {
 	</div>
 	<div class="selectmenu-content">
 	<a class="selectmenu-button" href="./?t=Canada_provinces"><?php echo _("Provinces") ?></a>
-	<a class="selectmenu-button" href="./?t=Canada_constituencies"><?php echo _("Constituencies") ?></a>
+	<a class="selectmenu-button" href="./?t=Canada_house_of_commons"><?php echo _("House of Commons") ?></a>
 	</div>
 </div>
 
@@ -574,7 +574,7 @@ if($mobile) {
 	</div>
 	<div class="selectmenu-content">
 	<a class="selectmenu-button" href="./?t=Germany_states"><?php echo _("States") ?></a>
-	<a class="selectmenu-button" href="./?t=Germany_constituencies"><?php echo _("Constituencies") ?></a>
+	<a class="selectmenu-button" href="./?t=Germany_bundestag"><?php echo _("Bundestag") ?></a>
 	</div>
 </div>
 
@@ -586,7 +586,7 @@ if($mobile) {
 	</div>
 	<div class="selectmenu-content">
 	<a class="selectmenu-button" href="./?t=Australia_states"><?php echo _("States") ?></a>
-	<a class="selectmenu-button" href="./?t=Australia_constituencies"><?php echo _("Constituencies") ?></a>
+	<a class="selectmenu-button" href="./?t=Australia_house_of_representatives"><?php echo _("House of Representatives") ?></a>
 	</div>
 </div>
 
@@ -610,26 +610,26 @@ if($mobile) {
 	</div>
 	<div class="selectmenu-content">
 	<a class="selectmenu-split">2020</a>
-	<a class="selectmenu-button" href="./?t=2020_presidential"><?php echo _("Presidential") ?></a>
-	<a class="selectmenu-button" href="./?t=2020_senate"><?php echo _("Senate") ?></a>
-	<a class="selectmenu-button" href="./?t=2020_governors"><?php echo _("Governors") ?></a>
+	<a class="selectmenu-button" href="./?t=USA_2020_presidential"><?php echo _("Presidential") ?></a>
+	<a class="selectmenu-button" href="./?t=USA_2020_senate"><?php echo _("Senate") ?></a>
+	<a class="selectmenu-button" href="./?t=USA_2020_governors"><?php echo _("Governors") ?></a>
 	<a class="selectmenu-button" href="./?t=USA_house"><?php echo _("House") ?></a>
 	<a class="selectmenu-split"><?php echo _("Forecasts") ?></a>
-	<a class="selectmenu-button" href="./?t=2020_cook">Cook Political Report</a>
-	<a class="selectmenu-button" href="./?t=2020_inside">Inside Elections</a>
-	<a class="selectmenu-button" href="./?t=2020_sabatos">Sabatos Crystal Ball</a>
+	<a class="selectmenu-button" href="./?t=USA_2020_cook">Cook Political Report</a>
+	<a class="selectmenu-button" href="./?t=USA_2020_inside">Inside Elections</a>
+	<a class="selectmenu-button" href="./?t=USA_2020_sabatos">Sabatos Crystal Ball</a>
 	<a class="selectmenu-split"><?php echo _("Primaries") ?></a>
-	<a class="selectmenu-button" href="./?t=2020_democratic_primary"><?php echo _("Democratic") ?></a>
-	<a class="selectmenu-button" href="./?t=2020_republican_primary"><?php echo _("Republican") ?></a>
+	<a class="selectmenu-button" href="./?t=USA_2020_democratic_primary"><?php echo _("Democratic") ?></a>
+	<a class="selectmenu-button" href="./?t=USA_2020_republican_primary"><?php echo _("Republican") ?></a>
 	<a class="selectmenu-split"><?php echo _("Current") ?></a>
-	<a class="selectmenu-button" href="./?t=Current_house"><?php echo _("House") ?></a>
-	<a class="selectmenu-button" href="./?t=Current_senate"><?php echo _("Senate") ?></a>
+	<a class="selectmenu-button" href="./?t=USA_current_house"><?php echo _("House") ?></a>
+	<a class="selectmenu-button" href="./?t=USA_current_senate"><?php echo _("Senate") ?></a>
 	<a class="selectmenu-split"><?php echo _("Blank") ?></a>
 	<a class="selectmenu-button" href="./?t=USA_senate"><?php echo _("Senate") ?></a>
 	<a class="selectmenu-button" href="./?t=USA_governors"><?php echo _("Governors") ?></a>
 	<a class="selectmenu-button" href="./?t=USA_county"><?php echo _("County") ?></a>
 	<a class="selectmenu-split"><?php echo _("Other") ?></a>
-	<a class="selectmenu-button" href="./?t=2024_projection">2024 Projection</a>
+	<a class="selectmenu-button" href="./?t=USA_2024_projection">2024 Projection</a>
 	<a class="selectmenu-button" href="./?t=USA_proportional"><?php echo _("Proportional") ?></a>
 	<a class="selectmenu-button" href="./?t=USA_takeall"><?php echo _("Take All") ?></a>
 	<a class="selectmenu-button" href="./?t=USA_split_maine"><?php echo _("Split Maine") ?></a>
@@ -646,46 +646,46 @@ if($mobile) {
 	<a class="selectmenu-split"><?php echo _("Blank") ?></a>
 	<a class="selectmenu-button" href="./?t=USA_house_2008"><?php echo _("Congressional") ?> 2008</a>
 	<a class="selectmenu-split"><?php echo _("Results") ?></a>
-	<a class="selectmenu-button" href="./?t=2016_presidential_county"><?php echo _("Presidential") . " " . _("County") ?> 2016</a>
-	<a class="selectmenu-button" href="./?t=2016_presidential"><?php echo _("Presidential") ?> 2016</a>
-	<a class="selectmenu-button" href="./?t=2012_presidential"><?php echo _("Presidential") ?> 2012</a>
-	<a class="selectmenu-button" href="./?t=2008_presidential"><?php echo _("Presidential") ?> 2008</a>
-	<a class="selectmenu-button" href="./?t=2004_presidential"><?php echo _("Presidential") ?> 2004</a>
-	<a class="selectmenu-button" href="./?t=2000_presidential"><?php echo _("Presidential") ?> 2000</a>
-	<a class="selectmenu-button" href="./?t=1996_presidential"><?php echo _("Presidential") ?> 1996</a>
-	<a class="selectmenu-button" href="./?t=1992_presidential"><?php echo _("Presidential") ?> 1992</a>
-	<a class="selectmenu-button" href="./?t=1988_presidential"><?php echo _("Presidential") ?> 1988</a>
-	<a class="selectmenu-button" href="./?t=1984_presidential"><?php echo _("Presidential") ?> 1984</a>
-	<a class="selectmenu-button" href="./?t=1980_presidential"><?php echo _("Presidential") ?> 1980</a>
-	<a class="selectmenu-button" href="./?t=1976_presidential"><?php echo _("Presidential") ?> 1976</a>
-	<a class="selectmenu-button" href="./?t=1972_presidential"><?php echo _("Presidential") ?> 1972</a>
-	<a class="selectmenu-button" href="./?t=1968_presidential"><?php echo _("Presidential") ?> 1968</a>
-	<a class="selectmenu-button" href="./?t=1964_presidential"><?php echo _("Presidential") ?> 1964</a>
-	<a class="selectmenu-button" href="./?t=1960_presidential"><?php echo _("Presidential") ?> 1960</a>
-	<a class="selectmenu-button" href="./?t=1956_presidential"><?php echo _("Presidential") ?> 1956</a>
-	<a class="selectmenu-button" href="./?t=1952_presidential"><?php echo _("Presidential") ?> 1952</a>
-	<a class="selectmenu-button" href="./?t=1948_presidential"><?php echo _("Presidential") ?> 1948</a>
-	<a class="selectmenu-button" href="./?t=1944_presidential"><?php echo _("Presidential") ?> 1944</a>
-	<a class="selectmenu-button" href="./?t=1940_presidential"><?php echo _("Presidential") ?> 1940</a>
-	<a class="selectmenu-button" href="./?t=1936_presidential"><?php echo _("Presidential") ?> 1936</a>
-	<a class="selectmenu-button" href="./?t=1932_presidential"><?php echo _("Presidential") ?> 1932</a>
-	<a class="selectmenu-button" href="./?t=1928_presidential"><?php echo _("Presidential") ?> 1928</a>
-	<a class="selectmenu-button" href="./?t=1924_presidential"><?php echo _("Presidential") ?> 1924</a>
-	<a class="selectmenu-button" href="./?t=1920_presidential"><?php echo _("Presidential") ?> 1920</a>
-	<a class="selectmenu-button" href="./?t=1916_presidential"><?php echo _("Presidential") ?> 1916</a>
-	<a class="selectmenu-button" href="./?t=1912_presidential"><?php echo _("Presidential") ?> 1912</a>
-	<a class="selectmenu-button" href="./?t=1908_presidential"><?php echo _("Presidential") ?> 1908</a>
-	<a class="selectmenu-button" href="./?t=1904_presidential"><?php echo _("Presidential") ?> 1904</a>
-	<a class="selectmenu-button" href="./?t=1900_presidential"><?php echo _("Presidential") ?> 1900</a>
-	<a class="selectmenu-button" href="./?t=1896_presidential"><?php echo _("Presidential") ?> 1896</a>
-	<a class="selectmenu-button" href="./?t=1892_presidential"><?php echo _("Presidential") ?> 1892</a>
-	<a class="selectmenu-button" href="./?t=1888_presidential"><?php echo _("Presidential") ?> 1888</a>
-	<a class="selectmenu-button" href="./?t=1884_presidential"><?php echo _("Presidential") ?> 1884</a>
-	<a class="selectmenu-button" href="./?t=1880_presidential"><?php echo _("Presidential") ?> 1880</a>
-	<a class="selectmenu-button" href="./?t=1876_presidential"><?php echo _("Presidential") ?> 1876</a>
-	<a class="selectmenu-button" href="./?t=1872_presidential"><?php echo _("Presidential") ?> 1872</a>
-	<a class="selectmenu-button" href="./?t=1868_presidential"><?php echo _("Presidential") ?> 1868</a>
-	<a class="selectmenu-button" href="./?t=1864_presidential"><?php echo _("Presidential") ?> 1864</a>
+	<a class="selectmenu-button" href="./?t=USA_2016_presidential_county"><?php echo _("Presidential") . " " . _("County") ?> 2016</a>
+	<a class="selectmenu-button" href="./?t=USA_2016_presidential"><?php echo _("Presidential") ?> 2016</a>
+	<a class="selectmenu-button" href="./?t=USA_2012_presidential"><?php echo _("Presidential") ?> 2012</a>
+	<a class="selectmenu-button" href="./?t=USA_2008_presidential"><?php echo _("Presidential") ?> 2008</a>
+	<a class="selectmenu-button" href="./?t=USA_2004_presidential"><?php echo _("Presidential") ?> 2004</a>
+	<a class="selectmenu-button" href="./?t=USA_2000_presidential"><?php echo _("Presidential") ?> 2000</a>
+	<a class="selectmenu-button" href="./?t=USA_1996_presidential"><?php echo _("Presidential") ?> 1996</a>
+	<a class="selectmenu-button" href="./?t=USA_1992_presidential"><?php echo _("Presidential") ?> 1992</a>
+	<a class="selectmenu-button" href="./?t=USA_1988_presidential"><?php echo _("Presidential") ?> 1988</a>
+	<a class="selectmenu-button" href="./?t=USA_1984_presidential"><?php echo _("Presidential") ?> 1984</a>
+	<a class="selectmenu-button" href="./?t=USA_1980_presidential"><?php echo _("Presidential") ?> 1980</a>
+	<a class="selectmenu-button" href="./?t=USA_1976_presidential"><?php echo _("Presidential") ?> 1976</a>
+	<a class="selectmenu-button" href="./?t=USA_1972_presidential"><?php echo _("Presidential") ?> 1972</a>
+	<a class="selectmenu-button" href="./?t=USA_1968_presidential"><?php echo _("Presidential") ?> 1968</a>
+	<a class="selectmenu-button" href="./?t=USA_1964_presidential"><?php echo _("Presidential") ?> 1964</a>
+	<a class="selectmenu-button" href="./?t=USA_1960_presidential"><?php echo _("Presidential") ?> 1960</a>
+	<a class="selectmenu-button" href="./?t=USA_1956_presidential"><?php echo _("Presidential") ?> 1956</a>
+	<a class="selectmenu-button" href="./?t=USA_1952_presidential"><?php echo _("Presidential") ?> 1952</a>
+	<a class="selectmenu-button" href="./?t=USA_1948_presidential"><?php echo _("Presidential") ?> 1948</a>
+	<a class="selectmenu-button" href="./?t=USA_1944_presidential"><?php echo _("Presidential") ?> 1944</a>
+	<a class="selectmenu-button" href="./?t=USA_1940_presidential"><?php echo _("Presidential") ?> 1940</a>
+	<a class="selectmenu-button" href="./?t=USA_1936_presidential"><?php echo _("Presidential") ?> 1936</a>
+	<a class="selectmenu-button" href="./?t=USA_1932_presidential"><?php echo _("Presidential") ?> 1932</a>
+	<a class="selectmenu-button" href="./?t=USA_1928_presidential"><?php echo _("Presidential") ?> 1928</a>
+	<a class="selectmenu-button" href="./?t=USA_1924_presidential"><?php echo _("Presidential") ?> 1924</a>
+	<a class="selectmenu-button" href="./?t=USA_1920_presidential"><?php echo _("Presidential") ?> 1920</a>
+	<a class="selectmenu-button" href="./?t=USA_1916_presidential"><?php echo _("Presidential") ?> 1916</a>
+	<a class="selectmenu-button" href="./?t=USA_1912_presidential"><?php echo _("Presidential") ?> 1912</a>
+	<a class="selectmenu-button" href="./?t=USA_1908_presidential"><?php echo _("Presidential") ?> 1908</a>
+	<a class="selectmenu-button" href="./?t=USA_1904_presidential"><?php echo _("Presidential") ?> 1904</a>
+	<a class="selectmenu-button" href="./?t=USA_1900_presidential"><?php echo _("Presidential") ?> 1900</a>
+	<a class="selectmenu-button" href="./?t=USA_1896_presidential"><?php echo _("Presidential") ?> 1896</a>
+	<a class="selectmenu-button" href="./?t=USA_1892_presidential"><?php echo _("Presidential") ?> 1892</a>
+	<a class="selectmenu-button" href="./?t=USA_1888_presidential"><?php echo _("Presidential") ?> 1888</a>
+	<a class="selectmenu-button" href="./?t=USA_1884_presidential"><?php echo _("Presidential") ?> 1884</a>
+	<a class="selectmenu-button" href="./?t=USA_1880_presidential"><?php echo _("Presidential") ?> 1880</a>
+	<a class="selectmenu-button" href="./?t=USA_1876_presidential"><?php echo _("Presidential") ?> 1876</a>
+	<a class="selectmenu-button" href="./?t=USA_1872_presidential"><?php echo _("Presidential") ?> 1872</a>
+	<a class="selectmenu-button" href="./?t=USA_1868_presidential"><?php echo _("Presidential") ?> 1868</a>
+	<a class="selectmenu-button" href="./?t=USA_1864_presidential"><?php echo _("Presidential") ?> 1864</a>
 	</div>
 </div>
 
@@ -716,12 +716,12 @@ if($mobile) {
 	<a class="selectmenu-button" onclick='displayCountryMenu("canada")'><?php echo _("Canada") ?></a>
 	<a class="selectmenu-button" onclick='displayCountryMenu("australia")'><?php echo _("Australia") ?></a>
 	<a class="selectmenu-button" onclick='displayCountryMenu("netherlands")'><?php echo _("Netherlands") ?></a>
-	<a class="selectmenu-button" href="./?t=Brazil_deputies"><?php echo _("Brazil") ?></a>
-	<a class="selectmenu-button" href="./?t=Spain_constituencies"><?php echo _("Spain") ?></a>
+	<a class="selectmenu-button" href="./?t=Brazil_chamber_of_deputies"><?php echo _("Brazil") ?></a>
+	<a class="selectmenu-button" href="./?t=Spain_congress_of_deputies"><?php echo _("Spain") ?></a>
 	<a class="selectmenu-button" href="./?t=Italy_states"><?php echo _("Italy") ?></a>
-	<a class="selectmenu-button" href="./?t=UnitedKingdom_constituencies"><?php echo _("United Kingdom") ?></a>
-	<a class="selectmenu-button" href="./?t=Ireland_constituencies"><?php echo _("Ireland") ?></a>
-	<a class="selectmenu-button" href="./?t=France_constituencies"><?php echo _("France") ?></a>
+	<a class="selectmenu-button" href="./?t=UnitedKingdom_house_of_commons"><?php echo _("United Kingdom") ?></a>
+	<a class="selectmenu-button" href="./?t=Ireland_dail_eireann"><?php echo _("Ireland") ?></a>
+	<a class="selectmenu-button" href="./?t=France_national_assembly"><?php echo _("France") ?></a>
 	<a class="selectmenu-button" href="./?t=EuropeanUnion"><?php echo _("EU") ?></a>
 	<a class="selectmenu-button" href="./?t=World"><?php echo _("World") ?></a>
 	<a class="selectmenu-split">Other</a>
