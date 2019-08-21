@@ -617,6 +617,19 @@
 	
 	<div class="map-type-box">
 	<div class="map-type-header">
+		Russia	
+	</div>
+	<div>
+		<a href="./app/?t=Russia_federal_council">
+			<div class="map-button">
+				Federal Council
+			</div>
+		</a>
+	</div>
+	</div>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
 		Other
 	</div>
 	<div>

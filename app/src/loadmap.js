@@ -208,6 +208,11 @@ function loadMapFromId(id) {
 			break;
 		case 'Russia_federal_council':
 			loadMap('./res/russia_federal_subjects.svg', 16, 0.25, 'russia_federal_council', 'proportional', 'open', {updateText: false});
+			loadPreset('russia');
+			break;
+		case 'Russia_duma':
+			loadMap('./res/russia_constituencies.svg', 16, 0.25, 'congressional', 'congressional', 'open', {updateText: false});
+			loadPreset('russia');
 			break;
 		case "EuropeanUnion":
 			loadMap("./res/eu.svg", 16, 0.25, "eu_parliament", "primary", "open", {updateText: false});

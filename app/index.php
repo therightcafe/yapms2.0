@@ -28,8 +28,9 @@
 
 	<meta property="og:title" content="YAPms - Yet Another Political Map Simulator">
 	<meta property="og:description" content="Interactive Political Maps">
-	<meta property="og:image:type" content="image/jpeg">
+	<meta property="og:image:type" content="image/png">
 	<meta property="og:site_name" content="yapms.com">
+	<meta property="og:type" content="article">
 
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="yapms.com">
@@ -67,6 +68,7 @@
 			echo '<meta property="og:image" content="http://yapms.org/maps/' . $_GET["m"] . '.png">';
 			echo '<meta property="og:image:secure_url" content="https://yapms.org/maps/' . $_GET["m"] . '.png">';
 			echo '<meta name="twitter:image" content="https://yapms.org/maps/' . $_GET["m"] . '.png">';
+			echo '<meta name="og:url" content="https://www.yapms.com/app/?m=' . $_GET["m"] . '>';
 		} else if(isset($_GET["t"]) && !empty($_GET["t"])) {
 			echo '<script>' .
 				'var php_load_map = false;' .
@@ -714,19 +716,20 @@ if($mobile) {
 	<a class="selectmenu-split"><?php echo _("Countries") ?></a>
 	<a class="selectmenu-button" onclick='displayCountryMenu("usa")'>USA</a>
 	<a class="selectmenu-button" onclick='displayCountryMenu("usa-historical")'>USA <?php echo _("Historical") ?></a>
-	<a class="selectmenu-button" onclick='displayCountryMenu("germany")'><?php echo _("Germany") ?></a>
-	<a class="selectmenu-button" onclick='displayCountryMenu("canada")'><?php echo _("Canada") ?></a>
 	<a class="selectmenu-button" onclick='displayCountryMenu("australia")'><?php echo _("Australia") ?></a>
-	<a class="selectmenu-button" onclick='displayCountryMenu("netherlands")'><?php echo _("Netherlands") ?></a>
 	<a class="selectmenu-button" href="./?t=Brazil_chamber_of_deputies"><?php echo _("Brazil") ?></a>
-	<a class="selectmenu-button" href="./?t=Spain_congress_of_deputies"><?php echo _("Spain") ?></a>
-	<a class="selectmenu-button" href="./?t=Italy_states"><?php echo _("Italy") ?></a>
-	<a class="selectmenu-button" href="./?t=UnitedKingdom_house_of_commons"><?php echo _("United Kingdom") ?></a>
-	<a class="selectmenu-button" href="./?t=Ireland_dail_eireann"><?php echo _("Ireland") ?></a>
+	<a class="selectmenu-button" onclick='displayCountryMenu("canada")'><?php echo _("Canada") ?></a>
 	<a class="selectmenu-button" href="./?t=France_national_assembly"><?php echo _("France") ?></a>
+	<a class="selectmenu-button" onclick='displayCountryMenu("germany")'><?php echo _("Germany") ?></a>
+	<a class="selectmenu-button" href="./?t=Ireland_dail_eireann"><?php echo _("Ireland") ?></a>
+	<a class="selectmenu-button" href="./?t=Italy_states"><?php echo _("Italy") ?></a>
+	<a class="selectmenu-button" onclick='displayCountryMenu("netherlands")'><?php echo _("Netherlands") ?></a>
+	<a class="selectmenu-button" href="./?t=Russia_federal_council"><?php echo _("Russia") ?></a>
+	<a class="selectmenu-button" href="./?t=Spain_congress_of_deputies"><?php echo _("Spain") ?></a>
+	<a class="selectmenu-button" href="./?t=UnitedKingdom_house_of_commons"><?php echo _("United Kingdom") ?></a>
+	<a class="selectmenu-split">Other</a>
 	<a class="selectmenu-button" href="./?t=EuropeanUnion"><?php echo _("EU") ?></a>
 	<a class="selectmenu-button" href="./?t=World"><?php echo _("World") ?></a>
-	<a class="selectmenu-split">Other</a>
 	<a class="selectmenu-button" href='./?t=USA_Canada'>USA/<?php echo _("Canada") ?></a>
 	<a class="selectmenu-button" onclick='displayCountryMenu("lte")'>LTE</a>
 	</div>
