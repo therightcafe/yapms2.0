@@ -1,7 +1,6 @@
 html {
 	background-color: black;
 	font-family: 'Roboto';
-	font-display: auto;
 	height: 100%;
 	width: 100%;
 	padding: 0px;
@@ -86,7 +85,6 @@ button {
 
 #text {
 	font-size: 16px;
-	font-weight: medium;
 	pointer-events: none;
 }
 

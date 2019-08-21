@@ -291,23 +291,21 @@ if($mobile === false) {
 			<h3>'
 			. _("Settings") .
 			'</h3>
-			<span class="sidebar-hover-popup"><input type="checkbox" id="popularvote-automargins" onclick="autoMarginsOnClick();" checked>' . _("Settings-Option1") .
+			<div class="sidebar-hover-popup"><input type="checkbox" id="popularvote-automargins" onclick="autoMarginsOnClick();" checked>' . _("Settings-Option1") .
 				'<div class="tooltip-text">
 					Setting the popular vote will also set the color of a state
 				</div>
-			</span>
-			<br>
-			<span class="sidebar-hover-popup"><input type="checkbox" id="popularvote-clicksetpv" checked>' . _("Settings-Option2") .
+			</div>
+			<div class="sidebar-hover-popup"><input type="checkbox" id="popularvote-clicksetpv" checked>' . _("Settings-Option2") .
 				'<div class="tooltip-text">
 					Clicking on a district will set the popular vote to max
 				</div>
-			</span>
-			<br>
-			<span class="sidebar-hover-popup"><input type="checkbox" id="popularvote-avoidalmargins" checked>' . _("Settings-Option3") .
+			</div>
+			<div class="sidebar-hover-popup"><input type="checkbox" id="popularvote-avoidalmargins" checked>' . _("Settings-Option3") .
 				'<div class="tooltip-text">
 					Clicking on a district in Nebraska or Maine will not calculate the margin for the AL vote.	
 				</div>
-			</span>
+			</div>
 		</div>',
 		'<div id="sidebar-congress" class="sidebar-box">
 			<h3><span id="sidebar-congress-district">District</span></h3>
@@ -384,8 +382,8 @@ if($mobile) {
 	<h2 id="ecedit-message"></h2>
 	</div>
 	<div class="selectmenu-content">
-	<a class="selectmenu-button"><input id="state-ec" type="number" name="value" min="1" max="10000" step="1"></a>
-	<a class="selectmenu-button" onclick="setEC()">Apply</a>
+	<div class="selectmenu-button"><input id="state-ec" type="number" name="value" min="1" max="10000" step="1"></div>
+	<div class="selectmenu-button" onclick="setEC()">Apply</div>
 	<input id="state-id" type="hidden">
 	</div>
 </div>
@@ -397,13 +395,13 @@ if($mobile) {
 	<h2 id="candidateedit-message"></h2>
 	</div>
 	<div class="selectmenu-content">
-	<a class="selectmenu-button">Name <input id="candidate-name" type="text" name="name"></a>
-	<a class="selectmenu-button">Solid <input id="candidate-solid" type="color"></a>
-	<a class="selectmenu-button">Likely <input id="candidate-likely" type="color"></a>
-	<a class="selectmenu-button">Lean <input id="candidate-lean" type="color"></a>
-	<a class="selectmenu-button">Tilt <input id="candidate-tilt" type="color"></a>
-	<a class="selectmenu-button" onclick="setCandidate()">Apply</a>
-	<a class="selectmenu-button" onclick='deleteCandidate()'>Delete</a>
+	<div class="selectmenu-button">Name <input id="candidate-name" type="text" name="name"></div>
+	<div class="selectmenu-button">Solid <input id="candidate-solid" type="color"></div>
+	<div class="selectmenu-button">Likely <input id="candidate-likely" type="color"></div>
+	<div class="selectmenu-button">Lean <input id="candidate-lean" type="color"></div>
+	<div class="selectmenu-button">Tilt <input id="candidate-tilt" type="color"></div>
+	<div class="selectmenu-button" onclick="setCandidate()">Apply</div>
+	<div class="selectmenu-button" onclick='deleteCandidate()'>Delete</div>
 	</div>
 </div>
 
@@ -428,11 +426,11 @@ if($mobile) {
 	</div>
 	<div class="selectmenu-content">
 	<input id="custom-color-name" type="hidden">
-	<a class="selectmenu-button"><?php echo _("Solid") ?> <input id="solidcustom" type="color"></a>
-	<a class="selectmenu-button"><?php echo _("Likely") ?> <input id="likelycustom" type="color"></a>
-	<a class="selectmenu-button"><?php echo _("Leaning") ?> <input id="leaningcustom" type="color"></a>
-	<a class="selectmenu-button"><?php echo _("Tilting") ?> <input id="tiltingcustom" type="color"></a>
-	<a class="selectmenu-button" onclick="saveCustomColors(); displayAddCandidateMenu()"><?php echo _("Set") ?></a>
+	<div class="selectmenu-button"><?php echo _("Solid") ?> <input id="solidcustom" type="color"></div>
+	<div class="selectmenu-button"><?php echo _("Likely") ?> <input id="likelycustom" type="color"></div>
+	<div class="selectmenu-button"><?php echo _("Leaning") ?> <input id="leaningcustom" type="color"></div>
+	<div class="selectmenu-button"><?php echo _("Tilting") ?> <input id="tiltingcustom" type="color"></div>
+	<div class="selectmenu-button" onclick="saveCustomColors(); displayAddCandidateMenu()"><?php echo _("Set") ?></div>
 	</div>
 </div>
 
@@ -442,7 +440,7 @@ if($mobile) {
 	<h2><?php echo _("Add Candidate") ?></h2>
 	</div>
 	<div class="selectmenu-content">
-	<a class="selectmenu-section"><?php echo _("Name") ?><input id="name" type="text"></a>
+	<div class="selectmenu-section"><?php echo _("Name") ?><input id="name" type="text"></div>
 	<a class="selectmenu-button selectmenu-red" onclick='setColors("red")'><?php echo _("Red Colors") ?></a>
 	<a class="selectmenu-button selectmenu-blue" onclick='setColors("blue")'><?php echo _("Blue Colors") ?></a>
 	<a class="selectmenu-button selectmenu-green" onclick='setColors("green")'><?php echo _("Green Colors") ?></a>
@@ -471,11 +469,11 @@ if($mobile) {
 		<a class="selectmenu-button-right selectmenu-button fas fa-cog"
 			onclick='displayCustomColorMenu("custom4")'></a>
 	</div>
-	<a class="selectmenu-section"><?php echo _("Solid") ?> <input id="solid" type="color"></a>
-	<a class="selectmenu-section"><?php echo _("Likely") ?> <input id="likely" type="color"></a>
-	<a class="selectmenu-section"><?php echo _("Leaning") ?> <input id="leaning" type="color"></a>
-	<a class="selectmenu-section"><?php echo _("Tilt") ?> <input id="tilting" type="color"></a>
-	<a class="selectmenu-button" onclick="addCandidate(); closeAllPopups();"><?php echo _("Add") ?></a>
+	<div class="selectmenu-section"><?php echo _("Solid") ?> <input id="solid" type="color"></div>
+	<div class="selectmenu-section"><?php echo _("Likely") ?> <input id="likely" type="color"></div>
+	<div class="selectmenu-section"><?php echo _("Leaning") ?> <input id="leaning" type="color"></div>
+	<div class="selectmenu-section"><?php echo _("Tilt") ?> <input id="tilting" type="color"></div>
+	<div class="selectmenu-button" onclick="addCandidate(); closeAllPopups();"><?php echo _("Add") ?></div>
 	</div>
 </div>
 
