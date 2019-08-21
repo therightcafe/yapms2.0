@@ -35,6 +35,9 @@ class State {
 		}else if(this.dataid === 'usa_1972_ec') {
 			this.setVoteCount(data[this.dataid][this.name], true);
 			this.voteCount_beforeDisable = data[this.dataid][this.name];
+		} else if(this.dataid === 'russia_federal_council') {
+			this.setVoteCount(2, false);
+			this.voteCount_beforeDisable = 2;
 		} else {
 			this.setVoteCount(data[this.dataid][this.name], false);
 			this.voteCount_beforeDisable = data[this.dataid][this.name];

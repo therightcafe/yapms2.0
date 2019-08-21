@@ -42,6 +42,7 @@
 	<link rel="shortcut icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
 	<link rel="manifest" href="./manifest.json">
 
+
 	<?php
 		$mobile = false;
 		
@@ -124,6 +125,7 @@
 ?>
 	</style>
 
+	<script src="https://kit.fontawesome.com/c623f9993e.js"></script>
 </head>
 
 <body id="body" onresize="onResize()">

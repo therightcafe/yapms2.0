@@ -206,6 +206,9 @@ function loadMapFromId(id) {
 			loadMap("./res/brazil_states.svg", 16, 50, "brazil_deputies", "proportional", "open", {updateText: false});
 			loadPreset('brazil');
 			break;
+		case 'Russia_federal_council':
+			loadMap('./res/russia_federal_subjects.svg', 16, 0.25, 'russia_federal_council', 'proportional', 'open', {updateText: false});
+			break;
 		case "EuropeanUnion":
 			loadMap("./res/eu.svg", 16, 0.25, "eu_parliament", "primary", "open", {updateText: false});
 			break;

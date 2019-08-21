@@ -104,6 +104,9 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		case 'France_national_assembly':
 		echo '<meta name="description" content="France - National Assembly election map"><title>France - National Assembly Election</title>';
 		break;
+		case 'Russia_federal_council':
+		echo '<meta name="description" content="Russia - Federal Council election map"><title>Russia - Federal Council Election</title>';
+		break;
 		case 'USA_Canada':
 		echo '<meta name="description" content="United USA and Canada election map"><title>USA/Canada Map Election</title>';
 		break;

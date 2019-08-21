@@ -1,4 +1,4 @@
-var currentCache = 'v0.55.4';
+var currentCache = 'v0.55.5';
 
 var cookies = {};
 
@@ -1281,13 +1281,6 @@ function start() {
 		loadPreset("classic");
 		loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open", {updateText: true, voters: 'usa_voting_pop', enablePopularVote: true});
 	}
-
-	var link = document.createElement('link');
-	link.rel = 'stylesheet';
-	link.href = './res/fontawesome/css/all.min.css';
-	link.type = 'text/css';
-	var ogLink = document.getElementsByTagName('link')[0];
-	ogLink.parentNode.insertBefore(link, ogLink);
 }
 
 start();
