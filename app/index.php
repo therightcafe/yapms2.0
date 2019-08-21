@@ -790,13 +790,13 @@ if($mobile === false) {
 	<h2><?php echo _("Load From File") ?></h2>
 	</div>
 	<div class="selectmenu-content">
-	<a class="selectmenu-section"><?php echo _("Load-Menu-Message") ?></a>
-	<a class="selectmenu-section">
+	<div class="selectmenu-section"><?php echo _("Load-Menu-Message") ?></div>
+	<div class="selectmenu-section">
 	<form action="load.php" method="post" enctype="multipart/form-data">
-		<input type="file" name"file" id="loadfile">
+		<input type="file" name="file" id="loadfile">
 		<input type="button" value="<?php echo _("Load") ?>" onclick='loadFileMap()'>
 	</form>
-	</a>
+	</div>
 	</div>
 </div>
 
