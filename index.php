@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<?php echo '<?xml version="1.0" encoding="UTF-8" standalone="no"?>' ?>
 <html class="noSelect" lang="en">
 <head>
 	<meta charset="UTF-8">

@@ -2,9 +2,7 @@
 <?php
 	include './html/localization.php';
 ?>
-<?php echo '<?xml version="1.0" encoding="UTF-8" standalone="no"?>' ?>
 <html class="noSelect" lang="<?php echo _("GETLANGUAGE") ?>">
-
 <head>
 	<meta charset="UTF-8">
 <?php
