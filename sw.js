@@ -27,11 +27,11 @@ var _scriptCache = [
 ];
 
 var _indexCache = [
-//	'./',
+	'./',
 	'./index.php',
 	'./offline.php',
 
-//	'./app/',
+	'./app/',
 	'./app/index.php',
 	'./app/?t=USA_current_house',
 	'./app/?t=USA_current_senate',
