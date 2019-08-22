@@ -53,12 +53,11 @@
 			echo '<script>var mobile = false</script>';
 		};
 
-		if(isset($_GET["m"]) && !empty($_GET["m"]) &&
-			is_numeric($_GET["m"])) {
+		if(isset($_GET["m"]) && !empty($_GET["m"])) {
 			echo '<script>' .
 				'var php_load_map = true;' .
 				'var php_load_type_map = false;' .
-				'var php_load_map_id = '.$_GET["m"].';' .
+				'var php_load_map_id = "' .$_GET["m"] . '";' .
 				'</script>';	
 
 			echo '<meta property="og:image" content="http://www.yapms.com/app/maps/' . $_GET["m"] . '.png">';
@@ -75,7 +74,7 @@
 			echo '<script>' .
 				'var php_load_map = false;' .
 				'var php_load_type_map = false;' .
-				'var php_load_map_id = 0;' .
+				'var php_load_map_id = "0";' .
 			     '</script>';
 		}
 
@@ -383,6 +382,7 @@ if($mobile) {
 </div>
 
 <div id="candidateedit" class="popup selectmenu">
+	<input id="candidate-originalName" type="hidden">
 	<div class="selectmenu-header">
 	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2 id="candidateedit-message"></h2>
@@ -393,7 +393,6 @@ if($mobile) {
 	<a class="selectmenu-button">Likely <input id="candidate-likely" type="color"></a>
 	<a class="selectmenu-button">Lean <input id="candidate-lean" type="color"></a>
 	<a class="selectmenu-button">Tilt <input id="candidate-tilt" type="color"></a>
-	<input id="candidate-originalName" type="hidden">
 	<a class="selectmenu-button" onclick="setCandidate()">Apply</a>
 	<a class="selectmenu-button" onclick='deleteCandidate()'>Delete</a>
 	</div>
@@ -709,20 +708,21 @@ if($mobile) {
 	<a class="selectmenu-split"><?php echo _("United States") ?></a>
 	<a class="selectmenu-button" onclick='displayCountryMenu("usa")'><img src="res/flags/usa.svg" height="20px"> <?php echo _("USA") ?></a>
 	<a class="selectmenu-button" onclick='displayCountryMenu("usa-historical")'><img src="res/flags/usa.svg" height="20px"> <?php echo _("USA Historical") ?></a>
-	<a class="selectmenu-split"><?php echo _("Other countries") ?></a>
+	<a class="selectmenu-split"><?php echo _("Other Countries") ?></a>
 	<a class="selectmenu-button" onclick='displayCountryMenu("australia")'><img src="res/flags/aus.svg" height="20px"> <?php echo _("Australia") ?></a>
 	<a class="selectmenu-button" href="./?t=Brazil_deputies"><img src="res/flags/bra.svg" height="20px"> <?php echo _("Brazil") ?></a>
-	<a class="selectmenu-button" href="./?t=France_constituencies"><img src="res/flags/fra.svg" height="20px"> <?php echo _("France") ?></a>
 	<a class="selectmenu-button" onclick='displayCountryMenu("canada")'><img src="res/flags/can.svg" height="20px"> <?php echo _("Canada") ?></a>
+	<a class="selectmenu-button" href="./?t=France_constituencies"><img src="res/flags/fra.svg" height="20px"> <?php echo _("France") ?></a>
 	<a class="selectmenu-button" onclick='displayCountryMenu("germany")'><img src="res/flags/ger.svg" height="20px"> <?php echo _("Germany") ?></a>
 	<a class="selectmenu-button" href="./?t=Italy_states"><img src="res/flags/ita.svg" height="20px"> <?php echo _("Italy") ?></a>
+	<a class="selectmenu-button" href="./?t=Ireland_constituencies"><img src="res/flags/ire.svg" height="20px"> <?php echo _("Ireland") ?></a>
 	<a class="selectmenu-button" onclick='displayCountryMenu("netherlands")'><img src="res/flags/ned.svg" height="20px"> <?php echo _("Netherlands") ?></a>
 	<a class="selectmenu-button" href="./?t=Spain_constituencies"><img src="res/flags/esp.svg" height="20px"> <?php echo _("Spain") ?></a>
+	<!-- Add Turkey -->
 	<a class="selectmenu-button" href="./?t=UnitedKingdom_constituencies"><img src="res/flags/ukd.svg" height="20px"> <?php echo _("United Kingdom") ?></a>
-	<a class="selectmenu-split"><?php echo _("Trans-national organizations") ?></a>
+	<a class="selectmenu-split"><?php echo _("Trans-national") ?></a>
 	<a class="selectmenu-button" href="./?t=EuropeanUnion"><img src="res/flags/eu.svg" height="20px"> <?php echo _("EU") ?></a>
 	<a class="selectmenu-button" href="./?t=World"><img src="res/flags/un.svg" height="20px"> <?php echo _("World") ?></a>
-	<a class="selectmenu-split"><?php echo _("Fused countries") ?></a>
 	<a class="selectmenu-button" href='./?t=USA_Canada'><img src="res/flags/usa.svg" height="20px"> <?php echo _("USA") ?>/<?php echo _("Canada") ?> <img src="res/flags/can.svg" height="20px"></a>
 	<a class="selectmenu-split"><?php echo _("Mock elections communities") ?></a>
 	<a class="selectmenu-button" onclick='displayCountryMenu("lte")'>LTE</a>

@@ -32,8 +32,7 @@ foreach($q as $row) {
 	$mapnumber = $row[0];
 }
 
-//$filename = "" . rand(0, 100000);
-$filename = $mapnumber;
+$filename = base_convert(''.$mapnumber, 10, 36);
 
 $imgData = $_POST["img"];
 $imgData = str_replace(' ', '+', $imgData);
@@ -47,7 +46,6 @@ if($file) {
 }
 
 $file = fopen("./maps/" . $filename . '.txt', 'w');
-//$file = gzopen("./maps/". $filename . '.gz', 'wb9');
 if($file) {
 	$data;
 	$data['filename'] = $_POST['filename'];
@@ -58,17 +56,7 @@ if($file) {
 	$data['year'] = $_POST['year'];
 	$data['updatetext'] = $_POST['updateText'] === 'true';
 
-
-	$writeData = $_POST["filename"] . " "
-		. $_POST["fontsize"] . " " 
-		. $_POST["strokewidth"] . " "
-		. $_POST["dataid"] . " "
-		. $_POST["type"] . " " 
-		. $_POST["year"] . " ";
-
 	$candidate_data = json_decode($_POST["candidates"], true);
-
-	$writeData .= count($candidate_data["candidate_data"]) . " " . $_POST["updateText"] . PHP_EOL;
 
 	foreach($candidate_data["candidate_data"] as $candidate) {
 		if($v["name"] !== "Tossup") {
@@ -90,9 +78,6 @@ if($file) {
 		$data['states'][$state['name']]['disabled'] = $state['disabled'];
 	}
 	
-
-//	gzwrite($file, json_encode($data));
-//	gzclose($file);
 	fwrite($file, json_encode($data));
 	fclose($file);
 	echo 'https://www.yapms.com/app/?m=' . $filename . ' ';
