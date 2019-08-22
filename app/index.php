@@ -106,7 +106,12 @@
 		gtag('config', 'UA-132710089-1');
 	</script>
 
-	<link rel="stylesheet" type="text/css" href="./style/fonts.css">
+	<style>
+	<?php
+		include './style/fonts.css';
+	?>
+	</style>
+
 	<link rel="stylesheet" type="text/css" href="./style/menu.css">
 	<link rel="stylesheet" type="text/css" href="./style/selectmenu.css">
 	<link rel="stylesheet" type="text/css" href="./style/popup.css">
