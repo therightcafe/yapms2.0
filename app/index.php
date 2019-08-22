@@ -41,7 +41,6 @@
 	<link rel="shortcut icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
 	<link rel="manifest" href="./manifest.json">
 
-
 	<?php
 		$mobile = false;
 		
@@ -81,13 +80,6 @@
 				'var php_load_map_id = "0";' .
 			     '</script>';
 		}
-
-		echo '<script>
-			var GET = {' .
-			'"t": "' . $_GET["t"] . '",' .
-			'"m": "' . $_GET["m"] . '",' .
-			'};
-		</script>'
 	?>
 
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

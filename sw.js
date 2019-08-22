@@ -1,10 +1,8 @@
-var scriptCache = 'd0.56.2';
-var indexCache = 'i0.56.2';
-var staticCache = 's0.56.0';
+var scriptCache = 'd0.56.5';
+var indexCache = 'i0.56.5';
+var staticCache = 's0.56.5';
 
 var _scriptCache = [
-	'./style.css',
-
 	'./app/html/battlechart.html',
 	'./app/html/closebutton.svg',
 	'./app/html/loading.svg',
@@ -29,11 +27,11 @@ var _scriptCache = [
 ];
 
 var _indexCache = [
-	'./',
+//	'./',
 	'./index.php',
 	'./offline.php',
 
-	'./app/',
+//	'./app/',
 	'./app/index.php',
 	'./app/?t=USA_current_house',
 	'./app/?t=USA_current_senate',
@@ -44,15 +42,16 @@ var _indexCache = [
 	'./app/?t=USA_2020_sabatos',
 	'./app/?t=USA_2020_senate',
 	'./app/?t=USA_2020_governors',
+	'./app/?t=USA_2020_house',
 	'./app/?t=USA_2020_democratic_primary',
 	'./app/?t=USA_2020_republican_primary',
 	'./app/?t=USA_county',
-	'./app/?t=USA_house',
 	'./app/?t=USA_governors',
 	'./app/?t=USA_senate',
 	'./app/?t=USA_takeall',
 	'./app/?t=USA_proportional',
 	'./app/?t=USA_split_maine',
+	'./app/?t=USA_2024_projection',
 
 	'./app/?t=Germany_states',
 	'./app/?t=Germany_bundestag',
@@ -64,7 +63,24 @@ var _indexCache = [
 	'./app/?t=Australia_states',
 	'./app/?t=Australia_house_of_representatives',
 	'./app/?t=Brazil_chamber_of_deputies',
-	'./app/?t=France_national_assembly'
+	'./app/?t=France_national_assembly',
+	'./app/?t=Russia_duma',
+	'./app/?t=Russia_federal_council',
+	'./app/?t=Netherlands_provinces',
+	'./app/?t=Netherlands_gemeenten',
+	'./app/?t=Ireland_dail_eireann',
+
+	'./app/style/battlechart.css',
+	'./app/style/battlechartmobile.css',
+	'./app/style/legend.css',
+	'./app/style/menu.css',
+	'./app/style/mobile.css',
+	'./app/style/popup.css',
+	'./app/style/selectmenu.css',
+	'./app/style/sidebar.css',
+	'./app/style/style.css',
+	'./app/style/yapnews.css',
+	'./style.css'
 ];
 
 function swLog(cache, message) {
