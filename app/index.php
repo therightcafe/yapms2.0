@@ -409,7 +409,7 @@ if($mobile) {
 
 <div id="miscmenu" class="popup selectmenu">
 	<div class="selectmenu-header">
-	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
+	<object type="image/svg+xml" data="https://www.yapms.com/app/html/closebutton.svg" >Error</object>
 	<h2><?php echo _("Misc") ?></h2>
 	</div>
 	<div class="selectmenu-content">
