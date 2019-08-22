@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /news/
+Disallow: /locales/
+
+Sitemap: https://www.yapms.com/sitemap.xml
