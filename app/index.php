@@ -862,9 +862,17 @@ if($mobile === true) {
 				newWorker = reg.installing;
 				newWorker.addEventListener('statechange', () => {
 					switch(newWorker.state) {
-						case 'installed':
-						if(navigator.serviceWorker.controller) {
-							displayUpdateServiceWorker();
+					case 'installed':
+						console.log('updated');
+						//displayUpdateServiceWorker();
+						if(windowLoaded) {
+							console.log('SW: Direct Activate');
+							newWorker.postMessage('loaded'); 
+						} else {
+							console.log('SW: Defer Activate');
+							window.onload = function() {
+								newWorker.postMessage('loaded'); 
+							};
 						}
 
 						if(typeof gtag !== 'undefined') {

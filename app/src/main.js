@@ -1,4 +1,6 @@
-var currentCache = 'v0.57.3';
+var currentCache = 'v0.57.31';
+
+var windowLoaded = false;
 
 var cookies = {};
 
@@ -1302,6 +1304,10 @@ function start() {
 		loadPreset("classic");
 		loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open", {updateText: true, voters: 'usa_voting_pop', enablePopularVote: true});
 	}
+}
+
+window.onload = function() {
+	windowLoaded = true;
 }
 
 start();

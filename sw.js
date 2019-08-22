@@ -1,6 +1,6 @@
-var scriptCache = 'd0.57.3';
-var indexCache = 'i0.57.3';
-var staticCache = 's0.57.3';
+var scriptCache = 'd0.57.31';
+var indexCache = 'i0.57.31';
+var staticCache = 's0.57.31';
 
 var _scriptCache = [
 	'./app/html/battlechart.html',
@@ -181,11 +181,12 @@ self.addEventListener('message', function(event) {
 				});
 			});
 		});
+	} else if(event.data === 'loaded') {
+		self.skipWaiting();
 	}
 });
 
 self.addEventListener('install', function(event) {
-	self.skipWaiting();
 	event.waitUntil(
 		caches.open(staticCache).then(function(cache) {
 			swLog('flycatch', 'installing');
@@ -261,7 +262,7 @@ self.addEventListener('fetch', function(event) {
 
 // clear old versions of the cache
 self.addEventListener('activate', function(event) {
-	event.waitUntil(
+	return event.waitUntil(
 		caches.keys().then(function(cacheNames) {
 			cacheNames.forEach(function(cacheName) {
 				if(cacheName === scriptCache ||
@@ -274,7 +275,7 @@ self.addEventListener('activate', function(event) {
 				}
 			});
 		}).then(function() {
-			self.clients.claim();
+			return self.clients.claim();
 		})
 	);
 });
