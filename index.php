@@ -639,6 +639,19 @@
 	
 	<div class="map-type-box">
 	<div class="map-type-header">
+		<img src="app/res/flags/ire.svg" height="20px"> Ireland
+	</div>
+	<div>
+		<a href="./app/?t=Ireland_constituencies">
+			<div class="map-button">
+				<i class="fas fa-chevron-circle-down"></i> Constituencies
+			</div>
+		</a>
+	</div>
+	</div>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
 		<img src="app/res/flags/ned.svg" height="20px"> Netherlands	
 	</div>
 	<div>
@@ -683,8 +696,7 @@
 	</div>
 	
 	<div class="map-type-box">
-	<div class="map-type-header">
-		Joined countries
+	<div class="map-type-header"> Joined countries
 	</div>
 	<div>
 		<a href="./app/?t=USA_Canada">

@@ -168,6 +168,10 @@ function loadMapFromId(id) {
 			loadMap("./res/unitedkingdom.svg", 16, 0.075, "congressional", "congressional", "open", {updateText: false});
 			loadPreset('uk')
 			break;
+		case "Ireland_constituencies":
+			loadMap("./res/ireland_constituencies.svg", 16, 0.075, "ireland_constituencies", "proportional", "open", {updateText: false});
+			loadPreset('ireland')
+			break;
 		case "Canada_provinces":
 			loadMap("./res/canada_states.svg", 38, 2, "congressional", "presidential", "open", {updateText: false});
 			loadPreset('canada')

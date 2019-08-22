@@ -60,6 +60,9 @@ function loadPreset(value) {
 		case 'brazil':
 			loadPresetBrazil();
 			break;
+		case 'ireland':
+			loadPresetsIreland();
+			break;
 	}
 	
 	verifyMap();
@@ -464,4 +467,35 @@ function loadPresetBrazil() {
 	candidates['PROS'] = pros;
 	candidates['AVANTE'] = avante;
 	//candidates['PV'] = pv;
+}
+
+function loadPresetsIreland() {
+	var finegael= new Candidate('Fine Gael',
+		['#6699FF','#6699FF','#6699FF','#6699FF']);
+	var fiannafail = new Candidate('Fianna Fáil',
+		['#66BB66','#66BB66','#66BB66','#66BB66']);
+	var sinnfein = new Candidate('Sinn Féin',
+		['#326760','#326760','#326760','#326760']);
+	var labour = new Candidate('Labour',
+		['#CC0000','#CC0000','#CC0000','#CC0000']);
+	var aaapbp = new Candidate('AAA-PBP',
+		['#E5E500','#E5E500','#E5E500','#E5E500']);
+	var inds4change = new Candidate('Inds. 4 Change',
+		['#FFC0CB','#FFC0CB','#FFC0CB','#FFC0CB']);
+	var socialdemocrats = new Candidate('Social Democrats',
+		['#752F8B','#752F8B','#752F8B','#752F8B']);
+	var green = new Candidate('Green Party',
+		['#99CC33','#99CC33','#99CC33','#99CC33']);
+	var indy = new Candidate('Independent',
+		['#CCCCCC','#CCCCCC','#CCCCCC','#CCCCCC']);
+
+	candidates['Fine Gael'] = finegael;
+	candidates['Fianna Fáil'] = fiannafail;
+	candidates['Sinn Féin'] = sinnfein;
+	candidates['Labour'] = labour;
+	candidates['AAA-PBP'] = aaapbp;
+	candidates['Inds. 4 Change'] = inds4change;
+	candidates['Social Democrats'] = socialdemocrats;
+	candidates['Green Party'] = green;
+	candidates['Independent'] = indy;
 }
