@@ -624,6 +624,12 @@
 				Federal Council
 			</div>
 		</a>
+		
+		<a href="./app/?t=Russia_duma">
+			<div class="map-button">
+				Duma
+			</div>
+		</a>
 	</div>
 	</div>
 	

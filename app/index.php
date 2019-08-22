@@ -66,7 +66,7 @@
 			echo '<meta property="og:image" content="http://yapms.org/maps/' . $_GET["m"] . '.png">';
 			echo '<meta property="og:image:secure_url" content="https://yapms.org/maps/' . $_GET["m"] . '.png">';
 			echo '<meta name="twitter:image" content="https://yapms.org/maps/' . $_GET["m"] . '.png">';
-			echo '<meta name="og:url" content="https://www.yapms.com/app/?m=' . $_GET["m"] . '>';
+			echo '<meta name="og:url" content="https://www.yapms.com/app/?m=' . $_GET["m"] . '">';
 		} else if(isset($_GET["t"]) && !empty($_GET["t"])) {
 			echo '<script>' .
 				'var php_load_map = false;' .
@@ -602,6 +602,18 @@ if($mobile) {
 	</div>
 </div>
 
+<!-- Russia Maps -->
+<div id="mapmenu-russia" class="popup selectmenu">
+	<div class="selectmenu-header">
+	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
+	<h2>Russia</h2>
+	</div>
+	<div class="selectmenu-content">
+	<a class="selectmenu-button" href="./?t=Russia_federal_council"><?php echo _("Federal Council") ?></a>
+	<a class="selectmenu-button" href="./?t=Russia_duma"><?php echo _("Duma") ?></a>
+	</div>
+</div>
+
 <!-- USA Maps -->
 <div id="mapmenu-usa" class="popup selectmenu">
 	<div class="selectmenu-header">
@@ -720,7 +732,7 @@ if($mobile) {
 	<a class="selectmenu-button" href="./?t=Ireland_dail_eireann"><?php echo _("Ireland") ?></a>
 	<a class="selectmenu-button" href="./?t=Italy_states"><?php echo _("Italy") ?></a>
 	<a class="selectmenu-button" onclick='displayCountryMenu("netherlands")'><?php echo _("Netherlands") ?></a>
-	<a class="selectmenu-button" href="./?t=Russia_federal_council"><?php echo _("Russia") ?></a>
+	<a class="selectmenu-button" onclick='displayCountryMenu("russia")'><?php echo _("Russia") ?></a>
 	<a class="selectmenu-button" href="./?t=Spain_congress_of_deputies"><?php echo _("Spain") ?></a>
 	<a class="selectmenu-button" href="./?t=UnitedKingdom_house_of_commons"><?php echo _("United Kingdom") ?></a>
 	<a class="selectmenu-split">Other</a>

@@ -38,6 +38,9 @@ class State {
 		} else if(this.dataid === 'russia_federal_council') {
 			this.setVoteCount(2, false);
 			this.voteCount_beforeDisable = 2;
+		} else if(this.dataid === 'duma') {
+			this.setVoteCount(1, false);
+			this.voteCount_beforeDisable = 1;
 		} else {
 			this.setVoteCount(data[this.dataid][this.name], false);
 			this.voteCount_beforeDisable = data[this.dataid][this.name];
@@ -287,6 +290,10 @@ class State {
 			// if the candidate is anything else...
 			//if(this.colorValue >= maxColorValue + 1) {
 			if(this.colorValue >= maxColorValues) {
+				this.colorValue = 0;
+			}
+
+			if(candidates[candidate].singleColor) {
 				this.colorValue = 0;
 			}
 		}

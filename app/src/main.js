@@ -1,4 +1,4 @@
-var currentCache = 'v0.55.11';
+var currentCache = 'v0.56.0';
 
 var cookies = {};
 
@@ -202,6 +202,21 @@ function initData(dataid) {
 		}
 	}
 
+	/*
+	var proportionalElements = document.getElementById('proportional').children;
+	if(proportionalElements) {
+		for(var index = 0, length = proportionalElements.length; index < length; ++index) {
+			var element = proportionalElements[index];
+			element.setAttribute('style', 'inherit');
+			var name = element.getAttribute('id');
+			var state = new State(name, element, dataid);
+			states.push(state);
+			element.setAttribute('onclick', 'stateClickPaintProportional(states["' + 
+				(states.length - 1) + '"])');
+		}
+	}
+	*/
+
 	/* Special Elections for Senate */
 	var special = document.getElementById('special');
 	var specialChildren;
@@ -260,6 +275,10 @@ function initChart() {
 				var legendColorDiv = document.createElement('div');
 				legendColorDiv.setAttribute('class', 'legend-color-div');
 				legendElement.appendChild(legendColorDiv);
+			
+				if(candidate.singleColor) {
+					legendColorDiv.style.display = 'none';
+				}
 
 				if((key === 'Republican' || key === 'Democrat')
 					&& mapYear === '2020' && 
@@ -323,7 +342,6 @@ function initChart() {
 			legendText.style.padding = '0px';
 			legendText.innerHTML = 'Select a candidate';
 			legendTooltip.appendChild(legendText);
-			
 
 		},
 		// do not display the build in legend for the chart
@@ -535,7 +553,6 @@ function setEC(e) {
 }
 
 function rebuildChart() {
-
 	var html = document.getElementById('chart-canvas');
 	var ctx = html.getContext('2d');
 	//var type = chart.config.type;
@@ -553,7 +570,6 @@ function rebuildChart() {
 	}
 
 	updateChart();
-
 }
 
 function toggleLegendCounter() {
@@ -789,7 +805,12 @@ function verifyMap() {
 			} else if(state.getCandidate() === 'Tossup') {
 				state.setColor('Tossup', 2);	
 			}else {
-				state.setColor(state.getCandidate(), state.getColorValue());
+				var candidate = candidates[state.getCandidate()];
+				if(candidate.singleColor === true) {
+					state.setColor(state.getCandidate(), 0);
+				} else {
+					state.setColor(state.getCandidate(), state.getColorValue());
+				}
 			}
 		}
 	});

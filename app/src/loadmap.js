@@ -211,7 +211,7 @@ function loadMapFromId(id) {
 			loadPreset('russia');
 			break;
 		case 'Russia_duma':
-			loadMap('./res/russia_constituencies.svg', 16, 0.25, 'congressional', 'congressional', 'open', {updateText: false});
+			loadMap('./res/russia_constituencies.svg', 16, 0.15, 'duma', 'congressional', 'open', {updateText: false});
 			loadPreset('russia');
 			break;
 		case "EuropeanUnion":
