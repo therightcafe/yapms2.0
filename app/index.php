@@ -106,8 +106,23 @@
 		gtag('config', 'UA-132710089-1');
 	</script>
 
-	<style>
+	<link rel="stylesheet" type="text/css" href="./style/fonts.css">
+	<link rel="stylesheet" type="text/css" href="./style/menu.css">
+	<link rel="stylesheet" type="text/css" href="./style/selectmenu.css">
+	<link rel="stylesheet" type="text/css" href="./style/popup.css">
+	<link rel="stylesheet" type="text/css" href="./style/legend.css">
+	<link rel="stylesheet" type="text/css" href="./style/style.css">
+	<link rel="stylesheet" type="text/css" href="./style/battlechart.css">
+	<link rel="stylesheet" type="text/css" href="./style/yapnews.css">
+	<link rel="stylesheet" type="text/css" href="./style/sidebar.css">
+	<?php
+		if($mobile) {
+			include '<link rel="stylesheet" type="text/css" href="./style/mobile.css">';
+		}
+	?>
+
 <?php
+		/*
 		include './style/fonts.css';
 		include './style/menu.css';
 		include './style/selectmenu.css';
@@ -117,13 +132,12 @@
 		include './style/battlechart.css';
 		include './style/yapnews.css';
 		include './style/sidebar.css';
-		include './style/yapnews.css';
 
 		if($mobile) {
 			include './style/mobile.css';
 		}
+		 */
 ?>
-	</style>
 
 	<script src="https://kit.fontawesome.com/c623f9993e.js"></script>
 </head>
