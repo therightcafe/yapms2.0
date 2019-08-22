@@ -122,6 +122,6 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 	}
 	}
 } else {
-	echo '<meta name="description" content="United States Presidential, Senatorial, Congressional, Guberntorial and Primary interactive election maps. United Kingdom, Canada, Germany election maps."><title>YAPms - Interactive Political Election Maps</title>';
+	echo '<meta name="description" content="United States Presidential, Senatorial, Congressional, Guberntorial and Primary interactive election maps. United Kingdom, Canada, Germany election maps."><title>YAPms - Interactive Political Election Maps</title><link rel="canonical" href="https://www.yapms.com/app/?t=USA_2020_presidential"/>';
 }
 ?>
