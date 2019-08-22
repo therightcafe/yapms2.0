@@ -1,6 +1,6 @@
-var scriptCache = 'd0.56.5';
-var indexCache = 'i0.56.5';
-var staticCache = 's0.56.5';
+var scriptCache = 'd0.56.6';
+var indexCache = 'i0.56.6';
+var staticCache = 's0.56.6';
 
 var _scriptCache = [
 	'./app/html/battlechart.html',
@@ -131,15 +131,15 @@ self.addEventListener('install', function(event) {
 		caches.open(staticCache).then(function(cache) {
 			swLog(staticCache, 'installing');
 			return cache.addAll([
-				'./app/res/usa_presidential.svg',
-				'./app/res/usa_1972_presidential.svg',
-				'./app/res/usa_congressional_2018.svg',
-				'./app/res/usa_dem_primary.svg',
-				'./app/res/usa_rep_primary.svg',
-				'./app/res/usa_gubernatorial.svg',
-				'./app/res/usa_no_districts.svg',
-				'./app/res/usa_senate.svg',
-				'./app/res/usa_county.svg',
+				//'./app/res/usa_presidential.svg',
+				//'./app/res/usa_1972_presidential.svg',
+				//'./app/res/usa_congressional_2018.svg',
+				//'./app/res/usa_dem_primary.svg',
+				//'./app/res/usa_rep_primary.svg',
+				//'./app/res/usa_gubernatorial.svg',
+				//'./app/res/usa_no_districts.svg',
+				//'./app/res/usa_senate.svg',
+				//'./app/res/usa_county.svg',
 
 				'./app/res/canada_states.svg',
 				'./app/res/canada_constituencies.svg',
