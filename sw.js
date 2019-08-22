@@ -1,6 +1,6 @@
-var scriptCache = 'd0.57.0';
-var indexCache = 'i0.57.0';
-var staticCache = 's0.57.0';
+var scriptCache = 'd0.57.1';
+var indexCache = 'i0.57.1';
+var staticCache = 's0.57.1';
 
 var _scriptCache = [
 	'./app/html/battlechart.html',
@@ -131,7 +131,6 @@ var _staticCache = [
 	'./app/data/senatorial_current',
 	'./app/data/senatorial_open',
 
-	'./app/res/fonts/roboto/roboto-v20-latin-regular.eot',
 	'./app/res/fonts/roboto/roboto-v20-latin-regular.svg',
 	'./app/res/fonts/roboto/roboto-v20-latin-regular.ttf',
 	'./app/res/fonts/roboto/roboto-v20-latin-regular.woff',
