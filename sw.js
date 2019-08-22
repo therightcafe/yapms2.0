@@ -1,6 +1,6 @@
-var scriptCache = 'd0.57.1';
-var indexCache = 'i0.57.1';
-var staticCache = 's0.57.1';
+var scriptCache = 'd0.57.2';
+var indexCache = 'i0.57.2';
+var staticCache = 's0.57.2';
 
 var _scriptCache = [
 	'./app/html/battlechart.html',
@@ -109,6 +109,7 @@ var _staticCache = [
 	'./app/res/russia_constituencies.svg',
 	'./app/res/netherlands_gemeenten.svg',
 	'./app/res/netherlands_provinces.svg',
+	'./app/res/ireland_dail_eireann.svg',
 	
 	'./app/res/lte.jpg',
 	'./app/res/redeagletv.png',
