@@ -1,6 +1,6 @@
-var scriptCache = 'd0.56.6';
-var indexCache = 'i0.56.6';
-var staticCache = 's0.56.6';
+var scriptCache = 'd0.57.0';
+var indexCache = 'i0.57.0';
+var staticCache = 's0.57.0';
 
 var _scriptCache = [
 	'./app/html/battlechart.html',
@@ -83,6 +83,71 @@ var _indexCache = [
 	'./style.css'
 ];
 
+var _staticCache = [
+	'./app/res/usa_presidential.svg',
+	'./app/res/usa_1972_presidential.svg',
+	'./app/res/usa_congressional_2018.svg',
+	'./app/res/usa_dem_primary.svg',
+	'./app/res/usa_rep_primary.svg',
+	'./app/res/usa_gubernatorial.svg',
+	'./app/res/usa_no_districts.svg',
+	'./app/res/usa_senate.svg',
+	'./app/res/usa_county.svg',
+
+	'./app/res/canada_states.svg',
+	'./app/res/canada_constituencies.svg',
+	'./app/res/germany.svg',
+	'./app/res/germany_constituencies.svg',
+	'./app/res/france_constituencies.svg',
+	'./app/res/unitedkingdom.svg',
+	'./app/res/italy.svg',
+	'./app/res/australia_constituencies.svg',
+	'./app/res/australia.svg',
+	'./app/res/spain_constituencies.svg',
+	'./app/res/brazil_states.svg',
+	'./app/res/russia_federal_subjects.svg',
+	'./app/res/russia_constituencies.svg',
+	'./app/res/netherlands_gemeenten.svg',
+	'./app/res/netherlands_provinces.svg',
+	
+	'./app/res/lte.jpg',
+	'./app/res/redeagletv.png',
+
+	'./app/res/presets/USA_current_house',
+	'./app/res/presets/USA_current_senate',
+	'./app/res/presets/USA_2016_presidential_county',
+
+	'./app/res/presets/USA_2024_projection',
+
+	'./app/res/presets/USA_2020_cook',
+	'./app/res/presets/USA_2020_inside',
+	'./app/res/presets/USA_2020_sabatos',
+	
+	'./app/data/gubernatorial_2018',
+	'./app/data/gubernatorial_2020',
+	'./app/data/gubernatorial_current',
+	'./app/data/gubernatorial_open',
+	'./app/data/senatorial_2020',
+	'./app/data/senatorial_current',
+	'./app/data/senatorial_open',
+
+	'./app/res/fonts/roboto/roboto-v20-latin-regular.eot',
+	'./app/res/fonts/roboto/roboto-v20-latin-regular.svg',
+	'./app/res/fonts/roboto/roboto-v20-latin-regular.ttf',
+	'./app/res/fonts/roboto/roboto-v20-latin-regular.woff',
+	'./app/res/fonts/roboto/roboto-v20-latin-regular.woff2',
+
+	'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js',
+	'https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0',
+	'https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.5.0/dist/svg-pan-zoom.min.js',
+	'https://code.jquery.com/jquery-3.4.1.min.js',
+	'https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js',
+	'https://kit.fontawesome.com/c623f9993e.js',
+
+	'./app/manifest.json',
+	'./manifest.json'
+];
+
 function swLog(cache, message) {
 	console.log('SW ' + cache + ': ' + message + ' ( ' + scriptCache + ' / ' + staticCache + ' / ' + indexCache + ' )');
 }
@@ -130,65 +195,7 @@ self.addEventListener('install', function(event) {
 	event.waitUntil(
 		caches.open(staticCache).then(function(cache) {
 			swLog(staticCache, 'installing');
-			return cache.addAll([
-				//'./app/res/usa_presidential.svg',
-				//'./app/res/usa_1972_presidential.svg',
-				//'./app/res/usa_congressional_2018.svg',
-				//'./app/res/usa_dem_primary.svg',
-				//'./app/res/usa_rep_primary.svg',
-				//'./app/res/usa_gubernatorial.svg',
-				//'./app/res/usa_no_districts.svg',
-				//'./app/res/usa_senate.svg',
-				//'./app/res/usa_county.svg',
-
-				'./app/res/canada_states.svg',
-				'./app/res/canada_constituencies.svg',
-				'./app/res/germany.svg',
-				'./app/res/germany_constituencies.svg',
-				'./app/res/france_constituencies.svg',
-				'./app/res/unitedkingdom.svg',
-				'./app/res/italy.svg',
-				'./app/res/australia_constituencies.svg',
-				'./app/res/australia.svg',
-				'./app/res/spain_constituencies.svg',
-				'./app/res/brazil_states.svg',
-				
-				'./app/res/lte.jpg',
-				'./app/res/redeagletv.png',
-
-				'./app/res/presets/USA_current_house',
-				'./app/res/presets/USA_current_senate',
-				'./app/res/presets/USA_2016_presidential_county',
-
-				'./app/res/presets/USA_2024_projection',
-
-				'./app/res/presets/USA_2020_cook',
-				'./app/res/presets/USA_2020_inside',
-				'./app/res/presets/USA_2020_sabatos',
-				
-				'./app/data/gubernatorial_2018',
-				'./app/data/gubernatorial_2020',
-				'./app/data/gubernatorial_current',
-				'./app/data/gubernatorial_open',
-				'./app/data/senatorial_2020',
-				'./app/data/senatorial_current',
-				'./app/data/senatorial_open',
-
-				'./app/res/fonts/roboto/roboto-v20-latin-regular.eot',
-				'./app/res/fonts/roboto/roboto-v20-latin-regular.svg',
-				'./app/res/fonts/roboto/roboto-v20-latin-regular.ttf',
-				'./app/res/fonts/roboto/roboto-v20-latin-regular.woff',
-				'./app/res/fonts/roboto/roboto-v20-latin-regular.woff2',
-
-				'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js',
-				'https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0',
-				'https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.5.0/dist/svg-pan-zoom.min.js',
-				'https://code.jquery.com/jquery-3.4.1.min.js',
-				'https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js',
-
-				'./app/manifest.json',
-				'./manifest.json'
-			]).then(function() {
+			return cache.addAll(_staticCache).then(function() {
 				for(var i = 1864; i < 2016; i += 4) {
 					cache.add('./app/res/presets/USA_' + i + '_presidential');
 				}

@@ -100,7 +100,7 @@
 
 	<style>
 	<?php
-		include './style/fonts.css';
+	include './style/fonts.css';
 	?>
 	</style>
 
@@ -113,28 +113,10 @@
 	<link rel="stylesheet" type="text/css" href="./style/yapnews.css">
 	<link rel="stylesheet" type="text/css" href="./style/sidebar.css">
 	<?php
-		if($mobile) {
-			include '<link rel="stylesheet" type="text/css" href="./style/mobile.css">';
-		}
+	if($mobile) {
+		include '<link rel="stylesheet" type="text/css" href="./style/mobile.css">';
+	}
 	?>
-
-<?php
-		/*
-		include './style/fonts.css';
-		include './style/menu.css';
-		include './style/selectmenu.css';
-		include './style/popup.css';
-		include './style/legend.css';
-		include './style/style.css';
-		include './style/battlechart.css';
-		include './style/yapnews.css';
-		include './style/sidebar.css';
-
-		if($mobile) {
-			include './style/mobile.css';
-		}
-		 */
-?>
 
 	<script src="https://kit.fontawesome.com/c623f9993e.js"></script>
 </head>
