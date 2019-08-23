@@ -41,7 +41,6 @@
 	<link rel="shortcut icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
 	<link rel="manifest" href="./manifest.json">
 
-
 	<?php
 		$mobile = false;
 		
@@ -83,13 +82,6 @@
 				'var php_load_map_id = "0";' .
 			     '</script>';
 		}
-
-		echo '<script>
-			var GET = {' .
-			'"t": "' . $_GET["t"] . '",' .
-			'"m": "' . $_GET["m"] . '",' .
-			'};
-		</script>'
 	?>
 
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -109,23 +101,24 @@
 	</script>
 
 	<style>
-<?php
-		include './style/fonts.css';
-		include './style/menu.css';
-		include './style/selectmenu.css';
-		include './style/popup.css';
-		include './style/legend.css';
-		include './style/style.css';
-		include './style/battlechart.css';
-		include './style/yapnews.css';
-		include './style/sidebar.css';
-		include './style/yapnews.css';
-
-		if($mobile) {
-			include './style/mobile.css';
-		}
-?>
+	<?php
+	include './style/fonts.css';
+	?>
 	</style>
+
+	<link rel="stylesheet" type="text/css" href="./style/menu.css">
+	<link rel="stylesheet" type="text/css" href="./style/selectmenu.css">
+	<link rel="stylesheet" type="text/css" href="./style/popup.css">
+	<link rel="stylesheet" type="text/css" href="./style/legend.css">
+	<link rel="stylesheet" type="text/css" href="./style/style.css">
+	<link rel="stylesheet" type="text/css" href="./style/battlechart.css">
+	<link rel="stylesheet" type="text/css" href="./style/yapnews.css">
+	<link rel="stylesheet" type="text/css" href="./style/sidebar.css">
+	<?php
+	if($mobile) {
+		include '<link rel="stylesheet" type="text/css" href="./style/mobile.css">';
+	}
+	?>
 
 	<script src="https://kit.fontawesome.com/c623f9993e.js"></script>
 </head>
@@ -871,9 +864,17 @@ if($mobile === true) {
 				newWorker = reg.installing;
 				newWorker.addEventListener('statechange', () => {
 					switch(newWorker.state) {
-						case 'installed':
-						if(navigator.serviceWorker.controller) {
-							displayUpdateServiceWorker();
+					case 'installed':
+						console.log('updated');
+						//displayUpdateServiceWorker();
+						if(windowLoaded) {
+							console.log('SW: Direct Activate');
+							newWorker.postMessage('loaded'); 
+						} else {
+							console.log('SW: Defer Activate');
+							window.onload = function() {
+								newWorker.postMessage('loaded'); 
+							};
 						}
 
 						if(typeof gtag !== 'undefined') {
