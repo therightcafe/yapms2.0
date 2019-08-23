@@ -1,4 +1,4 @@
-var currentCache = 'v0.58.0';
+var currentCache = 'v0.58.2';
 
 var windowLoaded = false;
 

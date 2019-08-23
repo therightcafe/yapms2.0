@@ -120,7 +120,8 @@
 	}
 	?>
 
-	<script src="https://kit.fontawesome.com/c623f9993e.js"></script>
+	<!--<script src="https://kit.fontawesome.com/c623f9993e.js"></script>-->
+	<script src="./res/fontawesome/js/all.min.js"></script>
 </head>
 
 <body id="body" onresize="onResize()">
