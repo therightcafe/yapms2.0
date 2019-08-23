@@ -1,4 +1,4 @@
-var currentCache = 'v0.58.15';
+var currentCache = 'v0.58.20';
 
 var windowLoaded = false;
 
@@ -172,6 +172,7 @@ function initData(dataid) {
 	for(var index = 0, length = htmlElements.length; index < length; ++index) {
 		var htmlElement = htmlElements[index];
 		htmlElement.setAttribute('style', 'inherit');
+		htmlElement.setAttribute('cursor', 'pointer');
 		var name = htmlElement.getAttribute('id');
 		if(name === null || name.includes('*lines*') || name.includes("*ignore*") ||
 			name.includes("_ignore_") || name.includes('othertext') || name === 'text') {
@@ -211,6 +212,7 @@ function initData(dataid) {
 		var proportionalElements = proportional.children;
 		for(var index = 0, length = proportionalElements.length; index < length; ++index) {
 			var element = proportionalElements[index];
+			element.setAttribute('cursor', 'pointer');
 			element.setAttribute('style', 'inherit');
 			var name = element.getAttribute('id');
 			var state = new State(name, element, dataid);
@@ -228,8 +230,8 @@ function initData(dataid) {
 
 		for(var index = 0; index < specialChildren.length; ++index) {
 			var htmlElement = specialChildren[index];
-			htmlElement.setAttribute('onclick',
-				'specialClick(this)');
+			htmlElement.setAttribute('onclick','specialClick(this)');
+			htmlElement.setAttribute('cursor', 'pointer');
 			var name = htmlElement.id;
 			var state = new State(name, htmlElement, dataid);
 			states.push(state);
