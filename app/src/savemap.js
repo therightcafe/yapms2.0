@@ -159,7 +159,6 @@ function saveMap_new(img, token) {
 	formData.append("captcha", token);
 	formData.append("img", img);
 
-	var candidateData = [];
 	for(var key in candidates) {
 		if(key === 'Tossup') {
 			continue;
@@ -172,7 +171,6 @@ function saveMap_new(img, token) {
 		data['candidates'][candidate.name]['tilt'] = candidate.colors[3];
 	}
 
-	var stateData = [];
 	for(var stateIndex = 0; stateIndex < states.length; ++stateIndex) {
 		var state = states[stateIndex];
 		data['states'][state.name] = {};
@@ -182,7 +180,17 @@ function saveMap_new(img, token) {
 		data['states'][state.name]['colorvalue'] = state.colorValue;
 		data['states'][state.name]['disabled'] = state.disabled;
 	}
-
+	
+	for(var stateIndex = 0; stateIndex < proportionalStates; ++stateIndex) {
+		var state = proportionalStates[stateIndex];
+		data['proportional'][state.name] = {};
+		data['proportional'][state.name]['candidate'] = state.candidate;
+		data['proportional'][state.name]['delegates'] = state.delegates;
+		data['proportional'][state.name]['votecount'] = state.voteCount;
+		data['proportional'][state.name]['colorvalue'] = state.colorValue;
+		data['proportional'][state.name]['disabled'] = state.disabled;
+	}
+	
 	formData.append("data", JSON.stringify(data));
 
 	$.ajax({
