@@ -100,6 +100,8 @@
 			</div>
 		</a>
 	</div>
+	<hr>
+	<h1> United States maps </h1>
 
 	<div class="map-type-box">	
 	<div class="map-type-header">
@@ -250,6 +252,8 @@
 	</div>
 
 	<br>
+	<hr>
+	<h1> United States historical maps </h1>
 
 	<div class="map-type-box">
 	<div class="map-type-header">
@@ -531,6 +535,8 @@
 	</div>
 
 	<br>
+	<hr>
+	<h1> Other countries maps </h1>
 	
 	<div class="map-type-box">
 	<div class="map-type-header">
@@ -685,6 +691,9 @@
 	</div>
 	</div>
 	
+	<hr>
+	<h1> Trans-national maps </h1>
+	
 	<div class="map-type-box">
 	<div class="map-type-header"> Joined countries
 	</div>
@@ -692,6 +701,32 @@
 		<a href="./app/?t=USA_Canada">
 			<div class="map-button">
 				<i class="fas fa-square"></i> <img src="app/res/flags/usa.svg" height="20px">/<img src="app/res/flags/can.svg" height="20px"> states
+			</div>
+		</a>
+	</div>
+	</div>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
+		<img src="app/res/flags/un.svg" height="20px"> United Nations
+	</div>
+	<div>
+		<a href="./app/?t=world">
+			<div class="map-button">
+				<i class="fas fa-square"></i> Countries
+			</div>
+		</a>
+	</div>
+	</div>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
+		<img src="app/res/flags/eu.svg" height="20px"> European Union
+	</div>
+	<div>
+		<a href="./app/?t=world">
+			<div class="map-button">
+				<i class="fas fa-chevron-circle-down"></i> Parliament
 			</div>
 		</a>
 	</div>
