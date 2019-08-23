@@ -1,6 +1,6 @@
-var scriptCache = 'd0.52.11';
-var indexCache = 'i0.52.11';
-var staticCache = 's0.52.11';
+var scriptCache = 'd0.55.3';
+var indexCache = 'i0.55.3';
+var staticCache = 's0.55.1';
 
 var _scriptCache = [
 	'./style.css',
@@ -35,21 +35,21 @@ var _indexCache = [
 
 	'./app/',
 	'./app/index.php',
-	'./app/?t=Current_house',
-	'./app/?t=Current_senate',
-	'./app/?t=2016_presidential_county',
-	'./app/?t=2020_presidential',
-	'./app/?t=2020_cook',
-	'./app/?t=2020_inside',
-	'./app/?t=2020_sabatos',
-	'./app/?t=2020_senatorial',
-	'./app/?t=2020_gubernatorial',
-	'./app/?t=2020_democratic_primary',
-	'./app/?t=2020_republican_primary',
+	'./app/?t=USA_current_house',
+	'./app/?t=USA_current_senate',
+	'./app/?t=USA_2016_presidential_county',
+	'./app/?t=USA_2020_presidential',
+	'./app/?t=USA_2020_cook',
+	'./app/?t=USA_2020_inside',
+	'./app/?t=USA_2020_sabatos',
+	'./app/?t=USA_2020_senate',
+	'./app/?t=USA_2020_governors',
+	'./app/?t=USA_2020_democratic_primary',
+	'./app/?t=USA_2020_republican_primary',
 	'./app/?t=USA_county',
-	'./app/?t=USA_congressional',
-	'./app/?t=USA_gubernatorial',
-	'./app/?t=USA_senatorial',
+	'./app/?t=USA_house',
+	'./app/?t=USA_governors',
+	'./app/?t=USA_senate',
 	'./app/?t=USA_takeall',
 	'./app/?t=USA_proportional',
 	'./app/?t=USA_Canada',
@@ -141,15 +141,15 @@ self.addEventListener('install', function(event) {
 				'./app/res/lte.jpg',
 				'./app/res/redeagletv.png',
 
-				'./app/res/presets/Current_house',
-				'./app/res/presets/Current_senate',
-				'./app/res/presets/2016_presidential_county',
+				'./app/res/presets/USA_current_house',
+				'./app/res/presets/USA_current_senate',
+				'./app/res/presets/USA_2016_presidential_county',
 
-				'./app/res/presets/2024_projection',
+				'./app/res/presets/USA_2024_projection',
 
-				'./app/res/presets/2020_cook',
-				'./app/res/presets/2020_inside',
-				'./app/res/presets/2020_sabatos',
+				'./app/res/presets/USA_2020_cook',
+				'./app/res/presets/USA_2020_inside',
+				'./app/res/presets/USA_2020_sabatos',
 				
 				'./app/data/gubernatorial_2018',
 				'./app/data/gubernatorial_2020',
@@ -177,10 +177,11 @@ self.addEventListener('install', function(event) {
 				'https://code.jquery.com/jquery-3.4.1.min.js',
 				'https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js',
 
-				'./app/manifest.json'
+				'./app/manifest.json',
+				'./manifest.json'
 			]).then(function() {
 				for(var i = 1864; i < 2016; i += 4) {
-					cache.add('./app/res/presets/' + i + '_presidential');
+					cache.add('./app/res/presets/USA_' + i + '_presidential');
 				}
 
 				return cache;
@@ -216,7 +217,8 @@ self.addEventListener('fetch', function(event) {
 				} else if(event.request.url.includes('yapms.com/app/') === true &&
 						event.request.url.includes('yapms.com/app/req_articles.php') === false &&
 						event.request.url.includes('yapms.com/app/?m=') === false &&
-						event.request.url.includes('yapms.com/app/savemap.php') === false) {
+						event.request.url.includes('yapms.com/app/savemap.php') === false &&
+						event.request.url.includes('yapms.com/app/savemap_new.php') === false) {
 					swLog('Web', 'fetch+cache ' + event.request.url);
 					return fetch(event.request)
 					.then(function(response) {

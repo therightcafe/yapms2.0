@@ -37,92 +37,98 @@ function loadPresetMap(preset, options) {
 // Load map based off of php t parameter
 function loadMapFromId(id) {
 	switch(id) {
-		case "Current_house":
+		case "USA_current_house":
 			loadPresetMap(id, {enableCongress: true});
 			break;
-		case "Current_senate":
-		case "2024_projection":
-		case "2020_cook":
-		case "2020_inside":
-		case "2020_sabatos":
-		case "2016_presidential":
-		case "2012_presidential":
-		case "2008_presidential":
-		case "2004_presidential":
-		case "2000_presidential":
-		case "1996_presidential":
-		case "1992_presidential":
-		case "1988_presidential":
-		case "1984_presidential":
-		case "1980_presidential":
-		case "1976_presidential":
-		case "1972_presidential":
-		case "1968_presidential":
-		case "1964_presidential":
-		case "1960_presidential":
-		case "1956_presidential":
-		case "1952_presidential":
-		case "1948_presidential":
-		case "1944_presidential":
-		case "1940_presidential":
-		case "1936_presidential":
-		case "1932_presidential":
-		case "1928_presidential":
-		case "1924_presidential":
-		case "1920_presidential":
-		case "1916_presidential":
-		case "1912_presidential":
-		case "1908_presidential":
-		case "1904_presidential":
-		case "1900_presidential":
-		case "1896_presidential":
-		case "1892_presidential":
-		case "1888_presidential":
-		case "1884_presidential":
-		case "1880_presidential":
-		case "1876_presidential":
-		case "1876_presidential":
-		case "1872_presidential":
-		case "1868_presidential":
-		case "1864_presidential":
-		case "2016_presidential_county":
+		case "USA_current_senate":
+		case "USA_2024_projection":
+		case "USA_2020_cook":
+		case "USA_2020_inside":
+		case "USA_2020_sabatos":
+		case "USA_2016_presidential":
+		case "USA_2012_presidential":
+		case "USA_2008_presidential":
+		case "USA_2004_presidential":
+		case "USA_2000_presidential":
+		case "USA_1996_presidential":
+		case "USA_1992_presidential":
+		case "USA_1988_presidential":
+		case "USA_1984_presidential":
+		case "USA_1980_presidential":
+		case "USA_1976_presidential":
+		case "USA_1972_presidential":
+		case "USA_1968_presidential":
+		case "USA_1964_presidential":
+		case "USA_1960_presidential":
+		case "USA_1956_presidential":
+		case "USA_1952_presidential":
+		case "USA_1948_presidential":
+		case "USA_1944_presidential":
+		case "USA_1940_presidential":
+		case "USA_1936_presidential":
+		case "USA_1932_presidential":
+		case "USA_1928_presidential":
+		case "USA_1924_presidential":
+		case "USA_1920_presidential":
+		case "USA_1916_presidential":
+		case "USA_1912_presidential":
+		case "USA_1908_presidential":
+		case "USA_1904_presidential":
+		case "USA_1900_presidential":
+		case "USA_1896_presidential":
+		case "USA_1892_presidential":
+		case "USA_1888_presidential":
+		case "USA_1884_presidential":
+		case "USA_1880_presidential":
+		case "USA_1876_presidential":
+		case "USA_1876_presidential":
+		case "USA_1872_presidential":
+		case "USA_1868_presidential":
+		case "USA_1864_presidential":
+		case "USA_2016_presidential_county":
 			loadPresetMap(id);
 			break;
 		case "USA_Canada":
 			loadMap("./res/usa_canada.svg", 16, 0.01, "congressional", "congressional", "open", {updateText: false});
 			break;
-		case "2020_presidential":
+		case "USA_2020_presidential":
 			loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open", {updateText: true, voters: 'usa_voting_pop', enablePopularVote: true});
 			break;
 		case "USA_split_maine":
 			loadMap("./res/usa_1972_presidential.svg", 16, 1, "usa_1972_ec", "presidential", "open", {updateText: true});
 			break;
-		case "2020_senatorial":
+		case "USA_2020_senatorial":
+		case "USA_2020_senate":
 			loadMap("./res/usa_senate.svg", 16, 1, "usa_senate", "senatorial", "2020", {updateText: false});
 			break;
-		case "2020_gubernatorial":
+		case "USA_2020_gubernatorial":
+		case "USA_2020_governors":
 			loadMap("./res/usa_gubernatorial.svg", 16, 1, "usa_gubernatorial", "gubernatorial", "2020", {updateText: false});
 			break;
-		case "2020_democratic_primary":
+		case "USA_2020_democratic_primary":
 			loadMap("./res/usa_dem_primary.svg", 16, 1, "dem_primary", "primary", "open", {updateText: false});
 			break;
-		case "2020_republican_primary":
+		case "USA_2020_republican_primary":
 			loadMap("./res/usa_rep_primary.svg", 16, 1, "rep_primary", "primary", "open",{updateText: false});
 			break;
 		case "USA_county":
 			loadMap("./res/usa_county.svg", 16, 0.075, "congressional", "congressional", "open", {updateText: false});
 			break;
 		case "USA_congressional":
+		case "USA_2020_house":
 			loadMap("./res/usa_congressional_2018.svg", 16, 0.075, "congressional", "congressional", "open", {updateText: false, enableCongress: true});
 			break;
 		case "USA_congressional_2008":
+		case "USA_2008_house":
 			loadMap("./res/usa_congressional_2008.svg", 16, 0.005, "congressional", "congressional", "open", {updateText: false});
 			break;
 		case "USA_gubernatorial":
-			loadMap("./res/usa_gubernatorial.svg", 16, 1.5, "usa_gubernatorial", "presidential", "open", {updateText: false});
+		case "USA_governors":
+			loadMap("./res/usa_gubernatorial.svg", 16, 1.5, "usa_gubernatorial", "gubernatorial", "open", {updateText: false});
 			break;
 		case "USA_senatorial":
-			loadMap("./res/usa_senate.svg", 16, 1.5, "usa_senate", "presidential", "open", {updateText: false});
+		case "USA_senate":
+			loadMap("./res/usa_senate.svg", 16, 1.5, "usa_senate", "senatorial", "open", {updateText: false});
 			break;
 		case "USA_takeall":
 			loadMap("./res/usa_no_districts.svg", 16, 1, "usa_no_districts_ec", "presidential", "open", {updateText: true});
@@ -138,10 +144,12 @@ function loadMapFromId(id) {
 			loadPreset('germany')
 			break;
 		case "Germany_constituencies":
+		case "Germany_bundestag":
 			loadMap("./res/germany_constituencies.svg", 16, 0.25, "congressional", "congressional", "open", {updateText: false});
 			loadPreset('germany')
 			break;
 		case "France_constituencies":
+		case "France_national_assembly":
 			loadMap("./res/france_constituencies.svg", 16, 0.25, "congressional", "congressional", "open", {updateText: false});
 			loadPreset('france')
 			break;
@@ -158,6 +166,7 @@ function loadMapFromId(id) {
 			loadPreset('italy')
 			break;
 		case "Spain_constituencies":
+		case "Spain_congress_of_deputies":
 			loadMap("./res/spain_constituencies.svg", 16, 0.25, "spain_constituencies", "proportional", "open", {updateText: false});
 			loadPreset('spain');
 			break;
@@ -165,10 +174,12 @@ function loadMapFromId(id) {
 			loadMap("./res/turkey_provinces.svg", 16, 0.5, "congressional", "presidential", "open", {updateText: false});
 			break;
 		case "UnitedKingdom_constituencies":
+		case "UnitedKingdom_house_of_commons":
 			loadMap("./res/unitedkingdom.svg", 16, 0.075, "congressional", "congressional", "open", {updateText: false});
 			loadPreset('uk')
 			break;
 		case "Ireland_constituencies":
+		case "Ireland_dail_eireann":
 			loadMap("./res/ireland_constituencies.svg", 16, 0.075, "ireland_constituencies", "proportional", "open", {updateText: false});
 			loadPreset('ireland')
 			break;
@@ -177,10 +188,12 @@ function loadMapFromId(id) {
 			loadPreset('canada')
 			break;
 		case "Canada_constituencies":
+		case "Canada_house_of_commons":
 			loadMap("./res/canada_constituencies.svg", 16, 0.1, "congressional", "congressional", "open", {updateText: true});
 			loadPreset('canada')
 			break;
 		case "Australia_constituencies":
+		case 'Australia_house_of_representatives':
 			loadMap("./res/australia_constituencies.svg", 16, 0.5, "congressional", "congressional", "open", {updateText: false});
 			loadPreset('australia')
 			break;
@@ -189,6 +202,7 @@ function loadMapFromId(id) {
 			loadPreset('australia')
 			break;
 		case "Brazil_deputies":
+		case 'Brazil_chamber_of_deputies':
 			loadMap("./res/brazil_states.svg", 16, 50, "brazil_deputies", "proportional", "open", {updateText: false});
 			loadPreset('brazil');
 			break;
@@ -469,7 +483,6 @@ function loadSenateFile(senatefile, onLoad) {
 
 function loadSavedMap_new(data) {
 	var obj = JSON.parse(data);	
-	console.log('UPDATE TEXT ??? ' + obj['updateText']);
 	loadMap(obj['filename'], obj['fontsize'], obj['strokewidth'], obj['dataid'],
 			obj['type'], obj['year'],
 	{	updateText: obj['updatetext'],
@@ -489,12 +502,12 @@ function loadSavedMap_new(data) {
 			state.setVoteCount(stateData['votecount'], obj['updatetext']);
 			state.setColor(stateData['candidate'], stateData['colorvalue']);
 			state.delegates = stateData['delegates'];
-			if(obj['type'] !== 'gubernatorial' &&
-				obj['type'] !== 'senatorial') {
+			//if(obj['type'] !== 'gubernatorial' &&
+			//	obj['type'] !== 'senatorial') {
 				if(stateData['disabled']) {
 					state.toggleDisable();
 				}
-			}
+			//}
 		}
 
 		countVotes();

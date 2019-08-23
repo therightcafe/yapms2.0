@@ -32,7 +32,6 @@ foreach($q as $row) {
 	$mapnumber = $row[0];
 }
 
-//$filename = "" . rand(0, 100000);
 $filename = base_convert(''.$mapnumber, 10, 36);
 
 $imgData = $_POST["img"];
@@ -40,56 +39,28 @@ $imgData = str_replace(' ', '+', $imgData);
 $imgData = substr($imgData, strpos($imgData, ",")+1);
 $imgData = base64_decode($imgData);
 
-$file = fopen("./maps/" . $filename . ".png", 'w');
+require '../../external/mapstore_pass.php';
+
+//$file = fopen("./maps/" . $filename . ".png", 'w');
+$file = fopen("ftp://yapms:{$mapstore_pass}@74.208.19.50/maps/{$filename}.png", 'w');
 if($file) {
 	fwrite($file, $imgData);
 	fclose($file);
 }
 
-$file = fopen("./maps/" . $filename . ".txt", 'w');
+$file = gzopen("./maps/{$filename}.txt.gz", "w");
 if($file) {
-	$writeData = $_POST["filename"] . " "
-		. $_POST["fontsize"] . " " 
-		. $_POST["strokewidth"] . " "
-		. $_POST["dataid"] . " "
-		. $_POST["type"] . " " 
-		. $_POST["year"] . " ";
+	gzwrite($file, $_POST["data"]);
+	gzclose($file);
+}
 
-	$candidate_data = json_decode($_POST["candidates"], true);
-
-	$writeData .= count($candidate_data["candidate_data"]) . " " . $_POST["updateText"] . PHP_EOL;
-
-	foreach($candidate_data["candidate_data"] as $v) {
-		$v["name"] = str_replace(' ', '%', $v["name"]);
-		if($v["name"] !== "Tossup") {
-			$writeData .= $v["name"] . " "
-				. $v["solid"] . " "
-				. $v["likely"] . " "
-				. $v["lean"] . " "
-				. $v["tilt"] . PHP_EOL;
-		}
-	}
-
-	$state_data = json_decode($_POST["states"], true);
-
-	foreach($state_data["state_data"] as $v) {
-		$v["candidate"] = str_replace(' ', '%', $v["candidate"]);
-		$writeData .= $v["name"] . " "
-			. $v["candidate"] . " "
-			. $v["colorValue"] . " ";
-
-		if(isset($v["delegates"])) {
-			foreach($v["delegates"] as $d) {
-				$writeData .= $d . " ";
-			}
-		}
-		
-		$writeData .= $v["voteCount"] . " "
-				. $v["disabled"] . PHP_EOL;
-	}
-
-	fwrite($file, $writeData);
+$file = fopen("ftp://yapms:{$mapstore_pass}@74.208.19.50/maps/{$filename}.txt.gz", 'w');
+if($file) {
+	fwrite($file, file_get_contents("./maps/{$filename}.txt.gz"));
 	fclose($file);
+	
+	unlink("./maps/{$filename}.txt.gz");
+
 	echo 'https://www.yapms.com/app/?m=' . $filename . ' ';
 	echo $filename;
 }

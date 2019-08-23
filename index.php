@@ -3,8 +3,8 @@
 <html class="noSelect" lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="description" content="Presidential, Senatorial, Congressional, Guberntorial and Primary political map simulator.">
-	<meta name="keywords" content="Map,Election,Political,Interactive,Simulator,Electoral,270,2020">
+	<meta name="description" content="United States Presidential, Senate, House, Governors and Primary interactive election maps. United Kingdom, Canada, Germany election maps.">
+	<meta name="keywords" content="Map,Election,Political,Interactive,Simulator,Electoral,270,2020,Forecast,Historical">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<meta property="og:title" content="YAPms - Yet Another Political Map Simulator">
@@ -20,6 +20,12 @@
 	<meta name="twitter:description" content="Interactive Political Maps">
 
 	<meta property="twitter:image" content="https://www.yapms.com/app/res/yapms-96.png">
+	
+	<meta name="theme-color" content="#ffffff"/>
+	<link rel="icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
+	<link rel="apple-touch-icon" href="./res/yapms-192.png"/>
+	<link rel="shortcut icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
+	<link rel="manifest" href="./manifest.json">
 
 	<title>YAPms - Yet Another Political Map Simulator</title>
 	
@@ -77,8 +83,8 @@
 		<br>
 
 		<a href="https://play.google.com/store/apps/details?id=com.fishstudio.yapms&hl=en_GB">
-			<div class="infobox link">
-				<i class="fab fa-android"></i> Download Android App
+			<div class="infobox link android">
+				<b><i class="fab fa-android"></i></b> Download Android App
 			</div>
 		</a>
 
@@ -87,9 +93,13 @@
 				<i class="fab fa-discord"></i> Join Our Discord
 			</div>
 		</a>
+		
+		<a href="https://www.reddit.com/r/YAPms/">
+			<div class="infobox link reddit">
+				<i class="fab fa-reddit"></i> Yapms Subreddit
+			</div>
+		</a>
 	</div>
-
-	<br>
 
 	<div class="map-type-box">	
 	<div class="map-type-header">
@@ -97,29 +107,26 @@
 	</div>
 
 	<div>	
-		<a href="./app/?t=2020_presidential">
+		<a href="./app/?t=USA_2020_presidential">
 			<div class="map-button">
 				<i class="fas fa-user"></i> Presidential
 			</div>
-		</a>
+		</a
 		
 		<a href="./app/?t=2020_gubernatorial">
 			<div class="map-button">
-				<i class="fas fa-square"></i> Gubernatorial
+				<i class="fas fa-square"></i> Governors
 			</div>
 		</a>
-		
 		<br>
-		
-		<a href="./app/?t=USA_congressional">
-			<div class="map-button">
-				<i class="fas fa-chevron-down"></i> Congressional
-			</div>
-		</a>
-
 		<a href="./app/?t=2020_senatorial">
 			<div class="map-button">
-				<i class="fas fa-chevron-up"></i> Senatorial
+				<i class="fas fa-chevron-up"></i> Senate
+			</div>
+		</a>
+		<a href="./app/?t=USA_congressional">
+			<div class="map-button">
+				<i class="fas fa-chevron-down"></i> House of Representatives
 			</div>
 		</a>
 	</div>
@@ -135,10 +142,8 @@
 				<i class="fas fa-democrat"></i> Democratic Primary
 			</div>
 		</a>
-		
 		<br>
-		
-		<a href="./app/?t=2020_republican_primary">
+		<a href="./app/?t=USA_2020_republican_primary">
 			<div class="map-button">
 				<i class="fas fa-republican"></i> Republican Primary
 			</div>
@@ -151,29 +156,24 @@
 		<img src="app/res/flags/usa.svg" height="20px"> 2020 Presidential Forecasts
 	</div>
 	<div>
-		<a href="./app/?t=2020_cook">
+		<a href="./app/?t=USA_2020_cook">
 			<div class="map-button">
 				Cook Political Report
 			</div>
 		</a>
-
-		<a href="./app/?t=2020_inside">
+		<a href="./app/?t=USA_2020_inside">
 			<div class="map-button">
 				Inside Elections
 			</div>
 		</a>
-
 		<br>
-
-		<a href="./app/?t=2020_sabatos">
+		<a href="./app/?t=USA_2020_sabatos">
 			<div class="map-button">
 				Sabatos Crystal Ball
 			</div>
 		</a>
 	</div>
 	</div>
-
-	<br>
 	
 	<div class="map-type-box">	
 	<div class="map-type-header">
@@ -181,15 +181,13 @@
 	</div>
 		
 	<div>
-		<a href="./app/?t=Current_senate">
+		<a href="./app/?t=USA_current_souse">
 			<div class="map-button">
 				<i class="fas fa-chevron-up"></i> Senate
 			</div>
 		</a>
-        
         <br>
-		
-		<a href="./app/?t=Current_house">
+		<a href="./app/?t=USA_current_house">
 			<div class="map-button">
 				<i class="fas fa-chevron-down"></i> House of Representatives
 			</div>
@@ -203,29 +201,19 @@
 	</div>
 
 	<div>
-		<a href="./app/?t=USA_senatorial">
+		<a href="./app/?t=USA_senate">
 			<div class="map-button">
 				<i class="fas fa-chevron-up"></i> Senate
 			</div>
 		</a>
-		
-		<a href="./app/?t=USA_congressional">
+		<a href="./app/?t=USA_governors">
 			<div class="map-button">
-				<i class="fas fa-chevron-down"></i> House of Representatives
+				<i class="fas fa-square"></i> Governors
 			</div>
 		</a>
-
-		<br>
-		
-		<a href="./app/?t=USA_gubernatorial">
-			<div class="map-button">
-				<i class="fas fa-square"></i> States/Governors
-			</div>
-		</a>
-		
 		<a href="./app/?t=USA_county">
 			<div class="map-button">
-				<i class="fas fa-border-all"></i> Counties
+				<i class="fas fa-border-all"></i> County
 			</div>
 		</a>
 	</div>
@@ -242,21 +230,17 @@
 				<i class="fas fa-user"></i> Presidential Take All
 			</div>
 		</a>
-		
 		<a href="./app/?t=USA_proportional">
 			<div class="map-button">
 				<i class="far fa-user-circle"></i>  Presidential Proportional
 			</div>
 		</a>
-
 		<br>
-		
-		<a href="./app/?t=2024_projection">
+		<a href="./app/?t=USA_2024_projection">
 			<div class="map-button">
 				<i class="far fa-user"></i> 2024 Estimates
 			</div>
 		</a>
-
 		<a href="./app/?t=USA_split_maine">
 			<div class="map-button">
 				<i class="fas fa-user"></i> Presidential (split Maine)
@@ -275,204 +259,211 @@
 		Post - WW2
 	</div>
 	<div>	
-		<a href="./app/?t=2016_presidential">
+		<a href="./app/?t=USA_2016_presidential">
 			<div class="map-button">
 				2016
 			</div>
 		</a>
-		<a href="./app/?t=2012_presidential">
+		<a href="./app/?t=USA_2012_presidential">
 			<div class="map-button">
 				2012
 			</div>
 		</a>
-		<a href="./app/?t=2008_presidential">
+		<a href="./app/?t=USA_2008_presidential">
 			<div class="map-button">
 				2008
 			</div>
 		</a>
-		<a href="./app/?t=2004_presidential">
+		<a href="./app/?t=USA_2004_presidential">
 			<div class="map-button">
 				2004
 			</div>
 		</a>
-		<a href="./app/?t=2000_presidential">
+		<br>
+		<a href="./app/?t=USA_2000_presidential">
 			<div class="map-button">
 				2000
 			</div>
-		</a><br>
-		<a href="./app/?t=1996_presidential">
+		</a>
+		<a href="./app/?t=USA_1996_presidential">
 			<div class="map-button">
 				1996
 			</div>
 		</a>
-		<a href="./app/?t=1992_presidential">
+		<a href="./app/?t=USA_1992_presidential">
 			<div class="map-button">
 				1992
 			</div>
 		</a>
-		<a href="./app/?t=1988_presidential">
+		<a href="./app/?t=USA_1988_presidential">
 			<div class="map-button">
 				1988
 			</div>
 		</a>
-		<a href="./app/?t=1984_presidential">
+		<a href="./app/?t=USA_1984_presidential">
 			<div class="map-button">
 				1984
 			</div>
 		</a>
-		<a href="./app/?t=1980_presidential">
+		<br>
+		<a href="./app/?t=USA_1980_presidential">
 			<div class="map-button">
 				1980
 			</div>
-		</a><br>
-		<a href="./app/?t=1976_presidential">
+		</a>
+		<a href="./app/?t=USA_1976_presidential">
 			<div class="map-button">
 				1976
 			</div>
 		</a>
-		<a href="./app/?t=1972_presidential">
+		<a href="./app/?t=USA_1972_presidential">
 			<div class="map-button">
 				1972
 			</div>
 		</a>
-		<a href="./app/?t=1968_presidential">
+		<a href="./app/?t=USA_1968_presidential">
 			<div class="map-button">
 				1968
 			</div>
 		</a>
-		<a href="./app/?t=1964_presidential">
+		<a href="./app/?t=USA_1964_presidential">
 			<div class="map-button">
 				1964
 			</div>
 		</a>
-		<a href="./app/?t=1960_presidential">
+		<br>
+		<a href="./app/?t=USA_1960_presidential">
 			<div class="map-button">
 				1960
 			</div>
-		</a><br>
-		<a href="./app/?t=1956_presidential">
+		</a>
+		<a href="./app/?t=USA_1956_presidential">
 			<div class="map-button">
 				1956
 			</div>
 		</a>
-		<a href="./app/?t=1952_presidential">
+		<a href="./app/?t=USA_1952_presidential">
 			<div class="map-button">
 				1952
 			</div>
 		</a>
-		<a href="./app/?t=1948_presidential">
+		<a href="./app/?t=USA_1948_presidential">
 			<div class="map-button">
 				1948
 			</div>
 		</a>
-		<a href="./app/?t=1944_presidential">
+		<a href="./app/?t=USA_1944_presidential">
 			<div class="map-button">
 				1944
 			</div>
 		</a>
-		<a href="./app/?t=1940_presidential">
+		</div>
+	</div>
+
+	<div class="map-type-box">
+	<div class="map-type-header">
+		USA - Pre WW2
+	</div>
+	<div>
+		<a href="./app/?t=USA_1940_presidential">
 			<div class="map-button">
 				1940
 			</div>
-		</a><br>
-	</div>
-    </div>
-	<div class="map-type-box">
-	<div class="map-type-header">
-		Pre - WW2
-	</div>
-	<div>
-		<a href="./app/?t=1936_presidential">
+		</a>
+		<a href="./app/?t=USA_1936_presidential">
 			<div class="map-button">
 				1936
 			</div>
 		</a>
-		<a href="./app/?t=1932_presidential">
+		<a href="./app/?t=USA_1932_presidential">
 			<div class="map-button">
 				1932
 			</div>
 		</a>
-		<a href="./app/?t=1928_presidential">
+		<a href="./app/?t=USA_1928_presidential">
 			<div class="map-button">
 				1928
 			</div>
 		</a>
-		<a href="./app/?t=1924_presidential">
+		<a href="./app/?t=USA_1924_presidential">
 			<div class="map-button">
 				1924
 			</div>
 		</a>
-		<a href="./app/?t=1920_presidential">
+		<br>
+		<a href="./app/?t=USA_1920_presidential">
 			<div class="map-button">
 				1920
 			</div>
-		</a><br>
-		<a href="./app/?t=1916_presidential">
+		</a>
+		<a href="./app/?t=USA_1916_presidential">
 			<div class="map-button">
 				1916
 			</div>
 		</a>
-		<a href="./app/?t=1912_presidential">
+		<a href="./app/?t=USA_1912_presidential">
 			<div class="map-button">
 				1912
 			</div>
 		</a>
-		<a href="./app/?t=1908_presidential">
+		<a href="./app/?t=USA_1908_presidential">
 			<div class="map-button">
 				1908
 			</div>
 		</a>
-		<a href="./app/?t=1904_presidential">
+		<a href="./app/?t=USA_1904_presidential">
 			<div class="map-button">
 				1904
 			</div>
 		</a>
-		<a href="./app/?t=1900_presidential">
+		<br>
+		<a href="./app/?t=USA_1900_presidential">
 			<div class="map-button">
 				1900
 			</div>
-		</a><br>
-		<a href="./app/?t=1896_presidential">
+		</a>
+		<a href="./app/?t=USA_1896_presidential">
 			<div class="map-button">
 				1896
 			</div>
 		</a>
-		<a href="./app/?t=1892_presidential">
+		<a href="./app/?t=USA_1892_presidential">
 			<div class="map-button">
 				1892
 			</div>
 		</a>
-		<a href="./app/?t=1888_presidential">
+		<a href="./app/?t=USA_1888_presidential">
 			<div class="map-button">
 				1888
 			</div>
 		</a>
-		<a href="./app/?t=1884_presidential">
+		<a href="./app/?t=USA_1884_presidential">
 			<div class="map-button">
 				1884
 			</div>
 		</a>
-		<a href="./app/?t=1880_presidential">
+		<br>
+		<a href="./app/?t=USA_1880_presidential">
 			<div class="map-button">
 				1880
 			</div>
-		</a><br>
-		<a href="./app/?t=1876_presidential">
+		</a>
+		<a href="./app/?t=USA_1876_presidential">
 			<div class="map-button">
 				1876
 			</div>
 		</a>
-		<a href="./app/?t=1872_presidential">
+		<a href="./app/?t=USA_1872_presidential">
 			<div class="map-button">
 				1872
 			</div>
 		</a>
-		<a href="./app/?t=1868_presidential">
+		<a href="./app/?t=USA_1868_presidential">
 			<div class="map-button">
 				1868
 			</div>
 		</a>
-		<a href="./app/?t=1864_presidential">
+		<a href="./app/?t=USA_1864_presidential">
 			<div class="map-button">
 				1864
 			</div>
@@ -486,13 +477,14 @@
 	<div class="map-type-box">
 	<div class="map-type-header">
 		Pre - Civil War
-	</div><!--
+	</div>
+	<div>To be added...<!--
 
 	ADD ELECTIONS HERE
 
 	-->
 	</div>
-	</dib>
+	</div>
 
 	<div class="map-type-box">
 	<div class="map-type-header">
@@ -551,9 +543,9 @@
 			</div>
 		</a>
 		
-		<a href="./app/?t=Australia_constituencies">
+		<a href="./app/?t=Australia_house_of_representatives">
 			<div class="map-button">
-				<i class="fas fa-chevron-down"></i> Constituencies
+				<i class="fas fa-chevron-down"></i> House of Representatives
 			</div>
 		</a>
 	</div>
@@ -566,7 +558,7 @@
 	<div>
 		<a href="./app/?t=Brazil_deputies">
 			<div class="map-button">
-				<i class="fas fa-chevron-circle-down"></i> Deputies
+				<i class="fas fa-chevron-circle-down"></i> Chamber of Deputies
 			</div>
 		</a>
 	</div>
@@ -582,9 +574,9 @@
 				<i class="fas fa-square"></i> Provinces
 			</div>
 		</a>
-		<a href="./app/?t=Canada_constituencies">
+		<a href="./app/?t=Canada_house_of_commons">
 			<div class="map-button">
-				<i class="fas fa-chevron-down"></i> Constituencies
+				<i class="fas fa-chevron-down"></i> House of Commons
 			</div>
 		</a>
 	</div>
@@ -595,9 +587,9 @@
 		<img src="app/res/flags/fra.svg" height="20px"> France
 	</div>
 	<div>
-		<a href="./app/?t=France_constituencies">
+		<a href="./app/?t=France_national_assembly">
 			<div class="map-button">
-				<i class="fas fa-chevron-down"></i> Constituencies
+				<i class="fas fa-chevron-down"></i> National Assembly
 			</div>
 		</a>
 	</div>
@@ -613,16 +605,14 @@
 				<i class="fas fa-square"></i> States
 			</div>
 		</a>
-		<a href="./app/?t=Germany_constituencies">
+		<a href="./app/?t=Germany_bundestag">
 			<div class="map-button">
-				<i class="fas fa-chevron-down"></i> Constituencies
+				<i class="fas fa-chevron-down"></i> Bundestag
 			</div>
 		</a>
 		
 	</div>
 	</div>
-
-	<br>
 	
 	<div class="map-type-box">
 	<div class="map-type-header">
@@ -642,9 +632,9 @@
 		<img src="app/res/flags/ire.svg" height="20px"> Ireland
 	</div>
 	<div>
-		<a href="./app/?t=Ireland_constituencies">
+		<a href="./app/?t=Ireland_dail_eireann">
 			<div class="map-button">
-				<i class="fas fa-chevron-circle-down"></i> Constituencies
+				<i class="fas fa-chevron-circle-down"></i> Dáil Éireann
 			</div>
 		</a>
 	</div>
@@ -676,7 +666,7 @@
 	<div>
 		<a href="./app/?t=Spain_constituencies">
 			<div class="map-button">
-				<i class="fas fa-chevron-circle-down"></i> Constituencies
+				<i class="fas fa-chevron-circle-down"></i> Congress of Deputies
 			</div>
 		</a>
 	</div>
@@ -687,9 +677,9 @@
 		<img src="app/res/flags/ukd.svg" height="20px"> United Kingdom
 	</div>
 	<div>
-		<a href="./app/?t=UnitedKingdom_constituencies">
+		<a href="./app/?t=UnitedKingdom_house_of_commons">
 			<div class="map-button">
-				<i class="fas fa-chevron-down"></i> Constituencies
+				<i class="fas fa-chevron-down"></i> House of Commons
 			</div>
 		</a>
 	</div>
