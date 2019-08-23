@@ -1,6 +1,6 @@
 var scriptCache = 'd0.58.0';
 var indexCache = 'i0.58.0';
-var staticCache = 's0.58.0';
+var staticCache = 's0.58.1';
 
 var _scriptCache = [
 	'./app/html/battlechart.html',
@@ -142,7 +142,11 @@ var _staticCache = [
 	'https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.5.0/dist/svg-pan-zoom.min.js',
 	'https://code.jquery.com/jquery-3.4.1.min.js',
 	'https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js',
+
 	'https://kit.fontawesome.com/c623f9993e.js',
+	'https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css',
+	'https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css',
+	'https://kit-free.fontawesome.com/releases/latest/css/free.min.css',
 
 	'./app/manifest.json',
 	'./manifest.json'
