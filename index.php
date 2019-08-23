@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<?php echo '<?xml version="1.0" encoding="UTF-8" standalone="no"?>' ?>
 <html class="noSelect" lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -52,7 +51,7 @@
 	
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 	<link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="./app/res/fontawesome/css/all.min.css">
+    <script src="./app/res/fontawesome/css/all.min.css"></script>
 	
 	
 </head>
@@ -638,6 +637,25 @@
 		<a href="./app/?t=Netherlands_gemeenten">
 			<div class="map-button">
 				<i class="fas fa-chevron-down"></i> Gemeeten
+			</div>
+		</a>
+	</div>
+	</div>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
+		<img src="app/res/flags/rus.svg" height="20px"> Russia	
+	</div>
+	<div>
+		<a href="./app/?t=Russia_federal_council">
+			<div class="map-button">
+				<i class="fas fa-chevron-up"></i> Federation Council
+			</div>
+		</a>
+		
+		<a href="./app/?t=Russia_duma">
+			<div class="map-button">
+				<i class="fas fa-chevron-down"></i> Duma
 			</div>
 		</a>
 	</div>

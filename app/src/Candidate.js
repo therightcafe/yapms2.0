@@ -7,6 +7,14 @@ class Candidate {
 		this.colors = colors;
 		this.voteCount = 0;
 		this.probVoteCounts = [0,0,0,0];
+
+		if(colors[0] === colors[1] &&
+			colors[0] === colors[2] &&
+			colors[0] === colors[3]) {
+			this.singleColor = true;
+		} else {
+			this.singleColor = false;
+		}
 	}
 };
 
@@ -112,7 +120,7 @@ function setCandidate() {
 	var solidColor = document.getElementById('candidate-solid').value;
 	var likelyColor = document.getElementById('candidate-likely').value;
 	var leanColor = document.getElementById('candidate-lean').value;
-	var tiltcolor = document.getElementById('candidate-tilt').value;
+	var tiltColor = document.getElementById('candidate-tilt').value;
 
 	// only rename the property if the name changed
 	if(newname !== candidateid) {
@@ -127,12 +135,27 @@ function setCandidate() {
 	candidate.colors[0] = solidColor;
 	candidate.colors[1] = likelyColor;
 	candidate.colors[2] = leanColor;
-	candidate.colors[3] = tiltcolor;
+	candidate.colors[3] = tiltColor;
+	
+	if(solidColor === likelyColor &&
+		solidColor === leanColor &&
+		solidColor === tiltColor) {
+		candidate.singleColor = true;
+		candidate.probVoteCounts[0] += 
+			candidate.probVoteCounts[1] +
+			candidate.probVoteCounts[2] +
+			candidate.probVoteCounts[3];
+		candidate.probVoteCounts[1] = 0;
+		candidate.probVoteCounts[2] = 0;
+		candidate.probVoteCounts[3] = 0;
+	} else {
+		candidate.singleColor = false;
+	}
 
 	chart.generateLegend();
+	verifyMap();
 	countVotes();
 	updateLegend();
-	verifyMap();
 	updateChart();
 }
 

@@ -63,6 +63,9 @@ function loadPreset(value) {
 		case 'ireland':
 			loadPresetIreland();
 			break;
+		case 'russia':
+			loadPresetRussia();
+			break;
 	}
 	
 	verifyMap();
@@ -497,5 +500,33 @@ function loadPresetIreland() {
 	candidates['I4C'] = inds4change;
 	candidates['SD'] = socialdemocrats;
 	candidates['GP'] = green;
+	candidates['Ind'] = indy;
+}
+
+function loadPresetRussia() {
+	var unitedrussia = new Candidate('ER',
+		['#0C2C84','#0C2C84','#0C2C84','#0C2C84']);
+	var libdem = new Candidate('LDPR',
+		['#2862B3','#2862B3','#2862B3','#2862B3']);
+	var communist = new Candidate('CPRF',
+		['#D70000','#D70000','#D70000','#D70000']);
+	var patriots = new Candidate('Patriots',
+		['#F6DF3B','#F6DF3B','#F6DF3B','#F6DF3B']);
+	var just = new Candidate('CP',
+		['#FAB512','#FAB512','#FAB512','#FAB512']);
+	var rodina = new Candidate('Rodina',
+		['#EA484A','#EA484A','#EA484A','#EA484A']);
+	var yabloko = new Candidate('Yabloko',
+		['#00A800','#00A800','#00A800','#00A800']);
+	var indy = new Candidate('Ind',
+		['#CCCCCC','#CCCCCC','#CCCCCC','#CCCCCC']);
+
+	candidates['ER'] = unitedrussia;
+	candidates['LDPR'] = libdem;
+	candidates['CPRF'] = communist;
+	candidates['Patriots'] = patriots;
+	candidates['CP'] = just;
+	candidates['Rodina'] = rodina;
+	candidates['Yabloko'] = yabloko;
 	candidates['Ind'] = indy;
 }

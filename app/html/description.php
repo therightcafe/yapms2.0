@@ -104,6 +104,9 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		case 'France_national_assembly':
 		echo '<meta name="description" content="France - National Assembly election map"><title>France - National Assembly Election</title>';
 		break;
+		case 'Russia_federal_council':
+		echo '<meta name="description" content="Russia - Federal Council election map"><title>Russia - Federal Council Election</title>';
+		break;
 		case 'USA_Canada':
 		echo '<meta name="description" content="United USA and Canada election map"><title>USA/Canada Map Election</title>';
 		break;
@@ -119,6 +122,6 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 	}
 	}
 } else {
-	echo '<meta name="description" content="United States Presidential, Senatorial, Congressional, Guberntorial and Primary interactive election maps. United Kingdom, Canada, Germany election maps."><title>YAPms - Interactive Political Election Maps</title>';
+	echo '<meta name="description" content="United States 2020 presidential interactive election map"><title>USA - 2020 Presidential Election</title><link rel="canonical" href="https://www.yapms.com/app/?t=USA_2020_presidential"/>';
 }
 ?>

@@ -2,9 +2,7 @@
 <?php
 	include './html/localization.php';
 ?>
-<?php echo '<?xml version="1.0" encoding="UTF-8" standalone="no"?>' ?>
 <html class="noSelect" lang="<?php echo _("GETLANGUAGE") ?>">
-
 <head>
 	<meta charset="UTF-8">
 <?php
@@ -28,8 +26,9 @@
 
 	<meta property="og:title" content="YAPms - Yet Another Political Map Simulator">
 	<meta property="og:description" content="Interactive Political Maps">
-	<meta property="og:image:type" content="image/jpeg">
+	<meta property="og:image:type" content="image/png">
 	<meta property="og:site_name" content="yapms.com">
+	<meta property="og:type" content="article">
 
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="yapms.com">
@@ -63,9 +62,12 @@
 			//echo '<meta property="og:image" content="https://www.yapms.com/app/maps/' . $_GET["m"] . '.png">';
 			//echo '<meta property="og:image:secure_url" content="https://www.yapms.com/app/maps/' . $_GET["m"] . '.png">';
 			//echo '<meta name="twitter:image" content="https://www.yapms.com/app/maps/' . $_GET["m"] . '.png">';
-			echo '<meta property="og:image" content="http://yapms.org/maps/' . $_GET["m"] . '.png">';
+			echo '<meta property="og:image:width" content="1200">';
+			echo '<meta property="og:image:height" content="1200">';
 			echo '<meta property="og:image:secure_url" content="https://yapms.org/maps/' . $_GET["m"] . '.png">';
+			echo '<meta property="og:image" content="https://yapms.org/maps/' . $_GET["m"] . '.png">';
 			echo '<meta name="twitter:image" content="https://yapms.org/maps/' . $_GET["m"] . '.png">';
+			echo '<meta property="og:url" content="https://www.yapms.com/app/?m=' . $_GET["m"] . '">';
 		} else if(isset($_GET["t"]) && !empty($_GET["t"])) {
 			echo '<script>' .
 				'var php_load_map = false;' .
@@ -80,13 +82,6 @@
 				'var php_load_map_id = "0";' .
 			     '</script>';
 		}
-
-		echo '<script>
-			var GET = {' .
-			'"t": "' . $_GET["t"] . '",' .
-			'"m": "' . $_GET["m"] . '",' .
-			'};
-		</script>'
 	?>
 
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -106,24 +101,26 @@
 	</script>
 
 	<style>
-<?php
-		include './style/fonts.css';
-		include './style/menu.css';
-		include './style/selectmenu.css';
-		include './style/popup.css';
-		include './style/legend.css';
-		include './style/style.css';
-		include './style/battlechart.css';
-		include './style/yapnews.css';
-		include './style/sidebar.css';
-		include './style/yapnews.css';
-
-		if($mobile) {
-			include './style/mobile.css';
-		}
-?>
+	<?php
+	include './style/fonts.css';
+	?>
 	</style>
 
+	<link rel="stylesheet" type="text/css" href="./style/menu.css">
+	<link rel="stylesheet" type="text/css" href="./style/selectmenu.css">
+	<link rel="stylesheet" type="text/css" href="./style/popup.css">
+	<link rel="stylesheet" type="text/css" href="./style/legend.css">
+	<link rel="stylesheet" type="text/css" href="./style/style.css">
+	<link rel="stylesheet" type="text/css" href="./style/battlechart.css">
+	<link rel="stylesheet" type="text/css" href="./style/yapnews.css">
+	<link rel="stylesheet" type="text/css" href="./style/sidebar.css">
+	<?php
+	if($mobile) {
+		include '<link rel="stylesheet" type="text/css" href="./style/mobile.css">';
+	}
+	?>
+
+	<script src="https://kit.fontawesome.com/c623f9993e.js"></script>
 </head>
 
 <body id="body" onresize="onResize()">
@@ -289,23 +286,21 @@ if($mobile === false) {
 			<h3>'
 			. _("Settings") .
 			'</h3>
-			<span class="sidebar-hover-popup"><input type="checkbox" id="popularvote-automargins" onclick="autoMarginsOnClick();" checked>' . _("Settings-Option1") .
+			<div class="sidebar-hover-popup"><input type="checkbox" id="popularvote-automargins" onclick="autoMarginsOnClick();" checked>' . _("Settings-Option1") .
 				'<div class="tooltip-text">
 					Setting the popular vote will also set the color of a state
 				</div>
-			</span>
-			<br>
-			<span class="sidebar-hover-popup"><input type="checkbox" id="popularvote-clicksetpv" checked>' . _("Settings-Option2") .
+			</div>
+			<div class="sidebar-hover-popup"><input type="checkbox" id="popularvote-clicksetpv" checked>' . _("Settings-Option2") .
 				'<div class="tooltip-text">
 					Clicking on a district will set the popular vote to max
 				</div>
-			</span>
-			<br>
-			<span class="sidebar-hover-popup"><input type="checkbox" id="popularvote-avoidalmargins" checked>' . _("Settings-Option3") .
+			</div>
+			<div class="sidebar-hover-popup"><input type="checkbox" id="popularvote-avoidalmargins" checked>' . _("Settings-Option3") .
 				'<div class="tooltip-text">
 					Clicking on a district in Nebraska or Maine will not calculate the margin for the AL vote.	
 				</div>
-			</span>
+			</div>
 		</div>',
 		'<div id="sidebar-congress" class="sidebar-box">
 			<h3><span id="sidebar-congress-district">District</span></h3>
@@ -382,8 +377,8 @@ if($mobile) {
 	<h2 id="ecedit-message"></h2>
 	</div>
 	<div class="selectmenu-content">
-	<a class="selectmenu-button"><input id="state-ec" type="number" name="value" min="1" max="10000" step="1"></a>
-	<a class="selectmenu-button" onclick="setEC()">Apply</a>
+	<div class="selectmenu-button"><input id="state-ec" type="number" name="value" min="1" max="10000" step="1"></div>
+	<div class="selectmenu-button" onclick="setEC()">Apply</div>
 	<input id="state-id" type="hidden">
 	</div>
 </div>
@@ -395,27 +390,27 @@ if($mobile) {
 	<h2 id="candidateedit-message"></h2>
 	</div>
 	<div class="selectmenu-content">
-	<a class="selectmenu-button">Name <input id="candidate-name" type="text" name="name"></a>
-	<a class="selectmenu-button">Solid <input id="candidate-solid" type="color"></a>
-	<a class="selectmenu-button">Likely <input id="candidate-likely" type="color"></a>
-	<a class="selectmenu-button">Lean <input id="candidate-lean" type="color"></a>
-	<a class="selectmenu-button">Tilt <input id="candidate-tilt" type="color"></a>
-	<a class="selectmenu-button" onclick="setCandidate()">Apply</a>
-	<a class="selectmenu-button" onclick='deleteCandidate()'>Delete</a>
+	<div class="selectmenu-button">Name <input id="candidate-name" type="text" name="name"></div>
+	<div class="selectmenu-button">Solid <input id="candidate-solid" type="color"></div>
+	<div class="selectmenu-button">Likely <input id="candidate-likely" type="color"></div>
+	<div class="selectmenu-button">Lean <input id="candidate-lean" type="color"></div>
+	<div class="selectmenu-button">Tilt <input id="candidate-tilt" type="color"></div>
+	<div class="selectmenu-button" onclick="setCandidate()">Apply</div>
+	<div class="selectmenu-button" onclick='deleteCandidate()'>Delete</div>
 	</div>
 </div>
 
 <div id="miscmenu" class="popup selectmenu">
 	<div class="selectmenu-header">
-	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
+	<object type="image/svg+xml" data="https://www.yapms.com/app/html/closebutton.svg" >Error</object>
 	<h2><?php echo _("Misc") ?></h2>
 	</div>
 	<div class="selectmenu-content">
-	<a class="selectmenu-button" onclick="displayVersionInfo()"><?php echo _("Version Info") ?></a>
-	<a class="selectmenu-button" onclick="enableFullscreen()"><?php echo _("Fullscreen") ?></a>
-	<a class="selectmenu-button" onclick="centerMap()"><?php echo _("Center Map") ?></a>
-	<a class="selectmenu-button" onclick="toggleLTELogo()">LTE Logo</a>
-	<a class="selectmenu-button" onclick="toggleRedEagleLogo()">RedEagle Logo</a>
+	<a class="selectmenu-button" onclick="displayVersionInfo()"><i class="fas fa-info"></i> <?php echo _("Version Info") ?></a>
+	<a class="selectmenu-button" onclick="enableFullscreen()"><i class="fas fa-expand-arrows-alt"></i> <?php echo _("Fullscreen") ?></a>
+	<a class="selectmenu-button" onclick="centerMap()"><i class="fas fa-compress-arrows-alt"></i> <?php echo _("Center Map") ?></a>
+	<a class="selectmenu-button" onclick="toggleLTELogo()"><i class="fas fa-desktop"></i> LTE Logo</a>
+	<a class="selectmenu-button" onclick="toggleRedEagleLogo()"><i class="fas fa-desktop"></i> RedEagle Logo</a>
 	</div>
 </div>
 
@@ -426,11 +421,11 @@ if($mobile) {
 	</div>
 	<div class="selectmenu-content">
 	<input id="custom-color-name" type="hidden">
-	<a class="selectmenu-button"><?php echo _("Solid") ?> <input id="solidcustom" type="color"></a>
-	<a class="selectmenu-button"><?php echo _("Likely") ?> <input id="likelycustom" type="color"></a>
-	<a class="selectmenu-button"><?php echo _("Leaning") ?> <input id="leaningcustom" type="color"></a>
-	<a class="selectmenu-button"><?php echo _("Tilting") ?> <input id="tiltingcustom" type="color"></a>
-	<a class="selectmenu-button" onclick="saveCustomColors(); displayAddCandidateMenu()"><?php echo _("Set") ?></a>
+	<div class="selectmenu-button"><?php echo _("Solid") ?> <input id="solidcustom" type="color"></div>
+	<div class="selectmenu-button"><?php echo _("Likely") ?> <input id="likelycustom" type="color"></div>
+	<div class="selectmenu-button"><?php echo _("Leaning") ?> <input id="leaningcustom" type="color"></div>
+	<div class="selectmenu-button"><?php echo _("Tilting") ?> <input id="tiltingcustom" type="color"></div>
+	<div class="selectmenu-button" onclick="saveCustomColors(); displayAddCandidateMenu()"><?php echo _("Set") ?></div>
 	</div>
 </div>
 
@@ -440,7 +435,7 @@ if($mobile) {
 	<h2><?php echo _("Add Candidate") ?></h2>
 	</div>
 	<div class="selectmenu-content">
-	<a class="selectmenu-section"><?php echo _("Name") ?><input id="name" type="text"></a>
+	<div class="selectmenu-section"><?php echo _("Name") ?><input id="name" type="text"></div>
 	<a class="selectmenu-button selectmenu-red" onclick='setColors("red")'><?php echo _("Red Colors") ?></a>
 	<a class="selectmenu-button selectmenu-blue" onclick='setColors("blue")'><?php echo _("Blue Colors") ?></a>
 	<a class="selectmenu-button selectmenu-green" onclick='setColors("green")'><?php echo _("Green Colors") ?></a>
@@ -469,11 +464,11 @@ if($mobile) {
 		<a class="selectmenu-button-right selectmenu-button fas fa-cog"
 			onclick='displayCustomColorMenu("custom4")'></a>
 	</div>
-	<a class="selectmenu-section"><?php echo _("Solid") ?> <input id="solid" type="color"></a>
-	<a class="selectmenu-section"><?php echo _("Likely") ?> <input id="likely" type="color"></a>
-	<a class="selectmenu-section"><?php echo _("Leaning") ?> <input id="leaning" type="color"></a>
-	<a class="selectmenu-section"><?php echo _("Tilt") ?> <input id="tilting" type="color"></a>
-	<a class="selectmenu-button" onclick="addCandidate(); closeAllPopups();"><?php echo _("Add") ?></a>
+	<div class="selectmenu-section"><?php echo _("Solid") ?> <input id="solid" type="color"></div>
+	<div class="selectmenu-section"><?php echo _("Likely") ?> <input id="likely" type="color"></div>
+	<div class="selectmenu-section"><?php echo _("Leaning") ?> <input id="leaning" type="color"></div>
+	<div class="selectmenu-section"><?php echo _("Tilt") ?> <input id="tilting" type="color"></div>
+	<div class="selectmenu-button" onclick="addCandidate(); closeAllPopups();"><?php echo _("Add") ?></div>
 	</div>
 </div>
 
@@ -602,6 +597,18 @@ if($mobile) {
 	</div>
 </div>
 
+<!-- Russia Maps -->
+<div id="mapmenu-russia" class="popup selectmenu">
+	<div class="selectmenu-header">
+	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
+	<h2>Russia</h2>
+	</div>
+	<div class="selectmenu-content">
+	<a class="selectmenu-button" href="./?t=Russia_federal_council"><i class="fas fa-chevron-up"></i> <?php echo _("Federation Council") ?></a>
+	<a class="selectmenu-button" href="./?t=Russia_duma"><i class="fas fa-chevron-down"></i> <?php echo _("Duma") ?></a>
+	</div>
+</div>
+
 <!-- USA Maps -->
 <div id="mapmenu-usa" class="popup selectmenu">
 	<div class="selectmenu-header">
@@ -724,6 +731,7 @@ if($mobile) {
 	<a class="selectmenu-button" href="./?t=Italy_states"><img src="res/flags/ita.svg" height="20px"> <?php echo _("Italy") ?></a>
 	<a class="selectmenu-button" href="./?t=Ireland_dail_eireann"><img src="res/flags/ire.svg" height="20px"> <?php echo _("Ireland") ?></a>
 	<a class="selectmenu-button" onclick='displayCountryMenu("netherlands")'><img src="res/flags/ned.svg" height="20px"> <?php echo _("Netherlands") ?></a>
+	<a class="selectmenu-button" onclick='displayCountryMenu("russia")'><img src="res/flags/rus.svg" height="20px"> <?php echo _("Russia") ?></a>
 	<a class="selectmenu-button" href="./?t=Spain_congress_of_deputies"><img src="res/flags/esp.svg" height="20px"> <?php echo _("Spain") ?></a>
 	<!-- Add Turkey -->
 	<a class="selectmenu-button" href="./?t=UnitedKingdom_house_of_commons"><img src="res/flags/ukd.svg" height="20px"> <?php echo _("United Kingdom") ?></a>
@@ -796,13 +804,13 @@ if($mobile === false) {
 	<h2><?php echo _("Load From File") ?></h2>
 	</div>
 	<div class="selectmenu-content">
-	<a class="selectmenu-section"><?php echo _("Load-Menu-Message") ?></a>
-	<a class="selectmenu-section">
+	<div class="selectmenu-section"><?php echo _("Load-Menu-Message") ?></div>
+	<div class="selectmenu-section">
 	<form action="load.php" method="post" enctype="multipart/form-data">
-		<input type="file" name"file" id="loadfile">
+		<input type="file" name="file" id="loadfile">
 		<input type="button" value="<?php echo _("Load") ?>" onclick='loadFileMap()'>
 	</form>
-	</a>
+	</div>
 	</div>
 </div>
 
@@ -863,9 +871,17 @@ if($mobile === true) {
 				newWorker = reg.installing;
 				newWorker.addEventListener('statechange', () => {
 					switch(newWorker.state) {
-						case 'installed':
-						if(navigator.serviceWorker.controller) {
-							displayUpdateServiceWorker();
+					case 'installed':
+						console.log('updated');
+						//displayUpdateServiceWorker();
+						if(windowLoaded) {
+							console.log('SW: Direct Activate');
+							newWorker.postMessage('loaded'); 
+						} else {
+							console.log('SW: Defer Activate');
+							window.onload = function() {
+								newWorker.postMessage('loaded'); 
+							};
 						}
 
 						if(typeof gtag !== 'undefined') {
