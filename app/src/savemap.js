@@ -180,7 +180,8 @@ function saveMap_new(img, token) {
 		data['states'][state.name]['colorvalue'] = state.colorValue;
 		data['states'][state.name]['disabled'] = state.disabled;
 	}
-	
+
+	console.log(proportionalStates);
 	for(var stateIndex = 0; stateIndex < proportionalStates; ++stateIndex) {
 		var state = proportionalStates[stateIndex];
 		data['proportional'][state.name] = {};
