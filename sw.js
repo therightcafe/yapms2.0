@@ -1,6 +1,6 @@
-var scriptCache = 'd0.57.31';
-var indexCache = 'i0.57.33';
-var staticCache = 's0.57.33';
+var scriptCache = 'd0.58.0';
+var indexCache = 'i0.58.0';
+var staticCache = 's0.58.0';
 
 var _scriptCache = [
 	'./app/html/battlechart.html',
@@ -187,40 +187,43 @@ self.addEventListener('message', function(event) {
 });
 
 self.addEventListener('install', function(event) {
-	event.waitUntil(
-		caches.open(staticCache).then(function(cache) {
+	event.waitUntil(caches.has(staticCache).then(function(exists) {
+		if(exists === false) {
+			return caches.open(staticCache).then(function(cache) {
+				swLog(staticCache, 'installing');
+				return cache.addAll(_staticCache).then(function() {
+					for(var i = 1864; i < 2016; i += 4) {
+						cache.add('./app/res/presets/USA_' + i + '_presidential');
+					}
+					return cache;
+				});
+			})
+		}
+	}).then(caches.has(scriptCache).then(function(exists) {
+		if(exists === false) {
+			return caches.open(scriptCache).then(function(cache) {
+				swLog(scriptCache, 'installing');
+				return cache.addAll(_scriptCache);
+			})
+		}
+	})).then(caches.has(indexCache).then(function(exists) {
+		if(exists ===  false) {
+			return caches.open(indexCache).then(function(cache) {
+				swLog(indexCache, 'installing');
+				return cache.addAll(_indexCache).then(function() {
+					for(var i = 1864; i < 2016; i += 4) {
+						cache.add('./app/?t=USA_' + i + '_presidential');
+					}
+					return cache;
+				});
+			})
+		}
+	})).then(function() {
+		return caches.open(staticCache).then(function(cache) {
 			swLog('flycatch', 'installing');
-			return cache.addAll([
-			]);
-		}));
-	event.waitUntil(
-		caches.open(staticCache).then(function(cache) {
-			swLog(staticCache, 'installing');
-			return cache.addAll(_staticCache).then(function() {
-				for(var i = 1864; i < 2016; i += 4) {
-					cache.add('./app/res/presets/USA_' + i + '_presidential');
-				}
-
-				return cache;
-			});
-		}));
-	event.waitUntil(
-		caches.open(scriptCache).then(function(cache) {
-			swLog(scriptCache, 'installing');
-			return cache.addAll(_scriptCache);
-		})
-	);
-	event.waitUntil(
-		caches.open(indexCache).then(function(cache) {
-			swLog(indexCache, 'installing');
-			return cache.addAll(_indexCache).then(function() {
-				for(var i = 1864; i < 2016; i += 4) {
-					cache.add('./app/?t=' + i + '_presidential');
-				}
-				return cache;
-			});
-		})
-	);
+			return cache.addAll([]);
+		});
+	}));
 });
 
 // first see if request is in cache, then check web
