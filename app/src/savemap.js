@@ -153,6 +153,7 @@ function saveMap_new(img, token) {
 	data['updatetext'] = mapOptions.updateText;
 	data['candidates'] = {};
 	data['states'] = {};
+	data['proportional'] = {};
 
 	var formData = new FormData();
 	console.log('token: ' + token);
