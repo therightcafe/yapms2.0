@@ -1,4 +1,4 @@
-var currentCache = 'v0.58.2';
+var currentCache = 'v0.58.3';
 
 var windowLoaded = false;
 
@@ -142,7 +142,8 @@ window.onerror = function(message, source, lineno, colno, error) {
 		console.log('Error');
 		gtag('event', 'error', {
 			'event_category': 'error',
-			'event_label': message + ', ' + source + ', ' + lineno + ', ' + currentCache
+			'event_label': message + ', ' + source + ', ' + lineno + ', ' + currentCache,
+			'non_interaction': true
 		});
 	}
 }

@@ -528,7 +528,8 @@ function loadSavedMap_new(data) {
 		
 		gtag('event', 'load', {
 			'event_category': 'load_map',
-			'event_label': 'loaded saved map new version ' + currentCache
+			'event_label': 'loaded saved map new version ' + currentCache,
+			'non_interaction': true
 		});
 	}});
 }
@@ -625,7 +626,8 @@ function loadSavedMap_old(data, options) {
 		
 		gtag('event', 'load', {
 			'event_category': 'load_map',
-			'event_label': 'loaded saved map old version ' + currentCache
+			'event_label': 'loaded saved map old version ' + currentCache,
+			'non_interaction': true
 		});
 	}
 		,
