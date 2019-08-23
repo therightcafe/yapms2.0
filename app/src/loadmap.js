@@ -521,7 +521,7 @@ function loadSavedMap_new(data) {
 		console.log(obj);
 		for(var stateName in obj.proportional) {
 			var stateData = obj.proportional[stateName];
-			var state = proportional.filter(state => state.name === stateName)[0];
+			var state = proportionalStates.filter(state => state.name === stateName)[0];
 			state.setVoteCount(stateData['votecount'], obj['updatetext']);
 			state.setColor(stateData['candidate'], stateData['colorvalue']);
 			state.delegates = stateData['delegates'];
