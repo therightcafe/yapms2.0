@@ -518,7 +518,7 @@ function loadSavedMap_new(data) {
 			//}
 		}
 
-		console.log(obj.proportional);
+		console.log(obj);
 		for(var stateName in obj.proportional) {
 			var stateData = obj.proportional[stateName];
 			var state = proportional.filter(state => state.name === stateName)[0];

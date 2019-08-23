@@ -1,5 +1,5 @@
-var scriptCache = 'd0.58.8';
-var indexCache = 'i0.58.8';
+var scriptCache = 'd0.58.9';
+var indexCache = 'i0.58.9';
 var staticCache = 's0.58.7';
 
 var _scriptCache = [
