@@ -68,6 +68,11 @@
 	border-bottom: 1px solid #cccccc;
 }
 
+.sidebar-hover-popup {
+	margin: 0px;
+	padding: 0px;
+}
+
 .sidebar-hover-popup .tooltip-text {
 	position: absolute;
 	visibility: hidden;

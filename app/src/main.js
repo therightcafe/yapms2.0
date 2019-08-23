@@ -1,4 +1,6 @@
-var currentCache = 'v0.55.3';
+var currentCache = 'v0.58.0';
+
+var windowLoaded = false;
 
 var cookies = {};
 
@@ -202,6 +204,21 @@ function initData(dataid) {
 		}
 	}
 
+	/*
+	var proportionalElements = document.getElementById('proportional').children;
+	if(proportionalElements) {
+		for(var index = 0, length = proportionalElements.length; index < length; ++index) {
+			var element = proportionalElements[index];
+			element.setAttribute('style', 'inherit');
+			var name = element.getAttribute('id');
+			var state = new State(name, element, dataid);
+			states.push(state);
+			element.setAttribute('onclick', 'stateClickPaintProportional(states["' + 
+				(states.length - 1) + '"])');
+		}
+	}
+	*/
+
 	/* Special Elections for Senate */
 	var special = document.getElementById('special');
 	var specialChildren;
@@ -260,6 +277,10 @@ function initChart() {
 				var legendColorDiv = document.createElement('div');
 				legendColorDiv.setAttribute('class', 'legend-color-div');
 				legendElement.appendChild(legendColorDiv);
+			
+				if(candidate.singleColor) {
+					legendColorDiv.style.display = 'none';
+				}
 
 				if((key === 'Republican' || key === 'Democrat')
 					&& mapYear === '2020' && 
@@ -323,7 +344,6 @@ function initChart() {
 			legendText.style.padding = '0px';
 			legendText.innerHTML = 'Select a candidate';
 			legendTooltip.appendChild(legendText);
-			
 
 		},
 		// do not display the build in legend for the chart
@@ -535,7 +555,6 @@ function setEC(e) {
 }
 
 function rebuildChart() {
-
 	var html = document.getElementById('chart-canvas');
 	var ctx = html.getContext('2d');
 	//var type = chart.config.type;
@@ -553,7 +572,6 @@ function rebuildChart() {
 	}
 
 	updateChart();
-
 }
 
 function toggleLegendCounter() {
@@ -789,7 +807,12 @@ function verifyMap() {
 			} else if(state.getCandidate() === 'Tossup') {
 				state.setColor('Tossup', 2);	
 			}else {
-				state.setColor(state.getCandidate(), state.getColorValue());
+				var candidate = candidates[state.getCandidate()];
+				if(candidate.singleColor === true) {
+					state.setColor(state.getCandidate(), 0);
+				} else {
+					state.setColor(state.getCandidate(), state.getColorValue());
+				}
 			}
 		}
 	});
@@ -1281,13 +1304,10 @@ function start() {
 		loadPreset("classic");
 		loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open", {updateText: true, voters: 'usa_voting_pop', enablePopularVote: true});
 	}
+}
 
-	var link = document.createElement('link');
-	link.rel = 'stylesheet';
-	link.href = './res/fontawesome/css/all.min.css';
-	link.type = 'text/css';
-	var ogLink = document.getElementsByTagName('link')[0];
-	ogLink.parentNode.insertBefore(link, ogLink);
+window.onload = function() {
+	windowLoaded = true;
 }
 
 start();
