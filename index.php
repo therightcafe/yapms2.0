@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="description" content="United States Presidential, Senate, House, Governors and Primary interactive election maps. United Kingdom, Canada, Germany election maps.">
-	<meta name="keywords" content="Map,Election,Political,Interactive,Simulator,Electoral,270,2020,Forecast,Historical">
+	<meta name="keywords" content="Map,Election,Political,Interactive,Simulator,Electoral,270,2020,Forecast,Historical,270towin,Voting,Vote,FiveThirtyEight">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<meta property="og:title" content="YAPms - Yet Another Political Map Simulator">
@@ -81,8 +81,6 @@
 		</div>
         
         <br>
-        
-        <h1>YAPms on:</h1>
 
 		<a href="https://play.google.com/store/apps/details?id=com.fishstudio.yapms&hl=en_GB">
 			<div class="infobox link android">
@@ -103,7 +101,7 @@
 		</a>
 	</div>
 	<hr>
-	<h1> United States maps </h1>
+	<h1> United States Maps </h1>
 
 	<div class="map-type-box">	
 	<div class="map-type-header">
@@ -255,14 +253,11 @@
 
 	<br>
 	<hr>
-	<h1> United States historical maps </h1>
+	<h1> United States Historical Maps </h1>
 
 	<div class="map-type-box">
 	<div class="map-type-header">
-		<img src="app/res/flags/usa.svg" height="20px"> <i class="fas fa-user"></i> Historical Presidential
-	</div>
-	<div class="map-type-header">
-		Post - WW2
+		<img src="app/res/flags/usa.svg" height="20px"> Presidential - Post-WW2
 	</div>
 	<div>	
 		<a href="./app/?t=USA_2016_presidential">
@@ -285,12 +280,12 @@
 				2004
 			</div>
 		</a>
-		<br>
 		<a href="./app/?t=USA_2000_presidential">
 			<div class="map-button">
 				2000
 			</div>
 		</a>
+		<br>
 		<a href="./app/?t=USA_1996_presidential">
 			<div class="map-button">
 				1996
@@ -311,12 +306,12 @@
 				1984
 			</div>
 		</a>
-		<br>
 		<a href="./app/?t=USA_1980_presidential">
 			<div class="map-button">
 				1980
 			</div>
 		</a>
+		<br>
 		<a href="./app/?t=USA_1976_presidential">
 			<div class="map-button">
 				1976
@@ -337,12 +332,12 @@
 				1964
 			</div>
 		</a>
-		<br>
 		<a href="./app/?t=USA_1960_presidential">
 			<div class="map-button">
 				1960
 			</div>
 		</a>
+		<br>
 		<a href="./app/?t=USA_1956_presidential">
 			<div class="map-button">
 				1956
@@ -368,7 +363,7 @@
 
 	<div class="map-type-box">
 	<div class="map-type-header">
-		USA - Pre WW2
+		<img src="app/res/flags/usa.svg" height="20px"> Presidential - Pre-WW2
 	</div>
 	<div>
 		<a href="./app/?t=USA_1940_presidential">
@@ -473,50 +468,32 @@
 			<div class="map-button">
 				1864
 			</div>
-		</a><!--
-
-	ADD 1860 HERE
-
-	--><br>
+		</a>
 	</div>
     </div>
-	<div class="map-type-box">
-	<div class="map-type-header">
-		Pre - Civil War
-	</div>
-	<div>To be added...<!--
-
-	ADD ELECTIONS HERE
-
-	-->
-	</div>
-	</div>
 
 	<div class="map-type-box">
 	<div class="map-type-header">
-		<img src="app/res/flags/usa.svg" height="20px"> <i class="fas fa-border-all"></i> Historical Counties
+		<img src="app/res/flags/usa.svg" height="20px"> Presidential Counties
 	</div>
 		
 		<a href="./app/?t=2016_presidential_county">
 			<div class="map-button">
-				<i class="fas fa-user"></i> 2016 Presidential
+				2016
 			</div>
 		</a>
-			
-		<br>
 		
 		<a href="./app/?t=2012_presidential_county">
 			<div class="map-button">
-				<i class="fas fa-user"></i> 2012 Presidential
+				2012
 			</div>
 		</a>
 		
-	</div>
 	</div>
 
 	<div class="map-type-box">
 	<div class="map-type-header">
-		<img src="app/res/flags/usa.svg" height="20px"> Historical Open Maps
+		<img src="app/res/flags/usa.svg" height="20px"> Open Maps
 	</div>
 		
 		<a href="./app/?t=USA_congressional">
@@ -534,11 +511,10 @@
 		</a>
 		
 	</div>
-	</div>
 
 	<br>
 	<hr>
-	<h1> Other countries maps </h1>
+	<h1> Other Countries Maps </h1>
 	
 	<div class="map-type-box">
 	<div class="map-type-header">
@@ -694,7 +670,7 @@
 	</div>
 	
 	<hr>
-	<h1> Trans-national maps </h1>
+	<h1> Trans-National Maps </h1>
 	
 	<div class="map-type-box">
 	<div class="map-type-header"> Joined countries
