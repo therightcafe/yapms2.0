@@ -1,4 +1,4 @@
-var currentCache = 'v0.58.7';
+var currentCache = 'v0.58.15';
 
 var windowLoaded = false;
 
@@ -795,6 +795,33 @@ function verifyPaintIndex() {
 function verifyMap() {
 	states.forEach(function(state) {
 		//state.verifyDisabledColor();
+		state.verifyTossupColor();
+		if(typeof candidates[state.candidate] === 'undefined') {
+			// if the current color is out of bounds set it to white
+			state.setColor('Tossup', tossupColor);
+		} else { 
+			// the candidate the state thinks its controled by
+			var currentCandidate = state.getCandidate();
+			// the candidate the state should be controle by
+			var shouldCandidate = candidates[state.getCandidate()].name;
+
+			// if these values differ, change the state to tossup
+			if(currentCandidate !== shouldCandidate) {
+				state.setColor('Tossup', tossupColor);
+			} else if(state.getCandidate() === 'Tossup') {
+				state.setColor('Tossup', 2);	
+			}else {
+				var candidate = candidates[state.getCandidate()];
+				if(candidate.singleColor === true) {
+					state.setColor(state.getCandidate(), 0);
+				} else {
+					state.setColor(state.getCandidate(), state.getColorValue());
+				}
+			}
+		}
+	});
+
+	proportionalStates.forEach(function(state) {
 		state.verifyTossupColor();
 		if(typeof candidates[state.candidate] === 'undefined') {
 			// if the current color is out of bounds set it to white

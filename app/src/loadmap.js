@@ -319,18 +319,6 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year, options) {
 				options.onLoad();
 			}
 
-			if(options.states) {
-				for(var stateIndex = 0, length = options.states.length; stateIndex < length; ++stateIndex) {
-					var state = states[stateIndex];
-					var optionState = options.states[stateIndex];
-					state.setVoteCount(optionState.voteCount, true);
-					state.setColor(optionState.candidate, optionState.colorValue);
-				}
-				countVotes();
-				updateChart();
-				updateLegend();
-			}
-
 			if(options.voters) {
 				for(var stateIndex = 0, length = states.length; stateIndex < length; ++stateIndex) {
 					var state = states[stateIndex];

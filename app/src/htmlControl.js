@@ -510,6 +510,12 @@ function setMapStyle(color, strokeWidth) {
 	outlines.style.stroke = color;
 	outlines.style.strokeWidth = strokeWidth * strokeMultiplier;
 
+	var proportional = document.getElementById('proportional');
+	if(proportional) {
+		proportional.style.stroke = color;
+		proportional.style.strokeWidth = strokeWidth * strokeMultiplier;
+	}
+
 	var special = document.getElementById('special');
 	if(special != null) {
 		special.style.stroke = color;

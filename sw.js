@@ -1,6 +1,6 @@
-var scriptCache = 'd0.58.13';
-var indexCache = 'i0.58.13';
-var staticCache = 's0.58.7';
+var scriptCache = 'd0.58.15';
+var indexCache = 'i0.58.15';
+var staticCache = 's0.58.15';
 
 var _scriptCache = [
 	'./app/html/battlechart.html',
