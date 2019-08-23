@@ -1,4 +1,4 @@
-var currentCache = 'v0.58.3';
+var currentCache = 'v0.58.5';
 
 var windowLoaded = false;
 
@@ -7,6 +7,7 @@ var cookies = {};
 var states = [];
 var lands = [];
 var buttons = [];
+var proportionalStates = [];
 
 // data for the chart
 var chart;
@@ -205,20 +206,19 @@ function initData(dataid) {
 		}
 	}
 
-	/*
-	var proportionalElements = document.getElementById('proportional').children;
-	if(proportionalElements) {
+	var proportional = document.getElementById('proportional');
+	if(proportional) {
+		var proportionalElements = proportional.children;
 		for(var index = 0, length = proportionalElements.length; index < length; ++index) {
 			var element = proportionalElements[index];
 			element.setAttribute('style', 'inherit');
 			var name = element.getAttribute('id');
 			var state = new State(name, element, dataid);
-			states.push(state);
-			element.setAttribute('onclick', 'stateClickPaintProportional(states["' + 
-				(states.length - 1) + '"])');
+			proportionalStates.push(state);
+			element.setAttribute('onclick', 'stateClickPaintProportional(proportionalStates["' + 
+				(proportionalStates.length - 1) + '"])');
 		}
 	}
-	*/
 
 	/* Special Elections for Senate */
 	var special = document.getElementById('special');
@@ -471,6 +471,9 @@ function setDelegates(e) {
 	e.parentElement.style.display = '';
 	var stateid = document.getElementById('demdel-state-name').value;
 	var state = states.find(state => state.name === stateid);
+	if(!state) {
+		state = proportionalStates.find(state => state.name === stateid);
+	}
 	// keep the total delegates
 	var total = state.voteCount;
 	for(var key in candidates) {
@@ -881,6 +884,21 @@ function countVotes() {
 					candidate.voteCount += state.voteCount;
 					candidate.probVoteCounts[state.colorValue] += state.voteCount;
 				}
+			}
+
+			for(var stateIndex = 0, length = proportionalStates.length; stateIndex < length; ++stateIndex) {
+				var state = proportionalStates[stateIndex];
+				if(typeof state.delegates === 'undefined') {
+					state.delegates = {};
+				}
+				if(typeof state.delegates[key] === 'undefined') {
+					state.delegates[key] = 0;
+					if(key === 'Tossup') {
+						state.delegates[key] = state.voteCount;	
+					}
+				}
+				candidate.voteCount += state.delegates[key];
+				candidate.probVoteCounts[0] += state.delegates[key];
 			}
 
 			if(mid !== null) {

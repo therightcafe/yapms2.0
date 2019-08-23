@@ -518,6 +518,17 @@ function loadSavedMap_new(data) {
 			//}
 		}
 
+		for(var stateName in obj.proportionalStates) {
+			var stateData = obj.proportionalStates[stateName];
+			var state = proportionalStates.filter(state => state.name === stateName)[0];
+			state.setVoteCount(stateData['votecount'], obj['updatetext']);
+			state.setColor(stateData['candidate'], stateData['colorvalue']);
+			state.delegates = stateData['delegates'];
+			if(stateData['disabled']) { 
+				state.toggleDisable();
+			}
+		}
+
 		countVotes();
 		updateLegend();
 		updateChart();

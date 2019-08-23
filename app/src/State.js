@@ -39,8 +39,13 @@ class State {
 			this.setVoteCount(2, false);
 			this.voteCount_beforeDisable = 2;
 		} else if(this.dataid === 'duma') {
-			this.setVoteCount(1, false);
-			this.voteCount_beforeDisable = 1;
+			if(this.name === 'Russia') {
+				this.setVoteCount(225, false);
+				this.voteCount_beforeDisable = 225;
+			} else {
+				this.setVoteCount(1, false);
+				this.voteCount_beforeDisable = 1;
+			}
 		} else {
 			this.setVoteCount(data[this.dataid][this.name], false);
 			this.voteCount_beforeDisable = data[this.dataid][this.name];

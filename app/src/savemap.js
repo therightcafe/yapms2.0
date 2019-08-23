@@ -48,6 +48,23 @@ function saveMap(img, token) {
 	formData.append("states", JSON.stringify({
 		state_data: stateData
 	}));
+
+	var proportionalData = [];
+	for(var stateIndex = 0; stateIndex < proportionalStates; ++stateIndex) {
+		var state = proportionalStates[stateIndex];
+		var obj = {
+			name: state.name,
+			candidate: state.candidate,
+			delegates: state.delegates,
+			voteCount: state.voteCount,
+			colorValue: state.colorValue,
+			disabled: state.disabled
+		};
+	}
+	formData.append("proportionalStates", JSON.stringify({
+		proportional_data: proportionalData
+	}));
+
 	$.ajax({
 		url: "./savemap_simple.php",
 		type: "POST",
