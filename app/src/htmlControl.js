@@ -80,7 +80,7 @@ function displayNotification(title, text) {
 function displayShare() {
 	closeAllPopups();
 	var share = document.getElementById('share');
-	share.style.display = 'inline';
+	share.style.display = 'flex';
 
 	var downloadbtn = document.getElementById('downloadbutton');
 	if(downloadbtn) {
