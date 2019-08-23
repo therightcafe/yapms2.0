@@ -79,24 +79,26 @@
 				<i class="fas fa-envelope-open-text"></i> <a style="color:blue;" href="mailto:bugreport@yapms.com">bugreport@yapms.com</a> 
 			</p>
 		</div>
-		
-		<br>
+        
+        <br>
+        
+        <h1>YAPms on:</h1>
 
 		<a href="https://play.google.com/store/apps/details?id=com.fishstudio.yapms&hl=en_GB">
 			<div class="infobox link android">
-				<b><i class="fab fa-android"></i></b> Download Android App
+				<b><i class="fab fa-android"></i></b> Android
 			</div>
 		</a>
 
 		<a href="https://discord.gg/WQh5fHU">
 			<div class="infobox link">
-				<i class="fab fa-discord"></i> Join Our Discord
+				<i class="fab fa-discord"></i> Discord
 			</div>
 		</a>
 		
 		<a href="https://www.reddit.com/r/YAPms/">
 			<div class="infobox link reddit">
-				<i class="fab fa-reddit"></i> Yapms Subreddit
+				<i class="fab fa-reddit"></i> Reddit
 			</div>
 		</a>
 	</div>
