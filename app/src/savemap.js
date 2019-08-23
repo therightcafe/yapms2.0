@@ -181,8 +181,7 @@ function saveMap_new(img, token) {
 		data['states'][state.name]['disabled'] = state.disabled;
 	}
 
-	console.log(proportionalStates);
-	for(var stateIndex = 0; stateIndex < proportionalStates; ++stateIndex) {
+	for(var stateIndex = 0; stateIndex < proportionalStates.length; ++stateIndex) {
 		var state = proportionalStates[stateIndex];
 		data['proportional'][state.name] = {};
 		data['proportional'][state.name]['candidate'] = state.candidate;
