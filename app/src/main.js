@@ -1,4 +1,4 @@
-var currentCache = 'v0.52.5';
+var currentCache = 'v0.55.3';
 
 var cookies = {};
 
@@ -102,6 +102,21 @@ function share() {
 			svg.setAttribute('width', mapdiv.offsetWidth);
 			svg.setAttribute('height', mapdiv.offsetHeight);
 		}
+		var notification = clone.getElementById('legend-tooltip');
+		if(notification) {
+			notification.style.display = 'none';
+		}
+		var editButtons = clone.getElementsByClassName('legend-delete');
+		for(var index = 0, length = editButtons.length; index < length; ++index) {
+			var element = editButtons[index];
+			if(element) {
+				element.style.display = 'none';
+			}
+		}
+		var addCandidate = clone.getElementById('legend-addcandidate-button');
+		if(addCandidate) {
+			addCandidate.style.display = 'none';
+		}
 	}}).then(function(canvas) {
 		notification.appendChild(canvas);
 		canvas.style.width = 0;
@@ -113,7 +128,8 @@ function share() {
 		i.src = img;
 		i.style.width = '40vw';
 		i.style.height = 'auto';
-		saveMap(img, token);
+		//saveMap(img, token);
+		saveMap_new(img, token);
 	});
 	});
 }
@@ -154,7 +170,7 @@ function initData(dataid) {
 		htmlElement.setAttribute('style', 'inherit');
 		var name = htmlElement.getAttribute('id');
 		if(name === null || name.includes('*lines*') || name.includes("*ignore*") ||
-			name.includes("_ignore_") || name.includes('othertext')) {
+			name.includes("_ignore_") || name.includes('othertext') || name === 'text') {
 			// do nothing with it paths that
 			// have these ids
 		} else if(name.includes('-button')) {
@@ -611,15 +627,38 @@ function setLanguage(language) {
 	}
 }
 
+function setLockMap(set) {
+	var lockButton = document.getElementById('lockbutton');
+	if(set === true) {
+		if(lockButton) {
+			lockButton.style.opacity = '0.5';
+		}
+		panObject.disablePan();
+		panObject.disableZoom();
+		lockedMap = true;
+	} else {
+		if(lockButton) {
+			lockButton.style.opacity = '1';
+		}
+		panObject.enablePan();
+		panObject.enableZoom();
+		lockedMap = false;
+	}
+}
+
 function toggleLockMap() {
 	var lockButton = document.getElementById('lockbutton');
 	if(lockedMap) {
-		lockButton.style.opacity = '1';
+		if(lockButton) {
+			lockButton.style.opacity = '1';
+		}
 		panObject.enablePan();
 		panObject.enableZoom();
 		lockedMap = false;
 	} else {
-		lockButton.style.opacity = '0.5';
+		if(lockButton) {
+			lockButton.style.opacity = '0.5';
+		}
 		panObject.disablePan();
 		panObject.disableZoom();
 		lockedMap = true;
@@ -655,7 +694,8 @@ function setMode(set) {
 	}
 
 	if(mapType === 'senatorial') {
-		if(set === 'delete' || set === 'ec') {
+		//if(set === 'delete' || set === 'ec') {
+		if(set === 'ec') {
 			title.innerHTML = 'Sorry';
 			message.innerHTML = 'This mode is not available while editing a senatorial map';
 			notification.style.display = 'inline';
@@ -666,19 +706,10 @@ function setMode(set) {
 	}
 
 	if(mapType === 'congressional') {
-		if(set === 'delete' || set === 'ec') {
+		//if(set === 'delete' || set === 'ec') {
+		if(set === 'ec') {
 			title.innerHTML = 'Sorry';
 			message.innerHTML = 'This mode is not available while editing a congressional map';
-			notification.style.display = 'inline';
-			console.log('denied');
-			return;
-		}
-	}
-
-	if(mapType === 'primary') {
-		if(set === 'delete') {
-			title.innerHTML = 'Sorry';
-			message.innerHTML = 'This mode is not available while editing a proportional map';
 			notification.style.display = 'inline';
 			console.log('denied');
 			return;
@@ -771,6 +802,7 @@ function verifyMap() {
 // sets all states to white
 function clearMap() {
 	loadMap(loadConfig.filename, loadConfig.fontsize, loadConfig.strokewidth, loadConfig.dataid, loadConfig.type, loadConfig.year, {updateText: mapOptions.updateText});
+	setLockMap(false);
 }
 
 // iterate over each state and delegate votes to the candidate
@@ -1186,8 +1218,10 @@ function start() {
 	loadCookies();
 
 	if(php_load_map === true) {
+		console.log('Save Search - yapms.org');
 		$.ajax({
-			url: "./maps/" + php_load_map_id + '.txt',
+			//url: './maps/' + php_load_map_id + '.txt',
+			url: 'https://yapms.org/maps/' + php_load_map_id + '.txt',
 			type: "POST",
 			success: function(data) {
 				console.log("Map Load: Found saved map");
@@ -1200,6 +1234,33 @@ function start() {
 				}
 			},
 			error: function(a, b, c) {
+				console.log('Save Search - yapms.com');
+				$.ajax({
+					url: 'https://www.yapms.com/app/maps/' + php_load_map_id + '.txt',
+					type: "POST",
+					success: function(data) {
+						console.log("Map Load: Found saved map");
+						try {
+							console.log('Map Load: Attemping new file load');
+							loadSavedMap_new(data);
+						} catch(e) {
+							console.log('Map Load: Attemping old file load');
+							loadSavedMap_old(data);
+						}
+					},
+					error: function(a, b, c) {
+						console.log("Map Load: Did not find saved map");
+						loadMap('./res/usa_presidential.svg', 16, 1, 'usa_ec',"presidential", "open", {updateText: true});
+
+						var notification = document.getElementById('notification');
+						var message = notification.querySelector('#notification-message');
+						var title = notification.querySelector('#notification-title');
+						title.innerHTML = 'Sorry';
+						message.innerHTML = 'The map you are looking for does not exist.<br><br>This feature is still in development and it may have been deleted.';
+						notification.style.display = 'inline';
+					}
+				});
+				/*
 				console.log("Map Load: Did not find saved map");
 				loadMap('./res/usa_presidential.svg', 16, 1, 'usa_ec',"presidential", "open", {updateText: true});
 
@@ -1209,6 +1270,7 @@ function start() {
 				title.innerHTML = 'Sorry';
 				message.innerHTML = 'The map you are looking for does not exist.<br><br>This feature is still in development and it may have been deleted.';
 				notification.style.display = 'inline';
+				*/
 			}
 		});
 

@@ -8,7 +8,7 @@ class State {
 		this.candidate = 'Tossup';
 		this.dataid = dataid;
 		this.voteCount = 0;
-		this.voteCount_beforeDisable;
+		this.voteCount_beforeDisable = 0;
 		this.resetVoteCount();
 		this.disabled = false;
 		this.locked = false;
@@ -18,27 +18,27 @@ class State {
 	}
 
 	resetVoteCount() {
-		//totalVotes -= this.voteCount;
-		//
 		if(this.dataid === 'congressional' ||
 			this.dataid === 'usa_gubernatorial') {
 			this.setVoteCount(1, false);
-			//this.voteCount = 1;
+			this.voteCount_beforeDisable = 1;
 		} else if(this.dataid === 'senate') {
 			this.setVoteCount(2, false);
-			//this.voteCount = 2;
+			this.voteCount_beforeDisable = 2;
 		} else if(this.dataid === 'ltesenate') {
 			this.setVoteCount(1, false);
-			//this.voteCount = 1;	
+			this.voteCount_beforeDisable = 1;
 		} else if(this.dataid === 'dem_primary' ||
 				this.dataid === 'rep_primary') {
 			this.setVoteCount(data[this.dataid][this.name], false);
+			this.voteCount_beforeDisable = data[this.dataid][this.name];
 		}else if(this.dataid === 'usa_1972_ec') {
 			this.setVoteCount(data[this.dataid][this.name], true);
+			this.voteCount_beforeDisable = data[this.dataid][this.name];
 		} else {
 			this.setVoteCount(data[this.dataid][this.name], false);
+			this.voteCount_beforeDisable = data[this.dataid][this.name];
 		}
-		//totalVotes += this.voteCount;
 	}
 
 	getCandidate() { 
@@ -186,7 +186,6 @@ class State {
 		}
 
 		if(this.disabled == false) {
-			this.voteCount_beforeDisable = this.voteCount;
 			this.setVoteCount(0, save_type === "presidential");
 			this.setColor('Tossup', 2);
 
@@ -195,11 +194,14 @@ class State {
 			this.htmlElement.setAttribute('fill-opacity', '0.25');
 			this.htmlElement.setAttribute('stroke-opacity', '0.25');
 			if(this.name.includes('-S')) {
-				this.htmlElement.style.visibility = 'hidden';
+	//			this.htmlElement.style.visibility = 'hidden';
 			}
-			var stateText = document.getElementById(this.name + '-text');
-			if(stateText !== null) {
-				stateText.setAttribute('fill-opacity', '0.25');
+		
+			if(save_type !== 'senatorial') {
+				var stateText = document.getElementById(this.name + '-text');
+				if(stateText !== null) {
+					stateText.setAttribute('fill-opacity', '0.25');
+				}
 			}
 
 			var land = document.getElementById(this.name + '-land');
@@ -214,14 +216,17 @@ class State {
 				button.setAttribute('stroke-opacity', '0.25');
 			}
 
-			var stateLandText = document.getElementById(this.name.split("-")[0] + '-text');
-			if(stateLandText !== null) {
-				stateLandText.setAttribute('fill-opacity', '0.25');
+			if(save_type !== 'senatorial') {
+				var stateLandText = document.getElementById(this.name.split("-")[0] + '-text');
+				if(stateLandText !== null) {
+					stateLandText.setAttribute('fill-opacity', '0.25');
+				}
 			}
 
 		} else if(this.disabled == true) {
 			this.resetVoteCount();
 			this.setVoteCount(this.voteCount, save_type === "presidential");
+			//this.setVoteCount(this.voteCount_beforeDisable, save_type === "presidential");
 			this.disabled = !this.disabled;
 			this.setColor(this.getCandidate(), this.getColorValue());
 			this.htmlElement.setAttribute('fill-opacity', '1.0');

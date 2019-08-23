@@ -60,6 +60,9 @@ function loadPreset(value) {
 		case 'brazil':
 			loadPresetBrazil();
 			break;
+		case 'ireland':
+			loadPresetIreland();
+			break;
 	}
 	
 	verifyMap();
@@ -464,4 +467,35 @@ function loadPresetBrazil() {
 	candidates['PROS'] = pros;
 	candidates['AVANTE'] = avante;
 	//candidates['PV'] = pv;
+}
+
+function loadPresetIreland() {
+	var finegael= new Candidate('FG',
+		['#6699FF','#6699FF','#6699FF','#6699FF']);
+	var fiannafail = new Candidate('FF',
+		['#66BB66','#66BB66','#66BB66','#66BB66']);
+	var sinnfein = new Candidate('SF',
+		['#326760','#326760','#326760','#326760']);
+	var labour = new Candidate('Lab',
+		['#CC0000','#CC0000','#CC0000','#CC0000']);
+	var aaapbp = new Candidate('AAA-PBP',
+		['#E5E500','#E5E500','#E5E500','#E5E500']);
+	var inds4change = new Candidate('I4C',
+		['#FFC0CB','#FFC0CB','#FFC0CB','#FFC0CB']);
+	var socialdemocrats = new Candidate('SD',
+		['#752F8B','#752F8B','#752F8B','#752F8B']);
+	var green = new Candidate('GP',
+		['#99CC33','#99CC33','#99CC33','#99CC33']);
+	var indy = new Candidate('Ind',
+		['#CCCCCC','#CCCCCC','#CCCCCC','#CCCCCC']);
+
+	candidates['FG'] = finegael;
+	candidates['FF'] = fiannafail;
+	candidates['SF'] = sinnfein;
+	candidates['Lab'] = labour;
+	candidates['AAA-PBP'] = aaapbp;
+	candidates['I4C'] = inds4change;
+	candidates['SD'] = socialdemocrats;
+	candidates['GP'] = green;
+	candidates['Ind'] = indy;
 }

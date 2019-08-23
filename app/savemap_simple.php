@@ -47,38 +47,7 @@ if($file) {
 
 $file = fopen("./maps/" . $filename . '.txt', 'w');
 if($file) {
-	$data;
-	$data['filename'] = $_POST['filename'];
-	$data['fontsize'] = $_POST['fontsize'];
-	$data['strokewidth'] = $_POST['strokewidth'];
-	$data['dataid'] = $_POST['dataid'];
-	$data['type'] = $_POST['type'];
-	$data['year'] = $_POST['year'];
-	$data['updatetext'] = $_POST['updateText'] === 'true';
-
-	$candidate_data = json_decode($_POST["candidates"], true);
-
-	foreach($candidate_data["candidate_data"] as $candidate) {
-		if($v["name"] !== "Tossup") {
-			$data['candidates'][$candidate['name']]['solid'] = $candidate['solid'];
-			$data['candidates'][$candidate['name']]['likely'] = $candidate['likely'];
-			$data['candidates'][$candidate['name']]['lean'] = $candidate['lean'];
-			$data['candidates'][$candidate['name']]['tilt'] = $candidate['tilt'];
-		}
-	}
-
-	$state_data = json_decode($_POST["states"], true);
-
-	foreach($state_data["state_data"] as $state) {
-		$v["candidate"] = str_replace(' ', '%', $v["candidate"]);
-		$data['states'][$state['name']]['candidate'] = $state['candidate'];
-		$data['states'][$state['name']]['colorvalue'] = $state['colorValue'];
-		$data['states'][$state['name']]['delegates'] = $state['delegates'];
-		$data['states'][$state['name']]['votecount'] = $state['voteCount'];
-		$data['states'][$state['name']]['disabled'] = $state['disabled'];
-	}
-	
-	fwrite($file, json_encode($data));
+	fwrite($file, $_POST["data"]);
 	fclose($file);
 	echo 'https://www.yapms.com/app/?m=' . $filename . ' ';
 	echo $filename;

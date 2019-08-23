@@ -53,17 +53,19 @@
 			echo '<script>var mobile = false</script>';
 		};
 
-		if(isset($_GET["m"]) && !empty($_GET["m"]) &&
-			is_numeric($_GET["m"])) {
+		if(isset($_GET["m"]) && !empty($_GET["m"])) {
 			echo '<script>' .
 				'var php_load_map = true;' .
 				'var php_load_type_map = false;' .
-				'var php_load_map_id = '.$_GET["m"].';' .
+				'var php_load_map_id = "' .$_GET["m"] . '";' .
 				'</script>';	
 
-			echo '<meta property="og:image" content="http://www.yapms.com/app/maps/' . $_GET["m"] . '.png">';
-			echo '<meta property="og:image:secure_url" content="https://www.yapms.com/app/maps/' . $_GET["m"] . '.png">';
-			echo '<meta name="twitter:image" content="https://www.yapms.com/app/maps/' . $_GET["m"] . '.png">';
+			//echo '<meta property="og:image" content="https://www.yapms.com/app/maps/' . $_GET["m"] . '.png">';
+			//echo '<meta property="og:image:secure_url" content="https://www.yapms.com/app/maps/' . $_GET["m"] . '.png">';
+			//echo '<meta name="twitter:image" content="https://www.yapms.com/app/maps/' . $_GET["m"] . '.png">';
+			echo '<meta property="og:image" content="http://yapms.org/maps/' . $_GET["m"] . '.png">';
+			echo '<meta property="og:image:secure_url" content="https://yapms.org/maps/' . $_GET["m"] . '.png">';
+			echo '<meta name="twitter:image" content="https://yapms.org/maps/' . $_GET["m"] . '.png">';
 		} else if(isset($_GET["t"]) && !empty($_GET["t"])) {
 			echo '<script>' .
 				'var php_load_map = false;' .
@@ -75,7 +77,7 @@
 			echo '<script>' .
 				'var php_load_map = false;' .
 				'var php_load_type_map = false;' .
-				'var php_load_map_id = 0;' .
+				'var php_load_map_id = "0";' .
 			     '</script>';
 		}
 
@@ -250,10 +252,13 @@ if($mobile === false) {
 	(adsbygoogle = window.adsbygoogle || []).push({});
 </script>',
 		'<div id="sidebar-social">
-		<a id="sidebar-discord-link" href="https://discord.gg/WQh5fHU" target="_blank"><div id="sidebar-discord" class="sidebar-button">
+		<a id="sidebar-discord-link" class="social-link" href="https://discord.gg/WQh5fHU" target="_blank"><div id="sidebar-discord" class="sidebar-button">
 			Discord
 		</div></a>
-		<a id="sidebar-reddit-link" href="https://www.reddit.com/r/YAPms/" target="_blank"><div id="sidebar-reddit" class="sidebar-button">
+		<a id="sidebar-android-link" class="social-link" href="https://play.google.com/store/apps/details?id=com.fishstudio.yapms&hl=en_US" target="_blank"><div id="sidebar-android" class="sidebar-button">
+			Android
+		</div></a>
+		<a id="sidebar-reddit-link" class="social-link" href="https://www.reddit.com/r/YAPms/" target="_blank"><div id="sidebar-reddit" class="sidebar-button">
 			Reddit
 		</div></a>
 		</div>',
@@ -348,9 +353,10 @@ if($mobile) {
 	echo '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- mobile-ad -->
 <ins class="adsbygoogle adslot_mobile"
-     style="display:inline-block;"
-     data-ad-client="ca-pub-1660456925957249"
-     data-ad-slot="8771249229"
+	style="display:inline-block;"
+	data-full-width-responsive="true"
+	data-ad-client="ca-pub-1660456925957249"
+	data-ad-slot="8771249229"
 </ins>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
@@ -383,6 +389,7 @@ if($mobile) {
 </div>
 
 <div id="candidateedit" class="popup selectmenu">
+	<input id="candidate-originalName" type="hidden">
 	<div class="selectmenu-header">
 	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2 id="candidateedit-message"></h2>
@@ -393,7 +400,6 @@ if($mobile) {
 	<a class="selectmenu-button">Likely <input id="candidate-likely" type="color"></a>
 	<a class="selectmenu-button">Lean <input id="candidate-lean" type="color"></a>
 	<a class="selectmenu-button">Tilt <input id="candidate-tilt" type="color"></a>
-	<input id="candidate-originalName" type="hidden">
 	<a class="selectmenu-button" onclick="setCandidate()">Apply</a>
 	<a class="selectmenu-button" onclick='deleteCandidate()'>Delete</a>
 	</div>
@@ -545,7 +551,7 @@ if($mobile) {
 	</div>
 	<div class="selectmenu-content">
 	<a class="selectmenu-button" href="./?t=Canada_provinces"><i class="fas fa-square"></i> <?php echo _("Provinces") ?></a>
-	<a class="selectmenu-button" href="./?t=Canada_constituencies"><i class="fas fa-chevron-down"></i> <?php echo _("Constituencies") ?></a>
+	<a class="selectmenu-button" href="./?t=Canada_house_of_commons"><i class="fas fa-chevron-down"></i> <?php echo _("House of Commons") ?></a>
 	</div>
 </div>
 
@@ -557,7 +563,7 @@ if($mobile) {
 	</div>
 	<div class="selectmenu-content">
 	<a class="selectmenu-button" href="./?t=Germany_states"><i class="fas fa-square"></i> <?php echo _("States") ?></a>
-	<a class="selectmenu-button" href="./?t=Germany_constituencies"><i class="fas fa-chevron-down"></i> <?php echo _("Constituencies") ?></a>
+	<a class="selectmenu-button" href="./?t=Germany_bundestag"><i class="fas fa-chevron-down"></i> <?php echo _("Bundestag") ?></a>
 	</div>
 </div>
 
@@ -569,7 +575,7 @@ if($mobile) {
 	</div>
 	<div class="selectmenu-content">
 	<a class="selectmenu-button" href="./?t=Australia_states"><i class="fas fa-square"></i> <?php echo _("States") ?></a>
-	<a class="selectmenu-button" href="./?t=Australia_constituencies"><i class="fas fa-chevron-down"></i> <?php echo _("Constituencies") ?></a>
+	<a class="selectmenu-button" href="./?t=Australia_house_of_representatives"><i class="fas fa-chevron-down"></i> <?php echo _("House of Representatives") ?></a>
 	</div>
 </div>
 
@@ -605,9 +611,9 @@ if($mobile) {
 	<div class="selectmenu-content">
 	<a class="selectmenu-split"><?php echo _("2020 National Elections") ?></a>
 	<a class="selectmenu-button" href="./?t=2020_presidential"><i class="fas fa-user"></i> <?php echo _("Presidential") ?></a>
-	<a class="selectmenu-button" href="./?t=2020_senatorial"><i class="fas fa-chevron-up"></i> <?php echo _("Senatorial") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_congressional"><i class="fas fa-chevron-down"></i> <?php echo _("Congressional") ?></a>
-	<a class="selectmenu-button" href="./?t=2020_gubernatorial"><i class="fas fa-square"></i> <?php echo _("Gubernatorial") ?></a>
+	<a class="selectmenu-button" href="./?t=2020_senatorial"><i class="fas fa-chevron-up"></i> <?php echo _("Senate") ?></a>
+	<a class="selectmenu-button" href="./?t=2020_gubernatorial"><i class="fas fa-square"></i> <?php echo _("Governors") ?></a>
+	<a class="selectmenu-button" href="./?t=USA_congressional"><i class="fas fa-chevron-down"></i> <?php echo _("House of Representatives") ?></a>
 	<a class="selectmenu-split"><?php echo _("2020 Presidential Forecasts") ?></a>
 	<a class="selectmenu-button" href="./?t=2020_cook">Cook Political Report</a>
 	<a class="selectmenu-button" href="./?t=2020_inside">Inside Elections</a>
@@ -619,9 +625,8 @@ if($mobile) {
 	<a class="selectmenu-button" href="./?t=Current_senate"><i class="fas fa-chevron-up"></i> <?php echo _("Senate") ?></a>
 	<a class="selectmenu-button" href="./?t=Current_house"><i class="fas fa-chevron-down"></i> <?php echo _("House of Representatives") ?></a>
 	<a class="selectmenu-split"><?php echo _("Blank maps") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_gubernatorial"><i class="fas fa-square"></i> <?php echo _("Governors/States") ?></a>
 	<a class="selectmenu-button" href="./?t=USA_senatorial"><i class="fas fa-chevron-up"></i> <?php echo _("Senate") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_congressional"><i class="fas fa-chevron-down"></i> <?php echo _("House of Representatives") ?></a>
+	<a class="selectmenu-button" href="./?t=USA_gubernatorial"><i class="fas fa-square"></i> <?php echo _("Governors") ?></a>
 	<a class="selectmenu-button" href="./?t=USA_county"><i class="fas fa-border-all"></i> <?php echo _("County") ?></a>
 	<a class="selectmenu-split"><?php echo _("Other presidential maps") ?></a>
 	<a class="selectmenu-button" href="./?t=USA_proportional"><i class="far fa-user-circle"></i> <?php echo _("Proportional") ?></a>
@@ -683,6 +688,7 @@ if($mobile) {
 	<a class="selectmenu-split"><?php echo _("Historical blank maps") ?></a>
 	<a class="selectmenu-button" href="./?t=USA_congressional_2008"><i class="fas fa-chevron-down"></i> <?php echo _("Congressional") ?> 2006-2010</a>
 	<a class="selectmenu-button" href="./?t=USA_congressional"><i class="fas fa-chevron-down"></i> <?php echo _("Congressional") ?> 2011-2020</a>
+
 	</div>
 </div>
 
@@ -711,14 +717,15 @@ if($mobile) {
 	<a class="selectmenu-button" onclick='displayCountryMenu("usa-historical")'><img src="res/flags/usa.svg" height="20px"> <?php echo _("USA Historical") ?></a>
 	<a class="selectmenu-split"><?php echo _("Other countries") ?></a>
 	<a class="selectmenu-button" onclick='displayCountryMenu("australia")'><img src="res/flags/aus.svg" height="20px"> <?php echo _("Australia") ?></a>
-	<a class="selectmenu-button" href="./?t=Brazil_deputies"><img src="res/flags/bra.svg" height="20px"> <?php echo _("Brazil") ?></a>
-	<a class="selectmenu-button" href="./?t=France_constituencies"><img src="res/flags/fra.svg" height="20px"> <?php echo _("France") ?></a>
+	<a class="selectmenu-button" href="./?t=Brazil_chamber_of_deputies"><img src="res/flags/bra.svg" height="20px"> <?php echo _("Brazil") ?></a>
+	<a class="selectmenu-button" href="./?t=France_national_assembly"><img src="res/flags/fra.svg" height="20px"> <?php echo _("France") ?></a>
 	<a class="selectmenu-button" onclick='displayCountryMenu("canada")'><img src="res/flags/can.svg" height="20px"> <?php echo _("Canada") ?></a>
 	<a class="selectmenu-button" onclick='displayCountryMenu("germany")'><img src="res/flags/ger.svg" height="20px"> <?php echo _("Germany") ?></a>
 	<a class="selectmenu-button" href="./?t=Italy_states"><img src="res/flags/ita.svg" height="20px"> <?php echo _("Italy") ?></a>
+	<a class="selectmenu-button" href="./?t=Ireland_dail_eireann"><img src="res/flags/ire.svg" height="20px"> <?php echo _("Ireland") ?></a>
 	<a class="selectmenu-button" onclick='displayCountryMenu("netherlands")'><img src="res/flags/ned.svg" height="20px"> <?php echo _("Netherlands") ?></a>
-	<a class="selectmenu-button" href="./?t=Spain_constituencies"><img src="res/flags/esp.svg" height="20px"> <?php echo _("Spain") ?></a>
-	<a class="selectmenu-button" href="./?t=UnitedKingdom_constituencies"><img src="res/flags/ukd.svg" height="20px"> <?php echo _("United Kingdom") ?></a>
+	<a class="selectmenu-button" href="./?t=Spain_congress_of_deputies"><img src="res/flags/esp.svg" height="20px"> <?php echo _("Spain") ?></a>
+	<a class="selectmenu-button" href="./?t=UnitedKingdom_house_of_commons"><img src="res/flags/ukd.svg" height="20px"> <?php echo _("United Kingdom") ?></a>
 	<a class="selectmenu-split"><?php echo _("Trans-national organizations") ?></a>
 	<a class="selectmenu-button" href="./?t=EuropeanUnion"><img src="res/flags/eu.svg" height="20px"> <?php echo _("EU") ?></a>
 	<a class="selectmenu-button" href="./?t=World"><img src="res/flags/un.svg" height="20px"> <?php echo _("World") ?></a>

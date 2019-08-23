@@ -13,8 +13,6 @@
 	font-family: Times;
 	font-size: 28px;
 	margin: 10px;
-	padding-bottom: 10px;
-	border-bottom: 1px solid #aaaaaa;
 }
 
 .adslot_sidebar {
@@ -24,6 +22,7 @@
 #sidebar-social {
 	display: flex;
 	flex-direction: row;
+	margin-top: 6px;
 }
 
 .sidebar-button {
@@ -36,7 +35,7 @@
 	padding-bottom: 3px;
 }
 
-#sidebar-discord-link {
+.social-link {
 	margin: 0px;
 	padding: 0px;
 	text-decoration: none;
@@ -47,15 +46,12 @@
 	background: #7289da;
 }
 
-#sidebar-reddit-link {
-	margin: 0px;
-	padding: 0px;
-	text-decoration: none;
-	flex: 1;
-}
-
 #sidebar-reddit {
 	background: #ff4500;
+}
+
+#sidebar-android {
+	background: #7db343;
 }
 
 .sidebar-box {

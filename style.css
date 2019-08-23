@@ -39,16 +39,21 @@ body {
 	font-size: 30px;
 	font-weight: bold;
 	padding: 10px;
-	border-radius: 12px;
+	border-radius: 8px;
 	border: 2px solid white;
 	cursor: pointer;
 }
 
-#welcome {
-
+.discord {
+	background: #7289da;
 }
 
-#whatsnew {
+.android {
+	background: #7db343;
+}
+
+.reddit {
+	background: #ff4500;
 }
 
 a {
@@ -67,7 +72,7 @@ a {
 	color: white;
 	background: black;
 	padding: 5px;
-	font-size: 20px;
+	font-size: 22px;
 }
 
 .map-button {
@@ -77,33 +82,14 @@ a {
 	padding: 8px;
 	margin: 5px;
 	border: 1px solid #bbbbbb;
-}
-
-.seperator {
-	font-size: 20px;
+	transition: background 250ms;
 }
 
 .map-button:hover {
-	background-color: #eeeeff;
+	background: #ccccdd;
 }
 
-#bottombar {
-	font-size: 16px;
-	text-align: right;
-	text-decoration: none;
-	background: #151515;
-	width: 100%;
-	bottom: 0%;
-	border-top: 1px solid black;
-	box-shadow: 1px 0px 4px black;
-	z-index: 1;
-	margin-top: 25px;
-	float: bottom;
+.fab {
+	font-weight: normal;
 }
 
-#bottombar a {
-	background: white;
-	padding-left: 5px;
-	padding-right: 5px;
-	border-left: 1px solid black;
-}
