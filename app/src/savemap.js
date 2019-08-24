@@ -255,7 +255,7 @@ function saveMap_new(img, token) {
 
 			var redditBtn = document.getElementById('reddit-share');
 			if(redditBtn) {
-				redditBtn.setAttribute('href', 'https://www.reddit.com/submit?url=' + url);
+				redditBtn.setAttribute('href', 'https://www.reddit.com/submit?title=My%20YAPms%20Map&url=' + url);
 			}
 
 			console.log('Map save NEW succeeded');
