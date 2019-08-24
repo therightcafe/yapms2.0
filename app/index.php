@@ -43,13 +43,15 @@
 
 	<?php
 		$mobile = false;
-		
+
+		echo "<!-- {$_SERVER['HTTP_USER_AGENT']} -->";
+
 		if(strpos($_SERVER['HTTP_USER_AGENT'], 'Mobi')) {
 			$mobile = true;	
-			echo '<script>var mobile = true</script>';
+			echo '<script>var mobile = true;</script>';
 		} else {
 			$mobile = false;	
-			echo '<script>var mobile = false</script>';
+			echo '<script>var mobile = false;</script>';
 		};
 
 		if(isset($_GET["m"]) && !empty($_GET["m"])) {
@@ -116,7 +118,7 @@
 	<link rel="stylesheet" type="text/css" href="./style/sidebar.css">
 	<?php
 	if($mobile) {
-		include '<link rel="stylesheet" type="text/css" href="./style/mobile.css">';
+		echo '<link rel="stylesheet" type="text/css" href="./style/mobile.css">';
 	}
 	?>
 
