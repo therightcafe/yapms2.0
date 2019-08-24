@@ -523,6 +523,8 @@ if($mobile) {
 	</div>
 	<div class="selectmenu-content">
 	<a class="selectmenu-split"><?php echo _("Chart") ?></a>
+
+
 	<a class="selectmenu-button" onclick='setChart("horizontalbattle")'><?php echo _("Chart-Option1") ?></a>
 	<a class="selectmenu-button" onclick='setChart("verticalbattle")'><?php echo _("Chart-Option2") ?></a>
 	<a class="selectmenu-button" onclick='setChart("pie")'><?php echo _("Chart-Option3") ?></a>
@@ -780,11 +782,27 @@ if($mobile) {
 	<div class="selectmenu-content">
 	<object id="loading-animation" type="image/svg+xml" data="./html/loading.svg">Error</object>
 	<div class="selectmenu-section" id="shareurl"></div>
+	
+	<div class="selectmenu-button-mult">
 <?php 
 if($mobile === false) {
-	echo '<a class="selectmenu-button" id="downloadbutton"><i class="fas fa-download"></i>  ' . _("Download") . '</a>';
+	echo '<a class="selectmenu-button-part selectmenu-button" id="downloadbutton"><i class="fas fa-download"></i>  ' . _("Download") . '</a>';
 }
 ?>
+		<a id="twitter-share" class="selectmenu-button-part selectmenu-button"
+			target="_blank">
+			<i class="fab fa-twitter"></i>
+		</a>
+		<a id="reddit-share" class="selectmenu-button-part selectmenu-button"
+			target="_blank">
+			<i class="fab fa-reddit-alien"></i>
+		</a>
+		<a id="facebook-share" class="selectmenu-button-part selectmenu-button"
+			target="_blank">
+			<i class="fab fa-facebook-f"></i>
+		</a>
+	</div>
+
 	<img class="selectmenu-section" id="screenshotimg"/>
 	<div class="selectmenu-section" id="captcha-notice">This site is protected by reCAPTCHA and the Google
 	<a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer">Privacy Policy</a> and

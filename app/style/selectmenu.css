@@ -58,6 +58,17 @@
 	margin-top: 4px;
 }
 
+.selectmenu-button-mult {
+	display: flex;
+	flex-direction: row;
+}
+
+.selectmenu-button-part {
+	flex: 1 1;
+	margin-left: 1px;
+	margin-right: 1px;
+}
+
 .selectmenu-button-double {
 	display: flex;
 	flex-direction: row;
@@ -96,6 +107,21 @@
 	font-weight: bold;
 	color: white;
 	background: linear-gradient(to right, #e6b700, #e8c84d, #ffe78a, #b8a252);
+}
+
+#facebook-share {
+	color: white;
+	background: #3A5E96;
+}
+
+#twitter-share {
+	color: white;
+	background: #00A1ED;
+}
+
+#reddit-share {
+	color: white;
+	background: #FF4A1F;
 }
 
 .selectmenu-button-bold {

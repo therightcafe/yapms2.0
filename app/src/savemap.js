@@ -243,6 +243,21 @@ function saveMap_new(img, token) {
 				image.style.display = '';
 			}
 
+			var facebookBtn = document.getElementById('facebook-share');
+			if(facebookBtn) {
+				facebookBtn.setAttribute('href', 'https://www.facebook.com/sharer.php?u=' + url);
+			}
+
+			var twitterBtn = document.getElementById('twitter-share');
+			if(twitterBtn) {
+				twitterBtn.setAttribute('href', 'https://twitter.com/intent/tweet?text=' + url);
+			}
+
+			var redditBtn = document.getElementById('reddit-share');
+			if(redditBtn) {
+				redditBtn.setAttribute('href', 'https://www.reddit.com/submit?url=' + url);
+			}
+
 			console.log('Map save NEW succeeded');
 			gtag('event', 'map_save_succeeded', {
 				'event_category': 'map_save',
