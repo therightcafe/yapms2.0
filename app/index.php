@@ -24,8 +24,10 @@
 	<meta name="keywords" content="Map,Election,Political,Interactive,Simulator,Electoral,270,2020,USA,Presidential">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!--
 	<meta property="og:title" content="YAPms - Yet Another Political Map Simulator">
 	<meta property="og:description" content="Interactive Political Maps">
+-->
 	<meta property="og:image:type" content="image/png">
 	<meta property="og:site_name" content="yapms.com">
 	<meta property="og:type" content="article">
