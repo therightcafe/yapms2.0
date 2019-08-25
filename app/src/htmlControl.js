@@ -80,7 +80,7 @@ function displayNotification(title, text) {
 function displayShare() {
 	closeAllPopups();
 	var share = document.getElementById('share');
-	share.style.display = 'inline';
+	share.style.display = 'flex';
 
 	var downloadbtn = document.getElementById('downloadbutton');
 	if(downloadbtn) {
@@ -509,6 +509,12 @@ function setMapStyle(color, strokeWidth) {
 	var outlines = document.getElementById('outlines');
 	outlines.style.stroke = color;
 	outlines.style.strokeWidth = strokeWidth * strokeMultiplier;
+
+	var proportional = document.getElementById('proportional');
+	if(proportional) {
+		proportional.style.stroke = color;
+		proportional.style.strokeWidth = strokeWidth * strokeMultiplier;
+	}
 
 	var special = document.getElementById('special');
 	if(special != null) {

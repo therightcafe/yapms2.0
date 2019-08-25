@@ -48,6 +48,23 @@ function saveMap(img, token) {
 	formData.append("states", JSON.stringify({
 		state_data: stateData
 	}));
+
+	var proportionalData = [];
+	for(var stateIndex = 0; stateIndex < proportionalStates; ++stateIndex) {
+		var state = proportionalStates[stateIndex];
+		var obj = {
+			name: state.name,
+			candidate: state.candidate,
+			delegates: state.delegates,
+			voteCount: state.voteCount,
+			colorValue: state.colorValue,
+			disabled: state.disabled
+		};
+	}
+	formData.append("proportionalStates", JSON.stringify({
+		proportional_data: proportionalData
+	}));
+
 	$.ajax({
 		url: "./savemap_simple.php",
 		type: "POST",
@@ -136,13 +153,13 @@ function saveMap_new(img, token) {
 	data['updatetext'] = mapOptions.updateText;
 	data['candidates'] = {};
 	data['states'] = {};
+	data['proportional'] = {};
 
 	var formData = new FormData();
 	console.log('token: ' + token);
 	formData.append("captcha", token);
 	formData.append("img", img);
 
-	var candidateData = [];
 	for(var key in candidates) {
 		if(key === 'Tossup') {
 			continue;
@@ -155,7 +172,6 @@ function saveMap_new(img, token) {
 		data['candidates'][candidate.name]['tilt'] = candidate.colors[3];
 	}
 
-	var stateData = [];
 	for(var stateIndex = 0; stateIndex < states.length; ++stateIndex) {
 		var state = states[stateIndex];
 		data['states'][state.name] = {};
@@ -166,6 +182,16 @@ function saveMap_new(img, token) {
 		data['states'][state.name]['disabled'] = state.disabled;
 	}
 
+	for(var stateIndex = 0; stateIndex < proportionalStates.length; ++stateIndex) {
+		var state = proportionalStates[stateIndex];
+		data['proportional'][state.name] = {};
+		data['proportional'][state.name]['candidate'] = state.candidate;
+		data['proportional'][state.name]['delegates'] = state.delegates;
+		data['proportional'][state.name]['votecount'] = state.voteCount;
+		data['proportional'][state.name]['colorvalue'] = state.colorValue;
+		data['proportional'][state.name]['disabled'] = state.disabled;
+	}
+	
 	formData.append("data", JSON.stringify(data));
 
 	$.ajax({
@@ -215,6 +241,21 @@ function saveMap_new(img, token) {
 			var image = document.getElementById('screenshotimg');
 			if(image) {
 				image.style.display = '';
+			}
+
+			var facebookBtn = document.getElementById('facebook-share');
+			if(facebookBtn) {
+				facebookBtn.setAttribute('href', 'https://www.facebook.com/sharer.php?u=' + url);
+			}
+
+			var twitterBtn = document.getElementById('twitter-share');
+			if(twitterBtn) {
+				twitterBtn.setAttribute('href', 'https://twitter.com/intent/tweet?text=' + url);
+			}
+
+			var redditBtn = document.getElementById('reddit-share');
+			if(redditBtn) {
+				redditBtn.setAttribute('href', 'https://www.reddit.com/submit?title=My%20YAPms%20Map&url=' + url);
 			}
 
 			console.log('Map save NEW succeeded');

@@ -1,4 +1,4 @@
-var currentCache = 'v0.58.2';
+var currentCache = 'v0.60.1';
 
 var windowLoaded = false;
 
@@ -7,6 +7,7 @@ var cookies = {};
 var states = [];
 var lands = [];
 var buttons = [];
+var proportionalStates = [];
 
 // data for the chart
 var chart;
@@ -142,7 +143,8 @@ window.onerror = function(message, source, lineno, colno, error) {
 		console.log('Error');
 		gtag('event', 'error', {
 			'event_category': 'error',
-			'event_label': message + ', ' + source + ', ' + lineno + ', ' + currentCache
+			'event_label': message + ', ' + source + ', ' + lineno + ', ' + currentCache,
+			'non_interaction': true
 		});
 	}
 }
@@ -170,6 +172,7 @@ function initData(dataid) {
 	for(var index = 0, length = htmlElements.length; index < length; ++index) {
 		var htmlElement = htmlElements[index];
 		htmlElement.setAttribute('style', 'inherit');
+		htmlElement.setAttribute('cursor', 'pointer');
 		var name = htmlElement.getAttribute('id');
 		if(name === null || name.includes('*lines*') || name.includes("*ignore*") ||
 			name.includes("_ignore_") || name.includes('othertext') || name === 'text') {
@@ -204,20 +207,20 @@ function initData(dataid) {
 		}
 	}
 
-	/*
-	var proportionalElements = document.getElementById('proportional').children;
-	if(proportionalElements) {
+	var proportional = document.getElementById('proportional');
+	if(proportional) {
+		var proportionalElements = proportional.children;
 		for(var index = 0, length = proportionalElements.length; index < length; ++index) {
 			var element = proportionalElements[index];
+			element.setAttribute('cursor', 'pointer');
 			element.setAttribute('style', 'inherit');
 			var name = element.getAttribute('id');
 			var state = new State(name, element, dataid);
-			states.push(state);
-			element.setAttribute('onclick', 'stateClickPaintProportional(states["' + 
-				(states.length - 1) + '"])');
+			proportionalStates.push(state);
+			element.setAttribute('onclick', 'stateClickPaintProportional(proportionalStates["' + 
+				(proportionalStates.length - 1) + '"])');
 		}
 	}
-	*/
 
 	/* Special Elections for Senate */
 	var special = document.getElementById('special');
@@ -227,8 +230,8 @@ function initData(dataid) {
 
 		for(var index = 0; index < specialChildren.length; ++index) {
 			var htmlElement = specialChildren[index];
-			htmlElement.setAttribute('onclick',
-				'specialClick(this)');
+			htmlElement.setAttribute('onclick','specialClick(this)');
+			htmlElement.setAttribute('cursor', 'pointer');
 			var name = htmlElement.id;
 			var state = new State(name, htmlElement, dataid);
 			states.push(state);
@@ -470,6 +473,9 @@ function setDelegates(e) {
 	e.parentElement.style.display = '';
 	var stateid = document.getElementById('demdel-state-name').value;
 	var state = states.find(state => state.name === stateid);
+	if(!state) {
+		state = proportionalStates.find(state => state.name === stateid);
+	}
 	// keep the total delegates
 	var total = state.voteCount;
 	for(var key in candidates) {
@@ -816,6 +822,33 @@ function verifyMap() {
 			}
 		}
 	});
+
+	proportionalStates.forEach(function(state) {
+		state.verifyTossupColor();
+		if(typeof candidates[state.candidate] === 'undefined') {
+			// if the current color is out of bounds set it to white
+			state.setColor('Tossup', tossupColor);
+		} else { 
+			// the candidate the state thinks its controled by
+			var currentCandidate = state.getCandidate();
+			// the candidate the state should be controle by
+			var shouldCandidate = candidates[state.getCandidate()].name;
+
+			// if these values differ, change the state to tossup
+			if(currentCandidate !== shouldCandidate) {
+				state.setColor('Tossup', tossupColor);
+			} else if(state.getCandidate() === 'Tossup') {
+				state.setColor('Tossup', 2);	
+			}else {
+				var candidate = candidates[state.getCandidate()];
+				if(candidate.singleColor === true) {
+					state.setColor(state.getCandidate(), 0);
+				} else {
+					state.setColor(state.getCandidate(), state.getColorValue());
+				}
+			}
+		}
+	});
 	
 	if(loadConfig.filename === './res/lte_house.svg') {
 		updateLTEHouse();
@@ -880,6 +913,21 @@ function countVotes() {
 					candidate.voteCount += state.voteCount;
 					candidate.probVoteCounts[state.colorValue] += state.voteCount;
 				}
+			}
+
+			for(var stateIndex = 0, length = proportionalStates.length; stateIndex < length; ++stateIndex) {
+				var state = proportionalStates[stateIndex];
+				if(typeof state.delegates === 'undefined') {
+					state.delegates = {};
+				}
+				if(typeof state.delegates[key] === 'undefined') {
+					state.delegates[key] = 0;
+					if(key === 'Tossup') {
+						state.delegates[key] = state.voteCount;	
+					}
+				}
+				candidate.voteCount += state.delegates[key];
+				candidate.probVoteCounts[0] += state.delegates[key];
 			}
 
 			if(mid !== null) {

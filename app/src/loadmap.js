@@ -319,18 +319,6 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year, options) {
 				options.onLoad();
 			}
 
-			if(options.states) {
-				for(var stateIndex = 0, length = options.states.length; stateIndex < length; ++stateIndex) {
-					var state = states[stateIndex];
-					var optionState = options.states[stateIndex];
-					state.setVoteCount(optionState.voteCount, true);
-					state.setColor(optionState.candidate, optionState.colorValue);
-				}
-				countVotes();
-				updateChart();
-				updateLegend();
-			}
-
 			if(options.voters) {
 				for(var stateIndex = 0, length = states.length; stateIndex < length; ++stateIndex) {
 					var state = states[stateIndex];
@@ -518,6 +506,18 @@ function loadSavedMap_new(data) {
 			//}
 		}
 
+		console.log(obj);
+		for(var stateName in obj.proportional) {
+			var stateData = obj.proportional[stateName];
+			var state = proportionalStates.filter(state => state.name === stateName)[0];
+			state.setVoteCount(stateData['votecount'], obj['updatetext']);
+			state.setColor(stateData['candidate'], stateData['colorvalue']);
+			state.delegates = stateData['delegates'];
+			if(stateData['disabled']) { 
+				state.toggleDisable();
+			}
+		}
+
 		countVotes();
 		updateLegend();
 		updateChart();
@@ -528,7 +528,8 @@ function loadSavedMap_new(data) {
 		
 		gtag('event', 'load', {
 			'event_category': 'load_map',
-			'event_label': 'loaded saved map new version ' + currentCache
+			'event_label': 'loaded saved map new version ' + currentCache,
+			'non_interaction': true
 		});
 	}});
 }
@@ -625,7 +626,8 @@ function loadSavedMap_old(data, options) {
 		
 		gtag('event', 'load', {
 			'event_category': 'load_map',
-			'event_label': 'loaded saved map old version ' + currentCache
+			'event_label': 'loaded saved map old version ' + currentCache,
+			'non_interaction': true
 		});
 	}
 		,
