@@ -80,7 +80,7 @@
 				'var php_load_type_map = true;' .
 				'var php_load_map_id = "' . $_GET["t"] . '";' .
 			     '</script>';
-				
+			echo '<meta property="og:url" content="https://www.yapms.com/app/?t=' . $_GET["t"] . '">';
 		} else {
 			echo '<script>' .
 				'var php_load_map = false;' .
