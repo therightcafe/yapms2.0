@@ -140,7 +140,7 @@ function loadMapFromId(id) {
 			loadMap("./res/usa_pre_civilwar.svg", 16, 1, "usa_pre_civilwar_ec", "presidential", "open", {updateText: true});
 			break;
 		case "Germany_states":
-			loadMap("./res/germany.svg", 16, 1, "congressional", "congressional", "open", {updateText: false});
+			loadMap("./res/germany.svg", 16, 1, "congressional", "presidential", "open", {updateText: false});
 			loadPreset('germany')
 			break;
 		case "Germany_constituencies":
@@ -162,7 +162,7 @@ function loadMapFromId(id) {
 			loadPreset('netherlands');
 			break;
 		case "Italy_states":
-			loadMap("./res/italy.svg", 16, 1, "congressional", "congressional", "open", {updateText: false});
+			loadMap("./res/italy.svg", 16, 1, "congressional", "presidential", "open", {updateText: false});
 			loadPreset('italy')
 			break;
 		case "Spain_constituencies":
@@ -171,7 +171,7 @@ function loadMapFromId(id) {
 			loadPreset('spain');
 			break;
 		case "Turkey_provinces":
-			loadMap("./res/turkey_provinces.svg", 16, 0.5, "congressional", "congressional", "open", {updateText: false});
+			loadMap("./res/turkey_provinces.svg", 16, 0.5, "congressional", "presidential", "open", {updateText: false});
 			break;
 		case "UnitedKingdom_constituencies":
 		case "UnitedKingdom_house_of_commons":
@@ -184,7 +184,7 @@ function loadMapFromId(id) {
 			loadPreset('ireland')
 			break;
 		case "Canada_provinces":
-			loadMap("./res/canada_states.svg", 38, 2, "congressional", "congressional", "open", {updateText: false});
+			loadMap("./res/canada_states.svg", 38, 2, "congressional", "presidential", "open", {updateText: false});
 			loadPreset('canada')
 			break;
 		case "Canada_constituencies":
@@ -198,7 +198,7 @@ function loadMapFromId(id) {
 			loadPreset('australia')
 			break;
 		case "Australia_states":
-			loadMap("./res/australia.svg", 16, 0.075, "congressional", "congressional", "open", {updateText: false});
+			loadMap("./res/australia.svg", 16, 0.075, "congressional", "presidential", "open", {updateText: false});
 			loadPreset('australia')
 			break;
 		case "Brazil_deputies":
