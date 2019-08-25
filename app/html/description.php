@@ -76,12 +76,24 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		'<meta property="og:title" content="YAPms - USA Senate">
 		<meta property="og:description" content="Interactive USA Senate Map">';
 		break;
+		case 'USA_current_senate':
+		echo '<meta name="description" content="United States interactive current senate map"><title>USA - Current Senate Map</title>';
+		echo 
+		'<meta property="og:title" content="YAPms - USA Current Senate Map">
+		<meta property="og:description" content="Interactive USA Current Senate Map">';
+		break;
 		case 'USA_congressional':
 		case 'USA_2020_house':
 		echo '<meta name="description" content="United States 2020 interactive house election map"><title>USA - 2020 House Election</title>';
 		echo 
 		'<meta property="og:title" content="YAPms - USA 2020 House">
 		<meta property="og:description" content="Interactive USA 2020 House Map">';
+		break;
+		case 'USA_current_house':
+		echo '<meta name="description" content="United States 2020 interactive house map"><title>USA - Current House Map</title>';
+		echo 
+		'<meta property="og:title" content="YAPms - USA Current House Map">
+		<meta property="og:description" content="Interactive USA Current House Map">';
 		break;
 		case 'USA_2018_congress':
 		case 'USA_2018_house':

@@ -51,9 +51,7 @@
 	
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 	<link rel="stylesheet" type="text/css" href="style.css">
-    <script src="./app/res/fontawesome/css/all.min.css"></script>
-	
-	
+	<script src="./app/res/fontawesome/js/all.min.js"></script>
 </head>
 
 <body>
@@ -70,12 +68,12 @@
 
 			<p>
 				<b>Supported Browsers:</b>
-				<i class="fab fa-chrome"></i> Chrome, <i class="fab fa-firefox"></i> Firefox and <i class="fab fa-opera"></i> Opera
+				Chrome, Firefox and Opera
 			</p>
 			
 			<p> 
 				<b>Contact Email:</b>
-				<i class="fas fa-envelope-open-text"></i> <a style="color:blue;" href="mailto:bugreport@yapms.com">bugreport@yapms.com</a> 
+				<a style="color:blue;" href="mailto:bugreport@yapms.com">bugreport@yapms.com</a> 
 			</p>
 		</div>
         
@@ -99,35 +97,34 @@
 			</div>
 		</a>
 	</div>
-	<hr>
-	<h1> United States Maps </h1>
+	<h2 class="header"> United States Maps </h2>
 
 	<div class="map-type-box">	
 	<div class="map-type-header">
 		<img src="app/res/flags/usa.svg" height="20px"> 2020 National Elections Maps	
 	</div>
 
-	<div>	
+	<div class="map-button-box">	
 		<a href="./app/?t=USA_2020_presidential">
 			<div class="map-button">
 				<i class="fas fa-user"></i> Presidential
 			</div>
-		</a
+		</a>
 		
-		<a href="./app/?t=2020_gubernatorial">
+		<a href="./app/?t=USA_2020_gubernatorial">
 			<div class="map-button">
 				<i class="fas fa-square"></i> Governors
 			</div>
 		</a>
 		<br>
-		<a href="./app/?t=2020_senatorial">
+		<a href="./app/?t=USA_2020_senatorial">
 			<div class="map-button">
 				<i class="fas fa-chevron-up"></i> Senate
 			</div>
 		</a>
 		<a href="./app/?t=USA_congressional">
 			<div class="map-button">
-				<i class="fas fa-chevron-down"></i> House of Representatives
+				<i class="fas fa-chevron-down"></i> House
 			</div>
 		</a>
 	</div>
@@ -137,16 +134,15 @@
 	<div class="map-type-header">
 		<img src="app/res/flags/usa.svg" height="20px"> 2020 Presidential Primaries
 	</div>
-	<div>
-		<a href="./app/?t=2020_democratic_primary">
+	<div class="map-button-box">	
+		<a href="./app/?t=USA_2020_democratic_primary">
 			<div class="map-button">
-				<i class="fas fa-democrat"></i> Democratic Primary
+				<i class="fas fa-democrat"></i> Democratic
 			</div>
 		</a>
-		<br>
 		<a href="./app/?t=USA_2020_republican_primary">
 			<div class="map-button">
-				<i class="fas fa-republican"></i> Republican Primary
+				<i class="fas fa-republican"></i> Republican
 			</div>
 		</a>
 	</div>
@@ -156,7 +152,7 @@
 	<div class="map-type-header">
 		<img src="app/res/flags/usa.svg" height="20px"> 2020 Presidential Forecasts
 	</div>
-	<div>
+	<div class="map-button-box">	
 		<a href="./app/?t=USA_2020_cook">
 			<div class="map-button">
 				Cook Political Report
@@ -180,17 +176,15 @@
 	<div class="map-type-header">
 		<img src="app/res/flags/usa.svg" height="20px"> Current Congressional Maps
 	</div>
-		
-	<div>
-		<a href="./app/?t=USA_current_souse">
+	<div class="map-button-box">	
+		<a href="./app/?t=USA_current_senate">
 			<div class="map-button">
 				<i class="fas fa-chevron-up"></i> Senate
 			</div>
 		</a>
-        <br>
 		<a href="./app/?t=USA_current_house">
 			<div class="map-button">
-				<i class="fas fa-chevron-down"></i> House of Representatives
+				<i class="fas fa-chevron-down"></i> House
 			</div>
 		</a>
 	</div>
@@ -198,10 +192,9 @@
 
 	<div class="map-type-box">	
 	<div class="map-type-header">
-		<img src="app/res/flags/usa.svg" height="20px"> Open Maps
+		<img src="app/res/flags/usa.svg" height="20px"> Blank Maps
 	</div>
-
-	<div>
+	<div class="map-button-box">	
 		<a href="./app/?t=USA_senate">
 			<div class="map-button">
 				<i class="fas fa-chevron-up"></i> Senate
@@ -222,10 +215,9 @@
 	
 	<div class="map-type-box">	
 	<div class="map-type-header">
-		<img src="app/res/flags/usa.svg" height="20px"> Other presidential maps	
+		<img src="app/res/flags/usa.svg" height="20px"> Other Presidential Maps	
 	</div>
-		
-	<div>
+	<div class="map-button-box">	
 		<a href="./app/?t=USA_takeall">
 			<div class="map-button">
 				<i class="fas fa-user"></i> Presidential Take All
@@ -251,14 +243,13 @@
 	</div>
 
 	<br>
-	<hr>
-	<h1> United States Historical Maps </h1>
+	<h2 class="header"> United States Historical Maps </h2>
 
 	<div class="map-type-box">
 	<div class="map-type-header">
 		<img src="app/res/flags/usa.svg" height="20px"> Presidential - Post-WW2
 	</div>
-	<div>	
+	<div class="map-button-box">	
 		<a href="./app/?t=USA_2016_presidential">
 			<div class="map-button">
 				2016
@@ -364,7 +355,7 @@
 	<div class="map-type-header">
 		<img src="app/res/flags/usa.svg" height="20px"> Presidential - Pre-WW2
 	</div>
-	<div>
+	<div class="map-button-box">	
 		<a href="./app/?t=USA_1940_presidential">
 			<div class="map-button">
 				1940
@@ -475,57 +466,47 @@
 	<div class="map-type-header">
 		<img src="app/res/flags/usa.svg" height="20px"> Presidential Counties
 	</div>
-		
-		<a href="./app/?t=2016_presidential_county">
+	<div class="map-button-box">	
+		<a href="./app/?t=USA_2016_presidential_county">
 			<div class="map-button">
 				2016
 			</div>
 		</a>
-		
-		<a href="./app/?t=2012_presidential_county">
-			<div class="map-button">
-				2012
-			</div>
-		</a>
-		
+	</div>
 	</div>
 
 	<div class="map-type-box">
 	<div class="map-type-header">
-		<img src="app/res/flags/usa.svg" height="20px"> Open Maps
+		<img src="app/res/flags/usa.svg" height="20px"> Blank Maps
 	</div>
-		
+	<div class="map-button-box">	
 		<a href="./app/?t=USA_congressional">
 			<div class="map-button">
 				<i class="fas fa-chevron-down"></i> Congress 2011-2020
 			</div>
 		</a>
-			
 		<br>
-		
 		<a href="./app/?t=USA_congressional_2008">
 			<div class="map-button">
 				<i class="fas fa-chevron-down"></i> Congress 2006-2010
 			</div>
 		</a>
-		
+	</div>	
 	</div>
 
 	<br>
-	<hr>
-	<h1> Other Countries Maps </h1>
+	<h1 class="header"> Other Country Maps </h1>
 	
 	<div class="map-type-box">
 	<div class="map-type-header">
 		<img src="app/res/flags/aus.svg" height="20px"> Australia
 	</div>
-	<div>
+	<div class="map-button-box">	
 		<a href="./app/?t=Australia_states">
 			<div class="map-button">
 				<i class="fas fa-square"></i> States
 			</div>
 		</a>
-		
 		<a href="./app/?t=Australia_house_of_representatives">
 			<div class="map-button">
 				<i class="fas fa-chevron-down"></i> House of Representatives
@@ -538,7 +519,7 @@
 	<div class="map-type-header">
 		<img src="app/res/flags/bra.svg" height="20px"> Brazil	
 	</div>
-	<div>
+	<div class="map-button-box">	
 		<a href="./app/?t=Brazil_deputies">
 			<div class="map-button">
 				<i class="fas fa-chevron-circle-down"></i> Chamber of Deputies
@@ -551,7 +532,7 @@
 	<div class="map-type-header">
 		<img src="app/res/flags/can.svg" height="20px"> Canada
 	</div>
-	<div>
+	<div class="map-button-box">	
 		<a href="./app/?t=Canada_provinces">
 			<div class="map-button">
 				<i class="fas fa-square"></i> Provinces
@@ -569,7 +550,7 @@
 	<div class="map-type-header">
 		<img src="app/res/flags/fra.svg" height="20px"> France
 	</div>
-	<div>
+	<div class="map-button-box">	
 		<a href="./app/?t=France_national_assembly">
 			<div class="map-button">
 				<i class="fas fa-chevron-down"></i> National Assembly
@@ -582,7 +563,7 @@
 	<div class="map-type-header">
 		<img src="app/res/flags/ger.svg" height="20px"> Germany
 	</div>
-	<div>
+	<div class="map-button-box">	
 		<a href="./app/?t=Germany_states">
 			<div class="map-button">
 				<i class="fas fa-square"></i> States
@@ -601,7 +582,7 @@
 	<div class="map-type-header">
 		<img src="app/res/flags/ita.svg" height="20px"> Italy
 	</div>
-	<div>
+	<div class="map-button-box">	
 		<a href="./app/?t=Italy_states">
 			<div class="map-button">
 				<i class="fas fa-square"></i> States
@@ -614,7 +595,7 @@
 	<div class="map-type-header">
 		<img src="app/res/flags/ire.svg" height="20px"> Ireland
 	</div>
-	<div>
+	<div class="map-button-box">	
 		<a href="./app/?t=Ireland_dail_eireann">
 			<div class="map-button">
 				<i class="fas fa-chevron-circle-down"></i> Dáil Éireann
@@ -627,13 +608,12 @@
 	<div class="map-type-header">
 		<img src="app/res/flags/ned.svg" height="20px"> Netherlands	
 	</div>
-	<div>
+	<div class="map-button-box">	
 		<a href="./app/?t=Netherlands_provinces">
 			<div class="map-button">
 				<i class="fas fa-chevron-circle-down"></i> Provinces
 			</div>
 		</a>
-		
 		<a href="./app/?t=Netherlands_gemeenten">
 			<div class="map-button">
 				<i class="fas fa-chevron-down"></i> Gemeeten
@@ -646,13 +626,12 @@
 	<div class="map-type-header">
 		<img src="app/res/flags/rus.svg" height="20px"> Russia	
 	</div>
-	<div>
+	<div class="map-button-box">	
 		<a href="./app/?t=Russia_federal_council">
 			<div class="map-button">
 				<i class="fas fa-chevron-up"></i> Federation Council
 			</div>
 		</a>
-		
 		<a href="./app/?t=Russia_duma">
 			<div class="map-button">
 				<i class="fas fa-chevron-down"></i> Duma
@@ -665,7 +644,7 @@
 	<div class="map-type-header">
 		<img src="app/res/flags/esp.svg" height="20px"> Spain
 	</div>
-	<div>
+	<div class="map-button-box">	
 		<a href="./app/?t=Spain_constituencies">
 			<div class="map-button">
 				<i class="fas fa-chevron-circle-down"></i> Congress of Deputies
@@ -678,7 +657,7 @@
 	<div class="map-type-header">
 		<img src="app/res/flags/ukd.svg" height="20px"> United Kingdom
 	</div>
-	<div>
+	<div class="map-button-box">	
 		<a href="./app/?t=UnitedKingdom_house_of_commons">
 			<div class="map-button">
 				<i class="fas fa-chevron-down"></i> House of Commons
@@ -687,16 +666,15 @@
 	</div>
 	</div>
 	
-	<hr>
-	<h1> Trans-National Maps </h1>
+	<h1 class="header"> Trans-National Maps </h1>
 	
 	<div class="map-type-box">
 	<div class="map-type-header"> Joined countries
 	</div>
-	<div>
+	<div class="map-button-box">	
 		<a href="./app/?t=USA_Canada">
 			<div class="map-button">
-				<i class="fas fa-square"></i> <img src="app/res/flags/usa.svg" height="20px">/<img src="app/res/flags/can.svg" height="20px"> states
+				<i class="fas fa-square"></i> USA/Canada
 			</div>
 		</a>
 	</div>
@@ -706,8 +684,8 @@
 	<div class="map-type-header">
 		<img src="app/res/flags/un.svg" height="20px"> United Nations
 	</div>
-	<div>
-		<a href="./app/?t=world">
+	<div class="map-button-box">	
+		<a href="./app/?t=World">
 			<div class="map-button">
 				<i class="fas fa-square"></i> Countries
 			</div>
@@ -719,8 +697,8 @@
 	<div class="map-type-header">
 		<img src="app/res/flags/eu.svg" height="20px"> European Union
 	</div>
-	<div>
-		<a href="./app/?t=world">
+	<div class="map-button-box">	
+		<a href="./app/?t=EuropeanUnion">
 			<div class="map-button">
 				<i class="fas fa-chevron-circle-down"></i> Parliament
 			</div>
