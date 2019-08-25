@@ -1,6 +1,6 @@
-var scriptCache = 'd0.60.6';
-var indexCache = 'i0.60.6';
-var staticCache = 's0.60.2';
+var scriptCache = 'd0.61.0';
+var indexCache = 'i0.61.0';
+var staticCache = 's0.61.0';
 
 var _scriptCache = [
 	'./app/html/battlechart.html',
@@ -236,10 +236,11 @@ self.addEventListener('fetch', function(event) {
 					swLog('Cache' , 'fetch ' + event.request.url);
 					return response;
 				} else if(event.request.url.includes('yapms.com/app/') === true &&
-						event.request.url.includes('yapms.com/app/req_articles.php') === false &&
-						event.request.url.includes('yapms.com/app/?m=') === false &&
-						event.request.url.includes('yapms.com/app/savemap.php') === false &&
-						event.request.url.includes('yapms.com/app/savemap_new.php') === false) {
+					event.request.url.includes('yapms.com/app/req_articles.php') === false &&
+					event.request.url.includes('yapms.com/app/?m=') === false &&
+					event.request.url.includes('yapms.com/app/savemap.php') === false &&
+					event.request.url.includes('yapms.com/app/savemap_new.php') === false &&
+					event.request.url.includes('yapms.com/app/savemap_simple.php') === false) {
 					swLog('Web', 'fetch+cache ' + event.request.url);
 					return fetch(event.request)
 					.then(function(response) {
