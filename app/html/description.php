@@ -1,7 +1,5 @@
 <?php
 if (isset($_GET["t"]) && !empty($_GET["t"])) {
-	echo '<meta property="og:image" content="http://www.yapms.com/app/res/yapms-96.png">
-	<meta property="og:image:secure_url" content="https://www.yapms.com/app/res/yapms-96.png">';
 	if(strpos($_GET['t'], '_presidential') && !strpos($_GET['t'], '_county')) {
 		$year = substr($_GET['t'], 4, 4);
 		echo "<meta name=\"description\" content=\"United States {$year} presidential interactive election map\"><title>USA - {$year} Presidential Election</title>";
@@ -233,9 +231,6 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 	echo 
 	'<meta property="og:title" content="YAPms - Yet Another Political Map Simulator">
 	<meta property="og:description" content="Interactive User Created Map">';
-	echo '<meta property="og:image:secure_url" content="https://yapms.org/maps/' . $_GET["m"] . '.png">';
-	echo '<meta property="og:image" content="https://yapms.org/maps/' . $_GET["m"] . '.png">';
-	echo '<meta name="twitter:image" content="https://yapms.org/maps/' . $_GET["m"] . '.png">';
 
 } else {
 	echo '<meta name="description" content="United States 2020 presidential interactive election map"><title>USA - 2020 Presidential Election</title><link rel="canonical" href="https://www.yapms.com/app/?t=USA_2020_presidential"/>';

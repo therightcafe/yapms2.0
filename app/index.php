@@ -23,11 +23,7 @@
 ?>
 	<meta name="keywords" content="Map,Election,Political,Interactive,Simulator,Electoral,270,2020,USA,Presidential">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!--
-	<meta property="og:title" content="YAPms - Yet Another Political Map Simulator">
-	<meta property="og:description" content="Interactive Political Maps">
--->
+	
 	<meta property="og:image:type" content="image/png">
 	<meta property="og:site_name" content="yapms.com">
 	<meta property="og:type" content="article">
@@ -62,31 +58,32 @@
 				'var php_load_type_map = false;' .
 				'var php_load_map_id = "' .$_GET["m"] . '";' .
 				'</script>';	
-
-			//echo '<meta property="og:image" content="https://www.yapms.com/app/maps/' . $_GET["m"] . '.png">';
-			//echo '<meta property="og:image:secure_url" content="https://www.yapms.com/app/maps/' . $_GET["m"] . '.png">';
-			//echo '<meta name="twitter:image" content="https://www.yapms.com/app/maps/' . $_GET["m"] . '.png">';
-			echo '<meta property="og:image:width" content="1200">';
-			echo '<meta property="og:image:height" content="1200">';
-			/*
-			echo '<meta property="og:image:secure_url" content="https://yapms.org/maps/' . $_GET["m"] . '.png">';
-			echo '<meta property="og:image" content="https://yapms.org/maps/' . $_GET["m"] . '.png">';
-			echo '<meta name="twitter:image" content="https://yapms.org/maps/' . $_GET["m"] . '.png">';
-			 */
-			echo '<meta property="og:url" content="https://www.yapms.com/app/?m=' . $_GET["m"] . '">';
+			echo '<meta property="og:image:width" content="1200">
+			<meta property="og:image:height" content="1200">
+			<meta property="og:image:secure_url" content="https://yapms.org/maps/' . $_GET["m"] . '.png">
+			<meta property="og:image" content="https://yapms.org/maps/' . $_GET["m"] . '.png">
+			<meta name="twitter:image" content="https://yapms.org/maps/' . $_GET["m"] . '.png">
+			<meta property="og:url" content="https://www.yapms.com/app/?m=' . $_GET["m"] . '">';
 		} else if(isset($_GET["t"]) && !empty($_GET["t"])) {
 			echo '<script>' .
 				'var php_load_map = false;' .
 				'var php_load_type_map = true;' .
 				'var php_load_map_id = "' . $_GET["t"] . '";' .
 			     '</script>';
-			echo '<meta property="og:url" content="https://www.yapms.com/app/?t=' . $_GET["t"] . '">';
+			echo '<meta property="og:url" content="https://www.yapms.com/app/?t=' . $_GET["t"] . '">
+			<meta property="og:image" content="http://www.yapms.com/app/res/yapms-96.png">
+			<meta property="og:image:secure_url" content="https://www.yapms.com/app/res/yapms-96.png">
+			<meta name="twitter:image" content="https://www.yapms.com/app/res/yamps-96.png">';
 		} else {
 			echo '<script>' .
 				'var php_load_map = false;' .
 				'var php_load_type_map = false;' .
 				'var php_load_map_id = "0";' .
 			     '</script>';
+			echo '<meta property="og:url" content="https://www.yapms.com/app/">
+			<meta property="og:image" content="http://www.yapms.com/app/res/yapms-96.png">
+			<meta property="og:image:secure_url" content="https://www.yapms.com/app/res/yapms-96.png">
+			<meta name="twitter:image" content="https://www.yapms.com/app/res/yamps-96.png">';
 		}
 	?>
 
