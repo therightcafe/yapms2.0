@@ -1036,8 +1036,9 @@ if($mobile) {
 		<div class="selectmenu-button-text"><?php echo _("World") ?></div>
 	</a>
 	<a class="selectmenu-button" href='./?t=USA_Canada'>
-		<img src="res/flags/usa.svg"><img src="res/flags/can.svg">
+		<img src="res/flags/usa.svg">
 		<div class="selectmenu-button-text"><?php echo _("USA") . " " . _("Canada") ?></div>
+		<img src="res/flags/can.svg">
 	</a>
 	<a class="selectmenu-split">
 		<div class="selectmenu-split-text"><?php echo _("Mock Elections") ?></div>
