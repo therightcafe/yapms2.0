@@ -25,6 +25,9 @@
 }
 
 .selectmenu .selectmenu-split {
+	display: flex;
+	flex-direction: row;
+	text-align: center;
 	background-color: #000000;
 	color: white;
 	border-radius: 10px;
@@ -32,13 +35,12 @@
 	margin-top: 4px;
 }
 
-.selectmenu-split i {
-	display: inline-block;
-	float: left;
+.selectmenu-split svg {
+	margin-right: 5px;
 }
 
 .selectmenu-split .selectmenu-split-text {
-	display: inline-block;
+	flex: 1 1;
 }
 
 .selectmenu-button {
@@ -56,6 +58,10 @@
 .selectmenu-button img {
 	height: 20px;
 	border-radius: 4px;
+	margin-right: 5px;
+}
+
+.selectmenu-button svg {
 	margin-right: 5px;
 }
 

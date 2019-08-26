@@ -34,6 +34,7 @@ function enableFullscreen() {
 }
 
 function displayCandidateEditMenu(candidate) {
+	closeAllPopups();
 	var candidateedit = document.getElementById('candidateedit');
 	candidateedit.style.display = 'flex';
 	var nameinput = document.getElementById('candidate-name');
