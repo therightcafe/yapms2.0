@@ -1,6 +1,6 @@
-var scriptCache = 'd0.60.1';
-var indexCache = 'i0.60.1';
-var staticCache = 's0.60.1';
+var scriptCache = 'd0.62.0';
+var indexCache = 'i0.62.0';
+var staticCache = 's0.62.0';
 
 var _scriptCache = [
 	'./app/html/battlechart.html',
@@ -123,7 +123,23 @@ var _staticCache = [
 	'./app/res/presets/USA_2020_cook',
 	'./app/res/presets/USA_2020_inside',
 	'./app/res/presets/USA_2020_sabatos',
-	
+
+	'./app/res/flags/aus.svg',
+	'./app/res/flags/bra.svg',
+	'./app/res/flags/can.svg',
+	'./app/res/flags/esp.svg',
+	'./app/res/flags/eu.svg',
+	'./app/res/flags/fra.svg',
+	'./app/res/flags/ger.svg',
+	'./app/res/flags/ire.svg',
+	'./app/res/flags/ita.svg',
+	'./app/res/flags/ned.svg',
+	'./app/res/flags/rus.svg',
+	'./app/res/flags/tur.svg',
+	'./app/res/flags/ukd.svg',
+	'./app/res/flags/un.svg',
+	'./app/res/flags/usa.svg',
+
 	'./app/data/gubernatorial_2018',
 	'./app/data/gubernatorial_2020',
 	'./app/data/gubernatorial_current',
@@ -236,10 +252,11 @@ self.addEventListener('fetch', function(event) {
 					swLog('Cache' , 'fetch ' + event.request.url);
 					return response;
 				} else if(event.request.url.includes('yapms.com/app/') === true &&
-						event.request.url.includes('yapms.com/app/req_articles.php') === false &&
-						event.request.url.includes('yapms.com/app/?m=') === false &&
-						event.request.url.includes('yapms.com/app/savemap.php') === false &&
-						event.request.url.includes('yapms.com/app/savemap_new.php') === false) {
+					event.request.url.includes('yapms.com/app/req_articles.php') === false &&
+					event.request.url.includes('yapms.com/app/?m=') === false &&
+					event.request.url.includes('yapms.com/app/savemap.php') === false &&
+					event.request.url.includes('yapms.com/app/savemap_new.php') === false &&
+					event.request.url.includes('yapms.com/app/savemap_simple.php') === false) {
 					swLog('Web', 'fetch+cache ' + event.request.url);
 					return fetch(event.request)
 					.then(function(response) {
