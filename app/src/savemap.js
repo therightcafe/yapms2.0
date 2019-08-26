@@ -228,11 +228,6 @@ function saveMap_new(img, token) {
 				downloadbtn.style.display = 'inline-block';
 				downloadbtn.setAttribute('href', 'https://yapms.org/downloadmap.php?f=' + filename);
 			}
-			
-			var button = document.getElementById('share-button');
-			if(button) {
-				button.setAttribute('onclick', 'share()');
-			}
 
 			var loadingAnimation = document.getElementById('loading-animation');
 			if(loadingAnimation) {
