@@ -196,7 +196,7 @@ function saveMap_new(img, token) {
 
 	$.ajax({
 		//url: "./savemap_external.php",
-		url: "https://yapms.org/test.php",
+		url: "https://yapms.org/upload.php",
 		type: "POST",
 		data: formData,
 		processData: false,
