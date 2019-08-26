@@ -87,10 +87,6 @@
 		}
 	?>
 	
-	<script async="async" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-	<script>
-		window.googletag = window.googletag || {cmd: []};
-	</script>
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<script>
 		(adsbygoogle = window.adsbygoogle || []).push({
