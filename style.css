@@ -9,6 +9,11 @@ body {
 	text-align: center;
 }
 
+a {
+	outline: 0;
+}
+
+
 #info {
 	background: #dddddd;
 	align-items: center;
