@@ -27,7 +27,7 @@
 	<link rel="manifest" href="./manifest.json">
 
 	<title>YAPms - Yet Another Political Map Simulator</title>
-	
+
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<script>
 	     (adsbygoogle = window.adsbygoogle || []).push({
@@ -35,8 +35,6 @@
 		  enable_page_level_ads: true
 	     });
 	</script>
-
-	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132710089-1"></script>
 	<script>
 		var host = window.location.hostname;
@@ -45,7 +43,7 @@
 		gtag('js', new Date());
 		gtag('config', 'UA-132710089-1');
 	</script>
-	
+
 	<link rel="icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
 	<link rel="shortcut icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
 	
@@ -97,7 +95,7 @@
 			</div>
 		</a>
 	</div>
-	<h2 class="header"> United States Maps </h2>
+	<h2 class="header">United States</h2>
 
 	<div class="map-type-box">	
 	<div class="map-type-header">
@@ -243,7 +241,7 @@
 	</div>
 
 	<br>
-	<h2 class="header"> United States Historical Maps </h2>
+	<h2 class="header">United States</h2>
 
 	<div class="map-type-box">
 	<div class="map-type-header">
@@ -495,7 +493,7 @@
 	</div>
 
 	<br>
-	<h1 class="header"> Other Country Maps </h1>
+	<h1 class="header">Other Countries</h1>
 	
 	<div class="map-type-box">
 	<div class="map-type-header">
@@ -666,7 +664,7 @@
 	</div>
 	</div>
 	
-	<h1 class="header"> Trans-National Maps </h1>
+	<h1 class="header">Trans-National Organizations</h1>
 	
 	<div class="map-type-box">
 	<div class="map-type-header"> Joined countries
