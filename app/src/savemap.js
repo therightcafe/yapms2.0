@@ -195,7 +195,8 @@ function saveMap_new(img, token) {
 	formData.append("data", JSON.stringify(data));
 
 	$.ajax({
-		url: "./savemap_external.php",
+		//url: "./savemap_external.php",
+		url: "https://yapms.org/upload.php",
 		type: "POST",
 		data: formData,
 		processData: false,
@@ -226,11 +227,6 @@ function saveMap_new(img, token) {
 			if(downloadbtn) {
 				downloadbtn.style.display = 'inline-block';
 				downloadbtn.setAttribute('href', 'https://yapms.org/downloadmap.php?f=' + filename);
-			}
-			
-			var button = document.getElementById('share-button');
-			if(button) {
-				button.setAttribute('onclick', 'share()');
 			}
 
 			var loadingAnimation = document.getElementById('loading-animation');

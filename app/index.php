@@ -86,15 +86,13 @@
 			<meta name="twitter:image" content="https://www.yapms.com/app/res/yamps-96.png">';
 		}
 	?>
-
+	
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<script>
 		(adsbygoogle = window.adsbygoogle || []).push({
 		google_ad_client: "ca-pub-1660456925957249",
 		enable_page_level_ads: true});
 	</script>
-
-	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132710089-1"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
@@ -381,8 +379,10 @@ if($mobile) {
 	<h2 id="ecedit-message"></h2>
 	</div>
 	<div class="selectmenu-content">
-	<div class="selectmenu-button"><input id="state-ec" type="number" name="value" min="1" max="10000" step="1"></div>
-	<div class="selectmenu-button" onclick="setEC()">Apply</div>
+	<div class="selectmenu-section"><input id="state-ec" type="number" name="value" min="1" max="10000" step="1"></div>
+	<div class="selectmenu-button" onclick="setEC()">
+		<div class="selectmenu-button-text"><?php echo _("Apply") ?></div>
+	</div>
 	<input id="state-id" type="hidden">
 	</div>
 </div>
@@ -395,26 +395,45 @@ if($mobile) {
 	</div>
 	<div class="selectmenu-content">
 	<div class="selectmenu-button">Name <input id="candidate-name" type="text" name="name"></div>
-	<div class="selectmenu-button">Solid <input id="candidate-solid" type="color"></div>
-	<div class="selectmenu-button">Likely <input id="candidate-likely" type="color"></div>
-	<div class="selectmenu-button">Lean <input id="candidate-lean" type="color"></div>
-	<div class="selectmenu-button">Tilt <input id="candidate-tilt" type="color"></div>
-	<div class="selectmenu-button" onclick="setCandidate()">Apply</div>
-	<div class="selectmenu-button" onclick='deleteCandidate()'>Delete</div>
+	<div class="selectmenu-section">Solid <input id="candidate-solid" type="color"></div>
+	<div class="selectmenu-section">Likely <input id="candidate-likely" type="color"></div>
+	<div class="selectmenu-section">Lean <input id="candidate-lean" type="color"></div>
+	<div class="selectmenu-section">Tilt <input id="candidate-tilt" type="color"></div>
+	<div class="selectmenu-button" onclick="setCandidate()">
+		<div class="selectmenu-button-text"><?php echo _("Apply") ?></div>
+	</div>
+	<div class="selectmenu-button" onclick='deleteCandidate()'>
+		<div class="selectmenu-button-text"><?php echo _("Delete") ?></div>
+	</div>
 	</div>
 </div>
 
 <div id="miscmenu" class="popup selectmenu">
 	<div class="selectmenu-header">
-	<object type="image/svg+xml" data="https://www.yapms.com/app/html/closebutton.svg" >Error</object>
+	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2><?php echo _("Misc") ?></h2>
 	</div>
 	<div class="selectmenu-content">
-	<a class="selectmenu-button" onclick="displayVersionInfo()"><i class="fas fa-info"></i> <?php echo _("Version Info") ?></a>
-	<a class="selectmenu-button" onclick="enableFullscreen()"><i class="fas fa-expand-arrows-alt"></i> <?php echo _("Fullscreen") ?></a>
-	<a class="selectmenu-button" onclick="centerMap()"><i class="fas fa-compress-arrows-alt"></i> <?php echo _("Center Map") ?></a>
-	<a class="selectmenu-button" onclick="toggleLTELogo()"><i class="fas fa-desktop"></i> LTE Logo</a>
-	<a class="selectmenu-button" onclick="toggleRedEagleLogo()"><i class="fas fa-desktop"></i> RedEagle Logo</a>
+	<a class="selectmenu-button" onclick="displayVersionInfo()">
+		<i class="fas fa-info"></i>
+		<div class="selectmenu-button-text"><?php echo _("Version Info") ?></div>
+	</a>
+	<a class="selectmenu-button" onclick="enableFullscreen()">
+		<i class="fas fa-expand-arrows-alt"></i>
+		<div class="selectmenu-button-text"><?php echo _("Fullscreen") ?></div>
+	</a>
+	<a class="selectmenu-button" onclick="centerMap()">
+		<i class="fas fa-compress-arrows-alt"></i>
+		<div class="selectmenu-button-text"><?php echo _("Center Map") ?></div>
+	</a>
+	<a class="selectmenu-button" onclick="toggleLTELogo()">
+		<i class="fas fa-desktop"></i>
+		<div class="selectmenu-button-text">LTE Logo</div>
+	</a>
+	<a class="selectmenu-button" onclick="toggleRedEagleLogo()">
+		<i class="fas fa-desktop"></i>
+		<div class="selectmenu-button-text">RedEagle Logo</div>
+	</a>
 	</div>
 </div>
 
@@ -425,11 +444,11 @@ if($mobile) {
 	</div>
 	<div class="selectmenu-content">
 	<input id="custom-color-name" type="hidden">
-	<div class="selectmenu-button"><?php echo _("Solid") ?> <input id="solidcustom" type="color"></div>
-	<div class="selectmenu-button"><?php echo _("Likely") ?> <input id="likelycustom" type="color"></div>
-	<div class="selectmenu-button"><?php echo _("Leaning") ?> <input id="leaningcustom" type="color"></div>
-	<div class="selectmenu-button"><?php echo _("Tilting") ?> <input id="tiltingcustom" type="color"></div>
-	<div class="selectmenu-button" onclick="saveCustomColors(); displayAddCandidateMenu()"><?php echo _("Set") ?></div>
+	<div class="selectmenu-section"><?php echo _("Solid") ?> <input id="solidcustom" type="color"></div>
+	<div class="selectmenu-section"><?php echo _("Likely") ?> <input id="likelycustom" type="color"></div>
+	<div class="selectmenu-section"><?php echo _("Leaning") ?> <input id="leaningcustom" type="color"></div>
+	<div class="selectmenu-section"><?php echo _("Tilting") ?> <input id="tiltingcustom" type="color"></div>
+	<div class="selectmenu-section" onclick="saveCustomColors(); displayAddCandidateMenu()"><?php echo _("Set") ?></div>
 	</div>
 </div>
 
@@ -440,31 +459,43 @@ if($mobile) {
 	</div>
 	<div class="selectmenu-content">
 	<div class="selectmenu-section"><?php echo _("Name") ?><input id="name" type="text"></div>
-	<a class="selectmenu-button selectmenu-red" onclick='setColors("red")'><?php echo _("Red Colors") ?></a>
-	<a class="selectmenu-button selectmenu-blue" onclick='setColors("blue")'><?php echo _("Blue Colors") ?></a>
-	<a class="selectmenu-button selectmenu-green" onclick='setColors("green")'><?php echo _("Green Colors") ?></a>
-	<a class="selectmenu-button selectmenu-yellow" onclick='setColors("yellow")'><?php echo _("Yellow Colors") ?></a>
+	<a class="selectmenu-button selectmenu-red" onclick='setColors("red")'>
+		<div class="selectmenu-button-text"><?php echo _("Red Colors") ?></div>
+	</a>
+	<a class="selectmenu-button selectmenu-blue" onclick='setColors("blue")'>
+		<div class="selectmenu-button-text"><?php echo _("Blue Colors") ?></div>
+	</a>
+	<a class="selectmenu-button selectmenu-green" onclick='setColors("green")'>
+		<div class="selectmenu-button-text"><?php echo _("Green Colors") ?></div>
+	</a>
+	<a class="selectmenu-button selectmenu-yellow" onclick='setColors("yellow")'>
+		<div class="selectmenu-button-text"><?php echo _("Yellow Colors") ?></div>
+	</a>
 	<div class="selectmenu-button-double">
-		<a id="custom1button" class="selectmenu-button-left selectmenu-button selectmenu-button-bold"
-		onclick='setColors("custom1")'><?php echo _("Custom") ?> 1</a>	
+		<a id="custom1button" class="selectmenu-button-left selectmenu-button selectmenu-button-bold" onclick='setColors("custom1")'>
+			<div class="selectmenu-button-text"><?php echo _("Custom") ?> 1</div>
+		</a>	
 		<a class="selectmenu-button-right selectmenu-button fas fa-cog"
 			onclick='displayCustomColorMenu("custom1")'></a>
 	</div>
 	<div class="selectmenu-button-double">
-		<a id="custom2button" class="selectmenu-button-left selectmenu-button selectmenu-button-bold"
-			onclick='setColors("custom2")'><?php echo _("Custom") ?> 2</a>	
+		<a id="custom2button" class="selectmenu-button-left selectmenu-button selectmenu-button-bold" onclick='setColors("custom2")'>
+			<div class="selectmenu-button-text"><?php echo _("Custom") ?> 2</div>
+		</a>	
 		<a class="selectmenu-button-right selectmenu-button fas fa-cog"
 			onclick='displayCustomColorMenu("custom2")'></a>
 	</div>
 	<div class="selectmenu-button-double">
-		<a id="custom3button" class="selectmenu-button-left selectmenu-button selectmenu-button-bold"
-			onclick='setColors("custom3")'><?php echo _("Custom") ?> 3</a>	
+		<a id="custom3button" class="selectmenu-button-left selectmenu-button selectmenu-button-bold" onclick='setColors("custom3")'>
+			<div class="selectmenu-button-text"><?php echo _("Custom") ?> 3</div>
+		</a>	
 		<a class="selectmenu-button-right selectmenu-button fas fa-cog"
 			onclick='displayCustomColorMenu("custom3")'></a>
 	</div>
 	<div class="selectmenu-button-double">
-		<a id="custom4button" class="selectmenu-button-left selectmenu-button selectmenu-button-bold"
-			onclick='setColors("custom4")'><?php echo _("Custom") ?> 4</a>	
+		<a id="custom4button" class="selectmenu-button-left selectmenu-button selectmenu-button-bold" onclick='setColors("custom4")'>
+			<div class="selectmenu-button-text"><?php echo _("Custom") ?> 4</div>
+		</a>	
 		<a class="selectmenu-button-right selectmenu-button fas fa-cog"
 			onclick='displayCustomColorMenu("custom4")'></a>
 	</div>
@@ -472,7 +503,9 @@ if($mobile) {
 	<div class="selectmenu-section"><?php echo _("Likely") ?> <input id="likely" type="color"></div>
 	<div class="selectmenu-section"><?php echo _("Leaning") ?> <input id="leaning" type="color"></div>
 	<div class="selectmenu-section"><?php echo _("Tilt") ?> <input id="tilting" type="color"></div>
-	<div class="selectmenu-button" onclick="addCandidate(); closeAllPopups();"><?php echo _("Add") ?></div>
+	<div class="selectmenu-button" onclick="addCandidate(); closeAllPopups();">
+		<div class="selectmenu-button-text"><?php echo _("Add") ?></div>
+	</div>
 	</div>
 </div>
 
@@ -488,34 +521,33 @@ if($mobile) {
 	</div>
 </div>
 
-<div id="modemenu" class="popup selectmenu">
-	<div class="selectmenu-header">
-	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
-	<h2><?php echo _("Select Mode") ?></h2>
-	</div>
-	<div class="selectmenu-content">
-	<a class="selectmenu-button" id="paintmovebutton" onclick='closeAllPopups(); setMode("paintmove")'><i class="fas fa-paint-brush"></i> <?php echo _("Mode-Option1") ?></a>
-	<a class="selectmenu-button" onclick='closeAllPopups(); setMode("paint")'><i class="fas fa-paint-brush"></i> <?php echo _("Mode-Option2") ?></a>
-	<a class="selectmenu-button" id="movebutton" onclick='closeAllPopups(); setMode("move")'><i class="fas fa-arrows-alt"></i> <?php echo _("Mode-Option3") ?></a>
-	<a class="selectmenu-button" onclick='closeAllPopups(); setMode("delete")'><i class="fas fa-eraser"></i> <?php echo _("Mode-Option4") ?></a>
-	<a class="selectmenu-button" onclick='closeAllPopups(); setMode("ec")'><i class="far fa-edit"></i> <?php echo _("Mode-Option5") ?></a>
-	<a class="selectmenu-button" onclick='closeAllPopups(); setMode("candidate")'><i class="fas fa-user-edit"></i> <?php echo _("Mode-Option6") ?></a>
-	</div>
-</div>
-
 <div id="thememenu" class="popup selectmenu">
 	<div class="selectmenu-header">
 	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2><?php echo _("Theme") ?></h2>
 	</div>
 	<div class="selectmenu-content">
-	<a class="selectmenu-button" onclick='darkPalette()'><?php echo _("Dark") ?></a>
-	<a class="selectmenu-button" onclick='greyscalePalette()'><?php echo _("Greyscale") ?></a>
-	<a class="selectmenu-button" onclick='terminalPalette()'><?php echo _("Terminal") ?></a>
-	<a class="selectmenu-button" onclick='lightPalette()'><?php echo _("Light") ?></a>
-	<a class="selectmenu-button" onclick='contrastPalette()'><?php echo _("Contrast") ?></a>
-	<a class="selectmenu-button" onclick='metallicPalette()'><?php echo _("Metallic") ?></a>
-	<a class="selectmenu-button" onclick='toWinPalette()'><?php echo _("Default") ?></a>
+	<a class="selectmenu-button" onclick='darkPalette()'>
+		<div class="selectmenu-button-text"><?php echo _("Dark") ?></div>
+	</a>
+	<a class="selectmenu-button" onclick='greyscalePalette()'>
+		<div class="selectmenu-button-text"><?php echo _("Greyscale") ?></div>
+	</a>
+	<a class="selectmenu-button" onclick='terminalPalette()'>
+		<div class="selectmenu-button-text"><?php echo _("Terminal") ?></div>
+	</a>
+	<a class="selectmenu-button" onclick='lightPalette()'>
+		<div class="selectmenu-button-text"><?php echo _("Light") ?></div>
+	</a>
+	<a class="selectmenu-button" onclick='contrastPalette()'>
+		<div class="selectmenu-button-text"><?php echo _("Contrast") ?></div>
+	</a>
+	<a class="selectmenu-button" onclick='metallicPalette()'>
+		<div class="selectmenu-button-text"><?php echo _("Metallic") ?></div>
+	</a>
+	<a class="selectmenu-button" onclick='toWinPalette()'>
+		<div class="selectmenu-button-text"><?php echo _("Default") ?></div>
+	</a>
 	</div>
 </div>
 
@@ -525,22 +557,48 @@ if($mobile) {
 	<h2><?php echo _("Select Chart") ?></h2>
 	</div>
 	<div class="selectmenu-content">
-	<a class="selectmenu-split"><?php echo _("Chart") ?></a>
-
-
-	<a class="selectmenu-button" onclick='setChart("horizontalbattle")'><?php echo _("Chart-Option1") ?></a>
-	<a class="selectmenu-button" onclick='setChart("verticalbattle")'><?php echo _("Chart-Option2") ?></a>
-	<a class="selectmenu-button" onclick='setChart("pie")'><?php echo _("Chart-Option3") ?></a>
-	<a class="selectmenu-button" onclick='setChart("pie","bottom")'><?php echo _("Chart-Option4") ?></a>
-	<a class="selectmenu-button" onclick='setChart("doughnut")'><?php echo _("Chart-Option5") ?></a>
-	<a class="selectmenu-button" onclick='setChart("doughnut", "bottom")'><?php echo _("Chart-Option6") ?></a>
-	<a class="selectmenu-button" onclick='setChart("horizontalBar")'><?php echo _("Chart-Option7") ?></a>
-	<a class="selectmenu-button" onclick='setChart("none")'><?php echo _("Chart-Option8") ?></a>
-	<a class="selectmenu-split"><?php echo _("Chart Settings") ?></a>
-	<a class="selectmenu-button" onclick='toggleLegendCounter()'><?php echo _("Chart-Setting1") ?></a>
-	<a class="selectmenu-button" onclick='toggleChartLabels()'><?php echo _("Chart-Setting2") ?></a>
-	<a class="selectmenu-button" onclick='toggleChartLeans()'><?php echo _("Chart-Setting3") ?></a>
-	<a class="selectmenu-button" onclick='toggleLegendLeans()'><?php echo _("Chart-Setting4") ?></a>
+	<a class="selectmenu-split">
+		<div class="selectmenu-split-text"><?php echo _("Chart") ?></div>
+	</a>
+	<a class="selectmenu-button" onclick='setChart("horizontalbattle")'>
+		<div class="selectmenu-button-text"><?php echo _("Chart-Option1") ?></div>
+	</a>
+	<a class="selectmenu-button" onclick='setChart("verticalbattle")'>
+		<div class="selectmenu-button-text"><?php echo _("Chart-Option2") ?></div>
+	</a>
+	<a class="selectmenu-button" onclick='setChart("pie")'>
+		<div class="selectmenu-button-text"><?php echo _("Chart-Option3") ?></div>
+	</a>
+	<a class="selectmenu-button" onclick='setChart("pie","bottom")'>
+		<div class="selectmenu-button-text"><?php echo _("Chart-Option4") ?></div>
+	</a>
+	<a class="selectmenu-button" onclick='setChart("doughnut")'>
+		<div class="selectmenu-button-text"><?php echo _("Chart-Option5") ?></div>
+	</a>
+	<a class="selectmenu-button" onclick='setChart("doughnut", "bottom")'>
+		<div class="selectmenu-button-text"><?php echo _("Chart-Option6") ?></div>
+	</a>
+	<a class="selectmenu-button" onclick='setChart("horizontalBar")'>
+		<div class="selectmenu-button-text"><?php echo _("Chart-Option7") ?></div>
+	</a>
+	<a class="selectmenu-button" onclick='setChart("none")'>
+		<div class="selectmenu-button-text"><?php echo _("Chart-Option8") ?></div>
+	</a>
+	<a class="selectmenu-split">
+		<div class="selectmenu-split-text"><?php echo _("Chart Settings") ?></div>
+	</a>
+	<a class="selectmenu-button" onclick='toggleLegendCounter()'>
+		<div class="selectmenu-button-text"><?php echo _("Chart-Setting1") ?></div>
+	</a>
+	<a class="selectmenu-button" onclick='toggleChartLabels()'>
+		<div class="selectmenu-button-text"><?php echo _("Chart-Setting2") ?></div>
+	</a>
+	<a class="selectmenu-button" onclick='toggleChartLeans()'>
+		<div class="selectmenu-button-text"><?php echo _("Chart-Setting3") ?></div>
+	</a>
+	<a class="selectmenu-button" onclick='toggleLegendLeans()'>
+		<div class="selectmenu-button-text"><?php echo _("Chart-Setting4") ?></div>
+	</a>
 	</div>
 </div>
 
@@ -548,11 +606,20 @@ if($mobile) {
 <div id="mapmenu-canada" class="popup selectmenu">
 	<div class="selectmenu-header">
 	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
-	<h2><img src="res/flags/can.svg" height="20px"> <?php echo _("Canada") ?></h2>
+	<h2 class="selectmenu-display-header">
+		<img src="res/flags/can.svg">
+		<div class="selectmenu-display-header-text"><?php echo _("Canada") ?></div>
+	</h2>
 	</div>
 	<div class="selectmenu-content">
-	<a class="selectmenu-button" href="./?t=Canada_provinces"><i class="fas fa-square"></i> <?php echo _("Provinces") ?></a>
-	<a class="selectmenu-button" href="./?t=Canada_house_of_commons"><i class="fas fa-chevron-down"></i> <?php echo _("House of Commons") ?></a>
+	<a class="selectmenu-button" href="./?t=Canada_provinces">
+		<i class="fas fa-square"></i>
+		<div class="selectmenu-display-header-text"><?php echo _("Provinces") ?></div>
+	</a>
+	<a class="selectmenu-button" href="./?t=Canada_house_of_commons">
+		<i class="fas fa-chevron-down"></i>
+		<div class="selectmenu-display-header-text"><?php echo _("House of Commons") ?></div>
+	</a>
 	</div>
 </div>
 
@@ -560,11 +627,20 @@ if($mobile) {
 <div id="mapmenu-germany" class="popup selectmenu">
 	<div class="selectmenu-header">
 	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
-	<h2><img src="res/flags/ger.svg" height="20px"> <?php echo _("Germany") ?></h2>
+	<h2 class="selectmenu-display-header">
+		<img src="res/flags/ger.svg">
+		<div class="selectmenu-display-header-text"><?php echo _("Germany") ?></div>
+	</h2>
 	</div>
 	<div class="selectmenu-content">
-	<a class="selectmenu-button" href="./?t=Germany_states"><i class="fas fa-square"></i> <?php echo _("States") ?></a>
-	<a class="selectmenu-button" href="./?t=Germany_bundestag"><i class="fas fa-chevron-down"></i> <?php echo _("Bundestag") ?></a>
+	<a class="selectmenu-button" href="./?t=Germany_states">
+		<i class="fas fa-square"></i>
+		<div class="selectmenu-button-text"><?php echo _("States") ?></div>
+	</a>
+	<a class="selectmenu-button" href="./?t=Germany_bundestag">
+		<i class="fas fa-chevron-down"></i>
+		<div class="selectmenu-button-text"><?php echo _("Bundestag") ?></div>
+	</a>
 	</div>
 </div>
 
@@ -572,11 +648,20 @@ if($mobile) {
 <div id="mapmenu-australia" class="popup selectmenu">
 	<div class="selectmenu-header">
 	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
-	<h2><img src="res/flags/aus.svg" height="20px"> <?php echo _("Australia") ?></h2>
+	<h2 class="selectmenu-display-header">
+		<img src="res/flags/aus.svg">
+		<div class="selectmenu-display-header-text"><?php echo _("Australia") ?></div>
+	</h2>
 	</div>
 	<div class="selectmenu-content">
-	<a class="selectmenu-button" href="./?t=Australia_states"><i class="fas fa-square"></i> <?php echo _("States") ?></a>
-	<a class="selectmenu-button" href="./?t=Australia_house_of_representatives"><i class="fas fa-chevron-down"></i> <?php echo _("House of Representatives") ?></a>
+	<a class="selectmenu-button" href="./?t=Australia_states">
+		<i class="fas fa-square"></i>
+		<div class="selectmenu-button-text"><?php echo _("States") ?></div>
+	</a>
+	<a class="selectmenu-button" href="./?t=Australia_house_of_representatives">
+		<i class="fas fa-chevron-down"></i>
+		<div class="selectmenu-button-text"><?php echo _("House of Representatives") ?></div>
+	</a>
 	</div>
 </div>
 
@@ -584,22 +669,20 @@ if($mobile) {
 <div id="mapmenu-netherlands" class="popup selectmenu">
 	<div class="selectmenu-header">
 	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
-	<h2><img src="res/flags/ned.svg" height="20px"> <?php echo _("Netherlands") ?></h2>
+	<h2 class="selectmenu-display-header">
+		<img src="res/flags/ned.svg">
+		<div class="selectmenu-display-header-text"><?php echo _("Netherlands") ?></div>
+	</h2>
 	</div>
 	<div class="selectmenu-content">
-	<a class="selectmenu-button" href="./?t=Netherlands_provinces"><i class="fas fa-chevron-circle-down"></i> <?php echo _("Provinces") ?></a>
-	<a class="selectmenu-button" href="./?t=Netherlands_gemeenten"><i class="fas fa-chevron-down"></i> <?php echo _("Gemeeten") ?></a>
-	</div>
-</div>
-
-<!-- UK Maps -->
-<div id="mapmenu-uk" class="popup selectmenu">
-	<div class="selectmenu-header">
-	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
-	<h2><img src="res/flags/ukd.svg" height="20px"> <?php echo _("United Kingdom") ?></h2>
-	</div>
-	<div class="selectmenu-content">
-	<a class="selectmenu-button" onclick='closeAllPopups(); loadMap("./res/unitedkingdom.svg", 16, 0.075, "congressional", "congressional", "open");'><i class="fas fa-chevron-down"></i> <?php echo _("Constituencies") ?></a>
+	<a class="selectmenu-button" href="./?t=Netherlands_provinces">
+		<i class="fas fa-chevron-circle-down"></i>
+		<div class="selectmenu-button-text"><?php echo _("Provinces") ?></div>
+	</a>
+	<a class="selectmenu-button" href="./?t=Netherlands_gemeenten">
+		<i class="fas fa-chevron-down"></i>
+		<div class="selectmenu-button-text"><?php echo _("Gemeeten") ?></div>
+	</a>
 	</div>
 </div>
 
@@ -607,11 +690,20 @@ if($mobile) {
 <div id="mapmenu-russia" class="popup selectmenu">
 	<div class="selectmenu-header">
 	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
-	<h2>Russia</h2>
+	<h2 class="selectmenu-display-header">
+		<img src="res/flags/rus.svg">
+		<div class="selectmenu-display-header-text"><?php echo _("Russia") ?></div>
+	</h2>
 	</div>
 	<div class="selectmenu-content">
-	<a class="selectmenu-button" href="./?t=Russia_federal_council"><i class="fas fa-chevron-up"></i> <?php echo _("Federation Council") ?></a>
-	<a class="selectmenu-button" href="./?t=Russia_duma"><i class="fas fa-chevron-down"></i> <?php echo _("Duma") ?></a>
+	<a class="selectmenu-button" href="./?t=Russia_federal_council">
+		<i class="fas fa-chevron-up"></i>
+		<div class="selectmenu-button-text"><?php echo _("Federation Council") ?></div>
+	</a>
+	<a class="selectmenu-button" href="./?t=Russia_duma">
+		<i class="fas fa-chevron-down"></i>
+		<div class="selectmenu-button-text"><?php echo _("Duma") ?></div>
+	</a>
 	</div>
 </div>
 
@@ -619,33 +711,99 @@ if($mobile) {
 <div id="mapmenu-usa" class="popup selectmenu">
 	<div class="selectmenu-header">
 	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
-	<h2><img src="res/flags/usa.svg" height="20px"> <?php echo _("USA Maps") ?></h2>
+	<h2 class="selectmenu-display-header">
+		<img src="res/flags/usa.svg">
+		<div class="selectmenu-display-header-text"><?php echo _("USA") ?></div>
+	</h2>
 	</div>
 	<div class="selectmenu-content">
-	<a class="selectmenu-split"><?php echo _("2020 Elections") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_2020_presidential"><i class="fas fa-user"></i> <?php echo _("Presidential") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_2020_senate"><i class="fas fa-chevron-up"></i> <?php echo _("Senate") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_2020_house"><i class="fas fa-chevron-down"></i> <?php echo _("House") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_2020_governors"><i class="fas fa-square"></i> <?php echo _("Governors") ?></a>
-	<a class="selectmenu-split"><?php echo _("2020 Forecasts") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_2020_cook">Cook Political Report</a>
-	<a class="selectmenu-button" href="./?t=USA_2020_inside">Inside Elections</a>
-	<a class="selectmenu-button" href="./?t=USA_2020_sabatos">Sabatos Crystal Ball</a>
-	<a class="selectmenu-split"><?php echo _("2020 Primaries") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_2020_democratic_primary"><i class="fas fa-democrat"></i> <?php echo _("Democratic") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_2020_republican_primary"><i class="fas fa-republican"></i> <?php echo _("Republican") ?></a>
-	<a class="selectmenu-split"><?php echo _("Current") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_current_senate"><i class="fas fa-chevron-up"></i> <?php echo _("Senate") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_current_house"><i class="fas fa-chevron-down"></i> <?php echo _("House") ?></a>
-	<a class="selectmenu-split"><?php echo _("Blank maps") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_senate"><i class="fas fa-chevron-up"></i> <?php echo _("Senate") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_governors"><i class="fas fa-square"></i> <?php echo _("Governors") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_county"><i class="fas fa-border-all"></i> <?php echo _("County") ?></a>
-	<a class="selectmenu-split"><?php echo _("Other Presidential Maps") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_2024_projection"><i class="far fa-user"></i> <?php echo _("2024 estimates") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_proportional"><i class="far fa-user-circle"></i> <?php echo _("Proportional") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_takeall"><i class="fas fa-user"></i> <?php echo _("Take All") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_split_maine"><i class="fas fa-user"></i> <?php echo _("Split Maine") ?></a>
+	<a class="selectmenu-split">
+		<div class="selectmenu-split-text"><?php echo _("National") ?></div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_2020_presidential">
+		<i class="fas fa-user"></i>
+		<div class="selectmenu-button-text"><?php echo _("Presidential") ?></div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_2020_senate">
+		<i class="fas fa-chevron-up"></i>
+		<div class="selectmenu-button-text"><?php echo _("Senate") ?></div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_2020_house">
+		<i class="fas fa-chevron-down"></i>
+		<div class="selectmenu-button-text"><?php echo _("House") ?></div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_2020_governors">
+		<i class="fas fa-square"></i>
+		<div class="selectmenu-button-text"><?php echo _("Governors") ?></div>
+	</a>
+	<a class="selectmenu-split">
+		<div class="selectmenu-split-text"><?php echo _("Forecasts") ?></div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_2020_cook">
+		<div class="selectmenu-button-text">Cook Political Report</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_2020_inside">
+		<div class="selectmenu-button-text">Inside Elections</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_2020_sabatos">
+		<div class="selectmenu-button-text">Sabatos Crystal Ball</div>
+	</a>
+	<a class="selectmenu-split">
+		<div class="selectmenu-split-text"><?php echo _("Primaries") ?></div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_2020_democratic_primary">
+		<i class="fas fa-democrat"></i>
+		<div class="selectmenu-button-text"><?php echo _("Democratic") ?></div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_2020_republican_primary">
+		<i class="fas fa-republican"></i>
+		<div class="selectmenu-button-text"><?php echo _("Republican") ?></div>
+	</a>
+	<a class="selectmenu-split">
+		<div class="selectmenu-split-text"><?php echo _("Current") ?></div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_current_senate">
+		<i class="fas fa-chevron-up"></i>
+		<div class="selectmenu-button-text"><?php echo _("Senate") ?></div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_current_house">
+		<i class="fas fa-chevron-down"></i>
+		<div class="selectmenu-button-text"><?php echo _("House") ?></div>
+	</a>
+	<a class="selectmenu-split">
+		<div class="selectmenu-split-text"><?php echo _("Blank") ?></div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_senate">
+		<i class="fas fa-chevron-up"></i>
+		<div class="selectmenu-button-text"><?php echo _("Senate") ?></div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_governors">
+		<i class="fas fa-square"></i>
+		<div class="selectmenu-button-text"><?php echo _("Governors") ?></div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_county">
+		<i class="fas fa-border-all"></i>
+		<div class="selectmenu-button-text"><?php echo _("County") ?></div>
+	</a>
+	<a class="selectmenu-split">
+		<div class="selectmenu-split-text"><?php echo _("Other") ?></div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_2024_projection">
+		<i class="far fa-user"></i>
+		<div class="selectmenu-button-text"><?php echo _("2024 Estimates") ?></div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_proportional">
+		<i class="far fa-user-circle"></i>
+		<div class="selectmenu-button-text"><?php echo _("Proportional") ?></div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_takeall">
+		<i class="fas fa-user"></i>
+		<div class="selectmenu-button-text"><?php echo _("Take All") ?></div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_split_maine">
+		<i class="fas fa-user"></i>
+		<div class="selectmenu-button-text"><?php echo _("Split Maine") ?></div>
+	</a>
 	</div>
 </div>
 
@@ -653,54 +811,150 @@ if($mobile) {
 <div id="mapmenu-usa-historical" class="popup selectmenu">
 	<div class="selectmenu-header">
 	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
-	<h2><img src="res/flags/usa.svg" height="20px"> <?php echo _("USA Historical Maps") ?></h2>
+	<h2 class="selectmenu-display-header">
+		<img src="res/flags/usa.svg">
+		<div class="selectmenu-display-header-text">USA <?php echo _("Historical") ?></div>
+	</h2>
 	</div>
 	<div class="selectmenu-content">
-	<a class="selectmenu-split"><i class="fas fa-chevron-down"></i> <?php echo _("Congressional Maps") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_congressional">2011-2020</a>
-	<a class="selectmenu-button" href="./?t=USA_congressional_2008">2006-2010</a>
-	<a class="selectmenu-split"><i class="fas fa-border-all"></i> <?php echo _("Presidential County Results") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_2016_presidential_county">2016</a>
-	<a class="selectmenu-split"><i class="fas fa-user"></i> <?php echo _("Presidential Results") ?></a>
-	<a class="selectmenu-button" href="./?t=USA_2016_presidential">2016</a>
-	<a class="selectmenu-button" href="./?t=USA_2012_presidential">2012</a>
-	<a class="selectmenu-button" href="./?t=USA_2008_presidential">2008</a>
-	<a class="selectmenu-button" href="./?t=USA_2004_presidential">2004</a>
-	<a class="selectmenu-button" href="./?t=USA_2000_presidential">2000</a>
-	<a class="selectmenu-button" href="./?t=USA_1996_presidential">1996</a>
-	<a class="selectmenu-button" href="./?t=USA_1992_presidential">1992</a>
-	<a class="selectmenu-button" href="./?t=USA_1988_presidential">1988</a>
-	<a class="selectmenu-button" href="./?t=USA_1984_presidential">1984</a>
-	<a class="selectmenu-button" href="./?t=USA_1980_presidential">1980</a>
-	<a class="selectmenu-button" href="./?t=USA_1976_presidential">1976</a>
-	<a class="selectmenu-button" href="./?t=USA_1972_presidential">1972</a>
-	<a class="selectmenu-button" href="./?t=USA_1968_presidential">1968</a>
-	<a class="selectmenu-button" href="./?t=USA_1964_presidential">1964</a>
-	<a class="selectmenu-button" href="./?t=USA_1960_presidential">1960</a>
-	<a class="selectmenu-button" href="./?t=USA_1956_presidential">1956</a>
-	<a class="selectmenu-button" href="./?t=USA_1952_presidential">1952</a>
-	<a class="selectmenu-button" href="./?t=USA_1948_presidential">1948</a>
-	<a class="selectmenu-button" href="./?t=USA_1944_presidential">1944</a>
-	<a class="selectmenu-button" href="./?t=USA_1940_presidential">1940</a>
-	<a class="selectmenu-button" href="./?t=USA_1936_presidential">1936</a>
-	<a class="selectmenu-button" href="./?t=USA_1932_presidential">1932</a>
-	<a class="selectmenu-button" href="./?t=USA_1928_presidential">1928</a>
-	<a class="selectmenu-button" href="./?t=USA_1924_presidential">1924</a>
-	<a class="selectmenu-button" href="./?t=USA_1920_presidential">1920</a>
-	<a class="selectmenu-button" href="./?t=USA_1916_presidential">1916</a>
-	<a class="selectmenu-button" href="./?t=USA_1912_presidential">1912</a>
-	<a class="selectmenu-button" href="./?t=USA_1908_presidential">1908</a>
-	<a class="selectmenu-button" href="./?t=USA_1904_presidential">1904</a>
-	<a class="selectmenu-button" href="./?t=USA_1900_presidential">1900</a>
-	<a class="selectmenu-button" href="./?t=USA_1896_presidential">1896</a>
-	<a class="selectmenu-button" href="./?t=USA_1892_presidential">1892</a>
-	<a class="selectmenu-button" href="./?t=USA_1888_presidential">1888</a>
-	<a class="selectmenu-button" href="./?t=USA_1884_presidential">1884</a>
-	<a class="selectmenu-button" href="./?t=USA_1880_presidential">1880</a>
-	<a class="selectmenu-button" href="./?t=USA_1876_presidential">1876</a>
-	<a class="selectmenu-button" href="./?t=USA_1872_presidential">1872</a>
-	<a class="selectmenu-button" href="./?t=USA_1868_presidential">1868</a>
-	<a class="selectmenu-button" href="./?t=USA_1864_presidential">1864</a>
+	<a class="selectmenu-split">
+		<i class="fas fa-chevron-down"></i>
+		<div class="selectmenu-split-text"><?php echo _("Congressional") ?></div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_congressional">
+		<div class="selectmenu-button-text">2018-2020</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_congressional_2008">
+		<div class="selectmenu-button-text">2006-2010</div>
+	</a>
+	<a class="selectmenu-split">
+		<i class="fas fa-border-all"></i>
+		<div class="selectmenu-split-text"><?php echo _("Presidential County Results") ?></div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_2016_presidential_county">
+		<div class="selectmenu-button-text">2016</div>
+	</a>
+	<a class="selectmenu-split">
+		<i class="fas fa-user"></i>
+		<div class="selectmenu-split-text"><?php echo _("Presidential Results") ?></div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_2016_presidential">
+		<div class="selectmenu-button-text">2016</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_2012_presidential">
+		<div class="selectmenu-button-text">2012</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_2008_presidential">
+		<div class="selectmenu-button-text">2008</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_2004_presidential">
+		<div class="selectmenu-button-text">2004</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_2000_presidential">
+		<div class="selectmenu-button-text">2000</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_1996_presidential">
+		<div class="selectmenu-button-text">1996</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_1992_presidential">
+		<div class="selectmenu-button-text">1992</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_1988_presidential">
+		<div class="selectmenu-button-text">1988</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_1984_presidential">
+		<div class="selectmenu-button-text">1984</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_1980_presidential">
+		<div class="selectmenu-button-text">1980</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_1976_presidential">
+		<div class="selectmenu-button-text">1976</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_1972_presidential">
+		<div class="selectmenu-button-text">1972</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_1968_presidential">
+		<div class="selectmenu-button-text">1968</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_1964_presidential">
+		<div class="selectmenu-button-text">1964</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_1960_presidential">
+		<div class="selectmenu-button-text">1960</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_1956_presidential">
+		<div class="selectmenu-button-text">1956</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_1952_presidential">
+		<div class="selectmenu-button-text">1952</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_1948_presidential">
+		<div class="selectmenu-button-text">1948</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_1944_presidential">
+		<div class="selectmenu-button-text">1944</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_1940_presidential">
+		<div class="selectmenu-button-text">1940</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_1936_presidential">
+		<div class="selectmenu-button-text">1936</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_1932_presidential">
+		<div class="selectmenu-button-text">1932</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_1928_presidential">
+		<div class="selectmenu-button-text">1928</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_1924_presidential">
+		<div class="selectmenu-button-text">1924</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_1920_presidential">
+		<div class="selectmenu-button-text">1920</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_1916_presidential">
+		<div class="selectmenu-button-text">1916</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_1912_presidential">
+		<div class="selectmenu-button-text">1912</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_1908_presidential">
+		<div class="selectmenu-button-text">1908</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_1904_presidential">
+		<div class="selectmenu-button-text">1904</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_1900_presidential">
+		<div class="selectmenu-button-text">1900</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_1896_presidential">
+		<div class="selectmenu-button-text">1896</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_1892_presidential">
+		<div class="selectmenu-button-text">1892</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_1888_presidential">
+		<div class="selectmenu-button-text">1888</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_1884_presidential">
+		<div class="selectmenu-button-text">1884</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_1880_presidential">
+		<div class="selectmenu-button-text">1880</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_1876_presidential">
+		<div class="selectmenu-button-text">1876</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_1872_presidential">
+		<div class="selectmenu-button-text">1872</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_1868_presidential">
+		<div class="selectmenu-button-text">1868</div>
+	</a>
+	<a class="selectmenu-button" href="./?t=USA_1864_presidential">
+		<div class="selectmenu-button-text">1864</div>
+	</a>
 	</div>
 </div>
 
@@ -724,28 +978,86 @@ if($mobile) {
 	<h2><?php echo _("Select Map") ?></h2>
 	</div>
 	<div class="selectmenu-content">
-	<a class="selectmenu-split"><?php echo _("United States") ?></a>
-	<a class="selectmenu-button" onclick='displayCountryMenu("usa")'><img src="res/flags/usa.svg" height="20px"> <?php echo _("USA") ?></a>
-	<a class="selectmenu-button" onclick='displayCountryMenu("usa-historical")'><img src="res/flags/usa.svg" height="20px"> <?php echo _("USA Historical") ?></a>
-	<a class="selectmenu-split"><?php echo _("Other Countries") ?></a>
-	<a class="selectmenu-button" onclick='displayCountryMenu("australia")'><img src="res/flags/aus.svg" height="20px"> <?php echo _("Australia") ?></a>
-	<a class="selectmenu-button" href="./?t=Brazil_chamber_of_deputies"><img src="res/flags/bra.svg" height="20px"> <?php echo _("Brazil") ?></a>
-	<a class="selectmenu-button" onclick='displayCountryMenu("canada")'><img src="res/flags/can.svg" height="20px"> <?php echo _("Canada") ?></a>
-	<a class="selectmenu-button" href="./?t=France_national_assembly"><img src="res/flags/fra.svg" height="20px"> <?php echo _("France") ?></a>
-	<a class="selectmenu-button" onclick='displayCountryMenu("germany")'><img src="res/flags/ger.svg" height="20px"> <?php echo _("Germany") ?></a>
-	<a class="selectmenu-button" href="./?t=Italy_states"><img src="res/flags/ita.svg" height="20px"> <?php echo _("Italy") ?></a>
-	<a class="selectmenu-button" href="./?t=Ireland_dail_eireann"><img src="res/flags/ire.svg" height="20px"> <?php echo _("Ireland") ?></a>
-	<a class="selectmenu-button" onclick='displayCountryMenu("netherlands")'><img src="res/flags/ned.svg" height="20px"> <?php echo _("Netherlands") ?></a>
-	<a class="selectmenu-button" onclick='displayCountryMenu("russia")'><img src="res/flags/rus.svg" height="20px"> <?php echo _("Russia") ?></a>
-	<a class="selectmenu-button" href="./?t=Spain_congress_of_deputies"><img src="res/flags/esp.svg" height="20px"> <?php echo _("Spain") ?></a>
-	<!-- Add Turkey -->
-	<a class="selectmenu-button" href="./?t=UnitedKingdom_house_of_commons"><img src="res/flags/ukd.svg" height="20px"> <?php echo _("United Kingdom") ?></a>
-	<a class="selectmenu-split"><?php echo _("Trans-national") ?></a>
-	<a class="selectmenu-button" href="./?t=EuropeanUnion"><img src="res/flags/eu.svg" height="20px"> <?php echo _("EU") ?></a>
-	<a class="selectmenu-button" href="./?t=World"><img src="res/flags/un.svg" height="20px"> <?php echo _("World") ?></a>
-	<a class="selectmenu-button" href='./?t=USA_Canada'><img src="res/flags/usa.svg" height="20px"><img src="res/flags/can.svg" height="20px"><br><?php echo _("USA") ?> <?php echo _("Canada") ?></a>
-	<a class="selectmenu-split"><?php echo _("Mock Elections") ?></a>
-	<a class="selectmenu-button" onclick='displayCountryMenu("lte")'>LTE</a>
+	<a class="selectmenu-split">
+		<div class="selectmenu-split-text"><?php echo _("United States") ?></div>
+	</a>
+	<a class="selectmenu-button" onclick='displayCountryMenu("usa")'>
+		<img src="res/flags/usa.svg">
+		<div class="selectmenu-button-text"><?php echo _("USA") ?></div>
+	</a>
+	<a class="selectmenu-button" onclick='displayCountryMenu("usa-historical")'>
+		<img src="res/flags/usa.svg">
+		<div class="selectmenu-button-text"><?php echo _("USA Historical") ?></div>
+	</a>
+	<a class="selectmenu-split">
+		<div class="selectmenu-split-text"><?php echo _("Other Countries") ?></div>
+	</a>
+	<a class="selectmenu-button" onclick='displayCountryMenu("australia")'>
+		<img src="res/flags/aus.svg">
+		<div class="selectmenu-button-text"><?php echo _("Australia") ?></div>
+	</a>
+	<a class="selectmenu-button" href="./?t=Brazil_chamber_of_deputies">
+		<img src="res/flags/bra.svg">
+		<div class="selectmenu-button-text"><?php echo _("Brazil") ?></div>
+	</a>
+	<a class="selectmenu-button" onclick='displayCountryMenu("canada")'>
+		<img src="res/flags/can.svg">
+		<div class="selectmenu-button-text"><?php echo _("Canada") ?></div>
+	</a>
+	<a class="selectmenu-button" href="./?t=France_national_assembly">
+		<img src="res/flags/fra.svg">
+		<div class="selectmenu-button-text"><?php echo _("France") ?></div>
+	</a>
+	<a class="selectmenu-button" onclick='displayCountryMenu("germany")'>
+		<img src="res/flags/ger.svg">
+		<div class="selectmenu-button-text"><?php echo _("Germany") ?></div>
+	</a>
+	<a class="selectmenu-button" href="./?t=Italy_states">
+		<img src="res/flags/ita.svg">
+		<div class="selectmenu-button-text"><?php echo _("Italy") ?></div>
+	</a>
+	<a class="selectmenu-button" href="./?t=Ireland_dail_eireann">
+		<img src="res/flags/ire.svg">
+		<div class="selectmenu-button-text"><?php echo _("Ireland") ?></div>
+	</a>
+	<a class="selectmenu-button" onclick='displayCountryMenu("netherlands")'>
+		<img src="res/flags/ned.svg">
+		<div class="selectmenu-button-text"><?php echo _("Netherlands") ?></div>
+	</a>
+	<a class="selectmenu-button" onclick='displayCountryMenu("russia")'>
+		<img src="res/flags/rus.svg">
+		<div class="selectmenu-button-text"><?php echo _("Russia") ?></div>
+	</a>
+	<a class="selectmenu-button" href="./?t=Spain_congress_of_deputies">
+		<img src="res/flags/esp.svg">
+		<div class="selectmenu-button-text"><?php echo _("Spain") ?></div>
+	</a>
+	<a class="selectmenu-button" href="./?t=UnitedKingdom_house_of_commons">
+		<img src="res/flags/ukd.svg">
+		<div class="selectmenu-button-text"><?php echo _("United Kingdom") ?></div>
+	</a>
+	<a class="selectmenu-split">
+		<div class="selectmenu-split-text"><?php echo _("Trans-National") ?></div>
+	</a>
+	<a class="selectmenu-button" href="./?t=EuropeanUnion">
+		<img src="res/flags/eu.svg">
+		<div class="selectmenu-button-text"><?php echo _("EU") ?></div>
+	</a>
+	<a class="selectmenu-button" href="./?t=World">
+		<img src="res/flags/un.svg">
+		<div class="selectmenu-button-text"><?php echo _("World") ?></div>
+	</a>
+	<a class="selectmenu-button" href='./?t=USA_Canada'>
+		<img src="res/flags/usa.svg">
+		<div class="selectmenu-button-text"><?php echo _("USA") . " " . _("Canada") ?></div>
+		<img src="res/flags/can.svg">
+	</a>
+	<a class="selectmenu-split">
+		<div class="selectmenu-split-text"><?php echo _("Mock Elections") ?></div>
+	</a>
+	<a class="selectmenu-button" onclick='displayCountryMenu("lte")'>
+		<div class="selectmenu-button-text">LTE</div>
+	</a>
 	</div>
 </div> 
 
@@ -755,9 +1067,12 @@ if($mobile) {
 	<h2><?php echo _("Select Language") ?> (Beta)</h2>
 	</div>
 	<div class="selectmenu-content">
-	<a class="selectmenu-button" onclick='setLanguage("en")'>English</a>
-	<a class="selectmenu-button" onclick='setLanguage("de")'>Deutsche</a>
-	<!--<a class="selectmenu-button" onclick='setLanguage("fr")'>Français</a>-->
+	<a class="selectmenu-button" onclick='setLanguage("en")'>
+		<div class="selectmenu-button-text">English</div>
+	</a>
+	<a class="selectmenu-button" onclick='setLanguage("de")'>
+		<div class="selectmenu-button-text">Deutsche</div>
+	</a>
 	</div>
 </div>
 

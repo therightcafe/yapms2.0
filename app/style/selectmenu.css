@@ -19,18 +19,16 @@
 	border-bottom: 1px solid black;
 }
 
-.selectmenu h2 {
-	text-align: center;
-	margin: 0px;
-	padding: 0px;
-}
-
 .selectmenu .selectmenu-button:hover {
 	background-color: #bbbbbb;
 	cursor: pointer;
 }
 
 .selectmenu .selectmenu-split {
+	display: flex;
+	flex-shrink: 0;
+	flex-direction: row;
+	text-align: center;
 	background-color: #000000;
 	color: white;
 	border-radius: 10px;
@@ -38,7 +36,18 @@
 	margin-top: 4px;
 }
 
+.selectmenu-split svg {
+	margin-right: 5px;
+}
+
+.selectmenu-split .selectmenu-split-text {
+	flex: 1 1;
+}
+
 .selectmenu-button {
+	display: flex;
+	flex-shrink: 0;
+	flex-direction: row;
 	text-decoration: none;
 	color: black;
 	text-align: center;
@@ -46,6 +55,22 @@
 	background-color: #eeeeee;
 	padding: 12px;
 	margin-top: 4px;
+}
+
+.selectmenu-button img {
+	height: 20px;
+	width: 32px;
+	border: 1px solid black;
+	border-radius: 4px;
+	margin-right: 5px;
+}
+
+.selectmenu-button svg {
+	margin-right: 5px;
+}
+
+.selectmenu-button-text {
+	flex: 1 1;
 }
 
 .selectmenu-section {
@@ -127,4 +152,23 @@
 .selectmenu-button-bold {
 	color: white;
 	font-weight: bold;
+}
+
+.selectmenu-display-header {
+	display: flex;
+	flex-direction: row;
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+}
+
+.selectmenu-display-header img {
+	height: 28px;
+	border-radius: 4px;
+	border: 1px solid black;
+	margin-right: 5px;
+}
+
+.selectmenu-display-header-text {
+	flex: 1 1;
 }

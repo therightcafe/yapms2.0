@@ -30,6 +30,10 @@ button {
 	font-size: inherit;
 }
 
+a {
+	outline: 0;
+}
+
 #yapms {
 	background-color: #181922;
 	text-align: center;

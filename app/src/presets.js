@@ -24,6 +24,9 @@ function loadPreset(value) {
 		case 'classic':
 			loadPresetClassic();
 			break;
+		case 'democratic primary':
+			loadPresetDemocraticPrimary();
+			break;
 		case 'libertarian':
 			loadPresetLibertarian();
 			break;
@@ -85,6 +88,35 @@ function loadPresetClassic() {
 
 	candidates['Republican'] = republican;
 	candidates['Democrat'] = democrat;
+}
+
+function loadPresetDemocraticPrimary() {
+	var biden = new Candidate('Biden',
+		['#009900','#009900','#009900','#009900']);
+	var harris = new Candidate('Harris',
+		['#ff9900','#ff9900','#ff9900','#ff9900']);
+	var sanders = new Candidate('Sanders',
+		['#457fff','#457fff','#457fff','#457fff']);
+	var warren = new Candidate('Warren',
+		['#996600','#996600','#996600','#996600']);
+	var buttigieg = new Candidate('Buttigieg',
+		['#990099','#990099','#990099','#990099']);
+	var orourke = new Candidate('O\'Rourke',
+		['#ff66ff','#ff66ff','#ff66ff','#ff66ff']);
+	var booker = new Candidate('Booker',
+		['#66ccff','#66ccff','#66ccff','#66ccff']);
+	var yang = new Candidate('Yang',
+		['#3da882','#3da882','#3da882','#3da882']);
+	
+	candidates['Biden'] = biden;
+	candidates['Harris'] = harris;
+	candidates['Sanders'] = sanders;
+	candidates['Warren'] = warren;
+	candidates['Buttigieg'] = buttigieg;
+	candidates['O\'Rourke'] = orourke;
+	candidates['Booker'] = booker;
+	candidates['Yang'] = yang;
+	
 }
 
 // republican vs democrat vs libertarian
