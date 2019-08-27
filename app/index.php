@@ -966,13 +966,13 @@ if($mobile) {
 	<h2><?php echo _("Select Map") ?></h2>
 	</div>
 	<div class="selectmenu-content">
-	<div class="selectmenu-split">
+	<a class="selectmenu-split">
 		<div class="selectmenu-split-text"><?php echo _("United States") ?></div>
-	</div>
-	<div class="selectmenu-button" onclick='displayCountryMenu("usa")'>
+	</a>
+	<a class="selectmenu-button" onclick='displayCountryMenu("usa")'>
 		<img src="res/flags/usa.svg">
 		<div class="selectmenu-button-text"><?php echo _("USA") ?></div>
-	</div>
+	</a>
 	<a class="selectmenu-button" onclick='displayCountryMenu("usa-historical")'>
 		<img src="res/flags/usa.svg">
 		<div class="selectmenu-button-text"><?php echo _("USA Historical") ?></div>

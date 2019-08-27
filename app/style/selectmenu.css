@@ -26,6 +26,7 @@
 
 .selectmenu .selectmenu-split {
 	display: flex;
+	flex-shrink: 0;
 	flex-direction: row;
 	text-align: center;
 	background-color: #000000;
@@ -45,6 +46,7 @@
 
 .selectmenu-button {
 	display: flex;
+	flex-shrink: 0;
 	flex-direction: row;
 	text-decoration: none;
 	color: black;
