@@ -717,7 +717,9 @@ if($mobile) {
 	</h2>
 	</div>
 	<div class="selectmenu-content">
-	<a class="selectmenu-split"><?php echo _("2020 Elections") ?></a>
+	<a class="selectmenu-split">
+		<div class="selectmenu-split-text"><?php echo _("National") ?></div>
+	</a>
 	<a class="selectmenu-button" href="./?t=USA_2020_presidential">
 		<i class="fas fa-user"></i>
 		<div class="selectmenu-button-text"><?php echo _("Presidential") ?></div>
@@ -734,7 +736,9 @@ if($mobile) {
 		<i class="fas fa-square"></i>
 		<div class="selectmenu-button-text"><?php echo _("Governors") ?></div>
 	</a>
-	<a class="selectmenu-split"><?php echo _("2020 Forecasts") ?></a>
+	<a class="selectmenu-split">
+		<div class="selectmenu-split-text"><?php echo _("Forecasts") ?></div>
+	</a>
 	<a class="selectmenu-button" href="./?t=USA_2020_cook">
 		<div class="selectmenu-button-text">Cook Political Report</div>
 	</a>
@@ -744,7 +748,9 @@ if($mobile) {
 	<a class="selectmenu-button" href="./?t=USA_2020_sabatos">
 		<div class="selectmenu-button-text">Sabatos Crystal Ball</div>
 	</a>
-	<a class="selectmenu-split"><?php echo _("2020 Primaries") ?></a>
+	<a class="selectmenu-split">
+		<div class="selectmenu-split-text"><?php echo _("Primaries") ?></div>
+	</a>
 	<a class="selectmenu-button" href="./?t=USA_2020_democratic_primary">
 		<i class="fas fa-democrat"></i>
 		<div class="selectmenu-button-text"><?php echo _("Democratic") ?></div>
@@ -753,7 +759,9 @@ if($mobile) {
 		<i class="fas fa-republican"></i>
 		<div class="selectmenu-button-text"><?php echo _("Republican") ?></div>
 	</a>
-	<a class="selectmenu-split"><?php echo _("Current") ?></a>
+	<a class="selectmenu-split">
+		<div class="selectmenu-split-text"><?php echo _("Current") ?></div>
+	</a>
 	<a class="selectmenu-button" href="./?t=USA_current_senate">
 		<i class="fas fa-chevron-up"></i>
 		<div class="selectmenu-button-text"><?php echo _("Senate") ?></div>
@@ -762,7 +770,9 @@ if($mobile) {
 		<i class="fas fa-chevron-down"></i>
 		<div class="selectmenu-button-text"><?php echo _("House") ?></div>
 	</a>
-	<a class="selectmenu-split"><?php echo _("Blank maps") ?></a>
+	<a class="selectmenu-split">
+		<div class="selectmenu-split-text"><?php echo _("Blank") ?></div>
+	</a>
 	<a class="selectmenu-button" href="./?t=USA_senate">
 		<i class="fas fa-chevron-up"></i>
 		<div class="selectmenu-button-text"><?php echo _("Senate") ?></div>
@@ -775,7 +785,9 @@ if($mobile) {
 		<i class="fas fa-border-all"></i>
 		<div class="selectmenu-button-text"><?php echo _("County") ?></div>
 	</a>
-	<a class="selectmenu-split"><?php echo _("Other Presidential") ?></a>
+	<a class="selectmenu-split">
+		<div class="selectmenu-split-text"><?php echo _("Other") ?></div>
+	</a>
 	<a class="selectmenu-button" href="./?t=USA_2024_projection">
 		<i class="far fa-user"></i>
 		<div class="selectmenu-button-text"><?php echo _("2024 Estimates") ?></div>
