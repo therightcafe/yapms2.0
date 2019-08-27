@@ -249,10 +249,10 @@
 	<br>
 	<h2 class="header">Historical United States</h2>
 
-	<div class="map-type-box">
+	<div class="map-type-box" style="max-width:385px;">
 	<div class="map-type-header">
 		<img src="app/res/flags/usa.svg">
-		<div class="map-type-header-text">Presidential - Post WW2</div>
+		<div class="map-type-header-text">Presidential - Post WW2</div> <!-- NBSP between "Post" and "WW2" -->
 	</div>
 	<div class="map-button-box">	
 		<a href="./app/?t=USA_2016_presidential">
@@ -280,7 +280,6 @@
 				2000
 			</div>
 		</a>
-		<br>
 		<a href="./app/?t=USA_1996_presidential">
 			<div class="map-button">
 				1996
@@ -306,7 +305,6 @@
 				1980
 			</div>
 		</a>
-		<br>
 		<a href="./app/?t=USA_1976_presidential">
 			<div class="map-button">
 				1976
@@ -332,7 +330,6 @@
 				1960
 			</div>
 		</a>
-		<br>
 		<a href="./app/?t=USA_1956_presidential">
 			<div class="map-button">
 				1956
@@ -356,10 +353,10 @@
 		</div>
 	</div>
 
-	<div class="map-type-box">
+	<div class="map-type-box" style="max-width:385px;">
 	<div class="map-type-header">
 		<img src="app/res/flags/usa.svg">
-		<div class="map-type-header-text">Presidential - Pre WW2</div>
+		<div class="map-type-header-text">Presidential - Pre WW2</div> <!-- NBSP between "Pre" and "WW2" -->
 	</div>
 	<div class="map-button-box">	
 		<a href="./app/?t=USA_1940_presidential">
@@ -387,7 +384,6 @@
 				1924
 			</div>
 		</a>
-		<br>
 		<a href="./app/?t=USA_1920_presidential">
 			<div class="map-button">
 				1920
@@ -413,7 +409,6 @@
 				1904
 			</div>
 		</a>
-		<br>
 		<a href="./app/?t=USA_1900_presidential">
 			<div class="map-button">
 				1900
@@ -439,7 +434,6 @@
 				1884
 			</div>
 		</a>
-		<br>
 		<a href="./app/?t=USA_1880_presidential">
 			<div class="map-button">
 				1880

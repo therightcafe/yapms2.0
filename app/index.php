@@ -974,8 +974,8 @@ if($mobile) {
 <!-- Maps menu -->
 <div id="mapmenu" class="popup selectmenu">
 	<div class="selectmenu-header">
-	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
-	<h2><?php echo _("Select Map") ?></h2>
+        <h2><object type="image/svg+xml" data="./html/closebutton.svg">Error</object>
+        <div class="selectmenu-toptext"><?php echo _("Select Map") ?></div></h2>
 	</div>
 	<div class="selectmenu-content">
 	<a class="selectmenu-split">
