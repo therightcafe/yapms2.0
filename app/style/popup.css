@@ -18,9 +18,9 @@
 
 /* make the close button stay on the left */
 .popup object {
-	width: 100%;
 	height: 24px;
 	text-align: left;
+	flex: 1 1;
 }
 
 .popup h2 {

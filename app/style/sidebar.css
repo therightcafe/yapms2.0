@@ -54,9 +54,13 @@
 	background: #7db343;
 }
 
+#sidebar-twitter {
+	background: #00A1ED;
+}
+
 .sidebar-box {
 	font-family: 'Roboto';
-	font-size: 16px;
+	font-size: 14px;
 	border-top: 1px solid #555555;
 	margin-top: 6px;
 	background: #f8f9fa;

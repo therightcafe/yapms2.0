@@ -79,7 +79,7 @@
 
 		<a href="https://play.google.com/store/apps/details?id=com.fishstudio.yapms&hl=en_GB">
 			<div class="infobox link android">
-				<b><i class="fab fa-android"></i></b> Android
+                <i class="fab fa-android"></i> Android
 			</div>
 		</a>
 

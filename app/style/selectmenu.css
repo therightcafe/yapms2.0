@@ -160,7 +160,7 @@ h2.selectmenu-toptext {
 
 .selectmenu-display-header {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	text-align: center;
 	margin: 0px;
 	padding: 0px;
@@ -169,10 +169,18 @@ h2.selectmenu-toptext {
 .selectmenu-display-header img {
 	height: 28px;
 	border-radius: 4px;
-	border: 1px solid black;
 	margin-right: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
-.selectmenu-display-header-text {
-	flex: 1 1;
+.selectmenu-controls {
+    display: flex;
+    flex-direction: row;
+}
+
+.selectmenu-toptext {
+    display: flex;
+    flex-direction: row;
+    text-align: center
 }

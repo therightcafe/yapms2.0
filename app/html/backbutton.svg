@@ -17,10 +17,10 @@ function backToMapMenu() {
 ]]></script>
 <style><![CDATA[
 g {
-	fill: blue;
+	fill: #0007ff;
 }
 g:hover {
-	fill: cyan;
+	fill: #7df9ff;
 }
 path.bg {
     fill: white;

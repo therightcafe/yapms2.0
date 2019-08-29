@@ -252,13 +252,16 @@ if($mobile === false) {
 </script>',
 		'<div id="sidebar-social">
 		<a id="sidebar-discord-link" class="social-link" href="https://discord.gg/WQh5fHU" target="_blank"><div id="sidebar-discord" class="sidebar-button">
-			Discord
+			<i class="fab fa-discord"></i> Discord
 		</div></a>
 		<a id="sidebar-android-link" class="social-link" href="https://play.google.com/store/apps/details?id=com.fishstudio.yapms&hl=en_US" target="_blank"><div id="sidebar-android" class="sidebar-button">
-			Android
+			<i class="fab fa-android"></i> Android
 		</div></a>
 		<a id="sidebar-reddit-link" class="social-link" href="https://www.reddit.com/r/YAPms/" target="_blank"><div id="sidebar-reddit" class="sidebar-button">
-			Reddit
+			<i class="fab fa-reddit"></i> Reddit
+		</div></a>
+		<a id="sidebar-reddit-link" class="social-link" href="https://twitter.com/YAPmsOfficial" target="_blank"><div id="sidebar-twitter" class="sidebar-button">
+			<i class="fab fa-twitter"></i> Twitter
 		</div></a>
 		</div>',
 		'<div id="sidebar-popularvote" class="sidebar-box">
@@ -605,10 +608,14 @@ if($mobile) {
 <!-- Canada Maps -->
 <div id="mapmenu-canada" class="popup selectmenu">
 	<div class="selectmenu-header">
-	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2 class="selectmenu-display-header">
-		<img src="res/flags/can.svg">
-		<div class="selectmenu-display-header-text"><?php echo _("Canada") ?></div>
+        <div class="selectmenu-controls">
+	       <object type="image/svg+xml" data="./html/backbutton.svg">Back</object>
+	       <object type="image/svg+xml" data="./html/closebutton.svg">Error</object>
+        </div>
+        <div class="selectmenu-toptext"><img src="res/flags/can.svg">
+            <?php echo _("Canada") ?>
+        </div>
 	</h2>
 	</div>
 	<div class="selectmenu-content">
@@ -626,10 +633,14 @@ if($mobile) {
 <!-- German Maps -->
 <div id="mapmenu-germany" class="popup selectmenu">
 	<div class="selectmenu-header">
-	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2 class="selectmenu-display-header">
-		<img src="res/flags/ger.svg">
-		<div class="selectmenu-display-header-text"><?php echo _("Germany") ?></div>
+        <div class="selectmenu-controls">
+	       <object type="image/svg+xml" data="./html/backbutton.svg">Back</object>
+	       <object type="image/svg+xml" data="./html/closebutton.svg">Error</object>
+        </div>
+        <div class="selectmenu-toptext"><img src="res/flags/ger.svg">
+            <?php echo _("Germany") ?>
+        </div>
 	</h2>
 	</div>
 	<div class="selectmenu-content">
@@ -647,10 +658,14 @@ if($mobile) {
 <!-- Australia Maps -->
 <div id="mapmenu-australia" class="popup selectmenu">
 	<div class="selectmenu-header">
-	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2 class="selectmenu-display-header">
-		<img src="res/flags/aus.svg">
-		<div class="selectmenu-display-header-text"><?php echo _("Australia") ?></div>
+        <div class="selectmenu-controls">
+	       <object type="image/svg+xml" data="./html/backbutton.svg">Back</object>
+	       <object type="image/svg+xml" data="./html/closebutton.svg">Error</object>
+        </div>
+        <div class="selectmenu-toptext"><img src="res/flags/aus.svg">
+            <?php echo _("Australia") ?>
+        </div>
 	</h2>
 	</div>
 	<div class="selectmenu-content">
@@ -668,10 +683,14 @@ if($mobile) {
 <!-- Netherlands Maps -->
 <div id="mapmenu-netherlands" class="popup selectmenu">
 	<div class="selectmenu-header">
-	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2 class="selectmenu-display-header">
-		<img src="res/flags/ned.svg">
-		<div class="selectmenu-display-header-text"><?php echo _("Netherlands") ?></div>
+        <div class="selectmenu-controls">
+	       <object type="image/svg+xml" data="./html/backbutton.svg">Back</object>
+	       <object type="image/svg+xml" data="./html/closebutton.svg">Error</object>
+        </div>
+        <div class="selectmenu-toptext"><img src="res/flags/ned.svg">
+            <?php echo _("Netherlands") ?>
+        </div>
 	</h2>
 	</div>
 	<div class="selectmenu-content">
@@ -710,10 +729,14 @@ if($mobile) {
 <!-- USA Maps -->
 <div id="mapmenu-usa" class="popup selectmenu">
 	<div class="selectmenu-header">
-	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2 class="selectmenu-display-header">
-		<img src="res/flags/usa.svg">
-		<div class="selectmenu-display-header-text"><?php echo _("USA") ?></div>
+        <div class="selectmenu-controls">
+	       <object type="image/svg+xml" data="./html/backbutton.svg">Back</object>
+	       <object type="image/svg+xml" data="./html/closebutton.svg">Error</object>
+        </div>
+        <div class="selectmenu-toptext"><img src="res/flags/usa.svg">
+            <?php echo _("USA") ?>
+        </div>
 	</h2>
 	</div>
 	<div class="selectmenu-content">
@@ -815,8 +838,8 @@ if($mobile) {
 	       <object type="image/svg+xml" data="./html/backbutton.svg">Back</object>
 	       <object type="image/svg+xml" data="./html/closebutton.svg">Error</object>
         </div>
-            <div class="selectmenu-toptext"><img src="res/flags/usa.svg">
-            <div class="selectmenu-display-header-text">USA <?php echo _("Historical") ?></div>
+        <div class="selectmenu-toptext"><img src="res/flags/usa.svg">
+            <?php echo _("USA Historical") ?>
         </div>
 	</h2>
 	</div>
