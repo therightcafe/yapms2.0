@@ -810,10 +810,14 @@ if($mobile) {
 <!-- USA Historical Maps -->
 <div id="mapmenu-usa-historical" class="popup selectmenu">
 	<div class="selectmenu-header">
-	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
 	<h2 class="selectmenu-display-header">
-		<img src="res/flags/usa.svg">
-		<div class="selectmenu-display-header-text">USA <?php echo _("Historical") ?></div>
+        <div class="selectmenu-controls">
+	       <object type="image/svg+xml" data="./html/backbutton.svg">Back</object>
+	       <object type="image/svg+xml" data="./html/closebutton.svg">Error</object>
+        </div>
+            <div class="selectmenu-toptext"><img src="res/flags/usa.svg">
+            <div class="selectmenu-display-header-text">USA <?php echo _("Historical") ?></div>
+        </div>
 	</h2>
 	</div>
 	<div class="selectmenu-content">
