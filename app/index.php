@@ -133,7 +133,11 @@
 	<i class="fas fa-window-close"></i> <?php echo _("Clear") ?>
 	</div>
 
-	<div class="click-button" onclick="displayMapMenu()" style="white-space: nowrap;">
+<!--	<div class="click-button" onclick="displayMapMenu()" style="white-space: nowrap;">
+	<i class="fas fa-map"></i> <?php echo _("Map") ?>
+	</div> -->
+	
+	<div class="click-button" onclick="displayMenu('mapmenu')" style="white-space: nowrap;">
 	<i class="fas fa-map"></i> <?php echo _("Map") ?>
 	</div>
 
@@ -971,6 +975,9 @@ if($mobile) {
 	</div>
 </div>
 
+<div id="selectmenu" class="popup selectmenu">
+</div>
+
 <!-- Maps menu -->
 <div id="mapmenu" class="popup selectmenu">
 	<div class="selectmenu-header">
@@ -1178,7 +1185,7 @@ if($mobile === false) {
 <script src="./src/popularvote.js"></script>
 <script src="./src/congress.js"></script>
 <script src="./src/keyboard.js"></script>
-
+<script src="./src/menuControl.js"></script>
 <script src="./src/main.js"></script>
 <?php 
 if($mobile === true) {
