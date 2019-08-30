@@ -138,6 +138,11 @@ h2.selectmenu-toptext {
 	background: linear-gradient(to right, #e6b700, #e8c84d, #ffe78a, #b8a252);
 }
 
+#downloadbutton .selectmenu-button-part-text {
+	flex: 1 1;
+	margin: 0px;
+}
+
 #sharebuttons svg {
 	flex: 1 1;
 	margin: 0px;
