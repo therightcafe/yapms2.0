@@ -1,4 +1,4 @@
-var currentCache = 'v0.65.16';
+var currentCache = 'v0.65.17';
 
 var windowLoaded = false;
 
@@ -766,16 +766,16 @@ function setMode(set) {
 	}
 
 	if(set === 'paint') {
-		modeText = '<i class="fas fa-paint-brush"></i> ' + language["Mode-Option2"];
+		modeText = '<i class="fas fa-paint-brush"></i> paint';
 		var button = document.getElementById('modebutton-paint');
 		button.style.opacity = '0.5';
 	} else if(set === 'ec') {
-		modeText = '<i class="fas fa-edit"></i> ' + language["Mode-Option5"];
+		modeText = '<i class="fas fa-edit"></i> EC Edit';
 		notificationText = "Click on a state to set its electoral college";
 		var button = document.getElementById('modebutton-ec');
 		button.style.opacity = '0.5';
 	} else if(set === 'delete') {
-		modeText = '<i class="fas fa-eraser"></i> ' + language["Mode-Option4"];
+		modeText = '<i class="fas fa-eraser"></i> Disable';
 		notificationText = "Click on a state to disable/enable it";
 		var button = document.getElementById('modebutton-delete');
 		button.style.opacity = '0.5';
