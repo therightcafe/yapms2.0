@@ -330,9 +330,9 @@ if($mobile) {
 	<div class="selectmenu-controls">
 	       <object type="image/svg+xml" data="./html/closebutton.svg">Error</object>
 	</div>
-	<h2 class="selectmenu-display-header">
-		<div id="demdel-message" class="selectmenu-display-header-text"></div>
-	</h2>
+	<div class="selectmenu-display-header">
+		<h2 id="demdel-message" class="selectmenu-display-header-text"></h2>
+	</div>
 	</div>
 	<div id="demdel-ranges" class="selectmenu-content">
 	</div>
@@ -345,9 +345,9 @@ if($mobile) {
 	<div class="selectmenu-controls">
 	       <object type="image/svg+xml" data="./html/closebutton.svg">Error</object>
 	</div>
-	<h2 class="selectmenu-display-header">
-		<div id="ecedit-message" class="selectmenu-display-header-text"></div>
-	</h2>
+	<div class="selectmenu-display-header">
+		<h2 id="ecedit-message" class="selectmenu-display-header-text"></h2>
+	</div>
 	</div>
 	<div class="selectmenu-content">
 	<div class="selectmenu-section"><input id="state-ec" type="number" name="value" min="1" max="10000" step="1"></div>
@@ -364,9 +364,9 @@ if($mobile) {
 	<div class="selectmenu-controls">
 	       <object type="image/svg+xml" data="./html/closebutton.svg">Error</object>
 	</div>
-	<h2 class="selectmenu-display-header">
-		<div id="candidateedit-message" class="selectmenu-display-header-text">Candidate Edit</div>
-	</h2>
+	<div class="selectmenu-display-header">
+		<h2 id="candidateedit-message" class="selectmenu-display-header-text">Candidate Edit</h2>
+	</div>
 	</div>
 	<div class="selectmenu-content">
 	<div class="selectmenu-button">Name <input id="candidate-name" type="text" name="name"></div>
@@ -388,9 +388,9 @@ if($mobile) {
 	<div class="selectmenu-controls">
 	       <object type="image/svg+xml" data="./html/closebutton.svg">Error</object>
 	</div>
-	<h2 class="selectmenu-display-header">
-		<div class="selectmenu-display-header-text">Custom Color Edit</div>
-	</h2>
+	<div class="selectmenu-display-header">
+		<h2 class="selectmenu-display-header-text">Custom Color Edit</h2>
+	</div>
 	</div>
 	<div class="selectmenu-content">
 	<input id="custom-color-name" type="hidden">
@@ -407,9 +407,9 @@ if($mobile) {
 	<div class="selectmenu-controls">
 	       <object type="image/svg+xml" data="./html/closebutton.svg">Error</object>
 	</div>
-	<h2 class="selectmenu-display-header">
-		<div class="selectmenu-display-header-text">Add Candidate</div>
-	</h2>
+	<div class="selectmenu-display-header">
+		<h2 class="selectmenu-display-header-text">Add Candidate</h2>
+	</div>
 	</div>
 	<div class="selectmenu-content">
 	<div class="selectmenu-section">Name<input id="name" type="text"></div>

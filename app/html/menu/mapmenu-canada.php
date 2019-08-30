@@ -3,10 +3,10 @@
 	<object type="image/svg+xml" data="./html/backbutton.svg"> Back</object>
 	<object type="image/svg+xml" data="./html/closebutton.svg">Error</object>
 </div>
-<h2 class="selectmenu-display-header">
+<div class="selectmenu-display-header">
 	<img src="res/flags/can.svg">
-	<div class="selectmenu-display-header-text">Canada</div>
-</h2>
+	<h2 class="selectmenu-display-header-text">Canada</h2>
+</div>
 </div>
 <div class="selectmenu-content">
 <a class="selectmenu-button" href="./?t=Canada_provinces">

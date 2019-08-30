@@ -1,5 +1,5 @@
-var scriptCache = 'd0.65.12';
-var indexCache = 'i0.65.12';
+var scriptCache = 'd0.65.13';
+var indexCache = 'i0.65.13';
 var staticCache = 's0.65.0';
 
 var _scriptCache = [
@@ -188,33 +188,7 @@ function swLog(cache, message) {
 self.addEventListener('message', function(event) {
 	var clientID = event.source.id;
 	swLog('Message', event.data);
-	if(event.data === 'localize') {
-		caches.keys().then(function(cacheNames) {
-			cacheNames.forEach(function(cacheName) {
-				if(cacheName === indexCache) {
-					swLog(cacheName, 'delete');
-					return caches.delete(cacheName);
-				}
-			});
-			caches.open(indexCache).then(function(cache) {
-				swLog(indexCache, 'installing');
-				return cache.addAll(_indexCache).then(function() {
-					for(var i = 1864; i < 2016; i += 4) {
-						cache.add('./app/?t=' + i + '_presidential');
-					}
-					return cache;
-				});
-			}).then(function() {
-				clients.matchAll().then(clients => {
-					clients.forEach(client => {
-						if(client.id === clientID) {
-							client.postMessage("reload");
-						}
-					});
-				});
-			});
-		});
-	} else if(event.data === 'loaded') {
+	if(event.data === 'loaded') {
 		self.skipWaiting();
 	}
 });
