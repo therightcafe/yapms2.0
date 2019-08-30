@@ -12,8 +12,10 @@
 
 <div id="sharebuttons" class="selectmenu-button-mult">
 	<a class="selectmenu-button-part selectmenu-button" id="downloadbutton">
-		<i class="fas fa-download"></i> 
-		<div class="selectmenu-button-part-text">Download</div>
+		<div class="selectmenu-button-part-text">
+			<i class="fas fa-download"></i> 
+			Download
+		</div>
 	</a>
 	<a id="twitter-share" class="selectmenu-button-part selectmenu-button"
 		target="_blank">
