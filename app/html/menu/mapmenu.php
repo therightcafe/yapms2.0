@@ -5,6 +5,7 @@
 <h2 class="selectmenu-display-header">
 	<div class="selectmenu-display-header-text">Select Map</div>
 </h2>
+</div>
 <div class="selectmenu-content">
 <a class="selectmenu-split">
 	<div class="selectmenu-split-text">United States</div>
