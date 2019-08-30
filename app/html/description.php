@@ -212,6 +212,12 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		'<meta property="og:title" content="YAPms - Russia Federal Council">
 		<meta property="og:description" content="Interactive Russian Federal Council Map">';
 		break;
+		case 'Russia_duma':
+		echo '<meta name="description" content="Russia - Duma election map"><title>Russia - Duma Election</title>';
+		echo 
+		'<meta property="og:title" content="YAPms - Russia Duma">
+		<meta property="og:description" content="Interactive Russian Duma Map">';
+		break;
 		case 'USA_Canada':
 		echo '<meta name="description" content="United USA and Canada election map"><title>USA/Canada Map Election</title>';
 		echo 
