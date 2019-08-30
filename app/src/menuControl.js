@@ -8,7 +8,7 @@ function displayMenu(filename) {
 			var selectmenu = document.getElementById('selectmenu');
 			selectmenu.style.display = 'flex';
 
-			if(filename === 'sharemenu') {
+			if(filename === 'sharemenu' || filename === 'sharemenu-mobile') {
 				var sharebuttons = document.getElementById('sharebuttons');
 				if(sharebuttons) {
 					sharebuttons.style.display = 'none';
