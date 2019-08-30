@@ -246,7 +246,7 @@
 		</a>
 		<a href="./app/?t=USA_split_maine">
 			<div class="map-button">
-				<i class="fas fa-user"></i> Presidential (split Maine)
+				<i class="fas fa-user"></i> Presidential (Split Maine)
 			</div>
 		</a>
 	</div>
