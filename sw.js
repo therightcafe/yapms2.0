@@ -1,5 +1,5 @@
-var scriptCache = 'd0.65.1';
-var indexCache = 'i0.65.1';
+var scriptCache = 'd0.65.2';
+var indexCache = 'i0.65.2';
 var staticCache = 's0.65.0';
 
 var _scriptCache = [
@@ -33,7 +33,22 @@ var _indexCache = [
 
 	'./app/',
 	'./app/index.php',
+
 	'./app/html/menu/chartmenu.php',
+	'./app/html/menu/loadmenu.php',
+	'./app/html/menu/miscmenu.php',
+	'./app/html/menu/sharemenu.php',
+	'./app/html/menu/thememenu.php',
+	'./app/html/menu/versionmenu.php',
+	'./app/html/menu/mapmenu.php',
+	'./app/html/menu/mapmenu-australia.php',
+	'./app/html/menu/mapmenu-canada.php',
+	'./app/html/menu/mapmenu-germany.php',
+	'./app/html/menu/mapmenu-lte.php',
+	'./app/html/menu/mapmenu-netherlands.php',
+	'./app/html/menu/mapmenu-russia.php',
+	'./app/html/menu/mapmenu-usa-historical.php',
+	'./app/html/menu/mapmenu-usa.php',
 
 	'./app/?t=USA_current_house',
 	'./app/?t=USA_current_senate',
