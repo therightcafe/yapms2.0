@@ -1,5 +1,5 @@
-var scriptCache = 'd0.65.2';
-var indexCache = 'i0.65.2';
+var scriptCache = 'd0.65.3';
+var indexCache = 'i0.65.3';
 var staticCache = 's0.65.0';
 
 var _scriptCache = [
@@ -166,7 +166,6 @@ var _staticCache = [
 	'./app/data/senatorial_open',
 
 	'./app/res/fonts/roboto/roboto-v20-latin-regular.svg',
-	'./app/res/fonts/roboto/roboto-v20-latin-regular.ttf',
 	'./app/res/fonts/roboto/roboto-v20-latin-regular.woff',
 	'./app/res/fonts/roboto/roboto-v20-latin-regular.woff2',
 
