@@ -223,4 +223,5 @@ a {
 
 .grecaptcha-badge {
 	visibility: hidden;
+	display: none;
 }
