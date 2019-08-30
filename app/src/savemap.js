@@ -225,7 +225,7 @@ function saveMap_new(img, token) {
 
 			var sharebuttons = document.getElementById('sharebuttons');
 			if(sharebuttons) {
-				sharebutton.style.display = 'flex';
+				sharebuttons.style.display = 'flex';
 			}
 			var downloadbtn = document.getElementById('downloadbutton');
 			if(downloadbtn) {
