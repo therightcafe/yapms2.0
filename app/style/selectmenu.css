@@ -140,6 +140,7 @@ h2.selectmenu-toptext {
 
 #sharebuttons svg {
 	flex: 1 1;
+	margin: 0px;
 }
 
 #facebook-share {
