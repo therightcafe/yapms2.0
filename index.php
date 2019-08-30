@@ -49,7 +49,7 @@
 	
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<script src="./app/res/fontawesome/js/all.min.js"></script>
+	<script async src="./app/res/fontawesome/js/all.min.js"></script>
 </head>
 
 <body>
