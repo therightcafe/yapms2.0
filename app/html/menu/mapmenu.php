@@ -1,86 +1,89 @@
 <div class="selectmenu-header">
-<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
-<h2><?php echo _("Select Map") ?></h2>
+<div class="selectmenu-controls">
+       <object type="image/svg+xml" data="./html/closebutton.svg">Error</object>
 </div>
+<h2 class="selectmenu-display-header">
+	<div class="selectmenu-display-header-text">Select Map</div>
+</h2>
 <div class="selectmenu-content">
 <a class="selectmenu-split">
-	<div class="selectmenu-split-text"><?php echo _("United States") ?></div>
+	<div class="selectmenu-split-text">United States</div>
 </a>
-<a class="selectmenu-button" onclick='displayCountryMenu("usa")'>
+<a class="selectmenu-button" onclick='displayMenu("mapmenu-usa")'>
 	<img src="res/flags/usa.svg">
-	<div class="selectmenu-button-text"><?php echo _("USA") ?></div>
+	<div class="selectmenu-button-text">USA</div>
 </a>
-<a class="selectmenu-button" onclick='displayCountryMenu("usa-historical")'>
+<a class="selectmenu-button" onclick='displayMenu("mapmenu-usa-historical")'>
 	<img src="res/flags/usa.svg">
-	<div class="selectmenu-button-text"><?php echo _("USA Historical") ?></div>
+	<div class="selectmenu-button-text">USA Historical</div>
 </a>
 <a class="selectmenu-split">
-	<div class="selectmenu-split-text"><?php echo _("Other Countries") ?></div>
+	<div class="selectmenu-split-text">Other Countries</div>
 </a>
-<a class="selectmenu-button" onclick='displayCountryMenu("australia")'>
+<a class="selectmenu-button" onclick='displayMenu("mapmenu-australia")'>
 	<img src="res/flags/aus.svg">
-	<div class="selectmenu-button-text"><?php echo _("Australia") ?></div>
+	<div class="selectmenu-button-text">Australia</div>
 </a>
 <a class="selectmenu-button" href="./?t=Brazil_chamber_of_deputies">
 	<img src="res/flags/bra.svg">
-	<div class="selectmenu-button-text"><?php echo _("Brazil") ?></div>
+	<div class="selectmenu-button-text">Brazil</div>
 </a>
-<a class="selectmenu-button" onclick='displayCountryMenu("canada")'>
+<a class="selectmenu-button" onclick='displayMenu("mapmenu-canada")'>
 	<img src="res/flags/can.svg">
-	<div class="selectmenu-button-text"><?php echo _("Canada") ?></div>
+	<div class="selectmenu-button-text">Canada</div>
 </a>
 <a class="selectmenu-button" href="./?t=France_national_assembly">
 	<img src="res/flags/fra.svg">
-	<div class="selectmenu-button-text"><?php echo _("France") ?></div>
+	<div class="selectmenu-button-text">France</div>
 </a>
-<a class="selectmenu-button" onclick='displayCountryMenu("germany")'>
+<a class="selectmenu-button" onclick='displayMenu("mapmenu-germany")'>
 	<img src="res/flags/ger.svg">
-	<div class="selectmenu-button-text"><?php echo _("Germany") ?></div>
+	<div class="selectmenu-button-text">Germany</div>
 </a>
 <a class="selectmenu-button" href="./?t=Italy_states">
 	<img src="res/flags/ita.svg">
-	<div class="selectmenu-button-text"><?php echo _("Italy") ?></div>
+	<div class="selectmenu-button-text">Italy</div>
 </a>
 <a class="selectmenu-button" href="./?t=Ireland_dail_eireann">
 	<img src="res/flags/ire.svg">
-	<div class="selectmenu-button-text"><?php echo _("Ireland") ?></div>
+	<div class="selectmenu-button-text">Ireland</div>
 </a>
-<a class="selectmenu-button" onclick='displayCountryMenu("netherlands")'>
+<a class="selectmenu-button" onclick='displayMenu("mapmenu-netherlands")'>
 	<img src="res/flags/ned.svg">
-	<div class="selectmenu-button-text"><?php echo _("Netherlands") ?></div>
+	<div class="selectmenu-button-text">Netherlands</div>
 </a>
-<a class="selectmenu-button" onclick='displayCountryMenu("russia")'>
+<a class="selectmenu-button" onclick='displayMenu("mapmenu-russia")'>
 	<img src="res/flags/rus.svg">
-	<div class="selectmenu-button-text"><?php echo _("Russia") ?></div>
+	<div class="selectmenu-button-text">Russia</div>
 </a>
 <a class="selectmenu-button" href="./?t=Spain_congress_of_deputies">
 	<img src="res/flags/esp.svg">
-	<div class="selectmenu-button-text"><?php echo _("Spain") ?></div>
+	<div class="selectmenu-button-text">Spain</div>
 </a>
 <a class="selectmenu-button" href="./?t=UnitedKingdom_house_of_commons">
 	<img src="res/flags/ukd.svg">
-	<div class="selectmenu-button-text"><?php echo _("United Kingdom") ?></div>
+	<div class="selectmenu-button-text">United Kingdom</div>
 </a>
 <a class="selectmenu-split">
-	<div class="selectmenu-split-text"><?php echo _("Trans-National") ?></div>
+	<div class="selectmenu-split-text">Trans-National</div>
 </a>
 <a class="selectmenu-button" href="./?t=EuropeanUnion">
 	<img src="res/flags/eu.svg">
-	<div class="selectmenu-button-text"><?php echo _("EU") ?></div>
+	<div class="selectmenu-button-text">EU</div>
 </a>
 <a class="selectmenu-button" href="./?t=World">
 	<img src="res/flags/un.svg">
-	<div class="selectmenu-button-text"><?php echo _("World") ?></div>
+	<div class="selectmenu-button-text">World</div>
 </a>
 <a class="selectmenu-button" href='./?t=USA_Canada'>
 	<img src="res/flags/usa.svg">
-	<div class="selectmenu-button-text"><?php echo _("USA") . " " . _("Canada") ?></div>
+	<div class="selectmenu-button-text">USA Canada</div>
 	<img src="res/flags/can.svg">
 </a>
 <a class="selectmenu-split">
-	<div class="selectmenu-split-text"><?php echo _("Mock Elections") ?></div>
+	<div class="selectmenu-split-text">Mock Elections</div>
 </a>
-<a class="selectmenu-button" onclick='displayCountryMenu("lte")'>
+<a class="selectmenu-button" onclick='displayMenu("mapmenu-lte")'>
 	<div class="selectmenu-button-text">LTE</div>
 </a>
 </div>

@@ -1,32 +1,35 @@
 <div class="selectmenu-header">
-<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
+<div class="selectmenu-controls">
+       <object type="image/svg+xml" data="./html/backbutton.svg">Back</object>
+       <object type="image/svg+xml" data="./html/closebutton.svg">Error</object>
+</div>
 <h2 class="selectmenu-display-header">
 	<img src="res/flags/usa.svg">
-	<div class="selectmenu-display-header-text"><?php echo _("USA") ?></div>
+	<div class="selectmenu-display-header-text">USA</div>
 </h2>
 </div>
 <div class="selectmenu-content">
 <a class="selectmenu-split">
-	<div class="selectmenu-split-text"><?php echo _("National") ?></div>
+	<div class="selectmenu-split-text">National</div>
 </a>
 <a class="selectmenu-button" href="./?t=USA_2020_presidential">
 	<i class="fas fa-user"></i>
-	<div class="selectmenu-button-text"><?php echo _("Presidential") ?></div>
+	<div class="selectmenu-button-text">Presidential</div>
 </a>
 <a class="selectmenu-button" href="./?t=USA_2020_senate">
 	<i class="fas fa-chevron-up"></i>
-	<div class="selectmenu-button-text"><?php echo _("Senate") ?></div>
+	<div class="selectmenu-button-text">Senate</div>
 </a>
 <a class="selectmenu-button" href="./?t=USA_2020_house">
 	<i class="fas fa-chevron-down"></i>
-	<div class="selectmenu-button-text"><?php echo _("House") ?></div>
+	<div class="selectmenu-button-text">House</div>
 </a>
 <a class="selectmenu-button" href="./?t=USA_2020_governors">
 	<i class="fas fa-square"></i>
-	<div class="selectmenu-button-text"><?php echo _("Governors") ?></div>
+	<div class="selectmenu-button-text">Governors</div>
 </a>
 <a class="selectmenu-split">
-	<div class="selectmenu-split-text"><?php echo _("Forecasts") ?></div>
+	<div class="selectmenu-split-text">Forecasts</div>
 </a>
 <a class="selectmenu-button" href="./?t=USA_2020_cook">
 	<div class="selectmenu-button-text">Cook Political Report</div>
@@ -38,59 +41,59 @@
 	<div class="selectmenu-button-text">Sabatos Crystal Ball</div>
 </a>
 <a class="selectmenu-split">
-	<div class="selectmenu-split-text"><?php echo _("Primaries") ?></div>
+	<div class="selectmenu-split-text">Primaries</div>
 </a>
 <a class="selectmenu-button" href="./?t=USA_2020_democratic_primary">
 	<i class="fas fa-democrat"></i>
-	<div class="selectmenu-button-text"><?php echo _("Democratic") ?></div>
+	<div class="selectmenu-button-text">Democratic</div>
 </a>
 <a class="selectmenu-button" href="./?t=USA_2020_republican_primary">
 	<i class="fas fa-republican"></i>
-	<div class="selectmenu-button-text"><?php echo _("Republican") ?></div>
+	<div class="selectmenu-button-text">Republican</div>
 </a>
 <a class="selectmenu-split">
-	<div class="selectmenu-split-text"><?php echo _("Current") ?></div>
+	<div class="selectmenu-split-text">Current</div>
 </a>
 <a class="selectmenu-button" href="./?t=USA_current_senate">
 	<i class="fas fa-chevron-up"></i>
-	<div class="selectmenu-button-text"><?php echo _("Senate") ?></div>
+	<div class="selectmenu-button-text">Senate</div>
 </a>
 <a class="selectmenu-button" href="./?t=USA_current_house">
 	<i class="fas fa-chevron-down"></i>
-	<div class="selectmenu-button-text"><?php echo _("House") ?></div>
+	<div class="selectmenu-button-text">House</div>
 </a>
 <a class="selectmenu-split">
-	<div class="selectmenu-split-text"><?php echo _("Blank") ?></div>
+	<div class="selectmenu-split-text">Blank</div>
 </a>
 <a class="selectmenu-button" href="./?t=USA_senate">
 	<i class="fas fa-chevron-up"></i>
-	<div class="selectmenu-button-text"><?php echo _("Senate") ?></div>
+	<div class="selectmenu-button-text">Senate</div>
 </a>
 <a class="selectmenu-button" href="./?t=USA_governors">
 	<i class="fas fa-square"></i>
-	<div class="selectmenu-button-text"><?php echo _("Governors") ?></div>
+	<div class="selectmenu-button-text">Governors</div>
 </a>
 <a class="selectmenu-button" href="./?t=USA_county">
 	<i class="fas fa-border-all"></i>
-	<div class="selectmenu-button-text"><?php echo _("County") ?></div>
+	<div class="selectmenu-button-text">County</div>
 </a>
 <a class="selectmenu-split">
-	<div class="selectmenu-split-text"><?php echo _("Other") ?></div>
+	<div class="selectmenu-split-text">Other</div>
 </a>
 <a class="selectmenu-button" href="./?t=USA_2024_projection">
 	<i class="far fa-user"></i>
-	<div class="selectmenu-button-text"><?php echo _("2024 Estimates") ?></div>
+	<div class="selectmenu-button-text">2024 Estimates</div>
 </a>
 <a class="selectmenu-button" href="./?t=USA_proportional">
 	<i class="far fa-user-circle"></i>
-	<div class="selectmenu-button-text"><?php echo _("Proportional") ?></div>
+	<div class="selectmenu-button-text">Proportional</div>
 </a>
 <a class="selectmenu-button" href="./?t=USA_takeall">
 	<i class="fas fa-user"></i>
-	<div class="selectmenu-button-text"><?php echo _("Take All") ?></div>
+	<div class="selectmenu-button-text">Take All</div>
 </a>
 <a class="selectmenu-button" href="./?t=USA_split_maine">
 	<i class="fas fa-user"></i>
-	<div class="selectmenu-button-text"><?php echo _("Split Maine") ?></div>
+	<div class="selectmenu-button-text">Split Maine</div>
 </a>
 </div>

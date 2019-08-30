@@ -223,9 +223,13 @@ function saveMap_new(img, token) {
 			
 			shareurl.style.display = '';
 
+			var sharebuttons = document.getElementById('sharebuttons');
+			if(sharebuttons) {
+				sharebutton.style.display = 'flex';
+			}
 			var downloadbtn = document.getElementById('downloadbutton');
 			if(downloadbtn) {
-				downloadbtn.style.display = 'inline-block';
+				downloadbtn.style.display = '';
 				downloadbtn.setAttribute('href', 'https://yapms.org/downloadmap.php?f=' + filename);
 			}
 

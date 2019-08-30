@@ -1,4 +1,4 @@
-var currentCache = 'v0.64.5';
+var currentCache = 'v0.65.0';
 
 var windowLoaded = false;
 
@@ -76,7 +76,7 @@ var previousPalette = function() {
 var panObject = null;
 
 function share() {
-	displayShare();
+	displayMenu('sharemenu');
 
 	if(grecaptcha) {
 		console.log('reCaptcha detected');

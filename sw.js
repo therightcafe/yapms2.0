@@ -1,6 +1,6 @@
-var scriptCache = 'd0.64.5';
-var indexCache = 'i0.64.5';
-var staticCache = 's0.63.5';
+var scriptCache = 'd0.65.0';
+var indexCache = 'i0.65.0';
+var staticCache = 's0.65.0';
 
 var _scriptCache = [
 	'./app/html/battlechart.html',
@@ -33,6 +33,8 @@ var _indexCache = [
 
 	'./app/',
 	'./app/index.php',
+	'./app/html/menu/chartmenu.php',
+
 	'./app/?t=USA_current_house',
 	'./app/?t=USA_current_senate',
 	'./app/?t=USA_2016_presidential_county',

@@ -1,14 +1,17 @@
 <div class="selectmenu-header">
-<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
+<div class="selectmenu-controls">
+       <object type="image/svg+xml" data="./html/backbutton.svg">Back</object>
+       <object type="image/svg+xml" data="./html/closebutton.svg">Error</object>
+</div>
 <h2 class="selectmenu-display-header">
 	<img src="res/flags/usa.svg">
-	<div class="selectmenu-display-header-text">USA <?php echo _("Historical") ?></div>
+	<div class="selectmenu-display-header-text">USA Historical</div>
 </h2>
 </div>
 <div class="selectmenu-content">
 <a class="selectmenu-split">
 	<i class="fas fa-chevron-down"></i>
-	<div class="selectmenu-split-text"><?php echo _("Congressional") ?></div>
+	<div class="selectmenu-split-text">Congressional</div>
 </a>
 <a class="selectmenu-button" href="./?t=USA_congressional">
 	<div class="selectmenu-button-text">2018-2020</div>
@@ -18,14 +21,14 @@
 </a>
 <a class="selectmenu-split">
 	<i class="fas fa-border-all"></i>
-	<div class="selectmenu-split-text"><?php echo _("Presidential County Results") ?></div>
+	<div class="selectmenu-split-text">Presidential County Results</div>
 </a>
 <a class="selectmenu-button" href="./?t=USA_2016_presidential_county">
 	<div class="selectmenu-button-text">2016</div>
 </a>
 <a class="selectmenu-split">
 	<i class="fas fa-user"></i>
-	<div class="selectmenu-split-text"><?php echo _("Presidential Results") ?></div>
+	<div class="selectmenu-split-text">Presidential Results</div>
 </a>
 <a class="selectmenu-button" href="./?t=USA_2016_presidential">
 	<div class="selectmenu-button-text">2016</div>

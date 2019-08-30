@@ -1,6 +1,11 @@
 <div class="selectmenu-header">
-<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
-<h2>LTE</h2>
+<div class="selectmenu-controls">
+       <object type="image/svg+xml" data="./html/backbutton.svg">Back</object>
+       <object type="image/svg+xml" data="./html/closebutton.svg">Error</object>
+</div>
+<h2 class="selectmenu-display-header">
+	<div class="selectmenu-display-header-text">LTE</div>
+</h2>
 </div>
 <div class="selectmenu-content">
 <a class="selectmenu-button" href="./?t=LTE_presidential"><i class="fas fa-user"></i> <?php echo _("Presidential") ?></a>
