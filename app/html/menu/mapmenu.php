@@ -53,6 +53,10 @@
 	<img src="res/flags/ned.svg">
 	<div class="selectmenu-button-text">Netherlands</div>
 </a>
+<a class="selectmenu-button" href="./?t=Portugal_assembly_of_the_republic">
+	<img src="res/flags/prt.svg">
+	<div class="selectmenu-button-text">Portugal</div>
+</a>
 <a class="selectmenu-button" onclick='displayMenu("mapmenu-russia")'>
 	<img src="res/flags/rus.svg">
 	<div class="selectmenu-button-text">Russia</div>

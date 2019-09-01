@@ -640,6 +640,20 @@
 	
 	<div class="map-type-box">
 	<div class="map-type-header">
+		<img src="app/res/flags/prt.svg">
+		<div class="map-type-header-text">Portugal</div>
+	</div>
+	<div class="map-button-box">	
+		<a href="./app/?t=Portugal_assembly_of_the_republic">
+			<div class="map-button">
+				<i class="fas fa-chevron-up"></i> Assembly of the Republic
+			</div>
+		</a>
+	</div>
+	</div>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
 		<img src="app/res/flags/rus.svg">
 		<div class="map-type-header-text">Russia</div>
 	</div>

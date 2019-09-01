@@ -69,6 +69,9 @@ function loadPreset(value) {
 		case 'russia':
 			loadPresetRussia();
 			break;
+		case 'portugal':
+			loadPresetPortugal();
+			break;
 	}
 	
 	verifyMap();
@@ -560,5 +563,33 @@ function loadPresetRussia() {
 	candidates['CP'] = just;
 	candidates['Rodina'] = rodina;
 	candidates['Yabloko'] = yabloko;
+	candidates['Ind'] = indy;
+}
+
+function loadPresetPortugal() {
+	var ps = new Candidate('PS', 
+		['#ff61ea','#ff61ea','#ff61ea','#ff61ea']);
+	var indy = new Candidate('Ind', 
+		['#aaaaaa','#aaaaaa','#aaaaaa','#aaaaaa']);
+	var be = new Candidate('BE', 
+		['#870909','#870909','#870909','#870909']);
+	var pcp = new Candidate('PCP', 
+		['#ff0000','#ff0000','#ff0000','#ff0000']);
+	var pev = new Candidate('PEV', 
+		['#008000','#008000','#008000','#008000']);
+	var ppdpsd = new Candidate('PPD/PSD',
+		['#ff9900','#ff9900','#ff9900','#ff9900']);
+	var cdspp = new Candidate('CDS-PP',
+		['#00daff','#00daff','#00daff','#00daff']);
+	var pan = new Candidate('PAN',
+		['#008080','#008080','#008080','#008080']);
+
+	candidates['PS'] = ps;
+	candidates['BE'] = be;
+	candidates['PCP'] = pcp;
+	candidates['PEV'] = pev;
+	candidates['PPD/PSD'] = ppdpsd;
+	candidates['CDS-PP'] = cdspp;
+	candidates['PAN'] = pan;
 	candidates['Ind'] = indy;
 }

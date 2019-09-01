@@ -179,6 +179,12 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		'<meta property="og:title" content="YAPms - Spain Congress of Deputies">
 		<meta property="og:description" content="Interactive Spanish Congress of Deputies Map">';
 		break;
+		case 'Portugal_assembly_of_the_republic':
+		echo '<meta name="description" content="Portugal - Assembly of the Republic election map"><title>Portugal - Assembly of the Republic Election</title>';
+		echo 
+		'<meta property="og:title" content="YAPms - Portugal Assembly of the Republic">
+		<meta property="og:description" content="Interactive Portuguese Assembly of the Republic Map">';
+		break;
 		case 'Italy_states':
 		echo '<meta name="description" content="Italy - State election map"><title>Italy - State Election</title>';
 		echo 

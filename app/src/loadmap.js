@@ -166,6 +166,10 @@ function loadMapFromId(id) {
 			loadMap("./res/italy.svg", 16, 1, "congressional", "presidential", "open", {updateText: false});
 			loadPreset('italy')
 			break;
+		case "Portugal_assembly_of_the_republic":
+			loadMap("./res/portugal_constituencies.svg", 16, 0.25, "portugal_constituencies", "proportional", "open", {updateText: false});
+			loadPreset('portugal');
+			break;
 		case "Spain_constituencies":
 		case "Spain_congress_of_deputies":
 			loadMap("./res/spain_constituencies.svg", 16, 0.25, "spain_constituencies", "proportional", "open", {updateText: false});

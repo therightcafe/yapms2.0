@@ -1,6 +1,6 @@
-var scriptCache = 'd0.65.17';
-var indexCache = 'i0.65.17';
-var staticCache = 's0.65.0';
+var scriptCache = 'd0.65.21';
+var indexCache = 'i0.65.21';
+var staticCache = 's0.65.21';
 
 var _scriptCache = [
 	'./app/html/battlechart.html',
@@ -73,6 +73,7 @@ var _indexCache = [
 	'./app/?t=Germany_states',
 	'./app/?t=Germany_bundestag',
 	'./app/?t=Spain_congress_of_deputies',
+	'./app/?t=Portugal_assembly_of_the_republic',
 	'./app/?t=Italy_states',
 	'./app/?t=UnitedKingdom_house_of_commons',
 	'./app/?t=Canada_provinces',
@@ -121,6 +122,7 @@ var _staticCache = [
 	'./app/res/australia_constituencies.svg',
 	'./app/res/australia.svg',
 	'./app/res/spain_constituencies.svg',
+	'./app/res/portugal_constituencies.svg',
 	'./app/res/brazil_states.svg',
 	'./app/res/russia_federal_subjects.svg',
 	'./app/res/russia_constituencies.svg',
@@ -145,6 +147,7 @@ var _staticCache = [
 	'./app/res/flags/bra.svg',
 	'./app/res/flags/can.svg',
 	'./app/res/flags/esp.svg',
+	'./app/res/flags/prt.svg',
 	'./app/res/flags/eu.svg',
 	'./app/res/flags/fra.svg',
 	'./app/res/flags/ger.svg',
