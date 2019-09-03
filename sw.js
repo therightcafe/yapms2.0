@@ -1,4 +1,4 @@
-var indexCache = 'i0.65.36';
+var indexCache = 'i0.65.40';
 var staticCache = 's0.65.30';
 
 var _indexCache = [
@@ -19,7 +19,6 @@ var _indexCache = [
 	'./app/src/loadmap.js',
 	'./app/src/savemap.js',
 	'./app/src/htmlControl.js',
-	'./app/src/menuControl.js',
 	'./app/src/html2canvas.min.js',
 	'./app/src/data.js',
 	'./app/src/click.js',
@@ -31,6 +30,7 @@ var _indexCache = [
 	'./app/src/congress.js',
 	'./app/src/keyboard.js',
 	'./app/src/deferedImages.js',
+	'./app/src/menuControl.js',
 
 	'./app/?t=USA_current_house',
 	'./app/?t=USA_current_senate',
