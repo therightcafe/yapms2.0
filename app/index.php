@@ -567,7 +567,7 @@ if($mobile) {
 <script src="./src/popularvote.js"></script>
 <script src="./src/congress.js"></script>
 <script src="./src/keyboard.js"></script>
-<script src="./src/menuControl.js"></script>
+<script src="./src/menuControl.js?v=1"></script>
 <script src="./src/main.js"></script>
 <?php 
 if($mobile === true) {
