@@ -463,7 +463,64 @@ if($mobile) {
 	</div>
 </div>
 
-<div id="selectmenu" class="popup selectmenu">
+<div id="mapmenu" class="popup selectmenu">
+	<?php require './html/menu/mapmenu.php'; ?>
+</div>
+
+<div id="mapmenu-usa" class="popup selectmenu">
+	<?php require './html/menu/mapmenu-usa.php'; ?>
+</div>
+
+<div id="mapmenu-usa-historical" class="popup selectmenu">
+	<?php require './html/menu/mapmenu-usa-historical.php'; ?>
+</div>
+
+<div id="mapmenu-russia" class="popup selectmenu">
+	<?php require './html/menu/mapmenu-russia.php'; ?>
+</div>
+
+<div id="mapmenu-netherlands" class="popup selectmenu">
+	<?php require './html/menu/mapmenu-netherlands.php'; ?>
+</div>
+
+<div id="mapmenu-germany" class="popup selectmenu">
+	<?php require './html/menu/mapmenu-germany.php'; ?>
+</div>
+
+<div id="mapmenu-canada" class="popup selectmenu">
+	<?php require './html/menu/mapmenu-canada.php'; ?>
+</div>
+
+<div id="mapmenu-australia" class="popup selectmenu">
+	<?php require './html/menu/mapmenu-australia.php'; ?>
+</div>
+
+<div id="mapmenu-lte" class="popup selectmenu">
+	<?php require './html/menu/mapmenu-lte.php'; ?>
+</div>
+
+<div id="chartmenu" class="popup selectmenu">
+	<?php require './html/menu/chartmenu.php'; ?>
+</div>
+
+<div id="thememenu" class="popup selectmenu">
+	<?php require './html/menu/thememenu.php'; ?>
+</div>
+
+<div id="sharemenu" class="popup selectmenu">
+	<?php require './html/menu/sharemenu.php'; ?>
+</div>
+
+<div id="loadmenu" class="popup selectmenu">
+	<?php require './html/menu/loadmenu.php'; ?>
+</div>
+
+<div id="miscmenu" class="popup selectmenu">
+	<?php require './html/menu/miscmenu.php'; ?>
+</div>
+
+<div id="versionmenu" class="popup selectmenu">
+	<?php require './html/menu/versionmenu.php'; ?>
 </div>
 
 <div id="notification" class="popup selectmenu">
