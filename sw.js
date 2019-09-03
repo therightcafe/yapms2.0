@@ -1,4 +1,4 @@
-var indexCache = 'i0.65.30';
+var indexCache = 'i0.65.31';
 var staticCache = 's0.65.30';
 
 var _indexCache = [
@@ -19,6 +19,7 @@ var _indexCache = [
 	'./app/src/loadmap.js',
 	'./app/src/savemap.js',
 	'./app/src/htmlControl.js',
+	'./app/src/menuControl.js',
 	'./app/src/html2canvas.min.js',
 	'./app/src/data.js',
 	'./app/src/click.js',
