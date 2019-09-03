@@ -1,9 +1,5 @@
-var scriptCache = 'd0.65.27';
-var indexCache = 'i0.65.27';
+var indexCache = 'i0.65.28';
 var staticCache = 's0.65.27';
-
-var _scriptCache = [
-];
 
 var _indexCache = [
 	'./',
@@ -170,7 +166,7 @@ var _staticCache = [
 ];
 
 function swLog(cache, message) {
-	console.log('SW ' + cache + ': ' + message + ' ( ' + scriptCache + ' / ' + staticCache + ' / ' + indexCache + ' )');
+	console.log('SW ' + cache + ': ' + message + ' ( ' + staticCache + ' / ' + indexCache + ' )');
 }
 
 self.addEventListener('message', function(event) {
@@ -192,13 +188,6 @@ self.addEventListener('install', function(event) {
 					}
 					return cache;
 				});
-			})
-		}
-	}).then(caches.has(scriptCache).then(function(exists) {
-		if(exists === false) {
-			return caches.open(scriptCache).then(function(cache) {
-				swLog(scriptCache, 'installing');
-				return cache.addAll(_scriptCache);
 			})
 		}
 	})).then(caches.has(indexCache).then(function(exists) {
@@ -264,9 +253,8 @@ self.addEventListener('activate', function(event) {
 	return event.waitUntil(
 		caches.keys().then(function(cacheNames) {
 			cacheNames.forEach(function(cacheName) {
-				if(cacheName === scriptCache ||
-					cacheName === staticCache ||
-					cacheName === indexCache) {
+				if(cacheName === staticCache ||
+				cacheName === indexCache) {
 					swLog(cacheName, 'keep');
 				} else {
 					swLog(cacheName, 'delete');

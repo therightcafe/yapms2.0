@@ -58,17 +58,6 @@ function displayUpdateServiceWorker() {
 	notification.style.display = 'inline';
 }
 
-function displayLanguageMenu() {
-	if(navigator.onLine) {
-		closeAllPopups();
-		var menu = document.getElementById("languagemenu");
-		menu.style.display = 'flex';
-	} else {
-		closeAllPopups();
-		displayNotification('Offline', 'Unavailable while Offline');
-	}
-}
-
 function displayNotification(title, text) {
 	var notification = document.getElementById('notification');
 	var messageHTML = notification.querySelector('#notification-message');
@@ -78,95 +67,11 @@ function displayNotification(title, text) {
 	titleHTML.innerHTML = title;
 }
 
-function displayShare() {
-	closeAllPopups();
-	var share = document.getElementById('share');
-	share.style.display = 'flex';
-
-	var downloadbtn = document.getElementById('downloadbutton');
-	if(downloadbtn) {
-		downloadbtn.style.display = 'none';
-	}
-
-	var shareurl = document.getElementById('shareurl');
-	if(shareurl) {
-		shareurl.style.display = 'none';
-		shareurl.innerHTML = '';
-	}
-
-	var image = document.getElementById('screenshotimg');
-	if(image) {
-		image.style.display = 'none';
-	}
-		
-	var loadingAnimation = document.getElementById('loading-animation');
-	if(loadingAnimation) {
-		loadingAnimation.style.display = '';
-	}
-}
-
-function displayMapMenu(type) {
-	closeAllPopups();
-	var mapmenu = document.getElementById('mapmenu');
-	mapmenu.style.display = 'flex';
-}
-
-function displayCountryMenu(type) {
-	closeAllPopups();
-	var mapmenu = document.getElementById('mapmenu-' + type);
-	mapmenu.style.display = 'flex';
-}
-
-function displayPresetMenu(type) {
-	closeAllPopups();
-	var presetmenu = document.getElementById('presetmenu');
-	presetmenu.style.display = 'flex';
-}
-
-function displayChartMenu(type) {
-	closeAllPopups();
-	var chartmenu = document.getElementById('chartmenu');
-	chartmenu.style.display = 'flex';
-}
-
-function displayLoadMenu(type) {
-	closeAllPopups();
-	var loadmenu = document.getElementById('loadmenu');
-	loadmenu.style.display = 'block';
-}
-
-function displayCountersMenu(type) {
-	closeAllPopups();
-	var countersmenu = document.getElementById('countersmenu');
-	countersmenu.style.display = 'flex';
-}
-
-function displayThemeMenu(type) {
-	closeAllPopups();
-	var thememenu = document.getElementById('thememenu');
-	thememenu.style.display = 'flex';
-}
-
-function displayModeMenu(type) {
-	closeAllPopups();
-	var modemenu = document.getElementById('modemenu');
-	modemenu.style.display = 'flex';
-}
-
 function displayAddCandidateMenu(type) {
 	customColorBackground();
 	closeAllPopups();
 	var addcandidatemenu = document.getElementById('addcandidatemenu');
 	addcandidatemenu.style.display = 'flex';
-}
-
-function displayVersionInfo() {
-	closeAllPopups();
-	var versioninfo = document.getElementById('versioninfo');
-	var versioninfotext = document.getElementById('versioninfo-text');
-
-	versioninfo.style.display = 'inline';
-	versioninfotext.innerHTML = currentCache;
 }
 
 function closeAllPopups() {
@@ -175,12 +80,6 @@ function closeAllPopups() {
 		var popup = popups[index];
 		popup.style.display = 'none';
 	}
-}
-
-function displayMiscMenu(type) {
-	closeAllPopups();
-	var miscmenu = document.getElementById('miscmenu');
-	miscmenu.style.display = 'flex';
 }
 
 function displayCustomColorMenu(type) {
