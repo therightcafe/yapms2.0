@@ -190,7 +190,7 @@ self.addEventListener('install', function(event) {
 				});
 			})
 		}
-	})).then(caches.has(indexCache).then(function(exists) {
+	}).then(caches.has(indexCache).then(function(exists) {
 		if(exists ===  false) {
 			return caches.open(indexCache).then(function(cache) {
 				swLog(indexCache, 'installing');
