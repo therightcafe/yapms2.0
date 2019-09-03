@@ -1,8 +1,18 @@
-var scriptCache = 'd0.65.25';
-var indexCache = 'i0.65.25';
-var staticCache = 's0.65.21';
+var scriptCache = 'd0.65.27';
+var indexCache = 'i0.65.27';
+var staticCache = 's0.65.27';
 
 var _scriptCache = [
+];
+
+var _indexCache = [
+	'./',
+	'./index.php',
+	'./offline.php',
+
+	'./app/',
+	'./app/index.php',
+	
 	'./app/html/battlechart.html',
 	'./app/html/closebutton.svg',
 	'./app/html/loading.svg',
@@ -24,31 +34,6 @@ var _scriptCache = [
 	'./app/src/congress.js',
 	'./app/src/keyboard.js',
 	'./app/src/deferedImages.js'
-];
-
-var _indexCache = [
-	'./',
-	'./index.php',
-	'./offline.php',
-
-	'./app/',
-	'./app/index.php',
-
-	'./app/html/menu/chartmenu.php',
-	'./app/html/menu/loadmenu.php',
-	'./app/html/menu/miscmenu.php',
-	'./app/html/menu/sharemenu.php',
-	'./app/html/menu/thememenu.php',
-	'./app/html/menu/versionmenu.php',
-	'./app/html/menu/mapmenu.php',
-	'./app/html/menu/mapmenu-australia.php',
-	'./app/html/menu/mapmenu-canada.php',
-	'./app/html/menu/mapmenu-germany.php',
-	'./app/html/menu/mapmenu-lte.php',
-	'./app/html/menu/mapmenu-netherlands.php',
-	'./app/html/menu/mapmenu-russia.php',
-	'./app/html/menu/mapmenu-usa-historical.php',
-	'./app/html/menu/mapmenu-usa.php',
 
 	'./app/?t=USA_current_house',
 	'./app/?t=USA_current_senate',
