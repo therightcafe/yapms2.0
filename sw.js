@@ -33,7 +33,7 @@ var _indexCache = [
 	'./app/src/popularvote.js',
 	'./app/src/congress.js',
 	'./app/src/keyboard.js',
-	'./app/src/deferedImages.js'
+	'./app/src/deferedImages.js',
 
 	'./app/?t=USA_current_house',
 	'./app/?t=USA_current_senate',
