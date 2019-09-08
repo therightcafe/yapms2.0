@@ -507,9 +507,17 @@ if($mobile) {
 	<?php require './html/menu/thememenu.php'; ?>
 </div>
 
-<div id="sharemenu" class="popup selectmenu">
-	<?php require './html/menu/sharemenu.php'; ?>
-</div>
+<?php
+if($mobile) {
+	echo '<div id="sharemenu-mobile" class="popup selectmenu">';
+	require './html/menu/sharemenu-mobile.php';
+	echo '</div>';
+} else {
+	echo '<div id="sharemenu" class="popup selectmenu">';
+	require './html/menu/sharemenu.php';
+	echo '</div>';
+}
+?>
 
 <div id="loadmenu" class="popup selectmenu">
 	<?php require './html/menu/loadmenu.php'; ?>
