@@ -229,8 +229,12 @@ function saveMap_new(img, token) {
 			}
 			var downloadbtn = document.getElementById('downloadbutton');
 			if(downloadbtn) {
-				downloadbtn.style.display = '';
-				downloadbtn.setAttribute('href', 'https://yapms.org/downloadmap.php?f=' + filename);
+				if(mobile) {
+					downloadbtn.style.display = 'none';
+				} else {
+					downloadbtn.style.display = '';
+					downloadbtn.setAttribute('href', 'https://yapms.org/downloadmap.php?f=' + filename);
+				}
 			}
 
 			var loadingAnimation = document.getElementById('loading-animation');
