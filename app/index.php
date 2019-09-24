@@ -219,17 +219,6 @@ if($mobile === false) {
 <?php
 if($mobile === false) {
 	echo '<div id="sidebar">' ,
-		'<div id="sidebar-header">
-			YAPms  
-		</div>' ,
-		'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle adslot_sidebar"
-     style="display:inline-block;width:336px;height:280px"
-     data-ad-client="ca-pub-1660456925957249"
-     data-ad-slot="8033943742"></ins>
-<script>
-	(adsbygoogle = window.adsbygoogle || []).push({});
-</script>',
 		'<div id="sidebar-social">
 		<a id="sidebar-discord-link" class="social-link" href="https://discord.gg/WQh5fHU" target="_blank"><div id="sidebar-discord" class="sidebar-button">
 			Discord
@@ -244,6 +233,17 @@ if($mobile === false) {
 			Twitter
 		</div></a>
 		</div>',
+		'<div id="sidebar-header">
+			YAPms  
+		</div>' ,
+		'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle adslot_sidebar"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-1660456925957249"
+     data-ad-slot="8033943742"></ins>
+<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+</script>',
 		'<div id="sidebar-popularvote" class="sidebar-box">
 			<h3>
 				<span>
