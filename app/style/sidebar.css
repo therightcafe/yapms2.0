@@ -15,6 +15,13 @@
 	margin: 10px;
 }
 
+#sidebar-header h1 {
+	margin: 0px;
+	padding: 0px;
+	font-size: 28px;
+	font-weight: normal;
+}
+
 .adslot_sidebar {
 	max-width: 336px;
 }

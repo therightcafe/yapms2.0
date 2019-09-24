@@ -232,9 +232,11 @@ if($mobile === false) {
 		<a id="sidebar-twitter-link" class="social-link" href="https://twitter.com/YAPmsOfficial" target="_blank"><div id="sidebar-twitter" class="sidebar-button">
 			Twitter
 		</div></a>
-		</div>',
-		'<div id="sidebar-header">
-			YAPms  
+		</div>
+		<div id="sidebar-header">
+			<h1>
+				YAPms
+			</h1>
 		</div>' ,
 		'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle adslot_sidebar"
