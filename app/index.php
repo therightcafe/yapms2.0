@@ -220,18 +220,18 @@ if($mobile === false) {
 if($mobile === false) {
 	echo '<div id="sidebar">' ,
 		'<div id="sidebar-social">
-		<a id="sidebar-discord-link" class="social-link" href="https://discord.gg/WQh5fHU" target="_blank"><div id="sidebar-discord" class="sidebar-button">
+		<div id="sidebar-discord-link" class="social-link" href="https://discord.gg/WQh5fHU" target="_blank"><div id="sidebar-discord" class="sidebar-button">
 			Discord
-		</div></a>
-		<a id="sidebar-android-link" class="social-link" href="https://play.google.com/store/apps/details?id=com.fishstudio.yapms&hl=en_US" target="_blank"><div id="sidebar-android" class="sidebar-button">
+		</div></div>
+		<div id="sidebar-android-link" class="social-link" href="https://play.google.com/store/apps/details?id=com.fishstudio.yapms&hl=en_US" target="_blank"><div id="sidebar-android" class="sidebar-button">
 			Android
-		</div></a>
-		<a id="sidebar-reddit-link" class="social-link" href="https://www.reddit.com/r/YAPms/" target="_blank"><div id="sidebar-reddit" class="sidebar-button">
+		</div></div>
+		<div id="sidebar-reddit-link" class="social-link" href="https://www.reddit.com/r/YAPms/" target="_blank"><div id="sidebar-reddit" class="sidebar-button">
 			Reddit
-		</div></a>
-		<a id="sidebar-twitter-link" class="social-link" href="https://twitter.com/YAPmsOfficial" target="_blank"><div id="sidebar-twitter" class="sidebar-button">
+		</div></div>
+		<div id="sidebar-twitter-link" class="social-link" href="https://twitter.com/YAPmsOfficial" target="_blank"><div id="sidebar-twitter" class="sidebar-button">
 			Twitter
-		</div></a>
+		</div></div>
 		</div>
 		<div id="sidebar-header">
 			<h1>
