@@ -111,6 +111,7 @@ function loadMapFromId(id) {
 			break;
 		case "USA_2020_republican_primary":
 			loadMap("./res/usa_rep_primary.svg", 16, 1, "rep_primary", "primary", "open",{updateText: false});
+			loadPreset('republican primary');
 			break;
 		case "USA_county":
 			loadMap("./res/usa_county.svg", 16, 0.075, "congressional", "congressional", "open", {updateText: false});

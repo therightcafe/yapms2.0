@@ -24,6 +24,9 @@ function loadPreset(value) {
 		case 'classic':
 			loadPresetClassic();
 			break;
+		case 'republican primary':
+			loadPresetRepublicanPrimary();
+			break;
 		case 'democratic primary':
 			loadPresetDemocraticPrimary();
 			break;
@@ -93,6 +96,22 @@ function loadPresetClassic() {
 	candidates['Democrat'] = democrat;
 }
 
+function loadPresetRepublicanPrimary() {
+	var trump = new Candidate('Trump',
+		['#bf1d29','#bf1d29','#bf1d29','#bf1d29']);
+	var weld = new Candidate('Weld',
+		['#e6b700','#e6b700','#e6b700','#e6b700']);
+	var walsh = new Candidate('Walsh',
+		['#1c408c','#1c408c','#1c408c','#1c408c']);
+	var sanford = new Candidate('Sanford',
+		['#1c8c28','#1c8c28','#1c8c28','#1c8c28']);
+	
+	candidates['Trump'] = trump;
+	candidates['Weld'] = weld;
+	candidates['Walsh'] = walsh;
+	candidates['Sanford'] = sanford;
+}
+
 function loadPresetDemocraticPrimary() {
 	var biden = new Candidate('Biden',
 		['#009900','#009900','#009900','#009900']);
@@ -119,7 +138,6 @@ function loadPresetDemocraticPrimary() {
 	candidates['O\'Rourke'] = orourke;
 	candidates['Booker'] = booker;
 	candidates['Yang'] = yang;
-	
 }
 
 // republican vs democrat vs libertarian
