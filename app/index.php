@@ -311,6 +311,7 @@ if($mobile === false) {
 ?>
 </div>
 <?php
+/*
 if($mobile) {
 	echo '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- mobile-ad -->
@@ -324,6 +325,7 @@ if($mobile) {
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>';
 }
+ */
 ?>
 </div>
 
