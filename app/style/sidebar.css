@@ -116,7 +116,7 @@
 	font-family: Times;
 }
 
-@media screen and (min-width: 1368px) {
+@media screen and (min-width: 1602px) {
 	#sidebar {
 		min-width: 348px;
 		max-width: 348px;
@@ -125,7 +125,26 @@
 	
 	.adslot_sidebar {
 		max-width: 336px;
+		max-height: 336px;
 	}
+}
+
+@media screen and (max-width: 1601px) {
+	#sidebar {
+		min-width: 312px;
+		max-width: 312px;
+		width: 312px;
+	}
+	
+	.adslot_sidebar {
+		max-width: 300px;
+		max-height: 300px;
+	}
+
+	.social-link {
+		font-size: 16px;
+	}
+
 }
 
 @media screen and (max-width: 1367px) {
@@ -137,6 +156,7 @@
 	
 	.adslot_sidebar {
 		max-width: 250px;
+		max-height: 250px;
 	}
 
 	.social-link {
