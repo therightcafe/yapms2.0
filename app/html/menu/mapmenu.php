@@ -41,6 +41,10 @@
 	<img src="res/flags/ger.svg">
 	<div class="selectmenu-button-text">Germany</div>
 </a>
+<a class="selectmenu-button" href="./?t=India_lok_sabha">
+	<img src="res/flags/ind.svg">
+	<div class="selectmenu-button-text">India</div>
+</a>
 <a class="selectmenu-button" href="./?t=Italy_states">
 	<img src="res/flags/ita.svg">
 	<div class="selectmenu-button-text">Italy</div>

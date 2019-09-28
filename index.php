@@ -593,6 +593,20 @@
 	
 	<div class="map-type-box">
 	<div class="map-type-header">
+		<img src="app/res/flags/ind.svg">
+		<div class="map-type-header-text">India</div>
+	</div>
+	<div class="map-button-box">	
+		<a href="./app/?t=India_lok_sabha">
+			<div class="map-button">
+				<i class="fas fa-chevron-down"></i> Lok Sabha
+			</div>
+		</a>
+	</div>
+	</div>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
 		<img src="app/res/flags/ita.svg">
 		<div class="map-type-header-text">Italy</div>
 	</div>
