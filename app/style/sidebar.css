@@ -115,3 +115,31 @@
 #yapnews-articles {
 	font-family: Times;
 }
+
+@media screen and (min-width: 1368px) {
+	#sidebar {
+		min-width: 348px;
+		max-width: 348px;
+		width: 348px;
+	}
+	
+	.adslot_sidebar {
+		max-width: 336px;
+	}
+}
+
+@media screen and (max-width: 1367px) {
+	#sidebar {
+		min-width: 262px;
+		max-width: 262px;
+		width: 262px;
+	}
+	
+	.adslot_sidebar {
+		max-width: 250px;
+	}
+
+	.social-link {
+		font-size: 14px;
+	}
+}

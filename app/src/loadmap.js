@@ -179,6 +179,9 @@ function loadMapFromId(id) {
 		case "Turkey_provinces":
 			loadMap("./res/turkey_provinces.svg", 16, 0.5, "congressional", "presidential", "open", {updateText: false});
 			break;
+		case "India_lok_sabha":
+			loadMap("./res/india_constituencies.svg", 16, 0.1, "congressional", "presidential", "open", {updateText: false});
+			break;
 		case "UnitedKingdom_constituencies":
 		case "UnitedKingdom_house_of_commons":
 			loadMap("./res/unitedkingdom.svg", 16, 0.075, "congressional", "congressional", "open", {updateText: false});
