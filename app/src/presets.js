@@ -45,6 +45,9 @@ function loadPreset(value) {
 		case 'germany':
 			loadPresetGermany();
 			break;
+		case 'india':
+			loadPresetIndia();
+			break;
 		case 'italy':
 			loadPresetItaly();
 			break;
@@ -610,4 +613,49 @@ function loadPresetPortugal() {
 	candidates['CDS-PP'] = cdspp;
 	candidates['PAN'] = pan;
 	candidates['Ind'] = indy;
+}
+
+function loadPresetIndia() {
+	var bjp = new Candidate('BJP',
+		['#ff9933','#ff9933','#ff9933','#ff9933']);
+	var ysrcp = new Candidate('YSRCP',
+		['#1569c7','#1569c7','#1569c7','#1569c7']);
+	var ss = new Candidate('SS',
+		['#ff6634','#ff6634','#ff6634','#ff6634']);
+	var jd = new Candidate('JD',
+		['#004285','#004285','#004285','#004285']);
+	var bjd= new Candidate('BJD',
+		['#006400','#006400','#006400','#006400']);
+	var bsp = new Candidate('BSP',
+		['#0000ff','#0000ff','#0000ff','#0000ff']);
+	var trs = new Candidate('TRS',
+		['#ff89ce','#ff89ce','#ff89ce','#ff89ce']);
+	var ljp = new Candidate('LJP',
+		['#40ff7e','#40ff7e','#40ff7e','#40ff7e']);
+
+	var inc = new Candidate('INC',
+		['#00bfff','#00bfff','#00bfff','#00bfff']);
+	var dmk = new Candidate('DMK',
+		['#de1100','#de1100','#de1100','#de1100']);
+	var ncp = new Candidate('NCP',
+		['#008080','#008080','#008080','#008080']);
+
+	var aitc = new Candidate('AITC',
+		['#00f200','#00f200','#00f200','#00f200']);
+	var sp = new Candidate('SP',
+		['#a30000','#a30000','#a30000','#a30000']);
+
+	candidates['BJP'] = bjp;
+	candidates['YSRCP'] = ysrcp;
+	candidates['SS'] = ss;
+	candidates['JD'] = jd;
+	candidates['BJD'] = bjd;
+	candidates['BSP'] = bsp;
+	candidates['TRS'] = trs;
+	candidates['LJP'] = ljp;
+	candidates['INC'] = inc;
+	candidates['DMK'] = dmk;
+	candidates['NCP'] = ncp;
+	candidates['AITC'] = aitc;
+	candidates['SP'] = sp;
 }

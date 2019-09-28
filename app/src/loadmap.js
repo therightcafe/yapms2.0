@@ -181,6 +181,7 @@ function loadMapFromId(id) {
 			break;
 		case "India_lok_sabha":
 			loadMap("./res/india_constituencies.svg", 16, 0.1, "congressional", "presidential", "open", {updateText: false});
+			loadPreset('india');
 			break;
 		case "UnitedKingdom_constituencies":
 		case "UnitedKingdom_house_of_commons":

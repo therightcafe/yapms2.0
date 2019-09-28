@@ -1,5 +1,5 @@
-var indexCache = 'i0.67.0';
-var staticCache = 's0.67.0';
+var indexCache = 'i0.67.5';
+var staticCache = 's0.67.5';
 
 var _indexCache = [
 	'./',
@@ -141,6 +141,7 @@ var _staticCache = [
 	'./app/res/flags/ukd.svg',
 	'./app/res/flags/un.svg',
 	'./app/res/flags/usa.svg',
+	'./app/res/flags/ind.svg',
 
 	'./app/data/gubernatorial_2018',
 	'./app/data/gubernatorial_2020',
