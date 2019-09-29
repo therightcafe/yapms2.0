@@ -69,6 +69,10 @@
 	<img src="res/flags/esp.svg">
 	<div class="selectmenu-button-text">Spain</div>
 </a>
+<a class="selectmenu-button" href="./?t=Turkey_national_assembly">
+	<img src="res/flags/tur.svg">
+	<div class="selectmenu-button-text">Turkey</div>
+</a>
 <a class="selectmenu-button" href="./?t=UnitedKingdom_house_of_commons">
 	<img src="res/flags/ukd.svg">
 	<div class="selectmenu-button-text">United Kingdom</div>

@@ -1,5 +1,5 @@
-var indexCache = 'i0.67.5';
-var staticCache = 's0.67.5';
+var indexCache = 'i0.68.0';
+var staticCache = 's0.68.0';
 
 var _indexCache = [
 	'./',
@@ -111,6 +111,7 @@ var _staticCache = [
 	'./app/res/netherlands_gemeenten.svg',
 	'./app/res/netherlands_provinces.svg',
 	'./app/res/ireland_constituencies.svg',
+	'./app/res/turkey_provinces.svg',
 	
 	'./app/res/lte.jpg',
 	'./app/res/redeagletv.png',
@@ -129,6 +130,7 @@ var _staticCache = [
 	'./app/res/flags/bra.svg',
 	'./app/res/flags/can.svg',
 	'./app/res/flags/esp.svg',
+	'./app/res/flags/tur.svg',
 	'./app/res/flags/prt.svg',
 	'./app/res/flags/eu.svg',
 	'./app/res/flags/fra.svg',

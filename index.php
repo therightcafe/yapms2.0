@@ -701,6 +701,20 @@
 	
 	<div class="map-type-box">
 	<div class="map-type-header">
+		<img src="app/res/flags/tur.svg">
+		<div class="map-type-header-text">Turkey</div>
+	</div>
+	<div class="map-button-box">	
+		<a href="./app/?t=Turkey_national_assembly">
+			<div class="map-button">
+				<i class="fas fa-chevron-circle-down"></i> National Assembly
+			</div>
+		</a>
+	</div>
+	</div>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
 		<img src="app/res/flags/ukd.svg">
 		<div class="map-type-header-text">United Kingdom</div>
 	</div>

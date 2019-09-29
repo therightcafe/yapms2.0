@@ -63,6 +63,9 @@ function loadPreset(value) {
 		case 'spain':
 			loadPresetSpain();
 			break;
+		case 'turkey':
+			loadPresetTurkey();
+			break;
 		case 'netherlands':
 			loadPresetNetherlands();
 			break;
@@ -398,6 +401,41 @@ function loadPresetSpain() {
 	candidates['CCa-PNC'] = cca;
 	candidates['PRC'] = prc;
 	toggleLegendLeans();
+}
+
+// Turkish Parties
+function loadPresetTurkey() {
+	var akp = new Candidate('AKP',
+		['#ffcc00','#ffcc00','#ffcc00','#ffcc00']);
+	var mhp = new Candidate('MHP',
+		['#870000','#870000','#870000','#870000']);
+	var bbp = new Candidate('BBP',
+		['#cc5252','#cc5252','#cc5252','#cc5252']);
+	var chp = new Candidate('CHP',
+		['#e30000','#e30000','#e30000','#e30000']);
+	var hdp = new Candidate('HDP',
+		['#951b88','#951b88','#951b88','#951b88']);
+	var iyi = new Candidate('IYI',
+		['#0099cc','#0099cc','#0099cc','#0099cc']);
+	var sp = new Candidate('SP',
+		['#ff5f5f','#ff5f5f','#ff5f5f','#ff5f5f']);
+	var tip = new Candidate('TIP',
+		['#990000','#990000','#990000','#990000']);
+	var dp = new Candidate('DP',
+		['#ff3333','#ff3333','#ff3333','#ff3333']);
+	var ind = new Candidate('Ind',
+		['#b0b0b0','#b0b0b0','#b0b0b0','#b0b0b0']);
+
+	candidates['AKP'] = akp;
+	candidates['MHP'] = mhp;
+	candidates['BBP'] = bbp;
+	candidates['CHP'] = chp;
+	candidates['HDP'] = hdp;
+	candidates['IYI'] = iyi;
+	candidates['SP'] = sp;
+	candidates['TIP'] = tip;
+	candidates['DP'] = dp;
+	candidates['Ind'] = ind;
 }
 
 // Dutch Parties

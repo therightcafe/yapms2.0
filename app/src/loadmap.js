@@ -176,8 +176,9 @@ function loadMapFromId(id) {
 			loadMap("./res/spain_constituencies.svg", 16, 0.25, "spain_constituencies", "proportional", "open", {updateText: false});
 			loadPreset('spain');
 			break;
-		case "Turkey_provinces":
-			loadMap("./res/turkey_provinces.svg", 16, 0.5, "congressional", "presidential", "open", {updateText: false});
+		case "Turkey_national_assembly":
+			loadMap("./res/turkey_provinces.svg", 16, 0.5, "turkey_national_assembly", "proportional", "open", {updateText: false});
+			loadPreset('turkey');
 			break;
 		case "India_lok_sabha":
 			loadMap("./res/india_constituencies.svg", 16, 0.1, "congressional", "presidential", "open", {updateText: false});
