@@ -15,6 +15,8 @@ class State {
 		this.voters = 0;
 		this.popularVote = {};
 		this.turnout = 100;
+		this.onChange = function() { 
+		}
 	}
 
 	resetVoteCount() {
@@ -341,6 +343,8 @@ class State {
 				}
 			}
 		}
+
+		this.onChange();
 	}
 
 	// directly change the color of a state (add error checking pls)
@@ -382,5 +386,7 @@ class State {
 				}
 			}
 		}
+		
+		this.onChange();
 	}
 };
