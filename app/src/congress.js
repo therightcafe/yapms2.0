@@ -45,6 +45,8 @@ function setCongressContested() {
 		congressData = data;
 	});
 
+	console.log(congressData);
+
 	for(var stateIndex = 0, length = states.length; stateIndex < length; ++stateIndex) {
 		var state = states[stateIndex];
 		var stateName = state.name.split('-')[0];
