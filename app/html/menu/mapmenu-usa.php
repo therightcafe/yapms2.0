@@ -29,6 +29,17 @@
 	<div class="selectmenu-button-text">Governors</div>
 </a>
 <a class="selectmenu-split">
+	<div class="selectmenu-split-text">Primaries</div>
+</a>
+<a class="selectmenu-button" href="./?t=USA_2020_democratic_primary">
+	<i class="fas fa-democrat"></i>
+	<div class="selectmenu-button-text">Democratic</div>
+</a>
+<a class="selectmenu-button" href="./?t=USA_2020_republican_primary">
+	<i class="fas fa-republican"></i>
+	<div class="selectmenu-button-text">Republican</div>
+</a>
+<a class="selectmenu-split">
 	<div class="selectmenu-split-text">Forecasts<br>Presidential</div>
 </a>
 <a class="selectmenu-button" href="./?t=USA_2020_cook">
@@ -45,17 +56,6 @@
 </a>
 <a class="selectmenu-button" href="./?t=USA_2020_house_cook">
 	<div class="selectmenu-button-text">Cook Political Report</div>
-</a>
-<a class="selectmenu-split">
-	<div class="selectmenu-split-text">Primaries</div>
-</a>
-<a class="selectmenu-button" href="./?t=USA_2020_democratic_primary">
-	<i class="fas fa-democrat"></i>
-	<div class="selectmenu-button-text">Democratic</div>
-</a>
-<a class="selectmenu-button" href="./?t=USA_2020_republican_primary">
-	<i class="fas fa-republican"></i>
-	<div class="selectmenu-button-text">Republican</div>
 </a>
 <a class="selectmenu-split">
 	<div class="selectmenu-split-text">Current</div>
