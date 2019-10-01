@@ -82,7 +82,7 @@ function setCongressContested() {
 				map.setAttribute('class', 'sidebar-congress-color');
 				map.style.backgroundColor = 'blue';
 				map.onclick = function() {
-					alert('test');	
+					state.incrementCandidateColor(paintIndex, false);	
 				}
 				color.appendChild(map);
 
