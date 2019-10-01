@@ -7,10 +7,15 @@ var save_strokewidth;
 
 var enablePopularVote = false;
 var enableCongress = false;
+var enableCongressContested = false;
 
 function loadPresetMap(preset, options) {
 	// Remove all candidates, and load the ones for the map
 	initCandidates();
+
+	if(preset === 'USA_2020_house_cook') {
+		enableCongressContested = true;
+	}
 
 	var enableHouse = false;
 
@@ -25,7 +30,13 @@ function loadPresetMap(preset, options) {
 		contentType: false,
 		success: function(a, b, c) {
 			console.log("Found preset map...");
-			loadSavedMap_old(a, {enableCongress: enableHouse});
+			//loadSavedMap_old(a, {enableCongress: enableHouse});
+			try {
+				loadSavedMap_new(a, {enableCongress: enableHouse});
+			} catch(e) {
+				loadSavedMap_old(a, {enableCongress: enableHouse});
+				console.log('New file load failed, attempting old');
+			}
 		},
 		error: function(a, b, c) {
 			console.log("Did not find preset map...");
@@ -45,6 +56,7 @@ function loadMapFromId(id) {
 		case "USA_2020_cook":
 		case "USA_2020_inside":
 		case "USA_2020_sabatos":
+		case "USA_2020_house_cook":
 		case "USA_2016_presidential":
 		case "USA_2012_presidential":
 		case "USA_2008_presidential":
@@ -328,6 +340,7 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year, options) {
 		var finishOptions = function() {
 			if(options.onLoad) {
 				options.onLoad();
+				setCongressContested();
 			}
 
 			if(options.voters) {

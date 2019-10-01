@@ -304,6 +304,13 @@ if($mobile === false) {
 				</li>
 			</ul>
 		</div>',
+		'<div id="sidebar-congress-contested">
+			<div class="sidebar-box">
+				<h2>
+					Contested Seats
+				</h2>
+			</div>
+		</div>',
 		'<div id="yapnews-articles">
 		</div>' ,
 	'</div>';

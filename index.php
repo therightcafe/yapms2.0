@@ -197,6 +197,20 @@
 		</a>
 	</div>
 	</div>
+	
+	<div class="map-type-box">	
+	<div class="map-type-header">
+		<img src="app/res/flags/usa.svg">
+		<div class="map-type-header-text">2020 House Forecasts</div>
+	</div>
+	<div class="map-button-box">	
+		<a href="./app/?t=USA_2020_house_cook">
+			<div class="map-button">
+				Cook Political Report
+			</div>
+		</a>
+	</div>
+	</div>
 
 	<div class="map-type-box">	
 	<div class="map-type-header">
