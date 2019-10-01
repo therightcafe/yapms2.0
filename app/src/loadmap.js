@@ -24,7 +24,6 @@ function loadPresetMap(preset, options) {
 		enableHouse = true;
 	}
 
-
 	$.ajax({
 		url: "./res/presets/" + preset,
 		type: "GET",
@@ -503,11 +502,20 @@ function loadSenateFile(senatefile, onLoad) {
 	});
 }
 
-function loadSavedMap_new(data) {
+function loadSavedMap_new(data, options) {
 	var obj = JSON.parse(data);	
+
+	if(options) {
+		enableCongress = options.enableCongress;
+	} else {
+		enableCongress = false;
+	}
+
 	loadMap(obj['filename'], obj['fontsize'], obj['strokewidth'], obj['dataid'],
 			obj['type'], obj['year'],
-	{	updateText: obj['updatetext'],
+	{	
+		enableCongress: enableCongress,
+		updateText: obj['updatetext'],
 		onLoad: function() {
 		mapOptions.updateText = obj['updatetext'];
 		for(var candidateName in obj.candidates) {
