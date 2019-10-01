@@ -67,9 +67,19 @@ function setCongressContested() {
 				district.appendChild(title);
 
 				var rep = document.createElement('div');
-				rep.innerHTML = districtData.Representative + ' ' + districtData.Party;
+				rep.innerHTML = districtData.Representative + ' - ' + districtData.Party;
 				district.appendChild(rep);
 
+				var color = document.createElement('div');
+				color.setAttribute('class', 'sidebar-congress-colors');
+				var proj = document.createElement('div');
+				proj.style.backgroundColor = 'green';
+				color.appendChild(proj);
+				var map = document.createElement('div');
+				map.style.backgroundColor = 'blue';
+				color.appendChild(map);
+
+				district.appencChild(color);
 				element.appendChild(district);
 			}
 		}

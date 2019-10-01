@@ -100,6 +100,12 @@
 	visibility: visible;
 }
 
+.sidebar-congress-color {
+	display: flex;
+	flex-direction: row;
+	height: 30px;
+}
+
 #sidebar-shortcuts {
 	border-bottom: 1px solid #555555;
 }
