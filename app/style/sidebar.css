@@ -100,10 +100,18 @@
 	visibility: visible;
 }
 
-.sidebar-congress-color {
+.sidebar-congress-colors {
 	display: flex;
 	flex-direction: row;
 	height: 30px;
+}
+
+.sidebar-congress-projection {
+	flex: 1 1;
+}
+
+.sidebar-congress-map {
+	flex: 1 1;
 }
 
 #sidebar-shortcuts {
