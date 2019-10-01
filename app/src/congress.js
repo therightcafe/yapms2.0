@@ -81,6 +81,10 @@ function setCongressContested() {
 				map.innerHTML = '<span>Map</span>';
 				map.setAttribute('class', 'sidebar-congress-color');
 				map.style.backgroundColor = state.htmlElement.style.fill;
+				state.onchange = function() {
+					map.style.backgroundColor = state.htmlElement.style.fill;
+				}
+
 				map.onclick = (function() {
 					var s = state;
 					var m = map;
