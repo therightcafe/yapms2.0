@@ -341,8 +341,8 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year, options) {
 		var finishOptions = function() {
 			if(options.onLoad) {
 				options.onLoad();
-				setCongressContested();
 			}
+			setCongressContested();
 
 			if(options.voters) {
 				for(var stateIndex = 0, length = states.length; stateIndex < length; ++stateIndex) {
