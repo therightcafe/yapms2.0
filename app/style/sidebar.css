@@ -109,16 +109,14 @@
 	color: white;
 }
 
-.sidebar-congress-projection {
+.sidebar-congress-color {
 	flex: 1 1;
 	border-radius: 8px;
-	margin: 5px;
+	margin: 3px;
 }
 
-.sidebar-congress-map {
-	flex: 1 1;
-	border-radius: 8px;
-	margin: 5px;
+.sidebar-congress-color span {
+	line-height: 24px;
 }
 
 #sidebar-shortcuts {
