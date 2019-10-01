@@ -95,6 +95,12 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		'<meta property="og:title" content="YAPms - USA Current House Map">
 		<meta property="og:description" content="Interactive USA Current House Map">';
 		break;
+		case 'USA_2020_house_cook':
+		echo '<meta name="description" content="United States 2020 House Cook Political Report forecast"><title>USA - 2020 Cook Political Report House Forecast</title>';
+		echo 
+		'<meta property="og:title" content="YAPms - USA 2020 House Cook Political Report Forecast">
+		<meta property="og:description" content="Interactive USA 2020 House Cook Political Report Map">';
+		break;
 		case 'USA_2018_congress':
 		case 'USA_2018_house':
 		echo '<meta name="description" content="United States 2018 interactive house election map"><title>USA - 2018 House Election</title>';
