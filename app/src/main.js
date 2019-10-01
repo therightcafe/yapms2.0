@@ -1167,6 +1167,15 @@ function toggleRedEagleLogo() {
 	}
 }
 
+function togglePGLogo() {
+	var pgLogo = document.getElementById('logo-pg-div');
+	if(pgLogo.style.display === '') {
+		pgLogo.style.display = 'inline';
+	} else if(pgLogo.style.display === 'inline') {
+		pgLogo.style.display = '';
+	}
+}
+
 function setColors(palette) {
 	var solid = document.getElementById('solid');
 	var likely = document.getElementById('likely');
