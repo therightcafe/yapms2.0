@@ -83,8 +83,10 @@ function setCongressContested() {
 				map.style.backgroundColor = 'blue';
 				map.onclick = (function() {
 					var s = state;
+					var m = map;
 					return function() {
-					s.incrementCandidateColor(paintIndex, false);	
+						s.incrementCandidateColor(paintIndex, false);	
+						m.style.backgroundColor = s.htmlElement.backgroundColor;
 					}
 				})();
 				color.appendChild(map);
