@@ -119,10 +119,6 @@
 	line-height: 24px;
 }
 
-#sidebar-shortcuts {
-	border-bottom: 1px solid #555555;
-}
-
 #sidebar-shortcuts ul {
 	margin: 8px;
 	padding: 0px;
@@ -132,6 +128,7 @@
 }
 
 #yapnews-articles {
+	border-top: 1px solid #555555;
 	font-family: Times;
 }
 
