@@ -1,5 +1,5 @@
-var indexCache = 'i0.69.1';
-var staticCache = 's0.69.1';
+var indexCache = 'i0.69.2';
+var staticCache = 's0.69.2';
 
 var _indexCache = [
 	'./',
@@ -118,6 +118,7 @@ var _staticCache = [
 	
 	'./app/res/lte.jpg',
 	'./app/res/redeagletv.png',
+	'./app/res/pg.png',
 
 	'./app/res/presets/USA_current_house',
 	'./app/res/presets/USA_current_senate',
