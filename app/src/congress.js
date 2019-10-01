@@ -75,12 +75,12 @@ function setCongressContested() {
 				var proj = document.createElement('div');
 				proj.innerHTML = '<span>Projection</span>';
 				proj.setAttribute('class', 'sidebar-congress-color');
-				proj.style.backgroundColor = 'green';
+				proj.style.backgroundColor = state.htmlElement.style.fill;
 				color.appendChild(proj);
 				var map = document.createElement('div');
 				map.innerHTML = '<span>Map</span>';
 				map.setAttribute('class', 'sidebar-congress-color');
-				map.style.backgroundColor = 'blue';
+				map.style.backgroundColor = state.htmlElement.style.fill;
 				map.onclick = (function() {
 					var s = state;
 					var m = map;
