@@ -1,5 +1,5 @@
-var indexCache = 'i0.68.5';
-var staticCache = 's0.68.5';
+var indexCache = 'i0.69.0';
+var staticCache = 's0.69.0';
 
 var _indexCache = [
 	'./',
@@ -51,6 +51,7 @@ var _indexCache = [
 	'./app/?t=USA_proportional',
 	'./app/?t=USA_split_maine',
 	'./app/?t=USA_2024_projection',
+	'./app/?t=USA_2020_house_cook',
 
 	'./app/?t=Germany_states',
 	'./app/?t=Germany_bundestag',
@@ -69,6 +70,8 @@ var _indexCache = [
 	'./app/?t=Netherlands_provinces',
 	'./app/?t=Netherlands_gemeenten',
 	'./app/?t=Ireland_dail_eireann',
+	'./app/?t=Turkey_national_assembly',
+
 
 	'./app/style/battlechart.css',
 	'./app/style/battlechartmobile.css',

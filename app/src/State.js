@@ -344,7 +344,9 @@ class State {
 			}
 		}
 
-		this.onChange();
+		if(typeof this.onChange === 'function') {
+			this.onChange();
+		}
 	}
 
 	// directly change the color of a state (add error checking pls)
@@ -387,6 +389,8 @@ class State {
 			}
 		}
 		
-		this.onChange();
+		if(typeof this.onChange === 'function') {
+			this.onChange();
+		}
 	}
 };
