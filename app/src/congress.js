@@ -83,8 +83,9 @@ function setCongressContested() {
 				map.style.backgroundColor = state.htmlElement.style.fill;
 				state.onChange = (function() {
 					var m = map;
+					var s = state;
 					return function() {
-						m.style.backgroundColor = state.htmlElement.style.fill;
+						m.style.backgroundColor = s.htmlElement.style.fill;
 					}
 				})();
 
