@@ -86,7 +86,7 @@ function setCongressContested() {
 					var m = map;
 					return function() {
 						s.incrementCandidateColor(paintIndex, false);	
-						m.style.backgroundColor = s.htmlElement.backgroundColor;
+						m.style.backgroundColor = s.htmlElement.style.fill;
 					}
 				})();
 				color.appendChild(map);
