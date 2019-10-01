@@ -13,15 +13,17 @@ function loadPresetMap(preset, options) {
 	// Remove all candidates, and load the ones for the map
 	initCandidates();
 
-	if(preset === 'USA_2020_house_cook') {
-		enableCongressContested = true;
-	}
-
 	var enableHouse = false;
 
 	if(options) {
 		enableHouse = options.enableCongress;
 	}
+	
+	if(preset === 'USA_2020_house_cook') {
+		enableCongressContested = true;
+		enableHouse = true;
+	}
+
 
 	$.ajax({
 		url: "./res/presets/" + preset,
