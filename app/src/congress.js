@@ -39,49 +39,42 @@ function setCongressContested() {
 
 	var element = document.getElementById('sidebar-congress-contested');
 
-	var congressData;
-
 	db_getCongress(function(data) {
-		congressData = data;
-	});
+		for(var stateIndex = 0, length = states.length; stateIndex < length; ++stateIndex) {
+			var state = states[stateIndex];
+			var stateName = state.name.split('-')[0];
+			var district = state.name.split('-')[1];
 
-	console.log(congressData);
+			// Convert district to a number
+			// AL -> 0, 01 -> 1, 02 -> 2
+			var districtIndex = district;
+			if(districtIndex === 'AL') {
+				districtIndex = '0';
+			}
+			districtIndex = parseInt(districtIndex).toString();
+			
+			var districtData = data.filter(obj => {
+				return obj.State === stateName &&
+					obj.District === districtIndex;
+			})[0];
 
-	for(var stateIndex = 0, length = states.length; stateIndex < length; ++stateIndex) {
-		var state = states[stateIndex];
-		var stateName = state.name.split('-')[0];
-		var district = state.name.split('-')[1];
+			if(state.colorValue !== 0) {
+				var district = document.createElement('div');
+				district.setAttribute('class', 'sidebar-box');
 
-		// Convert district to a number
-		// AL -> 0, 01 -> 1, 02 -> 2
-		var districtIndex = district;
-		if(districtIndex === 'AL') {
-			districtIndex = '0';
-		}
-		districtIndex = parseInt(districtIndex).toString();
+				var title = document.createElement('h3');
+				title.innerHTML = state.name;
+				district.appendChild(title);
 
-		if(state.colorValue !== 0) {
-			var district = document.createElement('div');
-			district.setAttribute('class', 'sidebar-box');
-
-			var title = document.createElement('h3');
-			title.innerHTML = state.name;
-			district.appendChild(title);
-
-
-			if(congressData) {
-				var districtData = congressData.filter(obj => {
-					return obj.State === stateName &&
-						obj.District === districtIndex;
-				})[0];
 				var rep = document.createElement('div');
 				rep.innerHTML = districtData.Representative + ' ' + districtData.Party;
 				district.appendChild(rep);
-			}
 
-			element.appendChild(district);
+				element.appendChild(district);
+			}
 		}
-	}
+	});
+
 }
 
 function setCongressOnHover() {
