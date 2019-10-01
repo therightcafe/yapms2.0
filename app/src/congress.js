@@ -79,7 +79,7 @@ function setCongressContested() {
 				map.style.backgroundColor = 'blue';
 				color.appendChild(map);
 
-				district.appencChild(color);
+				district.appendChild(color);
 				element.appendChild(district);
 			}
 		}
