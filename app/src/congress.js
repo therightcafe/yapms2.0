@@ -81,6 +81,9 @@ function setCongressContested() {
 				map.innerHTML = '<span>Map</span>';
 				map.setAttribute('class', 'sidebar-congress-color');
 				map.style.backgroundColor = 'blue';
+				map.onclick = function() {
+					alert('test');	
+				}
 				color.appendChild(map);
 
 				district.appendChild(color);
