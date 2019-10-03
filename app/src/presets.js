@@ -320,7 +320,7 @@ function loadPresetCanada() {
 	var bqc = new Candidate('BQC',
 		['#87CEFA', '#87CEFA', '#87CEFA', '#87CEFA']);
 	var ppc = new Candidate('PPC',
-		['#2A317C', '#2A317C', '#2A317C', '#2A317C']);
+		['#83789E', '#83789E', '#83789E', '#83789E']);
 
 	candidates['CON'] = con;
 	candidates['LIB'] = lib;
