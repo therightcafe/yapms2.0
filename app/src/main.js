@@ -1,4 +1,4 @@
-var currentCache = 'v0.70.0';
+var currentCache = 'v0.70.1';
 
 var windowLoaded = false;
 
@@ -84,6 +84,8 @@ function share() {
 		console.log('reCaptcha not detected');
 		return;
 	}
+
+	centerMap();
 
 	// disable button to prevent spam
 	var button = document.getElementById('share-button');

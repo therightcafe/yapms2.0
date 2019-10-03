@@ -159,7 +159,7 @@
 	<i class="fas fa-palette"></i> Theme
 	</div>
 
-	<div class="click-button" id="share-button" onclick="share()" style="white-space: nowrap;">
+	<div class="click-button" id="share-button" onclick="share();" style="white-space: nowrap;">
 		<i class="fas fa-share-alt"></i> Share
 	</div>
 
