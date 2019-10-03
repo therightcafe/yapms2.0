@@ -1,4 +1,4 @@
-var currentCache = 'v0.70.1';
+var currentCache = 'v0.70.2';
 
 var windowLoaded = false;
 
@@ -75,7 +75,7 @@ var previousPalette = function() {
 
 var panObject = null;
 
-function share() {
+function share(autoCenter) {
 	displayMenu('sharemenu');
 
 	if(grecaptcha) {
@@ -84,8 +84,10 @@ function share() {
 		console.log('reCaptcha not detected');
 		return;
 	}
-
-	centerMap();
+	
+	if(autoCenter) {
+		centerMap();
+	}
 
 	// disable button to prevent spam
 	var button = document.getElementById('share-button');

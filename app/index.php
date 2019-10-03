@@ -159,7 +159,7 @@
 	<i class="fas fa-palette"></i> Theme
 	</div>
 
-	<div class="click-button" id="share-button" onclick="share();" style="white-space: nowrap;">
+	<div class="click-button" id="share-button" onclick="displayMenu('sharemenu-autocenter');" style="white-space: nowrap;">
 		<i class="fas fa-share-alt"></i> Share
 	</div>
 
@@ -520,6 +520,10 @@ if($mobile) {
 
 <div id="sharemenu" class="popup selectmenu">
 	<?php require './html/menu/sharemenu.php'; ?>
+</div>
+
+<div id="sharemenu-autocenter" class="popup selectmenu">
+	<?php require './html/menu/sharemenu-autocenter.php'; ?>
 </div>
 
 <div id="loadmenu" class="popup selectmenu">
