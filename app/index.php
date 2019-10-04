@@ -506,6 +506,10 @@ if($mobile) {
 	<?php require './html/menu/mapmenu-australia.php'; ?>
 </div>
 
+<div id="mapmenu-uk" class="popup selectmenu">
+	<?php require './html/menu/mapmenu-uk.php'; ?>
+</div>
+
 <div id="mapmenu-lte" class="popup selectmenu">
 	<?php require './html/menu/mapmenu-lte.php'; ?>
 </div>

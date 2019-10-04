@@ -99,6 +99,7 @@ function loadMapFromId(id) {
 		case "USA_1868_presidential":
 		case "USA_1864_presidential":
 		case "USA_2016_presidential_county":
+		case "UnitedKingdom_current_parliament":
 			loadPresetMap(id);
 			break;
 		case "USA_Canada":
