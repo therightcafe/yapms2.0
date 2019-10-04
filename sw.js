@@ -1,5 +1,5 @@
-var indexCache = 'i0.70.5';
-var staticCache = 's0.70.5';
+var indexCache = 'i0.70.7';
+var staticCache = 's0.70.7';
 
 var _indexCache = [
 	'./',
@@ -71,7 +71,7 @@ var _indexCache = [
 	'./app/?t=Netherlands_gemeenten',
 	'./app/?t=Ireland_dail_eireann',
 	'./app/?t=Turkey_national_assembly',
-
+	'./app/?t=UK_current_parliament',
 
 	'./app/style/battlechart.css',
 	'./app/style/battlechartmobile.css',
@@ -121,6 +121,7 @@ var _staticCache = [
 	'./app/res/pg.png',
 
 	'./app/res/presets/USA_current_house',
+	'./app/res/presets/USA_2020_house_cook',
 	'./app/res/presets/USA_current_senate',
 	'./app/res/presets/USA_2016_presidential_county',
 
@@ -129,6 +130,7 @@ var _staticCache = [
 	'./app/res/presets/USA_2020_cook',
 	'./app/res/presets/USA_2020_inside',
 	'./app/res/presets/USA_2020_sabatos',
+	'./app/res/presets/UK_current_parliament',
 
 	'./app/res/flags/aus.svg',
 	'./app/res/flags/bra.svg',
