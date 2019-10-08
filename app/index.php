@@ -113,7 +113,7 @@
 
 <div id="yapms">
 <div id="menu-div">
-	<div class="click-button" onclick="clearMap()" style="white-space: nowrap;">
+	<div class="click-button" onclick="MapLoader.clearMap()" style="white-space: nowrap;">
 	<i class="fas fa-window-close"></i> Clear
 	</div>
 	
@@ -362,7 +362,7 @@ if($mobile) {
 	</div>
 	<div class="selectmenu-content">
 	<div class="selectmenu-section"><input id="state-ec" type="number" name="value" min="1" max="10000" step="1"></div>
-	<div class="selectmenu-button" onclick="setEC()">
+	<div class="selectmenu-button" onclick="State.setEC()">
 		<div class="selectmenu-button-text">Apply</div>
 	</div>
 	<input id="state-id" type="hidden">
@@ -575,13 +575,17 @@ if($mobile) {
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
 <script src="./src/Candidate.js"></script>
-<script src="./src/loadmap.js"></script>
+<script src="./src/LogoManager.js"></script>
+<script src="./src/CookieManager.js"></script>
+<script src="./src/InputManager.js"></script>
+<script src="./src/PresetLoader.js"></script>
+<script src="./src/ChartManager.js"></script>
+<script src="./src/MapLoader.js"></script>
 <script src="./src/savemap.js"></script>
 <script src="./src/data.js"></script>
 <script src="./src/State.js"></script>
 <script src="./src/htmlControl.js"></script>
 <script src="./src/battlechart.js"></script>
-<script src="./src/presets.js"></script>
 <script src="./src/click.js"></script>
 <script src="./src/popularvote.js"></script>
 <script src="./src/congress.js"></script>

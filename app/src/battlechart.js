@@ -2,9 +2,9 @@ function updateBattleChart() {
 
 	if(Object.keys(candidates).length > 3) {
 		if(mobile) {
-			setChart('pie', 'bottom');
+			ChartManager.setChart('pie', 'bottom');
 		} else {
-			setChart('pie');
+			ChartManager.setChart('pie');
 		}
 
 		return;
@@ -40,7 +40,7 @@ function updateBattleChart() {
 			tossup.style.background = candidate.colors[2];
 			
 			tossup.style.flexBasis = '' + (candidate.voteCount / totalVotes) * 100 + '%';
-			if(chartLabels) {
+			if(ChartManager.chartLabels) {
 				tossup.innerHTML = '<p>' + candidate.voteCount + '</p>';
 			} else {
 				tossup.innerHTML = '<p></p>';
@@ -48,7 +48,7 @@ function updateBattleChart() {
 		} else if(candidateIndex == 1) {
 			topbar.style.flexBasis = '' + 
 				(candidate.voteCount / totalVotes) * 100 + '%';
-			if(chartLeans) {
+			if(ChartManager.chartLeans) {
 				topbarSolid.style.flexBasis = '' + 
 					(candidate.probVoteCounts[0] / candidate.voteCount) * 100 + '%';
 				topbarSolid.style.background = candidate.colors[0];
@@ -65,7 +65,7 @@ function updateBattleChart() {
 					(candidate.probVoteCounts[3] / candidate.voteCount) * 100 + '%';
 				topbarTilt.style.background = candidate.colors[3];
 				
-				if(chartLabels) {
+				if(ChartManager.chartLabels) {
 					topbarSolid.innerHTML = '<p>'+candidate.probVoteCounts[0]+'</p>';
 					topbarLikely.innerHTML = '<p>'+candidate.probVoteCounts[1]+'</p>';
 					topbarLean.innerHTML = '<p>'+candidate.probVoteCounts[2]+'</p>';
@@ -86,7 +86,7 @@ function updateBattleChart() {
 				topbarTilt.style.flexBasis = '0%';
 				topbarTilt.style.background = candidate.colors[3];
 
-				if(chartLabels) {
+				if(ChartManager.chartLabels) {
 					topbarSolid.innerHTML = '<p>' + (
 						candidate.probVoteCounts[0] 
 						+ candidate.probVoteCounts[1]
@@ -106,7 +106,7 @@ function updateBattleChart() {
 		} else if(candidateIndex == 2) {
 			bottombar.style.flexBasis = '' + 
 				(candidate.voteCount / totalVotes) * 100 + '%';
-			if(chartLeans) {
+			if(ChartManager.chartLeans) {
 				bottombarSolid.style.flexBasis = '' + 
 					(candidate.probVoteCounts[0] / candidate.voteCount) * 100 + '%';
 				bottombarSolid.style.background = candidate.colors[0];
@@ -123,7 +123,7 @@ function updateBattleChart() {
 					(candidate.probVoteCounts[3] / candidate.voteCount) * 100 + '%';
 				bottombarTilt.style.background = candidate.colors[3];
 
-				if(chartLabels) {
+				if(ChartManager.chartLabels) {
 					bottombarSolid.innerHTML = '<p>'+candidate.probVoteCounts[0]+'</p>';
 					bottombarLikely.innerHTML = '<p>'+candidate.probVoteCounts[1]+'</p>';
 					bottombarLean.innerHTML = '<p>'+candidate.probVoteCounts[2]+'</p>';
@@ -144,7 +144,7 @@ function updateBattleChart() {
 				bottombarTilt.style.flexBasis = '0%';
 				bottombarTilt.style.background = candidate.colors[3];
 
-				if(chartLabels) {
+				if(ChartManager.chartLabels) {
 					bottombarSolid.innerHTML = '<p>' + (
 						candidate.probVoteCounts[0] 
 						+ candidate.probVoteCounts[1]

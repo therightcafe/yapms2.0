@@ -75,7 +75,7 @@ class State {
 		this.voteCount = value;
 		this.delegates = {};
 		this.delegates['Tossup'] = value;
-		if(mapType === 'proportional' || mapType === 'primary') {
+		if(MapLoader.save_type === 'proportional' || MapLoader.save_type === 'primary') {
 			this.candidate = 'Tossup';
 			this.setColor('Tossup', 2);
 		}
@@ -199,7 +199,7 @@ class State {
 		}
 
 		if(this.disabled == false) {
-			this.setVoteCount(0, save_type === "presidential");
+			this.setVoteCount(0, MapLoader.save_type === "presidential");
 			this.setColor('Tossup', 2);
 
 			//this.setDisplayColor(candidates['Tossup'].colors[1]);
@@ -210,7 +210,7 @@ class State {
 	//			this.htmlElement.style.visibility = 'hidden';
 			}
 		
-			if(save_type !== 'senatorial') {
+			if(MapLoader.save_type !== 'senatorial') {
 				var stateText = document.getElementById(this.name + '-text');
 				if(stateText !== null) {
 					stateText.setAttribute('fill-opacity', '0.25');
@@ -229,7 +229,7 @@ class State {
 				button.setAttribute('stroke-opacity', '0.25');
 			}
 
-			if(save_type !== 'senatorial') {
+			if(MapLoader.save_type !== 'senatorial') {
 				var stateLandText = document.getElementById(this.name.split("-")[0] + '-text');
 				if(stateLandText !== null) {
 					stateLandText.setAttribute('fill-opacity', '0.25');
@@ -238,7 +238,7 @@ class State {
 
 		} else if(this.disabled == true) {
 			this.resetVoteCount();
-			this.setVoteCount(this.voteCount, save_type === "presidential");
+			this.setVoteCount(this.voteCount, MapLoader.save_type === "presidential");
 			//this.setVoteCount(this.voteCount_beforeDisable, save_type === "presidential");
 			this.disabled = !this.disabled;
 			this.setColor(this.getCandidate(), this.getColorValue());
@@ -392,5 +392,32 @@ class State {
 		if(typeof this.onChange === 'function') {
 			this.onChange();
 		}
+	}
+
+	static setEC() {
+		// hide the popup window
+		closeAllPopups();
+
+		// get the stateId and input value
+		var stateId = document.getElementById('state-id').value;
+		var input = document.getElementById('state-ec').value;
+
+		// get the state and set its new vote count
+		states.forEach(function(element) {
+			if(element.getName() === stateId) {
+				// only update the text on presidential maps
+				if(mapOptions !== undefined && mapOptions.updateText !== undefined) {
+					element.setVoteCount(parseInt(input), mapOptions.updateText);
+				} else {
+					element.setVoteCount(parseInt(input), false);
+				}
+			}
+		});
+
+		// recount the votes
+		countVotes();
+		updateChart();
+		updateLegend();
+		verifyMap();
 	}
 };

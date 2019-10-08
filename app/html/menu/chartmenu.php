@@ -10,28 +10,28 @@
 <a class="selectmenu-split">
 	<div class="selectmenu-split-text">Chart</div>
 </a>
-<a class="selectmenu-button" onclick='setChart("horizontalbattle")'>
+<a class="selectmenu-button" onclick='ChartManager.setChart("horizontalbattle")'>
 	<div class="selectmenu-button-text">Horizontal Battle</div>
 </a>
-<a class="selectmenu-button" onclick='setChart("verticalbattle")'>
+<a class="selectmenu-button" onclick='ChartManager.setChart("verticalbattle")'>
 	<div class="selectmenu-button-text">Vertical Battle</div>
 </a>
-<a class="selectmenu-button" onclick='setChart("pie")'>
+<a class="selectmenu-button" onclick='ChartManager.setChart("pie")'>
 	<div class="selectmenu-button-text">Pie</div>
 </a>
-<a class="selectmenu-button" onclick='setChart("pie","bottom")'>
+<a class="selectmenu-button" onclick='ChartManager.setChart("pie","bottom")'>
 	<div class="selectmenu-button-text">Bottom Pie</div>
 </a>
-<a class="selectmenu-button" onclick='setChart("doughnut")'>
+<a class="selectmenu-button" onclick='ChartManager.setChart("doughnut")'>
 	<div class="selectmenu-button-text">Doughnut</div>
 </a>
-<a class="selectmenu-button" onclick='setChart("doughnut", "bottom")'>
+<a class="selectmenu-button" onclick='ChartManager.setChart("doughnut", "bottom")'>
 	<div class="selectmenu-button-text">Bottom Doughnut</div>
 </a>
-<a class="selectmenu-button" onclick='setChart("horizontalBar")'>
+<a class="selectmenu-button" onclick='ChartManager.setChart("horizontalBar")'>
 	<div class="selectmenu-button-text">Horizontal Bar</div>
 </a>
-<a class="selectmenu-button" onclick='setChart("none")'>
+<a class="selectmenu-button" onclick='ChartManager.setChart("none")'>
 	<div class="selectmenu-button-text">None</div>
 </a>
 <a class="selectmenu-split">
@@ -40,10 +40,10 @@
 <a class="selectmenu-button" onclick='toggleLegendCounter()'>
 	<div class="selectmenu-button-text">Legend Counter</div>
 </a>
-<a class="selectmenu-button" onclick='toggleChartLabels()'>
+<a class="selectmenu-button" onclick='ChartManager.toggleChartLabels()'>
 	<div class="selectmenu-button-text">Chart Labels</div>
 </a>
-<a class="selectmenu-button" onclick='toggleChartLeans()'>
+<a class="selectmenu-button" onclick='ChartManager.toggleChartLeans()'>
 	<div class="selectmenu-button-text">Chart Leans</div>
 </a>
 <a class="selectmenu-button" onclick='toggleLegendLeans()'>

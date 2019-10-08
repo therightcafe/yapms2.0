@@ -68,7 +68,7 @@ function displayNotification(title, text) {
 }
 
 function displayAddCandidateMenu(type) {
-	customColorBackground();
+	CookieManager.loadCustomColors();
 	closeAllPopups();
 	var addcandidatemenu = document.getElementById('addcandidatemenu');
 	addcandidatemenu.style.display = 'flex';
@@ -88,10 +88,10 @@ function displayCustomColorMenu(type) {
 	customColorName.value = type;
 	var miscmenu = document.getElementById('customcolormenu');
 	miscmenu.style.display = 'flex';
-	document.getElementById("solidcustom").value = cookies[type + 'solid'];
-	document.getElementById("likelycustom").value = cookies[type + 'likely'];
-	document.getElementById("leaningcustom").value = cookies[type + 'leaning'];
-	document.getElementById("tiltingcustom").value = cookies[type + 'tilting'];
+	document.getElementById("solidcustom").value = CookieManager.cookies[type + 'solid'];
+	document.getElementById("likelycustom").value = CookieManager.cookies[type + 'likely'];
+	document.getElementById("leaningcustom").value = CookieManager.cookies[type + 'leaning'];
+	document.getElementById("tiltingcustom").value = CookieManager.cookies[type + 'tilting'];
 }
 
 function setPalette(palette) {
@@ -124,7 +124,7 @@ function setPalette(palette) {
 }
 
 function darkPalette() {
-	appendCookie('theme', 'dark');
+	CookieManager.appendCookie('theme', 'dark');
 	setBackgroundColor('#181922');
 
 	setOtherText('white');
@@ -143,19 +143,19 @@ function darkPalette() {
 
 	setBorderStyle('#000000', 7.0);
 
-	chartOptions.plugins.datalabels.borderWidth = 2;
-	chartOptions.plugins.datalabels.borderRadius = 4;
+	ChartManager.chartOptions.plugins.datalabels.borderWidth = 2;
+	ChartManager.chartOptions.plugins.datalabels.borderRadius = 4;
 
-	chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
-	chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
-	setChart(chartType, chartPosition);
+	ChartManager.chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
+	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
+	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
 	countVotes();
 	verifyMap();
 	previousPalette = darkPalette;
 }
 
 function greyscalePalette() {
-	appendCookie('theme', 'greyscale');
+	CookieManager.appendCookie('theme', 'greyscale');
 	setBackgroundColor('#252525');
 	
 	setOtherText('white');
@@ -173,19 +173,19 @@ function greyscalePalette() {
 
 	setBorderStyle('#252525', 7.0);
 
-	chartOptions.plugins.datalabels.borderWidth = 2;
-	chartOptions.plugins.datalabels.borderRadius = 4;
+	ChartManager.chartOptions.plugins.datalabels.borderWidth = 2;
+	ChartManager.chartOptions.plugins.datalabels.borderRadius = 4;
 
-	chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
-	chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
-	setChart(chartType, chartPosition);
+	ChartManager.chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
+	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
+	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
 	countVotes();
 	verifyMap();
 	previousPalette = darkPalette;
 }
 
 function terminalPalette() {
-	appendCookie('theme', 'terminal');
+	CookieManager.appendCookie('theme', 'terminal');
 	setBackgroundColor('#000000');
 
 	setOtherText('white');
@@ -203,19 +203,19 @@ function terminalPalette() {
 	
 	setBorderStyle('#ffffff', 6.0);
 	
-	chartOptions.plugins.datalabels.borderWidth = 2;
-	chartOptions.plugins.datalabels.borderRadius = 4;
+	ChartManager.chartOptions.plugins.datalabels.borderWidth = 2;
+	ChartManager.chartOptions.plugins.datalabels.borderRadius = 4;
 	
-	chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
-	chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
-	setChart(chartType, chartPosition);
+	ChartManager.chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
+	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
+	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
 	countVotes();
 	verifyMap();
 	previousPalette = terminalPalette;
 }
 
 function lightPalette() {
-	appendCookie('theme', 'light');
+	CookieManager.appendCookie('theme', 'light');
 	setBackgroundColor('#dcdcdc');
 	
 	setOtherText('black');
@@ -235,19 +235,19 @@ function lightPalette() {
 	
 	setBorderStyle('#000000', 6.0);
 	
-	chartOptions.plugins.datalabels.borderWidth = 2;
-	chartOptions.plugins.datalabels.borderRadius = 4;
+	ChartManager.chartOptions.plugins.datalabels.borderWidth = 2;
+	ChartManager.chartOptions.plugins.datalabels.borderRadius = 4;
 	
-	chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
-	chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
-	setChart(chartType, chartPosition);
+	ChartManager.chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
+	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
+	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
 	countVotes();
 	verifyMap();
 	previousPalette = lightPalette;
 }
 
 function contrastPalette() {
-	appendCookie('theme', 'contrast');
+	CookieManager.appendCookie('theme', 'contrast');
 	setBackgroundColor('#f8f9fa');
 
 	setOtherText('black');
@@ -265,19 +265,19 @@ function contrastPalette() {
 	
 	setBorderStyle('#f8f9fa', 6.0);
 
-	chartOptions.plugins.datalabels.borderWidth = 2;
-	chartOptions.plugins.datalabels.borderRadius = 4;
+	ChartManager.chartOptions.plugins.datalabels.borderWidth = 2;
+	ChartManager.chartOptions.plugins.datalabels.borderRadius = 4;
 
-	chartBarScales.yAxes[0].ticks.fontColor = '#000000';
-	chartBarScales.xAxes[0].ticks.fontColor = '#000000';
-	setChart(chartType, chartPosition);
+	ChartManager.chartBarScales.yAxes[0].ticks.fontColor = '#000000';
+	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#000000';
+	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
 	countVotes();
 	verifyMap();
 	previousPalette = contrastPalette;
 }
 
 function metallicPalette() {
-	appendCookie('theme', 'metallic');
+	CookieManager.appendCookie('theme', 'metallic');
 	setBackgroundImage('linear-gradient(#696969, #33353b)');
 	
 	setOtherText('white');
@@ -295,19 +295,19 @@ function metallicPalette() {
 	
 	setBorderStyle('#000000', 6.0);
 
-	chartOptions.plugins.datalabels.borderWidth = 2;
-	chartOptions.plugins.datalabels.borderRadius = 4;
+	ChartManager.chartOptions.plugins.datalabels.borderWidth = 2;
+	ChartManager.chartOptions.plugins.datalabels.borderRadius = 4;
 	
-	chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
-	chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
-	setChart(chartType, chartPosition);
+	ChartManager.chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
+	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
+	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
 	countVotes();
 	verifyMap();
 	previousPalette = metallicPalette;
 }
 
 function toWinPalette() {
-	appendCookie('theme', 'default');
+	CookieManager.appendCookie('theme', 'default');
 	setBackgroundColor('#f8f9fa');
 
 	setOtherText('black');
@@ -325,12 +325,12 @@ function toWinPalette() {
 
 	setBorderStyle('#f8f9fa', 6.0);
 
-	chartOptions.plugins.datalabels.borderWidth = 0;
-	chartOptions.plugins.datalabels.borderRadius = 2;
+	ChartManager.chartOptions.plugins.datalabels.borderWidth = 0;
+	ChartManager.chartOptions.plugins.datalabels.borderRadius = 2;
 
-	chartBarScales.yAxes[0].ticks.fontColor = '#000000';
-	chartBarScales.xAxes[0].ticks.fontColor = '#000000';
-	setChart(chartType, chartPosition);
+	ChartManager.chartBarScales.yAxes[0].ticks.fontColor = '#000000';
+	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#000000';
+	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
 	countVotes();
 	verifyMap();
 	previousPalette = toWinPalette;
@@ -356,12 +356,12 @@ function setBackgroundColor(color) {
 }
 
 function setChartBorderStyle(width, color) {
-	chartBorderWidth = width;
-	chartBorderColor = color;
+	ChartManager.chartBorderWidth = width;
+	ChartManager.chartBorderColor = color;
 
 	var battlechart = document.getElementById('battlechartright');
 	battlechart.style.border = '1px solid ' + color;	
-	updateChart();
+	ChartManager.updateChart();
 
 	var legenddiv = document.getElementById('legend-div');
 	legenddiv.style.borderColor = color;
@@ -565,239 +565,6 @@ function unsetBattleHorizontal() {
 	bottombar.style.minWidth = '0';
 }
 
-// dynamically change the chart from one form to another
-function setChart(type, position) {
-	console.log('Set Chart - ' + type);
-	var sidebar = document.getElementById('chart-div');
-	var chartHTML = document.getElementById('chart');
-	var html = document.getElementById('chart-canvas');
-	var ctx = html.getContext('2d');
-	var battlechart = document.getElementById('battlechart');
-	chartHTML.style.display = 'inline-block';
-	battlechart.style.display = 'none';
-	sidebar.style.display = 'flex';
-	
-	sidebar.style.width = '28vw';
-
-	if(type === 'none') {
-		html.style.display = 'none';
-
-		unsetBattleHorizontal();
-		sidebar.style.display = 'none';
-
-		chartType = type;
-		centerMap();
-		return;
-	} else if(type === 'horizontalbattle' || type === 'verticalbattle') {
-		if(Object.keys(candidates).length > 3) {
-		
-			displayNotification('Sorry',
-				'This chart requires that there be two candidates');
-			return;
-		}
-		
-		if(type === 'horizontalbattle') {
-			setBattleHorizontal();
-			var logo = document.getElementById('logo-div');
-			logo.style.width = '15%';
-			logo.style.height = '100%';
-
-			sidebar.style.borderRight = '0px';
-			sidebar.style.borderTop = '1px solid black';
-
-			logo = document.getElementById('logo-redeagle-div');
-			logo.style.width = '15%';
-			logo.style.height = '100%';
-			
-			logo = document.getElementById('logo-pg-div');
-			logo.style.width = '15%';
-			logo.style.height = '100%';
-		}
-		else {
-			unsetBattleHorizontal();
-			sidebar.style.width = '20vw';	
-			var logo = document.getElementById('logo-div');
-			logo.style.width = '100%';
-			logo.style.height = '15%';
-			sidebar.style.borderTop = '0px';
-			sidebar.style.borderRight = '1px solid black';
-			
-			logo = document.getElementById('logo-redeagle-div');
-			logo.style.width = '100%';
-			logo.style.height = '15%';
-			
-			logo = document.getElementById('logo-pg-div');
-			logo.style.width = '100%';
-			logo.style.height = '15%';
-		}
-
-		html.style.display = 'none';
-		chartHTML.style.display = 'none';
-		battlechart.style.display = 'flex';
-		chartType = type;
-		updateChart();
-		centerMap();
-		return;
-	} 
-	
-	unsetBattleHorizontal();
-
-	chartPosition = position;	
-	if(position === 'bottom') {
-		var application = document.getElementById('application');
-		application.style.flexDirection = 'column-reverse';
-		
-		var map = document.getElementById('map-div');
-		map.style.height = '80%';
-
-		//var sidebar = document.getElementById('chart-div');
-		sidebar.style.flexDirection = 'row';
-		sidebar.style.width = '100%';	
-		sidebar.style.height = '20%';
-		sidebar.style.borderRight = '0px';
-		sidebar.style.borderTop = '1px solid black';
-	
-		var charthtml = document.getElementById('chart');
-		charthtml.style.height = 'auto';
-		charthtml.style.width = '' + (sidebar.offsetHeight - 5) + 'px';
-
-		var logo = document.getElementById('logo-div');
-		logo.style.width = '15%';
-		logo.style.height = '100%';
-		logo = document.getElementById('logo-redeagle-div');
-		logo.style.width = '15%';
-		logo.style.height = '100%';
-		logo = document.getElementById('logo-pg-div');
-		logo.style.width = '15%';
-		logo.style.height = '100%';
-	} else {
-		var application = document.getElementById('application');
-		application.style.flexDirection = 'row';
-
-		var map = document.getElementById('map-div');
-		map.style.height = '100%';
-
-		//var sidebar = document.getElementById('chart-div');
-		sidebar.style.flexDirection = 'column';
-		sidebar.style.width = '28vw';	
-		sidebar.style.height = '100%';
-		sidebar.style.borderTop = '0px';
-		sidebar.style.borderRight = '1px solid black';
-		
-		var charthtml = document.getElementById('chart');
-		charthtml.style.width = '100%';
-		
-		var logo = document.getElementById('logo-div');
-		logo.style.width = '100%';
-		logo.style.height = '15%';
-		logo = document.getElementById('logo-redeagle-div');
-		logo.style.width = '100%';
-		logo.style.height = '15%';
-		logo = document.getElementById('logo-pg-div');
-		logo.style.width = '100%';
-		logo.style.height = '15%';
-	}
-
-
-	centerMap();
-		
-	chartType = type;
-	
-	chartData = {
-		labels:[],
-		datasets: [{
-			borderColor: chartBorderColor,
-			borderWidth: chartBorderWidth,
-			data:[]
-		}]
-	};
-
-
-	html.style.display = 'inline-block';
-
-	// set the proper scales
-	if(type === 'horizontalBar') {
-		chartOptions.scales = chartBarScales;
-		delete chartOptions.scale;
-		// horizontal bar needs multiple datasets
-		for(var i = 0; i < 3; ++i) {
-			chartData.datasets.push({
-				borderColor: chartBorderColor,
-				borderWidth: chartBorderWidth,
-				data:[]
-			});
-		}
-	} else if(type === 'pie' || type === 'doughnut') {
-		chartOptions.scales = chartPieScales;
-		delete chartOptions.scale;
-	}
-
-	// first destroy the chart
-	chart.destroy();
-	// then rebuild
-	chart = new Chart(ctx, {type: type, data: chartData, options: chartOptions});
-	countVotes();
-	updateChart();
-}
-
-function togglePresentationMode() {
-	var menubar = document.getElementById('menu-div');
-	var sidebar = document.getElementById('sidebar');
-	var legend = document.getElementById('legend-div');
-
-	presentationMode = !presentationMode;
-
-	if(presentationMode) {
-		if(menubar) {
-			menubar.style.display = 'none';
-		}
-		if(sidebar) {
-			sidebar.style.display = 'none';
-		}
-		if(legend) {
-			legend.style.marginTop = '8px';
-		}
-
-		var addButton = document.getElementById('legend-addcandidate-button');
-		if(addButton) {
-			addButton.style.display = 'none';
-		}
-
-		var removeButtons = document.getElementsByClassName('legend-delete');
-		for(var index = 0; index < removeButtons.length; ++index) {
-			var button = removeButtons[index];
-			button.style.display = 'none';
-		}
-
-	} else {
-		if(menubar) {
-			menubar.style.display = 'inline-flex';
-		}
-		if(sidebar) {
-			sidebar.style.display = 'inline-flex';
-		}
-		if(legend) {
-			legend.style.marginTop = '4px';
-		}
-		
-		var addButton = document.getElementById('legend-addcandidate-button');
-		if(addButton) {
-			addButton.style.display = 'inline-block';
-		}
-		
-		var removeButtons = document.getElementsByClassName('legend-delete');
-		for(var index = 0; index < removeButtons.length; ++index) {
-			var button = removeButtons[index];
-			button.style.display = 'inline-block';
-		}
-	}
-
-	centerMap();
-
-	if(presentationMode) {
-		displayNotification('Presentation Mode', 'Press the spacebar to exit presentation mode');
-	}
-}
 
 function toggleYAPNews() {
 	var yapnews = document.getElementById("sidebar");

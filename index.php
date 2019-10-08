@@ -790,6 +790,89 @@
 		</a>
 	</div>
 	</div>
+	
+	<h1 class="header">Useful Links</h1>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
+		<div class="map-type-header-text">Real Clear Politics - Polls</div>
+	</div>
+	<div class="map-button-box">
+		<a href="https://www.realclearpolitics.com/epolls/2020/president/National.html" target="_blank">
+			<div class="map-button">
+				General
+			</div>
+		</a>
+
+		<a href="https://www.realclearpolitics.com/epolls/2020/president/us/2020_democratic_presidential_nomination-6730.html" target="_blank">
+			<div class="map-button">
+				Democratic Primary
+			</div>
+		</a>
+		
+		<br>
+	
+		<a href="https://www.realclearpolitics.com/epolls/latest_polls/republican_nomination_polls/" target="_blank">
+			<div class="map-button">
+				Republican Primary
+			</div>
+		</a>
+	</div>
+	</div>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
+		<div class="map-type-header-text">FiveThrityEight - Polls</div>
+	</div>
+	<div class="map-button-box">
+		<a href="https://projects.fivethirtyeight.com/polls/president-general/" target="_blank">
+			<div class="map-button">
+				General
+			</div>
+		</a>
+
+		<a href="https://projects.fivethirtyeight.com/polls/president-primary-d/" target="_blank">
+			<div class="map-button">
+				Democratic Primary
+			</div>
+		</a>
+		
+		<br>
+
+		<a href="https://projects.fivethirtyeight.com/polls/president-primary-r/" target="_blank">
+			<div class="map-button">
+				Republican Primary
+			</div>
+		</a>
+	</div>
+	</div>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
+		<div class="map-type-header-text">Fun</div>
+	</div>
+	<div class="map-button-box">	
+		<a href="https://politicalcompass.org" target="_blank">
+			<div class="map-button">
+				Political Compass
+			</div>
+		</a>
+
+		<a href="https://8values.github.io" target="_blank">
+			<div class="map-button">
+				8values
+			</div>
+		</a>
+
+		<br>
+
+		<a href="https://www.politiscales.net/en_US/" target="_blank">
+			<div class="map-button">
+				PolitiScales
+			</div>
+		</a>
+	</div>
+	</div>
 
 	<script>
 		if('serviceWorker' in navigator) {

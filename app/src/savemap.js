@@ -2,12 +2,12 @@ function saveMap(img, token) {
 	var formData = new FormData();
 
 	formData.append("img", img);
-	formData.append("filename", save_filename);
-	formData.append("dataid", save_dataid);
-	formData.append("type", save_type);
-	formData.append("year", save_year);
-	formData.append("fontsize", save_fontsize);
-	formData.append("strokewidth", save_strokewidth);
+	formData.append("filename", MapLoader.save_filename);
+	formData.append("dataid", MapLoader.save_dataid);
+	formData.append("type", MapLoader.save_type);
+	formData.append("year", MapLoader.save_year);
+	formData.append("fontsize", MapLoader.save_fontsize);
+	formData.append("strokewidth", MapLoader.save_strokewidth);
 	console.log('token: ' + token);
 	formData.append("captcha", token);
 	formData.append("updateText", mapOptions.updateText);
@@ -144,12 +144,12 @@ function saveMap_new(img, token) {
 	formData.append("img", img);
 	
 	var data = {};
-	data['filename'] = save_filename;
-	data['dataid'] = save_dataid;
-	data['type'] = save_type;
-	data['year'] = save_year;
-	data['fontsize'] = save_fontsize;
-	data['strokewidth'] = save_strokewidth;
+	data['filename'] = MapLoader.save_filename;
+	data['dataid'] = MapLoader.save_dataid;
+	data['type'] = MapLoader.save_type;
+	data['year'] = MapLoader.save_year;
+	data['fontsize'] = MapLoader.save_fontsize;
+	data['strokewidth'] = MapLoader.save_strokewidth;
 	data['updatetext'] = mapOptions.updateText;
 	data['candidates'] = {};
 	data['states'] = {};

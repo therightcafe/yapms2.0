@@ -2,7 +2,7 @@ function buttonClick(clickElement, options) {
 	if(mode === 'move') {
 		return;
 	} else if(mode === 'paint' || mode === 'paintmove') {
-		if(mapType === 'primary' || mapType === 'proportional') {
+		if(MapLoader.save_type === 'primary' || MapLoader.save_type === 'proportional') {
 			buttonClickPaintProportional(clickElement);
 		} else {
 
@@ -15,7 +15,7 @@ function buttonClick(clickElement, options) {
 	}
 	
 	countVotes();
-	updateChart();
+	ChartManager.updateChart();
 	updateLegend();
 }
 
@@ -102,7 +102,7 @@ function landClick(clickElement, options) {
 	}
 
 	countVotes();
-	updateChart();
+	ChartManager.updateChart();
 	updateLegend();
 	countPopularVote();
 }
@@ -119,9 +119,9 @@ function stateClick(clickElement, options) {
 	switch(mode) {
 		case 'paint':
 		case 'paintmove':
-			if(mapType === 'primary' || mapType === 'proportional') {
+			if(MapLoader.save_type === 'primary' || MapLoader.save_type === 'proportional') {
 				stateClickPaintProportional(state, id);
-			} else if(mapType === 'usapopular') {
+			} else if(MapLoader.save_type === 'usapopular') {
 				stateClickPaintProportional(state, id);	
 			} else {
 				stateClickPaint(state, options);
@@ -136,9 +136,8 @@ function stateClick(clickElement, options) {
 	}
 
 	countVotes();
-	updateChart();
+	ChartManager.updateChart();
 	updateLegend();
-	updateLTEHouse();
 }
 
 var tooltipTimeout = null;
@@ -313,7 +312,7 @@ function specialClick(clickElement, e) {
 	} else if(mode === 'paint' || mode === 'paintmove') {
 		state.incrementCandidateColor(paintIndex);
 		countVotes();
-		updateChart();
+		ChartManager.updateChart();
 		updateLegend();
 	}
 }

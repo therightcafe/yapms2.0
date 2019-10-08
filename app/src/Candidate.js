@@ -33,21 +33,19 @@ function saveCustomColors() {
 	var customColorName = document.getElementById('custom-color-name');
 	var name = customColorName.value;
 	var solid = document.getElementById("solidcustom").value;
-	appendCookie(name + "solid", solid);	
+	CookieManager.appendCookie(name + "solid", solid);	
 	var likely = document.getElementById("likelycustom").value;
-	appendCookie(name + "likely", likely);	
+	CookieManager.appendCookie(name + "likely", likely);	
 	var leaning = document.getElementById("leaningcustom").value;
-	appendCookie(name + "leaning", leaning);	
+	CookieManager.appendCookie(name + "leaning", leaning);	
 	var tilting = document.getElementById("tiltingcustom").value;
-	appendCookie(name + "tilting", tilting);
+	CookieManager.appendCookie(name + "tilting", tilting);
 	setColors(name);
 }
 
 // add candidate to the list
 // update map, chart and legend
 function addCandidate(name, solid, likely, leaning, tilting) {
-	//clearDelegates();
-
 	if(name === undefined) {
 		var nameHTML = document.getElementById('name');
 		if(nameHTML !== null) {
@@ -105,8 +103,8 @@ function addCandidate(name, solid, likely, leaning, tilting) {
 	verifyMap();
 	verifyPaintIndex();
 	countVotes();
-	updateChart();
-	chart.generateLegend();
+	ChartManager.updateChart();
+	ChartManager.chart.generateLegend();
 	updateLegend();
 
 	countPopularVote();
@@ -152,11 +150,11 @@ function setCandidate() {
 		candidate.singleColor = false;
 	}
 
-	chart.generateLegend();
+	ChartManager.chart.generateLegend();
 	verifyMap();
 	countVotes();
 	updateLegend();
-	updateChart();
+	ChartManager.updateChart();
 }
 
 function deleteCandidate() {
@@ -178,11 +176,11 @@ function deleteCandidate() {
 	}
 
 	delete candidates[candidateid];
-	chart.generateLegend();
+	ChartManager.chart.generateLegend();
 	countVotes();
 	updateLegend();
 	verifyMap();
-	updateChart();
+	ChartManager.updateChart();
 	countPopularVote();
 }
 
@@ -204,11 +202,11 @@ function deleteCandidateByName(name) {
 	}
 
 	delete candidates[candidateid];
-	chart.generateLegend();
+	ChartManager.chart.generateLegend();
 	countVotes();
 	updateLegend();
 	verifyMap();
-	updateChart();
+	ChartManager.updateChart();
 	countPopularVote();
 }
 
