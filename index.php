@@ -875,15 +875,15 @@
 	</div>
 
 	<script>
-		if('serviceWorker' in navigator) {
-			navigator.serviceWorker
-			.register('./sw.js')
-			.then(function(a) {
-				console.log('SW: registered');
-			}, function(err) {
-				console.log('SW: register error... ', err);
-			});
-		}
+	if('serviceWorker' in navigator) {
+		navigator.serviceWorker
+		.register('./sw.js')
+		.then(function(a) {
+			console.log('SW: registered');
+		}, function(err) {
+			console.log('SW: register error... ', err);
+		});
+	}
 	</script>
 </body>
 </html>

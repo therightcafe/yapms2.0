@@ -602,49 +602,23 @@ if($mobile === true) {
 <script src="./src/html2canvas.min.js"></script>
 <script src="./src/deferedImages.js"></script>
 <script>
-	if('serviceWorker' in navigator) {
-		console.log('Attempting to register service worker');
+if('serviceWorker' in navigator) {
+	console.log('Attempting to register service worker');
 
-		navigator.serviceWorker.addEventListener('message', function(event) {
-			console.log('Message from SW: ' + event.data);
-			if(event.data === 'reload') {
-				location.reload();
-			}
-		});
-
-		navigator.serviceWorker
-		.register('../sw.js')
-		.then(reg => {
-			reg.addEventListener('updatefound', () => {
-				newWorker = reg.installing;
-				newWorker.addEventListener('statechange', () => {
-					switch(newWorker.state) {
-					case 'installed':
-						console.log('updated');
-						//displayUpdateServiceWorker();
-						if(windowLoaded) {
-							console.log('SW: Direct Activate');
-							newWorker.postMessage('loaded'); 
-						} else {
-							console.log('SW: Defer Activate');
-							window.onload = function() {
-								newWorker.postMessage('loaded'); 
-							};
-						}
-
-						if(typeof gtag !== 'undefined') {
-							gtag('event', 'upgrade', {
-								'event_category': 'upgrade',
-								'event_label': "Upgrade from " + currentCache
-							});
-						}
-						break;
-						default:
-					}
-				});
+	navigator.serviceWorker
+	.register('./sw.js')
+	.then(function(a) {
+		console.log('SW: registered');
+		if(typeof gtag !== 'undefined') {
+			gtag('event', 'upgrade', {
+				'event_category': 'upgrade',
+				'event_label': "SW Register " + currentCache
 			});
-		});
-	}
+		}
+	}, function(err) {
+		console.log('SW: register error... ', err);
+	});
+}
 </script>
 </body>
 </html>
