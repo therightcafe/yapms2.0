@@ -403,7 +403,7 @@ class MapLoader {
 
 			countVotes();
 			updateLegend();
-			updateChart();
+			ChartManager.updateChart();
 			updateLegend();
 
 			var mapHTML = document.getElementById('map-div');
@@ -472,7 +472,7 @@ class MapLoader {
 
 			countVotes();
 			updateLegend();
-			updateChart();
+			ChartManager.updateChart();
 			updateLegend();
 
 			var mapHTML = document.getElementById('map-div');
@@ -534,7 +534,7 @@ class MapLoader {
 
 			countVotes();
 			updateLegend();
-			updateChart();
+			ChartManager.updateChart();
 			updateLegend();
 
 			var mapHTML = document.getElementById('map-div');
@@ -634,9 +634,8 @@ class MapLoader {
 			}
 			
 			countVotes();
-			updateChart();
+			ChartManager.updateChart();
 			updateLegend();
-			updateLTEHouse();
 			
 			gtag('event', 'load', {
 				'event_category': 'load_map',
