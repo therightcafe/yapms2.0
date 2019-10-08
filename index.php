@@ -883,6 +883,8 @@
 		}, function(err) {
 			console.log('SW: register error... ', err);
 		});
+	} else {
+		console.log('No service worker detected');
 	}
 	</script>
 </body>
