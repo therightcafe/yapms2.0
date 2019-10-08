@@ -1,5 +1,5 @@
-var indexCache = 'i0.70.10';
-var staticCache = 's0.70.10';
+var indexCache = 'i0.70.11';
+var staticCache = 's0.70.11';
 
 var _indexCache = [
 	'./',
@@ -134,7 +134,7 @@ var _staticCache = [
 	'./app/res/presets/USA_2020_cook',
 	'./app/res/presets/USA_2020_inside',
 	'./app/res/presets/USA_2020_sabatos',
-	'./app/res/presets/UK_current_parliament',
+	'./app/res/presets/UnitedKingdom_current_parliament',
 
 	'./app/res/flags/aus.svg',
 	'./app/res/flags/bra.svg',
