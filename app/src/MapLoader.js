@@ -25,9 +25,8 @@ class MapLoader {
 			contentType: false,
 			success: function(a, b, c) {
 				console.log("Found preset map...");
-				//loadSavedMap_old(a, {enableCongress: enableHouse});
 				try {
-					loadSavedMap_new(a, {enableCongress: enableHouse});
+					MapLoader.loadSavedMap_new(a, {enableCongress: enableHouse});
 				} catch(e) {
 					MapLoader.loadSavedMap_old(a, {enableCongress: enableHouse});
 					console.log('New file load failed, attempting old');
@@ -654,10 +653,10 @@ class MapLoader {
 		fileReader.onload = function(loadEvent) {
 			var a = loadEvent.target.result;
 			try {
-				loadSavedMap_new(a);
+				MapLoader.loadSavedMap_new(a);
 			} catch(e) {
 				console.log('New file load failed, attempting old');
-				loadSavedMap_old(a);
+				MapLoader.loadSavedMap_old(a);
 			}
 		}
 		fileReader.readAsText(file, 'UTF-8');

@@ -1,4 +1,4 @@
-var currentCache = 'v0.70.26';
+var currentCache = 'v0.70.30';
 
 var states = [];
 var lands = [];
@@ -586,10 +586,10 @@ function start() {
 				console.log("Map Load: Found saved map");
 				try {
 					console.log('Map Load: Attemping new file load');
-					loadSavedMap_new(data);
+					MapLoader.loadSavedMap_new(data);
 				} catch(e) {
 					console.log('Map Load: Attemping old file load');
-					loadSavedMap_old(data);
+					MapLoader.loadSavedMap_old(data);
 				}
 			},
 			error: function(a, b, c) {
@@ -601,15 +601,15 @@ function start() {
 						console.log("Map Load: Found saved map");
 						try {
 							console.log('Map Load: Attemping new file load');
-							loadSavedMap_new(data);
+							MapLoader.loadSavedMap_new(data);
 						} catch(e) {
 							console.log('Map Load: Attemping old file load');
-							loadSavedMap_old(data);
+							MapLoader.loadSavedMap_old(data);
 						}
 					},
 					error: function(a, b, c) {
 						console.log("Map Load: Did not find saved map");
-						loadMap('./res/usa_presidential.svg', 16, 1, 'usa_ec',"presidential", "open", {updateText: true});
+						MapLoader.loadMap('./res/usa_presidential.svg', 16, 1, 'usa_ec',"presidential", "open", {updateText: true});
 
 						var notification = document.getElementById('notification');
 						var message = notification.querySelector('#notification-message');
