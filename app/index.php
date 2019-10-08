@@ -574,23 +574,23 @@ if($mobile) {
 <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.5.0/dist/svg-pan-zoom.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
-<script src="./src/Candidate.js"></script>
-<script src="./src/LogoManager.js"></script>
-<script src="./src/CookieManager.js"></script>
-<script src="./src/InputManager.js"></script>
-<script src="./src/PresetLoader.js"></script>
-<script src="./src/ChartManager.js"></script>
-<script src="./src/MapLoader.js"></script>
-<script src="./src/savemap.js"></script>
-<script src="./src/data.js"></script>
-<script src="./src/State.js"></script>
-<script src="./src/htmlControl.js"></script>
-<script src="./src/battlechart.js"></script>
-<script src="./src/click.js"></script>
-<script src="./src/popularvote.js"></script>
-<script src="./src/congress.js"></script>
-<script src="./src/keyboard.js"></script>
-<script src="./src/menuControl.js"></script>
+<script src="./src/Candidate.js?v=1"></script>
+<script src="./src/LogoManager.js?v=1"></script>
+<script src="./src/CookieManager.js?v=1"></script>
+<script src="./src/InputManager.js?v=1"></script>
+<script src="./src/PresetLoader.js?v=1"></script>
+<script src="./src/ChartManager.js?v=1"></script>
+<script src="./src/MapLoader.js?v=1"></script>
+<script src="./src/savemap.js?v=1"></script>
+<script src="./src/data.js?v=1"></script>
+<script src="./src/State.js?v=1"></script>
+<script src="./src/htmlControl.js?v=1"></script>
+<script src="./src/battlechart.js?v=1"></script>
+<script src="./src/click.js?v=1"></script>
+<script src="./src/popularvote.js?v=1"></script>
+<script src="./src/congress.js?v=1"></script>
+<script src="./src/keyboard.js?v=1"></script>
+<script src="./src/menuControl.js?v=1"></script>
 <script src="./src/main.js?v=1"></script>
 <?php 
 if($mobile === true) {
