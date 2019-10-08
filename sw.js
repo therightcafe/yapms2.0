@@ -1,5 +1,5 @@
-var indexCache = 'i0.70.11';
-var staticCache = 's0.70.11';
+var indexCache = 'i0.70.12';
+var staticCache = 's0.70.12';
 
 var _indexCache = [
 	'./',
@@ -75,7 +75,7 @@ var _indexCache = [
 	'./app/?t=Netherlands_gemeenten',
 	'./app/?t=Ireland_dail_eireann',
 	'./app/?t=Turkey_national_assembly',
-	'./app/?t=UK_current_parliament',
+	'./app/?t=UnitedKingdom_current_parliament',
 
 	'./app/style/battlechart.css',
 	'./app/style/battlechartmobile.css',
@@ -149,7 +149,6 @@ var _staticCache = [
 	'./app/res/flags/ita.svg',
 	'./app/res/flags/ned.svg',
 	'./app/res/flags/rus.svg',
-	'./app/res/flags/tur.svg',
 	'./app/res/flags/ukd.svg',
 	'./app/res/flags/un.svg',
 	'./app/res/flags/usa.svg',
