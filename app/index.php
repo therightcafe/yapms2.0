@@ -606,7 +606,7 @@ if('serviceWorker' in navigator) {
 	console.log('Attempting to register service worker');
 
 	navigator.serviceWorker
-	.register('./sw.js')
+	.register('../sw.js')
 	.then(function(a) {
 		console.log('SW: registered');
 		if(typeof gtag !== 'undefined') {
