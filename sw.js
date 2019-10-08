@@ -1,5 +1,5 @@
-var indexCache = 'i0.70.7';
-var staticCache = 's0.70.7';
+var indexCache = 'i0.70.9';
+var staticCache = 's0.70.9';
 
 var _indexCache = [
 	'./',
@@ -15,8 +15,11 @@ var _indexCache = [
 
 	'./app/src/main.js',
 	'./app/src/mobile.js',
-	'./app/src/presets.js',
-	'./app/src/loadmap.js',
+	'./app/src/PresetLoader.js',
+	'./app/src/MapLoader.js',
+	'./app/src/LogoManager.js',
+	'./app/src/CookieManager.js',
+	'./app/src/ChartManager.js',
 	'./app/src/savemap.js',
 	'./app/src/htmlControl.js',
 	'./app/src/html2canvas.min.js',
