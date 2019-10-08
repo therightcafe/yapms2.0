@@ -6,7 +6,7 @@
 	include './html/description.php';
 ?>
 	<meta name="keywords" content="Map,Election,Political,Interactive,Simulator,Electoral,270,2020,USA,Presidential">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	
 	<meta property="og:image:type" content="image/png">
 	<meta property="og:site_name" content="yapms.com">
