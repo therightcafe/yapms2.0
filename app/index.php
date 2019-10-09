@@ -302,7 +302,7 @@ if($mobile === false) {
 			<h3>Shortcuts</h3>
 			<ul>
 				<li>
-					F - Hold down to quickly fill in districs
+					F - Hold down to quickly fill in districts
 				</li>
 			</ul>
 		</div>',
