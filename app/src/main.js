@@ -1,4 +1,4 @@
-var currentCache = 'v0.70.40';
+var currentCache = 'v0.70.42';
 
 var states = [];
 var lands = [];
@@ -571,6 +571,7 @@ function setChangeCandidate(oldCandidate, newCandidate) {
 }
 
 function start() {
+	KeyboardManager.init();
 	initCandidates();
 	ChartManager.initChart();
 	ChartManager.setChart('horizontalbattle');
@@ -630,6 +631,8 @@ function start() {
 		PresetLoader.loadPreset("classic");
 		MapLoader.loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open", {updateText: true, voters: 'usa_voting_pop', enablePopularVote: true});
 	}
+
+	LogoManager.loadLogos();
 }
 
 start();

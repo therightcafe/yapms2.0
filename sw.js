@@ -1,5 +1,5 @@
-var indexCache = 'i0.70.40';
-var staticCache = 's0.70.40';
+var indexCache = 'i0.70.42';
+var staticCache = 's0.70.42';
 
 var _indexCache = [
 	'./',
@@ -33,7 +33,6 @@ var _indexCache = [
 	'./app/src/popularvote.js',
 	'./app/src/congress.js',
 	'./app/src/keyboard.js',
-	'./app/src/deferedImages.js',
 	'./app/src/menuControl.js',
 
 	'./app/?t=USA_current_house',
