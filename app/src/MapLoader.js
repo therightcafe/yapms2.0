@@ -490,7 +490,7 @@ class MapLoader {
 			enableCongress = false;
 		}
 
-		loadMap(obj['filename'], obj['fontsize'], obj['strokewidth'], obj['dataid'],
+		MapLoader.loadMap(obj['filename'], obj['fontsize'], obj['strokewidth'], obj['dataid'],
 				obj['type'], obj['year'],
 		{	
 			enableCongress: enableCongress,
