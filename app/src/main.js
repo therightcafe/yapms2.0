@@ -588,6 +588,7 @@ function start() {
 					console.log('Map Load: Attemping new file load');
 					MapLoader.loadSavedMap_new(data);
 				} catch(e) {
+					console.log(e);
 					console.log('Map Load: Attemping old file load');
 					MapLoader.loadSavedMap_old(data);
 				}
