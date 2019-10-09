@@ -34,7 +34,7 @@ class MapLoader {
 			},
 			error: function(a, b, c) {
 				console.log("Did not find preset map...");
-				loadMap("../res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open", {updateText: true});
+				MapLoader.loadMap("../res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open", {updateText: true});
 			}
 		});
 	}

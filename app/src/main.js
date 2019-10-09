@@ -1,4 +1,4 @@
-var currentCache = 'v0.70.32';
+var currentCache = 'v0.70.35';
 
 var states = [];
 var lands = [];
@@ -628,7 +628,7 @@ function start() {
 		MapLoader.loadMapFromId(php_load_map_id);
 	} else {
 		PresetLoader.loadPreset("classic");
-		loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open", {updateText: true, voters: 'usa_voting_pop', enablePopularVote: true});
+		MapLoader.loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open", {updateText: true, voters: 'usa_voting_pop', enablePopularVote: true});
 	}
 }
 
