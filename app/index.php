@@ -574,6 +574,7 @@ if($mobile) {
 <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.5.0/dist/svg-pan-zoom.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+<!--
 <script src="./src/html2canvas.min.js"></script>
 <script src="./src/MapManager.js?v=1"></script>
 <script src="./src/Candidate.js?v=1"></script>
@@ -595,17 +596,24 @@ if($mobile) {
 <script src="./src/congress.js?v=1"></script>
 <script src="./src/menuControl.js?v=1"></script>
 <script src="./src/main.js"></script>
+-->
+<script src="./src/YAPMS.js"></script>
 <?php 
 if($mobile === true) {
-	echo '<script src="./src/mobile.js"></script>';
+	echo '<script>';
+	require './src/mobile.js';
+	echo '</script>';
+	//echo '<script src="./src/mobile.js"></script>';
 } else {
-	echo '<script src="./src/yapnews.js"></script>';
+	echo '<script>';
+	require './src/yapnews.js';
+	echo '</script>';
+	//echo '<script src="./src/yapnews.js"></script>';
 }
 ?>
 <script>
 if('serviceWorker' in navigator) {
 	console.log('Attempting to register service worker');
-
 	navigator.serviceWorker
 	.register('../sw.js')
 	.then(function(a) {

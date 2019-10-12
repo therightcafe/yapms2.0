@@ -1,5 +1,5 @@
-var indexCache = 'i0.71.0';
-var staticCache = 's0.71.0';
+var indexCache = 'i0.71.1';
+var staticCache = 's0.71.1';
 
 var _indexCache = [
 	'./',
@@ -13,6 +13,7 @@ var _indexCache = [
 	'./app/html/closebutton.svg',
 	'./app/html/loading.svg',
 
+/*
 	'./app/src/main.js',
 	'./app/src/mobile.js',
 	'./app/src/PresetLoader.js',
@@ -34,6 +35,8 @@ var _indexCache = [
 	'./app/src/congress.js',
 	'./app/src/keyboard.js',
 	'./app/src/menuControl.js',
+*/
+	'./app/src/YAPMS.js',
 
 	'./app/?t=USA_current_house',
 	'./app/?t=USA_current_senate',
