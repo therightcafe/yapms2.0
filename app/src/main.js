@@ -1,4 +1,4 @@
-var currentCache = 'v0.71.2';
+var currentCache = 'v0.71.3';
 
 var states = [];
 var lands = [];
@@ -448,6 +448,7 @@ function start() {
 	}
 
 	LogoManager.loadLogos();
+	LogoManager.loadButtons();
 }
 
 start();

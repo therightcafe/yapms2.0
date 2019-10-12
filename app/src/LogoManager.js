@@ -37,4 +37,19 @@ class LogoManager {
 		pgLogo.style.backgroundImage = 'url("https://www.yapms.com/app/res/pg.png")';
 
 	}
+
+	static loadButtons() {
+		var backButtons = document.getElementsByClassName("backbutton");
+		var closeButtons = document.getElementsByClassName("closebutton");
+
+		for(var index = 0; index < backButtons.length; ++index) {
+			var button = backButtons[index];
+			button.setAttribute("data", "./html/backbutton.svg");
+		}
+
+		for(var index = 0; index < closeButtons.length; ++index) {
+			var button = closeButtons[index];
+			button.setAttribute("data", "./html/closebutton.svg");
+		}
+	}
 }

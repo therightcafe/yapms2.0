@@ -1,7 +1,7 @@
 <div class="selectmenu-header">
 <div class="selectmenu-controls">
-       <object type="image/svg+xml" data="./html/backbutton.svg">Back</object>
-       <object type="image/svg+xml" data="./html/closebutton.svg">Error</object>
+       <object class="backbutton" type="image/svg+xml">Back</object>
+       <object class="closebutton" type="image/svg+xml">Close</object>
 </div>
 <div class="selectmenu-display-header">
 	<img src="res/flags/ger.svg">

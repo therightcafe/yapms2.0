@@ -1047,6 +1047,21 @@ class LogoManager {
 		pgLogo.style.backgroundImage = 'url("https://www.yapms.com/app/res/pg.png")';
 
 	}
+
+	static loadButtons() {
+		var backButtons = document.getElementsByClassName("backbutton");
+		var closeButtons = document.getElementsByClassName("closebutton");
+
+		for(var index = 0; index < backButtons.length; ++index) {
+			var button = backButtons[index];
+			button.setAttribute("data", "./html/backbutton.svg");
+		}
+
+		for(var index = 0; index < closeButtons.length; ++index) {
+			var button = closeButtons[index];
+			button.setAttribute("data", "./html/closebutton.svg");
+		}
+	}
 }
 class MapManager {
 	static centerMap() {
@@ -4980,7 +4995,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.71.1';
+var currentCache = 'v0.71.2';
 
 var states = [];
 var lands = [];
@@ -5430,6 +5445,7 @@ function start() {
 	}
 
 	LogoManager.loadLogos();
+	LogoManager.loadButtons();
 }
 
 start();

@@ -342,7 +342,7 @@ if($mobile) {
 <div id="demdel" class="popup selectmenu">
 	<div class="selectmenu-header">
 	<div class="selectmenu-controls">
-	       <object type="image/svg+xml" data="./html/closebutton.svg">Error</object>
+	       <object class="closebutton" type="image/svg+xml">Close</object>
 	</div>
 	<div class="selectmenu-display-header">
 		<h2 id="demdel-message" class="selectmenu-display-header-text"></h2>
@@ -357,7 +357,7 @@ if($mobile) {
 <div id="ecedit" class="popup selectmenu">
 	<div class="selectmenu-header">
 	<div class="selectmenu-controls">
-	       <object type="image/svg+xml" data="./html/closebutton.svg">Error</object>
+	       <object class="closebutton" type="image/svg+xml">Close</object>
 	</div>
 	<div class="selectmenu-display-header">
 		<h2 id="ecedit-message" class="selectmenu-display-header-text"></h2>
@@ -376,7 +376,7 @@ if($mobile) {
 	<input id="candidate-originalName" type="hidden">
 	<div class="selectmenu-header">
 	<div class="selectmenu-controls">
-	       <object type="image/svg+xml" data="./html/closebutton.svg">Error</object>
+	       <object class="closebutton" type="image/svg+xml">Close</object>
 	</div>
 	<div class="selectmenu-display-header">
 		<h2 id="candidateedit-message" class="selectmenu-display-header-text">Candidate Edit</h2>
@@ -400,7 +400,7 @@ if($mobile) {
 <div id="customcolormenu" class="popup selectmenu">
 	<div class="selectmenu-header">
 	<div class="selectmenu-controls">
-	       <object type="image/svg+xml" data="./html/closebutton.svg">Error</object>
+	       <object class="closebutton" type="image/svg+xml">Close</object>
 	</div>
 	<div class="selectmenu-display-header">
 		<h2 class="selectmenu-display-header-text">Custom Color Edit</h2>
@@ -419,7 +419,7 @@ if($mobile) {
 <div id="addcandidatemenu" class="popup selectmenu">
 	<div class="selectmenu-header">
 	<div class="selectmenu-controls">
-	       <object type="image/svg+xml" data="./html/closebutton.svg">Error</object>
+	       <object class="closebutton" type="image/svg+xml">Close</object>
 	</div>
 	<div class="selectmenu-display-header">
 		<h2 class="selectmenu-display-header-text">Add Candidate</h2>
@@ -548,7 +548,7 @@ if($mobile) {
 <div id="notification" class="popup selectmenu">
 	<div class="selectmenu-header">
 	<div class="selectmenu-controls">
-	       <object type="image/svg+xml" data="./html/closebutton.svg">Error</object>
+	       <object class="closebutton" type="image/svg+xml">Close</object>
 	</div>
 	<div class="selectmenu-display-header">
 		<h2 id="notification-title"></h2>
@@ -561,7 +561,7 @@ if($mobile) {
 
 <div id="notification-update-serviceworker" class="popup selectmenu">
 	<div class="selectmenu-header">
-	<object type="image/svg+xml" data="./html/closebutton.svg" >Error</object>
+	<object class="closebutton" type="image/svg+xml">Close</object>
 	<h2>New Version Installed</h2>
 	</div>
 	<div class="selectmenu-content">

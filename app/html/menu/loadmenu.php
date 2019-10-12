@@ -1,6 +1,6 @@
 <div class="selectmenu-header">
 <div class="selectmenu-controls">
-       <object type="image/svg+xml" data="./html/closebutton.svg">Error</object>
+       <object class="closebutton" type="image/svg+xml">Close</object>
 </div>
 <div class="selectmenu-display-header">
 	<h2 class="selectmenu-display-header-text">Load From File</h2>
