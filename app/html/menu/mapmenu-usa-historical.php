@@ -4,7 +4,7 @@
        <object class="closebutton" type="image/svg+xml">Close</object>
 </div>
 <div class="selectmenu-display-header">
-	<img src="res/flags/usa.svg">
+	<img class="flag-usa">
 	<h2 class="selectmenu-display-header-text">USA Historical</h2>
 </div>
 </div>

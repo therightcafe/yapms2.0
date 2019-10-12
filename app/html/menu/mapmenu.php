@@ -11,87 +11,87 @@
 	<div class="selectmenu-split-text">United States</div>
 </a>
 <a class="selectmenu-button" onclick='displayMenu("mapmenu-usa")'>
-	<img src="res/flags/usa.svg">
+	<img class="flag-usa">
 	<div class="selectmenu-button-text">USA</div>
 </a>
 <a class="selectmenu-button" onclick='displayMenu("mapmenu-usa-historical")'>
-	<img src="res/flags/usa.svg">
+	<img class="flag-usa">
 	<div class="selectmenu-button-text">USA Historical</div>
 </a>
 <a class="selectmenu-split">
 	<div class="selectmenu-split-text">Other Countries</div>
 </a>
 <a class="selectmenu-button" onclick='displayMenu("mapmenu-australia")'>
-	<img src="res/flags/aus.svg">
+	<img class="flag-aus">
 	<div class="selectmenu-button-text">Australia</div>
 </a>
 <a class="selectmenu-button" href="./?t=Brazil_chamber_of_deputies">
-	<img src="res/flags/bra.svg">
+	<img class="flag-bra">
 	<div class="selectmenu-button-text">Brazil</div>
 </a>
 <a class="selectmenu-button" onclick='displayMenu("mapmenu-canada")'>
-	<img src="res/flags/can.svg">
+	<img class="flag-can">
 	<div class="selectmenu-button-text">Canada</div>
 </a>
 <a class="selectmenu-button" href="./?t=France_national_assembly">
-	<img src="res/flags/fra.svg">
+	<img class="flag-fra">
 	<div class="selectmenu-button-text">France</div>
 </a>
 <a class="selectmenu-button" onclick='displayMenu("mapmenu-germany")'>
-	<img src="res/flags/ger.svg">
+	<img class="flag-ger">
 	<div class="selectmenu-button-text">Germany</div>
 </a>
 <a class="selectmenu-button" href="./?t=India_lok_sabha">
-	<img src="res/flags/ind.svg">
+	<img class="flag-ind">
 	<div class="selectmenu-button-text">India</div>
 </a>
 <a class="selectmenu-button" href="./?t=Italy_states">
-	<img src="res/flags/ita.svg">
+	<img class="flag-ita">
 	<div class="selectmenu-button-text">Italy</div>
 </a>
 <a class="selectmenu-button" href="./?t=Ireland_dail_eireann">
-	<img src="res/flags/ire.svg">
+	<img class="flag-ire">
 	<div class="selectmenu-button-text">Ireland</div>
 </a>
 <a class="selectmenu-button" onclick='displayMenu("mapmenu-netherlands")'>
-	<img src="res/flags/ned.svg">
+	<img class="flag-ned">
 	<div class="selectmenu-button-text">Netherlands</div>
 </a>
 <a class="selectmenu-button" href="./?t=Portugal_assembly_of_the_republic">
-	<img src="res/flags/prt.svg">
+	<img class="flag-prt">
 	<div class="selectmenu-button-text">Portugal</div>
 </a>
 <a class="selectmenu-button" onclick='displayMenu("mapmenu-russia")'>
-	<img src="res/flags/rus.svg">
+	<img class="flag-rus">
 	<div class="selectmenu-button-text">Russia</div>
 </a>
 <a class="selectmenu-button" href="./?t=Spain_congress_of_deputies">
-	<img src="res/flags/esp.svg">
+	<img class="flag-esp">
 	<div class="selectmenu-button-text">Spain</div>
 </a>
 <a class="selectmenu-button" href="./?t=Turkey_national_assembly">
-	<img src="res/flags/tur.svg">
+	<img class="flag-tur">
 	<div class="selectmenu-button-text">Turkey</div>
 </a>
 <a class="selectmenu-button" onclick='displayMenu("mapmenu-uk")'>
-	<img src="res/flags/ukd.svg">
+	<img class="flag-ukd">
 	<div class="selectmenu-button-text">United Kingdom</div>
 </a>
 <a class="selectmenu-split">
 	<div class="selectmenu-split-text">Trans-National</div>
 </a>
 <a class="selectmenu-button" href="./?t=EuropeanUnion">
-	<img src="res/flags/eu.svg">
+	<img class="flag-eu">
 	<div class="selectmenu-button-text">EU</div>
 </a>
 <a class="selectmenu-button" href="./?t=World">
-	<img src="res/flags/un.svg">
+	<img class="flag-un">
 	<div class="selectmenu-button-text">World</div>
 </a>
 <a class="selectmenu-button" href='./?t=USA_Canada'>
-	<img src="res/flags/usa.svg">
+	<img class="flag-usa">
 	<div class="selectmenu-button-text">USA Canada</div>
-	<img src="res/flags/can.svg">
+	<img class="flag-can">
 </a>
 <a class="selectmenu-split">
 	<div class="selectmenu-split-text">Mock Elections</div>
