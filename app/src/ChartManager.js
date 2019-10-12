@@ -8,8 +8,8 @@ class ChartManager {
 				var legendDiv = document.getElementById('legend-div');
 				legendDiv.innerHTML = '';
 				var index = -1;
-				for(var key in candidates) {
-					var candidate = candidates[key];
+				for(var key in CandidateManager.candidates) {
+					var candidate = CandidateManager.candidates[key];
 					++index;
 					var legendElement = document.createElement('div');
 					legendElement.setAttribute('id', candidate.name);
@@ -24,7 +24,7 @@ class ChartManager {
 					legendText.setAttribute('class', 'legend-button-text');	
 					legendText.style.backgroundColor = candidate.colors[0];
 					if(index == 0) {
-						var color = candidate.colors[tossupColor];
+						var color = candidate.colors[CandidateManager.tossupColor];
 						legendText.style.backgroundColor = color;
 					}
 					legendText.style.padding = '0px';
@@ -67,7 +67,7 @@ class ChartManager {
 						legendDelete.appendChild(legendDeleteText);
 					}
 
-					if(key !== 'Tossup' && legendLeans) {
+					if(key !== 'Tossup' && LegendManager.legendLeans) {
 						var amts = ['solid', 'likely', 'lean', 'tilt'];
 						for(var index = 0; index < amts.length; ++index) {
 							var legendColor = document.createElement('div');
@@ -90,7 +90,7 @@ class ChartManager {
 				var legendText = document.createElement('div');
 				legendText.setAttribute('id', 'addcandidate-button-text');	
 				legendText.setAttribute('class', 'legend-button-text');	
-				legendText.style.backgroundColor = candidates['Tossup'].colors[tossupColor];
+				legendText.style.backgroundColor = CandidateManager.candidates['Tossup'].colors[CandidateManager.tossupColor];
 				legendText.style.padding = '0px';
 				legendText.innerHTML = '+';
 				legendElement.appendChild(legendText);
@@ -250,10 +250,10 @@ class ChartManager {
 			sidebar.style.display = 'none';
 
 			ChartManager.chartType = type;
-			centerMap();
+			MapManager.centerMap();
 			return;
 		} else if(type === 'horizontalbattle' || type === 'verticalbattle') {
-			if(Object.keys(candidates).length > 3) {
+			if(Object.keys(CandidateManager.candidates).length > 3) {
 			
 				displayNotification('Sorry',
 					'This chart requires that there be two candidates');
@@ -300,7 +300,7 @@ class ChartManager {
 			battlechart.style.display = 'flex';
 			ChartManager.chartType = type;
 			ChartManager.updateChart();
-			centerMap();
+			MapManager.centerMap();
 			return;
 		} 
 		
@@ -362,7 +362,7 @@ class ChartManager {
 			logo.style.height = '15%';
 		}
 
-		centerMap();
+		MapManager.centerMap();
 			
 		ChartManager.chartType = type;
 		
@@ -450,14 +450,14 @@ class ChartManager {
 		ChartManager.chartData.datasets[3].backgroundColor = [];
 		
 		// each label is a candidate
-		for(var key in candidates) {
+		for(var key in CandidateManager.candidates) {
 			ChartManager.chartData.labels.push(key);
 		}
 
 		if(ChartManager.chartLeans) {
 			for(var probIndex = 0; probIndex < 4; ++probIndex) {
-				for(var key in candidates) {
-					var candidate = candidates[key];
+				for(var key in CandidateManager.candidates) {
+					var candidate = CandidateManager.candidates[key];
 					var name = candidate.name;
 					var count = candidate.probVoteCounts[probIndex];
 					ChartManager.chartData.datasets[probIndex].data.push(count);
@@ -467,8 +467,8 @@ class ChartManager {
 				}
 			}
 		} else {
-			for(var key in candidates) {
-				var candidate = candidates[key];
+			for(var key in CandidateManager.candidates) {
+				var candidate = CandidateManager.candidates[key];
 				var name = candidate.name;
 				var count = candidate.voteCount;
 				ChartManager.chartData.datasets[0].data.push(count);
@@ -495,14 +495,14 @@ class ChartManager {
 
 		// loop though candidates
 		var candidateIndex = -1;
-		for(var key in candidates) {
+		for(var key in CandidateManager.candidates) {
 			++candidateIndex;
-			var candidate = candidates[key];
+			var candidate = CandidateManager.candidates[key];
 			var name = candidate.name;
 			var voteCount = candidate.voteCount;
 			var color = candidate.colors[0];
 			if(candidateIndex == 0) {
-				color = candidates['Tossup'].colors[tossupColor];
+				color = CandidateManager.candidates['Tossup'].colors[CandidateManager.tossupColor];
 				// append the candidate label
 				ChartManager.chartData.labels[0] = 'Tossup';
 				// append the vote count

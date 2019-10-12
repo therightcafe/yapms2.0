@@ -1,24 +1,18 @@
-var currentCache = 'v0.70.42';
+var currentCache = 'v0.71.0';
 
 var states = [];
 var lands = [];
 var buttons = [];
 var proportionalStates = [];
 
-// pan object
-var panobject;
-
 // paint data
 var paintIndex = 'Tossup';
 var maxColorValue = 2;
 
-var lockedMap = false;
 var mode = 'paint';
 
 var blockPresets = false;
 
-var legendCounter = true;
-var legendLeans = true;
 var maxColorValues = 4;
 
 var mapOptions = {
@@ -31,8 +25,6 @@ var previousPalette = function() {
 	toWinPalette();	
 };
 
-var panObject = null;
-
 function share(autoCenter) {
 	displayMenu('sharemenu');
 
@@ -44,7 +36,7 @@ function share(autoCenter) {
 	}
 	
 	if(autoCenter) {
-		centerMap();
+		MapManager.centerMap();
 	}
 
 	// disable button to prevent spam
@@ -117,11 +109,11 @@ window.onerror = function(message, source, lineno, colno, error) {
 }
 
 function autoFill(stateIndex) {
-	if(keyStates[70]) {
+	if(KeyboardManager.keyStates[70]) {
 		states[stateIndex].incrementCandidateColor(paintIndex);
 		countVotes();
-		updateChart();
-		updateLegend();
+		ChartManager.updateChart();
+		LegendManager.updateLegend();
 	}
 }
 
@@ -134,7 +126,7 @@ function setDelegates(e) {
 	}
 	// keep the total delegates
 	var total = state.voteCount;
-	for(var key in candidates) {
+	for(var key in CandidateManager.candidates) {
 		if(key === 'Tossup')
 			continue;
 		var range = document.getElementById('range-' + key);
@@ -174,56 +166,7 @@ function setDelegates(e) {
 
 	countVotes();
 	ChartManager.updateChart();
-	updateLegend();
-}
-
-function toggleLegendCounter() {
-	legendCounter = !legendCounter;
-	updateLegend();
-}
-
-function toggleLegendLeans() {
-	legendLeans = !legendLeans;
-	ChartManager.chart.generateLegend();
-	updateLegend();
-}
-
-function setLockMap(set) {
-	var lockButton = document.getElementById('lockbutton');
-	if(set === true) {
-		if(lockButton) {
-			lockButton.style.opacity = '0.5';
-		}
-		panObject.disablePan();
-		panObject.disableZoom();
-		lockedMap = true;
-	} else {
-		if(lockButton) {
-			lockButton.style.opacity = '1';
-		}
-		panObject.enablePan();
-		panObject.enableZoom();
-		lockedMap = false;
-	}
-}
-
-function toggleLockMap() {
-	var lockButton = document.getElementById('lockbutton');
-	if(lockedMap) {
-		if(lockButton) {
-			lockButton.style.opacity = '1';
-		}
-		panObject.enablePan();
-		panObject.enableZoom();
-		lockedMap = false;
-	} else {
-		if(lockButton) {
-			lockButton.style.opacity = '0.5';
-		}
-		panObject.disablePan();
-		panObject.disableZoom();
-		lockedMap = true;
-	}
+	LegendManager.updateLegend();
 }
 
 function setMode(set) {
@@ -324,80 +267,21 @@ function setMode(set) {
 // if paint index is invalid, change it to tossup
 // ( WORK IN PROGRESS)
 function verifyPaintIndex() {
-	if(typeof candidates[paintIndex] === 'undefined') {
+	if(typeof CandidateManager.candidates[paintIndex] === 'undefined') {
 		paintIndex = 'Tossup';
 	}
-}
-
-// make sure states are proper colors
-// if states have invalid colors, turn them white
-function verifyMap() {
-	states.forEach(function(state) {
-		//state.verifyDisabledColor();
-		state.verifyTossupColor();
-		if(typeof candidates[state.candidate] === 'undefined') {
-			// if the current color is out of bounds set it to white
-			state.setColor('Tossup', tossupColor);
-		} else { 
-			// the candidate the state thinks its controled by
-			var currentCandidate = state.getCandidate();
-			// the candidate the state should be controle by
-			var shouldCandidate = candidates[state.getCandidate()].name;
-
-			// if these values differ, change the state to tossup
-			if(currentCandidate !== shouldCandidate) {
-				state.setColor('Tossup', tossupColor);
-			} else if(state.getCandidate() === 'Tossup') {
-				state.setColor('Tossup', 2);	
-			}else {
-				var candidate = candidates[state.getCandidate()];
-				if(candidate.singleColor === true) {
-					state.setColor(state.getCandidate(), 0);
-				} else {
-					state.setColor(state.getCandidate(), state.getColorValue());
-				}
-			}
-		}
-	});
-
-	proportionalStates.forEach(function(state) {
-		state.verifyTossupColor();
-		if(typeof candidates[state.candidate] === 'undefined') {
-			// if the current color is out of bounds set it to white
-			state.setColor('Tossup', tossupColor);
-		} else { 
-			// the candidate the state thinks its controled by
-			var currentCandidate = state.getCandidate();
-			// the candidate the state should be controle by
-			var shouldCandidate = candidates[state.getCandidate()].name;
-
-			// if these values differ, change the state to tossup
-			if(currentCandidate !== shouldCandidate) {
-				state.setColor('Tossup', tossupColor);
-			} else if(state.getCandidate() === 'Tossup') {
-				state.setColor('Tossup', 2);	
-			}else {
-				var candidate = candidates[state.getCandidate()];
-				if(candidate.singleColor === true) {
-					state.setColor(state.getCandidate(), 0);
-				} else {
-					state.setColor(state.getCandidate(), state.getColorValue());
-				}
-			}
-		}
-	});
 }
 
 // iterate over each state and delegate votes to the candidate
 function countVotes() {
 	var mid = document.getElementById("battlechartmid");
 	if(mid !== null) {
-		mid.setAttribute("fill", TOSSUP.colors[2]);
+		mid.setAttribute("fill", CandidateManager.TOSSUP.colors[2]);
 	}
 
 	if(MapLoader.save_type === 'primary' || MapLoader.save_type === 'proportional') {
-		for(var key in candidates) {
-			var candidate = candidates[key];
+		for(var key in CandidateManager.candidates) {
+			var candidate = CandidateManager.candidates[key];
 			candidate.voteCount = 0;
 			candidate.probVoteCounts = [0,0,0,0];
 			for(var stateIndex = 0, length = states.length; stateIndex < length; ++stateIndex) {
@@ -424,8 +308,8 @@ function countVotes() {
 		// iterate over every candidate
 		//candidates.forEach(function(candidate, candidateIndex) {
 		var candidateIndex = -1;
-		for(var key in candidates) {
-			var candidate = candidates[key];
+		for(var key in CandidateManager.candidates) {
+			var candidate = CandidateManager.candidates[key];
 			++candidateIndex;
 			candidate.voteCount = 0;
 			candidate.probVoteCounts = [0,0,0,0];
@@ -470,77 +354,8 @@ function countVotes() {
 	}
 }
 
-// displays the vote count on the legend
-// makes sure that the selected candidate is highlighted
-function updateLegend() {
-	var index = -1;
-	for(var key in candidates) {
-		var candidate = candidates[key];
-		++index;
-		var html = document.getElementById(candidate.name + '-text');
-
-		var newHTML = candidate.name;
-
-		if(legendCounter == true) {
-			newHTML += ' ' + candidate.voteCount;
-		}
-
-		if(html !== null) {
-			html.innerHTML = newHTML;
-		}
-
-		if(key === paintIndex) {
-			selectCandidateDisplay(html.parentElement);
-		}
-	}
-}
-
-function centerMap() {
-	if(panObject === null)
-		return;
-
-	panObject.resize();
-	panObject.fit();
-	panObject.center();
-	panObject.zoomBy(0.85);
-}
-
-function setColors(palette) {
-	var solid = document.getElementById('solid');
-	var likely = document.getElementById('likely');
-	var leaning =  document.getElementById('leaning');
-	var tilting = document.getElementById('tilting');
-
-	if(palette === 'red') {
-		solid.value = '#bf1d29';
-		likely.value = '#ff5865';
-		leaning.value = '#ff8b98';
-		tilting.value ='#cf8980';
-	} else if(palette === 'blue') {
-		solid.value = '#1c408c';
-		likely.value = '#577ccc';
-		leaning.value = '#8aafff';
-		tilting.value = '#949bb3';
-	} else if(palette === 'green') {
-		solid.value = '#1c8c28';
-		likely.value = '#50c85e';
-		leaning.value = '#8aff97';
-		tilting.value = '#7a997e';
-	} else if(palette === 'yellow') {
-		solid.value = '#e6b700';
-		likely.value = '#e8c84d';
-		leaning.value = '#ffe78a';
-		tilting.value = '#b8a252';
-	} else {
-		solid.value = CookieManager.cookies[palette + 'solid'];
-		likely.value = CookieManager.cookies[palette + 'likely'];
-		leaning.value = CookieManager.cookies[palette + 'leaning'];
-		tilting.value = CookieManager.cookies[palette + 'tilting'];
-	}
-}
-
 function onResize() {
-	centerMap();
+	MapManager.centerMap();
 
 	// make sure the height is maxed out if the chart is on the bottom	
 	if(ChartManager.chartPosition === 'bottom') {
@@ -572,7 +387,7 @@ function setChangeCandidate(oldCandidate, newCandidate) {
 
 function start() {
 	KeyboardManager.init();
-	initCandidates();
+	CandidateManager.initCandidates();
 	ChartManager.initChart();
 	ChartManager.setChart('horizontalbattle');
 	CookieManager.loadCookies();

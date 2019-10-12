@@ -102,7 +102,7 @@ function viewPopularVote(state) {
 				state.setColor('Tossup', 0, true);
 			}
 
-			for(var key in candidates) {
+			for(var key in CandidateManager.candidates) {
 				if(key === 'Tossup') {
 					continue;
 				}
@@ -137,7 +137,7 @@ function viewPopularVote(state) {
 	ranges.appendChild(displayTurnout);
 	ranges.appendChild(turnoutRange);
 
-	for(var key in candidates) {
+	for(var key in CandidateManager.candidates) {
 		if(key === 'Tossup')
 			continue;
 
@@ -160,7 +160,7 @@ function viewPopularVote(state) {
 		range.onchange = (function() {
 			return function(b) {
 				var totalVotes = 0;
-				for(var candidate in candidates) {
+				for(var candidate in CandidateManager.candidates) {
 					if(candidate === 'Tossup')
 						continue;
 					var range = document.getElementById('popular-range-' + candidate);
@@ -185,8 +185,8 @@ function viewPopularVote(state) {
 
 				countPopularVote();
 				countVotes();
-				updateLegend();
-				updateChart();
+				LegendManager.updateLegend();
+				ChartManager.updateChart();
 			}
 		})();
 
@@ -303,7 +303,7 @@ function calculateAutoMarginAL(stateName) {
 	var firstCandidate = "Tossup";
 	var secondCount = 0;
 	var secondCandidate = "Tossup";
-	for(var candidate in candidates) {
+	for(var candidate in CandidateManager.candidates) {
 		if(candidate === 'Tossup')
 			continue;
 
@@ -348,7 +348,7 @@ function calculateAutoMargin(state) {
 	var winCandidate = "Tossup";
 	var secondWin = 0;
 	var secondWinCandidate = "Tossup";
-	for(var candidate in candidates) {
+	for(var candidate in CandidateManager.candidates) {
 		// don't compare margins with the no vote
 		if(candidate === 'Tossup')
 			continue;

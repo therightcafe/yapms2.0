@@ -1,6 +1,6 @@
 function updateBattleChart() {
 
-	if(Object.keys(candidates).length > 3) {
+	if(Object.keys(CandidateManager.candidates).length > 3) {
 		if(mobile) {
 			ChartManager.setChart('pie', 'bottom');
 		} else {
@@ -31,10 +31,10 @@ function updateBattleChart() {
 	bottombar.style.flexBasis = '';
 
 	var candidateIndex = -1;
-	for(var key in candidates) {
+	for(var key in CandidateManager.candidates) {
 		++candidateIndex;
 
-		var candidate = candidates[key];
+		var candidate = CandidateManager.candidates[key];
 
 		if(candidateIndex == 0) {
 			tossup.style.background = candidate.colors[2];

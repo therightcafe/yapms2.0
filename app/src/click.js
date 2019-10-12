@@ -16,7 +16,7 @@ function buttonClick(clickElement, options) {
 	
 	countVotes();
 	ChartManager.updateChart();
-	updateLegend();
+	LegendManager.updateLegend();
 }
 
 function buttonClickPaint(clickElement, options) {
@@ -103,7 +103,7 @@ function landClick(clickElement, options) {
 
 	countVotes();
 	ChartManager.updateChart();
-	updateLegend();
+	LegendManager.updateLegend();
 	countPopularVote();
 }
 
@@ -137,7 +137,7 @@ function stateClick(clickElement, options) {
 
 	countVotes();
 	ChartManager.updateChart();
-	updateLegend();
+	LegendManager.updateLegend();
 }
 
 var tooltipTimeout = null;
@@ -235,7 +235,7 @@ function stateClickPaintProportional(state, id) {
 	var displayTossup = document.createElement('DIV');
 	displayTossup.setAttribute('id', 'display-Tossup');
 
-	for(var key in candidates) {
+	for(var key in CandidateManager.candidates) {
 		if(key === 'Tossup')
 			continue;
 		// create slider, set their max to the states delegate count
@@ -313,7 +313,7 @@ function specialClick(clickElement, e) {
 		state.incrementCandidateColor(paintIndex);
 		countVotes();
 		ChartManager.updateChart();
-		updateLegend();
+		LegendManager.updateLegend();
 	}
 }
 
@@ -325,25 +325,25 @@ function legendClick(candidate, button) {
 
 	} else if(mode === 'paint' || mode === 'paintmove') {
 		paintIndex = candidate;
-		selectCandidateDisplay(button);
+		LegendManager.selectCandidateDisplay(button);
 	} else if(mode === 'candidate' && candidate !== 'Tossup') {
 		var candidateedit = document.getElementById('candidateedit');
 		candidateedit.style.display = 'inline';
 		var nameinput = document.getElementById('candidate-name');
 		nameinput.value = candidate;
 		var solidinput = document.getElementById('candidate-solid');
-		solidinput.value = candidates[candidate].colors[0];
+		solidinput.value = CandidateManager.candidates[candidate].colors[0];
 		var likelyinput = document.getElementById('candidate-likely');
-		likelyinput.value = candidates[candidate].colors[1];
+		likelyinput.value = CandidateManager.candidates[candidate].colors[1];
 		var leaninput = document.getElementById('candidate-lean');
-		leaninput.value = candidates[candidate].colors[2];
+		leaninput.value = CandidateManager.candidates[candidate].colors[2];
 		var tiltinput = document.getElementById('candidate-tilt');
-		tiltinput.value = candidates[candidate].colors[3];
+		tiltinput.value = CandidateManager.candidates[candidate].colors[3];
 		var hiddeninput = document.getElementById('candidate-originalName');
 		var message = document.getElementById('candidateedit-message');
 		message.innerHTML = 'Edit ' + candidate;
 		hiddeninput.value = candidate;
 	} else if(mode === 'deletecandidate' && candidate !== 'Tossup') {
-		deleteCandidateByName(candidate);		
+		CandidateManager.deleteCandidateByName(candidate);		
 	}
 }

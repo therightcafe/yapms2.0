@@ -2,12 +2,12 @@ class InputManager {
 	static enableInputDesktop() {
 		var enablePan = false;
 		var enableZoom = false;
-		if(panObject != null) {
-			enablePan = panObject.isPanEnabled();
-			enableZoom = panObject.isZoomEnabled();
+		if(MapManager.panObject != null) {
+			enablePan = MapManager.panObject.isPanEnabled();
+			enableZoom = MapManager.panObject.isZoomEnabled();
 		}
 
-		panObject = svgPanZoom('#svgdata', {
+		MapManager.panObject = svgPanZoom('#svgdata', {
 			fit: true,
 			center: true,
 			contain: false,
@@ -56,7 +56,7 @@ class InputManager {
 		
 		}
 
-		panObject = svgPanZoom('#svgdata', {
+		MapManager.panObject = svgPanZoom('#svgdata', {
 			fit: true,
 			center: true,
 			contain: false,

@@ -13,11 +13,11 @@ function saveMap(img, token) {
 	formData.append("updateText", mapOptions.updateText);
 
 	var candidateData = [];
-	for(var key in candidates) {
+	for(var key in CandidateManager.candidates) {
 		if(key === 'Tossup') {
 			continue;
 		}
-		var candidate = candidates[key];
+		var candidate = CandidateManager.candidates[key];
 		var obj = {
 			name: candidate.name,
 			solid: candidate.colors[0],
@@ -160,11 +160,11 @@ function saveMap_new(img, token) {
 	formData.append("captcha", token);
 	formData.append("img", img);
 
-	for(var key in candidates) {
+	for(var key in CandidateManager.candidates) {
 		if(key === 'Tossup') {
 			continue;
 		}
-		var candidate = candidates[key];
+		var candidate = CandidateManager.candidates[key];
 		data['candidates'][candidate.name] = {};
 		data['candidates'][candidate.name]['solid'] = candidate.colors[0];
 		data['candidates'][candidate.name]['likely'] = candidate.colors[1];

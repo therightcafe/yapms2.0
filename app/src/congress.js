@@ -143,7 +143,7 @@ function setCongressOnHover() {
 					element = document.getElementById('sidebar-congress-party');
 					element.innerHTML = districtData.Party;
 
-					if(keyStates[70]) {
+					if(KeyboardManager.keyStates[70]) {
 						stateClick(this, {setSolid: true});
 					}
 				}

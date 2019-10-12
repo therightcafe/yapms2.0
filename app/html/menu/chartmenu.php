@@ -37,7 +37,7 @@
 <a class="selectmenu-split">
 	<div class="selectmenu-split-text">Chart Settings</div>
 </a>
-<a class="selectmenu-button" onclick='toggleLegendCounter()'>
+<a class="selectmenu-button" onclick='LegendManager.toggleLegendCounter()'>
 	<div class="selectmenu-button-text">Legend Counter</div>
 </a>
 <a class="selectmenu-button" onclick='ChartManager.toggleChartLabels()'>
@@ -46,7 +46,7 @@
 <a class="selectmenu-button" onclick='ChartManager.toggleChartLeans()'>
 	<div class="selectmenu-button-text">Chart Leans</div>
 </a>
-<a class="selectmenu-button" onclick='toggleLegendLeans()'>
+<a class="selectmenu-button" onclick='LegendManager.toggleLegendLeans()'>
 	<div class="selectmenu-button-text">Legend Leans</div>
 </a>
 </div>

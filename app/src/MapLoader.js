@@ -5,7 +5,7 @@ var enableCongressContested = false;
 class MapLoader {
 	static loadPresetMap(preset, options) {
 		// Remove all candidates, and load the ones for the map
-		initCandidates();
+		CandidateManager.initCandidates();
 
 		var enableHouse = false;
 
@@ -290,7 +290,7 @@ class MapLoader {
 				InputManager.enableInputDesktop();
 			}
 
-			centerMap();
+			MapManager.centerMap();
 			onResize();
 
 			var textHTML = document.getElementById('text');
@@ -306,7 +306,7 @@ class MapLoader {
 
 			countVotes();
 			ChartManager.updateChart();
-			updateLegend();
+			LegendManager.updateLegend();
 			setCongressOnHover();
 			
 			setPalette(CookieManager.cookies['theme']);
@@ -359,7 +359,7 @@ class MapLoader {
 		if(gubernatorialfile.includes('open') == false) {
 		}
 
-		initCandidates();
+		CandidateManager.initCandidates();
 		
 		var candidateNames = {};
 
@@ -383,7 +383,7 @@ class MapLoader {
 						var split = line.split(' ');
 						candidateNames[split[0]] = split[1];
 						var candidate = new Candidate(split[1], [split[2], split[3], split[4], split[5]]);
-						candidates[split[1]] = candidate;
+						CandidateManager.candidates[split[1]] = candidate;
 					}
 
 				} else if(loadMode === 'disable') {
@@ -401,9 +401,8 @@ class MapLoader {
 			}
 
 			countVotes();
-			updateLegend();
 			ChartManager.updateChart();
-			updateLegend();
+			LegendManager.updateLegend();
 
 			var mapHTML = document.getElementById('map-div');
 			mapHTML.style.visibility = 'visible';
@@ -418,7 +417,7 @@ class MapLoader {
 			//blockPresets = true;
 		}
 
-		initCandidates();
+		CandidateManager.initCandidates();
 
 		var candidateNames = {};
 
@@ -440,7 +439,7 @@ class MapLoader {
 						var split = line.split(' ');
 						candidateNames[split[0]] = split[1];
 						var candidate = new Candidate(split[1], [split[2], split[3], split[4], split[5]]);
-						candidates[split[1]] = candidate;
+						CandidateManager.candidates[split[1]] = candidate;
 					}
 
 				} else if(loadMode === 'disable') {
@@ -470,9 +469,8 @@ class MapLoader {
 			}
 
 			countVotes();
-			updateLegend();
 			ChartManager.updateChart();
-			updateLegend();
+			LegendManager.updateLegend();
 
 			var mapHTML = document.getElementById('map-div');
 			mapHTML.style.visibility = 'visible';
@@ -502,7 +500,7 @@ class MapLoader {
 					continue;
 				}
 				var candidate = obj.candidates[candidateName];
-				addCandidate(candidateName, candidate['solid'], candidate['likely'], candidate['lean'], candidate['tilt']);
+				CandidateManager.addCandidate(candidateName, candidate['solid'], candidate['likely'], candidate['lean'], candidate['tilt']);
 			}
 
 			for(var stateName in obj.states) {
@@ -532,9 +530,8 @@ class MapLoader {
 			}
 
 			countVotes();
-			updateLegend();
 			ChartManager.updateChart();
-			updateLegend();
+			LegendManager.updateLegend();
 
 			var mapHTML = document.getElementById('map-div');
 			mapHTML.style.visibility = 'visible';
@@ -567,7 +564,7 @@ class MapLoader {
 			var candidateEndLine = meta[6];
 			for(var candidateIndex = 1; candidateIndex < candidateEndLine; ++candidateIndex) {
 				var candidate = lines[candidateIndex].split(' ');
-				addCandidate(candidate[0].replace(/\%/g, " "), candidate[1], candidate[2], candidate[3], candidate[4]);
+				CandidateManager.addCandidate(candidate[0].replace(/\%/g, " "), candidate[1], candidate[2], candidate[3], candidate[4]);
 			}
 
 			// parse each state in the file
@@ -634,7 +631,7 @@ class MapLoader {
 			
 			countVotes();
 			ChartManager.updateChart();
-			updateLegend();
+			LegendManager.updateLegend();
 			
 			gtag('event', 'load', {
 				'event_category': 'load_map',
@@ -688,7 +685,7 @@ class MapLoader {
 				if(MapLoader.save_type === 'congressional' ||
 				MapLoader.save_type === 'presidential' ||
 				MapLoader.save_type === 'gubernatorial') {
-					htmlElement.setAttribute('onmouseover', 'if(keyStates[70]){buttonClick(this, {setSolid: true});}');
+					htmlElement.setAttribute('onmouseover', 'if(KeyboardManager.keyStates[70]){buttonClick(this, {setSolid: true});}');
 				}
 				buttons.push(htmlElement);
 			} else if(name.includes('-land')) {
@@ -696,7 +693,7 @@ class MapLoader {
 				if(MapLoader.save_type === 'congressional' ||
 				MapLoader.save_type === 'presidential' ||
 				MapLoader.save_type === 'gubernatorial') {
-					htmlElement.setAttribute('onmouseover', 'if(keyStates[70]){landClick(this, {setSolid: true});}');
+					htmlElement.setAttribute('onmouseover', 'if(KeyboardManager.keyStates[70]){landClick(this, {setSolid: true});}');
 				}
 				lands.push(htmlElement);
 			} else {
@@ -706,7 +703,7 @@ class MapLoader {
 				if(MapLoader.save_type === 'congressional' ||
 				MapLoader.save_type === 'presidential' ||
 				MapLoader.save_type === 'gubernatorial') {
-					htmlElement.setAttribute('onmouseover', 'if(keyStates[70]){stateClick(this, {setSolid: true});}');
+					htmlElement.setAttribute('onmouseover', 'if(KeyboardManager.keyStates[70]){stateClick(this, {setSolid: true});}');
 				}
 			}
 		}
@@ -746,7 +743,7 @@ class MapLoader {
 	// sets all states to white
 	static clearMap() {
 		MapLoader.loadMap(MapLoader.save_filename, MapLoader.save_fontsize, MapLoader.save_strokewidth, MapLoader.save_dataid, MapLoader.save_type, MapLoader.save_year, {updateText: mapOptions.updateText});
-		setLockMap(false);
+		MapManager.setLockMap(false);
 	}
 }
 

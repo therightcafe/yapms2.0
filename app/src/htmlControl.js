@@ -5,20 +5,8 @@ var presentationMode = false;
 if(document.getElementById("yapnews")) {
 	document.getElementById("yapnews").addEventListener("transitionend",
 	function() {
-		centerMap();
+		MapManager.centerMap();
 	});
-}
-
-function selectCandidateDisplay(html) {
-	var legendButtons = html.parentElement.children;
-
-	for(var index = 0; index < legendButtons.length; ++index) {
-		var button = legendButtons[index];
-		var text = button.childNodes[0];
-		text.style.padding = '4px';
-	}
-	
-	html.childNodes[0].style.padding = '7px';
 }
 
 function enableFullscreen() {
@@ -40,13 +28,13 @@ function displayCandidateEditMenu(candidate) {
 	var nameinput = document.getElementById('candidate-name');
 	nameinput.value = candidate;
 	var solidinput = document.getElementById('candidate-solid');
-	solidinput.value = candidates[candidate].colors[0];
+	solidinput.value = CandidateManager.candidates[candidate].colors[0];
 	var likelyinput = document.getElementById('candidate-likely');
-	likelyinput.value = candidates[candidate].colors[1];
+	likelyinput.value = CandidateManager.candidates[candidate].colors[1];
 	var leaninput = document.getElementById('candidate-lean');
-	leaninput.value = candidates[candidate].colors[2];
+	leaninput.value = CandidateManager.candidates[candidate].colors[2];
 	var tiltinput = document.getElementById('candidate-tilt');
-	tiltinput.value = candidates[candidate].colors[3];
+	tiltinput.value = CandidateManager.candidates[candidate].colors[3];
 	var hiddeninput = document.getElementById('candidate-originalName');
 	var message = document.getElementById('candidateedit-message');
 	message.innerHTML = 'Edit ' + candidate;
@@ -78,7 +66,9 @@ function closeAllPopups() {
 	var popups = document.getElementsByClassName('popup');
 	for(var index = 0; index < popups.length; ++index) {
 		var popup = popups[index];
-		popup.style.display = 'none';
+		if(popup.style) {
+			popup.style.display = 'none';
+		}
 	}
 }
 
@@ -150,7 +140,7 @@ function darkPalette() {
 	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
 	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
 	countVotes();
-	verifyMap();
+	MapManager.verifyMap();
 	previousPalette = darkPalette;
 }
 
@@ -180,7 +170,7 @@ function greyscalePalette() {
 	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
 	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
 	countVotes();
-	verifyMap();
+	MapManager.verifyMap();
 	previousPalette = darkPalette;
 }
 
@@ -210,7 +200,7 @@ function terminalPalette() {
 	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
 	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
 	countVotes();
-	verifyMap();
+	MapManager.verifyMap();
 	previousPalette = terminalPalette;
 }
 
@@ -242,7 +232,7 @@ function lightPalette() {
 	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
 	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
 	countVotes();
-	verifyMap();
+	MapManager.verifyMap();
 	previousPalette = lightPalette;
 }
 
@@ -272,7 +262,7 @@ function contrastPalette() {
 	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#000000';
 	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
 	countVotes();
-	verifyMap();
+	MapManager.verifyMap();
 	previousPalette = contrastPalette;
 }
 
@@ -302,7 +292,7 @@ function metallicPalette() {
 	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
 	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
 	countVotes();
-	verifyMap();
+	MapManager.verifyMap();
 	previousPalette = metallicPalette;
 }
 
@@ -332,7 +322,7 @@ function toWinPalette() {
 	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#000000';
 	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
 	countVotes();
-	verifyMap();
+	MapManager.verifyMap();
 	previousPalette = toWinPalette;
 }
 
@@ -394,11 +384,11 @@ function setClickButtonColor(color) {
 }
 
 function setDisableColor(color) {
-	TOSSUP.colors[1] = color;
+	CandidateManager.TOSSUP.colors[1] = color;
 }
 
 function setTossupColor(color) {
-	TOSSUP.colors[2] = color;
+	CandidateManager.TOSSUP.colors[2] = color;
 	var tossupText = document.getElementById('Tossup-text');
 	tossupText.style.backgroundColor = color;
 	var addCandidateButton = document.getElementById('addcandidate-button-text');
@@ -574,6 +564,6 @@ function toggleYAPNews() {
 		} else {
 			yapnews.style.display = "none";
 		}
-		centerMap();
+		MapManager.centerMap();
 	}
 }

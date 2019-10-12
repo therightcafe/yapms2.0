@@ -15,7 +15,7 @@
 	<i class="fas fa-expand-arrows-alt"></i>
 	<div class="selectmenu-button-text">Fullscreen</div>
 </a>
-<a class="selectmenu-button" onclick="centerMap()">
+<a class="selectmenu-button" onclick="MapManager.centerMap()">
 	<i class="fas fa-compress-arrows-alt"></i>
 	<div class="selectmenu-button-text">Center Map</div>
 </a>

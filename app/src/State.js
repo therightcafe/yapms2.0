@@ -120,23 +120,19 @@ class State {
 
 	verifyTossupColor() {
 		if(this.candidate === 'Tossup') {
-			this.setDisplayColor(TOSSUP.colors[2]);
-			//this.setColor('Tossup', 2);
+			this.setDisplayColor(CandidateManager.TOSSUP.colors[2]);
 		}
 	}
 
 	toggleLock() {
 		if(this.locked == false) {
 			this.disabled = true;
-			//this.setColor('Tossup', 2);
 
-			//this.setDisplayColor(candidates['Tossup'].colors[1]);
 			this.locked = !this.locked;
-			//this.disabled = !this.disabled;
 			if(this.name.includes('-S')) {
 				this.htmlElement.style.visibility = 'hidden';
 			}
-			this.setDisplayColor(TOSSUP.colors[2]);
+			this.setDisplayColor(CandidateManager.TOSSUP.colors[2]);
 			this.htmlElement.setAttribute('fill-opacity', '0.2');
 			this.htmlElement.setAttribute('stroke-opacity', '0.2');
 			var stateText = document.getElementById(this.name + '-text');
@@ -300,7 +296,7 @@ class State {
 				this.colorValue = 0;
 			}
 
-			if(candidates[candidate].singleColor) {
+			if(CandidateManager.candidates[candidate].singleColor) {
 				this.colorValue = 0;
 			}
 		}
@@ -310,16 +306,16 @@ class State {
 
 		// skip black color for tossup candidate
 		if(this.candidate === 'Tossup') {
-			this.colorValue = tossupColor;
+			this.colorValue = CandidateManager.tossupColor;
 		}
 
-		var color = TOSSUP.colors[tossupColor];
+		var color = CandidateManager.TOSSUP.colors[CandidateManager.tossupColor];
 		
-		if(this.candidate in candidates &&
-			candidates[this.candidate].colors !== undefined && 
-			candidates[this.candidate].colors !== null) {
+		if(this.candidate in CandidateManager.candidates &&
+			CandidateManager.candidates[this.candidate].colors !== undefined && 
+			CandidateManager.candidates[this.candidate].colors !== null) {
 			// get color
-			color = candidates[this.candidate].colors[this.colorValue];
+			color = CandidateManager.candidates[this.candidate].colors[this.colorValue];
 			// set color
 			this.htmlElement.style.fill = color;
 		}
@@ -335,7 +331,7 @@ class State {
 		}
 
 		if(setPopularVote) {
-			for(var key in candidates) {
+			for(var key in CandidateManager.candidates) {
 				if(key === candidate) {
 					this.popularVote[key] = this.voters * (this.turnout / 100.0);
 				} else {
@@ -364,8 +360,7 @@ class State {
 
 		this.colorValue = colorValue;
 		
-		var color = candidates[candidate]
-			.colors[colorValue];
+		var color = CandidateManager.candidates[candidate].colors[colorValue];
 
 		this.htmlElement.style.fill = color;
 
@@ -380,7 +375,7 @@ class State {
 		}
 
 		if(setPopularVote) {
-			for(var key in candidates) {
+			for(var key in CandidateManager.candidates) {
 				if(key === candidate) {
 					this.popularVote[key] = this.voters * (this.turnout / 100.0);
 				} else {
@@ -416,8 +411,8 @@ class State {
 
 		// recount the votes
 		countVotes();
-		updateChart();
-		updateLegend();
-		verifyMap();
+		ChartManager.updateChart();
+		LegendManager.updateLegend();
+		MapManager.verifyMap();
 	}
 };

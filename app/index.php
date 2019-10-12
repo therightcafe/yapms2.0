@@ -142,7 +142,7 @@
 
 <?php
 	if($mobile === false) {
-	echo '<div id="lockbutton" class="click-button lock-button" onclick="toggleLockMap()">
+	echo '<div id="lockbutton" class="click-button lock-button" onclick="MapManager.toggleLockMap()">
 		<i class="fas fa-lock"></i>
 		<div class="tooltip-menu">
 			Lock Map
@@ -385,10 +385,10 @@ if($mobile) {
 	<div class="selectmenu-section">Likely <input id="candidate-likely" type="color"></div>
 	<div class="selectmenu-section">Lean <input id="candidate-lean" type="color"></div>
 	<div class="selectmenu-section">Tilt <input id="candidate-tilt" type="color"></div>
-	<div class="selectmenu-button" onclick="setCandidate()">
+	<div class="selectmenu-button" onclick="CandidateManager.setCandidate()">
 		<div class="selectmenu-button-text">Apply</div>
 	</div>
-	<div class="selectmenu-button" onclick='deleteCandidate()'>
+	<div class="selectmenu-button" onclick='CandidateManager.deleteCandidate()'>
 		<div class="selectmenu-button-text">Delete</div>
 	</div>
 	</div>
@@ -409,7 +409,7 @@ if($mobile) {
 	<div class="selectmenu-section">Likely <input id="likelycustom" type="color"></div>
 	<div class="selectmenu-section">Leaning <input id="leaningcustom" type="color"></div>
 	<div class="selectmenu-section">Tilting <input id="tiltingcustom" type="color"></div>
-	<div class="selectmenu-section" onclick="saveCustomColors(); displayAddCandidateMenu()">Set</div>
+	<div class="selectmenu-section" onclick="CandidateManager.saveCustomColors(); displayAddCandidateMenu()">Set</div>
 	</div>
 </div>
 
@@ -424,41 +424,41 @@ if($mobile) {
 	</div>
 	<div class="selectmenu-content">
 	<div class="selectmenu-section">Name<input id="name" type="text"></div>
-	<a class="selectmenu-button selectmenu-red" onclick='setColors("red")'>
+	<a class="selectmenu-button selectmenu-red" onclick='CandidateManager.setColors("red")'>
 		<div class="selectmenu-button-text">Red Colors</div>
 	</a>
-	<a class="selectmenu-button selectmenu-blue" onclick='setColors("blue")'>
+	<a class="selectmenu-button selectmenu-blue" onclick='CandidateManager.setColors("blue")'>
 		<div class="selectmenu-button-text">Blue Colors</div>
 	</a>
-	<a class="selectmenu-button selectmenu-green" onclick='setColors("green")'>
+	<a class="selectmenu-button selectmenu-green" onclick='CandidateManager.setColors("green")'>
 		<div class="selectmenu-button-text">Green Colors</div>
 	</a>
-	<a class="selectmenu-button selectmenu-yellow" onclick='setColors("yellow")'>
+	<a class="selectmenu-button selectmenu-yellow" onclick='CandidateManager.setColors("yellow")'>
 		<div class="selectmenu-button-text">Yellow Colors</div>
 	</a>
 	<div class="selectmenu-button-double">
-		<a id="custom1button" class="selectmenu-button-left selectmenu-button selectmenu-button-bold" onclick='setColors("custom1")'>
+		<a id="custom1button" class="selectmenu-button-left selectmenu-button selectmenu-button-bold" onclick='CandidateManager.setColors("custom1")'>
 			<div class="selectmenu-button-text">Custom 1</div>
 		</a>	
 		<a class="selectmenu-button-right selectmenu-button fas fa-cog"
 			onclick='displayCustomColorMenu("custom1")'></a>
 	</div>
 	<div class="selectmenu-button-double">
-		<a id="custom2button" class="selectmenu-button-left selectmenu-button selectmenu-button-bold" onclick='setColors("custom2")'>
+		<a id="custom2button" class="selectmenu-button-left selectmenu-button selectmenu-button-bold" onclick='CandidateManager.setColors("custom2")'>
 			<div class="selectmenu-button-text">Custom 2</div>
 		</a>	
 		<a class="selectmenu-button-right selectmenu-button fas fa-cog"
 			onclick='displayCustomColorMenu("custom2")'></a>
 	</div>
 	<div class="selectmenu-button-double">
-		<a id="custom3button" class="selectmenu-button-left selectmenu-button selectmenu-button-bold" onclick='setColors("custom3")'>
+		<a id="custom3button" class="selectmenu-button-left selectmenu-button selectmenu-button-bold" onclick='CandidateManager.setColors("custom3")'>
 			<div class="selectmenu-button-text">Custom 3</div>
 		</a>	
 		<a class="selectmenu-button-right selectmenu-button fas fa-cog"
 			onclick='displayCustomColorMenu("custom3")'></a>
 	</div>
 	<div class="selectmenu-button-double">
-		<a id="custom4button" class="selectmenu-button-left selectmenu-button selectmenu-button-bold" onclick='setColors("custom4")'>
+		<a id="custom4button" class="selectmenu-button-left selectmenu-button selectmenu-button-bold" onclick='CandidateManager.setColors("custom4")'>
 			<div class="selectmenu-button-text">Custom 4</div>
 		</a>	
 		<a class="selectmenu-button-right selectmenu-button fas fa-cog"
@@ -468,7 +468,7 @@ if($mobile) {
 	<div class="selectmenu-section">Likely <input id="likely" type="color"></div>
 	<div class="selectmenu-section">Leaning <input id="leaning" type="color"></div>
 	<div class="selectmenu-section">Tilt <input id="tilting" type="color"></div>
-	<div class="selectmenu-button" onclick="addCandidate(); closeAllPopups();">
+	<div class="selectmenu-button" onclick="CandidateManager.addCandidate(); closeAllPopups();">
 		<div class="selectmenu-button-text">Add</div>
 	</div>
 	</div>
@@ -575,8 +575,10 @@ if($mobile) {
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
 <script src="./src/html2canvas.min.js"></script>
+<script src="./src/MapManager.js?v=1"></script>
 <script src="./src/Candidate.js?v=1"></script>
-<script src="./src/KeyboardManager.js?v=1"></script>
+<script src="./src/KeyboardManager.js"></script>
+<script src="./src/LegendManager.js"></script>
 <script src="./src/LogoManager.js?v=1"></script>
 <script src="./src/CookieManager.js?v=1"></script>
 <script src="./src/InputManager.js?v=1"></script>
@@ -592,7 +594,7 @@ if($mobile) {
 <script src="./src/popularvote.js?v=1"></script>
 <script src="./src/congress.js?v=1"></script>
 <script src="./src/menuControl.js?v=1"></script>
-<script src="./src/main.js?v=1"></script>
+<script src="./src/main.js"></script>
 <?php 
 if($mobile === true) {
 	echo '<script src="./src/mobile.js"></script>';

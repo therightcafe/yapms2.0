@@ -15,7 +15,7 @@ class PresetLoader {
 			return;
 		}
 	
-		initCandidates();
+		CandidateManager.initCandidates();
 
 		switch(value) {
 			case 'classic':
@@ -71,12 +71,12 @@ class PresetLoader {
 				break;
 		}
 		
-		verifyMap();
+		MapManager.verifyMap();
 		verifyPaintIndex();
 		countVotes();
 		ChartManager.updateChart();
 		ChartManager.chart.generateLegend();
-		updateLegend();
+		LegendManager.updateLegend();
 	}
 
 	// republicans vs democrats
@@ -86,8 +86,8 @@ class PresetLoader {
 		var democrat = new Candidate('Democrat',
 			['#1C408C', '#577CCC', '#8AAFFF', '#949BB3']);
 
-		candidates['Republican'] = republican;
-		candidates['Democrat'] = democrat;
+		CandidateManager.candidates['Republican'] = republican;
+		CandidateManager.candidates['Democrat'] = democrat;
 	}
 
 	static loadPresetRepublicanPrimary() {
@@ -100,10 +100,10 @@ class PresetLoader {
 		var sanford = new Candidate('Sanford',
 			['#1c8c28','#1c8c28','#1c8c28','#1c8c28']);
 		
-		candidates['Trump'] = trump;
-		candidates['Weld'] = weld;
-		candidates['Walsh'] = walsh;
-		candidates['Sanford'] = sanford;
+		CandidateManager.candidates['Trump'] = trump;
+		CandidateManager.candidates['Weld'] = weld;
+		CandidateManager.candidates['Walsh'] = walsh;
+		CandidateManager.candidates['Sanford'] = sanford;
 	}
 
 	static loadPresetDemocraticPrimary() {
@@ -124,14 +124,14 @@ class PresetLoader {
 		var yang = new Candidate('Yang',
 			['#3da882','#3da882','#3da882','#3da882']);
 		
-		candidates['Biden'] = biden;
-		candidates['Harris'] = harris;
-		candidates['Sanders'] = sanders;
-		candidates['Warren'] = warren;
-		candidates['Buttigieg'] = buttigieg;
-		candidates['O\'Rourke'] = orourke;
-		candidates['Booker'] = booker;
-		candidates['Yang'] = yang;
+		CandidateManager.candidates['Biden'] = biden;
+		CandidateManager.candidates['Harris'] = harris;
+		CandidateManager.candidates['Sanders'] = sanders;
+		CandidateManager.candidates['Warren'] = warren;
+		CandidateManager.candidates['Buttigieg'] = buttigieg;
+		CandidateManager.candidates['O\'Rourke'] = orourke;
+		CandidateManager.candidates['Booker'] = booker;
+		CandidateManager.candidates['Yang'] = yang;
 	}
 
 	// French parties
@@ -149,13 +149,13 @@ class PresetLoader {
 		var ps = new Candidate('PS',
 			['#FF8080', '#FF8080', '#FF8080', '#FF8080']);
 
-		candidates['LREM'] = lrem;
-		candidates['RN'] = rn;
-		candidates['EÉLV'] = eelv;
-		candidates['LR'] = lr;
-		candidates['LFI'] = lfi;
-		candidates['PS'] = ps;
-		toggleLegendLeans()
+		CandidateManager.candidates['LREM'] = lrem;
+		CandidateManager.candidates['RN'] = rn;
+		CandidateManager.candidates['EÉLV'] = eelv;
+		CandidateManager.candidates['LR'] = lr;
+		CandidateManager.candidates['LFI'] = lfi;
+		CandidateManager.candidates['PS'] = ps;
+		LegendManager.toggleLegendLeans()
 	}
 
 	// German parties
@@ -173,13 +173,13 @@ class PresetLoader {
 		var dl = new Candidate('LINKE',
 			['#BE3075', '#BE3075', '#BE3075', '#BE3075']);
 
-		candidates['CDU/CSU'] = union;
-		candidates['SPD'] = spd;
-		candidates['GRÜNE'] = grn;
-		candidates['AfD'] = afd;
-		candidates['FDP'] = fdp;
-		candidates['LINKE'] = dl;
-		toggleLegendLeans()
+		CandidateManager.candidates['CDU/CSU'] = union;
+		CandidateManager.candidates['SPD'] = spd;
+		CandidateManager.candidates['GRÜNE'] = grn;
+		CandidateManager.candidates['AfD'] = afd;
+		CandidateManager.candidates['FDP'] = fdp;
+		CandidateManager.candidates['LINKE'] = dl;
+		LegendManager.toggleLegendLeans()
 	}
 
 	// Italian parties
@@ -197,13 +197,13 @@ class PresetLoader {
 		var eu = new Candidate('+Eu',
 			['#FFD700', '#FFD700', '#FFD700', '#FFD700']);
 
-		candidates['Lega'] = lega;
-		candidates['PD'] = pd;
-		candidates['M5S'] = mcs;
-		candidates['FI'] = fi;
-		candidates['FdI'] = fdi;
-		candidates['+EU'] = eu;
-		toggleLegendLeans()
+		CandidateManager.candidates['Lega'] = lega;
+		CandidateManager.candidates['PD'] = pd;
+		CandidateManager.candidates['M5S'] = mcs;
+		CandidateManager.candidates['FI'] = fi;
+		CandidateManager.candidates['FdI'] = fdi;
+		CandidateManager.candidates['+EU'] = eu;
+		LegendManager.toggleLegendLeans()
 	}
 
 	// British parties
@@ -235,19 +235,19 @@ class PresetLoader {
 		var apni = new Candidate('APNI',
 			['#F6CB2F', '#F6CB2F', '#F6CB2F', '#F6CB2F']);
 
-		candidates['BXP'] = bxp;
-		candidates['LDM'] = ldm;
-		candidates['LAB'] = lab;
-		candidates['GRN'] = grn
-		candidates['CON'] = con;
-		candidates['SNP'] = snp;
-		candidates['TIG'] = tig;
-		candidates['PC'] = pc;
-		candidates['SF'] = sf;
-		candidates['DUP'] = dup;
-		candidates['UUP'] = uup;
-		candidates['APNI'] = apni;
-		toggleLegendLeans()
+		CandidateManager.candidates['BXP'] = bxp;
+		CandidateManager.candidates['LDM'] = ldm;
+		CandidateManager.candidates['LAB'] = lab;
+		CandidateManager.candidates['GRN'] = grn
+		CandidateManager.candidates['CON'] = con;
+		CandidateManager.candidates['SNP'] = snp;
+		CandidateManager.candidates['TIG'] = tig;
+		CandidateManager.candidates['PC'] = pc;
+		CandidateManager.candidates['SF'] = sf;
+		CandidateManager.candidates['DUP'] = dup;
+		CandidateManager.candidates['UUP'] = uup;
+		CandidateManager.candidates['APNI'] = apni;
+		LegendManager.toggleLegendLeans()
 	}
 
 	// Canadian parties
@@ -265,13 +265,13 @@ class PresetLoader {
 		var ppc = new Candidate('PPC',
 			['#83789E', '#83789E', '#83789E', '#83789E']);
 
-		candidates['CON'] = con;
-		candidates['LIB'] = lib;
-		candidates['NDP'] = ndp;
-		candidates['GRN'] = grn;
-		candidates['BQC'] = bqc;
-		candidates['PPC'] = ppc;
-		toggleLegendLeans()
+		CandidateManager.candidates['CON'] = con;
+		CandidateManager.candidates['LIB'] = lib;
+		CandidateManager.candidates['NDP'] = ndp;
+		CandidateManager.candidates['GRN'] = grn;
+		CandidateManager.candidates['BQC'] = bqc;
+		CandidateManager.candidates['PPC'] = ppc;
+		LegendManager.toggleLegendLeans()
 	}
 
 	// Australian parties
@@ -293,15 +293,15 @@ class PresetLoader {
 		var lab = new Candidate('LAB',
 			['#DE3533', '#DE3533', '#DE3533', '#DE3533']);
 
-		candidates['LIB'] = lib;
-		candidates['LNP'] = lnp;
-		candidates['NAT'] = nat;
-		candidates['CLP'] = clp;
-		candidates['IND'] = ind;
-		candidates['CEN'] = cen;
-		candidates['GRN'] = grn;
-		candidates['LAB'] = lab;
-		toggleLegendLeans()
+		CandidateManager.candidates['LIB'] = lib;
+		CandidateManager.candidates['LNP'] = lnp;
+		CandidateManager.candidates['NAT'] = nat;
+		CandidateManager.candidates['CLP'] = clp;
+		CandidateManager.candidates['IND'] = ind;
+		CandidateManager.candidates['CEN'] = cen;
+		CandidateManager.candidates['GRN'] = grn;
+		CandidateManager.candidates['LAB'] = lab;
+		LegendManager.toggleLegendLeans()
 	}
 
 	// Spanish Parties
@@ -331,19 +331,19 @@ class PresetLoader {
 		var prc = new Candidate('PRC',
 			['#C2CE0C', '#C2CE0C', '#C2CE0C', '#C2CE0C']);
 
-		candidates['PSOE'] = psoe;
-		candidates['PP'] = pp;
-		candidates['CS'] = cs;
-		candidates['Unidas Podemos'] = unidas;
-		candidates['Vox'] = vox;
-		candidates['ERC-Sobiranistes'] = erc;
-		candidates['JxCat-Junts'] = jxcat;
-		candidates['EAJ/PNV'] = eajpnv;
-		candidates['EH Bildu'] = eh;
-		candidates['Compromís 2019'] = compromis;
-		candidates['CCa-PNC'] = cca;
-		candidates['PRC'] = prc;
-		toggleLegendLeans();
+		CandidateManager.candidates['PSOE'] = psoe;
+		CandidateManager.candidates['PP'] = pp;
+		CandidateManager.candidates['CS'] = cs;
+		CandidateManager.candidates['Unidas Podemos'] = unidas;
+		CandidateManager.candidates['Vox'] = vox;
+		CandidateManager.candidates['ERC-Sobiranistes'] = erc;
+		CandidateManager.candidates['JxCat-Junts'] = jxcat;
+		CandidateManager.candidates['EAJ/PNV'] = eajpnv;
+		CandidateManager.candidates['EH Bildu'] = eh;
+		CandidateManager.candidates['Compromís 2019'] = compromis;
+		CandidateManager.candidates['CCa-PNC'] = cca;
+		CandidateManager.candidates['PRC'] = prc;
+		LegendManager.toggleLegendLeans();
 	}
 
 	// Turkish Parties
@@ -369,16 +369,16 @@ class PresetLoader {
 		var ind = new Candidate('Ind',
 			['#b0b0b0','#b0b0b0','#b0b0b0','#b0b0b0']);
 
-		candidates['AKP'] = akp;
-		candidates['MHP'] = mhp;
-		candidates['BBP'] = bbp;
-		candidates['CHP'] = chp;
-		candidates['HDP'] = hdp;
-		candidates['IYI'] = iyi;
-		candidates['SP'] = sp;
-		candidates['TIP'] = tip;
-		candidates['DP'] = dp;
-		candidates['Ind'] = ind;
+		CandidateManager.candidates['AKP'] = akp;
+		CandidateManager.candidates['MHP'] = mhp;
+		CandidateManager.candidates['BBP'] = bbp;
+		CandidateManager.candidates['CHP'] = chp;
+		CandidateManager.candidates['HDP'] = hdp;
+		CandidateManager.candidates['IYI'] = iyi;
+		CandidateManager.candidates['SP'] = sp;
+		CandidateManager.candidates['TIP'] = tip;
+		CandidateManager.candidates['DP'] = dp;
+		CandidateManager.candidates['Ind'] = ind;
 	}
 
 	// Dutch Parties
@@ -410,19 +410,19 @@ class PresetLoader {
 		var denk = new Candidate('DENK',
 			['#00A7EB','#00A7EB','#00A7EB','#00A7EB']);
 
-		candidates['FvD'] = fvd;
-		candidates['VVD'] = vvd;
-		candidates['CDA'] = cda;
-		candidates['GL'] = gl;
-		candidates['PvdA'] = pvda;
-		candidates['D66'] = d66;
-		candidates['PVV'] = pvv;
-		candidates['SP'] = sp;
-		candidates['CU'] = cu;
-		candidates['PvdD'] = pvdd;
-		candidates['50+'] = a50;
-		candidates['DENK'] = denk;
-		toggleLegendLeans();
+		CandidateManager.candidates['FvD'] = fvd;
+		CandidateManager.candidates['VVD'] = vvd;
+		CandidateManager.candidates['CDA'] = cda;
+		CandidateManager.candidates['GL'] = gl;
+		CandidateManager.candidates['PvdA'] = pvda;
+		CandidateManager.candidates['D66'] = d66;
+		CandidateManager.candidates['PVV'] = pvv;
+		CandidateManager.candidates['SP'] = sp;
+		CandidateManager.candidates['CU'] = cu;
+		CandidateManager.candidates['PvdD'] = pvdd;
+		CandidateManager.candidates['50+'] = a50;
+		CandidateManager.candidates['DENK'] = denk;
+		LegendManager.toggleLegendLeans();
 	}
 
 	// Brazilian Parties
@@ -456,13 +456,13 @@ class PresetLoader {
 		var patri = new Candidate('PATRI',
 			['#CCAA00','#CCAA00','#CCAA00','#CCAA00']);
 		
-		candidates['PSL'] = psl;
-		candidates['PP'] = pp;
-		candidates['PL'] = pl;
-		candidates['PSD'] = psd;
-		candidates['MDB'] = mdb;
-		candidates['PRB'] = prb;
-		candidates['PSDB'] = psdb;
+		CandidateManager.candidates['PSL'] = psl;
+		CandidateManager.candidates['PP'] = pp;
+		CandidateManager.candidates['PL'] = pl;
+		CandidateManager.candidates['PSD'] = psd;
+		CandidateManager.candidates['MDB'] = mdb;
+		CandidateManager.candidates['PRB'] = prb;
+		CandidateManager.candidates['PSDB'] = psdb;
 
 		var pt = new Candidate('PT',
 			['#CC0000','#CC0000','#CC0000','#CC0000']);
@@ -481,18 +481,18 @@ class PresetLoader {
 		var rede = new Candidate('REDE',
 			['#00C2BB','#00C2BB','#00C2BB','#00C2BB']);
 
-		candidates['PT'] = pt;
-		candidates['PSB'] = psb;
-		candidates['PDT'] = pdt;
-		candidates['PSOL'] = psol;
+		CandidateManager.candidates['PT'] = pt;
+		CandidateManager.candidates['PSB'] = psb;
+		CandidateManager.candidates['PDT'] = pdt;
+		CandidateManager.candidates['PSOL'] = psol;
 
 		var pros = new Candidate('PROS',
 			['#FF5460','#FF5460','#FF5460','#FF5460']);
 		var avante = new Candidate('AVANTE',
 			['#ED5F36','#ED5F36','#ED5F36','#ED5F36']);
 
-		candidates['PROS'] = pros;
-		candidates['AVANTE'] = avante;
+		CandidateManager.candidates['PROS'] = pros;
+		CandidateManager.candidates['AVANTE'] = avante;
 	}
 
 	static loadPresetIreland() {
@@ -515,15 +515,15 @@ class PresetLoader {
 		var indy = new Candidate('Ind',
 			['#CCCCCC','#CCCCCC','#CCCCCC','#CCCCCC']);
 
-		candidates['FG'] = finegael;
-		candidates['FF'] = fiannafail;
-		candidates['SF'] = sinnfein;
-		candidates['Lab'] = labour;
-		candidates['AAA-PBP'] = aaapbp;
-		candidates['I4C'] = inds4change;
-		candidates['SD'] = socialdemocrats;
-		candidates['GP'] = green;
-		candidates['Ind'] = indy;
+		CandidateManager.candidates['FG'] = finegael;
+		CandidateManager.candidates['FF'] = fiannafail;
+		CandidateManager.candidates['SF'] = sinnfein;
+		CandidateManager.candidates['Lab'] = labour;
+		CandidateManager.candidates['AAA-PBP'] = aaapbp;
+		CandidateManager.candidates['I4C'] = inds4change;
+		CandidateManager.candidates['SD'] = socialdemocrats;
+		CandidateManager.candidates['GP'] = green;
+		CandidateManager.candidates['Ind'] = indy;
 	}
 
 	static loadPresetRussia() {
@@ -544,14 +544,14 @@ class PresetLoader {
 		var indy = new Candidate('Ind',
 			['#CCCCCC','#CCCCCC','#CCCCCC','#CCCCCC']);
 
-		candidates['ER'] = unitedrussia;
-		candidates['LDPR'] = libdem;
-		candidates['CPRF'] = communist;
-		candidates['Patriots'] = patriots;
-		candidates['CP'] = just;
-		candidates['Rodina'] = rodina;
-		candidates['Yabloko'] = yabloko;
-		candidates['Ind'] = indy;
+		CandidateManager.candidates['ER'] = unitedrussia;
+		CandidateManager.candidates['LDPR'] = libdem;
+		CandidateManager.candidates['CPRF'] = communist;
+		CandidateManager.candidates['Patriots'] = patriots;
+		CandidateManager.candidates['CP'] = just;
+		CandidateManager.candidates['Rodina'] = rodina;
+		CandidateManager.candidates['Yabloko'] = yabloko;
+		CandidateManager.candidates['Ind'] = indy;
 	}
 
 	static loadPresetPortugal() {
@@ -572,14 +572,14 @@ class PresetLoader {
 		var pan = new Candidate('PAN',
 			['#008080','#008080','#008080','#008080']);
 
-		candidates['PS'] = ps;
-		candidates['BE'] = be;
-		candidates['PCP'] = pcp;
-		candidates['PEV'] = pev;
-		candidates['PPD/PSD'] = ppdpsd;
-		candidates['CDS-PP'] = cdspp;
-		candidates['PAN'] = pan;
-		candidates['Ind'] = indy;
+		CandidateManager.candidates['PS'] = ps;
+		CandidateManager.candidates['BE'] = be;
+		CandidateManager.candidates['PCP'] = pcp;
+		CandidateManager.candidates['PEV'] = pev;
+		CandidateManager.candidates['PPD/PSD'] = ppdpsd;
+		CandidateManager.candidates['CDS-PP'] = cdspp;
+		CandidateManager.candidates['PAN'] = pan;
+		CandidateManager.candidates['Ind'] = indy;
 	}
 
 	static loadPresetIndia() {
@@ -612,19 +612,19 @@ class PresetLoader {
 		var sp = new Candidate('SP',
 			['#a30000','#a30000','#a30000','#a30000']);
 
-		candidates['BJP'] = bjp;
-		candidates['YSRCP'] = ysrcp;
-		candidates['SS'] = ss;
-		candidates['JD'] = jd;
-		candidates['BJD'] = bjd;
-		candidates['BSP'] = bsp;
-		candidates['TRS'] = trs;
-		candidates['LJP'] = ljp;
-		candidates['INC'] = inc;
-		candidates['DMK'] = dmk;
-		candidates['NCP'] = ncp;
-		candidates['AITC'] = aitc;
-		candidates['SP'] = sp;
+		CandidateManager.candidates['BJP'] = bjp;
+		CandidateManager.candidates['YSRCP'] = ysrcp;
+		CandidateManager.candidates['SS'] = ss;
+		CandidateManager.candidates['JD'] = jd;
+		CandidateManager.candidates['BJD'] = bjd;
+		CandidateManager.candidates['BSP'] = bsp;
+		CandidateManager.candidates['TRS'] = trs;
+		CandidateManager.candidates['LJP'] = ljp;
+		CandidateManager.candidates['INC'] = inc;
+		CandidateManager.candidates['DMK'] = dmk;
+		CandidateManager.candidates['NCP'] = ncp;
+		CandidateManager.candidates['AITC'] = aitc;
+		CandidateManager.candidates['SP'] = sp;
 	}
 }
 
