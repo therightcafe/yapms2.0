@@ -11,16 +11,13 @@
 <div class="selectmenu-section" id="shareurl"></div>
 
 <div id="sharebuttons" class="selectmenu-button-mult">
-	<a id="twitter-share" class="selectmenu-button-part selectmenu-button"
-		target="_blank">
+	<a id="twitter-share" class="selectmenu-button-part selectmenu-button">
 		<i class="fab fa-twitter"></i>
 	</a>
-	<a id="reddit-share" class="selectmenu-button-part selectmenu-button"
-		target="_blank">
+	<a id="reddit-share" class="selectmenu-button-part selectmenu-button">
 		<i class="fab fa-reddit-alien"></i>
 	</a>
-	<a id="facebook-share" class="selectmenu-button-part selectmenu-button"
-		target="_blank">
+	<a id="facebook-share" class="selectmenu-button-part selectmenu-button">
 		<i class="fab fa-facebook-f"></i>
 	</a>
 </div>

@@ -5064,16 +5064,19 @@ function saveMap_new(img, token) {
 			var facebookBtn = document.getElementById('facebook-share');
 			if(facebookBtn) {
 				facebookBtn.setAttribute('href', 'https://www.facebook.com/sharer.php?u=' + url);
+				facebookBtn.setAttribute('target', '_blank');
 			}
 
 			var twitterBtn = document.getElementById('twitter-share');
 			if(twitterBtn) {
 				twitterBtn.setAttribute('href', 'https://twitter.com/intent/tweet?text=' + url);
+				twitterBtn.setAttribute('target', '_blank');
 			}
 
 			var redditBtn = document.getElementById('reddit-share');
 			if(redditBtn) {
 				redditBtn.setAttribute('href', 'https://www.reddit.com/submit?title=My%20YAPms%20Map&url=' + url);
+				redditBtn.setAttribute('target', '_blank');
 			}
 
 			console.log('Map save NEW succeeded');
@@ -5099,7 +5102,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.71.15';
+var currentCache = 'v0.71.20';
 
 var states = [];
 var lands = [];
