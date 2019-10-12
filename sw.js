@@ -1,5 +1,5 @@
-var indexCache = 'i0.71.1';
-var staticCache = 's0.71.1';
+var indexCache = 'i0.71.2';
+var staticCache = 's0.71.2';
 
 var _indexCache = [
 	'./',
@@ -79,16 +79,19 @@ var _indexCache = [
 	'./app/?t=Turkey_national_assembly',
 	'./app/?t=UnitedKingdom_current_parliament',
 
+/*
 	'./app/style/battlechart.css',
 	'./app/style/battlechartmobile.css',
 	'./app/style/legend.css',
 	'./app/style/menu.css',
-	'./app/style/mobile.css',
 	'./app/style/popup.css',
 	'./app/style/selectmenu.css',
 	'./app/style/sidebar.css',
 	'./app/style/style.css',
 	'./app/style/yapnews.css',
+*/
+	'./app/style/YAPMS.css',
+	'./app/style/mobile.css',
 	'./style.css'
 ];
 

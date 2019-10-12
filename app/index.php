@@ -91,6 +91,7 @@
 	?>
 	</style>
 
+<!--
 	<link rel="stylesheet" type="text/css" href="./style/menu.css">
 	<link rel="stylesheet" type="text/css" href="./style/selectmenu.css">
 	<link rel="stylesheet" type="text/css" href="./style/popup.css">
@@ -99,6 +100,8 @@
 	<link rel="stylesheet" type="text/css" href="./style/battlechart.css">
 	<link rel="stylesheet" type="text/css" href="./style/yapnews.css">
 	<link rel="stylesheet" type="text/css" href="./style/sidebar.css">
+-->
+	<link rel="stylesheet" type="text/css" href="./style/YAPMS.css">
 	<?php
 	if($mobile) {
 		echo '<link rel="stylesheet" type="text/css" href="./style/mobile.css">';
