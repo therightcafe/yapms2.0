@@ -3925,6 +3925,7 @@ function setPalette(palette) {
 			break;
 		case 'halloween':
 			halloweenPalette();
+			break;
 		case 'default':
 			toWinPalette();
 			break;
@@ -5232,7 +5233,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.71.33';
+var currentCache = 'v0.71.35';
 
 var states = [];
 var lands = [];

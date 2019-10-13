@@ -106,6 +106,7 @@ function setPalette(palette) {
 			break;
 		case 'halloween':
 			halloweenPalette();
+			break;
 		case 'default':
 			toWinPalette();
 			break;
