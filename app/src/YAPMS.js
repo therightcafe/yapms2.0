@@ -5232,7 +5232,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.71.25';
+var currentCache = 'v0.71.30';
 
 var states = [];
 var lands = [];

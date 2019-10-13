@@ -1,5 +1,5 @@
-var indexCache = 'i0.71.25';
-var staticCache = 's0.71.25';
+var indexCache = 'i0.71.30';
+var staticCache = 's0.71.30';
 
 var _indexCache = [
 	'./',
@@ -129,6 +129,8 @@ var _staticCache = [
 	'./app/res/lte.jpg',
 	'./app/res/redeagletv.png',
 	'./app/res/pg.png',
+
+	'./app/res/images/halloween.jpg',
 
 	'./app/res/presets/USA_current_house',
 	'./app/res/presets/USA_2020_house_cook',
