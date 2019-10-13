@@ -330,7 +330,7 @@ function metallicPalette() {
 
 function halloweenPalette() {
 	CookieManager.appendCookie('theme', 'halloween');
-	setBackgroundImage('url("https://cdn.discordapp.com/attachments/625152240021143563/632992624365666363/seamless-pattern-for-halloween.jpg")');
+	setBackgroundImage('url("https://testing.yapms.com/app/res/images/halloween.jpg")');
 
 	setOtherText('black');
 
@@ -407,7 +407,12 @@ function setOtherText(color) {
 function setBackgroundImage(img) {
 	var body = document.getElementById('application');
 	body.style.backgroundColor = '';
-	body.style.backgroundImage  = img;
+	body.style.backgroundImage = img;
+}
+
+function setBackgroundSize(size) {
+	var body = document.getElementById('application');
+	body.style.backgroudnSize = size;
 }
 
 function setBackgroundColor(color) {
