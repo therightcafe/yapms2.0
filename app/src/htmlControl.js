@@ -342,7 +342,7 @@ function halloweenPalette() {
 	setChartBarColor('#060606');
 	setChartBarShadow('0px -5px 5px 2px #060606');
 
-	setSideBarColor('#848482');
+	setSideBarColor('#9c9b98');
 	setSideBarTextStyle('#000000');
 	setSideBarH3Border('#666666');
 	
