@@ -685,7 +685,7 @@ a {
 	min-height: 0;
 }
 .yapnews-article {
-	border-bottom: 1px solid #cccccc;
+	border-bottom: 1px solid #222222;
 	margin: 10px;
 	padding-bottom: 10px;
 }
@@ -782,7 +782,7 @@ a {
 .sidebar-box h3 {
 	margin: 5px;
 	padding: 0px;
-	border-bottom: 1px solid #222222;
+	border-bottom: 1px solid #cccccc;
 }
 
 .sidebar-hover-popup {
