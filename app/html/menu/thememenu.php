@@ -25,6 +25,9 @@
 <a class="selectmenu-button" onclick='metallicPalette()'>
 	<div class="selectmenu-button-text">Metallic</div>
 </a>
+<a class="selectmenu-button" onclick='halloweenPalette()'>
+	<div class="selectmenu-button-text">Halloween</div>
+</a>
 <a class="selectmenu-button" onclick='toWinPalette()'>
 	<div class="selectmenu-button-text">Default</div>
 </a>

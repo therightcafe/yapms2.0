@@ -35,7 +35,6 @@ class LogoManager {
 
 		var pgLogo = document.getElementById('logo-pg-div');
 		pgLogo.style.backgroundImage = 'url("https://www.yapms.com/app/res/pg.png")';
-
 	}
 
 	static loadButtons() {

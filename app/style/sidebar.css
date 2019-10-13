@@ -32,13 +32,14 @@
 }
 
 .sidebar-button {
-	border-radius: 4px;
-	border: 2px solid white;
+	border-radius: 10px;
+	border: 1px solid black;
 	font-weight: bold;
 	text-decoration: none;
 	color: white;
 	padding-top: 3px;
 	padding-bottom: 3px;
+	margin: 1px;
 }
 
 .social-link {
@@ -69,7 +70,6 @@
 	font-size: 14px;
 	border-top: 1px solid #555555;
 	margin-top: 6px;
-	background: #f8f9fa;
 }
 
 .sidebar-box h3 {

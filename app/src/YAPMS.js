@@ -1045,7 +1045,6 @@ class LogoManager {
 
 		var pgLogo = document.getElementById('logo-pg-div');
 		pgLogo.style.backgroundImage = 'url("https://www.yapms.com/app/res/pg.png")';
-
 	}
 
 	static loadButtons() {
@@ -3924,6 +3923,8 @@ function setPalette(palette) {
 		case 'metallic':
 			metallicPalette();
 			break;
+		case 'halloween':
+			halloweenPalette();
 		case 'default':
 			toWinPalette();
 			break;
@@ -3944,12 +3945,17 @@ function darkPalette() {
 	setMapStyle('#181922', 1.5);
 	setTextStyle('white', 'bold');
 	setChartBorderStyle(1, '#2b2e33');
-	setSideBarColor('#2b2e33');
+	setChartBarColor('#2b2e33');
+	setChartBarShadow('0px 0px 0px 0px #000000');
 	
 	setClickButtonColor('#2b2e33');
 	setClickButtonColor('#2B2E33');
 	setClickButtonTextColor('#FFFFFF');
 	setMenuColor('#000000');
+	
+	setSideBarColor('#808080');
+	setSideBarTextStyle('#000000');
+	setSideBarH3Border('#777777');
 
 	setBorderStyle('#000000', 7.0);
 
@@ -3975,11 +3981,16 @@ function greyscalePalette() {
 	setMapStyle('#181922', 1.5);
 	setTextStyle('white', 'bold');
 	setChartBorderStyle(1, '#1b1b1b');
-	setSideBarColor('#454545');
+	setChartBarColor('#454545');
+	setChartBarShadow('0px 0px 0px 0px #000000');
 	
 	setClickButtonColor('#454545');
 	setClickButtonTextColor('#FFFFFF');
 	setMenuColor('#101010');
+	
+	setSideBarColor('#808080');
+	setSideBarTextStyle('#000000');
+	setSideBarH3Border('#777777');
 
 	setBorderStyle('#252525', 7.0);
 
@@ -4005,11 +4016,16 @@ function terminalPalette() {
 	setChartBorderStyle(2, '#ffffff');
 	setTextStyle('white', 'bold');
 	setMapStyle('white', 1.5);
-	setSideBarColor('black');
+	setChartBarColor('black');
+	setChartBarShadow('0px 0px 0px 0px #000000');
 
 	setClickButtonColor('#000000');
 	setClickButtonTextColor('#ffffff');
 	setMenuColor('#eeeeee');
+	
+	setSideBarColor('#eeeeee');
+	setSideBarTextStyle('#000000');
+	setSideBarH3Border('#cccccc');
 	
 	setBorderStyle('#ffffff', 6.0);
 	
@@ -4034,7 +4050,8 @@ function lightPalette() {
 	setTossupColor('#696969');
 	setMapStyle('#dcdcdc', 1.5);
 
-	setSideBarColor('#3b3e43');
+	setChartBarColor('#3b3e43');
+	setChartBarShadow('0px 0px 0px 0px #000000');
 
 	setTextStyle('white', 'bold');
 	setChartBorderStyle(1, '#3b3e43');
@@ -4042,6 +4059,10 @@ function lightPalette() {
 	setClickButtonColor('#3b3e43');
 	setClickButtonTextColor('white');
 	setMenuColor('#000000');
+	
+	setSideBarColor('#dcdcdc');
+	setSideBarTextStyle('#000000');
+	setSideBarH3Border('#cccccc');
 	
 	setBorderStyle('#000000', 6.0);
 	
@@ -4067,11 +4088,16 @@ function contrastPalette() {
 	setMapStyle('#f8f9fa', 1.5);
 	setTextStyle('white', 'bold');
 	setChartBorderStyle(1, '#fafafa');
-	setSideBarColor('#fafafa');
+	setChartBarColor('#fafafa');
+	setChartBarShadow('0px 0px 0px 0px #000000');
 
 	setClickButtonColor('#fafafa');
 	setClickButtonTextColor('#000000');
 	setMenuColor('#222222');
+	
+	setSideBarColor('#f8f9fa');
+	setSideBarTextStyle('#000000');
+	setSideBarH3Border('#cccccc');
 	
 	setBorderStyle('#f8f9fa', 6.0);
 
@@ -4097,11 +4123,16 @@ function metallicPalette() {
 	setMapStyle('black', 1.5);
 	setTextStyle('white', 'bold');
 	setChartBorderStyle(1, '#33353b');
-	setSideBarColor('#33353b');
+	setChartBarColor('#33353b');
+	setChartBarShadow('0px 0px 0px 0px #000000');
 	
 	setClickButtonColor('#33353b');
 	setClickButtonTextColor('#FFFFFF');
 	setMenuColor('black');
+	
+	setSideBarColor('#848482');
+	setSideBarTextStyle('#000000');
+	setSideBarH3Border('#666666');
 	
 	setBorderStyle('#000000', 6.0);
 
@@ -4116,6 +4147,40 @@ function metallicPalette() {
 	previousPalette = metallicPalette;
 }
 
+function halloweenPalette() {
+	CookieManager.appendCookie('theme', 'halloween');
+	setBackgroundImage('url("https://cdn.discordapp.com/attachments/625152240021143563/632992624365666363/seamless-pattern-for-halloween.jpg")');
+
+	setOtherText('black');
+
+	setDisableColor('#dddddd');
+	setTossupColor('#928e85');
+	setMapStyle('#000000', 1.25);
+	setTextStyle('white', 'bold');
+	setChartBorderStyle(1, '#000000');
+	setChartBarColor('#060606');
+	setChartBarShadow('0px -5px 5px 2px #060606');
+
+	setSideBarColor('#848482');
+	setSideBarTextStyle('#000000');
+	setSideBarH3Border('#666666');
+	
+	setClickButtonColor('#060606');
+	setClickButtonTextColor('#ffffff');
+	setMenuColor('#928e85');
+	setBorderStyle('#ffffff', 6.0);
+
+	ChartManager.chartOptions.plugins.datalabels.borderWidth = 0;
+	ChartManager.chartOptions.plugins.datalabels.borderRadius = 2;
+
+	ChartManager.chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
+	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
+	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
+	countVotes();
+	MapManager.verifyMap();
+	previousPalette = halloweenPalette;
+}
+
 function toWinPalette() {
 	CookieManager.appendCookie('theme', 'default');
 	setBackgroundColor('#f8f9fa');
@@ -4127,11 +4192,16 @@ function toWinPalette() {
 	setMapStyle('#fffbf2', 1);
 	setTextStyle('white', 'bold');
 	setChartBorderStyle(1, '#fafafa');
-	setSideBarColor('#fafafa');
+	setChartBarColor('#fafafa');
+	setChartBarShadow('0px 0px 0px 0px #000000');
 	
 	setClickButtonColor('#fafafa');
 	setClickButtonTextColor('#000000');
 	setMenuColor('#000000');
+	
+	setSideBarColor('#f8f9fa');
+	setSideBarTextStyle('#000000');
+	setSideBarH3Border('#cccccc');
 
 	setBorderStyle('#f8f9fa', 6.0);
 
@@ -4185,6 +4255,12 @@ function setMenuColor(color) {
 		button = clickButtons[index];
 		button.style.borderColor = color;
 	}
+}
+
+function setMenuImage(image) {
+	var menu = document.getElementById('menu-div');
+	menu.style.backgroundImage = image;
+	menu.style.backgroundSize = 'contain';
 }
 
 function setClickButtonTextColor(color) {
@@ -4242,8 +4318,57 @@ function setBorderStyle(color, strokeWidth) {
 }
 
 function setSideBarColor(color) {
+	var sidebar = document.getElementById('sidebar');
+	if(sidebar) {
+
+	} else {
+		return;
+	}
+
+	sidebar.style.background = color;
+}
+
+function setSideBarTextStyle(color) {
+	var sidebar = document.getElementById('sidebar');
+	if(sidebar) {
+
+	} else {
+		return;
+	}
+	sidebar.style.color = color;
+}
+
+function setSideBarSocialOutline(color, width) {
+	var sidebar = document.getElementById('sidebar');
+	if(sidebar) {
+		var elements = sidebar.querySelectorAll(".sidebar-button");
+		for(var index = 0; index < elements.length; ++index) {
+			var element = elements[index];
+			element.style.borderColor = color;
+			element.style.borderWidth = width;
+		}
+	}
+}
+
+function setSideBarH3Border(color) {
+	var sidebar = document.getElementById('sidebar');
+	if(sidebar) {
+		var elements = sidebar.querySelectorAll(".sidebar-box h3");
+		for(var index = 0; index < elements.length; ++index) {
+			var h3 = elements[index];
+			h3.style.borderBottom = '1px solid ' + color;
+		}
+	}
+}
+
+function setChartBarColor(color) {
 	var sidebar = document.getElementById('chart-div');
 	sidebar.style.background = color;
+}
+
+function setChartBarShadow(shadow) {
+	var sidebar = document.getElementById('chart-div');
+	sidebar.style.boxShadow = shadow;
 }
 
 function setTextStyle(color, weight) {
@@ -5102,7 +5227,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.71.21';
+var currentCache = 'v0.71.25';
 
 var states = [];
 var lands = [];

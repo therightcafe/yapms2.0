@@ -1,5 +1,5 @@
-var indexCache = 'i0.71.21';
-var staticCache = 's0.71.21';
+var indexCache = 'i0.71.25';
+var staticCache = 's0.71.25';
 
 var _indexCache = [
 	'./',
