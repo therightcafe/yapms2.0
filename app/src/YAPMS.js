@@ -4152,7 +4152,7 @@ function halloweenPalette() {
 	CookieManager.appendCookie('theme', 'halloween');
 	setBackgroundImage('url("./res/images/halloween.jpg")');
 
-	setOtherText('black');
+	setOtherText('#ffffff');
 
 	setDisableColor('#dddddd');
 	setTossupColor('#928e85');

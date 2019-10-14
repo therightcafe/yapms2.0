@@ -18,12 +18,6 @@
 
 	<meta name="theme-color" content="#ffffff"/>
 
-<!--
-	<meta name="google-signin-scope" content="profile email">
-	<meta name="google-signin-client_id" content="406738305883-b9cbn6ge3i5a5fnn6perdbuvq1eu5go2.apps.googleusercontent.com">
-	<script src="https://apis.google.com/js/platform.js"></script>
--->
-	
 	<link rel="icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
 	<link rel="apple-touch-icon" href="./res/yapms-192.png"/>
 	<link rel="shortcut icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
@@ -97,16 +91,6 @@
 	?>
 	</style>
 
-<!--
-	<link rel="stylesheet" type="text/css" href="./style/menu.css">
-	<link rel="stylesheet" type="text/css" href="./style/selectmenu.css">
-	<link rel="stylesheet" type="text/css" href="./style/popup.css">
-	<link rel="stylesheet" type="text/css" href="./style/legend.css">
-	<link rel="stylesheet" type="text/css" href="./style/style.css">
-	<link rel="stylesheet" type="text/css" href="./style/battlechart.css">
-	<link rel="stylesheet" type="text/css" href="./style/yapnews.css">
-	<link rel="stylesheet" type="text/css" href="./style/sidebar.css">
--->
 	<link rel="stylesheet" type="text/css" href="./style/YAPMS.css">
 	<?php
 	if($mobile) {
@@ -114,8 +98,47 @@
 	}
 	?>
 
-	<!--<script src="https://kit.fontawesome.com/c623f9993e.js"></script>-->
 	<script async src="./res/fontawesome/js/all.min.js"></script>
+	
+	<script src="https://apis.google.com/js/client:platform.js?onload=initGoogle" async defer></script>
+	<script>
+	function initGoogle() {
+		gapi.load('auth2', function() {
+			auth2 = gapi.auth2.init({
+				client_id: '406738305883-b9cbn6ge3i5a5fnn6perdbuvq1eu5go2.apps.googleusercontent.com'
+			});
+		});
+	}
+
+	function signInCallback(authResult) {
+		if(authResult['code']) {
+			var customData = {
+				'code': authResult['code']	
+			}
+
+			$.ajax({
+			type: 'POST',
+			url: 'https://accounts.google.com/o/oauth2/token',
+			header: {
+				'X-Requested-With': 'XMLHttpRequest'	
+			},
+			contentType: 'application/octet-stream; charset=utf-8',
+			success: function(result) {
+				console.log(result);
+			},
+			processData: false,
+			data: customData
+			});
+		} else {
+			// No Auth Code
+		}
+	}
+
+	function loginClick() {
+		auth2.grantOfflineAccess().then(signInCallback);
+	}
+	</script>
+	
 </head>
 
 <body id="body" onresize="onResize()">
@@ -189,15 +212,16 @@ if($mobile === false) {
 	<i class="fas fa-user-secret"></i> Privacy Policy
 	</a>
 	</div>
-<!--	
-	<div class="g-signin2" onclick="onSignIn()"></div>
--->
+
+	<div class="click-button" onclick="loginClick()" style="margin-left: auto; mergin-right: 0px;">
+	<i class="fab fa-google"></i> Login
+	</div>
 
 <?php
 /* margin-left: auto; moves the button all the way to the right */
 if($mobile === false) {
 	echo '
-<div class="click-button" onclick="toggleYAPNews()" style="white-space: nowrap; margin-left: auto;">
+<div class="click-button" onclick="toggleYAPNews()" style="white-space: nowrap; margin-left: 0px;">
 <i class="fas fa-bars"></i> Sidebar
 </div>';
 }
