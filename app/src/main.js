@@ -1,4 +1,4 @@
-var currentCache = 'v0.71.50';
+var currentCache = 'v0.71.51';
 
 var states = [];
 var lands = [];
@@ -24,6 +24,10 @@ var strokeMultiplier = 1;
 var previousPalette = function() {
 	toWinPalette();	
 };
+
+function onSignIn(googleUser) {
+	var profile = googleUser.getBasicProfile();
+}
 
 function share(autoCenter) {
 	displayMenu('sharemenu');

@@ -17,6 +17,9 @@
 	<meta name="twitter:description" content="Interactive Political Maps">
 
 	<meta name="theme-color" content="#ffffff"/>
+
+	<meta name="google-signin-scope" content="profile email">
+	<meta name="google-signin-client_id" content="406738305883-b9cbn6ge3i5a5fnn6perdbuvq1eu5go2.apps.googleusercontent.com">
 	
 	<link rel="icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
 	<link rel="apple-touch-icon" href="./res/yapms-192.png"/>
@@ -183,6 +186,8 @@ if($mobile === false) {
 	<i class="fas fa-user-secret"></i> Privacy Policy
 	</a>
 	</div>
+	
+	<div class="g-signin2" onclick="onSignIn()"></div>
 
 <?php
 /* margin-left: auto; moves the button all the way to the right */
@@ -633,6 +638,12 @@ if('serviceWorker' in navigator) {
 } else {
 	console.log('No service worker detected');
 }
+</script>
+<script src="https://apis.google.com/js/platform.js"></script>
+<script>
+	gapi.load('auth2', function() {
+		gapi.auth2.init();
+	});
 </script>
 </body>
 </html>
