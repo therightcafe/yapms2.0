@@ -4151,7 +4151,7 @@ function metallicPalette() {
 function halloweenPalette() {
 	CookieManager.appendCookie('theme', 'halloween');
 	//setBackgroundImage('url("https://testing.yapms.com/app/res/images/halloween.jpg")');
-	setBackgroundImage('../res/images/halloween.jpg');
+	setBackgroundImage('url("./res/images/halloween.jpg")');
 
 	setOtherText('black');
 
@@ -4227,8 +4227,9 @@ function setOtherText(color) {
 
 function setBackgroundImage(img) {
 	var body = document.getElementById('application');
-	body.style.backgroundColor = '';
-	body.style.backgroundImage = img;
+	//body.style.backgroundColor = '';
+	body.style.background = img;
+	console.log("set background image: " + img);
 }
 
 function setBackgroundSize(size) {
@@ -4238,8 +4239,8 @@ function setBackgroundSize(size) {
 
 function setBackgroundColor(color) {
 	var body = document.getElementById('application');
-	body.style.backgroundColor = color;
-	body.style.backgroundImage  = '';
+	body.style.background = color;
+	//body.style.background = '';
 }
 
 function setChartBorderStyle(width, color) {
@@ -5234,7 +5235,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.71.42';
+var currentCache = 'v0.71.43';
 
 var states = [];
 var lands = [];
