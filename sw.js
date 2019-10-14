@@ -1,5 +1,5 @@
-var indexCache = 'i0.71.52';
-var staticCache = 's0.71.52';
+var indexCache = 'i0.72.0';
+var staticCache = 's0.72.0';
 
 var _indexCache = [
 	'./',
@@ -14,29 +14,6 @@ var _indexCache = [
 	'./app/html/backbutton.svg',
 	'./app/html/loading.svg',
 
-/*
-	'./app/src/main.js',
-	'./app/src/mobile.js',
-	'./app/src/PresetLoader.js',
-	'./app/src/MapLoader.js',
-	'./app/src/LogoManager.js',
-	'./app/src/CookieManager.js',
-	'./app/src/ChartManager.js',
-	'./app/src/InputManager.js',
-	'./app/src/savemap.js',
-	'./app/src/htmlControl.js',
-	'./app/src/html2canvas.min.js',
-	'./app/src/data.js',
-	'./app/src/click.js',
-	'./app/src/battlechart.js',
-	'./app/src/State.js',
-	'./app/src/Candidate.js',
-	'./app/src/yapnews.js',
-	'./app/src/popularvote.js',
-	'./app/src/congress.js',
-	'./app/src/keyboard.js',
-	'./app/src/menuControl.js',
-*/
 	'./app/src/YAPMS.js',
 
 	'./app/?t=USA_current_house',
@@ -80,17 +57,6 @@ var _indexCache = [
 	'./app/?t=Turkey_national_assembly',
 	'./app/?t=UnitedKingdom_current_parliament',
 
-/*
-	'./app/style/battlechart.css',
-	'./app/style/battlechartmobile.css',
-	'./app/style/legend.css',
-	'./app/style/menu.css',
-	'./app/style/popup.css',
-	'./app/style/selectmenu.css',
-	'./app/style/sidebar.css',
-	'./app/style/style.css',
-	'./app/style/yapnews.css',
-*/
 	'./app/style/YAPMS.css',
 	'./app/style/mobile.css',
 	'./style.css'

@@ -4150,7 +4150,6 @@ function metallicPalette() {
 
 function halloweenPalette() {
 	CookieManager.appendCookie('theme', 'halloween');
-	//setBackgroundImage('url("https://testing.yapms.com/app/res/images/halloween.jpg")');
 	setBackgroundImage('url("./res/images/halloween.jpg")');
 
 	setOtherText('black');
@@ -5232,7 +5231,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.71.52';
+var currentCache = 'v0.72.0';
 
 var states = [];
 var lands = [];
@@ -5258,10 +5257,6 @@ var strokeMultiplier = 1;
 var previousPalette = function() {
 	toWinPalette();	
 };
-
-function onSignIn(googleUser) {
-	var profile = googleUser.getBasicProfile();
-}
 
 function share(autoCenter) {
 	displayMenu('sharemenu');

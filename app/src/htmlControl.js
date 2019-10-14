@@ -331,7 +331,6 @@ function metallicPalette() {
 
 function halloweenPalette() {
 	CookieManager.appendCookie('theme', 'halloween');
-	//setBackgroundImage('url("https://testing.yapms.com/app/res/images/halloween.jpg")');
 	setBackgroundImage('url("./res/images/halloween.jpg")');
 
 	setOtherText('black');
