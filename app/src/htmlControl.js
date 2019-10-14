@@ -408,9 +408,7 @@ function setOtherText(color) {
 
 function setBackgroundImage(img) {
 	var body = document.getElementById('application');
-	//body.style.backgroundColor = '';
 	body.style.background = img;
-	console.log("set background image: " + img);
 }
 
 function setBackgroundSize(size) {
@@ -421,7 +419,6 @@ function setBackgroundSize(size) {
 function setBackgroundColor(color) {
 	var body = document.getElementById('application');
 	body.style.background = color;
-	//body.style.background = '';
 }
 
 function setChartBorderStyle(width, color) {
