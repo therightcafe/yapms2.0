@@ -4150,7 +4150,8 @@ function metallicPalette() {
 
 function halloweenPalette() {
 	CookieManager.appendCookie('theme', 'halloween');
-	setBackgroundImage('url("https://testing.yapms.com/app/res/images/halloween.jpg")');
+	//setBackgroundImage('url("https://testing.yapms.com/app/res/images/halloween.jpg")');
+	setBackgroundImage('../res/images/halloween.jpg');
 
 	setOtherText('black');
 
@@ -5233,7 +5234,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.71.40';
+var currentCache = 'v0.71.42';
 
 var states = [];
 var lands = [];
