@@ -183,7 +183,6 @@ if($mobile === false) {
 			client_id: '406738305883-b9cbn6ge3i5a5fnn6perdbuvq1eu5go2.apps.googleusercontent.com',
 			cookiepolicy: 'single_host_origin'
 		});
-		attachSignin(document.getElementById('customBtn'));
 		auth2.attachClickHandler(document.getElementById('google-login'),
 		{},
 		function(googleUser) {
