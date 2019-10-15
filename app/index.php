@@ -176,48 +176,8 @@ if($mobile === false) {
 	</div>
 
 	<div id="google-login" class="customGPlusSignIn click-button">
+		Login
 	</div>
-	<script>
-	gapi.load('auth2', function() {
-		auth2 = gapi.auth2.init({
-			client_id: '406738305883-b9cbn6ge3i5a5fnn6perdbuvq1eu5go2.apps.googleusercontent.com',
-			cookiepolicy: 'single_host_origin'
-		});
-		auth2.attachClickHandler(document.getElementById('google-login'),
-		{},
-		function(googleUser) {
-			document.getElementById('google-login').innerText = 'Signed In';
-			console.log('testtttt');
-			console.log(googleUser);
-			var profile = googleUser.getBasicProfile();
-			var id = profile.getId();
-			var email = profile.getEmail();
-			var id_token = googleUser.getAuthResponse().id_token;
-			
-			console.log(email);
-			console.log(id_token);
-			$.ajax({
-				url: 'https://testing.yapms.com/login/auth.php',
-				type: 'POST',
-				data: {token: id_token},
-				success: function(data) {
-					console.log('Good AUTH');
-					console.log(data);
-				},
-				error: function(a, b, c) {
-					console.log('Bad AUTH');
-					console.log(a);
-					console.log(b);
-					console.log(c);
-				}
-			});
-		},
-		function(error) {
-			console.log('login error');	
-		});
-	});
-	</script>
-
 <?php
 /* margin-left: auto; moves the button all the way to the right */
 if($mobile === false) {
