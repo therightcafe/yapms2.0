@@ -100,6 +100,8 @@
 
 	<script async src="./res/fontawesome/js/all.min.js"></script>
 
+	<meta name="google-signin-scope" content="profile email">
+	<meta name="google-signin-client_id" content="406738305883-b9cbn6ge3i5a5fnn6perdbuvq1eu5go2.apps.googleusercontent.com">
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 
@@ -175,7 +177,7 @@ if($mobile === false) {
 	</a>
 	</div>
 
-	<div class="click-button" onclick="window.location = '<?php echo $loginURL ?>'">
+	<div class="g-signin2" data-onsuccess="Account.onSignIn" data-theme="dark">
 		Login
 	</div>
 
