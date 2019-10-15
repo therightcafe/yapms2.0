@@ -4226,17 +4226,14 @@ function setOtherText(color) {
 
 function setBackgroundImage(img) {
 	var body = document.getElementById('application');
-	body.style.background = img;
-}
-
-function setBackgroundSize(size) {
-	var body = document.getElementById('application');
-	body.style.backgroudnSize = size;
+	body.style.backgroundColor = '';
+	body.style.backgroundImage = img;
 }
 
 function setBackgroundColor(color) {
 	var body = document.getElementById('application');
 	body.style.background = color;
+	body.style.backgroundImage = '';
 }
 
 function setChartBorderStyle(width, color) {
@@ -5231,7 +5228,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.72.5';
+var currentCache = 'v0.72.6';
 
 var states = [];
 var lands = [];
