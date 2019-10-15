@@ -1,7 +1,6 @@
 <?
-require_once '../../external/mapstore_pass.php';
-
 function createUserDirectory($userID) {
+	require_once '../../external/mapstore_pass.php';
 	$connection_id = ftp_connect('74.208.19.50');
 	$login_result = ftp_login($connection_id, 'yapms', $mapstore_pass);
 	echo $userID;
