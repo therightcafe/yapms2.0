@@ -180,7 +180,7 @@ if($mobile === false) {
 	<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark">
 	</div>
 	<script>
-	onSignIn(googleUser) {
+	function onSignIn(googleUser) {
 		console.log('testtttt');
 		console.log(googleUser);
 		var profile = googleUser.getBasicProfile();
