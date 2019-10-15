@@ -35,7 +35,7 @@ class Account {
 				console.log('Auth Send Success');
 				console.log(data);
 				if(data === 'verify success') {
-					document.getElementById('google-login').innerText = 'Logout';
+					document.getElementById('google-login').innerText = 'Account';
 				} else {
 					document.getElementById('google-login').innerText = 'Login';
 
