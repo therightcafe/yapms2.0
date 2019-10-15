@@ -178,8 +178,36 @@ if($mobile === false) {
 	</div>
 
 	<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark">
-		Login
 	</div>
+	<script>
+	onSignIn(googleUser) {
+		console.log('testtttt');
+		console.log(googleUser);
+		var profile = googleUser.getBasicProfile();
+		var id = profile.getId();
+		var email = profile.getEmail();
+		var token = googleUser.getAuthResponse().id_token;
+		var token = token;
+
+		console.log(email);
+
+		$.ajax({
+			url: 'https://testing.yapms.com/login/auth.php?token=' + token,
+			type: 'GET',
+			success: function(data) {
+				console.log('Good AUTH');
+				console.log(data);
+			},
+			error: function(a, b, c) {
+				console.log('Bad AUTH');
+				console.log(a);
+				console.log(b);
+				console.log(c);
+			}
+		});
+	}
+	</script>
+
 
 <?php
 /* margin-left: auto; moves the button all the way to the right */
