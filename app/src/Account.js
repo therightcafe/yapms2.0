@@ -30,7 +30,7 @@ class Account {
 		$.ajax({
 			url: 'https://testing.yapms.com/login/auth.php',
 			type: 'POST',
-			data: {token: id_token},
+			data: {token: Account.token},
 			success: function(data) {
 				console.log('Auth Send Success');
 				console.log(data);
