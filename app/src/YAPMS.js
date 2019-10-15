@@ -1,5 +1,7 @@
 class Account {
 	static onSignIn(googleUser) {
+		console.log('testtttt');
+		console.log(googleUser);
 		var profile = googleUser.getBasicProfile();
 		Account.id = profile.getId();
 		Account.email = profile.getEmail();
@@ -5256,7 +5258,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.73.11';
+var currentCache = 'v0.73.12';
 
 var states = [];
 var lands = [];

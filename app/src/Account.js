@@ -1,5 +1,7 @@
 class Account {
 	static onSignIn(googleUser) {
+		console.log('testtttt');
+		console.log(googleUser);
 		var profile = googleUser.getBasicProfile();
 		Account.id = profile.getId();
 		Account.email = profile.getEmail();
