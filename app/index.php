@@ -175,14 +175,14 @@ if($mobile === false) {
 	</a>
 	</div>
 
-	<div id="google-login" class="customGPlusSignIn click-button">
+	<div id="google-login" class="customGPlusSignIn click-button" style="margin-left: auto;">
 		Login
 	</div>
 <?php
 /* margin-left: auto; moves the button all the way to the right */
 if($mobile === false) {
 	echo '
-<div class="click-button" onclick="toggleYAPNews()" style="white-space: nowrap; margin-left: auto;">
+<div class="click-button" onclick="toggleYAPNews()" style="white-space: nowrap; margin-left: 0px;">
 <i class="fas fa-bars"></i> Sidebar
 </div>';
 }

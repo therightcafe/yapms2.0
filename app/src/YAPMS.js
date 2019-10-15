@@ -28,7 +28,8 @@ class Account {
 		console.log('Token: ' + Account.token);
 
 		$.ajax({
-			url: 'https://testing.yapms.com/login/auth.php',
+			//url: 'https://testing.yapms.com/login/auth.php',
+			url: '../../login/auth.php',
 			type: 'POST',
 			data: {token: Account.token},
 			success: function(data) {
@@ -5278,7 +5279,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.73.33';
+var currentCache = 'v0.73.35';
 
 var states = [];
 var lands = [];
