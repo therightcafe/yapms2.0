@@ -7,6 +7,7 @@
 		$payload = $client->verifyIdToken($token);
 		if($payload) {
 			var_dump($payload);
+			echo 'verify success';
 		} else {
 			echo 'verify error';
 		}
