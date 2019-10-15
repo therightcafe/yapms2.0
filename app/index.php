@@ -177,7 +177,7 @@ if($mobile === false) {
 	</a>
 	</div>
 
-	<div class="g-signin2" data-onsuccess="Account.onSignIn" data-theme="dark">
+	<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark">
 		Login
 	</div>
 
