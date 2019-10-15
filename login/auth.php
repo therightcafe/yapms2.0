@@ -1,4 +1,5 @@
 <?
+	require_once "config.php";
 	if(isset($_GET['token'])) {
 		$gClient->getAccessToken($_GET['token']);
 		$oAuth = new Google_Service_Oauth2($gClient);
