@@ -1,7 +1,7 @@
 class Account {
 	static initGoogleLogin() {
 		gapi.load('auth2', function() {
-			auth2 = gapi.auth2.init({
+			var auth2 = gapi.auth2.init({
 				client_id: '406738305883-b9cbn6ge3i5a5fnn6perdbuvq1eu5go2.apps.googleusercontent.com',
 				cookiepolicy: 'single_host_origin'
 			});
@@ -5278,7 +5278,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.73.30';
+var currentCache = 'v0.73.31';
 
 var states = [];
 var lands = [];
