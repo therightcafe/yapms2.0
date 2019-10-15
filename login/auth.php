@@ -1,11 +1,11 @@
 <?
 require_once '../../external/mapstore_pass.php';
 
-function createUserDirectory() {
+function createUserDirectory($userID) {
 	$connection_id = ftp_connect('74.208.19.50');
 	$login_result = ftp_login($connection_id, 'yapms', $mapstore_pass);
 
-	if(ftp_mkdir($connection_id, './users/' . $userData['id'])) {
+	if(ftp_mkdir($connection_id, './users/' . $userID)) {
 		echo 'created dir';
 	} else {
 		echo 'failed creating dir';
@@ -23,7 +23,7 @@ if(isset($_POST['token'])) {
 	if($payload) {
 		var_dump($payload);
 		echo 'verify success';
-		createUserDirectory();
+		createUserDirectory($payload['sub']);
 	} else {
 		echo 'verify error';
 	}
