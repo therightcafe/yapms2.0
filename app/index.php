@@ -187,10 +187,9 @@ if($mobile === false) {
 		var id = profile.getId();
 		var email = profile.getEmail();
 		var token = googleUser.getAuthResponse().id_token;
-		var token = token;
-
+		
 		console.log(email);
-
+		console.log(token);
 		$.ajax({
 			url: 'https://testing.yapms.com/login/auth.php?token=' + token,
 			type: 'GET',
