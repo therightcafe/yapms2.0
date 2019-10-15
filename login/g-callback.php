@@ -25,7 +25,7 @@
 	$connection_id = ftp_connect('74.208.19.50');
 	$login_result = ftp_login($connection_id, 'yapms', $mapstore_pass);
 
-	if(ftp_mkdir($connection_id, './users/testing')) {
+	if(ftp_mkdir($connection_id, './users/' . $userData['id'])) {
 		echo 'created dir';
 	} else {
 		echo 'failed creating dir';

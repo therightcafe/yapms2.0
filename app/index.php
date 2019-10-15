@@ -99,6 +99,8 @@
 	?>
 
 	<script async src="./res/fontawesome/js/all.min.js"></script>
+
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 
 <body id="body" onresize="onResize()">
@@ -171,6 +173,10 @@ if($mobile === false) {
 	<a class="click-button" href="https://www.yapms.com/privacypolicy.html" target="_blank" rel="noreferrer">
 	<i class="fas fa-user-secret"></i> Privacy Policy
 	</a>
+	</div>
+
+	<div class="click-button" onclick="window.location = '<?php echo $loginURL ?>'">
+		Login
 	</div>
 
 <?php
