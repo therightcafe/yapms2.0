@@ -19,7 +19,20 @@
 	$_SESSION['id'] = $userData['id'];
 	$_SESSION['email'] = $userData['email'];
 	$_SESSION['givenName'] = $userData['givenName'];
+
+	require_once '../../external/mapstore_pass.php';
+	
+	$connection_id = ftp_connect('74.208.19.50');
+	$login_result = ftp_login($connection_id, 'yapms', $mapstore_pass);
+
+	if(ftp_mkdir($connection_id, './users/testing')) {
+		echo 'created dir';
+	} else {
+		echo 'failed creating dir';
+	}
+
+	ftp_close($connection_id);
 		
-	header('Location: welcome.php');	
+	//header('Location: welcome.php');	
 	exit();
 ?>

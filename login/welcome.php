@@ -19,6 +19,12 @@
 		Email: <?php echo $_SESSION['email']; ?>
 		<br>
 		ID: <?php echo $_SESSION['id']; ?>
+		<br>
+		Token: <?php echo var_dump($_SESSION['access_token']); ?>
+	</div>
+
+	<div>
+		<?php echo $result; ?>
 	</div>
 </body>
 </html>

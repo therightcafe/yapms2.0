@@ -99,46 +99,6 @@
 	?>
 
 	<script async src="./res/fontawesome/js/all.min.js"></script>
-	
-	<script src="https://apis.google.com/js/client:platform.js?onload=initGoogle" async defer></script>
-	<script>
-	function initGoogle() {
-		gapi.load('auth2', function() {
-			auth2 = gapi.auth2.init({
-				client_id: '406738305883-b9cbn6ge3i5a5fnn6perdbuvq1eu5go2.apps.googleusercontent.com'
-			});
-		});
-	}
-
-	function signInCallback(authResult) {
-		if(authResult['code']) {
-			var customData = {
-				'code': authResult['code']	
-			}
-
-			$.ajax({
-			type: 'POST',
-			url: 'https://accounts.google.com/o/oauth2/token',
-			header: {
-				'X-Requested-With': 'XMLHttpRequest'	
-			},
-			contentType: 'application/octet-stream; charset=utf-8',
-			success: function(result) {
-				console.log(result);
-			},
-			processData: false,
-			data: customData
-			});
-		} else {
-			// No Auth Code
-		}
-	}
-
-	function loginClick() {
-		auth2.grantOfflineAccess().then(signInCallback);
-	}
-	</script>
-	
 </head>
 
 <body id="body" onresize="onResize()">
@@ -213,15 +173,11 @@ if($mobile === false) {
 	</a>
 	</div>
 
-	<div class="click-button" onclick="loginClick()" style="margin-left: auto; mergin-right: 0px;">
-	<i class="fab fa-google"></i> Login
-	</div>
-
 <?php
 /* margin-left: auto; moves the button all the way to the right */
 if($mobile === false) {
 	echo '
-<div class="click-button" onclick="toggleYAPNews()" style="white-space: nowrap; margin-left: 0px;">
+<div class="click-button" onclick="toggleYAPNews()" style="white-space: nowrap; margin-left: auto;">
 <i class="fas fa-bars"></i> Sidebar
 </div>';
 }
