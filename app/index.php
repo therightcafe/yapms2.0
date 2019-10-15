@@ -100,9 +100,7 @@
 
 	<script async src="./res/fontawesome/js/all.min.js"></script>
 
-	<meta name="google-signin-scope" content="profile email">
-	<meta name="google-signin-client_id" content="406738305883-b9cbn6ge3i5a5fnn6perdbuvq1eu5go2.apps.googleusercontent.com">
-	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<script src="https://apis.google.com/js/api:client.js"></script>
 </head>
 
 <body id="body" onresize="onResize()">
@@ -177,37 +175,49 @@ if($mobile === false) {
 	</a>
 	</div>
 
-	<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark">
+	<div id="google-login" class="customGPlusSignIn click-button">
 	</div>
 	<script>
-	function onSignIn(googleUser) {
-		console.log('testtttt');
-		console.log(googleUser);
-		var profile = googleUser.getBasicProfile();
-		var id = profile.getId();
-		var email = profile.getEmail();
-		var id_token = googleUser.getAuthResponse().id_token;
-		
-		console.log(email);
-		console.log(id_token);
-		$.ajax({
-			url: 'https://testing.yapms.com/login/auth.php',
-			type: 'POST',
-			data: {token: id_token},
-			success: function(data) {
-				console.log('Good AUTH');
-				console.log(data);
-			},
-			error: function(a, b, c) {
-				console.log('Bad AUTH');
-				console.log(a);
-				console.log(b);
-				console.log(c);
-			}
+	gapi.load('auth2', function() {
+		auth2 = gapi.auth2.init({
+			client_id: '406738305883-b9cbn6ge3i5a5fnn6perdbuvq1eu5go2.apps.googleusercontent.com',
+			cookiepolicy: 'single_host_origin'
 		});
-	}
+		attachSignin(document.getElementById('customBtn'));
+		auth2.attachClickHandler(document.getElementById('google-login'),
+		{},
+		function(googleUser) {
+			document.getElementById('google-login').innerText = 'Signed In';
+			console.log('testtttt');
+			console.log(googleUser);
+			var profile = googleUser.getBasicProfile();
+			var id = profile.getId();
+			var email = profile.getEmail();
+			var id_token = googleUser.getAuthResponse().id_token;
+			
+			console.log(email);
+			console.log(id_token);
+			$.ajax({
+				url: 'https://testing.yapms.com/login/auth.php',
+				type: 'POST',
+				data: {token: id_token},
+				success: function(data) {
+					console.log('Good AUTH');
+					console.log(data);
+				},
+				error: function(a, b, c) {
+					console.log('Bad AUTH');
+					console.log(a);
+					console.log(b);
+					console.log(c);
+				}
+			});
+		},
+		function(error) {
+			console.log('login error');	
+		});
+	});
 	</script>
-
 
 <?php
 /* margin-left: auto; moves the button all the way to the right */
