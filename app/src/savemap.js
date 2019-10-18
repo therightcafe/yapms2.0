@@ -141,6 +141,9 @@ function saveMap(img, token) {
 function saveMap_user() {
 	var formData = new FormData();
 	formData.append('token', Account.token);
+	
+	var element = document.getElementById('savemap-name');
+	formData.append('mapName', element.value);
 
 	var data = {};
 	data['filename'] = MapLoader.save_filename;
@@ -189,7 +192,7 @@ function saveMap_user() {
 	formData.append("data", JSON.stringify(data));
 	
 	$.ajax({
-		url: "https://yapms.org/users/upload.php",
+		url: "https://yapms.org/upload_user.php",
 		type: "POST",
 		data: formData,
 		processData: false,
@@ -198,7 +201,9 @@ function saveMap_user() {
 			console.log(data);
 		},
 		error: function(a,b,c) {
-
+			console.log(a);
+			console.log(b);
+			console.log(c);
 		}
 	});
 }
