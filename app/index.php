@@ -175,8 +175,17 @@ if($mobile === false) {
 	</a>
 	</div>
 
-	<div id="google-login" class="customGPlusSignIn click-button" style="margin-left: auto;">
+	<div id="google-login" class="customGPlusSignIn click-button" style="margin-left: auto; display: none;">
 		Login
+	</div>
+	<div id="save-button" class="click-button" style="margin-left: auto; display: none;" onclick='displayMenu("savemenu");'>
+		Save
+	</div>
+	<div id="mymaps-button" class="click-button" style="display: none;">
+		My Maps
+	</div>
+	<div id="google-account" class="click-button" style="display: none;" onclick='displayMenu("accountmenu");'>
+		Account
 	</div>
 <?php
 /* margin-left: auto; moves the button all the way to the right */
@@ -529,6 +538,14 @@ if($mobile) {
 
 <div id="loadmenu" class="popup selectmenu">
 	<?php require './html/menu/loadmenu.php'; ?>
+</div>
+
+<div id="savemenu" class="popup selectmenu">
+	<?php require './html/menu/savemenu.php'; ?>
+</div>
+
+<div id="accountmenu" class="popup selectmenu">
+	<?php require './html/menu/accountmenu.php'; ?>
 </div>
 
 <div id="miscmenu" class="popup selectmenu">

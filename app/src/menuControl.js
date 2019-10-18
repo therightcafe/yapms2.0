@@ -41,3 +41,9 @@ function displayMenu(name) {
 		break;
 	}
 }
+
+function hideMenu(name) {
+	closeAllPopups();
+	var menu = document.getElementById(name);
+	menu.style.display = 'none';
+}

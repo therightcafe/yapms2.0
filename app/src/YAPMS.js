@@ -1,22 +1,38 @@
 class Account {
 	static initGoogleLogin() {
 		gapi.load('auth2', function() {
-			var auth2 = gapi.auth2.init({
+			Account.auth = gapi.auth2.init({
 				client_id: '406738305883-b9cbn6ge3i5a5fnn6perdbuvq1eu5go2.apps.googleusercontent.com',
 				cookiepolicy: 'single_host_origin',
-			});
-			auth2.attachClickHandler(document.getElementById('google-login'),
-			{},
-			function(googleUser) {
-				Account.onSignIn(googleUser);
-			},
-			function(error) {
-				console.log('Auth2 Attach Error');	
+			}).then(function(auth) {
+				Account.auth = auth;
+				Account.auth.attachClickHandler(document.getElementById('google-login'),
+				{},
+				function(googleUser) {
+					Account.login(googleUser);
+				},
+				function(error) {
+					console.log('Auth2 Attach Error');	
+				});
+
+				if(Account.auth.isSignedIn.get()) {
+					Account.user = Account.auth.currentUser.get();
+					document.getElementById('google-login').style.display = 'none';
+					document.getElementById('google-account').style.display = '';
+					document.getElementById('mymaps-button').style.display = '';
+					document.getElementById('save-button').style.display = '';
+				} else {
+					document.getElementById('google-login').style.display = '';
+					document.getElementById('google-account').style.display = 'None';
+					document.getElementById('mymaps-button').style.display = 'None';
+					document.getElementById('save-button').style.display = 'None';
+				}
 			});
 		});
 	}
 
-	static onSignIn(googleUser) {
+	static login(googleUser) {
+		Account.user = googleUser;
 		var profile = googleUser.getBasicProfile();
 		Account.id = profile.getId();
 		Account.email = profile.getEmail();
@@ -27,18 +43,17 @@ class Account {
 		console.log('Token: ' + Account.token);
 
 		$.ajax({
-			//url: 'https://testing.yapms.com/login/auth.php',
 			url: '../../login/auth.php',
 			type: 'POST',
 			data: {token: Account.token},
 			success: function(data) {
 				console.log('Auth Send Success');
 				console.log(data);
-				if(data === 'verify success') {
-					document.getElementById('google-login').innerText = 'Account';
-				} else {
-					document.getElementById('google-login').innerText = 'Login';
-
+				if(data === "verify success") {
+					document.getElementById('google-login').style.display = 'none';
+					document.getElementById('google-account').style.display = '';
+					document.getElementById('mymaps-button').style.display = '';
+					document.getElementById('save-button').style.display = '';
 				}
 			},
 			error: function(a, b, c) {
@@ -50,11 +65,30 @@ class Account {
 			}
 		});
 	}
+
+	static logout() {
+		Account.auth.signOut().then(function() {
+			hideMenu('accountmenu');
+			if(Account.auth.isSignedIn.get() === false) {
+				document.getElementById('google-login').style.display = '';
+				document.getElementById('google-account').style.display = 'none';
+				document.getElementById('mymaps-button').style.display = 'none';
+				document.getElementById('save-button').style.display = 'None';
+			}
+		});
+	}
+
+	static save() {
+		closeAllPopups();
+		saveMap_user();
+	}
 }
 
-Account.id = '';
-Account.email = '';
-Account.token = '';
+Account.id = null;
+Account.email = null;
+Account.token = null;
+Account.auth = null;
+Account.user = null;
 // list of candidates
 
 class Candidate {
@@ -4613,6 +4647,12 @@ function displayMenu(name) {
 		break;
 	}
 }
+
+function hideMenu(name) {
+	closeAllPopups();
+	var menu = document.getElementById(name);
+	menu.style.display = 'none';
+}
 var lastViewPopularVote = "";
 
 function numberWithCommas(number) {
@@ -5135,6 +5175,71 @@ function saveMap(img, token) {
 	});
 }
 
+function saveMap_user() {
+	var formData = new FormData();
+	formData.append('token', Account.token);
+
+	var data = {};
+	data['filename'] = MapLoader.save_filename;
+	data['dataid'] = MapLoader.save_dataid;
+	data['type'] = MapLoader.save_type;
+	data['year'] = MapLoader.save_year;
+	data['fontsize'] = MapLoader.save_fontsize;
+	data['strokewidth'] = MapLoader.save_strokewidth;
+	data['updatetext'] = mapOptions.updateText;
+	data['candidates'] = {};
+	data['states'] = {};
+	data['proportional'] = {};
+
+	for(var key in CandidateManager.candidates) {
+		if(key === 'Tossup') {
+			continue;
+		}
+		var candidate = CandidateManager.candidates[key];
+		data['candidates'][candidate.name] = {};
+		data['candidates'][candidate.name]['solid'] = candidate.colors[0];
+		data['candidates'][candidate.name]['likely'] = candidate.colors[1];
+		data['candidates'][candidate.name]['lean'] = candidate.colors[2];
+		data['candidates'][candidate.name]['tilt'] = candidate.colors[3];
+	}
+
+	for(var stateIndex = 0; stateIndex < states.length; ++stateIndex) {
+		var state = states[stateIndex];
+		data['states'][state.name] = {};
+		data['states'][state.name]['candidate'] = state.candidate;
+		data['states'][state.name]['delegates'] = state.delegates;
+		data['states'][state.name]['votecount'] = state.voteCount;
+		data['states'][state.name]['colorvalue'] = state.colorValue;
+		data['states'][state.name]['disabled'] = state.disabled;
+	}
+
+	for(var stateIndex = 0; stateIndex < proportionalStates.length; ++stateIndex) {
+		var state = proportionalStates[stateIndex];
+		data['proportional'][state.name] = {};
+		data['proportional'][state.name]['candidate'] = state.candidate;
+		data['proportional'][state.name]['delegates'] = state.delegates;
+		data['proportional'][state.name]['votecount'] = state.voteCount;
+		data['proportional'][state.name]['colorvalue'] = state.colorValue;
+		data['proportional'][state.name]['disabled'] = state.disabled;
+	}
+	
+	formData.append("data", JSON.stringify(data));
+	
+	$.ajax({
+		url: "https://yapms.org/users/upload.php",
+		type: "POST",
+		data: formData,
+		processData: false,
+		contentType: false,
+		success: function(data) {
+			console.log(data);
+		},
+		error: function(a,b,c) {
+
+		}
+	});
+}
+
 function saveMap_new(img, token) {
 	var formData = new FormData();
 	formData.append("captcha", token);
@@ -5285,7 +5390,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.73.43';
+var currentCache = 'v0.73.45';
 
 var states = [];
 var lands = [];
@@ -5337,7 +5442,10 @@ function share(autoCenter) {
 		}, 3000);
 	}
 
-	grecaptcha.execute('6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo', {action: 'share'}).then(function(token) {
+	grecaptcha.execute(
+		'6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo', 
+		{action: 'share'})
+		.then(function(token) {
 	html2canvas(document.getElementById('application'), {logging: true, onclone: function(clone) {
 		// remove the custom fonts from the clone
 		var svgtext = clone.getElementById('text');
