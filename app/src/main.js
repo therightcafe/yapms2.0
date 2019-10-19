@@ -1,4 +1,4 @@
-var currentCache = 'v0.73.51';
+var currentCache = 'v0.73.60';
 
 var states = [];
 var lands = [];
@@ -394,7 +394,6 @@ function start() {
 	ChartManager.initChart();
 	ChartManager.setChart('horizontalbattle');
 	CookieManager.loadCookies();
-	Account.initGoogleLogin();
 
 	if(php_load_map === true) {
 		console.log('Save Search - yapms.org');

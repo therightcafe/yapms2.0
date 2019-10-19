@@ -99,8 +99,6 @@
 	?>
 
 	<script async src="./res/fontawesome/js/all.min.js"></script>
-
-	<script src="https://apis.google.com/js/api:client.js"></script>
 </head>
 
 <body id="body" onresize="onResize()">
@@ -175,7 +173,7 @@ if($mobile === false) {
 	</a>
 	</div>
 
-	<div id="google-login" class="customGPlusSignIn click-button" style="margin-left: auto; display: none;">
+	<div id="login-button" class="customGPlusSignIn click-button" style="margin-left: auto;" onclick='displayMenu("loginmenu");'>
 		Login
 	</div>
 	<div id="save-button" class="click-button" style="margin-left: auto; display: none;" onclick='displayMenu("savemenu");'>
@@ -184,7 +182,7 @@ if($mobile === false) {
 	<div id="mymaps-button" class="click-button" style="display: none;">
 		My Maps
 	</div>
-	<div id="google-account" class="click-button" style="display: none;" onclick='displayMenu("accountmenu");'>
+	<div id="account-button" class="click-button" style="display: none;" onclick='displayMenu("accountmenu");'>
 		Account
 	</div>
 <?php
@@ -538,6 +536,14 @@ if($mobile) {
 
 <div id="loadmenu" class="popup selectmenu">
 	<?php require './html/menu/loadmenu.php'; ?>
+</div>
+
+<div id="loginmenu" class="popup selectmenu">
+	<?php require './html/menu/loginmenu.php'; ?>
+</div>
+
+<div id="registermenu" class="popup selectmenu">
+	<?php require './html/menu/registermenu.php'; ?>
 </div>
 
 <div id="savemenu" class="popup selectmenu">
