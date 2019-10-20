@@ -146,6 +146,35 @@ class Account {
 
 	}
 
+	static changePassword() {
+		var formData = new FormData();
+		var current = document.getElementById('password-reset-1').value;
+		var newPass = document.getElementById('password-reset-2').value;
+		var verifyPass = document.getElementById('password-reset-3').value;
+		formData.append('current-pass', current.value);
+		formData.append('new-pass', newPass.value);
+		formData.append('verify-pass', verifyPass.value);
+		$.ajax({
+			url: "https://yapms.org/auth/change_password.php",
+			type: "POST",
+			data: formData,
+			processData: false,
+			contentType: false,
+			xhrFields: {
+				withCredentials: true
+			},
+			crossDomain: true,
+			success: function(data) {
+				alert('Password Change: ' + data);
+			},
+			error: function(a, b, c) {
+				console.log(a);
+				console.log(b);
+				console.log(c);
+			}	
+		});
+	}
+
 	static updateHTML() {
 		var loginButton = document.getElementById('login-button');
 		var accountButton = document.getElementById('account-button');
