@@ -201,6 +201,10 @@ class Account {
 			data: formData,
 			processData: false,
 			contentType: false,
+			xhrFields: {
+				withCredentials: true
+			},
+			crossDomain: true,
 			success: function(data) {
 				console.log(data);
 			},
