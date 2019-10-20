@@ -12,7 +12,7 @@ class Account {
 			processData: false,
 			contentType: false,
 			xhrFields: {
-				widthCredentials: true
+				withCredentials: true
 			},
 			crossDomain: true,
 			success: function(data) {
@@ -40,7 +40,7 @@ class Account {
 			processData: false,
 			contentType: false,
 			xhrFields: {
-				widthCredentials: true
+				withCredentials: true
 			},
 			crossDomain: true,
 			success: function(data) {
@@ -81,7 +81,7 @@ class Account {
 			processData: false,
 			contentType: false,
 			xhrFields: {
-				widthCredentials: true
+				withCredentials: true
 			},
 			crossDomain: true,
 			success: function(data) {
