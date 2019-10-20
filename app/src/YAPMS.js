@@ -143,7 +143,73 @@ class Account {
 	}
 
 	static save() {
+		var formData = new FormData();
+		//formData.append("img", img);
+	
+		var mapName = "justatest";
+		formData.append("mapName", mapName);
+	
+		var data = {};
+		data['filename'] = MapLoader.save_filename;
+		data['dataid'] = MapLoader.save_dataid;
+		data['type'] = MapLoader.save_type;
+		data['year'] = MapLoader.save_year;
+		data['fontsize'] = MapLoader.save_fontsize;
+		data['strokewidth'] = MapLoader.save_strokewidth;
+		data['updatetext'] = mapOptions.updateText;
+		data['candidates'] = {};
+		data['states'] = {};
+		data['proportional'] = {};
 
+		for(var key in CandidateManager.candidates) {
+			if(key === 'Tossup') {
+				continue;
+			}
+			var candidate = CandidateManager.candidates[key];
+			data['candidates'][candidate.name] = {};
+			data['candidates'][candidate.name]['solid'] = candidate.colors[0];
+			data['candidates'][candidate.name]['likely'] = candidate.colors[1];
+			data['candidates'][candidate.name]['lean'] = candidate.colors[2];
+			data['candidates'][candidate.name]['tilt'] = candidate.colors[3];
+		}
+
+		for(var stateIndex = 0; stateIndex < states.length; ++stateIndex) {
+			var state = states[stateIndex];
+			data['states'][state.name] = {};
+			data['states'][state.name]['candidate'] = state.candidate;
+			data['states'][state.name]['delegates'] = state.delegates;
+			data['states'][state.name]['votecount'] = state.voteCount;
+			data['states'][state.name]['colorvalue'] = state.colorValue;
+			data['states'][state.name]['disabled'] = state.disabled;
+		}
+
+		for(var stateIndex = 0; stateIndex < proportionalStates.length; ++stateIndex) {
+			var state = proportionalStates[stateIndex];
+			data['proportional'][state.name] = {};
+			data['proportional'][state.name]['candidate'] = state.candidate;
+			data['proportional'][state.name]['delegates'] = state.delegates;
+			data['proportional'][state.name]['votecount'] = state.voteCount;
+			data['proportional'][state.name]['colorvalue'] = state.colorValue;
+			data['proportional'][state.name]['disabled'] = state.disabled;
+		}
+		
+		formData.append("data", JSON.stringify(data));
+
+		$.ajax({
+			url: "https://yapms.org/upload_user.php",
+			type: "POST",
+			data: formData,
+			processData: false,
+			contentType: false,
+			success: function(data) {
+				console.log(data);
+			},
+			error: function(a, b, c) {
+				console.log(a);
+				console.log(b);
+				console.log(c);
+			}
+		});
 	}
 
 	static changePassword() {
@@ -5160,9 +5226,10 @@ function saveMap(img, token) {
 	formData.append("year", MapLoader.save_year);
 	formData.append("fontsize", MapLoader.save_fontsize);
 	formData.append("strokewidth", MapLoader.save_strokewidth);
-	console.log('token: ' + token);
 	formData.append("captcha", token);
 	formData.append("updateText", mapOptions.updateText);
+	
+	console.log('token: ' + token);
 
 	var candidateData = [];
 	for(var key in CandidateManager.candidates) {

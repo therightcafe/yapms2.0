@@ -8,9 +8,10 @@ function saveMap(img, token) {
 	formData.append("year", MapLoader.save_year);
 	formData.append("fontsize", MapLoader.save_fontsize);
 	formData.append("strokewidth", MapLoader.save_strokewidth);
-	console.log('token: ' + token);
 	formData.append("captcha", token);
 	formData.append("updateText", mapOptions.updateText);
+	
+	console.log('token: ' + token);
 
 	var candidateData = [];
 	for(var key in CandidateManager.candidates) {
