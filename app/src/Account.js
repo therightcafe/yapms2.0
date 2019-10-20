@@ -21,14 +21,14 @@ class Account {
 				var arr = data.split(' ');
 				var registerInfo = document.getElementById('register-info');
 				if(arr[0] === 'good') {
-					registerInfo.innerHTML = 'Verification Email Send - Please check your spam';
+					registerInfo.innerHTML = 'Verification Email Sent (Please check your spam)';
 				} else {
 					if(arr[1] === 'inuse') {
 						registerInfo.innerHTML = 'Email Already Registered';	
 					} else if(arr[1] === 'inactive') {
-						registerInfo.innerHTML = 'Verification Email Already Sent - Please check your spam';
+						registerInfo.innerHTML = 'Verification Email Already Sent (Please check your spam)';
 					} else if(arr[1] === 'resent') {
-						registerInfo.innerHTML = 'Verification Email Resent - Please check your spam';
+						registerInfo.innerHTML = 'Verification Email Resent (Please check your spam)';
 					}
 				}
 			},
@@ -152,11 +152,16 @@ class Account {
 		var saveButton = document.getElementById('save-button');
 		var mymapsButton = document.getElementById('mymaps-button');
 
+		var accountUser = document.getElementById('account-user');
+		var accountEmail = document.getElementById('account-email');
+
 		if(Account.isLoggedIn) {
 			loginButton.style.display = 'none';
 			accountButton.style.display = '';
 			saveButton.style.display = '';
 			mymapsButton.style.display = '';
+			accountUser.innerHTML = Account.user;
+			accountEmail.innerHTML = Account.email;
 		} else {
 			loginButton.style.display = '';
 			accountButton.style.display = 'none';

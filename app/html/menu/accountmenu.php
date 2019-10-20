@@ -7,6 +7,12 @@
 </div>
 </div>
 <div class="selectmenu-content">
+<div class="selectmenu-section" id="account-user">
+	User
+</div>
+<div class="selectmenu-section" id="account-email">
+	Email
+</div>
 <a class="selectmenu-button" onclick="Account.logout();">
 	<i class="fas fa-sign-out-alt"></i>
 	<div class="selectmenu-button-text">Logout</div>
