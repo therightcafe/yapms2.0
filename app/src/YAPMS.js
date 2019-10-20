@@ -151,9 +151,9 @@ class Account {
 		var current = document.getElementById('password-reset-1').value;
 		var newPass = document.getElementById('password-reset-2').value;
 		var verifyPass = document.getElementById('password-reset-3').value;
-		formData.append('current', current.value);
-		formData.append('new', newPass.value);
-		formData.append('verify', verifyPass.value);
+		formData.append('current', current);
+		formData.append('new', newPass);
+		formData.append('verify', verifyPass);
 		$.ajax({
 			url: "https://yapms.org/auth/change_password.php",
 			type: "POST",
