@@ -1,5 +1,6 @@
 class Account {
 	static register() {
+		closeAllPopups();
 		var formData = new FormData();
 		var user = document.getElementById('user-input').value;
 		var email = document.getElementById('email-input').value;
@@ -28,6 +29,7 @@ class Account {
 	}
 
 	static login() {
+		closeAllPopups();
 		var formData = new FormData();
 		var user = document.getElementById('user-login').value;
 		var pass = document.getElementById('password-login').value;
@@ -87,6 +89,11 @@ class Account {
 			success: function(data) {
 				alert('Verify Login: ' + data);
 				Account.isLoggedIn = (data === 'good');
+				if(Account.isLoggedIn === false) {
+					Account.id = null;
+					Account.email = null;	
+					Account.user = null;	
+				}
 				Account.updateHTML();
 			},
 			error: function(a, b, c) {
@@ -98,6 +105,7 @@ class Account {
 	}
 
 	static logout() {
+		closeAllPopups();
 		$.ajax({
 			url: "https://yapms.org/auth/logout.php",
 			type: "POST",
