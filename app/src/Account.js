@@ -98,7 +98,25 @@ class Account {
 	}
 
 	static logout() {
-		Account.verifyState();
+		$.ajax({
+			url: "https://yapms.org/auth/logout.php",
+			type: "POST",
+			data: formData,
+			processData: false,
+			contentType: false,
+			xhrFields: {
+				withCredentials: true
+			},
+			crossDomain: true,
+			success: function(data) {
+				Account.verifyState();
+			},
+			error: function(a, b, c) {
+				console.log(a);
+				console.log(b);
+				console.log(c);
+			}	
+		});
 	}
 
 	static save() {
