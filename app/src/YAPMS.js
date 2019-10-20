@@ -101,7 +101,6 @@ class Account {
 		$.ajax({
 			url: "https://yapms.org/auth/logout.php",
 			type: "POST",
-			data: formData,
 			processData: false,
 			contentType: false,
 			xhrFields: {
