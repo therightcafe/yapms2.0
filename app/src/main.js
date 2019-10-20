@@ -454,7 +454,7 @@ function start() {
 	LogoManager.loadButtons();
 	LogoManager.loadFlags();
 	
-	Account.verifyLogin();
+	Account.verifyState();
 }
 
 start();
