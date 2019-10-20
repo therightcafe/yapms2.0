@@ -30,14 +30,29 @@ class Account {
 		formData.append('user', user);
 		formData.append('password', pass);
 		$.ajax({
-			url: "../../auth/login.php",
+			url: "https://yapms.org/auth/login.php",
 			type: "POST",
 			data: formData,
 			processData: false,
 			contentType: false,
 			success: function(data) {
-				console.log(data);
+				var arr = data.split(' ');
 				alert(data);
+				if(arr[0] === 'good') {
+					Account.user = arr[1];
+					Account.email = arr[2];
+					Account.id = arr[3];
+					Account.isLoggedIn = true;
+					alert('Login Good');
+					Account.verifyState();
+				} else {
+					Account.user = null;
+					Account.email = null;
+					Account.id = null;
+					Account.isLoggedIn = false;
+					alert('Login Failed');
+					Account.verifyState();
+				}
 			},
 			error: function(a, b, c) {
 				console.log(a);
@@ -45,7 +60,28 @@ class Account {
 				console.log(c);
 			}	
 		});
+	}
 
+	static verifyState() {
+		var formData = new FormData();
+		formData.append('user', Account.user);
+		formData.append('email', Account.email);
+		$.ajax({
+			url: "../../auth/verify_login.php",
+			type: "POST",
+			data: formData,
+			processData: false,
+			contentType: false,
+			success: function(data) {
+				Account.isLoggedIn = (data === 'good');
+				Account.updateHTML();
+			},
+			error: function(a, b, c) {
+				console.log(a);
+				console.log(b);
+				console.log(c);
+			}	
+		});
 	}
 
 	static logout() {
@@ -55,4 +91,28 @@ class Account {
 	static save() {
 
 	}
+
+	static updateHTML() {
+		var loginButton = document.getElementById('login-button');
+		var accountButton = document.getElementById('account-button');
+		var saveButton = document.getElementById('save-button');
+		var mymapsButton = document.getElementById('mymaps-button');
+
+		if(Account.isLoggedIn) {
+			loginButton.style.display = 'none';
+			accountButton.style.display = '';
+			saveButton.style.display = '';
+			mymapsButton.style.display = '';
+		} else {
+			loginButton.style.display = '';
+			accountButton.style.display = 'none';
+			saveButton.style.display = 'none';
+			mymapsButton.style.display = 'none';
+		}
+	}
 }
+
+Account.user = null;
+Account.email = null;
+Account.id = null;
+Account.isLoggedIn = false;

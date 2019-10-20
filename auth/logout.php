@@ -1,5 +1,7 @@
 <?php
 session_start();
+session_unset();
+session_destroy();
 $url = 'https://yapms.org/auth/login.php';
 
 $options = array(
@@ -15,8 +17,6 @@ $result = file_get_contents($url, false, $context);
 
 if($result === false) {
 	echo 'Login Error';
-	session_unset();
-	session_destroy();
 } else {
 	// --- TURN LOGIN RESULT INTO ARRAY --- //
 	$data = explode(' ', $result);
