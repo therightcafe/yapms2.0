@@ -17,7 +17,7 @@ class Account {
 			crossDomain: true,
 			success: function(data) {
 				console.log(data);
-				alert(data);
+				//alert(data);
 				var arr = data.split(' ');
 				var registerInfo = document.getElementById('register-info');
 				if(arr[0] === 'good') {
@@ -60,7 +60,7 @@ class Account {
 			crossDomain: true,
 			success: function(data) {
 				var arr = data.split(' ');
-				alert('Login: ' + data);
+				//alert('Login: ' + data);
 				Account.verifyState();
 				if(arr[0] === 'bad') {
 					var loginInfo = document.getElementById('login-info');
@@ -98,7 +98,7 @@ class Account {
 			},
 			crossDomain: true,
 			success: function(data) {
-				alert('Verify Login: ' + data);
+				//alert('Verify Login: ' + data);
 				var arr = data.split(' ');
 				Account.isLoggedIn = (arr[0] === 'good');
 				if(Account.isLoggedIn) {
