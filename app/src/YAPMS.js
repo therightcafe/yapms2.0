@@ -11,6 +11,10 @@ class Account {
 			data: formData,
 			processData: false,
 			contentType: false,
+			xhrFields: {
+				widthCredentials: true
+			},
+			crossDomain: true,
 			success: function(data) {
 				console.log(data);
 				alert(data);
@@ -35,6 +39,10 @@ class Account {
 			data: formData,
 			processData: false,
 			contentType: false,
+			xhrFields: {
+				widthCredentials: true
+			},
+			crossDomain: true,
 			success: function(data) {
 				var arr = data.split(' ');
 				alert('Login: ' + data);
@@ -72,6 +80,10 @@ class Account {
 			data: formData,
 			processData: false,
 			contentType: false,
+			xhrFields: {
+				widthCredentials: true
+			},
+			crossDomain: true,
 			success: function(data) {
 				alert('Verify Login: ' + data);
 				Account.isLoggedIn = (data === 'good');
