@@ -67,7 +67,7 @@ class Account {
 		formData.append('user', Account.user);
 		formData.append('email', Account.email);
 		$.ajax({
-			url: "../../auth/verify_login.php",
+			url: "https://yapms.org/auth/verify_login.php",
 			type: "POST",
 			data: formData,
 			processData: false,
