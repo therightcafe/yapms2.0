@@ -19,6 +19,10 @@
 <a class="selectmenu-split">
 	<div class="selectmenu-split-text">Actions</div>
 </a>
+<a class="selectmenu-button" onclick='displayMenu("passwordmenu")'>
+	<i class="fas fa-sign-out-alt"></i>
+	<div class="selectmenu-button-text">Change Password</div>
+</a>
 <a class="selectmenu-button" onclick="Account.logout();">
 	<i class="fas fa-sign-out-alt"></i>
 	<div class="selectmenu-button-text">Logout</div>

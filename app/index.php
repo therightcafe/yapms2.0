@@ -550,6 +550,10 @@ if($mobile) {
 	<?php require './html/menu/savemenu.php'; ?>
 </div>
 
+<div id="passwordmenu" class="popup selectmenu">
+	<?php require './html/menu/passwordmenu.php'; ?>
+</div>
+
 <div id="accountmenu" class="popup selectmenu">
 	<?php require './html/menu/accountmenu.php'; ?>
 </div>
