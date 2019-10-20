@@ -1,6 +1,5 @@
 class Account {
 	static register() {
-		closeAllPopups();
 		var formData = new FormData();
 		var user = document.getElementById('user-input').value;
 		var email = document.getElementById('email-input').value;
@@ -19,17 +18,31 @@ class Account {
 			success: function(data) {
 				console.log(data);
 				alert(data);
+				var arr = data.split(' ');
+				var registerInfo = document.getElementById('register-info');
+				if(arr[0] === 'good') {
+					registerInfo.innerHTML = 'Verification Email Send - Please check your spam';
+				} else {
+					if(arr[1] === 'inuse') {
+						registerInfo.innerHTML = 'Email Already Registered';	
+					} else if(arr[1] === 'inactive') {
+						registerInfo.innerHTML = 'Verification Email Already Sent - Please check your spam';
+					} else if(arr[1] === 'resent') {
+						registerInfo.innerHTML = 'Verification Email Resent - Please check your spam';
+					}
+				}
 			},
 			error: function(a, b, c) {
 				console.log(a);
 				console.log(b);
 				console.log(c);
+				var registerInfo = document.getElementById('register-info');
+				registerInfo.innerHTML = 'Connection Error';	
 			}	
 		});
 	}
 
 	static login() {
-		closeAllPopups();
 		var formData = new FormData();
 		var user = document.getElementById('user-login').value;
 		var pass = document.getElementById('password-login').value;
@@ -48,16 +61,24 @@ class Account {
 			success: function(data) {
 				var arr = data.split(' ');
 				alert('Login: ' + data);
-				if(arr[0] === 'good') {
-					Account.verifyState();
+				Account.verifyState();
+				if(arr[0] === 'bad') {
+					var loginInfo = document.getElementById('login-info');
+					if(arr[1] === 'account_innactive') {
+						loginInfo.innerHTML = 'Inactive Account';
+					} else if(arr[1] === 'incorrect_login') {
+						loginInfo.innerHTML = 'Incorrect Login';
+					}
 				} else {
-					Account.verifyState();
+					closeAllPopups();
 				}
 			},
 			error: function(a, b, c) {
 				console.log(a);
 				console.log(b);
 				console.log(c);
+				var loginInfo = document.getElementById('login-info');
+				loginInfo.innerHTML = 'Connection Error';
 			}	
 		});
 	}

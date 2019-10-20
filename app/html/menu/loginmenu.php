@@ -7,6 +7,9 @@
 </div>
 </div>
 <div class="selectmenu-content">
+<div class="selectmenu-section" id="login-info">
+	Please enter your credentials
+</div>
 <div class="selectmenu-section">User/Email <input id="user-login" type="text"></div>
 <div class="selectmenu-section">Password <input id="password-login" type="password"></div>
 <a class="selectmenu-button" onclick='Account.login();'>
