@@ -49,10 +49,8 @@ class Account {
 				var arr = data.split(' ');
 				alert('Login: ' + data);
 				if(arr[0] === 'good') {
-					alert('Login: Good');
 					Account.verifyState();
 				} else {
-					alert('Login: Failed');
 					Account.verifyState();
 				}
 			},
