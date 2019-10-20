@@ -49,17 +49,9 @@ class Account {
 				var arr = data.split(' ');
 				alert('Login: ' + data);
 				if(arr[0] === 'good') {
-					Account.user = arr[1];
-					Account.email = arr[2];
-					Account.id = arr[3];
-					Account.isLoggedIn = true;
 					alert('Login: Good');
 					Account.verifyState();
 				} else {
-					Account.user = null;
-					Account.email = null;
-					Account.id = null;
-					Account.isLoggedIn = false;
 					alert('Login: Failed');
 					Account.verifyState();
 				}
@@ -88,8 +80,13 @@ class Account {
 			crossDomain: true,
 			success: function(data) {
 				alert('Verify Login: ' + data);
-				Account.isLoggedIn = (data === 'good');
-				if(Account.isLoggedIn === false) {
+				var arr = data.split(' ');
+				Account.isLoggedIn = (arr[0] === 'good');
+				if(Account.isLoggedIn) {
+					Account.user = arr[1];
+					Account.email = arr[2];
+					Account.id = arr[3];
+				} else {
 					Account.id = null;
 					Account.email = null;	
 					Account.user = null;	
