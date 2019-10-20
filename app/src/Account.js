@@ -98,7 +98,7 @@ class Account {
 	}
 
 	static logout() {
-		verifyState();
+		Account.verifyState();
 	}
 
 	static save() {
