@@ -1,4 +1,4 @@
-var currentCache = 'v0.73.100';
+var currentCache = 'v0.74.1';
 
 var states = [];
 var lands = [];
@@ -84,14 +84,11 @@ function share(autoCenter) {
 		canvas.style.height = 0;	
 		canvas.style.display = 'none';
 		var img = canvas.toDataURL('image/png');
-		//var img = canvas.toDataURL('image/jpeg', 0.9);
 		notification.removeChild(canvas);
 		var i = document.getElementById('screenshotimg');
 		i.src = img;
 		i.style.width = '40vw';
 		i.style.height = 'auto';
-		i.style.display = '';
-		//saveMap(img, token);
 		grecaptcha.execute('6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo', {action: 'share'})
 		.then(function(token) {
 			saveMap_new(img, token);
@@ -454,7 +451,7 @@ function start() {
 	LogoManager.loadButtons();
 	LogoManager.loadFlags();
 	
-	Account.verifyState();
+//	Account.verifyState();
 }
 
 start();

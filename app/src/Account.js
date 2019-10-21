@@ -147,8 +147,11 @@ class Account {
 		var formData = new FormData();
 		//formData.append("img", img);
 	
-		var mapName = "justatest";
-		formData.append("mapName", mapName);
+		var mapName = document.getElementById('savemap-name');
+		if(mapName) {
+			formData.append("mapName", mapName.value);
+			mapName.value = '';
+		}
 	
 		var data = {};
 		data['filename'] = MapLoader.save_filename;
