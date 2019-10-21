@@ -83,8 +83,8 @@ function share(autoCenter) {
 		canvas.style.width = 0;
 		canvas.style.height = 0;	
 		canvas.style.display = 'none';
-		//var img = canvas.toDataURL('image/png');
-		var img = canvas.toDataURL('image/jpeg', 0.9);
+		var img = canvas.toDataURL('image/png');
+		//var img = canvas.toDataURL('image/jpeg', 0.9);
 		notification.removeChild(canvas);
 		var i = document.getElementById('screenshotimg');
 		i.src = img;
