@@ -143,6 +143,7 @@ class Account {
 	}
 
 	static save() {
+		closeAllPopups();
 		var formData = new FormData();
 		//formData.append("img", img);
 	

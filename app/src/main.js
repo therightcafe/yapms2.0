@@ -1,4 +1,4 @@
-var currentCache = 'v0.73.62';
+var currentCache = 'v0.73.100';
 
 var states = [];
 var lands = [];
@@ -50,10 +50,6 @@ function share(autoCenter) {
 		}, 3000);
 	}
 
-	grecaptcha.execute(
-		'6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo', 
-		{action: 'share'})
-		.then(function(token) {
 	html2canvas(document.getElementById('application'), {logging: true, onclone: function(clone) {
 		// remove the custom fonts from the clone
 		var svgtext = clone.getElementById('text');
@@ -87,15 +83,19 @@ function share(autoCenter) {
 		canvas.style.width = 0;
 		canvas.style.height = 0;	
 		canvas.style.display = 'none';
-		var img = canvas.toDataURL('image/png');
+		//var img = canvas.toDataURL('image/png');
+		var img = canvas.toDataURL('image/jpeg', 0.8);
 		notification.removeChild(canvas);
 		var i = document.getElementById('screenshotimg');
 		i.src = img;
 		i.style.width = '40vw';
 		i.style.height = 'auto';
+		i.style.display = '';
 		//saveMap(img, token);
-		saveMap_new(img, token);
-	});
+		grecaptcha.execute('6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo', {action: 'share'})
+		.then(function(token) {
+			saveMap_new(img, token);
+		});
 	});
 }
 

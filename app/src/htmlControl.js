@@ -128,7 +128,7 @@ function darkPalette() {
 	setTextStyle('white', 'bold');
 	setChartBorderStyle(1, '#2b2e33');
 	setChartBarColor('#2b2e33');
-	setChartBarShadow('0px 0px 0px 0px #000000');
+	setChartBarShadow('');
 	
 	setClickButtonColor('#2b2e33');
 	setClickButtonColor('#2B2E33');
@@ -164,7 +164,7 @@ function greyscalePalette() {
 	setTextStyle('white', 'bold');
 	setChartBorderStyle(1, '#1b1b1b');
 	setChartBarColor('#454545');
-	setChartBarShadow('0px 0px 0px 0px #000000');
+	setChartBarShadow('');
 	
 	setClickButtonColor('#454545');
 	setClickButtonTextColor('#FFFFFF');
@@ -199,7 +199,7 @@ function terminalPalette() {
 	setTextStyle('white', 'bold');
 	setMapStyle('white', 1.5);
 	setChartBarColor('black');
-	setChartBarShadow('0px 0px 0px 0px #000000');
+	setChartBarShadow('');
 
 	setClickButtonColor('#000000');
 	setClickButtonTextColor('#ffffff');
@@ -233,7 +233,7 @@ function lightPalette() {
 	setMapStyle('#dcdcdc', 1.5);
 
 	setChartBarColor('#3b3e43');
-	setChartBarShadow('0px 0px 0px 0px #000000');
+	setChartBarShadow('');
 
 	setTextStyle('white', 'bold');
 	setChartBorderStyle(1, '#3b3e43');
@@ -271,7 +271,7 @@ function contrastPalette() {
 	setTextStyle('white', 'bold');
 	setChartBorderStyle(1, '#fafafa');
 	setChartBarColor('#fafafa');
-	setChartBarShadow('0px 0px 0px 0px #000000');
+	setChartBarShadow('');
 
 	setClickButtonColor('#fafafa');
 	setClickButtonTextColor('#000000');
@@ -306,7 +306,7 @@ function metallicPalette() {
 	setTextStyle('white', 'bold');
 	setChartBorderStyle(1, '#33353b');
 	setChartBarColor('#33353b');
-	setChartBarShadow('0px 0px 0px 0px #000000');
+	setChartBarShadow('');
 	
 	setClickButtonColor('#33353b');
 	setClickButtonTextColor('#FFFFFF');
@@ -375,7 +375,7 @@ function toWinPalette() {
 	setTextStyle('white', 'bold');
 	setChartBorderStyle(1, '#fafafa');
 	setChartBarColor('#fafafa');
-	setChartBarShadow('0px 0px 0px 0px #000000');
+	setChartBarShadow('');
 	
 	setClickButtonColor('#fafafa');
 	setClickButtonTextColor('#000000');
