@@ -356,6 +356,7 @@ class MapLoader {
 				finishOptions();
 			}
 
+			alert("TESTINGGGG");
 			MapLoader.onLoadSVG();
 		});
 	}
