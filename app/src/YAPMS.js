@@ -2623,7 +2623,7 @@ class PresetLoader {
 			['#32cd32','#32cd32','#32cd32','#32cd32']);
 
 		CandidateManager.candidates['PNM'] = pnm;
-		CandidateManager.candidates['TIP'] = unc;
+		CandidateManager.candidates['UNC'] = unc;
 		CandidateManager.candidates['COP'] = cop;
 		CandidateManager.candidates['PDP'] = pdp;
 	}
@@ -3237,9 +3237,7 @@ class State {
 		}
 
 		this.colorValue = colorValue;
-	
-		console.log(CandidateManager.candidates);
-		console.log(candidate);	
+		
 		var color = CandidateManager.candidates[candidate].colors[colorValue];
 
 		this.htmlElement.style.fill = color;
@@ -5522,7 +5520,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.75.0';
+var currentCache = 'v0.75.1';
 
 var states = [];
 var lands = [];

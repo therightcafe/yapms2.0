@@ -396,7 +396,7 @@ class PresetLoader {
 			['#32cd32','#32cd32','#32cd32','#32cd32']);
 
 		CandidateManager.candidates['PNM'] = pnm;
-		CandidateManager.candidates['TIP'] = unc;
+		CandidateManager.candidates['UNC'] = unc;
 		CandidateManager.candidates['COP'] = cop;
 		CandidateManager.candidates['PDP'] = pdp;
 	}
