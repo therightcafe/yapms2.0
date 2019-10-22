@@ -701,4 +701,7 @@ function ifInIframe() {
 		element.style.display = 'flex';
 		setPalette("light", false);
 	}
+
+	console.log(window.location);
+	console.log(window.parent.location);
 }

@@ -4753,6 +4753,9 @@ function ifInIframe() {
 		element.style.display = 'flex';
 		setPalette("light", false);
 	}
+
+	console.log(window.location);
+	console.log(window.parent.location);
 }
 function displayVersionInfo() {
 	var versioninfotext = document.getElementById('versioninfo-text');
@@ -5546,7 +5549,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.75.9';
+var currentCache = 'v0.75.10';
 
 var states = [];
 var lands = [];
