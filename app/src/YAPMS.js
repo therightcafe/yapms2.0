@@ -1747,6 +1747,8 @@ class MapLoader {
 		MapLoader.save_fontsize = fontsize;
 		MapLoader.save_strokewidth = strokewidth;
 
+		alert("LOAD MAP");
+
 		if(options) {
 			enablePopularVote = options.enablePopularVote;
 			verifyPopularVote();
@@ -1837,7 +1839,6 @@ class MapLoader {
 				finishOptions();
 			}
 
-			alert("TESTINGGGG");
 			MapLoader.onLoadSVG();
 		});
 	}
@@ -6004,7 +6005,6 @@ function start() {
 	LogoManager.loadFlags();
 	
 //	Account.verifyState();
-	alert("HELP");
 }
 
 start();
