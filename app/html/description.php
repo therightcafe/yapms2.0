@@ -191,6 +191,12 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		'<meta property="og:title" content="YAPms - Turkey National Assembly">
 		<meta property="og:description" content="Interactive Turkey National Assembly Map">';
 		break;
+		case 'Trinidad_Tobago_house_of_representatives':
+		echo '<meta name="description" content="Trinidad & Tobago - House of Representatives election map"><title>Trinidad & Tobago - House of Representatives Election</title>';
+		echo 
+		'<meta property="og:title" content="YAPms - Trinidad Tobago House of Representatives">
+		<meta property="og:description" content="Interactive Trinidad Tobago House of Representatives Map">';
+		break;
 		case 'Portugal_assembly_of_the_republic':
 		echo '<meta name="description" content="Portugal - Assembly of the Republic election map"><title>Portugal - Assembly of the Republic Election</title>';
 		echo 

@@ -694,3 +694,9 @@ function toggleYAPNews() {
 		MapManager.centerMap();
 	}
 }
+
+function ifInIframe() {
+	if(window.location !== window.parent.location) {
+		alert('test');
+	}
+}

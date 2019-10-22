@@ -4727,6 +4727,12 @@ function toggleYAPNews() {
 		MapManager.centerMap();
 	}
 }
+
+function ifInIframe() {
+	if(window.location !== window.parent.location) {
+		alert('test');
+	}
+}
 function displayVersionInfo() {
 	var versioninfotext = document.getElementById('versioninfo-text');
 	versioninfotext.innerHTML = currentCache;
@@ -5519,7 +5525,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.75.3';
+var currentCache = 'v0.75.4';
 
 var states = [];
 var lands = [];
@@ -5973,6 +5979,7 @@ function start() {
 	LogoManager.loadFlags();
 	
 //	Account.verifyState();
+//	ifInIframe();
 }
 
 start();
