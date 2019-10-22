@@ -1989,7 +1989,6 @@ class MapLoader {
 				//}
 			}
 
-			console.log(obj);
 			for(var stateName in obj.proportional) {
 				var stateData = obj.proportional[stateName];
 				var state = proportionalStates.filter(state => state.name === stateName)[0];
@@ -5520,7 +5519,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.75.1';
+var currentCache = 'v0.75.3';
 
 var states = [];
 var lands = [];

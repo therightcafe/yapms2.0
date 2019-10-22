@@ -521,7 +521,6 @@ class MapLoader {
 				//}
 			}
 
-			console.log(obj);
 			for(var stateName in obj.proportional) {
 				var stateData = obj.proportional[stateName];
 				var state = proportionalStates.filter(state => state.name === stateName)[0];
