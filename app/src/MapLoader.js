@@ -266,8 +266,6 @@ class MapLoader {
 		MapLoader.save_fontsize = fontsize;
 		MapLoader.save_strokewidth = strokewidth;
 
-		alert("LOAD MAP");
-
 		if(options) {
 			enablePopularVote = options.enablePopularVote;
 			verifyPopularVote();
@@ -289,6 +287,7 @@ class MapLoader {
 		console.log('Loading ' + filename);
 		$('#map-div').load(filename, function(a) {
 			console.log('Done loading ' + filename);
+			MapLoader.onLoadSVG();
 		
 			if(mobile === true) {
 				InputManager.enableInputMobile();
@@ -357,8 +356,6 @@ class MapLoader {
 				mapHTML.style.visibility = 'visible';
 				finishOptions();
 			}
-
-			MapLoader.onLoadSVG();
 		});
 	}
 
