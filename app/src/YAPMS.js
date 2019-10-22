@@ -4756,6 +4756,11 @@ function ifInIframe() {
 		if(element) {
 			element.style.display = 'flex';
 		}
+		var elements = document.getElementsByClassName('adslot_mobile');
+		for(var index = 0; index < elements.length; ++index) {
+			element = elements[index];
+			element.style.display = 'none';
+		}
 		setPalette("light", false);
 	}
 }
@@ -5551,7 +5556,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.75.10';
+var currentCache = 'v0.75.17';
 
 var states = [];
 var lands = [];

@@ -195,7 +195,6 @@ if($mobile === false) {
 </div>';
 }
 ?>
-
 </div>
 
 <div id="application-loading">
@@ -334,7 +333,7 @@ if($mobile === false) {
 </div>
 <?php
 if($mobile) {
-	echo '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+echo '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- mobile-ad -->
 <ins class="adsbygoogle adslot_mobile"
 	style="display:inline-block;"
