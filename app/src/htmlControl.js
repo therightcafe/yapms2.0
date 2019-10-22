@@ -694,14 +694,17 @@ function toggleYAPNews() {
 function ifInIframe() {
 	if(window.location !== window.parent.location) {
 		var element= document.getElementById('sidebar');
-		element.style.display = 'none';
+		if(element) {
+			element.style.display = 'none';
+		}
 		element = document.getElementById('menu-div');
-		element.style.display = 'none';
+		if(element) {
+			element.style.display = 'none';
+		}
 		element = document.getElementById('yapms-watermark');
-		element.style.display = 'flex';
+		if(element) {
+			element.style.display = 'flex';
+		}
 		setPalette("light", false);
 	}
-
-	alert(window.location);
-	alert(window.parent.location);
 }
