@@ -6004,6 +6004,7 @@ function start() {
 	LogoManager.loadFlags();
 	
 //	Account.verifyState();
+	alert("HELP");
 }
 
 start();
