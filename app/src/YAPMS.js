@@ -4754,8 +4754,8 @@ function ifInIframe() {
 		setPalette("light", false);
 	}
 
-	console.log(window.location);
-	console.log(window.parent.location);
+	alert(window.location);
+	alert(window.parent.location);
 }
 function displayVersionInfo() {
 	var versioninfotext = document.getElementById('versioninfo-text');
