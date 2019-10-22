@@ -699,6 +699,6 @@ function ifInIframe() {
 		element.style.display = 'none';
 		element = document.getElementById('yapms-watermark');
 		element.style.display = 'flex';
-		setPalette("default", false);
+		setPalette("light", false);
 	}
 }

@@ -4751,7 +4751,7 @@ function ifInIframe() {
 		element.style.display = 'none';
 		element = document.getElementById('yapms-watermark');
 		element.style.display = 'flex';
-		setPalette("default", false);
+		setPalette("light", false);
 	}
 }
 function displayVersionInfo() {
@@ -5546,7 +5546,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.75.8';
+var currentCache = 'v0.75.9';
 
 var states = [];
 var lands = [];
