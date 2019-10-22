@@ -1836,7 +1836,13 @@ class MapLoader {
 				mapHTML.style.visibility = 'visible';
 				finishOptions();
 			}
+
+			MapLoader.onLoadSVG();
 		});
+	}
+
+	static onLoadSVG() {
+		ifInIframe();
 	}
 
 	static loadGubernatorialFile(gubernatorialfile, onLoad) {
@@ -4130,7 +4136,11 @@ function displayCustomColorMenu(type) {
 	document.getElementById("tiltingcustom").value = CookieManager.cookies[type + 'tilting'];
 }
 
-function setPalette(palette) {
+function setPalette(palette, setCookie) {
+	if(setCookie) {
+		CookieManager.appendCookie('theme', palette);
+	}
+
 	switch(palette) {
 		case 'dark':
 			darkPalette();
@@ -4163,7 +4173,6 @@ function setPalette(palette) {
 }
 
 function darkPalette() {
-	CookieManager.appendCookie('theme', 'dark');
 	setBackgroundColor('#181922');
 
 	setOtherText('white');
@@ -4199,7 +4208,6 @@ function darkPalette() {
 }
 
 function greyscalePalette() {
-	CookieManager.appendCookie('theme', 'greyscale');
 	setBackgroundColor('#252525');
 	
 	setOtherText('white');
@@ -4234,7 +4242,6 @@ function greyscalePalette() {
 }
 
 function terminalPalette() {
-	CookieManager.appendCookie('theme', 'terminal');
 	setBackgroundColor('#000000');
 
 	setOtherText('white');
@@ -4269,7 +4276,6 @@ function terminalPalette() {
 }
 
 function lightPalette() {
-	CookieManager.appendCookie('theme', 'light');
 	setBackgroundColor('#dcdcdc');
 	
 	setOtherText('black');
@@ -4306,7 +4312,6 @@ function lightPalette() {
 }
 
 function contrastPalette() {
-	CookieManager.appendCookie('theme', 'contrast');
 	setBackgroundColor('#f8f9fa');
 
 	setOtherText('black');
@@ -4341,7 +4346,6 @@ function contrastPalette() {
 }
 
 function metallicPalette() {
-	CookieManager.appendCookie('theme', 'metallic');
 	setBackgroundImage('linear-gradient(#696969, #33353b)');
 	
 	setOtherText('white');
@@ -4376,7 +4380,6 @@ function metallicPalette() {
 }
 
 function halloweenPalette() {
-	CookieManager.appendCookie('theme', 'halloween');
 	setBackgroundImage('url("./res/images/halloween.jpg")');
 
 	setOtherText('#ffffff');
@@ -4410,7 +4413,6 @@ function halloweenPalette() {
 }
 
 function toWinPalette() {
-	CookieManager.appendCookie('theme', 'default');
 	setBackgroundColor('#f8f9fa');
 
 	setOtherText('black');
@@ -4749,6 +4751,7 @@ function ifInIframe() {
 		element.style.display = 'none';
 		element = document.getElementById('yapms-watermark');
 		element.style.display = 'flex';
+		setPalette("default", false);
 	}
 }
 function displayVersionInfo() {
@@ -5543,7 +5546,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.75.7';
+var currentCache = 'v0.75.8';
 
 var states = [];
 var lands = [];
@@ -5997,7 +6000,6 @@ function start() {
 	LogoManager.loadFlags();
 	
 //	Account.verifyState();
-	ifInIframe();
 }
 
 start();

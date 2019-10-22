@@ -355,7 +355,13 @@ class MapLoader {
 				mapHTML.style.visibility = 'visible';
 				finishOptions();
 			}
+
+			MapLoader.onLoadSVG();
 		});
+	}
+
+	static onLoadSVG() {
+		ifInIframe();
 	}
 
 	static loadGubernatorialFile(gubernatorialfile, onLoad) {
