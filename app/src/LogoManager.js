@@ -53,106 +53,17 @@ class LogoManager {
 	}
 
 	static loadFlags() {
-		var flags = document.getElementsByClassName("flag-aus");
-		for(var index = 0; index < flags.length; ++index) {
-			var flag = flags[index];
-			flag.setAttribute("src", "res/flags/aus.svg");
-		}	
-
-		flags = document.getElementsByClassName("flag-usa");
-		for(var index = 0; index < flags.length; ++index) {
-			var flag = flags[index];
-			flag.setAttribute("src", "res/flags/usa.svg");
-		}	
-		
-		flags = document.getElementsByClassName("flag-bra");
-		for(var index = 0; index < flags.length; ++index) {
-			var flag = flags[index];
-			flag.setAttribute("src", "res/flags/bra.svg");
-		}	
-		
-		flags = document.getElementsByClassName("flag-can");
-		for(var index = 0; index < flags.length; ++index) {
-			var flag = flags[index];
-			flag.setAttribute("src", "res/flags/can.svg");
-		}	
-		
-		flags = document.getElementsByClassName("flag-ger");
-		for(var index = 0; index < flags.length; ++index) {
-			var flag = flags[index];
-			flag.setAttribute("src", "res/flags/ger.svg");
-		}	
-		
-		flags = document.getElementsByClassName("flag-ind");
-		for(var index = 0; index < flags.length; ++index) {
-			var flag = flags[index];
-			flag.setAttribute("src", "res/flags/ind.svg");
-		}	
-		
-		flags = document.getElementsByClassName("flag-ita");
-		for(var index = 0; index < flags.length; ++index) {
-			var flag = flags[index];
-			flag.setAttribute("src", "res/flags/ita.svg");
-		}	
-		
-		flags = document.getElementsByClassName("flag-ire");
-		for(var index = 0; index < flags.length; ++index) {
-			var flag = flags[index];
-			flag.setAttribute("src", "res/flags/ire.svg");
-		}	
-		
-		flags = document.getElementsByClassName("flag-ned");
-		for(var index = 0; index < flags.length; ++index) {
-			var flag = flags[index];
-			flag.setAttribute("src", "res/flags/ned.svg");
-		}	
-		
-		flags = document.getElementsByClassName("flag-prt");
-		for(var index = 0; index < flags.length; ++index) {
-			var flag = flags[index];
-			flag.setAttribute("src", "res/flags/prt.svg");
-		}	
-		
-		flags = document.getElementsByClassName("flag-rus");
-		for(var index = 0; index < flags.length; ++index) {
-			var flag = flags[index];
-			flag.setAttribute("src", "res/flags/rus.svg");
-		}	
-		
-		flags = document.getElementsByClassName("flag-esp");
-		for(var index = 0; index < flags.length; ++index) {
-			var flag = flags[index];
-			flag.setAttribute("src", "res/flags/esp.svg");
-		}	
-		
-		flags = document.getElementsByClassName("flag-tur");
-		for(var index = 0; index < flags.length; ++index) {
-			var flag = flags[index];
-			flag.setAttribute("src", "res/flags/tur.svg");
-		}	
-		
-		flags = document.getElementsByClassName("flag-ukd");
-		for(var index = 0; index < flags.length; ++index) {
-			var flag = flags[index];
-			flag.setAttribute("src", "res/flags/ukd.svg");
-		}	
-		
-		flags = document.getElementsByClassName("flag-eu");
-		for(var index = 0; index < flags.length; ++index) {
-			var flag = flags[index];
-			flag.setAttribute("src", "res/flags/eu.svg");
-		}	
-		
-		flags = document.getElementsByClassName("flag-un");
-		for(var index = 0; index < flags.length; ++index) {
-			var flag = flags[index];
-			flag.setAttribute("src", "res/flags/un.svg");
-		}	
-		
-		flags = document.getElementsByClassName("flag-fra");
-		for(var index = 0; index < flags.length; ++index) {
-			var flag = flags[index];
-			flag.setAttribute("src", "res/flags/fra.svg");
-		}	
+		var countries = ['aus', 'usa', 'bra', 'can', 'ger', 'ind',
+			'ita', 'ire', 'ned', 'prt', 'rus', 'esp', 'tur',
+			'ukd', 'eu', 'un', 'fra', 'tat'];
+	
+		for(var countryIndex = 0; countryIndex < countries.length; ++countryIndex) {	
+			var country = countries[countryIndex];
+			var elements = document.getElementsByClassName("flag-" + country);
+			for(var elementIndex = 0; elementIndex < elements.length; ++elementIndex) {
+				var flag = elements[elementIndex];
+				flag.setAttribute("src", "res/flags/" + country + ".svg");
+			}	
+		}
 	}
 }

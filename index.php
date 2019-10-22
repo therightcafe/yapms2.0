@@ -729,6 +729,20 @@
 	
 	<div class="map-type-box">
 	<div class="map-type-header">
+		<img src="app/res/flags/tat.svg">
+		<div class="map-type-header-text">Trinidad and Tobago</div>
+	</div>
+	<div class="map-button-box">	
+		<a href="./app/?t=Trinidad_Tobago_house_of_representatives">
+			<div class="map-button">
+				<i class="fas fa-chevron-down"></i> House of Representatives
+			</div>
+		</a>
+	</div>
+	</div>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
 		<img src="app/res/flags/ukd.svg">
 		<div class="map-type-header-text">United Kingdom</div>
 	</div>

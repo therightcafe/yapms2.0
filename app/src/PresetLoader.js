@@ -54,6 +54,9 @@ class PresetLoader {
 			case 'turkey':
 				PresetLoader.loadPresetTurkey();
 				break;
+			case 'trinidad_tobago':
+				PresetLoader.loadPresetTrinidadTobago();
+				break;
 			case 'netherlands':
 				PresetLoader.loadPresetNetherlands();
 				break;
@@ -379,6 +382,23 @@ class PresetLoader {
 		CandidateManager.candidates['TIP'] = tip;
 		CandidateManager.candidates['DP'] = dp;
 		CandidateManager.candidates['Ind'] = ind;
+	}
+	
+	// Trinidad and Tobago Parties
+	static loadPresetTrinidadTobago() {
+		var pnm = new Candidate('PNM',
+			['#ff0000','#ff0000','#ff0000','#ff0000']);
+		var unc = new Candidate('UNC',
+			['#e8ac41','#e8ac41','#e8ac41','#e8ac41']);
+		var cop = new Candidate('COP',
+			['#000000','#000000','#000000','#000000']);
+		var pdp = new Candidate('PDP',
+			['#32cd32','#32cd32','#32cd32','#32cd32']);
+
+		CandidateManager.candidates['PNM'] = pnm;
+		CandidateManager.candidates['TIP'] = unc;
+		CandidateManager.candidates['COP'] = cop;
+		CandidateManager.candidates['PDP'] = pdp;
 	}
 
 	// Dutch Parties

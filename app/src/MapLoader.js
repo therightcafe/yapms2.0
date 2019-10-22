@@ -232,10 +232,9 @@ class MapLoader {
 				MapLoader.loadMap('./res/russia_constituencies.svg', 16, 0.15, 'duma', 'congressional', 'open', {updateText: false});
 				PresetLoader.loadPreset('russia');
 				break;
-			case "Trinidad_Tobogo_house_of_representatives":
-			case "tthor":
-				alert('help');
-				MapLoader.loadMap("./res/tthor.svg", 16, 0.25, "congressional", "congressional", "open", {updateText: false});
+			case "Trinidad_Tobago_house_of_representatives":
+				MapLoader.loadMap("./res/trinidad_tobago_house_of_representatives.svg", 16, 0.25, "congressional", "congressional", "open", {updateText: false});
+				PresetLoader.loadPreset('trinidad_tobago');
 				break;
 			case "EuropeanUnion":
 				MapLoader.loadMap("./res/eu.svg", 16, 0.25, "eu_parliament", "primary", "open", {updateText: false});
