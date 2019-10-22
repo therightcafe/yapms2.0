@@ -4730,7 +4730,8 @@ function toggleYAPNews() {
 
 function ifInIframe() {
 	if(window.location !== window.parent.location) {
-		alert('test');
+		var sidebar = document.getElementById('sidebar');
+		sidebar.style.display = 'none';
 	}
 }
 function displayVersionInfo() {
@@ -5525,7 +5526,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.75.5';
+var currentCache = 'v0.75.6';
 
 var states = [];
 var lands = [];
