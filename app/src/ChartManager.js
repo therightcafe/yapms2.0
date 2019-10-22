@@ -276,6 +276,10 @@ class ChartManager {
 				logo = document.getElementById('logo-pg-div');
 				logo.style.width = '15%';
 				logo.style.height = '100%';
+				
+				logo = document.getElementById('yapms-watermark');
+				logo.style.width = '15%';
+				logo.style.height = '100%';
 			}
 			else {
 				unsetBattleHorizontal();
@@ -291,6 +295,9 @@ class ChartManager {
 				logo.style.height = '15%';
 				
 				logo = document.getElementById('logo-pg-div');
+				logo.style.width = '100%';
+				logo.style.height = '15%';
+				logo = document.getElementById('yapms-watermark');
 				logo.style.width = '100%';
 				logo.style.height = '15%';
 			}
@@ -334,6 +341,9 @@ class ChartManager {
 			logo = document.getElementById('logo-pg-div');
 			logo.style.width = '15%';
 			logo.style.height = '100%';
+			logo = document.getElementById('yapms-watermark');
+			logo.style.width = '15%';
+			logo.style.height = '100%';
 		} else {
 			var application = document.getElementById('application');
 			application.style.flexDirection = 'row';
@@ -358,6 +368,9 @@ class ChartManager {
 			logo.style.width = '100%';
 			logo.style.height = '15%';
 			logo = document.getElementById('logo-pg-div');
+			logo.style.width = '100%';
+			logo.style.height = '15%';
+			logo = document.getElementById('yapms-watermark');
 			logo.style.width = '100%';
 			logo.style.height = '15%';
 		}

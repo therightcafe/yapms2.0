@@ -697,7 +697,11 @@ function toggleYAPNews() {
 
 function ifInIframe() {
 	if(window.location !== window.parent.location) {
-		var sidebar = document.getElementById('sidebar');
-		sidebar.style.display = 'none';
+		var element= document.getElementById('sidebar');
+		element.style.display = 'none';
+		element = document.getElementById('menu-div');
+		element.style.display = 'none';
+		element = document.getElementById('yapms-watermark');
+		element.style.display = 'flex';
 	}
 }

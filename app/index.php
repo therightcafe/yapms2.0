@@ -220,6 +220,14 @@ if($mobile === false) {
 		</div>
 		<div id="logo-div">
 		</div>
+		<div id="yapms-watermark" onclick='window.open(window.location, "_blank");'>
+			<div id="yapms-watermark-header">
+				Powered By
+			</div>
+			<div id="yapms-watermark-graphic">
+				yapms.com
+			</div>
+		</div>
 	</div>
 	<div id="map-div"></div>
 </div>

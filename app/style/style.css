@@ -196,6 +196,38 @@ a {
 	background-position: center;
 }
 
+#yapms-watermark {
+	display: none;
+	flex-direction: column;
+	cursor: pointer;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 10%;
+	margin: 0px;
+	background: grey;
+	font: times;
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#yapms-watermark-header{
+	margin-bottom: 10px;
+}
+
+#yapms-watermark-graphic {
+	border: 1px solid black;
+	border-radius: 6px;
+	padding: 4px;
+	background-color: white;
+	color: black;
+}
+
+#yapms-watermark hr {
+	border: 1px solid white;
+}
+
 #svgdata {
 	width: 100%;
 	height: 100%;

@@ -798,6 +798,10 @@ class ChartManager {
 				logo = document.getElementById('logo-pg-div');
 				logo.style.width = '15%';
 				logo.style.height = '100%';
+				
+				logo = document.getElementById('yapms-watermark');
+				logo.style.width = '15%';
+				logo.style.height = '100%';
 			}
 			else {
 				unsetBattleHorizontal();
@@ -813,6 +817,9 @@ class ChartManager {
 				logo.style.height = '15%';
 				
 				logo = document.getElementById('logo-pg-div');
+				logo.style.width = '100%';
+				logo.style.height = '15%';
+				logo = document.getElementById('yapms-watermark');
 				logo.style.width = '100%';
 				logo.style.height = '15%';
 			}
@@ -856,6 +863,9 @@ class ChartManager {
 			logo = document.getElementById('logo-pg-div');
 			logo.style.width = '15%';
 			logo.style.height = '100%';
+			logo = document.getElementById('yapms-watermark');
+			logo.style.width = '15%';
+			logo.style.height = '100%';
 		} else {
 			var application = document.getElementById('application');
 			application.style.flexDirection = 'row';
@@ -880,6 +890,9 @@ class ChartManager {
 			logo.style.width = '100%';
 			logo.style.height = '15%';
 			logo = document.getElementById('logo-pg-div');
+			logo.style.width = '100%';
+			logo.style.height = '15%';
+			logo = document.getElementById('yapms-watermark');
 			logo.style.width = '100%';
 			logo.style.height = '15%';
 		}
@@ -4730,8 +4743,12 @@ function toggleYAPNews() {
 
 function ifInIframe() {
 	if(window.location !== window.parent.location) {
-		var sidebar = document.getElementById('sidebar');
-		sidebar.style.display = 'none';
+		var element= document.getElementById('sidebar');
+		element.style.display = 'none';
+		element = document.getElementById('menu-div');
+		element.style.display = 'none';
+		element = document.getElementById('yapms-watermark');
+		element.style.display = 'flex';
 	}
 }
 function displayVersionInfo() {
@@ -5526,7 +5543,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.75.6';
+var currentCache = 'v0.75.7';
 
 var states = [];
 var lands = [];
