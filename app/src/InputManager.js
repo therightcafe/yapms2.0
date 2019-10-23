@@ -65,8 +65,10 @@ class InputManager {
 			customEventsHandler: eventHandler
 		});
 
-		$('map-div').on('pinch', function(event) {
+/*
+		$('html').on('pinch', function(event) {
 			event.gesture.preventDefault();
 		});
+*/
 	}
 }

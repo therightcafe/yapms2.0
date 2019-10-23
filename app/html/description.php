@@ -146,6 +146,12 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		'<meta property="og:title" content="YAPms - Canada House of Commons">
 		<meta property="og:description" content="Interactive Canadian House of Commons Map">';
 		break;
+		case 'Canada_2019_house_of_commons':
+		echo '<meta name="description" content="Canada - 2019 House of Commons election map"><title>Canada - 2019 House of Commons Election</title>';
+		echo 
+		'<meta property="og:title" content="YAPms - 2019 Canada House of Commons">
+		<meta property="og:description" content="Interactive 2019 Canadian House of Commons Map">';
+		break;
 		case 'Australia_states':
 		echo '<meta name="description" content="Australia - states election map"><title>Australia - State Election</title>';
 		echo 

@@ -1,4 +1,4 @@
-var indexCache = 'i0.75.21';
+var indexCache = 'i0.75.23';
 var staticCache = 's0.75.3';
 
 var _indexCache = [
@@ -37,14 +37,16 @@ var _indexCache = [
 	'./app/?t=USA_2024_projection',
 	'./app/?t=USA_2020_house_cook',
 
+	'./app/?t=Canada_provinces',
+	'./app/?t=Canada_house_of_commons',
+	'./app/?t=Canada_2019_house_of_commons',
+
 	'./app/?t=Germany_states',
 	'./app/?t=Germany_bundestag',
 	'./app/?t=Spain_congress_of_deputies',
 	'./app/?t=Portugal_assembly_of_the_republic',
 	'./app/?t=Italy_states',
 	'./app/?t=UnitedKingdom_house_of_commons',
-	'./app/?t=Canada_provinces',
-	'./app/?t=Canada_house_of_commons',
 	'./app/?t=Australia_states',
 	'./app/?t=Australia_house_of_representatives',
 	'./app/?t=Brazil_chamber_of_deputies',
@@ -111,6 +113,8 @@ var _staticCache = [
 	'./app/res/presets/USA_2020_inside',
 	'./app/res/presets/USA_2020_sabatos',
 	'./app/res/presets/UnitedKingdom_current_parliament',
+	
+	'./app/res/presets/can/Canada_2019_house_of_commons',
 
 	'./app/res/flags/aus.svg',
 	'./app/res/flags/bra.svg',

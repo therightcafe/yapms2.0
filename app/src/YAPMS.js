@@ -1231,9 +1231,11 @@ class InputManager {
 			customEventsHandler: eventHandler
 		});
 
-		$('map-div').on('pinch', function(event) {
+/*
+		$('html').on('pinch', function(event) {
 			event.gesture.preventDefault();
 		});
+*/
 	}
 }
 class KeyboardManager {
@@ -1579,6 +1581,9 @@ class MapLoader {
 			case "USA_2016_presidential_county":
 			case "UnitedKingdom_current_parliament":
 				MapLoader.loadPresetMap(id);
+				break;
+			case "Canada_2019_house_of_commons":
+				MapLoader.loadPresetMap('can/' + id);
 				break;
 			case "USA_Canada":
 				MapLoader.loadMap("./res/usa_canada.svg", 16, 0.01, "congressional", "presidential", "open", {updateText: false});
@@ -5560,7 +5565,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.75.21';
+var currentCache = 'v0.75.23';
 
 var states = [];
 var lands = [];

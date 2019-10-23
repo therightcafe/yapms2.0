@@ -9,6 +9,9 @@
 </div>
 </div>
 <div class="selectmenu-content">
+<a class="selectmenu-split">
+	<div class="selectmenu-split-text">National</div>
+</a>
 <a class="selectmenu-button" href="./?t=Canada_provinces">
 	<i class="fas fa-square"></i>
 	<div class="selectmenu-display-header-text">Provinces</div>
@@ -16,5 +19,12 @@
 <a class="selectmenu-button" href="./?t=Canada_house_of_commons">
 	<i class="fas fa-chevron-down"></i>
 	<div class="selectmenu-display-header-text">House of Commons</div>
+</a>
+<a class="selectmenu-split">
+	<div class="selectmenu-split-text">Historical</div>
+</a>
+<a class="selectmenu-button" href="./?t=Canada_2019_house_of_commons">
+	<i class="fas fa-chevron-down"></i>
+	<div class="selectmenu-display-header-text">2019</div>
 </a>
 </div>

@@ -95,6 +95,9 @@ class MapLoader {
 			case "UnitedKingdom_current_parliament":
 				MapLoader.loadPresetMap(id);
 				break;
+			case "Canada_2019_house_of_commons":
+				MapLoader.loadPresetMap('can/' + id);
+				break;
 			case "USA_Canada":
 				MapLoader.loadMap("./res/usa_canada.svg", 16, 0.01, "congressional", "presidential", "open", {updateText: false});
 				break;

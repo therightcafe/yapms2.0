@@ -568,6 +568,11 @@
 				<i class="fas fa-chevron-down"></i> House of Commons
 			</div>
 		</a>
+		<a href="./app/?t=Canada_2019_house_of_commons">
+			<div class="map-button">
+				<i class="fas fa-chevron-down"></i> 2019
+			</div>
+		</a>
 	</div>
 	</div>
 	
