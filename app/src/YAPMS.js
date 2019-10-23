@@ -1230,6 +1230,10 @@ class InputManager {
 			dblClickZoomEnabled: false,
 			customEventsHandler: eventHandler
 		});
+
+		$('map-div').on('pinch', function(event) {
+			event.gesture.preventDefault();
+		});
 	}
 }
 class KeyboardManager {
@@ -5556,7 +5560,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.75.20';
+var currentCache = 'v0.75.21';
 
 var states = [];
 var lands = [];
