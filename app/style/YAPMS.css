@@ -327,8 +327,8 @@ h2.selectmenu-toptext {
 .legend-button {
 	display: inline-block;
 	cursor: pointer;
-	margin-left: 3px;
-	margin-right: 0px;
+	margin-left: 1px;
+	margin-right: 1px;
 	vertical-align: top;
 	pointer-events: auto;
 	border: 1px solid;
@@ -338,12 +338,11 @@ h2.selectmenu-toptext {
 .legend-delete {
 	display: inline-block;
 	cursor: pointer;
-	margin-left: 0px;
-	margin-right: 3px;
+	margin-left: 1px;
+	margin-right: 1px;
 	vertical-align: top;
 	pointer-events: auto;
 	border: 1px solid;
-	border-left: 0px;
 	border-color: inherit;
 }
 
