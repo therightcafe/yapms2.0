@@ -634,7 +634,8 @@ if('serviceWorker' in navigator) {
 		if(typeof gtag !== 'undefined') {
 			gtag('event', 'upgrade', {
 				'event_category': 'upgrade',
-				'event_label': "SW Register " + currentCache
+				'event_label': "SW Register " + currentCache,
+				'non_interaction': true
 			});
 		}
 	}, function(err) {

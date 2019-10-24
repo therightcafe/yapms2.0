@@ -5620,7 +5620,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.75.30';
+var currentCache = 'v0.75.31';
 
 var states = [];
 var lands = [];
