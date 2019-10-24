@@ -97,7 +97,7 @@ class PresetLoader {
 	}
 
 	static loadPresetRepublicanPrimary() {
-		var trump = new Candidate('Trump',
+		var trump = new Candidate('Drumpf',
 			['#bf1d29','#bf1d29','#bf1d29','#bf1d29']);
 		var weld = new Candidate('Weld',
 			['#e6b700','#e6b700','#e6b700','#e6b700']);
@@ -106,7 +106,7 @@ class PresetLoader {
 		var sanford = new Candidate('Sanford',
 			['#1c8c28','#1c8c28','#1c8c28','#1c8c28']);
 		
-		CandidateManager.candidates['Trump'] = trump;
+		CandidateManager.candidates['Drumpf'] = trump;
 		CandidateManager.candidates['Weld'] = weld;
 		CandidateManager.candidates['Walsh'] = walsh;
 		CandidateManager.candidates['Sanford'] = sanford;
@@ -651,43 +651,43 @@ class PresetLoader {
 	}
 
 	static loadPresetSwitzerland() {
-		var cvppdc= new Candidate('CVP/PDC', 
-			['#ef7d00','#ef7d00','#ef7d00','#ef7d00']);
+		var cvppdc= new Candidate('SVP/UDC', 
+			['#088A4B','#088A4B','#088A4B','#088A4B']);
 		var fdpplr = new Candidate('FDP/PLR', 
-			['#1c408c','#1c408c','#1c408c','#1c408c']);
-		var spps = new Candidate('SP/PS', 
-			['#bf1d29','#bf1d29','#bf1d29','#bf1d29']);
-		var cvppdc = new Candidate('CVP/PDC', 
-			['#ef7d00','#ef7d00','#ef7d00','#ef7d00']);
+			['#0174DF','#0174DF','#0174DF','#0174DF']);
+		var spps = new Candidate('SDP/PSS', 
+			['#FA1360','#FA1360','#FA1360','#FA1360']);
 		var gpspes = new Candidate('GPS/PES', 
-			['#84b414','#84b414','#84b414','#84b414']);
+			['#01DF01','#01DF01','#01DF01','#01DF01']);
+		var cvppdc = new Candidate('CVP/PDC', 
+			['#FE9A2E','#FE9A2E','#FE9A2E','#FE9A2E']);
+		var glppvl = new Candidate('glp/pvl',
+			['#9AFE2E','#9AFE2E','#9AFE2E','#9AFE2E']);
 		var bdppdb = new Candidate('BDP/PBD',
-			['#000000','#000000','#000000','#000000']);
-		var glppvl = new Candidate('GLP/PVL',
-			['#a6cf42','#a6cf42','#a6cf42','#a6cf42']);
+			['#FFFF00','#FFFF00','#FFFF00','#FFFF00']);
 		var evppev = new Candidate('EVP/PEV',
-			['#dfda18','#dfda18','#dfda18','#dfda18']);
+			['#FFD735','#FFD735','#FFD735','#FFD735']);
 		var ldt = new Candidate('LdT',
-			['#577ccc','#577ccc','#577ccc','#577ccc']);
-		var mcg = new Candidate('MCG',
-			['#ff5865','#ff5865','#ff5865','#ff5865']);
-		var pda = new Candidate('PdA',
-			['#ff8b98','#ff8b98','#ff8b98','#ff8b98']);
-		var cspow = new Candidate('CSP OW',
+			['#0B3861','#0B3861','#0B3861','#0B3861']);
+		var pdapst = new Candidate('PdA/PST',
+			['#FF0000','#FF0000','#FF0000','#FF0000']);
+		var sols = new Candidate('SolS',
 			['#ababab','#ababab','#ababab','#ababab']);
+		var eduuudf = new Candidate('EDU/UDF',
+			['#C71585','#C71585','#C71585','#C71585']);
 
-		CandidateManager.candidates['CVP/PDC'] = cvppdc;
+		CandidateManager.candidates['SVP/UDD'] = cvppdc;
 		CandidateManager.candidates['FDP/PLR'] = fdpplr;
 		CandidateManager.candidates['SP/PS'] = spps;
-		CandidateManager.candidates['CVP/PDC'] = cvppdc;
 		CandidateManager.candidates['GPS/PES'] = gpspes;
-		CandidateManager.candidates['BDP/PBD'] = bdppdb;
+		CandidateManager.candidates['CVP/PDC'] = cvppdc;
 		CandidateManager.candidates['GLP/PVL'] = glppvl;
+		CandidateManager.candidates['BDP/PBD'] = bdppdb;
 		CandidateManager.candidates['EVP/PEV'] = evppev;
+		CandidateManager.candidates['PdA/PST'] = pdapst;
+		CandidateManager.candidates['SolS'] = sols;
+		CandidateManager.candidates['EDU/UDF'] = eduudf;
 		CandidateManager.candidates['LdT'] = ldt;
-		CandidateManager.candidates['MCG'] = mcg;
-		CandidateManager.candidates['PdA'] = pda;
-		CandidateManager.candidates['CSP OW'] = cspow;
 	}
 }
 
