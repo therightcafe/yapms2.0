@@ -97,7 +97,7 @@ class PresetLoader {
 	}
 
 	static loadPresetRepublicanPrimary() {
-		var trump = new Candidate('Drumpf',
+		var trump = new Candidate('Trump',
 			['#bf1d29','#bf1d29','#bf1d29','#bf1d29']);
 		var weld = new Candidate('Weld',
 			['#e6b700','#e6b700','#e6b700','#e6b700']);
@@ -106,7 +106,7 @@ class PresetLoader {
 		var sanford = new Candidate('Sanford',
 			['#1c8c28','#1c8c28','#1c8c28','#1c8c28']);
 		
-		CandidateManager.candidates['Drumpf'] = trump;
+		CandidateManager.candidates['Trump'] = trump;
 		CandidateManager.candidates['Weld'] = weld;
 		CandidateManager.candidates['Walsh'] = walsh;
 		CandidateManager.candidates['Sanford'] = sanford;
@@ -651,32 +651,32 @@ class PresetLoader {
 	}
 
 	static loadPresetSwitzerland() {
-		var cvppdc= new Candidate('SVP/UDC', 
-			['#088A4B','#088A4B','#088A4B','#088A4B']);
+		var svpudc = new Candidate('SVP/UDC', 
+			['#088a4b','#088a4b','#088a4b','#088a4b']);
 		var fdpplr = new Candidate('FDP/PLR', 
-			['#0174DF','#0174DF','#0174DF','#0174DF']);
+			['#0e52a0','#0e52a0','#0e52a0','#0e52a0']);
 		var spps = new Candidate('SDP/PSS', 
 			['#FA1360','#FA1360','#FA1360','#FA1360']);
 		var gpspes = new Candidate('GPS/PES', 
-			['#01DF01','#01DF01','#01DF01','#01DF01']);
+			['#01df01','#01df01','#01df01','#01df01']);
 		var cvppdc = new Candidate('CVP/PDC', 
-			['#FE9A2E','#FE9A2E','#FE9A2E','#FE9A2E']);
-		var glppvl = new Candidate('glp/pvl',
-			['#9AFE2E','#9AFE2E','#9AFE2E','#9AFE2E']);
+			['#ef7d00','#ef7d00','#ef7d00','#ef7d00']);
+		var glppvl = new Candidate('GLP/PVL',
+			['#a6cf42','#a6cf42','#a6cf42','#a6cf42']);
 		var bdppdb = new Candidate('BDP/PBD',
-			['#FFFF00','#FFFF00','#FFFF00','#FFFF00']);
+			['#000000','#000000','#000000','#000000']);
 		var evppev = new Candidate('EVP/PEV',
-			['#FFD735','#FFD735','#FFD735','#FFD735']);
+			['#ffd735','#ffd735','#ffd735','#ffd735']);
 		var ldt = new Candidate('LdT',
-			['#0B3861','#0B3861','#0B3861','#0B3861']);
+			['#6495ed','#6495ed','#6495ed','#6495ed']);
 		var pdapst = new Candidate('PdA/PST',
 			['#FF0000','#FF0000','#FF0000','#FF0000']);
 		var sols = new Candidate('SolS',
 			['#ababab','#ababab','#ababab','#ababab']);
-		var eduuudf = new Candidate('EDU/UDF',
-			['#C71585','#C71585','#C71585','#C71585']);
+		var eduudf = new Candidate('EDU/UDF',
+			['#9b2a58','#9b2a58','#9b2a58','#9b2a58']);
 
-		CandidateManager.candidates['SVP/UDD'] = cvppdc;
+		CandidateManager.candidates['SVP/UDD'] = svpudc ;
 		CandidateManager.candidates['FDP/PLR'] = fdpplr;
 		CandidateManager.candidates['SP/PS'] = spps;
 		CandidateManager.candidates['GPS/PES'] = gpspes;
