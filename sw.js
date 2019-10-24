@@ -1,5 +1,5 @@
-var indexCache = 'i0.75.26';
-var staticCache = 's0.75.3';
+var indexCache = 'i0.75.30';
+var staticCache = 's0.75.30';
 
 var _indexCache = [
 	'./',
@@ -59,6 +59,8 @@ var _indexCache = [
 	'./app/?t=Turkey_national_assembly',
 	'./app/?t=UnitedKingdom_current_parliament',
 	'./app/?t=Trinidad_Tobago_house_of_representatives.svg',
+	'./app/?t=Switzerland_council_of_states.svg',
+	'./app/?t=Switzerland_national_council.svg',
 
 	'./app/style/YAPMS.css',
 	'./app/style/mobile.css',
@@ -95,6 +97,7 @@ var _staticCache = [
 	'./app/res/ireland_constituencies.svg',
 	'./app/res/turkey_provinces.svg',
 	'./app/res/trinidad_tobago_house_of_representatives.svg',
+	'./app/res/che/switzerland_cantons.svg',
 	
 	'./app/res/lte.jpg',
 	'./app/res/redeagletv.png',
@@ -134,6 +137,7 @@ var _staticCache = [
 	'./app/res/flags/usa.svg',
 	'./app/res/flags/ind.svg',
 	'./app/res/flags/tat.svg',
+	'./app/res/flags/che.svg',
 
 	'./app/data/gubernatorial_2018',
 	'./app/data/gubernatorial_2020',

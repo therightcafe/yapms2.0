@@ -239,6 +239,14 @@ class MapLoader {
 				MapLoader.loadMap("./res/trinidad_tobago_house_of_representatives.svg", 16, 0.25, "congressional", "congressional", "open", {updateText: false});
 				PresetLoader.loadPreset('trinidad_tobago');
 				break;
+			case "Switzerland_national_council":
+				MapLoader.loadMap("./res/che/switzerland_cantons.svg", 16, 0.25, "switzerland_national_council", "proportional", "open", {updateText: false});
+				PresetLoader.loadPreset('switzerland');
+				break;
+			case "Switzerland_council_of_states":
+				MapLoader.loadMap("./res/che/switzerland_cantons.svg", 16, 0.25, "switzerland_council_of_states", "proportional", "open", {updateText: false});
+				PresetLoader.loadPreset('switzerland');
+				break;
 			case "EuropeanUnion":
 				MapLoader.loadMap("./res/eu.svg", 16, 0.25, "eu_parliament", "primary", "open", {updateText: false});
 				break;

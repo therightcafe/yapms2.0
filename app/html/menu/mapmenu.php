@@ -69,6 +69,10 @@
 	<img class="flag-esp">
 	<div class="selectmenu-button-text">Spain</div>
 </a>
+<a class="selectmenu-button" onclick='displayMenu("mapmenu-switzerland")'>
+	<img class="flag-che">
+	<div class="selectmenu-button-text">Switzerland</div>
+</a>
 <a class="selectmenu-button" href="./?t=Trinidad_Tobago_house_of_representatives">
 	<img class="flag-tat">
 	<div class="selectmenu-button-text">Trinidad and Tobogo</div>

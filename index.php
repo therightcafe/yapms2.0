@@ -249,13 +249,13 @@
 		</a>
 		<a href="./app/?t=USA_proportional">
 			<div class="map-button">
-				<i class="far fa-user-circle"></i>  Presidential Proportional
+				<i class="fas fa-user"></i>  Presidential Proportional
 			</div>
 		</a>
 		<br>
 		<a href="./app/?t=USA_2024_projection">
 			<div class="map-button">
-				<i class="far fa-user"></i> 2024 Estimates
+				<i class="fas fa-user"></i> 2024 Estimates
 			</div>
 		</a>
 		<a href="./app/?t=USA_split_maine">
@@ -546,7 +546,7 @@
 	<div class="map-button-box">	
 		<a href="./app/?t=Brazil_deputies">
 			<div class="map-button">
-				<i class="fas fa-chevron-circle-down"></i> Chamber of Deputies
+				<i class="fas fa-chevron-down"></i> Chamber of Deputies
 			</div>
 		</a>
 	</div>
@@ -646,7 +646,7 @@
 	<div class="map-button-box">	
 		<a href="./app/?t=Ireland_dail_eireann">
 			<div class="map-button">
-				<i class="fas fa-chevron-circle-down"></i> Dáil Éireann
+				<i class="fas fa-chevron-down"></i> Dáil Éireann
 			</div>
 		</a>
 	</div>
@@ -660,7 +660,7 @@
 	<div class="map-button-box">	
 		<a href="./app/?t=Netherlands_provinces">
 			<div class="map-button">
-				<i class="fas fa-chevron-circle-down"></i> Provinces
+				<i class="fas fa-square"></i> Provinces
 			</div>
 		</a>
 		<a href="./app/?t=Netherlands_gemeenten">
@@ -712,7 +712,26 @@
 	<div class="map-button-box">	
 		<a href="./app/?t=Spain_constituencies">
 			<div class="map-button">
-				<i class="fas fa-chevron-circle-down"></i> Congress of Deputies
+				<i class="fas fa-chevron-down"></i> Congress of Deputies
+			</div>
+		</a>
+	</div>
+	</div>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
+		<img src="app/res/flags/che.svg">
+		<div class="map-type-header-text">Switzerland</div>
+	</div>
+	<div class="map-button-box">	
+		<a href="./app/?t=Switzerland_council_of_states">
+			<div class="map-button">
+				<i class="fas fa-chevron-up"></i> Council of States
+			</div>
+		</a>
+		<a href="./app/?t=Switzerland_national_council">
+			<div class="map-button">
+				<i class="fas fa-chevron-down"></i> National Council
 			</div>
 		</a>
 	</div>
@@ -726,7 +745,7 @@
 	<div class="map-button-box">	
 		<a href="./app/?t=Turkey_national_assembly">
 			<div class="map-button">
-				<i class="fas fa-chevron-circle-down"></i> National Assembly
+				<i class="fas fa-chevron-down"></i> National Assembly
 			</div>
 		</a>
 	</div>
@@ -757,8 +776,6 @@
 				<i class="fas fa-chevron-down"></i> House of Commons
 			</div>
 		</a>
-	</div>
-	<div class="map-button-box">	
 		<a href="./app/?t=UnitedKingdom_current_parliament">
 			<div class="map-button">
 				<i class="fas fa-chevron-down"></i> Current Parliament
@@ -804,7 +821,7 @@
 	<div class="map-button-box">	
 		<a href="./app/?t=EuropeanUnion">
 			<div class="map-button">
-				<i class="fas fa-chevron-circle-down"></i> Parliament
+				<i class="fas fa-chevron-down"></i> Parliament
 			</div>
 		</a>
 	</div>

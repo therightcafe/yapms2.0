@@ -55,7 +55,7 @@ class LogoManager {
 	static loadFlags() {
 		var countries = ['aus', 'usa', 'bra', 'can', 'ger', 'ind',
 			'ita', 'ire', 'ned', 'prt', 'rus', 'esp', 'tur',
-			'ukd', 'eu', 'un', 'fra', 'tat'];
+			'ukd', 'eu', 'un', 'fra', 'tat', 'che'];
 	
 		for(var countryIndex = 0; countryIndex < countries.length; ++countryIndex) {	
 			var country = countries[countryIndex];

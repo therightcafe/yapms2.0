@@ -254,6 +254,18 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		'<meta property="og:title" content="YAPms - Russia Duma">
 		<meta property="og:description" content="Interactive Russian Duma Map">';
 		break;
+		case 'Switzerland_council_of_states':
+		echo '<meta name="description" content="Switzerland - Council of States map"><title>Switzerland - Council of States Election</title>';
+		echo 
+		'<meta property="og:title" content="YAPms - Switzerland Council of States">
+		<meta property="og:description" content="Interactive Switzerland Council of States Map">';
+		break;
+		case 'Switzerland_national_council':
+		echo '<meta name="description" content="Switzerland - National Council map"><title>Switzerland - National Council Election</title>';
+		echo 
+		'<meta property="og:title" content="YAPms - Switzerland National Council">
+		<meta property="og:description" content="Interactive Switzerland National Council Map">';
+		break;
 		case 'USA_Canada':
 		echo '<meta name="description" content="United USA and Canada election map"><title>USA/Canada Map Election</title>';
 		echo 

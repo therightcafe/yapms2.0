@@ -69,6 +69,9 @@ class PresetLoader {
 			case 'russia':
 				PresetLoader.loadPresetRussia();
 				break;
+			case 'switzerland':
+				PresetLoader.loadPresetSwitzerland();
+				break;
 			case 'portugal':
 				PresetLoader.loadPresetPortugal();
 				break;
@@ -645,6 +648,46 @@ class PresetLoader {
 		CandidateManager.candidates['NCP'] = ncp;
 		CandidateManager.candidates['AITC'] = aitc;
 		CandidateManager.candidates['SP'] = sp;
+	}
+
+	static loadPresetSwitzerland() {
+		var cvppdc= new Candidate('CVP/PDC', 
+			['#ef7d00','#ef7d00','#ef7d00','#ef7d00']);
+		var fdpplr = new Candidate('FDP/PLR', 
+			['#1c408c','#1c408c','#1c408c','#1c408c']);
+		var spps = new Candidate('SP/PS', 
+			['#bf1d29','#bf1d29','#bf1d29','#bf1d29']);
+		var cvppdc = new Candidate('CVP/PDC', 
+			['#ef7d00','#ef7d00','#ef7d00','#ef7d00']);
+		var gpspes = new Candidate('GPS/PES', 
+			['#84b414','#84b414','#84b414','#84b414']);
+		var bdppdb = new Candidate('BDP/PBD',
+			['#000000','#000000','#000000','#000000']);
+		var glppvl = new Candidate('GLP/PVL',
+			['#a6cf42','#a6cf42','#a6cf42','#a6cf42']);
+		var evppev = new Candidate('EVP/PEV',
+			['#dfda18','#dfda18','#dfda18','#dfda18']);
+		var ldt = new Candidate('LdT',
+			['#577ccc','#577ccc','#577ccc','#577ccc']);
+		var mcg = new Candidate('MCG',
+			['#ff5865','#ff5865','#ff5865','#ff5865']);
+		var pda = new Candidate('PdA',
+			['#ff8b98','#ff8b98','#ff8b98','#ff8b98']);
+		var cspow = new Candidate('CSP OW',
+			['#ababab','#ababab','#ababab','#ababab']);
+
+		CandidateManager.candidates['CVP/PDC'] = cvppdc;
+		CandidateManager.candidates['FDP/PLR'] = fdpplr;
+		CandidateManager.candidates['SP/PS'] = spps;
+		CandidateManager.candidates['CVP/PDC'] = cvppdc;
+		CandidateManager.candidates['GPS/PES'] = gpspes;
+		CandidateManager.candidates['BDP/PBD'] = bdppdb;
+		CandidateManager.candidates['GLP/PVL'] = glppvl;
+		CandidateManager.candidates['EVP/PEV'] = evppev;
+		CandidateManager.candidates['LdT'] = ldt;
+		CandidateManager.candidates['MCG'] = mcg;
+		CandidateManager.candidates['PdA'] = pda;
+		CandidateManager.candidates['CSP OW'] = cspow;
 	}
 }
 

@@ -1364,7 +1364,7 @@ class LogoManager {
 	static loadFlags() {
 		var countries = ['aus', 'usa', 'bra', 'can', 'ger', 'ind',
 			'ita', 'ire', 'ned', 'prt', 'rus', 'esp', 'tur',
-			'ukd', 'eu', 'un', 'fra', 'tat'];
+			'ukd', 'eu', 'un', 'fra', 'tat', 'che'];
 	
 		for(var countryIndex = 0; countryIndex < countries.length; ++countryIndex) {	
 			var country = countries[countryIndex];
@@ -1725,6 +1725,14 @@ class MapLoader {
 			case "Trinidad_Tobago_house_of_representatives":
 				MapLoader.loadMap("./res/trinidad_tobago_house_of_representatives.svg", 16, 0.25, "congressional", "congressional", "open", {updateText: false});
 				PresetLoader.loadPreset('trinidad_tobago');
+				break;
+			case "Switzerland_national_council":
+				MapLoader.loadMap("./res/che/switzerland_cantons.svg", 16, 0.25, "switzerland_national_council", "proportional", "open", {updateText: false});
+				PresetLoader.loadPreset('switzerland');
+				break;
+			case "Switzerland_council_of_states":
+				MapLoader.loadMap("./res/che/switzerland_cantons.svg", 16, 0.25, "switzerland_council_of_states", "proportional", "open", {updateText: false});
+				PresetLoader.loadPreset('switzerland');
 				break;
 			case "EuropeanUnion":
 				MapLoader.loadMap("./res/eu.svg", 16, 0.25, "eu_parliament", "primary", "open", {updateText: false});
@@ -2322,6 +2330,9 @@ class PresetLoader {
 			case 'russia':
 				PresetLoader.loadPresetRussia();
 				break;
+			case 'switzerland':
+				PresetLoader.loadPresetSwitzerland();
+				break;
 			case 'portugal':
 				PresetLoader.loadPresetPortugal();
 				break;
@@ -2898,6 +2909,46 @@ class PresetLoader {
 		CandidateManager.candidates['NCP'] = ncp;
 		CandidateManager.candidates['AITC'] = aitc;
 		CandidateManager.candidates['SP'] = sp;
+	}
+
+	static loadPresetSwitzerland() {
+		var cvppdc= new Candidate('CVP/PDC', 
+			['#ef7d00','#ef7d00','#ef7d00','#ef7d00']);
+		var fdpplr = new Candidate('FDP/PLR', 
+			['#1c408c','#1c408c','#1c408c','#1c408c']);
+		var spps = new Candidate('SP/PS', 
+			['#bf1d29','#bf1d29','#bf1d29','#bf1d29']);
+		var cvppdc = new Candidate('CVP/PDC', 
+			['#ef7d00','#ef7d00','#ef7d00','#ef7d00']);
+		var gpspes = new Candidate('GPS/PES', 
+			['#84b414','#84b414','#84b414','#84b414']);
+		var bdppdb = new Candidate('BDP/PBD',
+			['#000000','#000000','#000000','#000000']);
+		var glppvl = new Candidate('GLP/PVL',
+			['#a6cf42','#a6cf42','#a6cf42','#a6cf42']);
+		var evppev = new Candidate('EVP/PEV',
+			['#dfda18','#dfda18','#dfda18','#dfda18']);
+		var ldt = new Candidate('LdT',
+			['#577ccc','#577ccc','#577ccc','#577ccc']);
+		var mcg = new Candidate('MCG',
+			['#ff5865','#ff5865','#ff5865','#ff5865']);
+		var pda = new Candidate('PdA',
+			['#ff8b98','#ff8b98','#ff8b98','#ff8b98']);
+		var cspow = new Candidate('CSP OW',
+			['#ababab','#ababab','#ababab','#ababab']);
+
+		CandidateManager.candidates['CVP/PDC'] = cvppdc;
+		CandidateManager.candidates['FDP/PLR'] = fdpplr;
+		CandidateManager.candidates['SP/PS'] = spps;
+		CandidateManager.candidates['CVP/PDC'] = cvppdc;
+		CandidateManager.candidates['GPS/PES'] = gpspes;
+		CandidateManager.candidates['BDP/PBD'] = bdppdb;
+		CandidateManager.candidates['GLP/PVL'] = glppvl;
+		CandidateManager.candidates['EVP/PEV'] = evppev;
+		CandidateManager.candidates['LdT'] = ldt;
+		CandidateManager.candidates['MCG'] = mcg;
+		CandidateManager.candidates['PdA'] = pda;
+		CandidateManager.candidates['CSP OW'] = cspow;
 	}
 }
 
@@ -4016,6 +4067,10 @@ data = {
 'netherlands_provinces':{'Groningen': 43, 'Friesland': 43, 'Drenthe': 41, 'Overijssel': 47, 'Flevoland': 41, 'Gelderland': 55, 'Utrecht': 49, 'Noord-Holland': 55, 'Zuid-Holland': 55, 'Zeeland': 39, 'Noord-Brabant': 55, 'Limburg': 47},
 
 'spain_constituencies': {'La Coruña': 8, 'Pontevedra': 7, 'Lugo': 4, 'Orense': 4, 'Asturias': 7, 'León': 4,'Zamora': 3, 'Salamanca': 4, 'Cáceres': 4, 'Badajoz': 6, 'Huelva': 5, 'Seville': 12, 'Cádiz': 9, 'Cordoba': 6, 'Málaga': 11, 'Granada': 7, 'Almeria': 6, 'Jaen': 5, 'Murcia': 10, 'Alicante': 12, 'Albacete': 4, 'Ciudad Real': 5, 'Toledo': 6, 'Cuenca': 3, 'Valencia': 15, 'Castellón': 5, 'Teruel': 3, 'Guadalajara': 3, 'Madrid': 37, 'Avila': 3, 'Segovia': 3, 'Valladolid': 5, 'Palencia': 3, 'Burgos': 4, 'Soria': 2, 'Zaragoza': 7, 'Tarragona': 6, 'Barcelona': 32, 'Girona': 6, 'Lreida': 4, 'Huesca': 3, 'Navarre': 5, 'La Rioja': 4, 'Álava': 4, 'Guipuzcoa': 6, 'Biscay': 8, 'Cantabria': 5, 'Ceuta': 1, 'Melilla': 1, 'Santa Cruz de Tenerife': 7, 'Las Palmas': 8, 'Balearic Islands': 8},
+
+'switzerland_national_council': {'Aargau': 16, 'Appenzell Outer Rhodes': 1, 'Appenzell Inner Rhodes': 1, 'Basel-Landschaft': 7, 'Basel-Stadt': 5, 'Bern': 24, 'Fribourg': 7, 'Geneva': 12, 'Glarus': 1, 'Graubünden': 5, 'Jura': 2, 'Lucerne': 9, 'Neuchâtel': 4, 'Nidwalden': 1, 'Obwalden': 1, 'St. Gallen': 12, 'Schaffhausen': 2, 'Schwyz': 4, 'Solothurn': 6, 'Thurgau': 6, 'Ticino': 8, 'Uri': 1, 'Vaud': 19, 'Valais': 8, 'Zurich': 35, 'Zug': 3},
+
+'switzerland_council_of_states': {'Aargau': 2, 'Appenzell Outer Rhodes': 1, 'Appenzell Inner Rhodes': 1, 'Basel-Landschaft': 1, 'Basel-Stadt': 1, 'Bern': 2, 'Fribourg': 2, 'Geneva': 2, 'Glarus': 2, 'Graubünden': 2, 'Jura': 2, 'Lucerne': 2, 'Neuchâtel': 2, 'Nidwalden': 1, 'Obwalden': 1, 'St. Gallen': 2, 'Schaffhausen': 2, 'Schwyz': 2, 'Solothurn': 2, 'Thurgau': 2, 'Ticino': 2, 'Uri': 2, 'Vaud': 2, 'Valais': 2, 'Zurich': 2, 'Zug': 2},
 
 'usa_voting_pop': {'AL': 3766477, 'AK': 554567, 'AZ': 5299579, 'AR': 2283195, 'CA': 30157154, 'CO': 4279173, 'CT': 2823158, 'DE': 747791, 'FL': 16465727, 'GA': 7798827, 'HI': 1120541, 'ID': 1245967, 'IL': 9875430, 'IN': 5057601, 'IA': 2403962, 'KS': 2192338, 'KY': 3426345, 'LA': 3567717, 'ME': 1081705, 'ME-AL': 1081705, 'ME-D1': 555860, 'ME-D2': 525845, 'MD': 4667719, 'MA': 5433677, 'MI': 7737243, 'MN': 4231619, 'MS': 2267438, 'MO': 4706137, 'MT': 814909, 'NE': 1445479, 'NE-AL': 1445479, 'NE-D1': 493216, 'NE-D2': 493516, 'NE-D3': 458747, 'NV': 2262631, 'NH': 1074207, 'NJ': 6969717, 'NM': 1590352, 'NY': 15564730, 'NC': 7848068, 'ND': 581641, 'OH': 9002201, 'OK': 2961933, 'OR': 3224738, 'PA': 10109422, 'RI': 848045, 'SC': 3863498, 'SD': 652167, 'TN': 5149399, 'TX': 20568009, 'UT': 2129444, 'VT': 506066, 'VA': 6541685, 'WA': 5658502, 'WV': 1456034, 'WI': 4491015, 'WY': 446600, 'DC': 560277},
 
@@ -5565,7 +5620,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.75.26';
+var currentCache = 'v0.75.30';
 
 var states = [];
 var lands = [];
