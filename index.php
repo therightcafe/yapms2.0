@@ -544,7 +544,12 @@
 		<div class="map-type-header-text">Brazil</div>
 	</div>
 	<div class="map-button-box">	
-		<a href="./app/?t=Brazil_deputies">
+		<a href="./app/?t=Brazil_federal_senate">
+			<div class="map-button">
+				<i class="fas fa-chevron-up"></i> Federal Senate
+			</div>
+		</a>
+		<a href="./app/?t=Brazil_chamber_of_deputies">
 			<div class="map-button">
 				<i class="fas fa-chevron-down"></i> Chamber of Deputies
 			</div>

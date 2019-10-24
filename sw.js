@@ -1,4 +1,4 @@
-var indexCache = 'i0.75.35';
+var indexCache = 'i0.76.0';
 var staticCache = 's0.75.30';
 
 var _indexCache = [
@@ -50,6 +50,7 @@ var _indexCache = [
 	'./app/?t=Australia_states',
 	'./app/?t=Australia_house_of_representatives',
 	'./app/?t=Brazil_chamber_of_deputies',
+	'./app/?t=Brazil_federal_senate',
 	'./app/?t=France_national_assembly',
 	'./app/?t=Russia_duma',
 	'./app/?t=Russia_federal_council',

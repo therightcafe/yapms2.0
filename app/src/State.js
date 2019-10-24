@@ -48,6 +48,9 @@ class State {
 				this.setVoteCount(1, false);
 				this.voteCount_beforeDisable = 1;
 			}
+		} else if(this.dataid === 'brazil_senate') {
+			this.setVoteCount(3, false);
+			this.voteCount_beforeDisable = 3;
 		} else {
 			this.setVoteCount(data[this.dataid][this.name], false);
 			this.voteCount_beforeDisable = data[this.dataid][this.name];

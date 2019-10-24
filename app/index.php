@@ -515,6 +515,10 @@ echo '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygo
 	<?php require './html/menu/mapmenu-canada.php'; ?>
 </div>
 
+<div id="mapmenu-brazil" class="popup selectmenu">
+	<?php require './html/menu/mapmenu-brazil.php'; ?>
+</div>
+
 <div id="mapmenu-australia" class="popup selectmenu">
 	<?php require './html/menu/mapmenu-australia.php'; ?>
 </div>

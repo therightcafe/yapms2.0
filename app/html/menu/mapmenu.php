@@ -25,7 +25,7 @@
 	<img class="flag-aus">
 	<div class="selectmenu-button-text">Australia</div>
 </a>
-<a class="selectmenu-button" href="./?t=Brazil_chamber_of_deputies">
+<a class="selectmenu-button" onclick='displayMenu("mapmenu-brazil")'>
 	<img class="flag-bra">
 	<div class="selectmenu-button-text">Brazil</div>
 </a>

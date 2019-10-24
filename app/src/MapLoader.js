@@ -227,6 +227,10 @@ class MapLoader {
 				MapLoader.loadMap("./res/brazil_states.svg", 16, 50, "brazil_deputies", "proportional", "open", {updateText: false});
 				PresetLoader.loadPreset('brazil');
 				break;
+			case 'Brazil_federal_senate':
+				MapLoader.loadMap('./res/brazil_states.svg', 16, 50, "brazil_senate", "proportional", "open", {updateText: false});
+				PresetLoader.loadPreset('brazil');
+				break;
 			case 'Russia_federal_council':
 				MapLoader.loadMap('./res/russia_federal_subjects.svg', 16, 0.25, 'russia_federal_council', 'proportional', 'open', {updateText: false});
 				PresetLoader.loadPreset('russia');

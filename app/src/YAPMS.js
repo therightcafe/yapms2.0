@@ -1714,6 +1714,10 @@ class MapLoader {
 				MapLoader.loadMap("./res/brazil_states.svg", 16, 50, "brazil_deputies", "proportional", "open", {updateText: false});
 				PresetLoader.loadPreset('brazil');
 				break;
+			case 'Brazil_federal_senate':
+				MapLoader.loadMap('./res/brazil_states.svg', 16, 50, "brazil_senate", "proportional", "open", {updateText: false});
+				PresetLoader.loadPreset('brazil');
+				break;
 			case 'Russia_federal_council':
 				MapLoader.loadMap('./res/russia_federal_subjects.svg', 16, 0.25, 'russia_federal_council', 'proportional', 'open', {updateText: false});
 				PresetLoader.loadPreset('russia');
@@ -3003,6 +3007,9 @@ class State {
 				this.setVoteCount(1, false);
 				this.voteCount_beforeDisable = 1;
 			}
+		} else if(this.dataid === 'brazil_senate') {
+			this.setVoteCount(3, false);
+			this.voteCount_beforeDisable = 3;
 		} else {
 			this.setVoteCount(data[this.dataid][this.name], false);
 			this.voteCount_beforeDisable = data[this.dataid][this.name];
@@ -5620,7 +5627,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.75.35';
+var currentCache = 'v0.76.0';
 
 var states = [];
 var lands = [];

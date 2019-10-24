@@ -184,6 +184,12 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		'<meta property="og:title" content="YAPms - Brazil Chamber of Deputies">
 		<meta property="og:description" content="Interactive Brazilian Chamber of Deputies Map">';
 		break;
+		case 'Brazil_federal_senate':
+		echo '<meta name="description" content="Brazil - Federal Senate election map"><title>Brazil - Federal Senate Election</title>';
+		echo 
+		'<meta property="og:title" content="YAPms - Brazil Federal Senate">
+		<meta property="og:description" content="Interactive Brazilian Federal Senate Map">';
+		break;
 		case 'Spain_constituencies':
 		case 'Spain_congress_of_deputies':
 		echo '<meta name="description" content="Spain - Congress of Deputies election map"><title>Spain - Congress of Deputies Election</title>';
