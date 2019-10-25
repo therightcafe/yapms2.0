@@ -58,7 +58,7 @@ class Account {
 			crossDomain: true,
 			success: function(data) {
 				var arr = data.split(' ');
-				//alert('Login: ' + data);
+				alert('Login: ' + data);
 				Account.verifyState();
 				if(arr[0] === 'bad') {
 					var loginInfo = document.getElementById('login-info');
