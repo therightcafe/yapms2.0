@@ -450,7 +450,7 @@ function start() {
 	LogoManager.loadLogos();
 	LogoManager.loadButtons();
 	LogoManager.loadFlags();
-	
+
 	Account.verifyState();
 }
 

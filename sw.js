@@ -1,5 +1,5 @@
-var indexCache = 'i0.76.2';
-var staticCache = 's0.75.30';
+var indexCache = 'i0.76.35';
+var staticCache = 's0.76.35';
 
 var _indexCache = [
 	'./',
@@ -103,8 +103,8 @@ var _staticCache = [
 	'./app/res/lte.jpg',
 	'./app/res/redeagletv.png',
 	'./app/res/pg.png',
-
-	'./app/res/images/halloween.jpg',
+	
+	'./app/res/images/halloween.jpg'
 
 	'./app/res/presets/USA_current_house',
 	'./app/res/presets/USA_2020_house_cook',
@@ -192,7 +192,7 @@ self.addEventListener('install', function(event) {
 			})
 		}
 	}).then(caches.has(indexCache).then(function(exists) {
-		if(exists ===  false) {
+		if(exists === false) {
 			return caches.open(indexCache).then(function(cache) {
 				swLog(indexCache, 'installing');
 				return cache.addAll(_indexCache).then(function() {
