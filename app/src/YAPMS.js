@@ -95,7 +95,7 @@ class Account {
 			},
 			crossDomain: true,
 			success: function(data) {
-				//alert('Verify Login: ' + data);
+				alert('Verify Login: ' + data);
 				var arr = data.split(' ');
 				Account.isLoggedIn = (arr[0] === 'good');
 				if(Account.isLoggedIn) {
