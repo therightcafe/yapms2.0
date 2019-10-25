@@ -10,7 +10,6 @@
 <div class="selectmenu-section" id="register-info">
 	Please enter your credentials
 </div>
-<div class="selectmenu-section">User <input id="user-input" type="text"></div>
 <div class="selectmenu-section">Email <input id="email-input" type="text"></div>
 <a class="selectmenu-button" onclick="Account.register();">
 	<div class="selectmenu-button-text">Register</div>

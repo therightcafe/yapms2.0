@@ -1,9 +1,7 @@
 class Account {
 	static register() {
 		var formData = new FormData();
-		var user = document.getElementById('user-input').value;
 		var email = document.getElementById('email-input').value;
-		formData.append('user', user);
 		formData.append('email', email);
 		$.ajax({
 			url: "https://yapms.org/auth/register.php",
@@ -44,9 +42,9 @@ class Account {
 
 	static login() {
 		var formData = new FormData();
-		var user = document.getElementById('user-login').value;
+		var email = document.getElementById('email-login').value;
 		var pass = document.getElementById('password-login').value;
-		formData.append('user', user);
+		formData.append('email', email);
 		formData.append('password', pass);
 		$.ajax({
 			url: "https://yapms.org/auth/login.php",
@@ -85,7 +83,6 @@ class Account {
 
 	static verifyState() {
 		var formData = new FormData();
-		formData.append('user', Account.user);
 		formData.append('email', Account.email);
 		$.ajax({
 			url: "https://yapms.org/auth/verify_login.php",
@@ -102,13 +99,11 @@ class Account {
 				var arr = data.split(' ');
 				Account.isLoggedIn = (arr[0] === 'good');
 				if(Account.isLoggedIn) {
-					Account.user = arr[1];
-					Account.email = arr[2];
-					Account.id = arr[3];
+					Account.email = arr[1];
+					Account.id = arr[2];
 				} else {
 					Account.id = null;
 					Account.email = null;	
-					Account.user = null;	
 				}
 				Account.updateHTML();
 			},
@@ -280,7 +275,6 @@ class Account {
 		var saveButton = document.getElementById('save-button');
 		var mymapsButton = document.getElementById('mymaps-button');
 
-		var accountUser = document.getElementById('account-user');
 		var accountEmail = document.getElementById('account-email');
 
 		if(Account.isLoggedIn) {
@@ -288,7 +282,6 @@ class Account {
 			accountButton.style.display = '';
 			saveButton.style.display = '';
 			mymapsButton.style.display = '';
-			accountUser.innerHTML = Account.user;
 			accountEmail.innerHTML = Account.email;
 		} else {
 			loginButton.style.display = '';
@@ -299,7 +292,6 @@ class Account {
 	}
 }
 
-Account.user = null;
 Account.email = null;
 Account.id = null;
 Account.isLoggedIn = false;
