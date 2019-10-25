@@ -249,6 +249,31 @@ class Account {
 		});
 	}
 
+	static forgotPassword() {
+		var formData = new FormData();
+		var email = document.getElementById('email-forgot-input').value;
+		formData.append('email', email);
+		$.ajax({
+			url: "https://yapms.org/auth/forgot_password.php",
+			type: "POST",
+			data: formData,
+			processData: false,
+			contentType: false,
+			xhrFields: {
+				withCredentials: true
+			},
+			crossDomain: true,
+			success: function(data) {
+				alert('Forgot email sent: ' + data);
+			},
+			error: function(a, b, c) {
+				console.log(a);
+				console.log(b);
+				console.log(c);
+			}	
+		});
+	}
+
 	static updateHTML() {
 		var loginButton = document.getElementById('login-button');
 		var accountButton = document.getElementById('account-button');
@@ -5627,7 +5652,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.76.0';
+var currentCache = 'v0.76.1';
 
 var states = [];
 var lands = [];
@@ -6080,7 +6105,7 @@ function start() {
 	LogoManager.loadButtons();
 	LogoManager.loadFlags();
 	
-//	Account.verifyState();
+	Account.verifyState();
 }
 
 start();

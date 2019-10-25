@@ -173,7 +173,7 @@ if($mobile === false) {
 	<i class="fas fa-user-secret"></i> Privacy Policy
 	</a>
 	</div>
-<!--
+
 	<div id="login-button" class="customGPlusSignIn click-button" style="margin-left: auto;" onclick='displayMenu("loginmenu");'>
 		Login
 	</div>
@@ -186,12 +186,12 @@ if($mobile === false) {
 	<div id="account-button" class="click-button" style="display: none;" onclick='displayMenu("accountmenu");'>
 		Account
 	</div>
--->
+
 <?php
 /* margin-left: auto; moves the button all the way to the right */
 if($mobile === false) {
 	echo '
-<div class="click-button" onclick="toggleYAPNews()" style="white-space: nowrap; margin-left: auto;">
+<div class="click-button" onclick="toggleYAPNews()" style="white-space: nowrap; margin-left: 0px;">
 <i class="fas fa-bars"></i> Sidebar
 </div>';
 }
@@ -557,6 +557,10 @@ echo '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygo
 
 <div id="loginmenu" class="popup selectmenu">
 	<?php require './html/menu/loginmenu.php'; ?>
+</div>
+
+<div id="forgotpasswordmenu" class="popup selectmenu">
+	<?php require './html/menu/forgotpasswordmenu.php'; ?>
 </div>
 
 <div id="registermenu" class="popup selectmenu">

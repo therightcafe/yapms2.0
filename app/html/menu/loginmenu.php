@@ -18,4 +18,7 @@
 <a class="selectmenu-button" onclick='displayMenu("registermenu");'>
 	<div class="selectmenu-button-text">Register</div>
 </a>
+<a class="selectmenu-button" onclick='displayMenu("forgotpasswordmenu");'>
+	<div class="selectmenu-button-text">Forgot Password</div>
+</a>
 </div>
