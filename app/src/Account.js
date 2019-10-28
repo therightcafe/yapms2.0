@@ -335,9 +335,11 @@ class Account {
 					var name = fileName[3].split('-')[1].split('.')[0];
 					var e = document.createElement('a');
 					e.className = 'selectmenu-button';
-					e.onclick = function() {
-						window.location.href = "https://testing.yapms.com/app/?u=" + Account.id + '$m=' + name;
-					}
+					e.onclick = (function() {
+						return function() {
+							window.location.href = "https://testing.yapms.com/app/?u=" + Account.id + '$m=' + name;
+						}
+					})();
 					var t = document.createElement('div');
 					t.className = "selectmenu-button-text";
 					var text = document.createTextNode(name);
