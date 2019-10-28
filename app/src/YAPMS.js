@@ -344,7 +344,7 @@ class Account {
 					var eleft = document.createElement('div');
 					eleft.className = 'selectmenu-button-left selectmenu-button';
 					var eright = document.createElement('i');
-					eright.className = 'fas fa-minus-square selectmenu-button-right selectmenu-button';	
+					eright.className = 'fa fa-minus-square selectmenu-button-right selectmenu-button';	
 
 					var textleft = document.createElement('div');
 					textleft.className = "selectmenu-button-text";
