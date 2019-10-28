@@ -316,6 +316,28 @@ class Account {
 		});
 	}
 
+	static getMaps() {
+		$.ajax({
+			url: "https://yapms.org/get_maps_users.php",
+			type: "POST",
+			data: formData,
+			processData: false,
+			contentType: false,
+			xhrFields: {
+				withCredentials: true
+			},
+			crossDomain: true,
+			success: function(data) {
+				console.log(data);
+			},
+			error: function(a, b, c) {
+				console.log(a);
+				console.log(b);
+				console.log(c);
+			}
+		});
+	}
+
 	static updateHTML() {
 		var loginButton = document.getElementById('login-button');
 		var accountButton = document.getElementById('account-button');
