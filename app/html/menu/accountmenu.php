@@ -10,9 +10,6 @@
 <a class="selectmenu-split">
 	<div class="selectmenu-split-text">Info</div>
 </a>
-<div class="selectmenu-section" id="account-user">
-	User
-</div>
 <div class="selectmenu-section" id="account-email">
 	Email
 </div>

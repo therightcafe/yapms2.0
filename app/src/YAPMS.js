@@ -14,7 +14,7 @@ class Account {
 			},
 			crossDomain: true,
 			success: function(data) {
-				console.log(data);
+				console.log('Register: ' + data);
 				//alert(data);
 				var arr = data.split(' ');
 				var registerInfo = document.getElementById('register-info');
@@ -63,8 +63,8 @@ class Account {
 			},
 			crossDomain: true,
 			success: function(data) {
+				console.log('Login: ' + data);
 				var arr = data.split(' ');
-				alert('Login: ' + data);
 				Account.verifyState();
 				if(arr[0] === 'good') {
 					closeAllPopups();
@@ -101,7 +101,7 @@ class Account {
 			},
 			crossDomain: true,
 			success: function(data) {
-				//alert('Verify Login: ' + data);
+				console.log('Verify Login: ' + data);
 				var arr = data.split(' ');
 				Account.isLoggedIn = (arr[0] === 'good');
 				if(Account.isLoggedIn) {
@@ -133,6 +133,7 @@ class Account {
 			},
 			crossDomain: true,
 			success: function(data) {
+				console.log('Logout: ' + data);
 				Account.verifyState();
 			},
 			error: function(a, b, c) {
@@ -211,7 +212,7 @@ class Account {
 			},
 			crossDomain: true,
 			success: function(data) {
-				console.log(data);
+				console.log('Save: ' + data);
 			},
 			error: function(a, b, c) {
 				console.log(a);
@@ -240,6 +241,7 @@ class Account {
 			},
 			crossDomain: true,
 			success: function(data) {
+				console.log('Change Password: ' + data);
 				var arr = data.split(' ');
 				if(arr[0] === 'good') {
 					closeAllPopups();
@@ -279,6 +281,7 @@ class Account {
 			},
 			crossDomain: true,
 			success: function(data) {
+				console.log('Forgot Password: ' + data);
 				var arr = data.split(' ');
 				closeAllPopups();
 				if(arr[0] === 'good') {
@@ -5681,7 +5684,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.80.5';
+var currentCache = 'v0.80.6';
 
 var states = [];
 var lands = [];
