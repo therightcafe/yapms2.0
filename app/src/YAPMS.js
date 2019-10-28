@@ -327,6 +327,7 @@ class Account {
 			},
 			crossDomain: true,
 			success: function(data) {
+				console.log(data);
 				var arr = data.split(' ');
 				for(var fileIndex = 0; fileIndex < arr.length; ++fileIndex) {
 					console.log(arr[fileIndex]);
@@ -334,7 +335,6 @@ class Account {
 					var name = fileName[2].split('-')[1].split['.'][0];
 					console.log(name);	
 				}
-				console.log(data);
 			},
 			error: function(a, b, c) {
 				console.log(a);
