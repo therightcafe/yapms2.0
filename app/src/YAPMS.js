@@ -66,6 +66,7 @@ class Account {
 				console.log('Login: ' + data);
 				var arr = data.split(' ');
 				Account.verifyState();
+				document.getElementById('password-login').value = "";
 				if(arr[0] === 'good') {
 					closeAllPopups();
 					loginInfo.innerHTML = 'Please enter your credentials';
@@ -5689,7 +5690,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.80.8';
+var currentCache = 'v0.80.10';
 
 var states = [];
 var lands = [];

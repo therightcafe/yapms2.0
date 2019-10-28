@@ -3,10 +3,13 @@
        <object class="closebutton" type="image/svg+xml">Close</object>
 </div>
 <div class="selectmenu-display-header">
-	<h2 class="selectmenu-display-header-text">Login</h2>
+	<h2 class="selectmenu-display-header-text">Login (beta)</h2>
 </div>
 </div>
 <div class="selectmenu-content">
+<div class="selectmenu-section">
+	This login system is currently in beta. If any major issues are found or when the system is fully released, accounts and all saved maps may be deleted.
+</div>
 <div class="selectmenu-section" id="login-info">
 	Please enter your credentials
 </div>
