@@ -68,6 +68,7 @@ class Account {
 				Account.verifyState();
 				if(arr[0] === 'good') {
 					closeAllPopups();
+					loginInfo.innerHTML = 'Please enter your credentials';
 				} else if(arr[0] === 'bad') {
 					var loginInfo = document.getElementById('login-info');
 					if(arr[1] === 'account_innactive') {
@@ -247,6 +248,10 @@ class Account {
 					closeAllPopups();
 					displayNotification('Password Change',
 						'Your password has been changed');
+					passwordChangeInfo.innerHTML = 'Please enter current and new password';
+					document.getElementById('password-reset-1').value = "";
+					document.getElementById('password-reset-2').value = "";
+					document.getElementById('password-reset-3').value = "";
 				} else if(arr[0] === 'bad') {
 					var passwordChangeInfo = document.getElementById('passwordchange-info');
 					if(arr[1] === 'verify_incorrect') {
@@ -5684,7 +5689,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.80.6';
+var currentCache = 'v0.80.7';
 
 var states = [];
 var lands = [];
