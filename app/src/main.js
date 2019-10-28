@@ -393,13 +393,14 @@ function start() {
 	CookieManager.loadCookies();
 
 	if(php_load_map === true) {
-		console.log('Save Search - yapms.org');
 		var customURL = null;
 		if(php_load_user === true) {
 			customURL = 'https://yapms.org/users/' + php_load_user_id + '/' + php_load_map_id + '.txt'; 	
 		} else {
 			customURL = 'https://yapms.org/maps/' + php_load_map_id + '.txt'; 	
 		}
+		
+		console.log('Save Search - ' + customURL);
 		$.ajax({
 			//url: './maps/' + php_load_map_id + '.txt',
 			url: customURL,
