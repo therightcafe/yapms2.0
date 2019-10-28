@@ -23,14 +23,17 @@ class Account {
 					displayNotification('Account Registered',
 						'Please check your email, and click the verification link. (check your spam)');	
 				} else if(arr[1] === 'inuse') {
-					displayNotification('Account Registered',
+					displayNotification('Register Error',
 						'Account Already Registered');	
 				} else if(arr[1] === 'inactive') {
-					displayNotification('Account Registered',
+					displayNotification('Register Error',
 						'Verification Email Already Sent (check your spam)');	
 				} else if(arr[1] === 'resent') {
 					displayNotification('Account Registered',
-						'Verification Email Resent Sent (check your spam)');	
+						'Please check your email, and click the verification link. (check your spam)');	
+				} else if(arr[1] === 'invalid_email') {
+					displayNotification('Register Error',
+						email + ' is not a valid email');	
 				}
 			},
 			error: function(a, b, c) {
@@ -63,15 +66,15 @@ class Account {
 				var arr = data.split(' ');
 				alert('Login: ' + data);
 				Account.verifyState();
-				if(arr[0] === 'bad') {
+				if(arr[0] === 'good') {
+					closeAllPopups();
+				} else if(arr[0] === 'bad') {
 					var loginInfo = document.getElementById('login-info');
 					if(arr[1] === 'account_innactive') {
 						loginInfo.innerHTML = 'Inactive Account';
 					} else if(arr[1] === 'incorrect_login') {
 						loginInfo.innerHTML = 'Incorrect Login';
 					}
-				} else {
-					closeAllPopups();
 				}
 			},
 			error: function(a, b, c) {
@@ -98,7 +101,7 @@ class Account {
 			},
 			crossDomain: true,
 			success: function(data) {
-				alert('Verify Login: ' + data);
+				//alert('Verify Login: ' + data);
 				var arr = data.split(' ');
 				Account.isLoggedIn = (arr[0] === 'good');
 				if(Account.isLoggedIn) {
@@ -237,7 +240,21 @@ class Account {
 			},
 			crossDomain: true,
 			success: function(data) {
-				alert('Password Change: ' + data);
+				var arr = data.split(' ');
+				if(arr[0] === 'good') {
+					closeAllPopups();
+					displayNotification('Password Change',
+						'Your password has been changed');
+				} else if(arr[0] === 'bad') {
+					var passwordChangeInfo = document.getElementById('passwordchange-info');
+					if(arr[1] === 'verify_incorrect') {
+						passwordChangeInfo.innerHTML = 'Passwords do not match';
+					} else if(arr[1] === 'incorrect_pass') {
+						passwordChangeInfo.innerHTML = 'Current password incorrect';
+					} else if(arr[1] === 'no_post') {
+						passwordChangeInfo.innerHTML = 'Missing information';
+					}
+				}
 			},
 			error: function(a, b, c) {
 				console.log(a);

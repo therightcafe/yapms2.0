@@ -7,6 +7,9 @@
 </div>
 </div>
 <div class="selectmenu-content">
+<div class="selectmenu-section" id="passwordchange-info">
+	Please enter current and new password
+</div>
 <a class="selectmenu-split">
 	<div class="selectmenu-split-text">Current</div>
 </a>
