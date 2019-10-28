@@ -358,8 +358,8 @@ class Account {
 					textright.appendChild(textrightNode);
 					eright.appendChild(textright);
 
-					e.appendChild(eright);
 					e.appendChild(eleft);
+					e.appendChild(eright);
 					content.appendChild(e);
 				}
 			},
