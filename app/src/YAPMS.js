@@ -333,19 +333,33 @@ class Account {
 				for(var fileIndex = 0; fileIndex < arr.length; ++fileIndex) {
 					var fileName = arr[fileIndex].split('/');
 					var name = fileName[3].split('-')[1].split('.')[0];
-					var e = document.createElement('a');
-					e.className = 'selectmenu-button';
+					var e = document.createElement('div');
+					e.className = 'selectmenu-button-double';
 					e.onclick = (function() {
 						var url = "https://testing.yapms.com/app/?u=" + Account.id + '&m=' + name;
 						return function() {
 							window.location.href = url;
 						}
 					})();
-					var t = document.createElement('div');
-					t.className = "selectmenu-button-text";
-					var text = document.createTextNode(name);
-					t.appendChild(text);
-					e.appendChild(t);
+					var eleft = document.createElement('div');
+					eleft.className = 'selectmenu-button-left';
+					var eright = document.createElement('div');
+					eright.className = 'selectmenu-button-right';	
+
+					var textleft = document.createElement('div');
+					textleft.className = "selectmenu-button-text";
+					var texlefttNode = document.createTextNode(name);
+					textleft.appendChild(textleftNode);
+					eleft.appendChild(textleft);
+					
+					var textright = document.createElement('div');
+					textright.className = "selectmenu-button-text";
+					var textrightNode= document.createTextNode(name);
+					textright.appendChild(textrightNode);
+					eright.appendChild(textright);
+
+					e.appenchChild(eright);
+					e.appenchChild(eleft);
 					content.appendChild(e);
 				}
 			},
