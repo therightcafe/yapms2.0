@@ -334,7 +334,11 @@ class Account {
 					var fileName = arr[fileIndex].split('/');
 					var name = fileName[3].split('-')[1].split('.')[0];
 					var e = document.createElement('a');
-					var t = document.createTextNode(name);
+					e.className = 'selectmenu-button';
+					var t = document.createElement('div');
+					t.className = "selectmenu-button-text";
+					var text = document.createTextNode(name);
+					t.appendChild(text);
 					e.appendChild(t);
 					content.appendChild(e);
 				}
