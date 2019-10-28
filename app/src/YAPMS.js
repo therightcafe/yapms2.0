@@ -6128,7 +6128,7 @@ function start() {
 	if(php_load_map === true) {
 		var customURL = null;
 		if(php_load_user === true) {
-			customURL = 'https://yapms.org/users/' + php_load_user_id + '/' + php_load_map_id + '.txt'; 	
+			customURL = 'https://yapms.org/users/' + php_load_user_id + '/u-' + php_load_map_id + '.txt'; 	
 		} else {
 			customURL = 'https://yapms.org/maps/' + php_load_map_id + '.txt'; 	
 		}
