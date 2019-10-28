@@ -392,7 +392,9 @@ function start() {
 	ChartManager.setChart('horizontalbattle');
 	CookieManager.loadCookies();
 
-	if(php_load_map === true) {
+	if(php_load_user === true && php_load_map === true) {
+		alert('loadddd user mappP!');
+	} else if(php_load_map === true) {
 		console.log('Save Search - yapms.org');
 		$.ajax({
 			//url: './maps/' + php_load_map_id + '.txt',

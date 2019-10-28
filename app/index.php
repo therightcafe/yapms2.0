@@ -37,6 +37,13 @@
 			echo '<script>var mobile = false;</script>';
 		};
 
+		if(isset($_GET["u"]) && !empty($_GET["u"])) {
+			echo '<script>
+				var php_load_user = true;
+				var php_load_user_id = ' . $_GET["u"] .	';' .
+				'</script>';
+		}
+
 		if(isset($_GET["m"]) && !empty($_GET["m"])) {
 			echo '<script>' .
 				'var php_load_map = true;' .

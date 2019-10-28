@@ -336,7 +336,7 @@ class Account {
 					var e = document.createElement('a');
 					e.className = 'selectmenu-button';
 					e.onclick = (function() {
-						var url = "https://testing.yapms.com/app/?u=" + Account.id + '$m=' + name;
+						var url = "https://testing.yapms.com/app/?u=" + Account.id + '&m=' + name;
 						return function() {
 							window.location.href = url;
 						}
