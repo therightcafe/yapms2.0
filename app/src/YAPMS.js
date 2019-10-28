@@ -320,7 +320,6 @@ class Account {
 		$.ajax({
 			url: "https://yapms.org/get_maps_users.php",
 			type: "POST",
-			data: formData,
 			processData: false,
 			contentType: false,
 			xhrFields: {
