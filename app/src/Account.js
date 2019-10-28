@@ -68,8 +68,8 @@ class Account {
 				Account.verifyState();
 				document.getElementById('password-login').value = "";
 				if(arr[0] === 'good') {
-					closeAllPopups();
 					loginInfo.innerHTML = 'Please enter your credentials';
+					closeAllPopups();
 				} else if(arr[0] === 'bad') {
 					var loginInfo = document.getElementById('login-info');
 					if(arr[1] === 'account_innactive') {
@@ -327,6 +327,12 @@ class Account {
 			},
 			crossDomain: true,
 			success: function(data) {
+				var arr = data.split(' ');
+				for(var fileIndex = 0; fileIndex < arr.length; ++fileIndex) {
+					var fileName = arr[fileIndex].split('/');
+					var name = fileName[3].split('-')[1].split['.'][0];
+					console.log(name);	
+				}
 				console.log(data);
 			},
 			error: function(a, b, c) {
