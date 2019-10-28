@@ -329,6 +329,7 @@ class Account {
 			success: function(data) {
 				var arr = data.split(' ');
 				for(var fileIndex = 0; fileIndex < arr.length; ++fileIndex) {
+					console.log(arr[fileIndex]);
 					var fileName = arr[fileIndex].split('/');
 					var name = fileName[2].split('-')[1].split['.'][0];
 					console.log(name);	
