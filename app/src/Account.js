@@ -342,9 +342,9 @@ class Account {
 						}
 					})();
 					var eleft = document.createElement('div');
-					eleft.className = 'selectmenu-button-left';
+					eleft.className = 'selectmenu-button-left selectmenu-button';
 					var eright = document.createElement('div');
-					eright.className = 'selectmenu-button-right';	
+					eright.className = 'selectmenu-button-right selectmenu-button';	
 
 					var textleft = document.createElement('div');
 					textleft.className = "selectmenu-button-text";
