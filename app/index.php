@@ -180,7 +180,7 @@ if($mobile === false) {
 	<div id="save-button" class="click-button" style="margin-left: auto; display: none;" onclick='displayMenu("savemenu");'>
 		Save
 	</div>
-	<div id="mymaps-button" class="click-button" style="display: none;" onclick="Account.getMaps();>
+	<div id="mymaps-button" class="click-button" style="display: none;" onclick="Account.getMaps();">
 		My Maps
 	</div>
 	<div id="account-button" class="click-button" style="display: none;" onclick='displayMenu("accountmenu");'>
