@@ -244,6 +244,7 @@ class Account {
 			success: function(data) {
 				console.log('Change Password: ' + data);
 				var arr = data.split(' ');
+				var passwordChangeInfo = document.getElementById('passwordchange-info');
 				if(arr[0] === 'good') {
 					closeAllPopups();
 					displayNotification('Password Change',
@@ -253,7 +254,6 @@ class Account {
 					document.getElementById('password-reset-2').value = "";
 					document.getElementById('password-reset-3').value = "";
 				} else if(arr[0] === 'bad') {
-					var passwordChangeInfo = document.getElementById('passwordchange-info');
 					if(arr[1] === 'verify_incorrect') {
 						passwordChangeInfo.innerHTML = 'Passwords do not match';
 					} else if(arr[1] === 'incorrect_pass') {
