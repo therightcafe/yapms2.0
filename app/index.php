@@ -180,7 +180,7 @@ if($mobile === false) {
 	<div id="save-button" class="click-button" style="margin-left: auto; display: none;" onclick='displayMenu("savemenu");'>
 		Save
 	</div>
-	<div id="mymaps-button" class="click-button" style="display: none;" onclick="Account.getMaps();">
+	<div id="mymaps-button" class="click-button" style="display: none;" onclick='Account.getMaps(); dispalyMenu("mymapsmenu");'>
 		My Maps
 	</div>
 	<div id="account-button" class="click-button" style="display: none;" onclick='displayMenu("accountmenu");'>
@@ -565,6 +565,10 @@ echo '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygo
 
 <div id="registermenu" class="popup selectmenu">
 	<?php require './html/menu/registermenu.php'; ?>
+</div>
+
+<div id="mymapmenu" class="popup selectmenu">
+	<?php require './html/menu/mymapmenu.php'; ?>
 </div>
 
 <div id="savemenu" class="popup selectmenu">

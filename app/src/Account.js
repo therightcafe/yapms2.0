@@ -327,13 +327,16 @@ class Account {
 			},
 			crossDomain: true,
 			success: function(data) {
-				console.log(data);
+				var html = '';
 				var arr = data.split(' ');
+				var content = document.getElementById("mapmenu-content");
 				for(var fileIndex = 0; fileIndex < arr.length; ++fileIndex) {
-					console.log(arr[fileIndex]);
 					var fileName = arr[fileIndex].split('/');
 					var name = fileName[3].split('-')[1].split('.')[0];
-					console.log(name);	
+					var e = document.createElement('a');
+					var t = document.createTextNode(name);
+					e.appendChild(t);
+					content.appendChild(e);
 				}
 			},
 			error: function(a, b, c) {
