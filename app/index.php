@@ -40,12 +40,12 @@
 		if(isset($_GET["u"]) && !empty($_GET["u"])) {
 			echo '<script>
 				var php_load_user = true;
-				var php_load_user_id = ' . $_GET["u"] .	';' .
+				var php_load_user_id = "' . $_GET["u"] . '";' .
 				'</script>';
 		} else {
 			echo '<script>
 				var php_load_user = false;
-				var php_load_user_id = -1;
+				var php_load_user_id = "-1";
 				</script>';
 		}
 

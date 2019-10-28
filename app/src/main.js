@@ -392,13 +392,17 @@ function start() {
 	ChartManager.setChart('horizontalbattle');
 	CookieManager.loadCookies();
 
-	if(php_load_user === true && php_load_map === true) {
-		alert('loadddd user mappP!');
-	} else if(php_load_map === true) {
+	if(php_load_map === true) {
 		console.log('Save Search - yapms.org');
+		var customURL = null;
+		if(php_load_user === true) {
+			customURL = 'https://yapms.org/users/' + php_load_user_id + '/' + php_load_map_id + '.txt'; 	
+		} else {
+			customURL = 'https://yapms.org/maps/' + php_load_map_id + '.txt'; 	
+		}
 		$.ajax({
 			//url: './maps/' + php_load_map_id + '.txt',
-			url: 'https://yapms.org/maps/' + php_load_map_id + '.txt',
+			url: customURL,
 			type: "POST",
 			success: function(data) {
 				console.log("Map Load: Found saved map");
