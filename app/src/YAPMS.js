@@ -18,18 +18,19 @@ class Account {
 				//alert(data);
 				var arr = data.split(' ');
 				var registerInfo = document.getElementById('register-info');
+				closeAllPopups();
 				if(arr[0] === 'good') {
-					closeAllPopups();
 					displayNotification('Account Registered',
 						'Please check your email, and click the verification link. (check your spam)');	
-				} else {
-					if(arr[1] === 'inuse') {
-						registerInfo.innerHTML = 'Email Already Registered';	
-					} else if(arr[1] === 'inactive') {
-						registerInfo.innerHTML = 'Verification Email Already Sent (Please check your spam)';
-					} else if(arr[1] === 'resent') {
-						registerInfo.innerHTML = 'Verification Email Resent (Please check your spam)';
-					}
+				} else if(arr[1] === 'inuse') {
+					displayNotification('Account Registered',
+						'Account Already Registered');	
+				} else if(arr[1] === 'inactive') {
+					displayNotification('Account Registered',
+						'Verification Email Already Sent (check your spam)');	
+				} else if(arr[1] === 'resent') {
+					displayNotification('Account Registered',
+						'Verification Email Resent Sent (check your spam)');	
 				}
 			},
 			error: function(a, b, c) {
@@ -261,7 +262,25 @@ class Account {
 			},
 			crossDomain: true,
 			success: function(data) {
-				alert('Forgot email sent: ' + data);
+				var arr = data.split(' ');
+				closeAllPopups();
+				if(arr[0] === 'good') {
+					if(arr[1] === 'reset_sent') {
+						displayNotification('Password Reset',
+							'Password reset email sent. (check your spam)');	
+					}
+				} else if(arr[0] === 'bad') {
+					if(arr[1] === 'innactive_account') {
+						displayNotification('Password Reset Error',
+							email + ' is not active. Please register or verify.');	
+					} else if(arr[1] === 'recent_verification') {
+						displayNotification('Password Reset Error',
+							'Password was recently reset, please wait.');	
+					} else if(arr[1] === 'please_register') {
+						displayNotification('Password Reset Error',
+							email + ' is not registered. Please register.');	
+					}
+				}
 			},
 			error: function(a, b, c) {
 				console.log(a);
@@ -5645,7 +5664,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.80.1';
+var currentCache = 'v0.80.2';
 
 var states = [];
 var lands = [];
