@@ -67,11 +67,11 @@ class Account {
 				var arr = data.split(' ');
 				Account.verifyState();
 				document.getElementById('password-login').value = "";
+				var loginInfo = document.getElementById('login-info');
 				if(arr[0] === 'good') {
 					loginInfo.innerHTML = 'Please enter your credentials';
 					closeAllPopups();
 				} else if(arr[0] === 'bad') {
-					var loginInfo = document.getElementById('login-info');
 					if(arr[1] === 'account_innactive') {
 						loginInfo.innerHTML = 'Inactive Account';
 					} else if(arr[1] === 'incorrect_login') {
