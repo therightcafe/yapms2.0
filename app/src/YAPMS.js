@@ -343,7 +343,7 @@ class Account {
 					})();
 					var eleft = document.createElement('div');
 					eleft.className = 'selectmenu-button-left selectmenu-button';
-					var eright = document.createElement('div');
+					var eright = document.createElement('i');
 					eright.className = 'selectmenu-button-right selectmenu-button fas fa-trash-alt';	
 
 					var textleft = document.createElement('div');
