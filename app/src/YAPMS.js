@@ -329,7 +329,7 @@ class Account {
 			success: function(data) {
 				var html = '';
 				var arr = data.split(' ');
-				var content = document.getElementById("mapmenu-content");
+				var content = document.getElementById("mymapmenu-content");
 				for(var fileIndex = 0; fileIndex < arr.length; ++fileIndex) {
 					var fileName = arr[fileIndex].split('/');
 					var name = fileName[3].split('-')[1].split('.')[0];
