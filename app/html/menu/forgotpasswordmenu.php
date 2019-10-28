@@ -7,7 +7,7 @@
 </div>
 </div>
 <div class="selectmenu-content">
-<div class="selectmenu-section" id="register-info">
+<div class="selectmenu-section" id="forgot-info">
 	Please enter your email
 </div>
 <div class="selectmenu-section">Email <input id="email-forgot-input" type="text"></div>

@@ -23,8 +23,7 @@ class Account {
 					displayNotification('Account Registered',
 						'Please check your email, and click the verification link. (check your spam)');	
 				} else {
-					if(arr[1] === 'sent') {
-					} else if(arr[1] === 'inuse') {
+					if(arr[1] === 'inuse') {
 						registerInfo.innerHTML = 'Email Already Registered';	
 					} else if(arr[1] === 'inactive') {
 						registerInfo.innerHTML = 'Verification Email Already Sent (Please check your spam)';
@@ -277,7 +276,6 @@ class Account {
 		var accountButton = document.getElementById('account-button');
 		var saveButton = document.getElementById('save-button');
 		var mymapsButton = document.getElementById('mymaps-button');
-
 		var accountEmail = document.getElementById('account-email');
 
 		if(Account.isLoggedIn) {
