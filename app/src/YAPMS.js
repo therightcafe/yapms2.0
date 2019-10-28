@@ -21,7 +21,11 @@ class Account {
 				if(arr[0] === 'good') {
 					registerInfo.innerHTML = 'Verification Email Sent (Please check your spam)';
 				} else {
-					if(arr[1] === 'inuse') {
+					if(arr[1] === 'sent') {
+						closeAllPopups();
+						displayNotification('Account Registered',
+							'Please check your email, and click the verification link. (check your spam)');	
+					} else if(arr[1] === 'inuse') {
 						registerInfo.innerHTML = 'Email Already Registered';	
 					} else if(arr[1] === 'inactive') {
 						registerInfo.innerHTML = 'Verification Email Already Sent (Please check your spam)';
@@ -5644,7 +5648,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.76.2';
+var currentCache = 'v0.80.0';
 
 var states = [];
 var lands = [];
