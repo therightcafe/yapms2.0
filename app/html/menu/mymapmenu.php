@@ -7,13 +7,9 @@
 </div>
 </div>
 <div class="selectmenu-content" id="mymapmenu-content">
-	<div class="selectmenu-button-double">
-		<div class="selectmenu-button-left selectmenu-button">
-			<div class="selectmenu-button-text">
-				test
-			</div>
-		</div>
-		<div class="selectmenu-button-right selectmenu-button">
+	<div class="selectmenu-button">
+		<div class="selectmenu-button-text">
+			New Save
 		</div>
 	</div>
 </div>
