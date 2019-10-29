@@ -11,7 +11,7 @@
 		<div class="selectmenu-button-left selectmenu-button">
 			<div class="selectmenu-button-text">
 				test
-			<div>
+			</div>
 		</div>
 		<div class="selectmenu-button-right selectmenu-button">
 		</div>
