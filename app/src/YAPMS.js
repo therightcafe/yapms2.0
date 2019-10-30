@@ -327,6 +327,7 @@ class Account {
 			},
 			crossDomain: true,
 			success: function(data) {
+				console.log(data);
 				var html = '';
 				var arr = data.split(' ');
 				var content = document.getElementById("mymapmenu-content");
