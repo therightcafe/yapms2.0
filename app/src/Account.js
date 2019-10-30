@@ -346,7 +346,7 @@ class Account {
 
 					var eright = document.createElement('object');
 					eright.className = "selectmenu-button-right selectmenu-button";
-					eright.src = "../res/deletebutton.svg";
+					eright.data = "./html/deletebutton.svg";
 					eright.type = "image/svg+xml";
 
 					var textleft = document.createElement('div');
