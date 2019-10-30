@@ -196,10 +196,7 @@ if($mobile === false) {
 	<div id="login-button" class="customGPlusSignIn click-button" style="margin-left: auto;" onclick='displayMenu("loginmenu");'>
 		Login
 	</div>
-	<div id="save-button" class="click-button" style="margin-left: auto; display: none;" onclick='displayMenu("savemenu");'>
-		Save
-	</div>
-	<div id="mymaps-button" class="click-button" style="display: none;" onclick='Account.getMaps(); displayMenu("mymapmenu");'>
+	<div id="mymaps-button" class="click-button" style="margin-left: auto; white-space: nowrap; display: none;" onclick='Account.getMaps(); displayMenu("mymapmenu");'>
 		My Maps
 	</div>
 	<div id="account-button" class="click-button" style="display: none;" onclick='displayMenu("accountmenu");'>

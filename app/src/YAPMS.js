@@ -374,20 +374,17 @@ class Account {
 	static updateHTML() {
 		var loginButton = document.getElementById('login-button');
 		var accountButton = document.getElementById('account-button');
-		var saveButton = document.getElementById('save-button');
 		var mymapsButton = document.getElementById('mymaps-button');
 		var accountEmail = document.getElementById('account-email');
 
 		if(Account.isLoggedIn) {
 			loginButton.style.display = 'none';
 			accountButton.style.display = '';
-			saveButton.style.display = '';
 			mymapsButton.style.display = '';
 			accountEmail.innerHTML = Account.email;
 		} else {
 			loginButton.style.display = '';
 			accountButton.style.display = 'none';
-			saveButton.style.display = 'none';
 			mymapsButton.style.display = 'none';
 		}
 	}
