@@ -335,7 +335,7 @@ class Account {
 				for(var fileIndex = 0; fileIndex < arr.length; ++fileIndex) {
 					var fileName = arr[fileIndex].split('/');
 					console.log(fileName);
-					var name = fileName[3].split('-')[1].split('.')[0];
+					var name = fileName[2].split('-')[1].split('.')[0];
 					var e = document.createElement('div');
 					e.className = 'selectmenu-button-double';
 					e.onclick = (function() {
