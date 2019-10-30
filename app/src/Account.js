@@ -146,6 +146,30 @@ class Account {
 		});
 	}
 
+	static unlink(mapName) {
+		var formData = new FormData();
+		formData.append("mapName", mapName);
+		
+		$.ajax({
+			url: "https://yapms.org/users/unlink.php",
+			type: "POST",
+			processData: false,
+			contentType: false,
+			xhrFields: {
+				withCredentials: true
+			},
+			crossDomain: true,
+			success: function(data) {
+
+			},
+			error: function(a, b, c) {
+				console.log(a);
+				console.log(b);
+				console.log(c);
+			}	
+		});
+	}
+
 	static save() {
 		closeAllPopups();
 		var formData = new FormData();
@@ -348,6 +372,7 @@ class Account {
 					eright.className = "selectmenu-button-right selectmenu-button";
 					eright.data = "./html/deletebutton.svg";
 					eright.type = "image/svg+xml";
+					eright.onclick = "Account.unlink(" + name + ");";
 
 					var textleft = document.createElement('div');
 					textleft.className = "selectmenu-button-text";
