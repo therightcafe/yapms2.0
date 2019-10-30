@@ -360,14 +360,15 @@ class Account {
 					var name = fileName[2].split('-')[1].split('.')[0];
 					var e = document.createElement('div');
 					e.className = 'selectmenu-button-double';
-					e.onclick = (function() {
+
+					var eleft = document.createElement('div');
+					eleft.className = 'selectmenu-button-left selectmenu-button';
+					eleft.onclick = (function() {
 						var url = "https://testing.yapms.com/app/?u=" + Account.id + '&m=' + name;
 						return function() {
 							window.location.href = url;
 						}
 					})();
-					var eleft = document.createElement('div');
-					eleft.className = 'selectmenu-button-left selectmenu-button';
 
 					var eright = document.createElement('object');
 					eright.className = "selectmenu-button-right selectmenu-button";
