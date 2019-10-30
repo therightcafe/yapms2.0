@@ -373,7 +373,9 @@ class Account {
 					eright.className = "selectmenu-button-right selectmenu-button";
 					eright.data = "./html/deletebutton.svg";
 					eright.type = "image/svg+xml";
-					eright.onClick = "Account.unlink(" + name + ");";
+					eright.onclick = function() {
+						Account.unlink(name);
+					}
 
 					var textleft = document.createElement('div');
 					textleft.className = "selectmenu-button-text";
