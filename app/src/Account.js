@@ -161,7 +161,7 @@ class Account {
 			},
 			crossDomain: true,
 			success: function(data) {
-
+				console.log(data);
 			},
 			error: function(a, b, c) {
 				console.log(a);
