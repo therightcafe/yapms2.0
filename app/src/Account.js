@@ -354,12 +354,6 @@ class Account {
 					var textleftNode = document.createTextNode(name);
 					textleft.appendChild(textleftNode);
 					eleft.appendChild(textleft);
-					
-					var textright = document.createElement('div');
-					textright.className = "selectmenu-button-text";
-					var textrightNode= document.createTextNode(name);
-					textright.appendChild(textrightNode);
-					eright.appendChild(textright);
 
 					e.appendChild(eleft);
 					e.appendChild(eright);
