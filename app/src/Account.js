@@ -147,6 +147,7 @@ class Account {
 	}
 
 	static unlink(mapName) {
+		alert("unlink: " + mapName);
 		var formData = new FormData();
 		formData.append("mapName", mapName);
 		
@@ -372,7 +373,7 @@ class Account {
 					eright.className = "selectmenu-button-right selectmenu-button";
 					eright.data = "./html/deletebutton.svg";
 					eright.type = "image/svg+xml";
-					eright.onclick = "Account.unlink(" + name + ");";
+					eright.onClick = "Account.unlink(" + name + ");";
 
 					var textleft = document.createElement('div');
 					textleft.className = "selectmenu-button-text";
