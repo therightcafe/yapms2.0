@@ -343,9 +343,11 @@ class Account {
 					})();
 					var eleft = document.createElement('div');
 					eleft.className = 'selectmenu-button-left selectmenu-button';
+
 					var eright = document.createElement('object');
-					eright.className = "deletebutton selectmenu-button-right selectmenu-button";
-					eright.type="image/svg+xml";
+					eright.className = "selectmenu-button-right selectmenu-button";
+					eright.src = "../res/deletebutton.svg";
+					eright.type = "image/svg+xml";
 
 					var textleft = document.createElement('div');
 					textleft.className = "selectmenu-button-text";
