@@ -330,9 +330,11 @@ class Account {
 				console.log(data);
 				var html = '';
 				var arr = data.split(' ');
+				console.log(arr);
 				var content = document.getElementById("mymapmenu-content");
 				for(var fileIndex = 0; fileIndex < arr.length; ++fileIndex) {
 					var fileName = arr[fileIndex].split('/');
+					console.log(fileName);
 					var name = fileName[3].split('-')[1].split('.')[0];
 					var e = document.createElement('div');
 					e.className = 'selectmenu-button-double';
