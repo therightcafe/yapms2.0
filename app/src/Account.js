@@ -204,7 +204,7 @@ class Account {
 		formData.append("data", JSON.stringify(data));
 
 		$.ajax({
-			url: "https://yapms.org/upload_user.php",
+			url: "https://yapms.org/users/upload.php",
 			type: "POST",
 			data: formData,
 			processData: false,
@@ -318,7 +318,7 @@ class Account {
 
 	static getMaps() {
 		$.ajax({
-			url: "https://yapms.org/get_maps_users.php",
+			url: "https://yapms.org/users/get_maps.php",
 			type: "POST",
 			processData: false,
 			contentType: false,

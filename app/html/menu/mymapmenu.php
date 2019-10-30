@@ -9,7 +9,7 @@
 <div class="selectmenu-content" id="mymapmenu-content">
 	<div class="selectmenu-button">
 		<div class="selectmenu-button-text">
-			New Save
+			New Save <i class="fas fa-plus-circle"></i>
 		</div>
 	</div>
 </div>
