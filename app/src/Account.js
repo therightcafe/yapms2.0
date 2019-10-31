@@ -356,6 +356,9 @@ class Account {
 				var html = '';
 				var arr = data.split(' ');
 				var content = document.getElementById("mymapmenu-content");
+				while(content.firstChild) {
+					content.removeChild(content.firstChild);
+				}
 				for(var fileIndex = 0; fileIndex < arr.length; ++fileIndex) {
 					var fileName = arr[fileIndex].split('/');
 					var name = fileName[2].split('-')[1].split('.')[0];
