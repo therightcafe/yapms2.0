@@ -213,7 +213,8 @@ h2.selectmenu-toptext {
 }
 
 .selectmenu-button-left {
-	flex: 1 1;
+	flex: 0 0 65%;
+	overflow: hidden;
 	border-top-right-radius: 0px;
 	border-bottom-right-radius: 0px;
 }

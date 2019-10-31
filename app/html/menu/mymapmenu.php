@@ -7,7 +7,7 @@
 </div>
 </div>
 <div class="selectmenu-content">
-	<div class="selectmenu-button" onclick='displayMenu("savemenu");'>
+	<div class="selectmenu-button" onclick='displayMenu("savemenu");' style="color: white; background: green;">
 		<div class="selectmenu-button-text">
 			New Save <i class="fas fa-plus-circle"></i>
 		</div>
