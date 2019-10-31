@@ -154,6 +154,7 @@ class Account {
 		$.ajax({
 			url: "https://yapms.org/users/unlink.php",
 			type: "POST",
+			data: formData,
 			processData: false,
 			contentType: false,
 			xhrFields: {
