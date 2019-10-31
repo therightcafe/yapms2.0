@@ -150,7 +150,6 @@ class Account {
 		alert("unlink: " + mapName);
 		var formData = new FormData();
 		formData.append("mapName", mapName);
-		
 		$.ajax({
 			url: "https://yapms.org/users/unlink.php",
 			type: "POST",
@@ -163,6 +162,7 @@ class Account {
 			crossDomain: true,
 			success: function(data) {
 				console.log(data);
+				Account.getMaps();
 			},
 			error: function(a, b, c) {
 				console.log(a);
