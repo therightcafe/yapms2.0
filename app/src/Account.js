@@ -371,9 +371,9 @@ class Account {
 						}
 					})();
 
-					var eright = document.createElement('object');
+					var eright = document.createElement('img');
 					eright.className = "selectmenu-button-right selectmenu-button";
-					eright.data = "./html/deletebutton.svg";
+					eright.src = "./html/deletebutton.svg";
 					eright.type = "image/svg+xml";
 					eright.onclick = (function() {
 						var mapName = name;
