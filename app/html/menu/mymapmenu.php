@@ -12,6 +12,6 @@
 			New Save <i class="fas fa-plus-circle"></i>
 		</div>
 	</div>
-	<div class="selectmenu-content" id="mymapmenu-content">
+	<div class="selectmenu-content" id="mymapmenu-content" style="overflow: visible;">
 	</div>
 </div>
