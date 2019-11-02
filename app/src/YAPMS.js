@@ -242,12 +242,10 @@ class Account {
 			data: formData,
 			processData: false,
 			contentType: false,
-/*
 			xhrFields: {
 				withCredentials: true
 			},
 			crossDomain: true,
-*/
 			success: function(data) {
 				var arr = data.split(' ');
 				console.log(arr);
@@ -432,12 +430,10 @@ class Account {
 			type: "POST",
 			processData: false,
 			contentType: false,
-/*
 			xhrFields: {
 				withCredentials: true
 			},
 			crossDomain: true,
-*/
 			success: function(data) {
 				var arr = data.split(' ');
 				for(var fileIndex = 0; fileIndex < arr.length; ++fileIndex) {
