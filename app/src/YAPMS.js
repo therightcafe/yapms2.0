@@ -466,7 +466,7 @@ class Account {
 				
 					var mapPreview = document.createElement('img');
 					mapPreview.className = "mysaves-mappreview";
-					mapPreview.src = "https://yapms.org/users/"  + Account.id + "/" + name + ".png";
+					mapPreview.src = "https://yapms.org/users/"  + Account.id + "/" + name + ".png#" + new Date().getTime();
 					mapPreview.alt = "No Preview";
 					mapPreview.onclick = (function() {
 						var url = "https://testing.yapms.com/app/?u=" + Account.id + '&m=' + name;
@@ -5865,7 +5865,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.81.2';
+var currentCache = 'v0.81.3';
 
 var states = [];
 var lands = [];
