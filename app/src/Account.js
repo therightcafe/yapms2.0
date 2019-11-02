@@ -467,11 +467,10 @@ class Account {
 				
 					var mapPreview = document.createElement('img');
 					mapPreview.className = "mysaves-mappreview";
-					mapPreview.src = "https://yapms.org/users/1/u-" + name + ".png";
+					mapPreview.src = "https://yapms.org/users/"  + Account.id + "/u-" + name + ".png";
 					mapPreview.alt = "No Preview";
 					mapPreview.onclick = (function() {
 						var url = "https://testing.yapms.com/app/?u=" + Account.id + '&m=' + name;
-						var url = "https://testing.yapms.com/app/?u=1&m=" + name;
 						return function() {
 							window.location.href = url;
 						}
