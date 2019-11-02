@@ -2036,6 +2036,9 @@ class MapLoader {
 			MapLoader.save_year === year &&
 			MapLoader.save_fontsize === fontsize &&
 			MapLoader.save_strokewidth === strokewidth) {
+			if(options.onLoad) {
+				options.onLoad();
+			}
 			return;
 		}
 
@@ -2298,12 +2301,9 @@ class MapLoader {
 				state.setVoteCount(stateData['votecount'], obj['updatetext']);
 				state.setColor(stateData['candidate'], stateData['colorvalue']);
 				state.delegates = stateData['delegates'];
-				//if(obj['type'] !== 'gubernatorial' &&
-				//	obj['type'] !== 'senatorial') {
-					if(stateData['disabled']) {
-						state.toggleDisable();
-					}
-				//}
+				if(stateData['disabled']) {
+					state.toggleDisable();
+				}
 			}
 
 			for(var stateName in obj.proportional) {
@@ -5905,7 +5905,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.81.6';
+var currentCache = 'v0.81.7';
 
 var states = [];
 var lands = [];
