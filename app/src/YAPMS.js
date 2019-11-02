@@ -147,7 +147,6 @@ class Account {
 	}
 
 	static unlink(mapName) {
-		alert("unlink: " + mapName);
 		var formData = new FormData();
 		formData.append("mapName", mapName);
 		$.ajax({
@@ -168,19 +167,27 @@ class Account {
 				console.log(a);
 				console.log(b);
 				console.log(c);
+				Account.getMaps();
 			}	
 		});
 	}
 
 	static save() {
-		closeAllPopups();
 		var formData = new FormData();
-		//formData.append("img", img);
+		var img = document.getElementById("mysaves-current-mappreview");
+		if(img) {
+			formData.append("img", img.src);
+		}
 	
-		var mapName = document.getElementById('savemap-name');
+		var mapName = document.getElementById("mysaves-name-input");
 		if(mapName) {
 			formData.append("mapName", mapName.value);
 			mapName.value = '';
+		}
+
+		var error = document.getElementById("mysaves-current-error");
+		if(error) {
+			error.style.display = 'none';
 		}
 	
 		var data = {};
@@ -235,14 +242,28 @@ class Account {
 			data: formData,
 			processData: false,
 			contentType: false,
+/*
 			xhrFields: {
 				withCredentials: true
 			},
 			crossDomain: true,
+*/
 			success: function(data) {
-				console.log('Save: ' + data);
+				var arr = data.split(' ');
+				console.log(arr);
+				if(arr[0] === "bad") {
+					error.style.display = 'inline';
+					if(arr[1] === "no_map_name") {
+						error.innerHTML = "Enter Map Name";
+					} else if(arr[1] === "file_limit") {
+						error.innerHTML = "File Limit Reached";	
+					}
+				} else {
+					Account.getMaps();
+				}
 			},
 			error: function(a, b, c) {
+				alert(a + b + c);
 				console.log(a);
 				console.log(b);
 				console.log(c);
@@ -342,64 +363,140 @@ class Account {
 		});
 	}
 
+	static closeMyMaps() {
+		var page = document.getElementById("application-mysaves");
+		page.style.display = "none";
+		var maps = document.getElementById("mysaves-maps");
+		while(maps.firstChild) {
+			maps.removeChild(maps.firstChild);
+		}
+	}
+
 	static getMaps() {
+		var maps = document.getElementById("mysaves-maps");
+		while(maps.firstChild) {
+			maps.removeChild(maps.firstChild);
+		}
+		
+		var error = document.getElementById("mysaves-current-error");
+		if(error) {
+			error.style.display = 'none';
+		}
+
+		var page = document.getElementById("application-mysaves");
+		if(page) {
+			page.style.display = "inline-flex";
+		}
+
+		html2canvas(document.getElementById("application"), {logging: true, onclone: function(clone) {
+			// remove the custom fonts from the clone
+			var svgtext = clone.getElementById('text');
+			if(svgtext) {
+				svgtext.style.fontFamily = 'arial';
+				svgtext.style.fontSize = '15px';
+			}
+			var svg = clone.getElementById('svgdata');
+			var mapdiv = clone.getElementById('map-div');
+			if(svg && mapdiv) {
+				svg.setAttribute('width', mapdiv.offsetWidth);
+				svg.setAttribute('height', mapdiv.offsetHeight);
+			}
+			var notification = clone.getElementById('legend-tooltip');
+			if(notification) {
+				notification.style.display = 'none';
+			}
+			var editButtons = clone.getElementsByClassName('legend-delete');
+			for(var index = 0, length = editButtons.length; index < length; ++index) {
+				var element = editButtons[index];
+				if(element) {
+					element.style.display = 'none';
+				}
+			}
+			var addCandidate = clone.getElementById('legend-addcandidate-button');
+			if(addCandidate) {
+				addCandidate.style.display = 'none';
+			}
+		}}).then(function(canvas) {
+			canvas.style.width = 0;
+			canvas.style.height = 0;	
+			canvas.style.display = 'none';
+			var img = canvas.toDataURL('image/png');
+			var i = document.getElementById('mysaves-current-mappreview');
+			i.src = img;
+			i.style.width = '40vw';
+			i.style.height = 'auto';
+		});
+		
 		$.ajax({
 			url: "https://yapms.org/users/get_maps.php",
 			type: "POST",
 			processData: false,
 			contentType: false,
+/*
 			xhrFields: {
 				withCredentials: true
 			},
 			crossDomain: true,
+*/
 			success: function(data) {
-				var html = '';
 				var arr = data.split(' ');
-				var content = document.getElementById("mymapmenu-content");
-				while(content.firstChild) {
-					content.removeChild(content.firstChild);
-				}
 				for(var fileIndex = 0; fileIndex < arr.length; ++fileIndex) {
 					var fileName = arr[fileIndex].split('/');
-					var name = fileName[2].split('-')[1].split('.')[0];
-					var e = document.createElement('div');
-					e.className = 'selectmenu-button-double';
+					var name = fileName[2].split('.')[0].substr(2);
+					console.log(name);
+					var nameDecode = atob(name);
+					
+					var mapBox = document.createElement('div');
+					mapBox.className = "mysaves-mapbox";
+					var mapBoxHeader = document.createElement('div');
+					mapBoxHeader.className = "mysaves-mapbox-header";
 
-					var eleft = document.createElement('div');
-					eleft.className = 'selectmenu-button-left selectmenu-button';
-					eleft.onclick = (function() {
+					var mapDelete = document.createElement('img');
+					mapDelete.src = "./html/deletebutton.svg";
+					mapDelete.className = "mysaves-delete";
+					mapDelete.onclick = (function() {
+						var name_onclick = name;
+						return function() {
+							Account.unlink(name_onclick);
+						}
+					})();
+					mapBoxHeader.appendChild(mapDelete);
+
+					var mapName = document.createElement('div');
+					mapName.className = "mysaves-mapname";
+					mapName.innerHTML = nameDecode;
+					mapBoxHeader.appendChild(mapName);
+					
+					mapBox.appendChild(mapBoxHeader);
+				
+					var mapPreview = document.createElement('img');
+					mapPreview.className = "mysaves-mappreview";
+					mapPreview.src = "https://yapms.org/users/1/u-" + name + ".png";
+					mapPreview.alt = "No Preview";
+					mapPreview.onclick = (function() {
 						var url = "https://testing.yapms.com/app/?u=" + Account.id + '&m=' + name;
+						var url = "https://testing.yapms.com/app/?u=1&m=" + name;
 						return function() {
 							window.location.href = url;
 						}
 					})();
+					mapBox.appendChild(mapPreview);
 
-					var eright = document.createElement('img');
-					eright.className = "selectmenu-button-right selectmenu-button";
-					eright.src = "./html/deletebutton.svg";
-					eright.type = "image/svg+xml";
-					eright.onclick = (function() {
-						var mapName = name;
-						return function() {
-							Account.unlink(mapName);
-						}
-					})();
+					var mapBoxURL = document.createElement('div');
+					mapBoxURL.className = "mysaves-url";
+					var mapURL = document.createTextNode("https://testing.yapms.com/app/?u=1&m=" + name);
+					mapBoxURL.appendChild(mapURL);
+					mapBox.appendChild(mapBoxURL);
 
-					var textleft = document.createElement('div');
-					textleft.className = "selectmenu-button-text";
-					var textleftNode = document.createTextNode(name);
-					textleft.appendChild(textleftNode);
-					eleft.appendChild(textleft);
-
-					e.appendChild(eleft);
-					e.appendChild(eright);
-					content.appendChild(e);
+					var maps = document.getElementById("mysaves-maps");
+					maps.appendChild(mapBox);
 				}
 			},
 			error: function(a, b, c) {
 				console.log(a);
 				console.log(b);
 				console.log(c);
+				console.log("BAD");
 			}
 		});
 	}
@@ -6236,6 +6333,7 @@ function start() {
 	LogoManager.loadFlags();
 
 	Account.verifyState();
+//	Account.getMaps_new();
 }
 
 start();

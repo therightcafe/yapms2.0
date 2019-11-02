@@ -196,7 +196,7 @@ if($mobile === false) {
 	<div id="login-button" class="customGPlusSignIn click-button" style="margin-left: auto;" onclick='displayMenu("loginmenu");'>
 		Login
 	</div>
-	<div id="mymaps-button" class="click-button" style="margin-left: auto; white-space: nowrap; display: none;" onclick='Account.getMaps(); displayMenu("mymapmenu");'>
+	<div id="mymaps-button" class="click-button" style="margin-left: auto; white-space: nowrap; display: none;" onclick='Account.getMaps();'>
 		My Maps
 	</div>
 	<div id="account-button" class="click-button" style="display: none;" onclick='displayMenu("accountmenu");'>
@@ -218,6 +218,10 @@ if($mobile === false) {
 	<div id="application-loading-div">
 		<object id="application-loading-image" type="image/svg+xml" data="./html/loading.svg"></object>
 	</div>
+</div>
+
+<div id="application-mysaves">
+	<?php include './html/menu/application-mysaves.php'; ?>
 </div>
 
 <div id="application-sidebar-div">

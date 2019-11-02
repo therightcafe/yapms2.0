@@ -1,0 +1,166 @@
+#application-mysaves {
+	position: absolute;
+	display: none;
+	flex-direction: column;
+	width: 85%;
+	height: 95%;
+	z-index: 9;
+	background: white;
+	background: #f8f9fa;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	border: 2px solid black;
+	border-radius: 1em;
+	overflow: hidden;
+}
+
+#mysaves-header {
+	display: flex;
+	flex-direction: row;
+	background: #dedede;
+	padding-bottom: 1em;
+	padding-top: 1em;
+	border-bottom: 1px solid black;
+}
+
+#mysaves-header-close {
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	margin-left: 10px;
+}
+
+#mysaves-header-text {
+	flex: 1 1;
+	padding: 0px;
+	margin: 0px;
+}
+
+#mysaves-scroll {
+	overflow-y: auto;
+}
+
+#mysaves-current-map {
+	display: inline-flex;
+	flex-direction: column;
+	text-align: center;
+	border: 1px solid black;
+	border-radius: 10px;
+	overflow: hidden;
+	margin: auto;
+	margin-top: 1em;
+}
+
+#mysaves-current-header {
+	background: #dedede;
+	border-bottom: 1px solid #999999;
+	margin-bottom: 1em;
+	padding: 5px;
+}
+
+#mysaves-current-mappreview-container {
+	max-width: 20em;
+	max-height: 20em;
+}
+
+#mysaves-current-mappreview {
+	max-width: 20em;
+	max-height: 20em;
+	object-fit: contain;
+}
+
+#mysaves-current-footer {
+	display: flex;
+	flex-direction: column;
+	background: #dedede;
+	border-top: 1px solid #999999;
+	padding: 5px;
+	margin-top: 1em;
+}
+
+#mysaves-current-error {
+	display: none;
+	background: #960018;
+	color: white;
+	height: 20px;
+	border-radius: 5px;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+
+#mysaves-name-input {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+#mysaves-save {
+	background: green;
+	color: white;
+	cursor: pointer;
+	border-radius: 5px;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+
+.mysaves-mapbox {
+	display: inline-flex;
+	flex-direction: column;
+	max-width: 45%;
+	overflow: hidden;
+	border: 1px solid black;
+	border-radius: 10px;
+	margin: 10px;
+}
+
+.mysaves-mapbox-header {
+	display: flex;
+	background: #dedede;
+	flex-direction: row;
+	border-bottom: 1px solid #999999;
+	padding: 5px;
+}
+
+.mysaves-mappreview {
+	cursor: pointer;
+	max-width: 100%;
+	max-height: 20em;
+	object-fit: contain;
+	width: 20em;
+	height: auto;
+	border-left: 1px solid #999999;
+	border-right: 1px solid #999999;
+	margin: auto;
+}
+
+.mysaves-mapbox .mysaves-delete {
+	display: inline-block;
+	cursor: pointer;
+	width: 25px;
+	height: 25px;
+}
+
+.mysaves-mapbox .mysaves-mapname {
+	width: 100%;
+}
+
+.mysaves-mapbox .mysaves-url {
+	cursor: text;
+	border-top: 1px solid #999999;
+	background: #dedede;
+	padding-left: 10px;;
+	padding-right: 10px;;
+	padding-top: 1em;
+	padding-bottom: 1em;
+
+	word-break: break-all;
+	word-wrap: break-word;	
+	font-size: 80%;	
+	-webkit-touch-callout: all;
+	-webkit-user-select: all;
+        -khtml-user-select: all;
+	-moz-user-select: all;
+	-ms-user-select: text;
+}

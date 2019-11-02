@@ -459,6 +459,7 @@ function start() {
 	LogoManager.loadFlags();
 
 	Account.verifyState();
+//	Account.getMaps_new();
 }
 
 start();
