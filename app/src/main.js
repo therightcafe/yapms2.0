@@ -1,4 +1,4 @@
-var currentCache = 'v0.81.5';
+var currentCache = 'v0.81.6';
 
 var states = [];
 var lands = [];
@@ -383,9 +383,6 @@ function setChangeCandidate(oldCandidate, newCandidate) {
 		state.delegates[newCandidate] = state.delegates[oldCandidate];
 		state.delegates[oldCandidate] = undefined;
 	}
-}
-
-function loadSave(URL) {
 }
 
 function start() {

@@ -303,6 +303,17 @@ class MapLoader {
 
 	// loads the svg element into the HTML
 	static loadMap(filename, fontsize, strokewidth, dataid, type, year, options) {
+
+		// if the svg is already loaded dont load another
+		if(MapLoader.save_filename === filename &&
+			MapLoader.save_dataid === dataid &&
+			MapLoader.save_type === type &&
+			MapLoader.save_year === year &&
+			MapLoader.save_fontsize === fontsize &&
+			MapLoader.save_strokewidth === strokewidth) {
+			return;
+		}
+
 		MapLoader.save_filename = filename;
 		MapLoader.save_dataid = dataid;
 		MapLoader.save_type = type;
