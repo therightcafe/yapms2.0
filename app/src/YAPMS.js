@@ -437,7 +437,7 @@ class Account {
 				var arr = data.split(' ');
 				for(var fileIndex = 0; fileIndex < arr.length; ++fileIndex) {
 					var fileName = arr[fileIndex].split('/');
-					var name = fileName[2].split('.')[0].substr(2);
+					var name = fileName[2].split('.')[0];
 					console.log(name);
 					var nameDecode = atob(name);
 					
