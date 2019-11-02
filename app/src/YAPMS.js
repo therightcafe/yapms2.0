@@ -1764,6 +1764,35 @@ class MapLoader {
 		});
 	}
 
+	static loadMapFromURL(URL) {
+		console.log('Map Loader: ' + URL);
+		$.ajax({
+			url: URL,
+			type: "POST",
+			success: function(data) {
+				console.log("Map Load: Found saved map");
+				try {
+					console.log('Map Loader: Attemping new file load');
+					MapLoader.loadSavedMap_new(data);
+				} catch(e) {
+					console.log('Map Loader: Attemping old file load');
+					MapLoader.loadSavedMap_old(data);
+				}
+			},
+			error: function() {
+				console.log("Map Loader: Did not find saved map");
+				MapLoader.loadMap('./res/usa_presidential.svg', 16, 1, 'usa_ec',"presidential", "open", {updateText: true});
+
+				var notification = document.getElementById('notification');
+				var message = notification.querySelector('#notification-message');
+				var title = notification.querySelector('#notification-title');
+				title.innerHTML = 'Sorry';
+				message.innerHTML = 'The map you are looking for does not exist.<br><br>This feature is still in development and it may have been deleted.';
+				notification.style.display = 'inline';
+			}
+		});
+	}
+
 	// Load map based off of php t parameter
 	static loadMapFromId(id) {
 		switch(id) {
@@ -5865,7 +5894,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.81.3';
+var currentCache = 'v0.81.5';
 
 var states = [];
 var lands = [];
@@ -6252,6 +6281,9 @@ function setChangeCandidate(oldCandidate, newCandidate) {
 	}
 }
 
+function loadSave(URL) {
+}
+
 function start() {
 	KeyboardManager.init();
 	CandidateManager.initCandidates();
@@ -6260,58 +6292,19 @@ function start() {
 	CookieManager.loadCookies();
 
 	if(php_load_map === true) {
-		var customURL = null;
+		var url = null;
 		if(php_load_user === true) {
-			customURL = 'https://yapms.org/users/' + php_load_user_id + '/' + php_load_map_id + '.txt'; 	
+			url = 'https://yapms.org/users/' + php_load_user_id + '/' + php_load_map_id + '.txt'; 	
 		} else {
-			customURL = 'https://yapms.org/maps/' + php_load_map_id + '.txt'; 	
+			url = 'https://yapms.org/maps/' + php_load_map_id + '.txt'; 	
 		}
-		
-		console.log('Save Search - ' + customURL);
-		$.ajax({
-			//url: './maps/' + php_load_map_id + '.txt',
-			url: customURL,
-			type: "POST",
-			success: function(data) {
-				console.log("Map Load: Found saved map");
-				try {
-					console.log('Map Load: Attemping new file load');
-					MapLoader.loadSavedMap_new(data);
-				} catch(e) {
-					console.log(e);
-					console.log('Map Load: Attemping old file load');
-					MapLoader.loadSavedMap_old(data);
-				}
-			},
-			error: function(a, b, c) {
-				console.log('Save Search - yapms.com');
-				$.ajax({
-					url: 'https://www.yapms.com/app/maps/' + php_load_map_id + '.txt',
-					type: "POST",
-					success: function(data) {
-						console.log("Map Load: Found saved map");
-						try {
-							console.log('Map Load: Attemping new file load');
-							MapLoader.loadSavedMap_new(data);
-						} catch(e) {
-							console.log('Map Load: Attemping old file load');
-							MapLoader.loadSavedMap_old(data);
-						}
-					},
-					error: function(a, b, c) {
-						console.log("Map Load: Did not find saved map");
-						MapLoader.loadMap('./res/usa_presidential.svg', 16, 1, 'usa_ec',"presidential", "open", {updateText: true});
+		MapLoader.loadMapFromURL(url);
 
-						var notification = document.getElementById('notification');
-						var message = notification.querySelector('#notification-message');
-						var title = notification.querySelector('#notification-title');
-						title.innerHTML = 'Sorry';
-						message.innerHTML = 'The map you are looking for does not exist.<br><br>This feature is still in development and it may have been deleted.';
-						notification.style.display = 'inline';
-					}
-				});
-			}
-		});
+		if(php_auto_reload) {
+			window.setInterval(function() {
+				MapLoader.loadMapFromURL(url);
+			}, 5000);
+		}
 
 	} else if(php_load_type_map === true) {
 		PresetLoader.loadPreset("classic");
@@ -6326,7 +6319,6 @@ function start() {
 	LogoManager.loadFlags();
 
 	Account.verifyState();
-//	Account.getMaps_new();
 }
 
 start();

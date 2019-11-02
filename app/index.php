@@ -44,6 +44,16 @@
 			echo '<script>var mobile = false;</script>';
 		};
 
+		if(isset($_GET["a"]) && !empty($_GET["a"])) {
+			echo '<script>
+				var php_auto_reload = true;
+				</script>';
+		} else {
+			echo '<script>
+				var php_auto_reload = false;
+				</script>';
+		}
+
 		if(isset($_GET["u"]) && !empty($_GET["u"])) {
 			echo '<script>
 				var php_load_user = true;

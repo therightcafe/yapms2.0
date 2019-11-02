@@ -39,6 +39,35 @@ class MapLoader {
 		});
 	}
 
+	static loadMapFromURL(URL) {
+		console.log('Map Loader: ' + URL);
+		$.ajax({
+			url: URL,
+			type: "POST",
+			success: function(data) {
+				console.log("Map Load: Found saved map");
+				try {
+					console.log('Map Loader: Attemping new file load');
+					MapLoader.loadSavedMap_new(data);
+				} catch(e) {
+					console.log('Map Loader: Attemping old file load');
+					MapLoader.loadSavedMap_old(data);
+				}
+			},
+			error: function() {
+				console.log("Map Loader: Did not find saved map");
+				MapLoader.loadMap('./res/usa_presidential.svg', 16, 1, 'usa_ec',"presidential", "open", {updateText: true});
+
+				var notification = document.getElementById('notification');
+				var message = notification.querySelector('#notification-message');
+				var title = notification.querySelector('#notification-title');
+				title.innerHTML = 'Sorry';
+				message.innerHTML = 'The map you are looking for does not exist.<br><br>This feature is still in development and it may have been deleted.';
+				notification.style.display = 'inline';
+			}
+		});
+	}
+
 	// Load map based off of php t parameter
 	static loadMapFromId(id) {
 		switch(id) {
