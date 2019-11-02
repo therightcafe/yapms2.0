@@ -261,7 +261,6 @@ class Account {
 				}
 			},
 			error: function(a, b, c) {
-				alert(a + b + c);
 				console.log(a);
 				console.log(b);
 				console.log(c);
@@ -386,7 +385,7 @@ class Account {
 			page.style.display = "inline-flex";
 		}
 
-		html2canvas(document.getElementById("application"), {logging: true, onclone: function(clone) {
+		html2canvas(document.getElementById("application"), {logging: false, onclone: function(clone) {
 			// remove the custom fonts from the clone
 			var svgtext = clone.getElementById('text');
 			if(svgtext) {
@@ -479,7 +478,7 @@ class Account {
 
 					var mapBoxURL = document.createElement('div');
 					mapBoxURL.className = "mysaves-url";
-					var mapURL = document.createTextNode("https://testing.yapms.com/app/?u=1&m=" + name);
+					var mapURL = document.createTextNode("https://testing.yapms.com/app/?u=" + Account.id + "&m=" + name);
 					mapBoxURL.appendChild(mapURL);
 					mapBox.appendChild(mapBoxURL);
 
@@ -491,7 +490,6 @@ class Account {
 				console.log(a);
 				console.log(b);
 				console.log(c);
-				console.log("BAD");
 			}
 		});
 	}
