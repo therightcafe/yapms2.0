@@ -150,7 +150,7 @@ class Account {
 		var formData = new FormData();
 		formData.append("mapName", mapName);
 		$.ajax({
-			url: "https://yapms.org/users/unlink.php",
+			url: "https://yapms.org/users/.tools/unlink.php",
 			type: "POST",
 			data: formData,
 			processData: false,
@@ -237,7 +237,7 @@ class Account {
 		formData.append("data", JSON.stringify(data));
 
 		$.ajax({
-			url: "https://yapms.org/users/upload.php",
+			url: "https://yapms.org/users/.tools/upload.php",
 			type: "POST",
 			data: formData,
 			processData: false,
@@ -425,7 +425,7 @@ class Account {
 		});
 		
 		$.ajax({
-			url: "https://yapms.org/users/get_maps.php",
+			url: "https://yapms.org/users/.tools/get_maps.php",
 			type: "POST",
 			processData: false,
 			contentType: false,
@@ -436,16 +436,18 @@ class Account {
 			success: function(data) {
 				var arr = data.split(' ');
 				for(var fileIndex = 0; fileIndex < arr.length; ++fileIndex) {
+					/* GET BASE64 DATA AND DECODE */
 					var fileName = arr[fileIndex].split('/');
 					var name = fileName[2].split('.')[0];
-					console.log(name);
 					var nameDecode = atob(name);
-					
+				
+					/* CREATE MAP BOX ELEMENT */	
 					var mapBox = document.createElement('div');
 					mapBox.className = "mysaves-mapbox";
 					var mapBoxHeader = document.createElement('div');
 					mapBoxHeader.className = "mysaves-mapbox-header";
 
+					/* CREATE DELETE MAP BUTTON */
 					var mapDelete = document.createElement('img');
 					mapDelete.src = "./html/deletebutton.svg";
 					mapDelete.className = "mysaves-delete";
@@ -457,13 +459,15 @@ class Account {
 					})();
 					mapBoxHeader.appendChild(mapDelete);
 
+					/* CREATE MAP NAME */
 					var mapName = document.createElement('div');
 					mapName.className = "mysaves-mapname";
 					mapName.innerHTML = nameDecode;
 					mapBoxHeader.appendChild(mapName);
 					
 					mapBox.appendChild(mapBoxHeader);
-				
+			
+					/* CREATE MAP PREVIEW */	
 					var mapPreview = document.createElement('img');
 					mapPreview.className = "mysaves-mappreview";
 					mapPreview.src = "https://yapms.org/users/"  + Account.id + "/" + name + ".png#" + new Date().getTime();
@@ -476,6 +480,7 @@ class Account {
 					})();
 					mapBox.appendChild(mapPreview);
 
+					/* CREATE MAP LINK */
 					var mapBoxURL = document.createElement('div');
 					mapBoxURL.className = "mysaves-url";
 					var mapURL = document.createTextNode("https://testing.yapms.com/app/?u=" + Account.id + "&m=" + name);

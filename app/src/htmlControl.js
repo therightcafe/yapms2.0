@@ -70,6 +70,11 @@ function closeAllPopups() {
 			popup.style.display = 'none';
 		}
 	}
+
+	var mysaves = document.getElementById("application-mysaves");
+	if(mysaves) {
+		Account.closeMyMaps();
+	}
 }
 
 function displayCustomColorMenu(type) {
