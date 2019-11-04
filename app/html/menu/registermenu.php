@@ -7,8 +7,8 @@
 </div>
 </div>
 <div class="selectmenu-content" id="mapmenu-content">
-<div class="selectmenu-section">
-	<small>This login system is currently in beta.<br>If any major issues are found or when the system is fully released,<br>accounts and all saved maps may be deleted.</small>
+<div class="selectmenu-section" style="word-wrap: break-word;">
+	<small>This login system is currently in beta. If any major issues are found or when the system is fully released, accounts and all saved maps may be deleted.</small>
 </div>
 <div class="selectmenu-section" id="register-info">
 	Please enter your credentials

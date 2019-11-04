@@ -7,19 +7,19 @@
 </div>
 </div>
 <div class="selectmenu-content">
-<div class="selectmenu-section">
-	<small>This login system is currently in beta.<br>If any major issues are found or when the system is fully released,<br>accounts and all saved maps may be deleted.</small>
+<div class="selectmenu-section" style="word-wrap: break-word;">
+	<small>This login system is currently in beta. If any major issues are found or when the system is fully released, accounts and all saved maps may be deleted.</small>
 </div>
 <div class="selectmenu-section" id="login-info">
 	Please enter your credentials
 </div>
-<form>
-<div class="selectmenu-section">Email <input id="email-login" type="text"></div>
-<div class="selectmenu-section">Password <input id="password-login" type="password"></div>
+<form action="">
+	<div class="selectmenu-section">Email <input id="email-login" type="text"></div>
+	<div class="selectmenu-section">Password <input id="password-login" type="password"></div>
+	<a class="selectmenu-button" onclick='Account.login();'>
+		<div class="selectmenu-button-text">Login</div>
+	</a>
 </form>
-<a class="selectmenu-button" onclick='Account.login();'>
-	<div class="selectmenu-button-text">Login</div>
-</a>
 <a class="selectmenu-button" onclick='displayMenu("registermenu");'>
 	<div class="selectmenu-button-text">Register</div>
 </a>
