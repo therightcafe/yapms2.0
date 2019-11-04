@@ -319,7 +319,7 @@ input[type=range]::-moz-range-track {
 }
 
 input[type=submit] {
-	display: flex;
+	display: block;
 	width: 100%;
 	border: none;
 	font-size: inherit;
