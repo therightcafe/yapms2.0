@@ -1,4 +1,4 @@
-var currentCache = 'v0.86.1';
+var currentCache = 'v0.86.2';
 
 var states = [];
 var lands = [];
@@ -99,7 +99,6 @@ function share(autoCenter) {
 window.onerror = function(message, source, lineno, colno, error) {
 	//alert(message + ' ' + source + ' ' + lineno + ' ' + colno);
 	if(typeof gtag !== 'undefined') {
-		console.log('Error');
 		if(message === "Script error." && lineno === 0 && colno === 0) {
 			return;
 		} else {
