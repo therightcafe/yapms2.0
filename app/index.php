@@ -604,14 +604,6 @@ echo '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygo
 	<?php require './html/menu/registermenu.php'; ?>
 </div>
 
-<div id="mymapmenu" class="popup selectmenu">
-	<?php require './html/menu/mymapmenu.php'; ?>
-</div>
-
-<div id="savemenu" class="popup selectmenu">
-	<?php require './html/menu/savemenu.php'; ?>
-</div>
-
 <div id="passwordmenu" class="popup selectmenu">
 	<?php require './html/menu/passwordmenu.php'; ?>
 </div>

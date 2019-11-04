@@ -255,6 +255,8 @@ class Account {
 						error.innerHTML = "Enter Map Name";
 					} else if(arr[1] === "file_limit") {
 						error.innerHTML = "File Limit Reached";	
+					} else {
+						error.innerHTML = "Upload Error";	
 					}
 				} else {
 					Account.getMaps();

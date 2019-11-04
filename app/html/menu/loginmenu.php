@@ -13,8 +13,10 @@
 <div class="selectmenu-section" id="login-info">
 	Please enter your credentials
 </div>
+<form>
 <div class="selectmenu-section">Email <input id="email-login" type="text"></div>
 <div class="selectmenu-section">Password <input id="password-login" type="password"></div>
+</form>
 <a class="selectmenu-button" onclick='Account.login();'>
 	<div class="selectmenu-button-text">Login</div>
 </a>

@@ -255,6 +255,8 @@ class Account {
 						error.innerHTML = "Enter Map Name";
 					} else if(arr[1] === "file_limit") {
 						error.innerHTML = "File Limit Reached";	
+					} else {
+						error.innerHTML = "Upload Error";	
 					}
 				} else {
 					Account.getMaps();
@@ -5915,7 +5917,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.81.10';
+var currentCache = 'v0.82.0';
 
 var states = [];
 var lands = [];
