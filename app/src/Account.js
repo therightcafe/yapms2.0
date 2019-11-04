@@ -367,9 +367,10 @@ class Account {
 		var nameDecode = atob(base64name);
 
 		/* DELETE MAP BOX IF ALREADY EXISTS */
-		var previousMapBox = document.getElementById("mapbox-" + name);
-		if(previousMapBox) {
-			previousMapBox.parentNode.removeChild(previousMapBox);
+		var previous = document.getElementById("mappreview-" + name);
+		if(previous) {
+			previous.src = "https://yapms.org/users/"  + Account.id + "/" + name + ".png#" + new Date().getTime();
+			return;
 		}
 	
 		/* CREATE MAP BOX ELEMENT */	
@@ -407,6 +408,7 @@ class Account {
 		/* CREATE MAP PREVIEW */	
 		var mapPreview = document.createElement('img');
 		mapPreview.className = "mysaves-mappreview";
+		mapPreview.id = "mappreview-" + name;
 		mapPreview.src = "https://yapms.org/users/"  + Account.id + "/" + name + ".png#" + new Date().getTime();
 		mapPreview.alt = "No Preview";
 		mapPreview.onclick = (function() {
