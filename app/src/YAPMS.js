@@ -363,6 +363,7 @@ class Account {
 
 	static addMapBox(base64name) {
 		/* GET BASE64 DATA AND DECODE */
+		var name = base64name;
 		var nameDecode = atob(base64name);
 	
 		/* CREATE MAP BOX ELEMENT */	
@@ -5994,7 +5995,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.82.2';
+var currentCache = 'v0.82.3';
 
 var states = [];
 var lands = [];

@@ -363,6 +363,7 @@ class Account {
 
 	static addMapBox(base64name) {
 		/* GET BASE64 DATA AND DECODE */
+		var name = base64name;
 		var nameDecode = atob(base64name);
 	
 		/* CREATE MAP BOX ELEMENT */	
