@@ -6015,7 +6015,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.86.5';
+var currentCache = 'v0.90.0';
 
 var states = [];
 var lands = [];

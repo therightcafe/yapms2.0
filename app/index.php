@@ -237,7 +237,7 @@ if($mobile === false) {
 	</div>
 </div>
 
-<div id="application-mysaves">
+<div id="application-mysaves" style="display: none">
 	<?php include './html/menu/application-mysaves.php'; ?>
 </div>
 
