@@ -428,7 +428,7 @@ class Account {
 
 		var maps = document.getElementById("mysaves-maps");
 		if(preappend) {
-			maps.insertBefore(maps.firstChild);
+			maps.insertBefore(mapBox, maps.firstChild);
 		} else {
 			maps.appendChild(mapBox);
 		}
