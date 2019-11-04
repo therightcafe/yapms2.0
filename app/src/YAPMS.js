@@ -523,6 +523,11 @@ class Account {
 Account.email = null;
 Account.id = null;
 Account.isLoggedIn = false;
+
+$("#login-form").submit(function(event) {
+	event.preventDefault();
+	Account.login();
+});
 // list of candidates
 
 class Candidate {
@@ -5917,7 +5922,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.82.0';
+var currentCache = 'v0.82.1';
 
 var states = [];
 var lands = [];

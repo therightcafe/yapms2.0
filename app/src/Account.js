@@ -523,3 +523,8 @@ class Account {
 Account.email = null;
 Account.id = null;
 Account.isLoggedIn = false;
+
+$("#login-form").submit(function(event) {
+	event.preventDefault();
+	Account.login();
+});
