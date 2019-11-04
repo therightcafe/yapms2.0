@@ -2139,7 +2139,12 @@ class MapLoader {
 			if(options.onLoad) {
 				options.onLoad();
 			}
-			return;
+
+			if(options.clear && options.clear === true) {
+
+			} else {
+				return;
+			}
 		}
 
 		MapLoader.save_filename = filename;
@@ -2630,7 +2635,7 @@ class MapLoader {
 
 	// sets all states to white
 	static clearMap() {
-		MapLoader.loadMap(MapLoader.save_filename, MapLoader.save_fontsize, MapLoader.save_strokewidth, MapLoader.save_dataid, MapLoader.save_type, MapLoader.save_year, {updateText: mapOptions.updateText});
+		MapLoader.loadMap(MapLoader.save_filename, MapLoader.save_fontsize, MapLoader.save_strokewidth, MapLoader.save_dataid, MapLoader.save_type, MapLoader.save_year, {updateText: mapOptions.updateText, clear: true});
 		MapManager.setLockMap(false);
 	}
 }
@@ -6010,7 +6015,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.86.2';
+var currentCache = 'v0.86.5';
 
 var states = [];
 var lands = [];
