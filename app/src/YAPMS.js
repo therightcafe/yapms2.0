@@ -258,7 +258,7 @@ class Account {
 					}
 				} else {
 					var base64name = arr[1];
-					Account.addMapBox(base64name);
+					Account.addMapBox(base64name, true);
 				}
 			},
 			error: function(a, b, c) {
@@ -361,7 +361,7 @@ class Account {
 		});
 	}
 
-	static addMapBox(base64name) {
+	static addMapBox(base64name, preappend) {
 		/* GET BASE64 DATA AND DECODE */
 		var name = base64name;
 		var nameDecode = atob(base64name);
@@ -427,7 +427,11 @@ class Account {
 		mapBox.appendChild(mapBoxURL);
 
 		var maps = document.getElementById("mysaves-maps");
-		maps.appendChild(mapBox);
+		if(preappend) {
+			maps.insertBefore(maps.firstChild);
+		} else {
+			maps.appendChild(mapBox);
+		}
 	}
 
 	static closeMyMaps() {
