@@ -376,6 +376,11 @@ class Account {
 		while(maps.firstChild) {
 			maps.removeChild(maps.firstChild);
 		}
+
+		var current = document.getElementById("mysaves-current-map");
+		if(current) {
+			current.style.display = "none";
+		}
 		
 		var error = document.getElementById("mysaves-current-error");
 		if(error) {
@@ -424,6 +429,10 @@ class Account {
 			i.src = img;
 			i.style.width = '40vw';
 			i.style.height = 'auto';
+			var current = document.getElementById("mysaves-current-map");
+			if(current) {
+				current.style.display = "inline-flex";
+			}
 		});
 		
 		$.ajax({
