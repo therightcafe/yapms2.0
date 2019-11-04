@@ -257,7 +257,8 @@ class Account {
 						error.innerHTML = "Upload Error";	
 					}
 				} else {
-					Account.getMaps();
+					var base64name = arr[1];
+					Account.addMapBox(base64name);
 				}
 			},
 			error: function(a, b, c) {
@@ -358,6 +359,65 @@ class Account {
 				console.log(c);
 			}	
 		});
+	}
+
+	static addMapBox(base64name) {
+		/* GET BASE64 DATA AND DECODE */
+		var nameDecode = atob(base64name);
+	
+		/* CREATE MAP BOX ELEMENT */	
+		var mapBox = document.createElement('div');
+		mapBox.className = "mysaves-mapbox";
+		var mapBoxHeader = document.createElement('div');
+		mapBoxHeader.className = "mysaves-mapbox-header";
+
+		/* CREATE DELETE MAP BUTTON */
+		var mapDelete = document.createElement('img');
+		mapDelete.src = "./html/deletebutton.svg";
+		mapDelete.className = "mysaves-delete";
+		mapDelete.onclick = (function() {
+			var name_onclick = name;
+			var thisMap  = mapBox;
+			var allMaps = document.getElementById("mysaves-maps");
+			return function() {
+				Account.unlink(name_onclick);
+				if(allMaps && thisMap) {
+					allMaps.removeChild(thisMap)
+				}
+			}
+		})();
+		mapBoxHeader.appendChild(mapDelete);
+
+		/* CREATE MAP NAME */
+		var mapName = document.createElement('div');
+		mapName.className = "mysaves-mapname";
+		mapName.innerHTML = nameDecode;
+		mapBoxHeader.appendChild(mapName);
+		
+		mapBox.appendChild(mapBoxHeader);
+
+		/* CREATE MAP PREVIEW */	
+		var mapPreview = document.createElement('img');
+		mapPreview.className = "mysaves-mappreview";
+		mapPreview.src = "https://yapms.org/users/"  + Account.id + "/" + name + ".png#" + new Date().getTime();
+		mapPreview.alt = "No Preview";
+		mapPreview.onclick = (function() {
+			var url = "https://testing.yapms.com/app/?u=" + Account.id + '&m=' + name;
+			return function() {
+				window.location.href = url;
+			}
+		})();
+		mapBox.appendChild(mapPreview);
+
+		/* CREATE MAP LINK */
+		var mapBoxURL = document.createElement('div');
+		mapBoxURL.className = "mysaves-url";
+		var mapURL = document.createTextNode("https://testing.yapms.com/app/?u=" + Account.id + "&m=" + name);
+		mapBoxURL.appendChild(mapURL);
+		mapBox.appendChild(mapBoxURL);
+
+		var maps = document.getElementById("mysaves-maps");
+		maps.appendChild(mapBox);
 	}
 
 	static closeMyMaps() {
