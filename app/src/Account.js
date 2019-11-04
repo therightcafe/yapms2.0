@@ -161,13 +161,11 @@ class Account {
 			crossDomain: true,
 			success: function(data) {
 				console.log(data);
-				Account.getMaps();
 			},
 			error: function(a, b, c) {
 				console.log(a);
 				console.log(b);
 				console.log(c);
-				Account.getMaps();
 			}	
 		});
 	}
@@ -464,8 +462,13 @@ class Account {
 					mapDelete.className = "mysaves-delete";
 					mapDelete.onclick = (function() {
 						var name_onclick = name;
+						var thisMap  = mapBox;
+						var allMaps = document.getElementById("mysaves-maps");
 						return function() {
 							Account.unlink(name_onclick);
+							if(allMaps && thisMap) {
+								allMaps.removeChild(thisMap)
+							}
 						}
 					})();
 					mapBoxHeader.appendChild(mapDelete);
