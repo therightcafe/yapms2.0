@@ -412,7 +412,7 @@ class Account {
 		mapPreview.src = "https://yapms.org/users/"  + Account.id + "/" + name + ".png#" + new Date().getTime();
 		mapPreview.alt = "No Preview";
 		mapPreview.onclick = (function() {
-			var url = "https://testing.yapms.com/app/?u=" + Account.id + '&m=' + name;
+			var url = "https://www.yapms.com/app/?u=" + Account.id + '&m=' + name;
 			return function() {
 				window.location.href = url;
 			}
@@ -422,7 +422,7 @@ class Account {
 		/* CREATE MAP LINK */
 		var mapBoxURL = document.createElement('div');
 		mapBoxURL.className = "mysaves-url";
-		var mapURL = document.createTextNode("https://testing.yapms.com/app/?u=" + Account.id + "&m=" + name);
+		var mapURL = document.createTextNode("https://www.yapms.com/app/?u=" + Account.id + "&m=" + name);
 		mapBoxURL.appendChild(mapURL);
 		mapBox.appendChild(mapBoxURL);
 
@@ -563,7 +563,7 @@ class Account {
 					mapPreview.src = "https://yapms.org/users/"  + Account.id + "/" + name + ".png#" + new Date().getTime();
 					mapPreview.alt = "No Preview";
 					mapPreview.onclick = (function() {
-						var url = "https://testing.yapms.com/app/?u=" + Account.id + '&m=' + name;
+						var url = "https://www.yapms.com/app/?u=" + Account.id + '&m=' + name;
 						return function() {
 							window.location.href = url;
 						}
@@ -573,7 +573,7 @@ class Account {
 					/* CREATE MAP LINK */
 					var mapBoxURL = document.createElement('div');
 					mapBoxURL.className = "mysaves-url";
-					var mapURL = document.createTextNode("https://testing.yapms.com/app/?u=" + Account.id + "&m=" + name);
+					var mapURL = document.createTextNode("https://www.yapms.com/app/?u=" + Account.id + "&m=" + name);
 					mapBoxURL.appendChild(mapURL);
 					mapBox.appendChild(mapBoxURL);
 
