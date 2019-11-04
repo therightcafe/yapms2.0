@@ -555,6 +555,7 @@ class Account {
 					/* CREATE MAP PREVIEW */	
 					var mapPreview = document.createElement('img');
 					mapPreview.className = "mysaves-mappreview";
+					mapPreview.id = "mappreview-" + name;
 					mapPreview.src = "https://yapms.org/users/"  + Account.id + "/" + name + ".png#" + new Date().getTime();
 					mapPreview.alt = "No Preview";
 					mapPreview.onclick = (function() {
