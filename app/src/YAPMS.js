@@ -365,10 +365,17 @@ class Account {
 		/* GET BASE64 DATA AND DECODE */
 		var name = base64name;
 		var nameDecode = atob(base64name);
+
+		/* DELETE MAP BOX IF ALREADY EXISTS */
+		var previousMapBox = document.getElementById("mapbox-" + name);
+		if(previousMapBox) {
+			previousMapBox.parentNode.removeChild(previousMapBox);
+		}
 	
 		/* CREATE MAP BOX ELEMENT */	
 		var mapBox = document.createElement('div');
 		mapBox.className = "mysaves-mapbox";
+		mapBox.id = "mapbox-" + name;
 		var mapBoxHeader = document.createElement('div');
 		mapBoxHeader.className = "mysaves-mapbox-header";
 
@@ -514,6 +521,7 @@ class Account {
 					/* CREATE MAP BOX ELEMENT */	
 					var mapBox = document.createElement('div');
 					mapBox.className = "mysaves-mapbox";
+					mapBox.id = "mapbox-" + name;
 					var mapBoxHeader = document.createElement('div');
 					mapBoxHeader.className = "mysaves-mapbox-header";
 
@@ -5995,7 +6003,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.82.3';
+var currentCache = 'v0.82.5';
 
 var states = [];
 var lands = [];
