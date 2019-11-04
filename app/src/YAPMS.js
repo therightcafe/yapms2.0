@@ -6010,7 +6010,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.86.0';
+var currentCache = 'v0.86.1';
 
 var states = [];
 var lands = [];
@@ -6112,11 +6112,15 @@ window.onerror = function(message, source, lineno, colno, error) {
 	//alert(message + ' ' + source + ' ' + lineno + ' ' + colno);
 	if(typeof gtag !== 'undefined') {
 		console.log('Error');
-		gtag('event', 'error', {
-			'event_category': 'error',
-			'event_label': message + ', ' + source + ', ' + lineno + ', ' + currentCache,
-			'non_interaction': true
-		});
+		if(message === "Script error." && lineno === 0 && colno === 0) {
+			return;
+		} else {
+			gtag('event', 'error', {
+				'event_category': 'error',
+				'event_label': message + ', ' + source + ', ' + lineno + ', ' + currentCache,
+				'non_interaction': true
+			});
+		}
 	}
 }
 
