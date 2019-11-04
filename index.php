@@ -163,17 +163,23 @@
 		<a href="./app/?t=USA_2020_cook">
 			<div class="map-button">
 				Cook Political Report
+				<br>
+				<small>9/30/19</small>
 			</div>
 		</a>
 		<a href="./app/?t=USA_2020_inside">
 			<div class="map-button">
 				Inside Elections
+				<br>
+				<small>9/1/19</small>
 			</div>
 		</a>
 		<br>
 		<a href="./app/?t=USA_2020_sabatos">
 			<div class="map-button">
 				Sabatos Crystal Ball
+				<br>
+				<small>9/29/19</small>
 			</div>
 		</a>
 	</div>
@@ -207,6 +213,8 @@
 		<a href="./app/?t=USA_2020_house_cook">
 			<div class="map-button">
 				Cook Political Report
+				<br>
+				<small>10/28/19</small>
 			</div>
 		</a>
 	</div>
