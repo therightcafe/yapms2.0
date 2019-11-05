@@ -273,36 +273,6 @@
 		</a>
 	</div>
 	</div>
-	
-	<div class="map-type-box">	
-	<div class="map-type-header">
-		<img src="app/res/flags/usa.svg">
-		<div class="map-type-header-text">State Legislatures</div>
-	</div>
-	<div class="map-button-box">	
-		<a href="./app/?t=USA_takeall">
-			<div class="map-button">
-				<i class="fas fa-user"></i> Presidential Take All
-			</div>
-		</a>
-		<a href="./app/?t=USA_proportional">
-			<div class="map-button">
-				<i class="fas fa-user"></i>  Presidential Proportional
-			</div>
-		</a>
-		<br>
-		<a href="./app/?t=USA_2024_projection">
-			<div class="map-button">
-				<i class="fas fa-user"></i> 2024 Estimates
-			</div>
-		</a>
-		<a href="./app/?t=USA_split_maine">
-			<div class="map-button">
-				<i class="fas fa-user"></i> Presidential (Split Maine)
-			</div>
-		</a>
-	</div>
-	</div>
 
 	<br>
 	<h2 class="header">Historical United States</h2>
