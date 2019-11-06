@@ -1,5 +1,5 @@
-var indexCache = 'i0.90.1';
-var staticCache = 's0.90.1';
+var indexCache = 'i0.90.2';
+var staticCache = 's0.90.2';
 
 var _indexCache = [
 	'./',
@@ -36,6 +36,7 @@ var _indexCache = [
 	'./app/?t=USA_split_maine',
 	'./app/?t=USA_2024_projection',
 	'./app/?t=USA_2020_house_cook',
+	'./app/?t=USA_trump_impeachment_support',
 
 	'./app/?t=Canada_provinces',
 	'./app/?t=Canada_house_of_commons',
@@ -117,6 +118,8 @@ var _staticCache = [
 	'./app/res/presets/USA_2020_inside',
 	'./app/res/presets/USA_2020_sabatos',
 	'./app/res/presets/UnitedKingdom_current_parliament',
+	
+	'./app/res/presets/usa/USA_trump_impeachment_support',_
 	
 	'./app/res/presets/can/Canada_2019_house_of_commons',
 

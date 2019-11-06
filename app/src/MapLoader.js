@@ -124,6 +124,9 @@ class MapLoader {
 			case "UnitedKingdom_current_parliament":
 				MapLoader.loadPresetMap(id);
 				break;
+			case "USA_trump_impeachment_support":
+				MapLoader.loadPresetMap('usa/' + id);
+				break;
 			case "Canada_2019_house_of_commons":
 				MapLoader.loadPresetMap('can/' + id);
 				break;
@@ -179,6 +182,9 @@ class MapLoader {
 				break;
 			case "USA_pre_civilwar":
 				MapLoader.loadMap("./res/usa_pre_civilwar.svg", 16, 1, "usa_pre_civilwar_ec", "presidential", "open", {updateText: true});
+				break;
+			case "Pakistan_national_assembly":
+				MapLoader.loadMap("./res/pak/pakistan.svg", 16, 0.08, "congressional", "congressional", "open", {updateText: false});
 				break;
 			case "Germany_states":
 				MapLoader.loadMap("./res/germany.svg", 16, 1, "congressional", "presidential", "open", {updateText: false});

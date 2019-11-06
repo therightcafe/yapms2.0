@@ -676,7 +676,7 @@ class PresetLoader {
 		var eduudf = new Candidate('EDU/UDF',
 			['#9b2a58','#9b2a58','#9b2a58','#9b2a58']);
 
-		CandidateManager.candidates['SVP/UDD'] = svpudc ;
+		CandidateManager.candidates['SVP/UDC'] = svpudc ;
 		CandidateManager.candidates['FDP/PLR'] = fdpplr;
 		CandidateManager.candidates['SP/PS'] = spps;
 		CandidateManager.candidates['GPS/PES'] = gpspes;

@@ -1949,6 +1949,9 @@ class MapLoader {
 			case "UnitedKingdom_current_parliament":
 				MapLoader.loadPresetMap(id);
 				break;
+			case "USA_trump_impeachment_support":
+				MapLoader.loadPresetMap('usa/' + id);
+				break;
 			case "Canada_2019_house_of_commons":
 				MapLoader.loadPresetMap('can/' + id);
 				break;
@@ -2004,6 +2007,9 @@ class MapLoader {
 				break;
 			case "USA_pre_civilwar":
 				MapLoader.loadMap("./res/usa_pre_civilwar.svg", 16, 1, "usa_pre_civilwar_ec", "presidential", "open", {updateText: true});
+				break;
+			case "Pakistan_national_assembly":
+				MapLoader.loadMap("./res/pak/pakistan.svg", 16, 0.08, "congressional", "congressional", "open", {updateText: false});
 				break;
 			case "Germany_states":
 				MapLoader.loadMap("./res/germany.svg", 16, 1, "congressional", "presidential", "open", {updateText: false});
@@ -3324,7 +3330,7 @@ class PresetLoader {
 		var eduudf = new Candidate('EDU/UDF',
 			['#9b2a58','#9b2a58','#9b2a58','#9b2a58']);
 
-		CandidateManager.candidates['SVP/UDD'] = svpudc ;
+		CandidateManager.candidates['SVP/UDC'] = svpudc ;
 		CandidateManager.candidates['FDP/PLR'] = fdpplr;
 		CandidateManager.candidates['SP/PS'] = spps;
 		CandidateManager.candidates['GPS/PES'] = gpspes;
@@ -6015,7 +6021,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.90.1';
+var currentCache = 'v0.90.2';
 
 var states = [];
 var lands = [];
