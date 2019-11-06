@@ -125,10 +125,10 @@ class MapLoader {
 				MapLoader.loadPresetMap(id);
 				break;
 			case "USA_trump_impeachment_support":
-				MapLoader.loadPresetMap('usa/' + id);
+				MapLoader.loadPresetMap('usa/' + id, {enableCongress: true});
 				break;
 			case "Canada_2019_house_of_commons":
-				MapLoader.loadPresetMap('can/' + id, {enableCongress: true});
+				MapLoader.loadPresetMap('can/' + id);
 				break;
 			case "USA_Canada":
 				MapLoader.loadMap("./res/usa_canada.svg", 16, 0.01, "congressional", "presidential", "open", {updateText: false});
