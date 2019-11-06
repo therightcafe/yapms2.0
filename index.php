@@ -273,6 +273,20 @@
 		</a>
 	</div>
 	</div>
+	
+	<div class="map-type-box">	
+	<div class="map-type-header">
+		<img src="app/res/flags/usa.svg">
+		<div class="map-type-header-text">Other</div>
+	</div>
+	<div class="map-button-box">	
+		<a href="./app/?t=USA_trump_impeachment_support">
+			<div class="map-button">
+				<i class="fas fa-user"></i> Impeachment Support
+			</div>
+		</a>
+	</div>
+	</div>
 
 	<br>
 	<h2 class="header">Historical United States</h2>
