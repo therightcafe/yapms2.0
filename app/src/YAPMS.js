@@ -1572,11 +1572,9 @@ class InputManager {
 			preventEventsDefaults: false
 		});
 
-/*
-		$('html').on('pinch', function(event) {
+		$('#svgdata').on('pinch', function(event) {
 			event.gesture.preventDefault();
 		});
-*/
 	}
 }
 class KeyboardManager {
@@ -6024,7 +6022,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.90.11';
+var currentCache = 'v0.90.12';
 
 var states = [];
 var lands = [];

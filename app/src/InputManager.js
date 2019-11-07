@@ -68,10 +68,8 @@ class InputManager {
 			preventEventsDefaults: false
 		});
 
-/*
-		$('html').on('pinch', function(event) {
+		$('#svgdata').on('pinch', function(event) {
 			event.gesture.preventDefault();
 		});
-*/
 	}
 }
