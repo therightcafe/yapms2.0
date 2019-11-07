@@ -222,8 +222,6 @@ input[type=range]::-moz-range-track {
 	overflow-x: auto;
 
 	margin-bottom: 1px;
-
-	touch-action: none;
 }
 
 .click-button {
@@ -545,7 +543,6 @@ h2.selectmenu-toptext {
 	pointer-events: none;
 	top: 0px;
 	margin-top: 4px;
-	touch-action: none;
 }
 
 .legend-button {
@@ -844,6 +841,7 @@ a {
 #map-div {
 	width: 100%;
 	height: 100%;
+	touch-action: none;
 }
 
 #toolbar-div {

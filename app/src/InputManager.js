@@ -63,22 +63,7 @@ class InputManager {
 			maxZoom: 100,
 			zoomScaleSensitivity: 0.1,
 			dblClickZoomEnabled: false,
-			preventEventsDefaults: true,
 			customEventsHandler: eventHandler
 		});
-
-/*
-		$('#svgdata').on('pinch', function(event) {
-			console.log(event);
-			event.gesture.preventDefault();
-		});
-*/
-
-		document.addEventListener('touchmove', function(event) {
-			if(event.scale !== 1) {
-				event.preventDefault();
-				console.log(event);
-			}
-		}, false);
 	}
 }
