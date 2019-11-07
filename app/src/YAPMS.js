@@ -1576,7 +1576,7 @@ class InputManager {
 				event.preventDefault();
 				console.log('prevent default');
 			}
-		}, true);
+		}, {passive: false});
 	}
 }
 class KeyboardManager {
