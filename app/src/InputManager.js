@@ -72,6 +72,6 @@ class InputManager {
 				event.preventDefault();
 				console.log('prevent default');
 			}
-		}, false);
+		}, true);
 	}
 }
