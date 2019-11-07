@@ -67,11 +67,18 @@ class InputManager {
 			customEventsHandler: eventHandler
 		});
 
+		$('#svgdata').on('pinch', function(event) {
+			console.log(event);
+			event.gesture.preventDefault();
+		});
+
+/*
 		document.addEventListener('touchmove', function(event) {
 			if(event.scale !== 1) {
 				event.preventDefault();
 				console.log(event);
 			}
 		}, {passive: false});
+*/
 	}
 }
