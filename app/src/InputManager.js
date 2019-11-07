@@ -15,7 +15,8 @@ class InputManager {
 			zoomEnabled: true,
 			dblClickZoomEnabled: false,
 			maxZoom: 100,
-			zoomScaleSensitivity: 0.06
+			zoomScaleSensitivity: 0.1,
+			preventEventsDefaults: false
 		});
 	}
 
@@ -60,9 +61,11 @@ class InputManager {
 			fit: true,
 			center: true,
 			contain: false,
-			maxZoom: 70,
+			maxZoom: 100,
+			zoomScaleSensitivity: 0.1,
 			dblClickZoomEnabled: false,
-			customEventsHandler: eventHandler
+			customEventsHandler: eventHandler,
+			preventEventsDefaults: false
 		});
 
 /*
