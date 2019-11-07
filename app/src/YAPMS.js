@@ -1571,19 +1571,19 @@ class InputManager {
 			customEventsHandler: eventHandler
 		});
 
+/*
 		$('#svgdata').on('pinch', function(event) {
 			console.log(event);
 			event.gesture.preventDefault();
 		});
+*/
 
-/*
 		document.addEventListener('touchmove', function(event) {
 			if(event.scale !== 1) {
 				event.preventDefault();
 				console.log(event);
 			}
-		}, {passive: false});
-*/
+		}, false);
 	}
 }
 class KeyboardManager {
@@ -6031,7 +6031,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.90.13';
+var currentCache = 'v0.90.31';
 
 var states = [];
 var lands = [];
