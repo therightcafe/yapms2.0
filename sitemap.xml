@@ -403,13 +403,18 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.yapms.com/privacypolicy.html</loc>
-  <lastmod>2019-08-22T05:08:53+00:00</lastmod>
-  <priority>0.64</priority>
+  <loc>https://www.yapms.com/app/?t=USA_trump_impeachment_support</loc>
+  <lastmod>2019-08-22T13:01:36+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.yapms.com/app/?t=USA_2016_presidential_county</loc>
   <lastmod>2019-08-22T13:01:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.yapms.com/privacypolicy.html</loc>
+  <lastmod>2019-08-22T05:08:53+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>

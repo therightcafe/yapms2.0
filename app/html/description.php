@@ -22,6 +22,12 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		'<meta property="og:title" content="YAPms - USA 2020 Governors">
 		<meta property="og:description" content="Interactive USA 2020 Governors Map">';
 		break;
+		case 'USA_trump_impeachment_support':
+		echo '<meta name="description" content="Trump Impeachment Support Map"><title>USA - Trump Impeachment Support Map</title>';
+		echo 
+		'<meta property="og:title" content="YAPms - Trump Impeachment Support Map">
+		<meta property="og:description" content="Interactive Trump Impeachment Support Map">';
+		break;
 		case 'USA_2020_cook':
 		echo '<meta name="description" content="United States 2020 Cook Political Report forecast"><title>USA - 2020 Cook Political Report Election Forecast</title>';
 		echo 
