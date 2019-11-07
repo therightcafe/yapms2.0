@@ -158,6 +158,7 @@ a {
 	flex-direction: column;
 	z-index: 1;
 	overflow: visible;
+	touch-action: none;
 }
 
 #logo-div {
