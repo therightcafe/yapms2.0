@@ -15,8 +15,7 @@ class InputManager {
 			zoomEnabled: true,
 			dblClickZoomEnabled: false,
 			maxZoom: 100,
-			zoomScaleSensitivity: 0.1,
-			preventEventsDefaults: false
+			zoomScaleSensitivity: 0.1
 		});
 	}
 
@@ -64,12 +63,14 @@ class InputManager {
 			maxZoom: 100,
 			zoomScaleSensitivity: 0.1,
 			dblClickZoomEnabled: false,
-			customEventsHandler: eventHandler,
-			preventEventsDefaults: false
+			preventEventsDefaults: true,
+			customEventsHandler: eventHandler
 		});
 
-		$('#svgdata').on('pinch', function(event) {
-			event.gesture.preventDefault();
-		});
+		document.addEventListener('touchmove', function(event) {
+			if(event.scale !== 1) {
+				event.preventDefault();
+			}
+		}, false);
 	}
 }
