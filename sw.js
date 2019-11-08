@@ -1,5 +1,5 @@
-var indexCache = 'i0.90.41';
-var staticCache = 's0.90.11';
+var indexCache = 'i0.90.50';
+var staticCache = 's0.90.50';
 
 var _indexCache = [
 	'./',
@@ -157,13 +157,11 @@ var _staticCache = [
 
 	'./app/res/fontawesome/js/all.min.js',
 
-/*
-	'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js',
-	'https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0',
-	'https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.5.0/dist/svg-pan-zoom.min.js',
+	'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js',
+	'https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0',
+	'https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js',
 	'https://code.jquery.com/jquery-3.4.1.min.js',
 	'https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js',
-*/
 
 	'./app/manifest.json',
 	'./manifest.json'

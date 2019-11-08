@@ -189,16 +189,16 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 	}
 ?>
 
-	<div class="click-button" onclick="displayMenu('chartmenu')" style="white-space: nowrap;">
-	<i class="fas fa-chart-pie"></i> Chart 
+	<div class="click-button" id="share-button" onclick="displayMenu('sharemenu-autocenter');" style="white-space: nowrap;">
+	<i class="fas fa-share-alt"></i> Share
 	</div>
 
 	<div class="click-button" onclick="displayMenu('thememenu')" style="white-space: nowrap;">
 	<i class="fas fa-palette"></i> Theme
 	</div>
 
-	<div class="click-button" id="share-button" onclick="displayMenu('sharemenu-autocenter');" style="white-space: nowrap;">
-		<i class="fas fa-share-alt"></i> Share
+	<div class="click-button" onclick="displayMenu('chartmenu')" style="white-space: nowrap;">
+	<i class="fas fa-chart-pie"></i> Chart 
 	</div>
 
 <?php
@@ -656,9 +656,8 @@ echo '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygo
 </div>
 
 <script src="https://www.google.com/recaptcha/api.js?render=6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo"></script>
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0"></script> 
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script> 
 <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
