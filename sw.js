@@ -1,5 +1,5 @@
-var indexCache = 'i0.90.52';
-var staticCache = 's0.90.52';
+var indexCache = 'i0.90.53';
+var staticCache = 's0.90.53';
 
 var _indexCache = [
 	'./',
@@ -108,19 +108,18 @@ var _staticCache = [
 	
 	'./app/res/images/halloween.jpg',
 
-	'./app/res/presets/USA_current_house',
-	'./app/res/presets/USA_2020_house_cook',
-	'./app/res/presets/USA_current_senate',
-	'./app/res/presets/USA_2016_presidential_county',
+	'./app/res/presets/usa/USA_current_house',
+	'./app/res/presets/usa/USA_2020_house_cook',
+	'./app/res/presets/usa/USA_current_senate',
+	'./app/res/presets/usa/USA_2016_presidential_county',
 
-	'./app/res/presets/USA_2024_projection',
-
-	'./app/res/presets/USA_2020_cook',
-	'./app/res/presets/USA_2020_inside',
-	'./app/res/presets/USA_2020_sabatos',
-	'./app/res/presets/UnitedKingdom_current_parliament',
-	
+	'./app/res/presets/usa/USA_2024_projection',
 	'./app/res/presets/usa/USA_trump_impeachment_support',
+
+	'./app/res/presets/usa/USA_2020_cook',
+	'./app/res/presets/usa/USA_2020_inside',
+	'./app/res/presets/usa/USA_2020_sabatos',
+	'./app/res/presets/UnitedKingdom_current_parliament',
 	
 	'./app/res/presets/can/Canada_2019_house_of_commons',
 
@@ -187,7 +186,7 @@ self.addEventListener('install', function(event) {
 				swLog(staticCache, 'installing');
 				return cache.addAll(_staticCache).then(function() {
 					for(var i = 1789; i < 2016; i += 4) {
-						cache.add('./app/res/presets/USA_' + i + '_presidential');
+						cache.add('./app/res/presets/usa/USA_' + i + '_presidential');
 					}
 					return cache;
 				});

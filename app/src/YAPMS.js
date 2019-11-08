@@ -1893,6 +1893,9 @@ class MapLoader {
 			case "USA_current_house":
 				MapLoader.loadPresetMap(id, {enableCongress: true});
 				break;
+			case "UnitedKingdom_current_parliament":
+				MapLoader.loadPresetMap(id);
+				break;
 			case "USA_current_senate":
 			case "USA_2024_projection":
 			case "USA_2020_cook":
@@ -1900,6 +1903,7 @@ class MapLoader {
 			case "USA_2020_sabatos":
 			case "USA_2020_house_cook":
 			case "USA_2016_presidential":
+			case "USA_2016_presidential_county":
 			case "USA_2012_presidential":
 			case "USA_2008_presidential":
 			case "USA_2004_presidential":
@@ -1939,10 +1943,6 @@ class MapLoader {
 			case "USA_1872_presidential":
 			case "USA_1868_presidential":
 			case "USA_1864_presidential":
-			case "USA_2016_presidential_county":
-			case "UnitedKingdom_current_parliament":
-				MapLoader.loadPresetMap(id);
-				break;
 			case "USA_1789_presidential":
 			case "USA_1792_presidential":
 			case "USA_1796_presidential":
@@ -6036,7 +6036,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.90.52';
+var currentCache = 'v0.90.53';
 
 var states = [];
 var lands = [];
