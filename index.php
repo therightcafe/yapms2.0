@@ -512,7 +512,111 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 			</div>
 		</a>
 	</div>
-    </div>
+	</div> 
+
+	<div class="map-type-box" style="max-width:385px;">
+	<div class="map-type-header">
+		<img src="app/res/flags/usa.svg">
+		<div class="map-type-header-text">Presidential - Pre Civil War</div>
+	</div>
+	<div class="map-button-box">	
+		<a href="./app/?t=USA_1860_presidential">
+			<div class="map-button">
+				1860
+			</div>
+		</a>
+		<a href="./app/?t=USA_1856_presidential">
+			<div class="map-button">
+				1856
+			</div>
+		</a>
+		<a href="./app/?t=USA_1852_presidential">
+			<div class="map-button">
+				1852
+			</div>
+		</a>
+		<a href="./app/?t=USA_1848_presidential">
+			<div class="map-button">
+				1848
+			</div>
+		</a>
+		<a href="./app/?t=USA_1844_presidential">
+			<div class="map-button">
+				1844
+			</div>
+		</a>
+		<a href="./app/?t=USA_1840_presidential">
+			<div class="map-button">
+				1840
+			</div>
+		</a>
+		<a href="./app/?t=USA_1836_presidential">
+			<div class="map-button">
+				1836
+			</div>
+		</a>
+		<a href="./app/?t=USA_1832_presidential">
+			<div class="map-button">
+				1832
+			</div>
+		</a>
+		<a href="./app/?t=USA_1828_presidential">
+			<div class="map-button">
+				1828
+			</div>
+		</a>
+		<a href="./app/?t=USA_1824_presidential">
+			<div class="map-button">
+				1824
+			</div>
+		</a>
+		<a href="./app/?t=USA_1820_presidential">
+			<div class="map-button">
+				1820
+			</div>
+		</a>
+		<a href="./app/?t=USA_1816_presidential">
+			<div class="map-button">
+				1816
+			</div>
+		</a>
+		<a href="./app/?t=USA_1812_presidential">
+			<div class="map-button">
+				1812
+			</div>
+		</a>
+		<a href="./app/?t=USA_1808_presidential">
+			<div class="map-button">
+				1808
+			</div>
+		</a>
+		<a href="./app/?t=USA_1804_presidential">
+			<div class="map-button">
+				1804
+			</div>
+		</a>
+		<a href="./app/?t=USA_1800_presidential">
+			<div class="map-button">
+				1800
+			</div>
+		</a>
+		<a href="./app/?t=USA_1796_presidential">
+			<div class="map-button">
+				1796
+			</div>
+		</a>
+		<a href="./app/?t=USA_1792_presidential">
+			<div class="map-button">
+				1792
+			</div>
+		</a>
+		<a href="./app/?t=USA_1789_presidential">
+			<div class="map-button">
+				1789
+			</div>
+		</a>
+	</div>
+	</div>
 
 	<div class="map-type-box">
 	<div class="map-type-header">

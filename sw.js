@@ -1,5 +1,5 @@
-var indexCache = 'i0.90.50';
-var staticCache = 's0.90.50';
+var indexCache = 'i0.90.51';
+var staticCache = 's0.90.51';
 
 var _indexCache = [
 	'./',
@@ -185,7 +185,7 @@ self.addEventListener('install', function(event) {
 			return caches.open(staticCache).then(function(cache) {
 				swLog(staticCache, 'installing');
 				return cache.addAll(_staticCache).then(function() {
-					for(var i = 1864; i < 2016; i += 4) {
+					for(var i = 1789; i < 2016; i += 4) {
 						cache.add('./app/res/presets/USA_' + i + '_presidential');
 					}
 					return cache;
@@ -197,7 +197,7 @@ self.addEventListener('install', function(event) {
 			return caches.open(indexCache).then(function(cache) {
 				swLog(indexCache, 'installing');
 				return cache.addAll(_indexCache).then(function() {
-					for(var i = 1864; i < 2016; i += 4) {
+					for(var i = 1789; i < 2016; i += 4) {
 						cache.add('./app/?t=USA_' + i + '_presidential');
 					}
 					return cache;

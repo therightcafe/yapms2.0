@@ -172,7 +172,6 @@ class CandidateManager {
 			} else {
 				tilting = '#000000';
 			}
-			
 		}
 		
 		var candidate = new Candidate(name, [solid, likely, leaning, tilting]);

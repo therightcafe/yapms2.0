@@ -124,6 +124,27 @@ class MapLoader {
 			case "UnitedKingdom_current_parliament":
 				MapLoader.loadPresetMap(id);
 				break;
+			case "USA_1789_presidential":
+			case "USA_1792_presidential":
+			case "USA_1796_presidential":
+			case "USA_1800_presidential":
+			case "USA_1804_presidential":
+			case "USA_1808_presidential":
+			case "USA_1812_presidential":
+			case "USA_1816_presidential":
+			case "USA_1820_presidential":
+			case "USA_1824_presidential":
+			case "USA_1828_presidential":
+			case "USA_1832_presidential":
+			case "USA_1836_presidential":
+			case "USA_1840_presidential":
+			case "USA_1844_presidential":
+			case "USA_1848_presidential":
+			case "USA_1852_presidential":
+			case "USA_1856_presidential":
+			case "USA_1860_presidential":
+				MapLoader.loadPresetMap('usa/' + id);
+				break;
 			case "USA_trump_impeachment_support":
 				MapLoader.loadPresetMap('usa/' + id, {enableCongress: true});
 				break;

@@ -147,4 +147,62 @@
 <a class="selectmenu-button" href="./?t=USA_1864_presidential">
 	<div class="selectmenu-button-text">1864</div>
 </a>
+<a class="selectmenu-button" href="./?t=USA_1860_presidential">
+	<div class="selectmenu-button-text">1860</div>
+</a>
+<a class="selectmenu-button" href="./?t=USA_1856_presidential">
+	<div class="selectmenu-button-text">1856</div>
+</a>
+<a class="selectmenu-button" href="./?t=USA_1852_presidential">
+	<div class="selectmenu-button-text">1852</div>
+</a>
+<a class="selectmenu-button" href="./?t=USA_1848_presidential">
+	<div class="selectmenu-button-text">1848</div>
+</a>
+<a class="selectmenu-button" href="./?t=USA_1844_presidential">
+	<div class="selectmenu-button-text">1844</div>
+</a>
+<a class="selectmenu-button" href="./?t=USA_1840_presidential">
+	<div class="selectmenu-button-text">1840</div>
+</a>
+<a class="selectmenu-button" href="./?t=USA_1836_presidential">
+	<div class="selectmenu-button-text">1836</div>
+</a>
+<a class="selectmenu-button" href="./?t=USA_1832_presidential">
+	<div class="selectmenu-button-text">1832</div>
+</a>
+<a class="selectmenu-button" href="./?t=USA_1828_presidential">
+	<div class="selectmenu-button-text">1828</div>
+</a>
+<a class="selectmenu-button" href="./?t=USA_1824_presidential">
+	<div class="selectmenu-button-text">1824</div>
+</a>
+<a class="selectmenu-button" href="./?t=USA_1820_presidential">
+	<div class="selectmenu-button-text">1820</div>
+</a>
+<a class="selectmenu-button" href="./?t=USA_1816_presidential">
+	<div class="selectmenu-button-text">1812</div>
+</a>
+<a class="selectmenu-button" href="./?t=USA_1812_presidential">
+	<div class="selectmenu-button-text">1812</div>
+</a>
+<a class="selectmenu-button" href="./?t=USA_1808_presidential">
+	<div class="selectmenu-button-text">1808</div>
+</a>
+<a class="selectmenu-button" href="./?t=USA_1804_presidential">
+	<div class="selectmenu-button-text">1832</div>
+</a>
+<a class="selectmenu-button" href="./?t=USA_1800_presidential">
+	<div class="selectmenu-button-text">1800</div>
+</a>
+<a class="selectmenu-button" href="./?t=USA_1796_presidential">
+	<div class="selectmenu-button-text">1796</div>
+</a>
+<a class="selectmenu-button" href="./?t=USA_1792_presidential">
+	<div class="selectmenu-button-text">1792</div>
+</a>
+<a class="selectmenu-button" href="./?t=USA_1789_presidential">
+	<div class="selectmenu-button-text">1789</div>
+</a>
+
 </div>
