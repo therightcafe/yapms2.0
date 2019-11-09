@@ -6,6 +6,18 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		echo 
 		"<meta property=\"og:title\" content=\"YAPms - USA {$year} Presidential\">
 		<meta property=\"og:description\" content=\"Interactive USA {$year} Presidential Map\">";
+	} else if(strpos($_GET['t'], '_democratic_primary')) {
+		$year = substr($_GET['t'], 4, 4);
+		echo "<meta name=\"description\" content=\"United States {$year} democratic primary interactive election map\"><title>USA - {$year} Democratic Primary</title>";
+		echo 
+		"<meta property=\"og:title\" content=\"YAPms - USA {$year} Democratic Primary\">
+		<meta property=\"og:description\" content=\"Interactive USA {$year} Democratic Primary Map\">";
+	} else if(strpos($_GET['t'], '_republican_primary')) {
+		$year = substr($_GET['t'], 4, 4);
+		echo "<meta name=\"description\" content=\"United States {$year} republican primary interactive election map\"><title>USA - {$year} Republican Primary</title>";
+		echo 
+		"<meta property=\"og:title\" content=\"YAPms - USA {$year} Republican Primary\">
+		<meta property=\"og:description\" content=\"Interactive USA {$year} Republican Primary Map\">";
 	} else {
 	switch($_GET['t']) {
 		case 'USA_2020_senatorial':
@@ -45,18 +57,6 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		echo 
 		'<meta property="og:title" content="YAPms - USA 2020 Sabatos Crystal Ball Forecast">
 		<meta property="og:description" content="Interactive USA 2020 Sabatos Crystal Ball Map">';
-		break;
-		case 'USA_2020_democratic_primary':
-		echo '<meta name="description" content="United States 2020 interactive democratic primary map"><title>USA - 2020 Democratic Primary Election</title>';
-		echo 
-		'<meta property="og:title" content="YAPms - USA 2020 Democratic Primary">
-		<meta property="og:description" content="Interactive USA 2020 Democratic Primary Map">';
-		break;
-		case 'USA_2020_republican_primary':
-		echo '<meta name="description" content="United States 2020 interactive republican primary map"><title>USA - 2020 Republican Primary Election</title>';
-		echo 
-		'<meta property="og:title" content="YAPms - USA 2020 Republican Primary">
-		<meta property="og:description" content="Interactive USA 2020 Republican Primary Map">';
 		break;
 		case 'USA_county':
 		echo '<meta name="description" content="United States interactive county election map"><title>USA - County Election</title>';

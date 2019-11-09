@@ -1904,6 +1904,8 @@ class MapLoader {
 			case "USA_2020_house_cook":
 			case "USA_2016_presidential":
 			case "USA_2016_presidential_county":
+			case "USA_2016_democratic_primary":
+			case "USA_2016_republican_primary":
 			case "USA_2012_presidential":
 			case "USA_2008_presidential":
 			case "USA_2004_presidential":
@@ -6036,7 +6038,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.90.70';
+var currentCache = 'v0.90.71';
 
 var states = [];
 var lands = [];

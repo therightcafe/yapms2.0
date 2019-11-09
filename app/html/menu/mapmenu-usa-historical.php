@@ -21,14 +21,28 @@
 </a>
 <a class="selectmenu-split">
 	<i class="fas fa-border-all"></i>
-	<div class="selectmenu-split-text">Presidential County Results</div>
+	<div class="selectmenu-split-text">Presidential County</div>
 </a>
 <a class="selectmenu-button" href="./?t=USA_2016_presidential_county">
 	<div class="selectmenu-button-text">2016</div>
 </a>
 <a class="selectmenu-split">
+	<i class="fas fa-republican"></i>
+	<div class="selectmenu-split-text">Republican Primary</div>
+</a>
+<a class="selectmenu-button" href="./?t=USA_2016_republican_primary">
+	<div class="selectmenu-button-text">2016</div>
+</a>
+<a class="selectmenu-split">
+	<i class="fas fa-democrat"></i>
+	<div class="selectmenu-split-text">Democratic Primary</div>
+</a>
+<a class="selectmenu-button" href="./?t=USA_2016_democratic_primary">
+	<div class="selectmenu-button-text">2016</div>
+</a>
+<a class="selectmenu-split">
 	<i class="fas fa-user"></i>
-	<div class="selectmenu-split-text">Presidential Results</div>
+	<div class="selectmenu-split-text">Presidential</div>
 </a>
 <a class="selectmenu-button" href="./?t=USA_2016_presidential">
 	<div class="selectmenu-button-text">2016</div>

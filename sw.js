@@ -1,5 +1,5 @@
-var indexCache = 'i0.90.70';
-var staticCache = 's0.90.70';
+var indexCache = 'i0.90.71';
+var staticCache = 's0.90.71';
 
 var _indexCache = [
 	'./',
@@ -27,7 +27,9 @@ var _indexCache = [
 	'./app/?t=USA_2020_governors',
 	'./app/?t=USA_2020_house',
 	'./app/?t=USA_2020_democratic_primary',
+	'./app/?t=USA_2016_democratic_primary',
 	'./app/?t=USA_2020_republican_primary',
+	'./app/?t=USA_2016_republican_primary',
 	'./app/?t=USA_county',
 	'./app/?t=USA_governors',
 	'./app/?t=USA_senate',
@@ -112,6 +114,8 @@ var _staticCache = [
 	'./app/res/presets/usa/USA_2020_house_cook',
 	'./app/res/presets/usa/USA_current_senate',
 	'./app/res/presets/usa/USA_2016_presidential_county',
+	'./app/res/presets/usa/USA_2016_republican_primary',
+	'./app/res/presets/usa/USA_2016_democratic_primary',
 
 	'./app/res/presets/usa/USA_2024_projection',
 	'./app/res/presets/usa/USA_trump_impeachment_support',

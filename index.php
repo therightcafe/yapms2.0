@@ -631,6 +631,34 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 		</a>
 	</div>
 	</div>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
+		<img src="app/res/flags/usa.svg">
+		<div class="map-type-header-text">Democratic Primaries</div>
+	</div>
+	<div class="map-button-box">	
+		<a href="./app/?t=USA_2016_democratic_primary">
+			<div class="map-button">
+				2016
+			</div>
+		</a>
+	</div>
+	</div>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
+		<img src="app/res/flags/usa.svg">
+		<div class="map-type-header-text">Republican Primaries</div>
+	</div>
+	<div class="map-button-box">	
+		<a href="./app/?t=USA_2016_republican_primary">
+			<div class="map-button">
+				2016
+			</div>
+		</a>
+	</div>
+	</div>
 
 	<div class="map-type-box">
 	<div class="map-type-header">
