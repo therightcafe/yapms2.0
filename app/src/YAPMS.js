@@ -550,7 +550,7 @@ class Account {
 
 					/* CREATE DOWNLOAD MAP BUTTON */
 					var mapDownloadA = document.createElement('a');
-					mapDownloadA.setAttribute('class', 'mapsaves-download');
+					mapDownloadA.setAttribute('class', 'mysaves-download');
 					mapDownloadA.setAttribute('href', "https://yapms.org/users/.tools/download.php?u=" + Account.id + "&m=" + name);
 					var mapDownloadImg = document.createElement('img');
 					mapDownloadImg.src = "./html/downloadbutton.svg";
