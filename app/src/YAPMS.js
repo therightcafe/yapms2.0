@@ -571,7 +571,7 @@ class Account {
 							Account.save(ref_mapName);
 						}
 					})();
-					mapBoxHeader.appendChild(mapOverwirte);
+					mapBoxHeader.appendChild(mapOverwrite);
 
 					/* CREATE MAP NAME */
 					var mapName = document.createElement('div');
