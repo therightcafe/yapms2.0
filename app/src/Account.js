@@ -553,6 +553,7 @@ class Account {
 					mapDownload.src = "./html/deletebutton.svg";
 					mapDownload.className = "mysaves-download";
 					mapDownload.href = "https://yapms.org/users/.tools/download.php?u=" + Account.id + "&m=" + name;
+					mapBoxHeader.appendChild(mapDownload);
 
 					/* CREATE MAP NAME */
 					var mapName = document.createElement('div');
