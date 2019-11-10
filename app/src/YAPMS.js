@@ -552,6 +552,12 @@ class Account {
 					})();
 					mapBoxHeader.appendChild(mapDelete);
 
+					/* CREATE MAP NAME */
+					var mapName = document.createElement('div');
+					mapName.className = "mysaves-mapname";
+					mapName.innerHTML = nameDecode;
+					mapBoxHeader.appendChild(mapName);
+
 					/* CREATE DOWNLOAD MAP BUTTON */
 					var mapDownloadA = document.createElement('a');
 					mapDownloadA.setAttribute('class', 'mysaves-download');
@@ -572,12 +578,6 @@ class Account {
 						}
 					})();
 					mapBoxHeader.appendChild(mapOverwrite);
-
-					/* CREATE MAP NAME */
-					var mapName = document.createElement('div');
-					mapName.className = "mysaves-mapname";
-					mapName.innerHTML = nameDecode;
-					mapBoxHeader.appendChild(mapName);
 					
 					mapBox.appendChild(mapBoxHeader);
 			
