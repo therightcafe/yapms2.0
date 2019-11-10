@@ -552,7 +552,7 @@ class Account {
 					var mapDownloadA = document.createElement('a');
 					mapDownloadA.setAttribute('href', "https://yapms.org/users/.tools/download.php?u=" + Account.id + "&m=" + name);
 					var mapDownloadImg = document.createElement('img');
-					mapDownloadImg.src = "./html/deletebutton.svg";
+					mapDownloadImg.src = "./html/downloadbutton.svg";
 					mapDownloadA.appendChild(mapDownloadImg);	
 					mapBoxHeader.appendChild(mapDownloadA);
 

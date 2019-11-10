@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="svg10" width="24" height="24" version="1.1" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<style id="style2"><![CDATA[
+g {
+	fill: #1c408c;
+}
+path.bg {
+    fill: white;
+}
+]]></style>
+ <g id="g8">
+  <path id="path4" class="bg" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z" pointer-events="visiblePoint"/>
+  <path id="path6" transform="scale(21.3333)" d="m12 0.375c-6.42188 0-11.625 5.20312-11.625 11.625s5.20312 11.625 11.625 11.625 11.625-5.20312 11.625-11.625-5.20312-11.625-11.625-11.625zm-3 2.625h6v11h6l-9 7c-3-2.33333-6-4.66667-9-7h6z" style="stroke-width:.046875"/>
+ </g>
+</svg>
