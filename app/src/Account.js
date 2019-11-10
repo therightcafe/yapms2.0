@@ -549,11 +549,12 @@ class Account {
 					mapBoxHeader.appendChild(mapDelete);
 
 					/* CREATE DOWNLOAD MAP BUTTON */
-					var mapDownload = document.createElement('img');
-					mapDownload.src = "./html/deletebutton.svg";
-					mapDownload.className = "mysaves-download";
-					mapDownload.setAttribute('href', "https://yapms.org/users/.tools/download.php?u=" + Account.id + "&m=" + name);
-					mapBoxHeader.appendChild(mapDownload);
+					var mapDownloadA = document.createElement('a');
+					mapDownloadA.setAttribute('href', "https://yapms.org/users/.tools/download.php?u=" + Account.id + "&m=" + name);
+					var mapDownloadImg = document.createElement('img');
+					mapDownloadImg.src = "./html/deletebutton.svg";
+					mapDownloadA.appendChild(mapDownloadImg);	
+					mapBoxHeader.appendChild(mapDownloadA);
 
 					/* CREATE MAP NAME */
 					var mapName = document.createElement('div');
