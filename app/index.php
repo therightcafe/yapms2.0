@@ -213,20 +213,21 @@ if($mobile === false) {
 	<i class="fas fa-clipboard"></i> Misc
 	</div>
 
-	<div class="click-button" style="white-space: nowrap;">
-	<a class="click-button" href="https://www.yapms.com/privacypolicy.html" target="_blank" rel="noreferrer">
-	<i class="fas fa-user-secret"></i> Privacy Policy
-	</a>
-	</div>
 
-	<div id="login-button" class="customGPlusSignIn click-button" style="margin-left: auto;" onclick='displayMenu("loginmenu");'>
-		Login
+	<div id="login-button" class="customGPlusSignIn click-button" style="margin-left: auto;" onclick='displayMenu("loginmenu");'>	
+		<i class="fas fa-sign-in-alt"></i> Login
 	</div>
 	<div id="mymaps-button" class="click-button" style="margin-left: auto; white-space: nowrap; display: none;" onclick='Account.getMaps();'>
 		My Maps
 	</div>
 	<div id="account-button" class="click-button" style="display: none;" onclick='displayMenu("accountmenu");'>
 		Account
+	</div>
+	
+	<div class="click-button" style="white-space: nowrap;">
+	<a class="click-button" href="https://www.yapms.com/privacypolicy.html" target="_blank" rel="noreferrer">
+	<i class="fas fa-user-secret"></i> Privacy Policy
+	</a>
 	</div>
 
 <?php

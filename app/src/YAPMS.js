@@ -873,8 +873,12 @@ class ChartManager {
 					var legendElement = document.createElement('div');
 					legendElement.setAttribute('id', candidate.name);
 					legendElement.setAttribute('class', 'legend-button');
-					legendElement.setAttribute(
-						'onclick', 'legendClick("' + key + '", this);');
+					legendElement.onclick = (function() {
+						var ref_key = key;
+						return function() {	
+							legendClick(ref_key, this);
+						}
+					})();
 					legendElement.style.background = 'none';
 					legendDiv.appendChild(legendElement);
 				
@@ -913,7 +917,12 @@ class ChartManager {
 						// after adding all the candidates, add the add candidate button
 						var legendDelete = document.createElement('div');
 						legendDelete.setAttribute('class', 'legend-delete');
-						legendDelete.setAttribute('onclick', 'displayCandidateEditMenu("' + candidate.name + '")');
+						legendDelete.onclick = (function() {
+							var ref_name = candidate.name;
+							return function() {
+								displayCandidateEditMenu(ref_name);
+							};
+						})();
 						legendDelete.style.background = 'none';
 						legendDiv.appendChild(legendDelete);
 						var legendDeleteText = document.createElement('div');
@@ -942,8 +951,7 @@ class ChartManager {
 				var legendElement = document.createElement('div');
 				legendElement.setAttribute('id', 'legend-addcandidate-button');
 				legendElement.setAttribute('class', 'legend-button');
-				legendElement.setAttribute(
-					'onclick', 'displayAddCandidateMenu();');
+				legendElement.onclick = displayAddCandidateMenu;
 				legendElement.style.background = 'none';
 				legendDiv.appendChild(legendElement);
 				var legendText = document.createElement('div');
@@ -2597,7 +2605,9 @@ class MapLoader {
 				// have these ids
 			} else if(name.includes('-button')) {
 				// don't include buttons as states
-				htmlElement.setAttribute('onclick', 'buttonClick(this)');
+				htmlElement.onclick = function() {
+					buttonClick(this);
+				}
 				if(MapLoader.save_type === 'congressional' ||
 				MapLoader.save_type === 'presidential' ||
 				MapLoader.save_type === 'gubernatorial') {
@@ -2605,7 +2615,9 @@ class MapLoader {
 				}
 				buttons.push(htmlElement);
 			} else if(name.includes('-land')) {
-				htmlElement.setAttribute('onclick', 'landClick(this)');
+				htmlElement.onclick = function() {
+					landClick(this);
+				}
 				if(MapLoader.save_type === 'congressional' ||
 				MapLoader.save_type === 'presidential' ||
 				MapLoader.save_type === 'gubernatorial') {
@@ -2613,7 +2625,9 @@ class MapLoader {
 				}
 				lands.push(htmlElement);
 			} else {
-				htmlElement.setAttribute('onclick', 'stateClick(this)');
+				htmlElement.onclick = function() {
+					stateClick(this);
+				}
 				states.push(new State(name, htmlElement, dataid));
 				var stateIndex = states.length - 1;
 				if(MapLoader.save_type === 'congressional' ||
@@ -2634,24 +2648,13 @@ class MapLoader {
 				var name = element.getAttribute('id');
 				var state = new State(name, element, dataid);
 				proportionalStates.push(state);
-				element.setAttribute('onclick', 'stateClickPaintProportional(proportionalStates["' + 
-					(proportionalStates.length - 1) + '"])');
-			}
-		}
-
-		/* Special Elections for Senate */
-		var special = document.getElementById('special');
-		var specialChildren;
-		if(special != null) {
-			specialChildren = special.children;
-
-			for(var index = 0; index < specialChildren.length; ++index) {
-				var htmlElement = specialChildren[index];
-				htmlElement.setAttribute('onclick','specialClick(this)');
-				htmlElement.setAttribute('cursor', 'pointer');
-				var name = htmlElement.id;
-				var state = new State(name, htmlElement, dataid);
-				states.push(state);
+				element.onclick = (function() {
+					var ref_index = proportionalStates.length - 1;	
+					return function() {	
+						stateClickPaintProportional(
+						proportionalStates[ref_index]);
+					}
+				})();
 			}
 		}
 	}
@@ -6038,7 +6041,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.90.72';
+var currentCache = 'v0.90.75';
 
 var states = [];
 var lands = [];

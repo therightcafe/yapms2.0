@@ -14,8 +14,12 @@ class ChartManager {
 					var legendElement = document.createElement('div');
 					legendElement.setAttribute('id', candidate.name);
 					legendElement.setAttribute('class', 'legend-button');
-					legendElement.setAttribute(
-						'onclick', 'legendClick("' + key + '", this);');
+					legendElement.onclick = (function() {
+						var ref_key = key;
+						return function() {	
+							legendClick(ref_key, this);
+						}
+					})();
 					legendElement.style.background = 'none';
 					legendDiv.appendChild(legendElement);
 				
@@ -54,7 +58,12 @@ class ChartManager {
 						// after adding all the candidates, add the add candidate button
 						var legendDelete = document.createElement('div');
 						legendDelete.setAttribute('class', 'legend-delete');
-						legendDelete.setAttribute('onclick', 'displayCandidateEditMenu("' + candidate.name + '")');
+						legendDelete.onclick = (function() {
+							var ref_name = candidate.name;
+							return function() {
+								displayCandidateEditMenu(ref_name);
+							};
+						})();
 						legendDelete.style.background = 'none';
 						legendDiv.appendChild(legendDelete);
 						var legendDeleteText = document.createElement('div');
@@ -83,8 +92,7 @@ class ChartManager {
 				var legendElement = document.createElement('div');
 				legendElement.setAttribute('id', 'legend-addcandidate-button');
 				legendElement.setAttribute('class', 'legend-button');
-				legendElement.setAttribute(
-					'onclick', 'displayAddCandidateMenu();');
+				legendElement.onclick = displayAddCandidateMenu;
 				legendElement.style.background = 'none';
 				legendDiv.appendChild(legendElement);
 				var legendText = document.createElement('div');

@@ -778,7 +778,9 @@ class MapLoader {
 				// have these ids
 			} else if(name.includes('-button')) {
 				// don't include buttons as states
-				htmlElement.setAttribute('onclick', 'buttonClick(this)');
+				htmlElement.onclick = function() {
+					buttonClick(this);
+				}
 				if(MapLoader.save_type === 'congressional' ||
 				MapLoader.save_type === 'presidential' ||
 				MapLoader.save_type === 'gubernatorial') {
@@ -786,7 +788,9 @@ class MapLoader {
 				}
 				buttons.push(htmlElement);
 			} else if(name.includes('-land')) {
-				htmlElement.setAttribute('onclick', 'landClick(this)');
+				htmlElement.onclick = function() {
+					landClick(this);
+				}
 				if(MapLoader.save_type === 'congressional' ||
 				MapLoader.save_type === 'presidential' ||
 				MapLoader.save_type === 'gubernatorial') {
@@ -794,7 +798,9 @@ class MapLoader {
 				}
 				lands.push(htmlElement);
 			} else {
-				htmlElement.setAttribute('onclick', 'stateClick(this)');
+				htmlElement.onclick = function() {
+					stateClick(this);
+				}
 				states.push(new State(name, htmlElement, dataid));
 				var stateIndex = states.length - 1;
 				if(MapLoader.save_type === 'congressional' ||
@@ -815,24 +821,13 @@ class MapLoader {
 				var name = element.getAttribute('id');
 				var state = new State(name, element, dataid);
 				proportionalStates.push(state);
-				element.setAttribute('onclick', 'stateClickPaintProportional(proportionalStates["' + 
-					(proportionalStates.length - 1) + '"])');
-			}
-		}
-
-		/* Special Elections for Senate */
-		var special = document.getElementById('special');
-		var specialChildren;
-		if(special != null) {
-			specialChildren = special.children;
-
-			for(var index = 0; index < specialChildren.length; ++index) {
-				var htmlElement = specialChildren[index];
-				htmlElement.setAttribute('onclick','specialClick(this)');
-				htmlElement.setAttribute('cursor', 'pointer');
-				var name = htmlElement.id;
-				var state = new State(name, htmlElement, dataid);
-				states.push(state);
+				element.onclick = (function() {
+					var ref_index = proportionalStates.length - 1;	
+					return function() {	
+						stateClickPaintProportional(
+						proportionalStates[ref_index]);
+					}
+				})();
 			}
 		}
 	}
