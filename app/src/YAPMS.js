@@ -552,7 +552,7 @@ class Account {
 					var mapDownload = document.createElement('img');
 					mapDownload.src = "./html/deletebutton.svg";
 					mapDownload.className = "mysaves-download";
-					mapDownload.href = "https://yapms.org/users/.tools/download.php?u=" + Account.id + "&m=" + name;
+					mapDownload.setAttribute('href', "https://yapms.org/users/.tools/download.php?u=" + Account.id + "&m=" + name);
 					mapBoxHeader.appendChild(mapDownload);
 
 					/* CREATE MAP NAME */
@@ -6048,7 +6048,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.90.76';
+var currentCache = 'v0.90.77';
 
 var states = [];
 var lands = [];
