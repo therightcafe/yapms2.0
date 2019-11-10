@@ -170,17 +170,21 @@ class Account {
 		});
 	}
 
-	static save() {
+	static save(mapName) {
 		var formData = new FormData();
 		var img = document.getElementById("mysaves-current-mappreview");
 		if(img) {
 			formData.append("img", img.src);
 		}
-	
-		var mapName = document.getElementById("mysaves-name-input");
+
 		if(mapName) {
-			formData.append("mapName", mapName.value);
-			mapName.value = '';
+			formData.append("mapName", mapName);
+		} else {	
+			mapNameElement = document.getElementById("mysaves-name-input");
+			if(mapName) {
+				formData.append("mapName", mapNameElement.value);
+				mapNameElement.value = '';
+			}
 		}
 
 		var error = document.getElementById("mysaves-current-error");
@@ -556,6 +560,18 @@ class Account {
 					mapDownloadImg.src = "./html/downloadbutton.svg";
 					mapDownloadA.appendChild(mapDownloadImg);	
 					mapBoxHeader.appendChild(mapDownloadA);
+
+					/* CREATE OVERWRITE MAP BUTTON */
+					var mapOverwrite = document.createElement('img');
+					mapOverwrite.setAttribute('class', 'mysave-overwrite');
+					mapOverwrite.src = "./html/overwritebutton.svg";
+					mapOverwrite.onclick = (function() {
+						var ref_mapName = nameDecode;
+						return function() {
+							Account.save(ref_mapName);
+						}
+					})();
+					mapBoxHeader.appendChild(mapOverwirte);
 
 					/* CREATE MAP NAME */
 					var mapName = document.createElement('div');

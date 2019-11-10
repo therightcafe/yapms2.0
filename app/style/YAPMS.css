@@ -149,6 +149,13 @@
 	margin-left: 0.5em;
 }
 
+.mysaves-mapbox .mysaves-overwrite {
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	margin-left: 0.5em;
+}
+
 .mysaves-mapbox .mysaves-mapname {
 	width: 100%;
 }
