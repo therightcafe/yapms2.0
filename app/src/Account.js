@@ -548,6 +548,12 @@ class Account {
 					})();
 					mapBoxHeader.appendChild(mapDelete);
 
+					/* CREATE DOWNLOAD MAP BUTTON */
+					var mapDownload = document.createElement('img');
+					mapDownload.src = "./html/deletebutton.svg";
+					mapDownload.className = "mysaves-download";
+					mapDownload.href = "https://yapms.org/users/.tools/download.php?u=" + Account.id + "&m=" + name;
+
 					/* CREATE MAP NAME */
 					var mapName = document.createElement('div');
 					mapName.className = "mysaves-mapname";
