@@ -2822,7 +2822,7 @@ class PresetLoader {
 			['#996600','#996600','#996600','#996600']);
 		var buttigieg = new Candidate('Buttigieg',
 			['#990099','#990099','#990099','#990099']);
-		var orourke = new Candidate('O\'Rourke',
+		var klobuchar = new Candidate('Klobuchar',
 			['#ff66ff','#ff66ff','#ff66ff','#ff66ff']);
 		var booker = new Candidate('Booker',
 			['#66ccff','#66ccff','#66ccff','#66ccff']);
@@ -2834,7 +2834,7 @@ class PresetLoader {
 		CandidateManager.candidates['Sanders'] = sanders;
 		CandidateManager.candidates['Warren'] = warren;
 		CandidateManager.candidates['Buttigieg'] = buttigieg;
-		CandidateManager.candidates['O\'Rourke'] = orourke;
+		CandidateManager.candidates['Klobuchar'] = klobuchar;
 		CandidateManager.candidates['Booker'] = booker;
 		CandidateManager.candidates['Yang'] = yang;
 	}
