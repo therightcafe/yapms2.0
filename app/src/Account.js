@@ -180,8 +180,8 @@ class Account {
 		if(mapName) {
 			formData.append("mapName", mapName);
 		} else {	
-			mapNameElement = document.getElementById("mysaves-name-input");
-			if(mapName) {
+			var mapNameElement = document.getElementById("mysaves-name-input");
+			if(mapNameElement) {
 				formData.append("mapName", mapNameElement.value);
 				mapNameElement.value = '';
 			}
