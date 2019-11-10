@@ -563,7 +563,7 @@ class Account {
 
 					/* CREATE OVERWRITE MAP BUTTON */
 					var mapOverwrite = document.createElement('img');
-					mapOverwrite.setAttribute('class', 'mysave-overwrite');
+					mapOverwrite.setAttribute('class', 'mysaves-overwrite');
 					mapOverwrite.src = "./html/overwritebutton.svg";
 					mapOverwrite.onclick = (function() {
 						var ref_mapName = nameDecode;

@@ -144,16 +144,18 @@
 
 .mysaves-mapbox .mysaves-download {
 	display: inline-block;
+	cursor: pointer;
 	width: 25px;
 	height: 25px;
-	margin-left: 0.5em;
+	margin-left: 0.4em;
 }
 
 .mysaves-mapbox .mysaves-overwrite {
 	display: inline-block;
+	cursor: pointer;
 	width: 25px;
 	height: 25px;
-	margin-left: 0.5em;
+	margin-left: 0.4em;
 }
 
 .mysaves-mapbox .mysaves-mapname {
