@@ -1,4 +1,5 @@
 #application-mysaves {
+	display: none;
 	position: absolute;
 	flex-direction: column;
 	width: 85%;
