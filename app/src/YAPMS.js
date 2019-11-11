@@ -409,7 +409,7 @@ class Account {
 
 		/* CREATE DOWNLOAD MAP BUTTON */
 		var mapDownloadA = document.createElement('a');
-		mapDownloadA.setAttribute('class', 'toolbar-button toolbar-button-blue');
+		mapDownloadA.setAttribute('class', 'toolbar-button toolbar-button-blue toolbar-button-download');
 		mapDownloadA.setAttribute('href', "https://yapms.org/users/.tools/download.php?u=" + Account.id + "&m=" + name);
 		mapDownloadA.setAttribute('title', 'Download');
 		var mapDownloadImg = document.createElement('img');
@@ -6023,7 +6023,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.90.91';
+var currentCache = 'v0.90.92';
 
 var states = [];
 var lands = [];

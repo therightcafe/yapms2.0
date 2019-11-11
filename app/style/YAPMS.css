@@ -153,9 +153,12 @@
 .mysaves-mapbox .toolbar-button {
 	display: inline-block;
 	cursor: pointer;
-	width: 25px;
-	height: 25px;
 	flex-grow: 1;
+	height: 2em;
+}
+
+.mysaves-mapbox .toolbar-button .toolbar-button-download {
+	height: 100%;	
 }
 
 .toolbar-button-red {
