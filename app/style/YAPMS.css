@@ -154,7 +154,7 @@
 	display: inline-block;
 	cursor: pointer;
 	flex-grow: 1;
-	height: 2em;
+	height: 1.8em;
 }
 
 .mysaves-mapbox .toolbar-button .toolbar-button-download {

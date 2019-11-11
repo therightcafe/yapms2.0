@@ -183,7 +183,7 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 ?>
 
 	<div class="click-button" id="share-button" onclick="displayMenu('sharemenu-autocenter');" style="white-space: nowrap;">
-	<i class="fas fa-share-alt"></i> Share
+	<i class="fas fa-share-alt"></i> Share Map
 	</div>
 
 	<div class="click-button" onclick="displayMenu('thememenu')" style="white-space: nowrap;">
