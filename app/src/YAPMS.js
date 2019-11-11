@@ -409,11 +409,12 @@ class Account {
 
 		/* CREATE DOWNLOAD MAP BUTTON */
 		var mapDownloadA = document.createElement('a');
-		mapDownloadA.setAttribute('class', 'toolbar-button toolbar-button-blue toolbar-button-download');
+		mapDownloadA.setAttribute('class', 'toolbar-button toolbar-button-blue');
 		mapDownloadA.setAttribute('href', "https://yapms.org/users/.tools/download.php?u=" + Account.id + "&m=" + name);
 		mapDownloadA.setAttribute('title', 'Download');
 		var mapDownloadImg = document.createElement('img');
 		mapDownloadImg.src = "./html/downloadbutton.svg";
+		mapDownloadImg.setAttribute('class', 'toolbar-button-download');
 		mapDownloadA.appendChild(mapDownloadImg);	
 		mapToolbar.appendChild(mapDownloadA);
 
