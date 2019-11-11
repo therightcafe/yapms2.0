@@ -555,98 +555,10 @@ class Account {
 			success: function(data) {
 				var arr = data.split(' ');
 				for(var fileIndex = 0; fileIndex < arr.length; ++fileIndex) {
-					/* GET BASE64 DATA AND DECODE */
+					/* GET BASE64 DATA */
 					var fileName = arr[fileIndex].split('/');
 					var name = fileName[2].split('.')[0];
-					var nameDecode = atob(name);
-				
-					/* CREATE MAP BOX ELEMENT */	
-					var mapBox = document.createElement('div');
-					mapBox.className = "mysaves-mapbox";
-					mapBox.id = "mapbox-" + name;
-					var mapBoxHeader = document.createElement('div');
-					mapBoxHeader.className = "mysaves-mapbox-header";
-
-					/* CREATE MAP TOOLBAR */
-					var mapToolbar = document.createElement('div');
-					mapToolbar.className = "mysaves-mapbox-toolbar";
-
-					/* CREATE DELETE MAP BUTTON */
-					var mapDelete = document.createElement('img');
-					mapDelete.src = "./html/deletebutton.svg";
-					mapDelete.className = "toolbar-button toolbar-button-red";
-					mapDelete.setAttribute('title', 'Delete');
-					mapDelete.onclick = (function() {
-						var name_onclick = name;
-						var thisMap  = mapBox;
-						var allMaps = document.getElementById("mysaves-maps");
-						return function() {
-							Account.unlink(name_onclick);
-							if(allMaps && thisMap) {
-								allMaps.removeChild(thisMap)
-							}
-						}
-					})();
-					mapToolbar.appendChild(mapDelete);
-
-					/* CREATE DOWNLOAD MAP BUTTON */
-					var mapDownloadA = document.createElement('a');
-					mapDownloadA.setAttribute('class', 'toolbar-button toolbar-button-blue');
-					mapDownloadA.setAttribute('href', "https://yapms.org/users/.tools/download.php?u=" + Account.id + "&m=" + name);
-					mapDownloadA.setAttribute('title', 'Download');
-					var mapDownloadImg = document.createElement('img');
-					mapDownloadImg.src = "./html/downloadbutton.svg";
-					mapDownloadA.appendChild(mapDownloadImg);	
-					mapToolbar.appendChild(mapDownloadA);
-
-					/* CREATE OVERWRITE MAP BUTTON */
-					var mapOverwrite = document.createElement('img');
-					mapOverwrite.setAttribute('class', 'toolbar-button toolbar-button-green');
-					mapOverwrite.src = "./html/overwritebutton.svg";
-					mapOverwrite.setAttribute('title', 'Overwrite');
-					mapOverwrite.onclick = (function() {
-						var ref_mapName = nameDecode;
-						return function() {
-							Account.save(ref_mapName);
-						}
-					})();
-					mapToolbar.appendChild(mapOverwrite);
-			
-					/* APPEND TOOLBAR */	
-					mapBoxHeader.appendChild(mapToolbar);
-	
-					/* CREATE MAP NAME */
-					var mapName = document.createElement('div');
-					mapName.className = "mysaves-mapname";
-					mapName.innerHTML = nameDecode;
-					mapBoxHeader.appendChild(mapName);
-
-					/* APPEND HEADER */
-					mapBox.appendChild(mapBoxHeader);
-			
-					/* CREATE MAP PREVIEW */	
-					var mapPreview = document.createElement('img');
-					mapPreview.className = "mysaves-mappreview";
-					mapPreview.id = "mappreview-" + name;
-					mapPreview.src = "https://yapms.org/users/"  + Account.id + "/" + name + ".png#" + new Date().getTime();
-					mapPreview.alt = "No Preview";
-					mapPreview.onclick = (function() {
-						var url = "https://www.yapms.com/app/?u=" + Account.id + '&m=' + name;
-						return function() {
-							window.location.href = url;
-						}
-					})();
-					mapBox.appendChild(mapPreview);
-
-					/* CREATE MAP LINK */
-					var mapBoxURL = document.createElement('div');
-					mapBoxURL.className = "mysaves-url";
-					var mapURL = document.createTextNode("https://www.yapms.com/app/?u=" + Account.id + "&m=" + name);
-					mapBoxURL.appendChild(mapURL);
-					mapBox.appendChild(mapBoxURL);
-
-					var maps = document.getElementById("mysaves-maps");
-					maps.appendChild(mapBox);
+					Account.addMapBox(name, false);
 				}
 			},
 			error: function(a, b, c) {
