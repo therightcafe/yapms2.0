@@ -149,6 +149,24 @@
 	flex-direction: row;
 }
 
+.mysaves-mapbox .toolbar-button {
+	display: inline-block;
+	cursor: pointer;
+	width: 25px;
+	height: 25px;
+}
+
+.toolbar-button-red {
+	background: red;
+}
+
+.toolbar-button-blue {
+	background: blue;
+}
+
+.toolbar-button-green {
+	background: green;
+}
 
 .mysaves-mappreview {
 	cursor: pointer;
@@ -160,13 +178,6 @@
 	border-left: 1px solid #999999;
 	border-right: 1px solid #999999;
 	margin: auto;
-}
-
-.mysaves-mapbox .toolbar-button {
-	display: inline-block;
-	cursor: pointer;
-	width: 25px;
-	height: 25px;
 }
 
 .mysaves-mapbox .mysaves-mapname {
