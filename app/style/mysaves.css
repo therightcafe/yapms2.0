@@ -31,6 +31,8 @@
 	height: 35px;
 	cursor: pointer;
 	margin-left: 10px;
+	background: #bf1d29;
+	border-radius: 50%;
 }
 
 #mysaves-header-text {
