@@ -206,8 +206,7 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 	<i class="fas fa-clipboard"></i> Misc
 	</div>
 
-
-	<div id="login-button" class="customGPlusSignIn click-button" style="margin-left: auto;" onclick='displayMenu("loginmenu");'>	
+	<div id="login-button" class="customGPlusSignIn click-button" style="white-space: nowrap; margin-left: auto;" onclick='displayMenu("loginmenu");'>	
 		<i class="fas fa-sign-in-alt"></i> Login
 	</div>
 	<div id="mymaps-button" class="click-button" style="margin-left: auto; white-space: nowrap; display: none;" onclick='Account.getMaps();'>
