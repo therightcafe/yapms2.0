@@ -19,16 +19,11 @@
 
 #mysaves-header {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	background: #dedede;
 	padding-bottom: 1em;
 	padding-top: 1em;
 	border-bottom: 1px solid black;
-}
-
-#mysaves-toolbar {
-	display: flex;
-	flex-direction: row;
 }
 
 #mysaves-header-close {
@@ -143,11 +138,17 @@
 
 .mysaves-mapbox-header {
 	display: flex;
+	flex-direction: column;
 	background: #dedede;
-	flex-direction: row;
 	border-bottom: 1px solid #999999;
 	padding: 5px;
 }
+
+.mysaves-mapbox-toolbar {
+	display: flex;
+	flex-direction: row;
+}
+
 
 .mysaves-mappreview {
 	cursor: pointer;
@@ -161,26 +162,11 @@
 	margin: auto;
 }
 
-.mysaves-mapbox .mysaves-delete {
+.mysaves-mapbox .toolbar-button {
 	display: inline-block;
 	cursor: pointer;
 	width: 25px;
 	height: 25px;
-}
-
-.mysaves-mapbox .mysaves-download {
-	display: inline-block;
-	cursor: pointer;
-	width: 25px;
-	height: 25px;
-}
-
-.mysaves-mapbox .mysaves-overwrite {
-	display: inline-block;
-	cursor: pointer;
-	width: 25px;
-	height: 25px;
-	margin-left: 0.5em;
 }
 
 .mysaves-mapbox .mysaves-mapname {

@@ -537,12 +537,12 @@ class Account {
 
 					/* CREATE MAP TOOLBAR */
 					var mapToolbar = document.createElement('div');
-					mapToolbar.className = "mysaves-toolbar";
+					mapToolbar.className = "mysaves-mapbox-toolbar";
 
 					/* CREATE DELETE MAP BUTTON */
 					var mapDelete = document.createElement('img');
 					mapDelete.src = "./html/deletebutton.svg";
-					mapDelete.className = "mysaves-delete";
+					mapDelete.className = "toolbar-button";
 					mapDelete.onclick = (function() {
 						var name_onclick = name;
 						var thisMap  = mapBox;
@@ -558,7 +558,7 @@ class Account {
 
 					/* CREATE DOWNLOAD MAP BUTTON */
 					var mapDownloadA = document.createElement('a');
-					mapDownloadA.setAttribute('class', 'mysaves-download');
+					mapDownloadA.setAttribute('class', 'toolbar-button');
 					mapDownloadA.setAttribute('href', "https://yapms.org/users/.tools/download.php?u=" + Account.id + "&m=" + name);
 					var mapDownloadImg = document.createElement('img');
 					mapDownloadImg.src = "./html/downloadbutton.svg";
@@ -567,7 +567,7 @@ class Account {
 
 					/* CREATE OVERWRITE MAP BUTTON */
 					var mapOverwrite = document.createElement('img');
-					mapOverwrite.setAttribute('class', 'mysaves-overwrite');
+					mapOverwrite.setAttribute('class', 'toolbar-button');
 					mapOverwrite.src = "./html/overwritebutton.svg";
 					mapOverwrite.onclick = (function() {
 						var ref_mapName = nameDecode;
