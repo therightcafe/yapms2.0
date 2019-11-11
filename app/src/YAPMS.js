@@ -2600,9 +2600,11 @@ class MapLoader {
 			var a = loadEvent.target.result;
 			try {
 				MapLoader.loadSavedMap_new(a);
+				closeAllPopups();
 			} catch(e) {
 				console.log('New file load failed, attempting old');
 				MapLoader.loadSavedMap_old(a);
+				closeAllPopups();
 			}
 		}
 		fileReader.readAsText(file, 'UTF-8');
@@ -6066,7 +6068,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v0.90.80';
+var currentCache = 'v0.90.81';
 
 var states = [];
 var lands = [];

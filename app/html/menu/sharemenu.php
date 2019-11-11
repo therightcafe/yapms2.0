@@ -11,12 +11,6 @@
 <div class="selectmenu-section" id="shareurl"></div>
 
 <div id="sharebuttons" class="selectmenu-button-mult">
-	<a class="selectmenu-button-part selectmenu-button" id="downloadbutton">
-		<div class="selectmenu-button-part-text">
-			<i class="fas fa-download"></i> 
-			Download
-		</div>
-	</a>
 	<a id="twitter-share" class="selectmenu-button-part selectmenu-button">
 		<i class="fab fa-twitter"></i>
 	</a>

@@ -748,9 +748,11 @@ class MapLoader {
 			var a = loadEvent.target.result;
 			try {
 				MapLoader.loadSavedMap_new(a);
+				closeAllPopups();
 			} catch(e) {
 				console.log('New file load failed, attempting old');
 				MapLoader.loadSavedMap_old(a);
+				closeAllPopups();
 			}
 		}
 		fileReader.readAsText(file, 'UTF-8');

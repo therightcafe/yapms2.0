@@ -23,6 +23,18 @@
 			</div>
 		</div>
 	</div>
+	<br>
+	<div id="mysaves-load">
+		<div id="mysaves-load-header">
+			Load Map From File
+		</div>
+		<div id="mysaves-load-input">
+			<form action="load.php" method="post" enctype="multipart/form-data">
+				<input type="file" name="file" id="loadfile">
+				<input type="button" value="Load" onclick="MapLoader.loadFileMap();">
+			</form>
+		</div>
+	</div>
 	<div id="mysaves-maps">
 	</div>
 </div>

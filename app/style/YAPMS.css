@@ -1,6 +1,5 @@
 #application-mysaves {
 	position: absolute;
-	display: none;
 	flex-direction: column;
 	width: 85%;
 	height: 95%;
@@ -103,6 +102,27 @@
 	border-radius: 5px;
 	padding-top: 0.5em;
 	padding-bottom: 0.5em;
+}
+
+#mysaves-load {
+	display: inline-flex;
+	flex-direction: column;
+	text-align: center;
+	border: 1px solid black;
+	border-radius: 10px;
+	overflow: hidden;
+	margin: auto;
+	margin-top: 1em;
+}
+
+#mysaves-load-header {
+	background: #dedede;
+	border-bottom: 1px solid #999999;
+	padding: 5px;
+}
+
+#mysaves-load-input {
+	padding: 0.5em;
 }
 
 .mysaves-mapbox {

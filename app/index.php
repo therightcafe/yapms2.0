@@ -202,11 +202,11 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 	</div>
 
 <?php
-if($mobile === false) {
+/*if($mobile === false) {
 	echo '<div class="click-button" onclick="displayMenu(\'loadmenu\')" style="white-space: nowrap;">
 		<i class="fas fa-upload"></i> Load
 		</div>';
-}
+}*/
 ?>
 
 	<div class="click-button" onclick="displayMenu('miscmenu')" style="white-space: nowrap;">
@@ -247,7 +247,7 @@ if($mobile === false) {
 	</div>
 </div>
 
-<div id="application-mysaves" style="display: none">
+<div id="application-mysaves" style="">
 	<?php include './html/menu/application-mysaves.php'; ?>
 </div>
 

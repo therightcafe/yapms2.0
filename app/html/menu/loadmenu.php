@@ -10,8 +10,9 @@
 <div class="selectmenu-section">Select a .yapms file to load</div>
 <div class="selectmenu-section">
 <form action="load.php" method="post" enctype="multipart/form-data">
-	<input type="file" name="file" id="loadfile">
+<!--	<input type="file" name="file" id="loadfile">
 	<input type="button" value="<?php echo _("Load") ?>" onclick='MapLoader.loadFileMap()'>
+-->
 </form>
 </div>
 </div>
