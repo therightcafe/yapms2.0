@@ -173,7 +173,7 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 			<div class="map-button">
 				Cook Political Report
 				<br>
-				<small>9/30/19</small>
+				<small>10/29/19</small>
 			</div>
 		</a>
 		<a href="./app/?t=USA_2020_inside">

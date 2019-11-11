@@ -357,8 +357,42 @@ if($mobile === false) {
 					F - Hold down to quickly fill in districts
 				</li>
 			</ul>
-		</div>',
-		'<div id="sidebar-congress-contested">
+		</div>';
+
+		$url = "";
+		$title = "";
+	
+		switch($_GET["t"]) {
+			case "USA_2020_cook":
+			$url = "https://cookpolitical.com";
+			$title = "cookpolitical.com";
+			break;
+			case "USA_2020_house_cook":
+			$url = "https://cookpolitical.com/index.php/ratings/house-race-ratings";
+			$title = "cookpolitical.com";
+			break;
+			case "USA_2020_sabatos":
+			$url = "http://crystalball.centerforpolitics.org/crystalball/2020-president/";
+			$title = "centerforpolitics.org";
+			break;
+			case "USA_2020_inside":
+			$url = "https://insideelections.com/ratings/president";
+			$title = "insideelections.com";
+			break;
+		}
+		
+		if($url !== "" && $title !== "") {
+			echo "<div id='sidebar-source'>
+				<div class='sidebar-box'>
+					<h3>
+						Source
+					</h3>
+					<a href='{$url}' target='_blank'>{$title}</a>
+				</div>
+			</div>";
+		}
+	
+		echo '<div id="sidebar-congress-contested">
 			<div class="sidebar-box">
 				<h2>
 					Contested Seats
