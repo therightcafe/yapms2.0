@@ -388,6 +388,7 @@ class Account {
 		var mapDelete = document.createElement('img');
 		mapDelete.src = "./html/deletebutton.svg";
 		mapDelete.className = "mysaves-delete";
+		mapDelete.setAttribute('title', 'Delete Map');
 		mapDelete.onclick = (function() {
 			var name_onclick = name;
 			var thisMap  = mapBox;
@@ -543,6 +544,7 @@ class Account {
 					var mapDelete = document.createElement('img');
 					mapDelete.src = "./html/deletebutton.svg";
 					mapDelete.className = "toolbar-button toolbar-button-red";
+					mapDelete.setAttribute('title', 'Delete');
 					mapDelete.onclick = (function() {
 						var name_onclick = name;
 						var thisMap  = mapBox;
@@ -560,6 +562,7 @@ class Account {
 					var mapDownloadA = document.createElement('a');
 					mapDownloadA.setAttribute('class', 'toolbar-button toolbar-button-blue');
 					mapDownloadA.setAttribute('href', "https://yapms.org/users/.tools/download.php?u=" + Account.id + "&m=" + name);
+					mapDownloadA.setAttribute('title', 'Download');
 					var mapDownloadImg = document.createElement('img');
 					mapDownloadImg.src = "./html/downloadbutton.svg";
 					mapDownloadA.appendChild(mapDownloadImg);	
@@ -569,6 +572,7 @@ class Account {
 					var mapOverwrite = document.createElement('img');
 					mapOverwrite.setAttribute('class', 'toolbar-button toolbar-button-green');
 					mapOverwrite.src = "./html/overwritebutton.svg";
+					mapOverwrite.setAttribute('title', 'Overwrite');
 					mapOverwrite.onclick = (function() {
 						var ref_mapName = nameDecode;
 						return function() {
