@@ -1,5 +1,5 @@
-var indexCache = 'i0.90.83';
-var staticCache = 's0.90.82';
+var indexCache = 'i0.90.90';
+var staticCache = 's0.90.90';
 
 var _indexCache = [
 	'./',
@@ -13,6 +13,9 @@ var _indexCache = [
 	'./app/html/closebutton.svg',
 	'./app/html/backbutton.svg',
 	'./app/html/loading.svg',
+	'./app/html/deletebutton.svg',
+	'./app/html/downloadbutton.svg',
+	'./app/html/overwritebutton.svg',
 
 	'./app/src/YAPMS.js',
 
