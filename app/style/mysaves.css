@@ -19,11 +19,16 @@
 
 #mysaves-header {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	background: #dedede;
 	padding-bottom: 1em;
 	padding-top: 1em;
 	border-bottom: 1px solid black;
+}
+
+#mysaves-toolbar {
+	display: flex;
+	flex-direction: row;
 }
 
 #mysaves-header-close {

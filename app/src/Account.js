@@ -535,6 +535,10 @@ class Account {
 					var mapBoxHeader = document.createElement('div');
 					mapBoxHeader.className = "mysaves-mapbox-header";
 
+					/* CREATE MAP TOOLBAR */
+					var mapToolbar = document.createElement('div');
+					mapToolbar.className = "mysaves-toolbar";
+
 					/* CREATE DELETE MAP BUTTON */
 					var mapDelete = document.createElement('img');
 					mapDelete.src = "./html/deletebutton.svg";
@@ -550,13 +554,7 @@ class Account {
 							}
 						}
 					})();
-					mapBoxHeader.appendChild(mapDelete);
-
-					/* CREATE MAP NAME */
-					var mapName = document.createElement('div');
-					mapName.className = "mysaves-mapname";
-					mapName.innerHTML = nameDecode;
-					mapBoxHeader.appendChild(mapName);
+					mapToolbar.appendChild(mapDelete);
 
 					/* CREATE DOWNLOAD MAP BUTTON */
 					var mapDownloadA = document.createElement('a');
@@ -565,7 +563,7 @@ class Account {
 					var mapDownloadImg = document.createElement('img');
 					mapDownloadImg.src = "./html/downloadbutton.svg";
 					mapDownloadA.appendChild(mapDownloadImg);	
-					mapBoxHeader.appendChild(mapDownloadA);
+					mapToolbar.appendChild(mapDownloadA);
 
 					/* CREATE OVERWRITE MAP BUTTON */
 					var mapOverwrite = document.createElement('img');
@@ -577,8 +575,18 @@ class Account {
 							Account.save(ref_mapName);
 						}
 					})();
-					mapBoxHeader.appendChild(mapOverwrite);
-					
+					mapToolbar.appendChild(mapOverwrite);
+			
+					/* APPEND TOOLBAR */	
+					mapBoxHeader.appendChild(mapToolbar);
+	
+					/* CREATE MAP NAME */
+					var mapName = document.createElement('div');
+					mapName.className = "mysaves-mapname";
+					mapName.innerHTML = nameDecode;
+					mapBoxHeader.appendChild(mapName);
+
+					/* APPEND HEADER */
 					mapBox.appendChild(mapBoxHeader);
 			
 					/* CREATE MAP PREVIEW */	
