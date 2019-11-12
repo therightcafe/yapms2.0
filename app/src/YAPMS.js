@@ -6070,7 +6070,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v1.1.11';
+var currentCache = 'v1.1.12';
 
 var states = [];
 var lands = [];

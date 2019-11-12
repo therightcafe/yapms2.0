@@ -55,7 +55,7 @@
 				</script>';
 		}
 
-		if(isset($_GET["preventEdit") && !empty($_GET["preventEdit"])) {
+		if(isset($_GET["preventEdit"]) && !empty($_GET["preventEdit"])) {
 			echo '<script>
 				var php_candidate_edit = false;
 				</script>';
