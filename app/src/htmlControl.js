@@ -716,7 +716,8 @@ function ifInIframe() {
 			element.style.display = 'none';
 		}
 
-		if(php_candidate_edit) {
+			alert(php_candidate_edit);
+		if(php_candidate_edit === false) {
 			elements = document.getElementsByClassName('legend-delete');
 			for(var index = 0; index < elements.length; ++index) {
 				element = elements[index];

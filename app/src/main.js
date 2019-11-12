@@ -409,11 +409,6 @@ function start() {
 				MapLoader.loadMapFromURL(url);
 			}, 30000 + (Math.floor(Math.random() * 30000)));
 		}
-
-		if(php_candidate_edit === false) {
-			
-		}
-
 	} else if(php_load_type_map === true) {
 		PresetLoader.loadPreset("classic");
 		MapLoader.loadMapFromId(php_load_map_id);

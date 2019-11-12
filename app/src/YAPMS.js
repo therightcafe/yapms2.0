@@ -5260,7 +5260,8 @@ function ifInIframe() {
 			element.style.display = 'none';
 		}
 
-		if(php_candidate_edit) {
+			alert(php_candidate_edit);
+		if(php_candidate_edit === false) {
 			elements = document.getElementsByClassName('legend-delete');
 			for(var index = 0; index < elements.length; ++index) {
 				element = elements[index];
@@ -6481,11 +6482,6 @@ function start() {
 				MapLoader.loadMapFromURL(url);
 			}, 30000 + (Math.floor(Math.random() * 30000)));
 		}
-
-		if(php_candidate_edit === false) {
-			
-		}
-
 	} else if(php_load_type_map === true) {
 		PresetLoader.loadPreset("classic");
 		MapLoader.loadMapFromId(php_load_map_id);
