@@ -24,6 +24,15 @@
 	<link rel="shortcut icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
 	<link rel="manifest" href="./manifest.json">
 
+	<link href="https://yapms.org" rel="preconnect" crossorigin>
+	<link href="https://www.google.com" rel="preconnect" crossorigin>
+	<link href="https://www.google.co.uk" rel="preconnect" crossorigin>
+	<link href="https://www.gstatic.com" rel="preconnect" crossorigin>
+	<link href="https://fonts.googleapis.com" rel="preconnect" crossorigin>
+	<link href="https://stats.g.doubleclick.net" rel="preconnect" crossorigin>
+	<link href="https://www.google-analytics.com" rel="preconnect" crossorigin>
+	<link href="https://www.googletagmanager.com" rel="preconnect" crossorigin>
+
 	<?php
 		$mobile = false;
 
