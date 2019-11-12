@@ -1,4 +1,7 @@
 function buttonClick(clickElement, options) {
+	if(php_candidate_edit === false)
+		return;
+
 	if(mode === 'move') {
 		return;
 	} else if(mode === 'paint' || mode === 'paintmove') {
@@ -55,6 +58,9 @@ function buttonClickDelete(clickElement) {
 }
 
 function landClick(clickElement, options) {
+	if(php_candidate_edit === false)
+		return;
+
 	if(mode === 'move') {
 		return;
 	}
@@ -108,6 +114,9 @@ function landClick(clickElement, options) {
 }
 
 function stateClick(clickElement, options) {
+	if(php_candidate_edit === false)
+		return;
+
 	// first element is the state
 	// second element might be button
 	//var split = id.split('-');
