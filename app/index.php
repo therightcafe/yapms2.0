@@ -45,13 +45,24 @@
 			echo '<script>var mobile = false;</script>';
 		};
 
-		if(isset($_GET["a"]) && !empty($_GET["a"])) {
+		if(isset($_GET["autoreload"]) && !empty($_GET["autoreload"])) {
 			echo '<script>
 				var php_auto_reload = true;
 				</script>';
 		} else {
 			echo '<script>
 				var php_auto_reload = false;
+				</script>';
+		}
+
+		if(isset($_GET["preventEdit") && !empty($_GET["preventEdit"])) {
+			echo '<script>
+				var php_candidate_edit = false;
+				</script>';
+		
+		} else {
+			echo '<script>
+				var php_candidate_edit = true;
 				</script>';
 		}
 

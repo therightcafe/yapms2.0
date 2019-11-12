@@ -5259,6 +5259,19 @@ function ifInIframe() {
 			element = elements[index];
 			element.style.display = 'none';
 		}
+
+		if(php_candidate_edit) {
+			elements = document.getElementsByClassName('legend-delete');
+			for(var index = 0; index < elements.length; ++index) {
+				element = elements[index];
+				element.style.display = 'none';	
+			}
+			element = document.getElementById('legend-addcandidate-button');
+			if(element) {
+				element.style.display = 'none';
+			}
+		}
+
 		setPalette("light", false);
 	}
 }
@@ -6057,7 +6070,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v1.1.10';
+var currentCache = 'v1.1.11';
 
 var states = [];
 var lands = [];
@@ -6466,7 +6479,11 @@ function start() {
 		if(php_auto_reload) {
 			window.setInterval(function() {
 				MapLoader.loadMapFromURL(url);
-			}, 5000);
+			}, 30000 + (Math.floor(Math.random() * 30000)));
+		}
+
+		if(php_candidate_edit === false) {
+			
 		}
 
 	} else if(php_load_type_map === true) {

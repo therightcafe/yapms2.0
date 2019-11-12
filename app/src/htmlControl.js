@@ -715,6 +715,19 @@ function ifInIframe() {
 			element = elements[index];
 			element.style.display = 'none';
 		}
+
+		if(php_candidate_edit) {
+			elements = document.getElementsByClassName('legend-delete');
+			for(var index = 0; index < elements.length; ++index) {
+				element = elements[index];
+				element.style.display = 'none';	
+			}
+			element = document.getElementById('legend-addcandidate-button');
+			if(element) {
+				element.style.display = 'none';
+			}
+		}
+
 		setPalette("light", false);
 	}
 }

@@ -1,4 +1,4 @@
-var currentCache = 'v1.1.10';
+var currentCache = 'v1.1.11';
 
 var states = [];
 var lands = [];
@@ -407,7 +407,11 @@ function start() {
 		if(php_auto_reload) {
 			window.setInterval(function() {
 				MapLoader.loadMapFromURL(url);
-			}, 5000);
+			}, 30000 + (Math.floor(Math.random() * 30000)));
+		}
+
+		if(php_candidate_edit === false) {
+			
 		}
 
 	} else if(php_load_type_map === true) {
