@@ -22,7 +22,10 @@ function enableFullscreen() {
 }
 
 function displayCandidateEditMenu(candidate) {
+	LogoManager.loadFlags();
+	LogoManager.loadButtons();
 	closeAllPopups();
+
 	var candidateedit = document.getElementById('candidateedit');
 	candidateedit.style.display = 'flex';
 	var nameinput = document.getElementById('candidate-name');
@@ -47,6 +50,8 @@ function displayUpdateServiceWorker() {
 }
 
 function displayNotification(title, text) {
+	LogoManager.loadFlags();
+	LogoManager.loadButtons();
 	var notification = document.getElementById('notification');
 	var messageHTML = notification.querySelector('#notification-message');
 	var titleHTML = notification.querySelector('#notification-title');
@@ -56,8 +61,10 @@ function displayNotification(title, text) {
 }
 
 function displayAddCandidateMenu(type) {
-	CookieManager.loadCustomColors();
+	LogoManager.loadFlags();
+	LogoManager.loadButtons();
 	closeAllPopups();
+	CookieManager.loadCustomColors();
 	var addcandidatemenu = document.getElementById('addcandidatemenu');
 	addcandidatemenu.style.display = 'flex';
 }
@@ -78,6 +85,8 @@ function closeAllPopups() {
 }
 
 function displayCustomColorMenu(type) {
+	LogoManager.loadFlags();
+	LogoManager.loadButtons();
 	closeAllPopups();
 	var customColorName = document.getElementById('custom-color-name');
 	customColorName.value = type;

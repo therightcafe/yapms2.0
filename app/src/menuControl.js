@@ -29,7 +29,6 @@ function displayShareMenu() {
 function displayMenu(name) {
 	LogoManager.loadFlags();
 	LogoManager.loadButtons();
-
 	closeAllPopups();
 
 	var menu = document.getElementById(name);
