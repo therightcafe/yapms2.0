@@ -277,14 +277,6 @@ class ChartManager {
 				sidebar.style.borderRight = '0px';
 				sidebar.style.borderTop = '1px solid black';
 
-				logo = document.getElementById('logo-redeagle-div');
-				logo.style.width = '15%';
-				logo.style.height = '100%';
-				
-				logo = document.getElementById('logo-pg-div');
-				logo.style.width = '15%';
-				logo.style.height = '100%';
-				
 				logo = document.getElementById('yapms-watermark');
 				logo.style.width = '15%';
 				logo.style.height = '100%';
@@ -298,13 +290,6 @@ class ChartManager {
 				sidebar.style.borderTop = '0px';
 				sidebar.style.borderRight = '1px solid black';
 				
-				logo = document.getElementById('logo-redeagle-div');
-				logo.style.width = '100%';
-				logo.style.height = '15%';
-				
-				logo = document.getElementById('logo-pg-div');
-				logo.style.width = '100%';
-				logo.style.height = '15%';
 				logo = document.getElementById('yapms-watermark');
 				logo.style.width = '100%';
 				logo.style.height = '15%';
@@ -343,12 +328,6 @@ class ChartManager {
 			var logo = document.getElementById('logo-div');
 			logo.style.width = '15%';
 			logo.style.height = '100%';
-			logo = document.getElementById('logo-redeagle-div');
-			logo.style.width = '15%';
-			logo.style.height = '100%';
-			logo = document.getElementById('logo-pg-div');
-			logo.style.width = '15%';
-			logo.style.height = '100%';
 			logo = document.getElementById('yapms-watermark');
 			logo.style.width = '15%';
 			logo.style.height = '100%';
@@ -370,12 +349,6 @@ class ChartManager {
 			charthtml.style.width = '100%';
 			
 			var logo = document.getElementById('logo-div');
-			logo.style.width = '100%';
-			logo.style.height = '15%';
-			logo = document.getElementById('logo-redeagle-div');
-			logo.style.width = '100%';
-			logo.style.height = '15%';
-			logo = document.getElementById('logo-pg-div');
 			logo.style.width = '100%';
 			logo.style.height = '15%';
 			logo = document.getElementById('yapms-watermark');

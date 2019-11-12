@@ -19,15 +19,15 @@
 	<i class="fas fa-compress-arrows-alt"></i>
 	<div class="selectmenu-button-text">Center Map</div>
 </a>
-<a class="selectmenu-button" onclick="LogoManager.toggleLTE()">
+<a class="selectmenu-button" onclick="LogoManager.toggleLogo('LTE')">
 	<i class="fas fa-desktop"></i>
 	<div class="selectmenu-button-text">LTE Logo</div>
 </a>
-<a class="selectmenu-button" onclick="LogoManager.toggleRedEagle()">
+<a class="selectmenu-button" onclick="LogoManager.toggleLogo('RedEagle')">
 	<i class="fas fa-desktop"></i>
 	<div class="selectmenu-button-text">RedEagle Logo</div>
 </a>
-<a class="selectmenu-button" onclick="LogoManager.togglePG()">
+<a class="selectmenu-button" onclick="LogoManager.toggleLogo('PG')">
 	<i class="fas fa-desktop"></i>
 	<div class="selectmenu-button-text">PoliticsGaming Logo</div>
 </a>

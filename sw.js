@@ -1,5 +1,5 @@
-var indexCache = 'i1.1.1';
-var staticCache = 's1.1.1';
+var indexCache = 'i1.1.2';
+var staticCache = 's1.1.2';
 
 var _indexCache = [
 	'./',
@@ -107,10 +107,6 @@ var _staticCache = [
 	'./app/res/turkey_provinces.svg',
 	'./app/res/trinidad_tobago_house_of_representatives.svg',
 	'./app/res/che/switzerland_cantons.svg',
-	
-	'./app/res/lte.jpg',
-	'./app/res/redeagletv.png',
-	'./app/res/pg.png',
 	
 	'./app/res/images/halloween.jpg',
 

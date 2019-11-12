@@ -1117,14 +1117,6 @@ class ChartManager {
 				sidebar.style.borderRight = '0px';
 				sidebar.style.borderTop = '1px solid black';
 
-				logo = document.getElementById('logo-redeagle-div');
-				logo.style.width = '15%';
-				logo.style.height = '100%';
-				
-				logo = document.getElementById('logo-pg-div');
-				logo.style.width = '15%';
-				logo.style.height = '100%';
-				
 				logo = document.getElementById('yapms-watermark');
 				logo.style.width = '15%';
 				logo.style.height = '100%';
@@ -1138,13 +1130,6 @@ class ChartManager {
 				sidebar.style.borderTop = '0px';
 				sidebar.style.borderRight = '1px solid black';
 				
-				logo = document.getElementById('logo-redeagle-div');
-				logo.style.width = '100%';
-				logo.style.height = '15%';
-				
-				logo = document.getElementById('logo-pg-div');
-				logo.style.width = '100%';
-				logo.style.height = '15%';
 				logo = document.getElementById('yapms-watermark');
 				logo.style.width = '100%';
 				logo.style.height = '15%';
@@ -1183,12 +1168,6 @@ class ChartManager {
 			var logo = document.getElementById('logo-div');
 			logo.style.width = '15%';
 			logo.style.height = '100%';
-			logo = document.getElementById('logo-redeagle-div');
-			logo.style.width = '15%';
-			logo.style.height = '100%';
-			logo = document.getElementById('logo-pg-div');
-			logo.style.width = '15%';
-			logo.style.height = '100%';
 			logo = document.getElementById('yapms-watermark');
 			logo.style.width = '15%';
 			logo.style.height = '100%';
@@ -1210,12 +1189,6 @@ class ChartManager {
 			charthtml.style.width = '100%';
 			
 			var logo = document.getElementById('logo-div');
-			logo.style.width = '100%';
-			logo.style.height = '15%';
-			logo = document.getElementById('logo-redeagle-div');
-			logo.style.width = '100%';
-			logo.style.height = '15%';
-			logo = document.getElementById('logo-pg-div');
 			logo.style.width = '100%';
 			logo.style.height = '15%';
 			logo = document.getElementById('yapms-watermark');
@@ -1629,42 +1602,29 @@ class LegendManager {
 LegendManager.legendCounter = true;
 LegendManager.legendLeans = true;
 class LogoManager {
-	static toggleLTE() {
-		var lteLogo = document.getElementById('logo-div');
-		if(lteLogo.style.display === '') {
-			lteLogo.style.display = 'inline';
-		} else if(lteLogo.style.display === 'inline') {
-			lteLogo.style.display = '';
+	static toggleLogo(name) {
+		var logoSlot = document.getElementById("logo-div");
+		switch(name) {
+			case "LTE":
+			logoSlot.style.backgroundImage = 'url("https://www.yapms.com/app/res/lte.jpg")';
+			break;
+			case "RedEagle":
+			logoSlot.style.backgroundImage = 'url("https://www.yapms.com/app/res/redeagletv.png")';
+			break;
+			case "PG":
+			logoSlot.style.backgroundImage = 'url("https://www.yapms.com/app/res/pg.png")';
+			break;
 		}
-	}
-
-	static toggleRedEagle() {
-		var redEagleLogo = document.getElementById('logo-redeagle-div');
-		if(redEagleLogo.style.display === '') {
-			redEagleLogo.style.display = 'inline';
-		} else if(redEagleLogo.style.display === 'inline') {
-			redEagleLogo.style.display = '';
+	
+		if(LogoManager.currentLogo !== name) {
+			logoSlot.style.display = "inline";
+		} else if(logoSlot.style.display === "") {
+			logoSlot.style.display = "inline";
+		} else if(logoSlot.style.display === "inline") {
+			logoSlot.style.display = "";
 		}
-	}
 
-	static togglePG() {
-		var pgLogo = document.getElementById('logo-pg-div');
-		if(pgLogo.style.display === '') {
-			pgLogo.style.display = 'inline';
-		} else if(pgLogo.style.display === 'inline') {
-			pgLogo.style.display = '';
-		}
-	}
-
-	static loadLogos() {
-		var redEagleLogo = document.getElementById('logo-redeagle-div');
-		redEagleLogo.style.backgroundImage = 'url("https://www.yapms.com/app/res/redeagletv.png")';
-
-		var lteLogo = document.getElementById('logo-div');
-		lteLogo.style.backgroundImage = 'url("https://www.yapms.com/app/res/lte.jpg")';
-
-		var pgLogo = document.getElementById('logo-pg-div');
-		pgLogo.style.backgroundImage = 'url("https://www.yapms.com/app/res/pg.png")';
+		LogoManager.currentLogo = name;
 	}
 
 	static loadButtons() {
@@ -1697,6 +1657,8 @@ class LogoManager {
 		}
 	}
 }
+
+LogoManager.currentLogo = "";
 class MapManager {
 	static centerMap() {
 		if(MapManager.panObject === null)
@@ -6077,7 +6039,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v1.1.1';
+var currentCache = 'v1.1.2';
 
 var states = [];
 var lands = [];
@@ -6497,7 +6459,6 @@ function start() {
 		MapLoader.loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open", {updateText: true, voters: 'usa_voting_pop', enablePopularVote: true});
 	}
 
-	LogoManager.loadLogos();
 	LogoManager.loadButtons();
 	LogoManager.loadFlags();
 

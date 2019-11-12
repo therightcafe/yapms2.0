@@ -253,10 +253,6 @@ if($mobile === false) {
 		<?php
 			include 'html/battlechart.html';
 		?>
-		<div id="logo-pg-div">
-		</div>
-		<div id="logo-redeagle-div">
-		</div>
 		<div id="logo-div">
 		</div>
 		<div id="yapms-watermark" onclick='window.open(window.location, "_blank");'>
