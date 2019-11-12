@@ -26,7 +26,8 @@
 
 	<link href="https://yapms.org" rel="preconnect">
 	<link href="https://www.google-analytics.com" rel="preconnect">
-	<link href="https://www.googletagmanager.com" rel="preconnect">
+	<link href="https://www.google-analytics.com" rel="preconnect">
+	<link href="https://www.gstatic.com" rel="preconnect">
 
 	<?php
 		$mobile = false;
