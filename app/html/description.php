@@ -252,6 +252,12 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		'<meta property="og:title" content="YAPms - United Kingdom House of Commons">
 		<meta property="og:description" content="Interactive United Kingdom House of Commons Map">';
 		break;
+		case 'UnitedKingdom_current_parliament':
+		echo '<meta name="description" content="United Kingdom - Current Parliament map"><title>United Kingdom - Current Parliament Map</title>';
+		echo 
+		'<meta property="og:title" content="YAPms - United Kingdom Current Parliament">
+		<meta property="og:description" content="Interactive United Kingdom Current Parliament Map">';
+		break;
 		case 'Ireland_constituencies':
 		case 'Ireland_dail_eireann':
 		echo '<meta name="description" content="Ireland - Dáil Éireann election map"><title>Ireland - Dáil Éireann Election</title>';

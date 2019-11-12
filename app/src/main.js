@@ -1,4 +1,4 @@
-var currentCache = 'v1.1.2';
+var currentCache = 'v1.1.3';
 
 var states = [];
 var lands = [];
@@ -100,6 +100,7 @@ window.onerror = function(message, source, lineno, colno, error) {
 	//alert(message + ' ' + source + ' ' + lineno + ' ' + colno);
 	if(typeof gtag !== 'undefined') {
 		if(message === "Script error." && lineno === 0 && colno === 0) {
+			console.log('coolios');
 			return;
 		} else {
 			gtag('event', 'error', {
