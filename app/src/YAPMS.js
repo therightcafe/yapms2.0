@@ -1628,6 +1628,11 @@ class LogoManager {
 	}
 
 	static loadButtons() {
+		if(LogoManager.buttonsLoaded) {
+			return;
+		}
+		LogoManager.buttonsLoaded = true;
+
 		var backButtons = document.getElementsByClassName("backbutton");
 		var closeButtons = document.getElementsByClassName("closebutton");
 
@@ -1643,6 +1648,11 @@ class LogoManager {
 	}
 
 	static loadFlags() {
+		if(LogoManager.flagsLoaded) {
+			return;
+		}
+		LogoManager.flagsLoaded = true;
+
 		var countries = ['aus', 'usa', 'bra', 'can', 'ger', 'ind',
 			'ita', 'ire', 'ned', 'prt', 'rus', 'esp', 'tur',
 			'ukd', 'eu', 'un', 'fra', 'tat', 'che', 'zaf'];
@@ -1659,6 +1669,8 @@ class LogoManager {
 }
 
 LogoManager.currentLogo = "";
+LogoManager.buttonsLoaded = false;
+LogoManager.flagsLoaded = false;
 class MapManager {
 	static centerMap() {
 		if(MapManager.panObject === null)
@@ -5279,6 +5291,9 @@ function displayShareMenu() {
 }
 
 function displayMenu(name) {
+	LogoManager.loadFlags();
+	LogoManager.loadButtons();
+
 	closeAllPopups();
 
 	var menu = document.getElementById(name);
@@ -6042,7 +6057,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v1.1.6';
+var currentCache = 'v1.1.10';
 
 var states = [];
 var lands = [];
@@ -6462,8 +6477,10 @@ function start() {
 		MapLoader.loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open", {updateText: true, voters: 'usa_voting_pop', enablePopularVote: true});
 	}
 
+/*
 	LogoManager.loadButtons();
 	LogoManager.loadFlags();
+*/
 
 	Account.verifyState();
 }

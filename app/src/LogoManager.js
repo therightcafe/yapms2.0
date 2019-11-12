@@ -25,6 +25,11 @@ class LogoManager {
 	}
 
 	static loadButtons() {
+		if(LogoManager.buttonsLoaded) {
+			return;
+		}
+		LogoManager.buttonsLoaded = true;
+
 		var backButtons = document.getElementsByClassName("backbutton");
 		var closeButtons = document.getElementsByClassName("closebutton");
 
@@ -40,6 +45,11 @@ class LogoManager {
 	}
 
 	static loadFlags() {
+		if(LogoManager.flagsLoaded) {
+			return;
+		}
+		LogoManager.flagsLoaded = true;
+
 		var countries = ['aus', 'usa', 'bra', 'can', 'ger', 'ind',
 			'ita', 'ire', 'ned', 'prt', 'rus', 'esp', 'tur',
 			'ukd', 'eu', 'un', 'fra', 'tat', 'che', 'zaf'];
@@ -56,3 +66,5 @@ class LogoManager {
 }
 
 LogoManager.currentLogo = "";
+LogoManager.buttonsLoaded = false;
+LogoManager.flagsLoaded = false;
