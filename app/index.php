@@ -45,7 +45,7 @@
 			echo '<script>var mobile = false;</script>';
 		};
 
-		if(isset($_GET["autoreload"]) && !empty($_GET["autoreload"])) {
+		if(isset($_GET["autoReload"]) && !empty($_GET["autoReload"])) {
 			echo '<script>
 				var php_auto_reload = true;
 				</script>';
