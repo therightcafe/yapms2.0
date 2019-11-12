@@ -12,8 +12,8 @@ class MapLoader {
 		if(options) {
 			enableHouse = options.enableCongress;
 		}
-		
-		if(preset === 'USA_2020_house_cook') {
+
+		if(preset === 'usa/USA_2020_house_cook') {
 			enableCongressContested = true;
 			enableHouse = true;
 		}
@@ -425,6 +425,7 @@ class MapLoader {
 				if(options.onLoad) {
 					options.onLoad();
 				}
+
 				setCongressContested();
 
 				if(options.voters) {

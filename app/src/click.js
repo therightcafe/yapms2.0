@@ -203,10 +203,6 @@ function stateClickPaint(state, options) {
 }
 
 function stateClickPaintProportional(state, id) {
-	if(state === undefined) {
-		alert("FAIL");
-	}
-
 	if(state.disabled) {
 		return;
 	}

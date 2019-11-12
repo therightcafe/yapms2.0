@@ -15,7 +15,6 @@ function verifyCongress() {
 }
 
 function verifyCongressContested() {
-
 	if(mobile) {
 		return false;
 	}
@@ -32,7 +31,6 @@ function verifyCongressContested() {
 }
 
 function setCongressContested() {
-
 	if(verifyCongressContested() === false) {
 		return;
 	}

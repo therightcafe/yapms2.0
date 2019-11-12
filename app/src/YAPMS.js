@@ -1820,8 +1820,8 @@ class MapLoader {
 		if(options) {
 			enableHouse = options.enableCongress;
 		}
-		
-		if(preset === 'USA_2020_house_cook') {
+
+		if(preset === 'usa/USA_2020_house_cook') {
 			enableCongressContested = true;
 			enableHouse = true;
 		}
@@ -2233,6 +2233,7 @@ class MapLoader {
 				if(options.onLoad) {
 					options.onLoad();
 				}
+
 				setCongressContested();
 
 				if(options.voters) {
@@ -4197,10 +4198,6 @@ function stateClickPaint(state, options) {
 }
 
 function stateClickPaintProportional(state, id) {
-	if(state === undefined) {
-		alert("FAIL");
-	}
-
 	if(state.disabled) {
 		return;
 	}
@@ -4358,7 +4355,6 @@ function verifyCongress() {
 }
 
 function verifyCongressContested() {
-
 	if(mobile) {
 		return false;
 	}
@@ -4375,7 +4371,6 @@ function verifyCongressContested() {
 }
 
 function setCongressContested() {
-
 	if(verifyCongressContested() === false) {
 		return;
 	}
@@ -6082,7 +6077,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v1.1.0';
+var currentCache = 'v1.1.1';
 
 var states = [];
 var lands = [];
