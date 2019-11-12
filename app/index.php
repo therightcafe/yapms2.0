@@ -28,6 +28,8 @@
 	<link href="https://www.google-analytics.com" rel="preconnect">
 	<link href="https://www.google-analytics.com" rel="preconnect">
 	<link href="https://www.gstatic.com" rel="preconnect">
+	<link href="https://www.google.com" rel="preconnect">
+	<link href="https://www.googletagmanager.com" rel="preconnect">
 
 	<?php
 		$mobile = false;
