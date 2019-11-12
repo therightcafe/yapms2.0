@@ -39,8 +39,9 @@ class ChartManager {
 					legendDelete.setAttribute('class', 'legend-delete');
 					legendDelete.style.backgroundColor = 'black';
 					legendDelete.innerHTML = 'tesstt';
-					if(php_candidate_edit) {
-						legendText.appendChild(legendDelete);
+					legendText.appendChild(legendDelete);
+					if(php_candidate_edit === false) {
+						legendDelete.style.display = 'none';
 					}
 
 					var legendColorDiv = document.createElement('div');
@@ -96,8 +97,9 @@ class ChartManager {
 				legendElement.setAttribute('class', 'legend-button');
 				legendElement.onclick = displayAddCandidateMenu;
 				legendElement.style.background = 'none';
-				if(php_candidate_edit) {
-					legendDiv.appendChild(legendElement);
+				legendDiv.appendChild(legendElement);
+				if(php_candidate_edit === false) {
+					legendElement.style.display = 'none';
 				}
 				var legendText = document.createElement('div');
 				legendText.setAttribute('id', 'addcandidate-button-text');	
