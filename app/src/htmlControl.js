@@ -101,9 +101,6 @@ function setPalette(palette, setCookie) {
 		case 'greyscale':
 			greyscalePalette();
 			break;
-		case 'light':
-			lightPalette();
-			break;
 		case 'terminal':
 			terminalPalette();
 			break;
@@ -116,11 +113,14 @@ function setPalette(palette, setCookie) {
 		case 'halloween':
 			halloweenPalette();
 			break;
-		case 'default':
+		case 'white':
 			toWinPalette();
 			break;
+		case 'default':
+			lightPalette();
+			break;
 		default:
-			toWinPalette();
+			lightPalette();
 			break;
 	}
 }

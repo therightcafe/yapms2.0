@@ -227,11 +227,23 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		'<meta property="og:title" content="YAPms - India Lok Sabha">
 		<meta property="og:description" content="Interactive Indian Lok Sabha Map">';
 		break;
+		case 'SouthAfrica_national_assembly':
+		echo '<meta name="description" content="South Africa - National Assembly election map"><title>South Africa - National Assembly Election</title>';
+		echo 
+		'<meta property="og:title" content="YAPms - South Africa National Assembly">
+		<meta property="og:description" content="Interactive South African National Assembly Map">';
+		break;
 		case 'Italy_states':
 		echo '<meta name="description" content="Italy - State election map"><title>Italy - State Election</title>';
 		echo 
 		'<meta property="og:title" content="YAPms - Italy States">
 		<meta property="og:description" content="Interactive Italian States Map">';
+		break;
+		case 'UnitedKingdom_historic_counties':
+		echo '<meta name="description" content="United Kingdom - Historic County Map"><title>United Kingdom - Historic County Map</title>';
+		echo 
+		'<meta property="og:title" content="YAPms - United Kingdom Historic County Map">
+		<meta property="og:description" content="Interactive United Kingdom Historic County Map">';
 		break;
 		case 'UnitedKingdom_constituencies':
 		case 'UnitedKingdom_house_of_commons':

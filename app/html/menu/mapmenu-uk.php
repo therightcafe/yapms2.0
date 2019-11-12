@@ -17,4 +17,8 @@
 	<i class="fas fa-chevron-down"></i>
 	<div class="selectmenu-display-header-text">Current Parliament</div>
 </a>
+<a class="selectmenu-button" href="./?t=UnitedKingdom_historic_counties">
+	<i class="fas fa-border-all"></i>
+	<div class="selectmenu-display-header-text">Historic Counties</div>
+</a>
 </div>

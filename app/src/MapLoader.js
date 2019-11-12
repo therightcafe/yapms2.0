@@ -252,9 +252,16 @@ class MapLoader {
 				MapLoader.loadMap("./res/india_constituencies.svg", 16, 0.1, "congressional", "presidential", "open", {updateText: false});
 				PresetLoader.loadPreset('india');
 				break;
-			case "UnitedKingdom_constituencies":
+			case "SouthAfrica_national_assembly":
+				MapLoader.loadMap("./res/zaf/south_africa_provinces.svg", 16, 0.25, "south_africa_national_assembly", "proportional", "open", {updateText: false});
+				PresetLoader.loadPreset('southafrica');
+				break;
 			case "UnitedKingdom_house_of_commons":
 				MapLoader.loadMap("./res/unitedkingdom.svg", 16, 0.075, "congressional", "congressional", "open", {updateText: false});
+				PresetLoader.loadPreset('uk')
+				break;
+			case "UnitedKingdom_historic_counties":
+				MapLoader.loadMap("./res/ukd/unitedkingdom_historic_counties.svg", 16, 0.4, "congressional", "congressional", "open", {updateText: false});
 				PresetLoader.loadPreset('uk')
 				break;
 			case "Ireland_constituencies":

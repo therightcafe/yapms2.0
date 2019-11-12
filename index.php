@@ -875,6 +875,20 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 	
 	<div class="map-type-box">
 	<div class="map-type-header">
+		<img src="app/res/flags/zaf.svg">
+		<div class="map-type-header-text">South Africa</div>
+	</div>
+	<div class="map-button-box">	
+		<a href="./app/?t=SouthAfrica_national_assembly">
+			<div class="map-button">
+				<i class="fas fa-chevron-down"></i> National Assembly
+			</div>
+		</a>
+	</div>
+	</div>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
 		<img src="app/res/flags/esp.svg">
 		<div class="map-type-header-text">Spain</div>
 	</div>
@@ -950,6 +964,11 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 				<i class="fas fa-chevron-down"></i> Current Parliament
 				<br>
 				<small>11/4/19</small>
+			</div>
+		</a>
+		<a href="./app/?t=UnitedKingdom_historic_counties">
+			<div class="map-button">
+				<i class="fas fa-border-all"></i> Historic Counties 
 			</div>
 		</a>
 	</div>

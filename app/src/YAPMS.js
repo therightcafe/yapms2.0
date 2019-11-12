@@ -1685,7 +1685,7 @@ class LogoManager {
 	static loadFlags() {
 		var countries = ['aus', 'usa', 'bra', 'can', 'ger', 'ind',
 			'ita', 'ire', 'ned', 'prt', 'rus', 'esp', 'tur',
-			'ukd', 'eu', 'un', 'fra', 'tat', 'che'];
+			'ukd', 'eu', 'un', 'fra', 'tat', 'che', 'zaf'];
 	
 		for(var countryIndex = 0; countryIndex < countries.length; ++countryIndex) {	
 			var country = countries[countryIndex];
@@ -2060,9 +2060,16 @@ class MapLoader {
 				MapLoader.loadMap("./res/india_constituencies.svg", 16, 0.1, "congressional", "presidential", "open", {updateText: false});
 				PresetLoader.loadPreset('india');
 				break;
-			case "UnitedKingdom_constituencies":
+			case "SouthAfrica_national_assembly":
+				MapLoader.loadMap("./res/zaf/south_africa_provinces.svg", 16, 0.25, "south_africa_national_assembly", "proportional", "open", {updateText: false});
+				PresetLoader.loadPreset('southafrica');
+				break;
 			case "UnitedKingdom_house_of_commons":
 				MapLoader.loadMap("./res/unitedkingdom.svg", 16, 0.075, "congressional", "congressional", "open", {updateText: false});
+				PresetLoader.loadPreset('uk')
+				break;
+			case "UnitedKingdom_historic_counties":
+				MapLoader.loadMap("./res/ukd/unitedkingdom_historic_counties.svg", 16, 0.4, "congressional", "congressional", "open", {updateText: false});
 				PresetLoader.loadPreset('uk')
 				break;
 			case "Ireland_constituencies":
@@ -2690,6 +2697,9 @@ class PresetLoader {
 			case 'germany':
 				PresetLoader.loadPresetGermany();
 				break;
+			case 'southafrica':
+				PresetLoader.loadPresetSouthAfrica();
+				break;
 			case 'india':
 				PresetLoader.loadPresetIndia();
 				break;
@@ -3260,6 +3270,52 @@ class PresetLoader {
 		CandidateManager.candidates['CDS-PP'] = cdspp;
 		CandidateManager.candidates['PAN'] = pan;
 		CandidateManager.candidates['Ind'] = indy;
+	}
+
+	static loadPresetSouthAfrica() {
+		var anc = new Candidate('ANC',
+			['#006600','#006600','#006600','#006600']);
+		var da = new Candidate('DA',
+			['#005ba6','#005ba6','#005ba6','#005ba6']);
+		var eff = new Candidate('EFF',
+			['#852a2a','#852a2a','#852a2a','#852a2a']);
+		var ifp = new Candidate('IFP',
+			['#ff0000','#ff0000','#ff0000','#ff0000']);
+		var ffp = new Candidate('FF+',
+			['#ec8713','#ec8713','#ec8713','#ec8713']);
+		var acdp = new Candidate('ACDP',
+			['#ba0c2f','#ba0c2f','#ba0c2f','#ba0c2f']);
+		var udm = new Candidate('UDM',
+			['#ffde01','#ffde01','#ffde01','#ffde01']);
+		var atm = new Candidate('ATM',
+			['#00adee','#00adee','#00adee','#00adee']);
+		var good = new Candidate('Good',
+			['#f36900','#f36900','#f36900','#f36900']);
+		var nfp = new Candidate('NFP',
+			['#ff8040','#ff8040','#ff8040','#ff8040']);
+		var aic = new Candidate('AIC',
+			['#ffb543','#ffb543','#ffb543','#ffb543']);
+		var cope = new Candidate('COPE',
+			['#ffca08','#ffca08','#ffca08','#ffca08']);
+		var pac = new Candidate('PAC',
+			['#008718','#008718','#008718','#008718']);
+		var alj = new Candidate('ALJ',
+			['#1c9069','#1c9069','#1c9069','#1c9069']);
+
+		CandidateManager.candidates['ANC'] = anc;
+		CandidateManager.candidates['DA'] = da;
+		CandidateManager.candidates['EFF'] = eff;
+		CandidateManager.candidates['IFP'] = ifp;
+		CandidateManager.candidates['FF+'] = ffp;
+		CandidateManager.candidates['ACDP'] = acdp;
+		CandidateManager.candidates['UDM'] = udm;
+		CandidateManager.candidates['ATM'] = atm;
+		CandidateManager.candidates['Good'] = good;
+		CandidateManager.candidates['NFP'] = nfp;
+		CandidateManager.candidates['AIC'] = aic;
+		CandidateManager.candidates['COPE'] = cope;
+		CandidateManager.candidates['PAC'] = pac;
+		CandidateManager.candidates['ALJ'] = alj;
 	}
 
 	static loadPresetIndia() {
@@ -4457,6 +4513,8 @@ function db_getCongress(onLoad) {
 data = {
 'turkey_national_assembly': {'Adana': 15, 'Adıyaman':5, 'Afyonkarahisar':6, 'Ağrı':4, 'Aksaray':4, 'Amasya':3, 'Ankara':36, 'Antalya':16, 'Ardahan':2, 'Artvin':2, 'Aydın':8, 'Balıkesir':9, 'Bartın':2, 'Batman': 5, 'Bayburt':1, 'Bilecik':2, 'Bingöl':3, 'Bitlis':3, 'Bolu':3, 'Burdur':3, 'Bursa':20, 'Çanakkale':4, 'Çankırı':2, 'Çorum':4, 'Denizli':8, 'Diyarbakır':12, 'Düzce':3, 'Edirne':4, 'Elazığ':5, 'Erzincan':2, 'Erzurum':6, 'Eskişehir':7, 'Gaziantep':14, 'Giresun':4, 'Gümüşhane':2, 'Hakkâri':3, 'Hatay':11, 'Iğdır':2, 'Isparta':4, 'İstanbul':98, 'İzmir':28, 'Kahramanmaraş':8, 'Kars':3, 'Kastamonu':3, 'Karabük':3, 'Karaman':3, 'Kayseri':10, 'Kilis':2, 'Kırklareli':3, 'Kırıkkale':3, 'Kırşehir':2, 'Kocaeli':13, 'Konya':15, 'Kütahya':5, 'Malatya':6, 'Manisa':10, 'Mardin':6, 'Mersin':13, 'Muğla':7, 'Muş':4, 'Nevşehir':3, 'Niğde':3, 'Ordu':6, 'Osmaniye':4, 'Rize':3, 'Sakarya':7, 'Samsun':9, 'Siirt':3, 'Sinop':2, 'Sivas':5, 'Şanlıurfa':14, 'Şırnak':4, 'Tekirdağ':7, 'Tokat':5, 'Trabzon':6, 'Tunceli':2, 'Uşak':3, 'Van':8, 'Yalova':3, 'Yozgat':4, 'Zonguldak':5},
 
+'south_africa_national_assembly': {'Eastern Cape': 25, 'Western Cape': 23, 'Northern Cape': 5, 'Gauteng': 48, 'KwaZulu': 41, 'Limpopo': 19, 'Mpumalanga': 15, 'Free State': 11, 'North West Cape': 13, 'South Africa': 200},
+
 'portugal_constituencies': {'Lisbon': 47, 'Porto': 39, 'Braga': 19, 'Setúbal': 18, 'Aveiro': 16, 'Leiria': 10, 'Coimbra': 9, 'Faro': 9, 'Santarém': 9, 'Viseu': 9, 'Madeira': 6, 'Viana do Castelo': 6, 'Azores': 5, 'Vila Real': 5, 'Guarda': 4, 'Castelo Branco': 4, 'Beja': 3, 'Bragança': 3, 'Évora': 3, 'Portalegre': 2, 'Europe': 2, 'Outside Europe': 2},
 
 'ireland_constituencies': {'Donegal': 5, 'Sligo-Leitrim': 4, 'Mayo': 4, 'Galway-West': 5, 'Clare': 4, 'Kerry': 5, 'Cork South-West': 3, 'Cork North-West': 3, 'Limerick County': 3, 'Limerick City': 4, 'Cork South-Central': 4, 'Cork North-Central': 4, 'Cork East': 4, 'Waterford': 4, 'Tipperary': 5, 'Carlow-Kilkenny': 5, 'Wexford': 5, 'Wicklow & East Carlow': 5, 'Kildare North': 4, 'Kildare South': 3, 'Laois': 3, 'Offaly': 3, 'Galway-East': 3, 'Roscommon-Galway': 3, 'Longford-Westmeath': 4, 'Meath West': 3, 'Meath East': 3, 'Louth': 5, 'Cavan-Monaghan': 4, 'Sligo-Leitrim': 4, 'Donegal': 5, 'Dublin Fingal': 5, 'Dublin West': 4, 'Dublin North-West': 3, 'Dublin Bay North': 5, 'Dublin Mid-West': 4, 'Dublin South-Central': 4, 'Dublin Central': 3, 'Dublin Bay South': 4, 'Dublin South-West': 5, 'Dublin Rathdown': 3, 'Dún Laoghaire': 4},
@@ -4615,9 +4673,6 @@ function setPalette(palette, setCookie) {
 		case 'greyscale':
 			greyscalePalette();
 			break;
-		case 'light':
-			lightPalette();
-			break;
 		case 'terminal':
 			terminalPalette();
 			break;
@@ -4630,11 +4685,14 @@ function setPalette(palette, setCookie) {
 		case 'halloween':
 			halloweenPalette();
 			break;
-		case 'default':
+		case 'white':
 			toWinPalette();
 			break;
+		case 'default':
+			lightPalette();
+			break;
 		default:
-			toWinPalette();
+			lightPalette();
 			break;
 	}
 }
@@ -6024,7 +6082,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v1.0.0';
+var currentCache = 'v1.1.0';
 
 var states = [];
 var lands = [];

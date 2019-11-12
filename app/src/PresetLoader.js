@@ -33,6 +33,9 @@ class PresetLoader {
 			case 'germany':
 				PresetLoader.loadPresetGermany();
 				break;
+			case 'southafrica':
+				PresetLoader.loadPresetSouthAfrica();
+				break;
 			case 'india':
 				PresetLoader.loadPresetIndia();
 				break;
@@ -603,6 +606,52 @@ class PresetLoader {
 		CandidateManager.candidates['CDS-PP'] = cdspp;
 		CandidateManager.candidates['PAN'] = pan;
 		CandidateManager.candidates['Ind'] = indy;
+	}
+
+	static loadPresetSouthAfrica() {
+		var anc = new Candidate('ANC',
+			['#006600','#006600','#006600','#006600']);
+		var da = new Candidate('DA',
+			['#005ba6','#005ba6','#005ba6','#005ba6']);
+		var eff = new Candidate('EFF',
+			['#852a2a','#852a2a','#852a2a','#852a2a']);
+		var ifp = new Candidate('IFP',
+			['#ff0000','#ff0000','#ff0000','#ff0000']);
+		var ffp = new Candidate('FF+',
+			['#ec8713','#ec8713','#ec8713','#ec8713']);
+		var acdp = new Candidate('ACDP',
+			['#ba0c2f','#ba0c2f','#ba0c2f','#ba0c2f']);
+		var udm = new Candidate('UDM',
+			['#ffde01','#ffde01','#ffde01','#ffde01']);
+		var atm = new Candidate('ATM',
+			['#00adee','#00adee','#00adee','#00adee']);
+		var good = new Candidate('Good',
+			['#f36900','#f36900','#f36900','#f36900']);
+		var nfp = new Candidate('NFP',
+			['#ff8040','#ff8040','#ff8040','#ff8040']);
+		var aic = new Candidate('AIC',
+			['#ffb543','#ffb543','#ffb543','#ffb543']);
+		var cope = new Candidate('COPE',
+			['#ffca08','#ffca08','#ffca08','#ffca08']);
+		var pac = new Candidate('PAC',
+			['#008718','#008718','#008718','#008718']);
+		var alj = new Candidate('ALJ',
+			['#1c9069','#1c9069','#1c9069','#1c9069']);
+
+		CandidateManager.candidates['ANC'] = anc;
+		CandidateManager.candidates['DA'] = da;
+		CandidateManager.candidates['EFF'] = eff;
+		CandidateManager.candidates['IFP'] = ifp;
+		CandidateManager.candidates['FF+'] = ffp;
+		CandidateManager.candidates['ACDP'] = acdp;
+		CandidateManager.candidates['UDM'] = udm;
+		CandidateManager.candidates['ATM'] = atm;
+		CandidateManager.candidates['Good'] = good;
+		CandidateManager.candidates['NFP'] = nfp;
+		CandidateManager.candidates['AIC'] = aic;
+		CandidateManager.candidates['COPE'] = cope;
+		CandidateManager.candidates['PAC'] = pac;
+		CandidateManager.candidates['ALJ'] = alj;
 	}
 
 	static loadPresetIndia() {

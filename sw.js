@@ -1,5 +1,5 @@
-var indexCache = 'i1.0.2';
-var staticCache = 's1.0.2';
+var indexCache = 'i1.1.0';
+var staticCache = 's1.1.0';
 
 var _indexCache = [
 	'./',
@@ -92,6 +92,7 @@ var _staticCache = [
 	'./app/res/germany_constituencies.svg',
 	'./app/res/france_constituencies.svg',
 	'./app/res/unitedkingdom.svg',
+	'./app/res/ukd/unitedkingdom_historic_counties.svg',
 	'./app/res/italy.svg',
 	'./app/res/australia_constituencies.svg',
 	'./app/res/australia.svg',

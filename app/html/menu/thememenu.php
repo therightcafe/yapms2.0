@@ -16,8 +16,8 @@
 <a class="selectmenu-button" onclick='setPalette("terminal", true);'>
 	<div class="selectmenu-button-text">Terminal</div>
 </a>
-<a class="selectmenu-button" onclick='setPalette("light", true);'>
-	<div class="selectmenu-button-text">Light</div>
+<a class="selectmenu-button" onclick='setPalette("white", true);'>
+	<div class="selectmenu-button-text">White</div>
 </a>
 <a class="selectmenu-button" onclick='setPalette("contrast", true);'>
 	<div class="selectmenu-button-text">Contrast</div>

@@ -65,6 +65,10 @@
 	<img class="flag-rus">
 	<div class="selectmenu-button-text">Russia</div>
 </a>
+<a class="selectmenu-button" href="./?t=SouthAfrica_national_assembly">
+	<img class="flag-zaf">
+	<div class="selectmenu-button-text">South Africa</div>
+</a>
 <a class="selectmenu-button" href="./?t=Spain_congress_of_deputies">
 	<img class="flag-esp">
 	<div class="selectmenu-button-text">Spain</div>
