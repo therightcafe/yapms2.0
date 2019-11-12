@@ -268,8 +268,8 @@ if($mobile === false) {
 </div>
 <?php
 if($mobile === false) {
-	echo '<div id="sidebar">' ,
-		'<div id="sidebar-social">
+	echo '<div id="sidebar">
+		<div id="sidebar-social">
 		<a id="sidebar-discord-link" class="social-link" href="https://discord.gg/WQh5fHU" target="_blank"><div id="sidebar-discord" class="sidebar-button">
 			Discord
 		</div></a>
@@ -287,16 +287,18 @@ if($mobile === false) {
 			<h1>
 				YAPms
 			</h1>
-		</div>' ,
-		'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle adslot_sidebar"
-     style="display:inline-block;width:336px;height:280px"
-     data-ad-client="ca-pub-1660456925957249"
-     data-ad-slot="8033943742"></ins>
-<script>
-	(adsbygoogle = window.adsbygoogle || []).push({});
-</script>',
-		'<div id="sidebar-popularvote" class="sidebar-box">
+		</div>
+
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<ins class="adsbygoogle adslot_sidebar"
+		     style="display:inline-block;width:336px;height:280px"
+		     data-ad-client="ca-pub-1660456925957249"
+		     data-ad-slot="8033943742"></ins>
+		<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+
+		<div id="sidebar-popularvote" class="sidebar-box">
 			<h3>
 				<span>
 				State Popular Vote
@@ -309,8 +311,8 @@ if($mobile === false) {
 			</div>
 			<div id="popularvote-ranges">
 			</div>
-		</div>',
-		'<div id="sidebar-national-popularvote" class="sidebar-box">
+		</div>
+		<div id="sidebar-national-popularvote" class="sidebar-box">
 			<h3>
 				<span>
 					National Popular Vote
@@ -318,8 +320,8 @@ if($mobile === false) {
 			</h3>
 			<div id="national-popularvote-ranges">
 			</div>
-		</div>',
-		'<div id="sidebar-popularvote-settings" class="sidebar-box">
+		</div>
+		<div id="sidebar-popularvote-settings" class="sidebar-box">
 			<h3>
 				Settings
 			</h3>
@@ -338,15 +340,15 @@ if($mobile === false) {
 					Clicking on a district in Nebraska or Maine will not calculate the margin for the AL vote.	
 				</div>
 			</div>
-		</div>',
-		'<div id="sidebar-congress" class="sidebar-box">
+		</div>
+		<div id="sidebar-congress" class="sidebar-box">
 			<h3><span id="sidebar-congress-district">District</span></h3>
 			<div id="sidebar-congress-representative">
 			</div>
 			<div id="sidebar-congress-party">
 			</div>
-		</div>',
-		'<div id="sidebar-shortcuts" class="sidebar-box">
+		</div>
+		<div id="sidebar-shortcuts" class="sidebar-box">
 			<h3>Shortcuts</h3>
 			<ul>
 				<li>
@@ -394,10 +396,10 @@ if($mobile === false) {
 					Contested Seats
 				</h2>
 			</div>
-		</div>',
-		'<div id="yapnews-articles">
-		</div>' ,
-	'</div>';
+		</div>
+			<div id="yapnews-articles">
+			</div>
+		</div>';
 }
 ?>
 </div>

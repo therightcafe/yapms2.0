@@ -681,7 +681,7 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 	</div>
 
 	<br>
-	<h1 class="header">Other Countries</h1>
+	<h2 class="header">Other Countries</h2>
 	
 	<div class="map-type-box">
 	<div class="map-type-header">
@@ -974,7 +974,7 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 	</div>
 	</div>
 	
-	<h1 class="header">Trans-National Organizations</h1>
+	<h2 class="header">Trans-National Organizations</h2>
 	
 	<div class="map-type-box">
 	<div class="map-type-header">
@@ -1017,7 +1017,7 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 	</div>
 	</div>
 	
-	<h1 class="header">Useful Links</h1>
+	<h2 class="header">Useful Links</h2>
 	
 	<div class="map-type-box">
 	<div class="map-type-header">
