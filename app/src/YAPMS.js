@@ -878,11 +878,7 @@ class ChartManager {
 					var legendDelete = document.createElement('div');
 					legendDelete.setAttribute('class', 'legend-delete');
 					legendDelete.style.backgroundColor = 'black';
-					legendDelete.innerHTML = 'tesstt';
 					legendText.appendChild(legendDelete);
-					if(php_candidate_edit === false) {
-						legendDelete.style.display = 'none';
-					}
 
 					var legendColorDiv = document.createElement('div');
 					legendColorDiv.setAttribute('class', 'legend-color-div');
@@ -908,7 +904,12 @@ class ChartManager {
 							};
 						})();
 						legendDelete.style.background = 'none';
-						legendDiv.appendChild(legendDelete);
+
+						/* ONLY ADD IF CANDIDATE EDIT IS ENABLED */
+						if(php_candidate_edit) {
+							legendDiv.appendChild(legendDelete);
+						}
+
 						var legendDeleteText = document.createElement('div');
 						legendDeleteText.setAttribute('class', 'legend-delete-text');	
 						legendDeleteText.style.backgroundColor = candidate.colors[0];
@@ -937,10 +938,12 @@ class ChartManager {
 				legendElement.setAttribute('class', 'legend-button');
 				legendElement.onclick = displayAddCandidateMenu;
 				legendElement.style.background = 'none';
-				legendDiv.appendChild(legendElement);
-				if(php_candidate_edit === false) {
-					legendElement.style.display = 'none';
+
+				/* ONLY ADD IF CANDIDATE EDIT IS ENABLED */
+				if(php_candidate_edit) {
+					legendDiv.appendChild(legendElement);
 				}
+
 				var legendText = document.createElement('div');
 				legendText.setAttribute('id', 'addcandidate-button-text');	
 				legendText.setAttribute('class', 'legend-button-text');	
@@ -5021,7 +5024,9 @@ function setTossupColor(color) {
 	var tossupText = document.getElementById('Tossup-text');
 	tossupText.style.backgroundColor = color;
 	var addCandidateButton = document.getElementById('addcandidate-button-text');
-	addCandidateButton.style.backgroundColor = color;
+	if(addCandidateButton) {
+		addCandidateButton.style.backgroundColor = color;
+	}
 }
 
 function setMapStyle(color, strokeWidth) {
@@ -6063,7 +6068,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v1.1.12';
+var currentCache = 'v1.1.13';
 
 var states = [];
 var lands = [];
