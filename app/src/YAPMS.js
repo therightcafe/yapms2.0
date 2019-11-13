@@ -844,6 +844,7 @@ class ChartManager {
 			// This basically inserts HTML into the legend-div div
 			// it's a WIP
 			legendCallback: function(chart) {
+				console.trace();
 				console.log("Generating Legend...");
 				var legendDiv = document.getElementById('legend-div');
 				legendDiv.innerHTML = '';
@@ -1081,7 +1082,7 @@ class ChartManager {
 			maintainAspectRatio: true
 		});
 
-		ChartManager.chart.generateLegend();
+		//ChartManager.chart.generateLegend();
 
 		ChartManager.chartType = 'doughnut';
 	}
@@ -6085,7 +6086,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v1.1.23';
+var currentCache = 'v1.1.25';
 
 var states = [];
 var lands = [];
