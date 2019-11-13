@@ -18,6 +18,8 @@ class PresetLoader {
 		CandidateManager.initCandidates();
 
 		switch(value) {
+			case 'none':
+				break;
 			case 'classic':
 				PresetLoader.loadPresetClassic();
 				break;
