@@ -33,6 +33,8 @@
 	<link href="https://tpc.googlesyndication.com" rel="preconnect">
 	<link href="https://fonts.googleapis.com" rel="preconnect">
 
+	<link rel="preload" href="./res/fonts/roboto/roboto-v20-latin-regular.woff" as="font">
+
 	<?php
 		$mobile = false;
 
