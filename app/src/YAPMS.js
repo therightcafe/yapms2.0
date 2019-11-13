@@ -844,7 +844,6 @@ class ChartManager {
 			// This basically inserts HTML into the legend-div div
 			// it's a WIP
 			legendCallback: function(chart) {
-				console.trace();
 				console.log("Generating Legend...");
 				var legendDiv = document.getElementById('legend-div');
 				legendDiv.innerHTML = '';
@@ -1942,7 +1941,7 @@ class MapLoader {
 				MapLoader.loadPresetMap('usa/' + id);
 				break;
 			case "USA_trump_impeachment_support":
-				PresetLoader.loadPreset('classic');
+				PresetLoader.loadPreset('none');
 				MapLoader.loadPresetMap('usa/' + id, {enableCongress: true});
 				break;
 			case "Canada_2019_house_of_commons":

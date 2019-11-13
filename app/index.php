@@ -36,6 +36,7 @@
 	<link href="https://ajax.googleapis.com" rel="preconnect">
 	<link href="https://cdn.jsdelivr.net" rel="preconnect">
 
+<!--
 	<link href="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" rel="preload" as="script">
 	<link href="https://ajax.googleapis.com/ajax/libs/hammerjs/2.0.8/hammer.min.js" rel="preload" as="script">
 	<link href="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js" rel="preload" as="script">
@@ -44,6 +45,7 @@
 	<link href="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0/dist/chartjs-plugin-datalabels.min.js" rel="preload" as="script">
 	<link href="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js" rel="preload" as="script">
 	<link href="./src/YAPMS.js" rel="preload" as="script">
+-->
 
 	<link rel="preload" href="./res/fonts/roboto/roboto-v20-latin-regular.woff" as="font">
 
