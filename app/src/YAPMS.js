@@ -1836,7 +1836,7 @@ class MapLoader {
 			url: URL,
 			type: "POST",
 			success: function(data) {
-				ChartManager.chart.generateLegend();
+			//	ChartManager.chart.generateLegend();
 				console.log("Map Load: Found saved map");
 				try {
 					console.log('Map Loader: Attemping new file load');
