@@ -844,6 +844,7 @@ class ChartManager {
 			// This basically inserts HTML into the legend-div div
 			// it's a WIP
 			legendCallback: function(chart) {
+				console.trace();
 				console.log("Generating Legend...");
 				var legendDiv = document.getElementById('legend-div');
 				legendDiv.innerHTML = '';
