@@ -43,6 +43,7 @@
 	<link href="https://cdn.jsdelivr.net/npm/chart.js@2.9.2/dist/Chart.min.js" rel="preload" as="script">
 	<link href="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0/dist/chartjs-plugin-datalabels.min.js" rel="preload" as="script">
 	<link href="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js" rel="preload" as="script">
+	<link href="./src/YAPMS.js" rel="preload" as="script">
 
 	<link rel="preload" href="./res/fonts/roboto/roboto-v20-latin-regular.woff" as="font">
 
