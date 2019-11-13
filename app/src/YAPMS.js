@@ -414,8 +414,8 @@ class Account {
 
 		/* CREATE DELETE MAP BUTTON */
 		var mapDelete = document.createElement('img');
-		mapDelete.src = "./html/deletebutton.svg";
 		mapDelete.className = "toolbar-button toolbar-button-red";
+		mapDelete.src = "./html/deletebutton.svg";
 		mapDelete.setAttribute('title', 'Delete Map');
 		mapDelete.onclick = (function() {
 			var name_onclick = name;
@@ -428,7 +428,7 @@ class Account {
 				}
 			}
 		})();
-		mapBoxHeader.appendChild(mapDelete);
+		//mapBoxHeader.appendChild(mapDelete);
 		mapToolbar.appendChild(mapDelete);
 
 		/* CREATE DOWNLOAD MAP BUTTON */
@@ -6109,7 +6109,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v1.1.27';
+var currentCache = 'v1.1.28';
 
 var states = [];
 var lands = [];
