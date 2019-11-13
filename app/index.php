@@ -33,7 +33,6 @@
 	<link href="https://tpc.googlesyndication.com" rel="preconnect">
 	<link href="https://fonts.googleapis.com" rel="preconnect">
 	
-	<link href="https://ajax.googleapis.com" rel="preconnect">
 	<link href="https://cdn.jsdelivr.net" rel="preconnect">
 
 	<link rel="preload" href="./res/fonts/roboto/roboto-v20-latin-regular.woff" as="font">
@@ -218,14 +217,6 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 	<div class="click-button" onclick="displayMenu('chartmenu')" style="white-space: nowrap;">
 	<i class="fas fa-chart-pie"></i> Chart 
 	</div>
-
-<?php
-/*if($mobile === false) {
-	echo '<div class="click-button" onclick="displayMenu(\'loadmenu\')" style="white-space: nowrap;">
-		<i class="fas fa-upload"></i> Load
-		</div>';
-}*/
-?>
 
 	<div class="click-button" onclick="displayMenu('miscmenu')" style="white-space: nowrap;">
 	<i class="fas fa-clipboard"></i> Misc
@@ -693,22 +684,10 @@ echo '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygo
 	</div>
 </div>
 
-<div id="notification-update-serviceworker" class="popup selectmenu">
-	<div class="selectmenu-header">
-	<object class="closebutton" type="image/svg+xml">Close</object>
-	<h2>New Version Installed</h2>
-	</div>
-	<div class="selectmenu-content">
-	<div class="selectmenu-section">Click reload to start using the update</div>
-	<div class="selectmenu-button" onclick='closeAllPopups(); location.reload();'>Reload</div>
-	<div class="selectmenu-button" onclick="closeAllPopups();">Skip</div>
-	</div>
-</div>
-
 <script src="https://www.google.com/recaptcha/api.js?render=6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo"></script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/hammerjs/2.0.8/hammer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/src/browserify.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.2/dist/Chart.min.js"></script>
@@ -733,15 +712,8 @@ if('serviceWorker' in navigator) {
 	.register('../sw.js')
 	.then(function(a) {
 		console.log('SW: registered');
-		if(typeof gtag !== 'undefined') {
-			gtag('event', 'upgrade', {
-				'event_category': 'upgrade',
-				'event_label': "SW Register " + currentCache,
-				'non_interaction': true
-			});
-		}
 	}, function(err) {
-		console.log('SW: register error... ', err);
+		console.log('SW: register error ', err);
 	});
 } else {
 	console.log('No service worker detected');
