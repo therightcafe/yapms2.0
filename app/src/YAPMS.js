@@ -1081,7 +1081,7 @@ class ChartManager {
 			maintainAspectRatio: true
 		});
 
-		ChartManager.chart.generateLegend();
+		//ChartManager.chart.generateLegend();
 
 		ChartManager.chartType = 'doughnut';
 	}
@@ -1836,6 +1836,7 @@ class MapLoader {
 			url: URL,
 			type: "POST",
 			success: function(data) {
+				ChartManager.chart.generateLegend();
 				console.log("Map Load: Found saved map");
 				try {
 					console.log('Map Loader: Attemping new file load');
