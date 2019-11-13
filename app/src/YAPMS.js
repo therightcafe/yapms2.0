@@ -1081,8 +1081,6 @@ class ChartManager {
 			maintainAspectRatio: true
 		});
 
-		//ChartManager.chart.generateLegend();
-
 		ChartManager.chartType = 'doughnut';
 	}
 
@@ -1836,7 +1834,6 @@ class MapLoader {
 			url: URL,
 			type: "POST",
 			success: function(data) {
-			//	ChartManager.chart.generateLegend();
 				console.log("Map Load: Found saved map");
 				try {
 					console.log('Map Loader: Attemping new file load');
@@ -6471,6 +6468,7 @@ function start() {
 		} else {
 			url = 'https://yapms.org/maps/' + php_load_map_id + '.txt'; 	
 		}
+		ChartManager.chart.generateLegend();
 		MapLoader.loadMapFromURL(url);
 
 		if(php_auto_reload) {

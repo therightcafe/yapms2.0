@@ -402,6 +402,7 @@ function start() {
 		} else {
 			url = 'https://yapms.org/maps/' + php_load_map_id + '.txt'; 	
 		}
+		ChartManager.chart.generateLegend();
 		MapLoader.loadMapFromURL(url);
 
 		if(php_auto_reload) {
