@@ -179,6 +179,7 @@ class MapLoader {
 				PresetLoader.loadPreset('republican primary');
 				break;
 			case "USA_county":
+				PresetLoader.loadPreset('classic');
 				MapLoader.loadMap("./res/usa_county.svg", 16, 0.075, "congressional", "congressional", "open", {updateText: false});
 				break;
 			case "USA_congressional":
