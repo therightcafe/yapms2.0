@@ -6469,7 +6469,6 @@ function start() {
 		} else {
 			url = 'https://yapms.org/maps/' + php_load_map_id + '.txt'; 	
 		}
-		ChartManager.chart.generateLegend();
 		MapLoader.loadMapFromURL(url);
 
 		if(php_auto_reload) {
@@ -6478,7 +6477,6 @@ function start() {
 			}, 30000 + (Math.floor(Math.random() * 30000)));
 		}
 	} else if(php_load_type_map === true) {
-		PresetLoader.loadPreset("classic");
 		MapLoader.loadMapFromId(php_load_map_id);
 	} else {
 		PresetLoader.loadPreset("classic");
