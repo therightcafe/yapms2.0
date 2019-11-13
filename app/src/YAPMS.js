@@ -1081,7 +1081,7 @@ class ChartManager {
 			maintainAspectRatio: true
 		});
 
-		//ChartManager.chart.generateLegend();
+		ChartManager.chart.generateLegend();
 
 		ChartManager.chartType = 'doughnut';
 	}
