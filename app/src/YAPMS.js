@@ -1835,6 +1835,7 @@ class MapLoader {
 			url: URL,
 			type: "POST",
 			success: function(data) {
+				PresetLoader.loadPreset('none');
 				console.log("Map Load: Found saved map");
 				try {
 					console.log('Map Loader: Attemping new file load');
