@@ -1,5 +1,5 @@
-var indexCache = 'i1.1.43';
-var staticCache = 's1.1.43';
+var indexCache = 'i1.1.45';
+var staticCache = 's1.1.45';
 
 var _indexCache = [
 	'./',
@@ -160,7 +160,7 @@ var _staticCache = [
 	'./app/res/fontawesome/js/all.min.js',
 
 	'https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js',
-	'https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/src/browserify.min.js',
+	'https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js',
 	'https://cdn.jsdelivr.net/npm/chart.js@2.9.2/dist/Chart.min.js',
 	'https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0/dist/chartjs-plugin-datalabels.min.js',
 	'https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js',
