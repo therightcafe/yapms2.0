@@ -1,5 +1,5 @@
-var indexCache = 'i1.1.45';
-var staticCache = 's1.1.45';
+var indexCache = 'i1.1.50';
+var staticCache = 's1.1.50';
 
 var _indexCache = [
 	'./',
@@ -163,7 +163,6 @@ var _staticCache = [
 	'https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js',
 	'https://cdn.jsdelivr.net/npm/chart.js@2.9.2/dist/Chart.min.js',
 	'https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0/dist/chartjs-plugin-datalabels.min.js',
-	'https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js',
 	'https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js',
 	'https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js',
 
