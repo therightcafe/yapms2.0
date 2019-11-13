@@ -454,12 +454,9 @@ class MapLoader {
 
 				// disable the load screen when the map is finished loading
 				var loadScreen = document.getElementById('application-loading');
-				/*
 				setTimeout(function() {
 					loadScreen.style.display = 'none';
-				}, 350);
-				*/
-				loadScreen.style.display = 'none';
+				}, 200);
 			}
 
 			if(type === 'senatorial' && year !== 'open') {

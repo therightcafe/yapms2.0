@@ -844,7 +844,6 @@ class ChartManager {
 			// This basically inserts HTML into the legend-div div
 			// it's a WIP
 			legendCallback: function(chart) {
-				console.trace();
 				console.log("Generating Legend...");
 				var legendDiv = document.getElementById('legend-div');
 				legendDiv.innerHTML = '';
@@ -2244,12 +2243,9 @@ class MapLoader {
 
 				// disable the load screen when the map is finished loading
 				var loadScreen = document.getElementById('application-loading');
-				/*
 				setTimeout(function() {
 					loadScreen.style.display = 'none';
-				}, 350);
-				*/
-				loadScreen.style.display = 'none';
+				}, 200);
 			}
 
 			if(type === 'senatorial' && year !== 'open') {
@@ -6080,7 +6076,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v1.1.41';
+var currentCache = 'v1.1.42';
 
 var states = [];
 var lands = [];
@@ -6497,11 +6493,6 @@ function start() {
 		PresetLoader.loadPreset("classic");
 		MapLoader.loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open", {updateText: true, voters: 'usa_voting_pop', enablePopularVote: true});
 	}
-
-/*
-	LogoManager.loadButtons();
-	LogoManager.loadFlags();
-*/
 
 	Account.verifyState();
 }
