@@ -1,5 +1,5 @@
-var indexCache = 'i1.1.30';
-var staticCache = 's1.1.30';
+var indexCache = 'i1.1.32';
+var staticCache = 's1.1.32';
 
 var _indexCache = [
 	'./',
@@ -155,17 +155,17 @@ var _staticCache = [
 	'./app/data/senatorial_current',
 	'./app/data/senatorial_open',
 
-	'./app/res/fonts/roboto/roboto-v20-latin-regular.svg',
 	'./app/res/fonts/roboto/roboto-v20-latin-regular.woff',
-	'./app/res/fonts/roboto/roboto-v20-latin-regular.woff2',
 
 	'./app/res/fontawesome/js/all.min.js',
 
-	'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js',
-	'https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0',
+	'https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js',
+	'https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/src/browserify.min.js',
+	'https://cdn.jsdelivr.net/npm/chart.js@2.9.2/dist/Chart.min.js',
+	'https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0/dist/chartjs-plugin-datalabels.min.js',
 	'https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js',
-	'https://code.jquery.com/jquery-3.4.1.min.js',
-	'https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js',
+	'https://ajax.googleapis.com/ajax/libs/hammerjs/2.0.8/hammer.min.js',
+	'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js',
 
 	'./app/manifest.json',
 	'./manifest.json'
