@@ -59,6 +59,8 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 <noscript><img src="https://certify.alexametrics.com/atrk.gif?account=rBAMt1Y1Mn20Io" style="display:none" height="1" width="1" alt="" /></noscript>
 <!-- End Alexa Certify Javascript --> 
 
+	<link rel="prerender" href="https://www.yapms.com/app/?t=USA_2020_presidential">
+
 </head>
 
 <body>
