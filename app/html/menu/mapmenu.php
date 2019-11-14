@@ -21,6 +21,10 @@
 <a class="selectmenu-split">
 	<div class="selectmenu-split-text">Other Countries</div>
 </a>
+<a class="selectmenu-button" href="./?t=Argentina_chamber_of_deputies">
+	<img class="flag-arg">
+	<div class="selectmenu-button-text">Argentina</div>
+</a>
 <a class="selectmenu-button" onclick='displayMenu("mapmenu-australia")'>
 	<img class="flag-aus">
 	<div class="selectmenu-button-text">Australia</div>

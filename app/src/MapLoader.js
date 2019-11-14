@@ -159,6 +159,10 @@ class MapLoader {
 				PresetLoader.loadPreset('none');
 				MapLoader.loadPresetMap('can/' + id);
 				break;
+			case "Argentina_chamber_of_deputies":
+				PresetLoader.loadPreset('classic');
+				MapLoader.loadMap("./res/arg/argentina_provinces_buenos.svg", 16, 0.75, "argentina_chamber_of_deputies", "proportional", "open", {updateText: false});
+				break;
 			case "India_2019_lok_sabha":
 				PresetLoader.loadPreset('none');
 				MapLoader.loadPresetMap('ind/' + id);
@@ -286,6 +290,10 @@ class MapLoader {
 			case "UnitedKingdom_historic_counties":
 				PresetLoader.loadPreset('uk')
 				MapLoader.loadMap("./res/ukd/unitedkingdom_historic_counties.svg", 16, 0.4, "congressional", "congressional", "open", {updateText: false});
+				break;
+			case "Ukraine":
+				PresetLoader.loadPreset('uk')
+				MapLoader.loadMap("./res/ukr/ukraine.svg", 16, 0.1, "congressional", "congressional", "open", {updateText: false});
 				break;
 			case "Ireland_dail_eireann":
 				PresetLoader.loadPreset('ireland')

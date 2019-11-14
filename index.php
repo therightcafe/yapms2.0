@@ -2,8 +2,8 @@
 <html class="noSelect" lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="description" content="United States Presidential, Senate, House, Governors and Primary interactive election maps. United Kingdom, Canada, Germany election maps.">
-	<meta name="keywords" content="Map,Election,Political,Interactive,Simulator,Electoral,270,2020,Forecast,Historical,270towin,Voting,Vote,FiveThirtyEight">
+	<meta name="description" content="Create and share interactive political maps for countries all across the world. Including the USA, UK, Canada, Germany and more!">
+	<meta name="keywords" content="Map,Election,Political,Interactive,Simulator,Electoral,270,2020,Forecast,Historical,Voting,Vote">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<meta property="og:title" content="YAPms - Yet Another Political Map Simulator">
@@ -684,6 +684,20 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 
 	<br>
 	<h2 class="header">Other Countries</h2>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
+		<img src="app/res/flags/arg.svg">
+		<div class="map-type-header-text">Argentina</div>
+	</div>
+	<div class="map-button-box">	
+		<a href="./app/?t=Argentina_chamber_of_deputies">
+			<div class="map-button">
+				<i class="fas fa-chevron-down"></i> Chamber of Deputies
+			</div>
+		</a>
+	</div>
+	</div>
 	
 	<div class="map-type-box">
 	<div class="map-type-header">

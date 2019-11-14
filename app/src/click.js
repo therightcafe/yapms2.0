@@ -222,9 +222,9 @@ function stateClickPaintProportional(state, id) {
 	demdel.style.display = 'flex';
 	var message = document.getElementById('demdel-message');
 	if(state.name !== 'SU') {
-		message.innerHTML = state.name + ' - ' + state.voteCount + ' delegates';
+		message.innerHTML = state.name + '<br><small>' + state.voteCount + ' delegates</small>';
 	} else {
-		message.innerHTML = 'Super - ' + state.voteCount + ' delegates';
+		message.innerHTML = 'Super<br><small>' + state.voteCount + ' delegates</small>';
 	}
 	var hidden = document.getElementById('demdel-state-name');
 	hidden.value = state.name;

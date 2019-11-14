@@ -5,7 +5,7 @@
 <?php
 	include './html/description.php';
 ?>
-	<meta name="keywords" content="Map,Election,Political,Interactive,Simulator,Electoral,270,2020,USA,Presidential">
+	<meta name="keywords" content="Map,Election,Political,Interactive,Simulator,Electoral,2020,USA,Presidential">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<meta name="HandheldFriendly" content="true">
 	

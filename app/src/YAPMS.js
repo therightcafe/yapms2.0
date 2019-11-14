@@ -1662,7 +1662,8 @@ class LogoManager {
 
 		var countries = ['aus', 'usa', 'bra', 'can', 'ger', 'ind',
 			'ita', 'ire', 'ned', 'prt', 'rus', 'esp', 'tur',
-			'ukd', 'eu', 'un', 'fra', 'tat', 'che', 'zaf', 'swe'];
+			'ukd', 'eu', 'un', 'fra', 'tat', 'che', 'zaf', 'swe',
+			'arg'];
 	
 		for(var countryIndex = 0; countryIndex < countries.length; ++countryIndex) {	
 			var country = countries[countryIndex];
@@ -1948,6 +1949,10 @@ class MapLoader {
 				PresetLoader.loadPreset('none');
 				MapLoader.loadPresetMap('can/' + id);
 				break;
+			case "Argentina_chamber_of_deputies":
+				PresetLoader.loadPreset('classic');
+				MapLoader.loadMap("./res/arg/argentina_provinces_buenos.svg", 16, 0.75, "argentina_chamber_of_deputies", "proportional", "open", {updateText: false});
+				break;
 			case "India_2019_lok_sabha":
 				PresetLoader.loadPreset('none');
 				MapLoader.loadPresetMap('ind/' + id);
@@ -2075,6 +2080,10 @@ class MapLoader {
 			case "UnitedKingdom_historic_counties":
 				PresetLoader.loadPreset('uk')
 				MapLoader.loadMap("./res/ukd/unitedkingdom_historic_counties.svg", 16, 0.4, "congressional", "congressional", "open", {updateText: false});
+				break;
+			case "Ukraine":
+				PresetLoader.loadPreset('uk')
+				MapLoader.loadMap("./res/ukr/ukraine.svg", 16, 0.1, "congressional", "congressional", "open", {updateText: false});
 				break;
 			case "Ireland_dail_eireann":
 				PresetLoader.loadPreset('ireland')
@@ -4257,9 +4266,9 @@ function stateClickPaintProportional(state, id) {
 	demdel.style.display = 'flex';
 	var message = document.getElementById('demdel-message');
 	if(state.name !== 'SU') {
-		message.innerHTML = state.name + ' - ' + state.voteCount + ' delegates';
+		message.innerHTML = state.name + '<br><small>' + state.voteCount + ' delegates</small>';
 	} else {
-		message.innerHTML = 'Super - ' + state.voteCount + ' delegates';
+		message.innerHTML = 'Super<br><small>' + state.voteCount + ' delegates</small>';
 	}
 	var hidden = document.getElementById('demdel-state-name');
 	hidden.value = state.name;
@@ -4556,6 +4565,8 @@ function db_getCongress(onLoad) {
 	});
 }
 data = {
+'argentina_chamber_of_deputies': {'Buenos Aires': 70, 'Buenos Aires City': 25, 'Catamarca': 5, 'Chaco': 7, 'Chubut': 5, 'Córdoba': 18, 'Corrientes': 7, 'Entre Ríos': 9, 'Formosa': 5, 'Jujuy': 6, 'La Pampa': 5, 'La Rioja': 5, 'Mendoza': 10, 'Misiones': 7, 'Neuquén': 5, 'Río Negro': 5, 'Salta': 7, 'San Juan': 6, 'San Luis': 5, 'Santa Cruz': 5, 'Santa Fe': 19, 'Santiago del Estero': 7, 'Tierra del Fuego': 5, 'Tucumán': 9},
+
 'turkey_national_assembly': {'Adana': 15, 'Adıyaman':5, 'Afyonkarahisar':6, 'Ağrı':4, 'Aksaray':4, 'Amasya':3, 'Ankara':36, 'Antalya':16, 'Ardahan':2, 'Artvin':2, 'Aydın':8, 'Balıkesir':9, 'Bartın':2, 'Batman': 5, 'Bayburt':1, 'Bilecik':2, 'Bingöl':3, 'Bitlis':3, 'Bolu':3, 'Burdur':3, 'Bursa':20, 'Çanakkale':4, 'Çankırı':2, 'Çorum':4, 'Denizli':8, 'Diyarbakır':12, 'Düzce':3, 'Edirne':4, 'Elazığ':5, 'Erzincan':2, 'Erzurum':6, 'Eskişehir':7, 'Gaziantep':14, 'Giresun':4, 'Gümüşhane':2, 'Hakkâri':3, 'Hatay':11, 'Iğdır':2, 'Isparta':4, 'İstanbul':98, 'İzmir':28, 'Kahramanmaraş':8, 'Kars':3, 'Kastamonu':3, 'Karabük':3, 'Karaman':3, 'Kayseri':10, 'Kilis':2, 'Kırklareli':3, 'Kırıkkale':3, 'Kırşehir':2, 'Kocaeli':13, 'Konya':15, 'Kütahya':5, 'Malatya':6, 'Manisa':10, 'Mardin':6, 'Mersin':13, 'Muğla':7, 'Muş':4, 'Nevşehir':3, 'Niğde':3, 'Ordu':6, 'Osmaniye':4, 'Rize':3, 'Sakarya':7, 'Samsun':9, 'Siirt':3, 'Sinop':2, 'Sivas':5, 'Şanlıurfa':14, 'Şırnak':4, 'Tekirdağ':7, 'Tokat':5, 'Trabzon':6, 'Tunceli':2, 'Uşak':3, 'Van':8, 'Yalova':3, 'Yozgat':4, 'Zonguldak':5},
 
 'south_africa_national_assembly': {'Eastern Cape': 25, 'Western Cape': 23, 'Northern Cape': 5, 'Gauteng': 48, 'KwaZulu': 41, 'Limpopo': 19, 'Mpumalanga': 15, 'Free State': 11, 'North West Cape': 13, 'South Africa': 200},
