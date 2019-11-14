@@ -6123,7 +6123,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v1.1.55';
+var currentCache = 'v1.1.60';
 
 var states = [];
 var lands = [];
@@ -6162,8 +6162,13 @@ function share(autoCenter) {
 	
 	if(autoCenter) {
 		MapManager.centerMap();
+		setTimeout(share_afterCenter, 200);
+	} else {
+		share_afterCenter();
 	}
+}
 
+function share_afterCenter() {
 	// disable button to prevent spam
 	var button = document.getElementById('share-button');
 	if(button) {
