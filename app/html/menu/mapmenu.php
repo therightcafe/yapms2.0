@@ -41,7 +41,7 @@
 	<img class="flag-ger">
 	<div class="selectmenu-button-text">Germany</div>
 </a>
-<a class="selectmenu-button" href="./?t=India_lok_sabha">
+<a class="selectmenu-button" onclick='displayMenu("mapmenu-india")'>
 	<img class="flag-ind">
 	<div class="selectmenu-button-text">India</div>
 </a>
@@ -72,6 +72,10 @@
 <a class="selectmenu-button" href="./?t=Spain_congress_of_deputies">
 	<img class="flag-esp">
 	<div class="selectmenu-button-text">Spain</div>
+</a>
+<a class="selectmenu-button" href="./?t=Sweden_riksdag">
+	<img class="flag-swe">
+	<div class="selectmenu-button-text">Sweden</div>
 </a>
 <a class="selectmenu-button" onclick='displayMenu("mapmenu-switzerland")'>
 	<img class="flag-che">

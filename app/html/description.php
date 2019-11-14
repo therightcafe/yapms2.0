@@ -2,21 +2,21 @@
 if (isset($_GET["t"]) && !empty($_GET["t"])) {
 	if(strpos($_GET['t'], '_presidential') && !strpos($_GET['t'], '_county')) {
 		$year = substr($_GET['t'], 4, 4);
-		echo "<meta name=\"description\" content=\"United States {$year} presidential interactive election map\"><title>USA - {$year} Presidential Election</title>";
+		echo "<meta name=\"description\" content=\"United States {$year} presidential interactive election map\"><title>USA - {$year} Presidential Election Map</title>";
 		echo 
-		"<meta property=\"og:title\" content=\"YAPms - USA {$year} Presidential\">
-		<meta property=\"og:description\" content=\"Interactive USA {$year} Presidential Map\">";
+		"<meta property=\"og:title\" content=\"YAPms - USA {$year} Presidential Election Map\">
+		<meta property=\"og:description\" content=\"Interactive USA {$year} Presidential Election Map\">";
 	} else if(strpos($_GET['t'], '_democratic_primary')) {
 		$year = substr($_GET['t'], 4, 4);
-		echo "<meta name=\"description\" content=\"United States {$year} democratic primary interactive election map\"><title>USA - {$year} Democratic Primary</title>";
+		echo "<meta name=\"description\" content=\"United States {$year} democratic primary interactive election map\"><title>USA - {$year} Democratic Primary Map</title>";
 		echo 
-		"<meta property=\"og:title\" content=\"YAPms - USA {$year} Democratic Primary\">
+		"<meta property=\"og:title\" content=\"YAPms - USA {$year} Democratic Primary Map\">
 		<meta property=\"og:description\" content=\"Interactive USA {$year} Democratic Primary Map\">";
 	} else if(strpos($_GET['t'], '_republican_primary')) {
 		$year = substr($_GET['t'], 4, 4);
-		echo "<meta name=\"description\" content=\"United States {$year} republican primary interactive election map\"><title>USA - {$year} Republican Primary</title>";
+		echo "<meta name=\"description\" content=\"United States {$year} republican primary interactive election map\"><title>USA - {$year} Republican Primary Map</title>";
 		echo 
-		"<meta property=\"og:title\" content=\"YAPms - USA {$year} Republican Primary\">
+		"<meta property=\"og:title\" content=\"YAPms - USA {$year} Republican Primary Map\">
 		<meta property=\"og:description\" content=\"Interactive USA {$year} Republican Primary Map\">";
 	} else {
 	switch($_GET['t']) {
@@ -153,10 +153,10 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		<meta property="og:description" content="Interactive Canadian House of Commons Map">';
 		break;
 		case 'Canada_2019_house_of_commons':
-		echo '<meta name="description" content="Canada - 2019 House of Commons election map"><title>Canada - 2019 House of Commons Election</title>';
+		echo '<meta name="description" content="Canada - 2019 House of Commons election results map"><title>Canada - 2019 House of Commons Election Results Map</title>';
 		echo 
-		'<meta property="og:title" content="YAPms - 2019 Canada House of Commons">
-		<meta property="og:description" content="Interactive 2019 Canadian House of Commons Map">';
+		'<meta property="og:title" content="YAPms - 2019 Canada House of Commons Election Results">
+		<meta property="og:description" content="Interactive 2019 Canadian House of Commons Election Results Map">';
 		break;
 		case 'Australia_states':
 		echo '<meta name="description" content="Australia - states election map"><title>Australia - State Election</title>';
@@ -227,11 +227,23 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		'<meta property="og:title" content="YAPms - India Lok Sabha">
 		<meta property="og:description" content="Interactive Indian Lok Sabha Map">';
 		break;
+		case 'India_2019_lok_sabha':
+		echo '<meta name="description" content="India - 2019 Lok Sabha election results map"><title>India - 2019 Lok Sabha Election Results Map</title>';
+		echo 
+		'<meta property="og:title" content="YAPms - 2019 India Lok Sabha Election Results">
+		<meta property="og:description" content="Interactive 2019 Indian Lok Sabha Election Results Map">';
+		break;
 		case 'SouthAfrica_national_assembly':
 		echo '<meta name="description" content="South Africa - National Assembly election map"><title>South Africa - National Assembly Election</title>';
 		echo 
 		'<meta property="og:title" content="YAPms - South Africa National Assembly">
 		<meta property="og:description" content="Interactive South African National Assembly Map">';
+		break;
+		case 'Sweden_riksdag':
+		echo '<meta name="description" content="Sweden - Riksdag election map"><title>Sweden - Riksdag Election Map</title>';
+		echo 
+		'<meta property="og:title" content="YAPms - Sweden Riksdag Election Map">
+		<meta property="og:description" content="Interactive Sweden Riksdag Election Map">';
 		break;
 		case 'Italy_states':
 		echo '<meta name="description" content="Italy - State election map"><title>Italy - State Election</title>';

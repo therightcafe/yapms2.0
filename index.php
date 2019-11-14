@@ -790,6 +790,11 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 				<i class="fas fa-chevron-down"></i> Lok Sabha
 			</div>
 		</a>
+		<a href="./app/?t=India_2019_lok_sabha">
+			<div class="map-button">
+				<i class="fas fa-chevron-down"></i> 2019
+			</div>
+		</a>
 	</div>
 	</div>
 	
@@ -896,6 +901,20 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 		<a href="./app/?t=Spain_constituencies">
 			<div class="map-button">
 				<i class="fas fa-chevron-down"></i> Congress of Deputies
+			</div>
+		</a>
+	</div>
+	</div>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
+		<img src="app/res/flags/swe.svg">
+		<div class="map-type-header-text">Sweden</div>
+	</div>
+	<div class="map-button-box">	
+		<a href="./app/?t=Sweden_riksdag">
+			<div class="map-button">
+				<i class="fas fa-chevron-down"></i> Riksdag
 			</div>
 		</a>
 	</div>

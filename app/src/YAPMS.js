@@ -1662,7 +1662,7 @@ class LogoManager {
 
 		var countries = ['aus', 'usa', 'bra', 'can', 'ger', 'ind',
 			'ita', 'ire', 'ned', 'prt', 'rus', 'esp', 'tur',
-			'ukd', 'eu', 'un', 'fra', 'tat', 'che', 'zaf'];
+			'ukd', 'eu', 'un', 'fra', 'tat', 'che', 'zaf', 'swe'];
 	
 		for(var countryIndex = 0; countryIndex < countries.length; ++countryIndex) {	
 			var country = countries[countryIndex];
@@ -1948,6 +1948,10 @@ class MapLoader {
 				PresetLoader.loadPreset('none');
 				MapLoader.loadPresetMap('can/' + id);
 				break;
+			case "India_2019_lok_sabha":
+				PresetLoader.loadPreset('none');
+				MapLoader.loadPresetMap('ind/' + id);
+				break;
 			case "USA_Canada":
 				PresetLoader.loadPreset('classic');
 				MapLoader.loadMap("./res/usa_canada.svg", 16, 0.01, "congressional", "presidential", "open", {updateText: false});
@@ -2048,6 +2052,10 @@ class MapLoader {
 				PresetLoader.loadPreset('spain');
 				MapLoader.loadMap("./res/spain_constituencies.svg", 16, 0.25, "spain_constituencies", "proportional", "open", {updateText: false});
 				break;
+			case "Sweden_riksdag":
+				PresetLoader.loadPreset('sweden');
+				MapLoader.loadMap("./res/swe/sweden_districts.svg", 25, 0.25, "sweden_riksdag", "proportional", "open", {updateText: false});
+				break;
 			case "Turkey_national_assembly":
 				PresetLoader.loadPreset('turkey');
 				MapLoader.loadMap("./res/turkey_provinces.svg", 16, 0.5, "turkey_national_assembly", "proportional", "open", {updateText: false});
@@ -2058,7 +2066,7 @@ class MapLoader {
 				break;
 			case "SouthAfrica_national_assembly":
 				PresetLoader.loadPreset('southafrica');
-				MapLoader.loadMap("./res/zaf/south_africa_provinces.svg", 16, 0.25, "south_africa_national_assembly", "proportional", "open", {updateText: false});
+				MapLoader.loadMap("./res/zaf/south_africa_provinces.svg", 25, 0.25, "south_africa_national_assembly", "proportional", "open", {updateText: false});
 				break;
 			case "UnitedKingdom_house_of_commons":
 				PresetLoader.loadPreset('uk')
@@ -2736,6 +2744,9 @@ class PresetLoader {
 			case 'switzerland':
 				PresetLoader.loadPresetSwitzerland();
 				break;
+			case 'sweden':
+				PresetLoader.loadPresetSweden();
+				break;
 			case 'portugal':
 				PresetLoader.loadPresetPortugal();
 				break;
@@ -3358,6 +3369,39 @@ class PresetLoader {
 		CandidateManager.candidates['NCP'] = ncp;
 		CandidateManager.candidates['AITC'] = aitc;
 		CandidateManager.candidates['SP'] = sp;
+	}
+
+	static loadPresetSweden() {
+		var sap = new Candidate('SAP',
+			['#ed1231','#ed1231','#ed1231','#ed1231']);
+		var mp = new Candidate('MP',
+			['#2b912b','#2b912b','#2b912b','#2b912b']);
+		
+		var c = new Candidate('C',
+			['#216c3e','#216c3e','#216c3e','#216c3e']);
+		var l = new Candidate('L',
+			['#006ab5','#006ab5','#006ab5','#006ab5']);
+		var v = new Candidate('V',
+			['#ec121e','#ec121e','#ec121e','#ec121e']);
+		
+		var m = new Candidate('M',
+			['#019cdb','#019cdb','#019cdb','#019cdb']);
+		var sd = new Candidate('SD',
+			['#fedf09','#fedf09','#fedf09','#fedf09']);
+		var kd = new Candidate('KD',
+			['#005ea3','#005ea3','#005ea3','#005ea3']);
+		var ind = new Candidate('Ind',
+			['#999999','#999999','#999999','#999999']);
+		
+		CandidateManager.candidates['SAP'] = sap;
+		CandidateManager.candidates['MP'] = mp;
+		CandidateManager.candidates['C'] = c;
+		CandidateManager.candidates['L'] = l;
+		CandidateManager.candidates['V'] = v;
+		CandidateManager.candidates['M'] = m;
+		CandidateManager.candidates['SD'] = sd;
+		CandidateManager.candidates['KD'] = kd;
+		CandidateManager.candidates['Ind'] = ind;
 	}
 
 	static loadPresetSwitzerland() {
@@ -4207,6 +4251,7 @@ function stateClickPaintProportional(state, id) {
 		return;
 	}
 
+	LogoManager.loadButtons();
 	closeAllPopups();
 	var demdel = document.getElementById('demdel');
 	demdel.style.display = 'flex';
@@ -4528,6 +4573,8 @@ data = {
 'switzerland_national_council': {'Aargau': 16, 'Appenzell Outer Rhodes': 1, 'Appenzell Inner Rhodes': 1, 'Basel-Landschaft': 7, 'Basel-Stadt': 5, 'Bern': 24, 'Fribourg': 7, 'Geneva': 12, 'Glarus': 1, 'Graubünden': 5, 'Jura': 2, 'Lucerne': 9, 'Neuchâtel': 4, 'Nidwalden': 1, 'Obwalden': 1, 'St. Gallen': 12, 'Schaffhausen': 2, 'Schwyz': 4, 'Solothurn': 6, 'Thurgau': 6, 'Ticino': 8, 'Uri': 1, 'Vaud': 19, 'Valais': 8, 'Zurich': 35, 'Zug': 3},
 
 'switzerland_council_of_states': {'Aargau': 2, 'Appenzell Outer Rhodes': 1, 'Appenzell Inner Rhodes': 1, 'Basel-Landschaft': 1, 'Basel-Stadt': 1, 'Bern': 2, 'Fribourg': 2, 'Geneva': 2, 'Glarus': 2, 'Graubünden': 2, 'Jura': 2, 'Lucerne': 2, 'Neuchâtel': 2, 'Nidwalden': 1, 'Obwalden': 1, 'St. Gallen': 2, 'Schaffhausen': 2, 'Schwyz': 2, 'Solothurn': 2, 'Thurgau': 2, 'Ticino': 2, 'Uri': 2, 'Vaud': 2, 'Valais': 2, 'Zurich': 2, 'Zug': 2},
+
+'sweden_riksdag': {'Sweden': 39, 'Stockholms kommun': 29, 'Stockholm': 39, 'Uppsala': 11, 'Södermanland': 9, 'Östergötland': 14, 'Jönköping': 11, 'Kronoberg': 6, 'Kalmar': 8, 'Gotland': 2, 'Blekinge': 5, 'Malmö kommun': 10, 'Skåne läns västra': 9, 'Skåne läns södra': 12, 'Skåne läns norra och östra': 10, 'Värmland': 9, 'Örebro': 9, 'Västmanland': 8, 'Dalarna': 9, 'Gävleborg': 9, 'Västernorrland': 8, 'Jämtland': 4, 'Västerbotten': 9, 'Norrbotten': 8, 'Halland': 10, 'Göteborgs kommun': 17, 'Västra Götalands läns norra': 8, 'Västra Götalands läns östra': 9, 'Västra Götalands läns västra': 11, 'Västra Götalands läns södra': 7},
 
 'usa_voting_pop': {'AL': 3766477, 'AK': 554567, 'AZ': 5299579, 'AR': 2283195, 'CA': 30157154, 'CO': 4279173, 'CT': 2823158, 'DE': 747791, 'FL': 16465727, 'GA': 7798827, 'HI': 1120541, 'ID': 1245967, 'IL': 9875430, 'IN': 5057601, 'IA': 2403962, 'KS': 2192338, 'KY': 3426345, 'LA': 3567717, 'ME': 1081705, 'ME-AL': 1081705, 'ME-D1': 555860, 'ME-D2': 525845, 'MD': 4667719, 'MA': 5433677, 'MI': 7737243, 'MN': 4231619, 'MS': 2267438, 'MO': 4706137, 'MT': 814909, 'NE': 1445479, 'NE-AL': 1445479, 'NE-D1': 493216, 'NE-D2': 493516, 'NE-D3': 458747, 'NV': 2262631, 'NH': 1074207, 'NJ': 6969717, 'NM': 1590352, 'NY': 15564730, 'NC': 7848068, 'ND': 581641, 'OH': 9002201, 'OK': 2961933, 'OR': 3224738, 'PA': 10109422, 'RI': 848045, 'SC': 3863498, 'SD': 652167, 'TN': 5149399, 'TX': 20568009, 'UT': 2129444, 'VT': 506066, 'VA': 6541685, 'WA': 5658502, 'WV': 1456034, 'WI': 4491015, 'WY': 446600, 'DC': 560277},
 
@@ -6076,7 +6123,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v1.1.51';
+var currentCache = 'v1.1.55';
 
 var states = [];
 var lands = [];

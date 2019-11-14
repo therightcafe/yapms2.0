@@ -77,6 +77,9 @@ class PresetLoader {
 			case 'switzerland':
 				PresetLoader.loadPresetSwitzerland();
 				break;
+			case 'sweden':
+				PresetLoader.loadPresetSweden();
+				break;
 			case 'portugal':
 				PresetLoader.loadPresetPortugal();
 				break;
@@ -699,6 +702,39 @@ class PresetLoader {
 		CandidateManager.candidates['NCP'] = ncp;
 		CandidateManager.candidates['AITC'] = aitc;
 		CandidateManager.candidates['SP'] = sp;
+	}
+
+	static loadPresetSweden() {
+		var sap = new Candidate('SAP',
+			['#ed1231','#ed1231','#ed1231','#ed1231']);
+		var mp = new Candidate('MP',
+			['#2b912b','#2b912b','#2b912b','#2b912b']);
+		
+		var c = new Candidate('C',
+			['#216c3e','#216c3e','#216c3e','#216c3e']);
+		var l = new Candidate('L',
+			['#006ab5','#006ab5','#006ab5','#006ab5']);
+		var v = new Candidate('V',
+			['#ec121e','#ec121e','#ec121e','#ec121e']);
+		
+		var m = new Candidate('M',
+			['#019cdb','#019cdb','#019cdb','#019cdb']);
+		var sd = new Candidate('SD',
+			['#fedf09','#fedf09','#fedf09','#fedf09']);
+		var kd = new Candidate('KD',
+			['#005ea3','#005ea3','#005ea3','#005ea3']);
+		var ind = new Candidate('Ind',
+			['#999999','#999999','#999999','#999999']);
+		
+		CandidateManager.candidates['SAP'] = sap;
+		CandidateManager.candidates['MP'] = mp;
+		CandidateManager.candidates['C'] = c;
+		CandidateManager.candidates['L'] = l;
+		CandidateManager.candidates['V'] = v;
+		CandidateManager.candidates['M'] = m;
+		CandidateManager.candidates['SD'] = sd;
+		CandidateManager.candidates['KD'] = kd;
+		CandidateManager.candidates['Ind'] = ind;
 	}
 
 	static loadPresetSwitzerland() {

@@ -159,6 +159,10 @@ class MapLoader {
 				PresetLoader.loadPreset('none');
 				MapLoader.loadPresetMap('can/' + id);
 				break;
+			case "India_2019_lok_sabha":
+				PresetLoader.loadPreset('none');
+				MapLoader.loadPresetMap('ind/' + id);
+				break;
 			case "USA_Canada":
 				PresetLoader.loadPreset('classic');
 				MapLoader.loadMap("./res/usa_canada.svg", 16, 0.01, "congressional", "presidential", "open", {updateText: false});
@@ -259,6 +263,10 @@ class MapLoader {
 				PresetLoader.loadPreset('spain');
 				MapLoader.loadMap("./res/spain_constituencies.svg", 16, 0.25, "spain_constituencies", "proportional", "open", {updateText: false});
 				break;
+			case "Sweden_riksdag":
+				PresetLoader.loadPreset('sweden');
+				MapLoader.loadMap("./res/swe/sweden_districts.svg", 25, 0.25, "sweden_riksdag", "proportional", "open", {updateText: false});
+				break;
 			case "Turkey_national_assembly":
 				PresetLoader.loadPreset('turkey');
 				MapLoader.loadMap("./res/turkey_provinces.svg", 16, 0.5, "turkey_national_assembly", "proportional", "open", {updateText: false});
@@ -269,7 +277,7 @@ class MapLoader {
 				break;
 			case "SouthAfrica_national_assembly":
 				PresetLoader.loadPreset('southafrica');
-				MapLoader.loadMap("./res/zaf/south_africa_provinces.svg", 16, 0.25, "south_africa_national_assembly", "proportional", "open", {updateText: false});
+				MapLoader.loadMap("./res/zaf/south_africa_provinces.svg", 25, 0.25, "south_africa_national_assembly", "proportional", "open", {updateText: false});
 				break;
 			case "UnitedKingdom_house_of_commons":
 				PresetLoader.loadPreset('uk')
