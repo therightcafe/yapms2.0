@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: yapms.com
+Token: 79385628979a945b0f21e379415031bfb9473d3274b70ff17dad66a2b5a80a41 
