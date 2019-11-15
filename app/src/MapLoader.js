@@ -160,7 +160,7 @@ class MapLoader {
 				MapLoader.loadPresetMap('can/' + id);
 				break;
 			case "Argentina_chamber_of_deputies":
-				PresetLoader.loadPreset('classic');
+				PresetLoader.loadPreset('argentina');
 				MapLoader.loadMap("./res/arg/argentina_provinces_buenos.svg", 16, 0.75, "argentina_chamber_of_deputies", "proportional", "open", {updateText: false});
 				break;
 			case "India_2019_lok_sabha":

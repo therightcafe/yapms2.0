@@ -29,6 +29,9 @@ class PresetLoader {
 			case 'democratic primary':
 				PresetLoader.loadPresetDemocraticPrimary();
 				break;
+			case 'argentina':
+				PresetLoader.loadPresetArgentina();
+				break;
 			case 'france':
 				PresetLoader.loadPresetFrance();
 				break;
@@ -288,6 +291,44 @@ class PresetLoader {
 		LegendManager.toggleLegendLeans()
 	}
 
+	static loadPresetArgentina() {
+		var lc = new Candidate("Let's Change",
+			['#ccae0b','#ccae0b','#ccae0b','#ccae0b']);
+		var fpv = new Candidate('FPV',
+			['#75aadb','#75aadb','#75aadb','#75aadb']);
+		var federal = new Candidate('Federal',
+			['#19bc9d','#19bc9d','#19bc9d','#19bc9d']);
+		var una = new Candidate('UNA',
+			['#0a1172','#0a1172','#0a1172','#0a1172']);
+		var rxa = new Candidate('RxA',
+			['#00677f','#00677f','#00677f','#00677f']);
+		var fcps = new Candidate('FCpS',
+			['#ff0080','#ff0080','#ff0080','#ff0080']);
+		var unity = new Candidate('Unity',
+			['#00774f','#00774f','#00774f','#00774f',]);
+		var evolution = new Candidate('Evolution',
+			['#ff0000','#ff0000','#ff0000','#ff0000']);
+		var fit = new Candidate('FIT',
+			['#800000','#800000','#800000','#800000']);
+		var catamarca = new Candidate('Catamarca',
+			['#ff69b4','#ff69b4','#ff69b4','#ff69b4']);
+		var other = new Candidate('Other',
+			['#999999','#999999','#999999','#999999']);
+		
+		CandidateManager.candidates["Let's Change"] = lc;
+		CandidateManager.candidates["FPV"] = fpv;
+		CandidateManager.candidates["Federal"] = federal;
+		CandidateManager.candidates["UNA"] = una;
+		CandidateManager.candidates["RxA"] = rxa;
+		CandidateManager.candidates["FCpS"] = fcps;
+		CandidateManager.candidates["Unity"] = unity;
+		CandidateManager.candidates["Evolution"] = evolution;
+		CandidateManager.candidates["FIT"] = fit;
+		CandidateManager.candidates["Catamarca"] = catamarca;
+		CandidateManager.candidates["Other"] = other;
+		LegendManager.toggleLegendLeans()
+	}
+
 	// Australian parties
 	static loadPresetAustralia() {
 		var lib = new Candidate('LIB', 
@@ -393,6 +434,7 @@ class PresetLoader {
 		CandidateManager.candidates['TIP'] = tip;
 		CandidateManager.candidates['DP'] = dp;
 		CandidateManager.candidates['Ind'] = ind;
+		LegendManager.toggleLegendLeans()
 	}
 	
 	// Trinidad and Tobago Parties
@@ -410,6 +452,7 @@ class PresetLoader {
 		CandidateManager.candidates['UNC'] = unc;
 		CandidateManager.candidates['COP'] = cop;
 		CandidateManager.candidates['PDP'] = pdp;
+		LegendManager.toggleLegendLeans()
 	}
 
 	// Dutch Parties
@@ -524,6 +567,7 @@ class PresetLoader {
 
 		CandidateManager.candidates['PROS'] = pros;
 		CandidateManager.candidates['AVANTE'] = avante;
+		LegendManager.toggleLegendLeans()
 	}
 
 	static loadPresetIreland() {
@@ -555,6 +599,7 @@ class PresetLoader {
 		CandidateManager.candidates['SD'] = socialdemocrats;
 		CandidateManager.candidates['GP'] = green;
 		CandidateManager.candidates['Ind'] = indy;
+		LegendManager.toggleLegendLeans()
 	}
 
 	static loadPresetRussia() {
@@ -583,6 +628,7 @@ class PresetLoader {
 		CandidateManager.candidates['Rodina'] = rodina;
 		CandidateManager.candidates['Yabloko'] = yabloko;
 		CandidateManager.candidates['Ind'] = indy;
+		LegendManager.toggleLegendLeans()
 	}
 
 	static loadPresetPortugal() {
@@ -611,6 +657,7 @@ class PresetLoader {
 		CandidateManager.candidates['CDS-PP'] = cdspp;
 		CandidateManager.candidates['PAN'] = pan;
 		CandidateManager.candidates['Ind'] = indy;
+		LegendManager.toggleLegendLeans()
 	}
 
 	static loadPresetSouthAfrica() {
@@ -657,6 +704,7 @@ class PresetLoader {
 		CandidateManager.candidates['COPE'] = cope;
 		CandidateManager.candidates['PAC'] = pac;
 		CandidateManager.candidates['ALJ'] = alj;
+		LegendManager.toggleLegendLeans()
 	}
 
 	static loadPresetIndia() {
@@ -702,6 +750,7 @@ class PresetLoader {
 		CandidateManager.candidates['NCP'] = ncp;
 		CandidateManager.candidates['AITC'] = aitc;
 		CandidateManager.candidates['SP'] = sp;
+		LegendManager.toggleLegendLeans()
 	}
 
 	static loadPresetSweden() {
@@ -735,6 +784,7 @@ class PresetLoader {
 		CandidateManager.candidates['SD'] = sd;
 		CandidateManager.candidates['KD'] = kd;
 		CandidateManager.candidates['Ind'] = ind;
+		LegendManager.toggleLegendLeans()
 	}
 
 	static loadPresetSwitzerland() {
@@ -775,6 +825,7 @@ class PresetLoader {
 		CandidateManager.candidates['SolS'] = sols;
 		CandidateManager.candidates['EDU/UDF'] = eduudf;
 		CandidateManager.candidates['LdT'] = ldt;
+		LegendManager.toggleLegendLeans()
 	}
 }
 
