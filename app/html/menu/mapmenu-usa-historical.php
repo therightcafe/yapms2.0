@@ -13,10 +13,10 @@
 	<i class="fas fa-chevron-down"></i>
 	<div class="selectmenu-split-text">Congressional</div>
 </a>
-<a class="selectmenu-button" href="./?t=USA_congressional">
+<a class="selectmenu-button" href="./?t=USA_2020_house">
 	<div class="selectmenu-button-text">2018-2020</div>
 </a>
-<a class="selectmenu-button" href="./?t=USA_congressional_2008">
+<a class="selectmenu-button" href="./?t=USA_2008_house">
 	<div class="selectmenu-button-text">2006-2010</div>
 </a>
 <a class="selectmenu-split">

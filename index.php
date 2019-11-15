@@ -127,18 +127,18 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 			</div>
 		</a>
 		
-		<a href="./app/?t=USA_2020_gubernatorial">
+		<a href="./app/?t=USA_2020_governors">
 			<div class="map-button">
 				<i class="fas fa-square"></i> Governors
 			</div>
 		</a>
 		<br>
-		<a href="./app/?t=USA_2020_senatorial">
+		<a href="./app/?t=USA_2020_senate">
 			<div class="map-button">
 				<i class="fas fa-chevron-up"></i> Senate
 			</div>
 		</a>
-		<a href="./app/?t=USA_congressional">
+		<a href="./app/?t=USA_2020_house">
 			<div class="map-button">
 				<i class="fas fa-chevron-down"></i> House
 			</div>
@@ -668,13 +668,13 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 		<div class="map-type-header-text">Blank Maps</div>
 	</div>
 	<div class="map-button-box">	
-		<a href="./app/?t=USA_congressional">
+		<a href="./app/?t=USA_2020_house">
 			<div class="map-button">
 				<i class="fas fa-chevron-down"></i> Congress 2011-2020
 			</div>
 		</a>
 		<br>
-		<a href="./app/?t=USA_congressional_2008">
+		<a href="./app/?t=USA_2008_house">
 			<div class="map-button">
 				<i class="fas fa-chevron-down"></i> Congress 2006-2010
 			</div>

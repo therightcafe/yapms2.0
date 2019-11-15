@@ -32,6 +32,12 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		'<meta property="og:title" content="YAPms - USA 2020 Governors Map">
 		<meta property="og:description" content="Interactive USA 2020 Governors Election Map">';
 		break;
+		case 'USA_2020_house':
+		echo '<meta name="description" content="United States interactive 2020 interactive house election map"><title>USA - 2020 House Election Map</title>';
+		echo 
+		'<meta property="og:title" content="YAPms - USA 2020 House">
+		<meta property="og:description" content="Interactive USA 2020 House Map">';
+		break;
 		case 'USA_takeall':
 		echo '<meta name="description" content="United States interactive take all 2020 presidential election map"><title>USA - 2020 Take All Election Map</title>';
 		echo 
@@ -97,12 +103,6 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		echo 
 		'<meta property="og:title" content="YAPms - USA Current Senate Map">
 		<meta property="og:description" content="Interactive USA Current Senate Map">';
-		break;
-		case 'USA_2020_house':
-		echo '<meta name="description" content="United States interactive 2020 interactive house election map"><title>USA - 2020 House Election Map</title>';
-		echo 
-		'<meta property="og:title" content="YAPms - USA 2020 House">
-		<meta property="og:description" content="Interactive USA 2020 House Map">';
 		break;
 		case 'USA_current_house':
 		echo '<meta name="description" content="United States interactive current house map"><title>USA - Current House Map</title>';
