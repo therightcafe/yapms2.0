@@ -1,5 +1,5 @@
-var indexCache = 'i1.1.71';
-var staticCache = 's1.1.71';
+var indexCache = 'i1.1.72';
+var staticCache = 's1.1.72';
 
 var _indexCache = [
 	'./',
@@ -133,6 +133,7 @@ var _staticCache = [
 	'./app/res/presets/ind/India_2019_lok_sabha',
 	'./app/res/presets/UnitedKingdom_current_parliament',
 
+	'./app/res/flags/arg.svg',
 	'./app/res/flags/aus.svg',
 	'./app/res/flags/bra.svg',
 	'./app/res/flags/can.svg',
