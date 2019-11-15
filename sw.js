@@ -1,5 +1,5 @@
-var indexCache = 'i1.1.61';
-var staticCache = 's1.1.60';
+var indexCache = 'i1.1.62';
+var staticCache = 's1.1.62';
 
 var _indexCache = [
 	'./',
@@ -43,6 +43,7 @@ var _indexCache = [
 	'./app/?t=USA_2020_house_cook',
 	'./app/?t=USA_trump_impeachment_support',
 
+	'./app/?t=Argentina_chamber_of_deputies',
 	'./app/?t=Australia_states',
 	'./app/?t=Australia_house_of_representatives',
 	'./app/?t=Brazil_chamber_of_deputies',
@@ -89,6 +90,7 @@ var _staticCache = [
 	'./app/res/usa_senate.svg',
 	'./app/res/usa_county.svg',
 
+	'./app/res/arg/argentina_provinces_buenos.svg',
 	'./app/res/australia_constituencies.svg',
 	'./app/res/australia.svg',
 	'./app/res/brazil_states.svg',

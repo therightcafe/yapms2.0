@@ -20,19 +20,29 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		<meta property=\"og:description\" content=\"Interactive USA {$year} Republican Primary Map\">";
 	} else {
 	switch($_GET['t']) {
-		case 'USA_2020_senatorial':
 		case 'USA_2020_senate':
 		echo '<meta name="description" content="United States interactive 2020 senate election map"><title>USA - 2020 Senate Election Map</title>';
 		echo 
 		'<meta property="og:title" content="YAPms - USA 2020 Senate">
 		<meta property="og:description" content="Interactive USA 2020 Senate Map">';
 		break;
-		case 'USA_2020_gubernatorial':
 		case 'USA_2020_governors':
 		echo '<meta name="description" content="United States interactive 2020 governors election map"><title>USA - 2020 Governors Election Map</title>';
 		echo 
 		'<meta property="og:title" content="YAPms - USA 2020 Governors Map">
 		<meta property="og:description" content="Interactive USA 2020 Governors Election Map">';
+		break;
+		case 'USA_takeall':
+		echo '<meta name="description" content="United States interactive take all 2020 presidential election map"><title>USA - 2020 Take All Election Map</title>';
+		echo 
+		'<meta property="og:title" content="YAPms - USA 2020 Take All Presidential Election Map">
+		<meta property="og:description" content="Interactive USA 2020 Take All Presidential Election Map">';
+		break;
+		case 'USA_proportional':
+		echo '<meta name="description" content="United States interactive proportional 2020 presidential election map"><title>USA - 2020 Proportional Election Map</title>';
+		echo 
+		'<meta property="og:title" content="YAPms - USA 2020 Proportional Presidential Election Map">
+		<meta property="og:description" content="Interactive USA 2020 Proportional Presidential Election Map">';
 		break;
 		case 'USA_trump_impeachment_support':
 		echo '<meta name="description" content="Trump Impeachment Support Map"><title>USA - Trump Impeachment Support Map</title>';
@@ -88,7 +98,6 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		'<meta property="og:title" content="YAPms - USA Current Senate Map">
 		<meta property="og:description" content="Interactive USA Current Senate Map">';
 		break;
-		case 'USA_congressional':
 		case 'USA_2020_house':
 		echo '<meta name="description" content="United States interactive 2020 interactive house election map"><title>USA - 2020 House Election Map</title>';
 		echo 
@@ -119,7 +128,7 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		'<meta property="og:title" content="YAPms - USA 2024 Electoral College Projection">
 		<meta property="og:description" content="Interactive USA 2024 Electoral College Projection Map">';
 		break;
-		case 'Germany_constituencies':
+
 		case 'Germany_bundestag':
 		echo '<meta name="description" content="Germany - Interactive Bundestag election map"><title>Germany - Bundestag Election Map</title>';
 		echo 
@@ -132,6 +141,7 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		'<meta property="og:title" content="YAPms - Germany States">
 		<meta property="og:description" content="Interactive German States Map">';
 		break;
+
 		case 'Canada_provinces':
 		echo '<meta name="description" content="Canada - Interactive province election map"><title>Canada - Province Election Map</title>';
 		echo 
@@ -151,12 +161,14 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		'<meta property="og:title" content="YAPms - 2019 Canada House of Commons Election Results">
 		<meta property="og:description" content="Interactive 2019 Canadian House of Commons Election Results Map">';
 		break;
+
 		case 'Argentina_chamber_of_deputies':
 		echo '<meta name="description" content="Argentina - Interactive Chamber of Deputies election map"><title>Argentina - Chamber of Deputies Election Map</title>';
 		echo 
 		'<meta property="og:title" content="YAPms - Argentina Chamber of Deputies Election Map">
 		<meta property="og:description" content="Interactive Argentine Chamber of Deputies Election Map">';
 		break;
+
 		case 'Australia_states':
 		echo '<meta name="description" content="Australia - Interactive state election map"><title>Australia - State Election Map</title>';
 		echo 
@@ -170,6 +182,7 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		'<meta property="og:title" content="YAPms - Australia House of Representatives">
 		<meta property="og:description" content="Interactive Australian House of Representatives Map">';
 		break;
+
 		case 'Netherlands_provinces':
 		echo '<meta name="description" content="Netherland - Interactive provinces election map"><title>Netherlands - Province Election Map</title>';
 		echo 
@@ -182,6 +195,7 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		'<meta property="og:title" content="YAPms - Netherland Gemeenten">
 		<meta property="og:description" content="Interactive Dutch Gemeenten Map">';
 		break;
+
 		case 'Brazil_deputies':
 		case 'Brazil_chamber_of_deputies':
 		echo '<meta name="description" content="Brazil - Interactive Chamber of Deputies election map"><title>Brazil - Chamber of Deputies Election Map</title>';
@@ -195,6 +209,7 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		'<meta property="og:title" content="YAPms - Brazil Federal Senate">
 		<meta property="og:description" content="Interactive Brazilian Federal Senate Map">';
 		break;
+
 		case 'Spain_constituencies':
 		case 'Spain_congress_of_deputies':
 		echo '<meta name="description" content="Spain - Interactive Congress of Deputies election map"><title>Spain - Congress of Deputies Election Map</title>';
@@ -202,24 +217,28 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		'<meta property="og:title" content="YAPms - Spain Congress of Deputies">
 		<meta property="og:description" content="Interactive Spanish Congress of Deputies Map">';
 		break;
+
 		case 'Turkey_national_assembly':
 		echo '<meta name="description" content="Turkey - Interactive National Assembly election map"><title>Turkey - National Assembly Election Map</title>';
 		echo 
 		'<meta property="og:title" content="YAPms - Turkey National Assembly">
 		<meta property="og:description" content="Interactive Turkey National Assembly Map">';
 		break;
+
 		case 'Trinidad_Tobago_house_of_representatives':
 		echo '<meta name="description" content="Trinidad & Tobago - Interactive House of Representatives election map"><title>Trinidad & Tobago - House of Representatives Election Map</title>';
 		echo 
 		'<meta property="og:title" content="YAPms - Trinidad Tobago House of Representatives">
 		<meta property="og:description" content="Interactive Trinidad Tobago House of Representatives Map">';
 		break;
+
 		case 'Portugal_assembly_of_the_republic':
 		echo '<meta name="description" content="Portugal - Interactive Assembly of the Republic election map"><title>Portugal - Assembly of the Republic Election Map</title>';
 		echo 
 		'<meta property="og:title" content="YAPms - Portugal Assembly of the Republic">
 		<meta property="og:description" content="Interactive Portuguese Assembly of the Republic Map">';
 		break;
+
 		case 'India_lok_sabha':
 		echo '<meta name="description" content="India - Interactive Lok Sabha election map"><title>India - Lok Sabha Election Map</title>';
 		echo 
@@ -232,12 +251,14 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		'<meta property="og:title" content="YAPms - 2019 India Lok Sabha Election Results">
 		<meta property="og:description" content="Interactive 2019 Indian Lok Sabha Election Results Map">';
 		break;
+
 		case 'SouthAfrica_national_assembly':
 		echo '<meta name="description" content="South Africa - Interactive National Assembly election map"><title>South Africa - National Assembly Election Map</title>';
 		echo 
 		'<meta property="og:title" content="YAPms - South Africa National Assembly">
 		<meta property="og:description" content="Interactive South African National Assembly Map">';
 		break;
+
 		case 'Sweden_riksdag':
 		echo '<meta name="description" content="Sweden - Interactive Riksdag election map"><title>Sweden - Riksdag Election Map</title>';
 		echo 
