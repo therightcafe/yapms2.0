@@ -88,9 +88,9 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
         
         <br>
 
-		<a id="installbutton">
+		<a id="installbutton" style="display: none">
 			<div class="infobox link install">
-                <i class="fas fa-home"></i> Install
+				<i class="fas fa-home"></i> Install
 			</div>
 		</a>
 
@@ -1150,7 +1150,6 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 
 	var deferredPrompt = null;
 	window.addEventListener('beforeinstallprompt', (e) => {
-		e.preventDefault();
 		deferredPrompt = e;
 		var install = document.getElementById('installbutton');
 		if(install) {
