@@ -88,9 +88,9 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
         
         <br>
 
-		<a href="https://play.google.com/store/apps/details?id=com.fishstudio.yapms&hl=en_GB">
-			<div class="infobox link android">
-                <i class="fab fa-android"></i> Android
+		<a id="installbutton">
+			<div class="infobox link install">
+                <i class="fas fa-home"></i> Install
 			</div>
 		</a>
 
@@ -1147,6 +1147,22 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 	} else {
 		console.log('No service worker detected');
 	}
+
+	var deferredPrompt = null;
+	window.addEventListener('beforeinstallprompt', (e) => {
+		deferredPrompt = e;
+		var install = document.getElementById('installbutton');
+		if(install) {
+			install.style.display = '';
+			install.onclick = function() {
+				install.style.display = 'none';
+				deferredPrompt.prompt();
+				deferredPrompt.userChoice.then((result) => {
+					deferredPrompt = null;
+				});
+			}
+		}	
+	});
 	</script>
 </body>
 </html>
