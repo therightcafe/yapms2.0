@@ -1,4 +1,4 @@
-var currentCache = 'v1.1.75';
+var currentCache = 'v1.1.80';
 
 var states = [];
 var lands = [];
@@ -180,6 +180,8 @@ function setDelegates(e) {
 function setMode(set) {
 	console.log('mode ' +  mode + ' | set ' + set + 
 		' | mapType ' + MapLoader.save_type + ' | mapYear ' + MapLoader.save_year);
+
+	LogoManager.loadButtons();
 
 	var notification = document.getElementById('notification');
 	var message = notification.querySelector('#notification-message');
