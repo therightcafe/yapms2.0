@@ -6191,7 +6191,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v1.2.1';
+var currentCache = 'v1.2.2';
 
 var states = [];
 var lands = [];
@@ -6617,6 +6617,10 @@ function start() {
 	}
 
 	Account.verifyState();
+
+	setTimeout(function() {
+		LogoManager.loadButtons();
+	}, 2500);
 }
 
 start();
