@@ -1949,15 +1949,19 @@ class MapLoader {
 				PresetLoader.loadPreset('none');
 				MapLoader.loadPresetMap('can/' + id);
 				break;
-			case "Michigan_2020_house":
+			case "Arkansas_2020_state_house":
+				PresetLoader.loadPreset("classic");
+				MapLoader.loadMap("./res/usa/arkansas/2020_house.svg", 16, 150, "congressional", "congressional", "open", {updateText: false});
+				break;
+			case "Michigan_2020_state_house":
 				PresetLoader.loadPreset("classic");
 				MapLoader.loadMap("./res/usa/michigan/2020_house.svg", 16, 0.2, "congressional", "congressional", "open", {updateText: false});
 				break;
-			case "Pennsylvania_2020_house":
+			case "Pennsylvania_2020_state_house":
 				PresetLoader.loadPreset("classic");
 				MapLoader.loadMap("./res/usa/pennsylvania/2020_house.svg", 16, 0.25, "congressional", "congressional", "open", {updateText: false});
 				break;
-			case "Texas_2020_house":
+			case "Texas_2020_state_house":
 				PresetLoader.loadPreset("classic");
 				MapLoader.loadMap("./res/usa/texas/2020_house.svg", 16, 0.5, "congressional", "congressional", "open", {updateText: false});
 				break;
@@ -6191,7 +6195,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v1.2.2';
+var currentCache = 'v1.2.5';
 
 var states = [];
 var lands = [];

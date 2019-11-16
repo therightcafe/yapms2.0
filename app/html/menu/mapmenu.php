@@ -14,6 +14,10 @@
 	<img class="flag-usa">
 	<div class="selectmenu-button-text">USA</div>
 </a>
+<a class="selectmenu-button" onclick='displayMenu("mapmenu-usa-state")'>
+	<img class="flag-usa">
+	<div class="selectmenu-button-text">State Legislatures</div>
+</a>
 <a class="selectmenu-button" onclick='displayMenu("mapmenu-usa-historical")'>
 	<img class="flag-usa">
 	<div class="selectmenu-button-text">USA Historical</div>

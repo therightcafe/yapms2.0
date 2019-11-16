@@ -258,6 +258,35 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 	<div class="map-type-box">	
 	<div class="map-type-header">
 		<img src="app/res/flags/usa.svg">
+		<div class="map-type-header-text">State Legislatures - House</div>
+	</div>
+	<div class="map-button-box">	
+		<a href="./app/?t=Arkansas_2020_state_house">
+			<div class="map-button">
+				Arkansas
+			</div>
+		</a>
+		<a href="./app/?t=Michigan_2020_state_house">
+			<div class="map-button">
+				Michigan
+			</div>
+		</a>
+		<a href="./app/?t=Pennsylvania_2020_state_house">
+			<div class="map-button">
+				Pennsylvania
+			</div>
+		</a>
+		<a href="./app/?t=Texas_2020_state_house">
+			<div class="map-button">
+				Texas
+			</div>
+		</a>
+	</div>
+	</div>
+	
+	<div class="map-type-box">	
+	<div class="map-type-header">
+		<img src="app/res/flags/usa.svg">
 		<div class="map-type-header-text">Other Presidential</div>
 	</div>
 	<div class="map-button-box">	
