@@ -1949,17 +1949,17 @@ class MapLoader {
 				PresetLoader.loadPreset('none');
 				MapLoader.loadPresetMap('can/' + id);
 				break;
-			case "Michigan_house":
+			case "Michigan_2020_house":
 				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/michigan/house.svg", 16, 0.2, "congressional", "congressional", "open", {updateText: false});
+				MapLoader.loadMap("./res/usa/michigan/2020_house.svg", 16, 0.2, "congressional", "congressional", "open", {updateText: false});
 				break;
-			case "Pennsylvania_house":
+			case "Pennsylvania_2020_house":
 				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/pennsylvania/house.svg", 16, 0.25, "congressional", "congressional", "open", {updateText: false});
+				MapLoader.loadMap("./res/usa/pennsylvania/2020_house.svg", 16, 0.25, "congressional", "congressional", "open", {updateText: false});
 				break;
-			case "Texas":
+			case "Texas_2020_house":
 				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/texas/house.svg", 16, 0.25, "congressional", "congressional", "open", {updateText: false});
+				MapLoader.loadMap("./res/usa/texas/2020_house.svg", 16, 0.5, "congressional", "congressional", "open", {updateText: false});
 				break;
 			case "Argentina_chamber_of_deputies":
 				PresetLoader.loadPreset('argentina');
@@ -6191,7 +6191,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v1.2.0';
+var currentCache = 'v1.2.1';
 
 var states = [];
 var lands = [];

@@ -90,7 +90,7 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 
 		<a id="installbutton" style="display: none">
 			<div class="infobox link install">
-				<i class="fas fa-home"></i> Install
+				<i class="fas fa-home"></i> Install App
 			</div>
 		</a>
 
@@ -1142,7 +1142,7 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 		.then(function(a) {
 			console.log('SW: registered');
 		}, function(err) {
-			console.log('SW: register error... ', err);
+			console.log('SW: register error ', err);
 		});
 	} else {
 		console.log('No service worker detected');
