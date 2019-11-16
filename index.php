@@ -1153,7 +1153,8 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 		deferredPrompt = e;
 		var install = document.getElementById('installbutton');
 		if(install) {
-			install.style.display = '';
+			console.log('Display Install Button');
+			install.style.display = 'inline';
 			install.onclick = function() {
 				install.style.display = 'none';
 				deferredPrompt.prompt();
