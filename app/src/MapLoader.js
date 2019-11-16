@@ -159,6 +159,18 @@ class MapLoader {
 				PresetLoader.loadPreset('none');
 				MapLoader.loadPresetMap('can/' + id);
 				break;
+			case "Michigan_house":
+				PresetLoader.loadPreset("classic");
+				MapLoader.loadMap("./res/usa/michigan/house.svg", 16, 0.2, "congressional", "congressional", "open", {updateText: false});
+				break;
+			case "Pennsylvania_house":
+				PresetLoader.loadPreset("classic");
+				MapLoader.loadMap("./res/usa/pennsylvania/house.svg", 16, 0.25, "congressional", "congressional", "open", {updateText: false});
+				break;
+			case "Texas":
+				PresetLoader.loadPreset("classic");
+				MapLoader.loadMap("./res/usa/texas/house.svg", 16, 0.25, "congressional", "congressional", "open", {updateText: false});
+				break;
 			case "Argentina_chamber_of_deputies":
 				PresetLoader.loadPreset('argentina');
 				MapLoader.loadMap("./res/arg/argentina_provinces_buenos.svg", 16, 0.75, "argentina_chamber_of_deputies", "proportional", "open", {updateText: false});

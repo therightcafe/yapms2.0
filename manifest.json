@@ -36,7 +36,7 @@
 	],
 	"start_url": ".",
 	"background_color": "#f9eacb",
-	"display": "fullscreen",
+	"display": "standalone",
 	"scope": ".",
 	"theme_color": "#baac8f"
 }
