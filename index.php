@@ -1164,6 +1164,16 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 			}
 		}	
 	});
+
+	window.addEventListener('appinstalled', (evt) => {
+		if(gtag) {
+			gtag('event', 'install', {
+				'event_category': 'install',
+				'event_label': 'User installed to homescreen',
+				'non_interaction': false
+			});
+		}
+	});
 	</script>
 </body>
 </html>
