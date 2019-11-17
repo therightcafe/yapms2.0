@@ -87,23 +87,21 @@
 	<div class="selectmenu-split-text">Other</div>
 </a>
 <a class="selectmenu-button" href="./?t=USA_trump_impeachment_support">
-	<i class="fas fa-user"></i>
 	<div class="selectmenu-button-text">Impeachment Support</div>
 </a>
 <a class="selectmenu-button" href="./?t=USA_2024_projection">
-	<i class="far fa-user"></i>
-	<div class="selectmenu-button-text">2024 Estimates</div>
+	<div class="selectmenu-button-text">2024</div>
+</a>
+<a class="selectmenu-button" href="./?t=USA_presidential_territories">
+	<div class="selectmenu-button-text">Territories</div>
 </a>
 <a class="selectmenu-button" href="./?t=USA_proportional">
-	<i class="far fa-user-circle"></i>
 	<div class="selectmenu-button-text">Proportional</div>
 </a>
 <a class="selectmenu-button" href="./?t=USA_takeall">
-	<i class="fas fa-user"></i>
 	<div class="selectmenu-button-text">Take All</div>
 </a>
 <a class="selectmenu-button" href="./?t=USA_split_maine">
-	<i class="fas fa-user"></i>
 	<div class="selectmenu-button-text">Split Maine</div>
 </a>
 </div>

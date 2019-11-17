@@ -292,23 +292,27 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 	<div class="map-button-box">	
 		<a href="./app/?t=USA_takeall">
 			<div class="map-button">
-				<i class="fas fa-user"></i> Presidential Take All
+				Take All
+			</div>
+		</a>
+		<a href="./app/?t=USA_presidential_territories">
+			<div class="map-button">
+				Territories
 			</div>
 		</a>
 		<a href="./app/?t=USA_proportional">
 			<div class="map-button">
-				<i class="fas fa-user"></i>  Presidential Proportional
+				Proportional
 			</div>
 		</a>
-		<br>
 		<a href="./app/?t=USA_2024_projection">
 			<div class="map-button">
-				<i class="fas fa-user"></i> 2024 Estimates
+				2024
 			</div>
 		</a>
 		<a href="./app/?t=USA_split_maine">
 			<div class="map-button">
-				<i class="fas fa-user"></i> Presidential (Split Maine)
+				Split Maine
 			</div>
 		</a>
 	</div>
@@ -322,7 +326,7 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 	<div class="map-button-box">	
 		<a href="./app/?t=USA_trump_impeachment_support">
 			<div class="map-button">
-				<i class="fas fa-user"></i> Impeachment Support<br>
+				Impeachment Support<br>
 				<small>11/5/19</small>
 			</div>
 		</a>

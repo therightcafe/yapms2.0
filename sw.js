@@ -1,5 +1,5 @@
-var indexCache = 'i1.2.5';
-var staticCache = 's1.2.5';
+var indexCache = 'i1.2.6';
+var staticCache = 's1.2.6';
 
 var _indexCache = [
 	'./',
@@ -51,12 +51,12 @@ var _indexCache = [
 	'./app/?t=Canada_provinces',
 	'./app/?t=Canada_house_of_commons',
 	'./app/?t=Canada_2019_house_of_commons',
-	'./app/?t=France_national_assembly',
+	//'./app/?t=France_national_assembly',
 	'./app/?t=Germany_states',
 	'./app/?t=Germany_bundestag',
 	'./app/?t=India_lok_sabha',
 	'./app/?t=India_2019_lok_sabha',
-	'./app/?t=Italy_states',
+	//'./app/?t=Italy_states',
 	'./app/?t=Ireland_dail_eireann',
 	'./app/?t=Netherlands_provinces',
 	'./app/?t=Netherlands_gemeenten',
@@ -96,10 +96,10 @@ var _staticCache = [
 	'./app/res/brazil_states.svg',
 	'./app/res/canada_states.svg',
 	'./app/res/canada_constituencies.svg',
-	'./app/res/france_constituencies.svg',
+	//'./app/res/france_constituencies.svg',
 	'./app/res/germany.svg',
 	'./app/res/germany_constituencies.svg',
-	'./app/res/italy.svg',
+	//'./app/res/italy.svg',
 	'./app/res/ireland_constituencies.svg',
 	'./app/res/netherlands_gemeenten.svg',
 	'./app/res/netherlands_provinces.svg',
