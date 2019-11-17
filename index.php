@@ -86,7 +86,18 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 			</p>
 		</div>
         
-        <br>
+		<br>
+
+		<div id="warning" class="infobox">
+			<p>
+				The Google Play Store App is unsupported. 
+			</p>
+			<p>
+				Please consider using the <span>"Install App"</span> or <span>"Add to Home Screen"</span> link for the best experience.
+			</p>
+		</div>
+
+		<br>
 
 		<a id="installbutton" style="display: none">
 			<div class="infobox link install">
@@ -1219,6 +1230,13 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 			});
 		}
 	});
+
+	if(window.matchMedia('(display-mode: standalone)').matches) {
+		var warning = document.getElementById('warning');
+		if(warning) {
+			warning.style.display = 'inline-block';
+		}
+	}
 	</script>
 </body>
 </html>

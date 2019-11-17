@@ -40,6 +40,17 @@ a {
 	margin: 5px;
 }
 
+#warning {
+	display: none;
+	font-size: 16px;
+	background: #ad343d;
+	color: white;
+}
+
+#warning span {
+	white-space: nowrap;
+}
+
 .link {
 	background: #7289da;
 	color: white;
