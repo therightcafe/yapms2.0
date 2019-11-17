@@ -12,11 +12,17 @@
 <a class="selectmenu-split">
 	<div class="selectmenu-split-text">House</div>
 </a>
+<a class="selectmenu-button" href="./?t=Alabama_2020_state_house">
+	<div class="selectmenu-button-text">Alabama</div>
+</a>
 <a class="selectmenu-button" href="./?t=Arkansas_2020_state_house">
 	<div class="selectmenu-button-text">Arkansas</div>
 </a>
 <a class="selectmenu-button" href="./?t=Michigan_2020_state_house">
 	<div class="selectmenu-button-text">Michigan</div>
+</a>
+<a class="selectmenu-button" href="./?t=Minnesota_2020_state_house">
+	<div class="selectmenu-button-text">Minnesota</div>
 </a>
 <a class="selectmenu-button" href="./?t=Pennsylvania_2020_state_house">
 	<div class="selectmenu-button-text">Pennsylvania</div>

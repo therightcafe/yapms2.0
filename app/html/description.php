@@ -22,10 +22,10 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 		$split = explode('_', $_GET['t']);
 		$state = $split[0];
 		$year = $split[1];
-		echo "<meta name=\"description\" content=\"Interactive {$state} {$year} State House Map\">
+		echo "<meta name=\"description\" content=\"Interactive {$state} {$year} State Legislature House Map\">
 			<title>USA - {$state} {$year} State House Election Map</title>
 			<meta property=\"og:title\" content=\"YAPms - USA {$state} {$year} State House Map\">
-			<meta property=\"og:description\" content=\"Interactive {$state} {$year} State House Map\">";
+			<meta property=\"og:description\" content=\"Interactive {$state} {$year} State Legislature House Map\">";
 	} else {
 	switch($_GET['t']) {
 		case 'USA_2020_senate':

@@ -159,6 +159,10 @@ class MapLoader {
 				PresetLoader.loadPreset('none');
 				MapLoader.loadPresetMap('can/' + id);
 				break;
+			case "Alabama_2020_state_house":
+				PresetLoader.loadPreset("classic");
+				MapLoader.loadMap("./res/usa/alabama/2020_house.svg", 16, 0.15, "congressional", "congressional", "open", {updateText: false});
+				break;
 			case "Arkansas_2020_state_house":
 				PresetLoader.loadPreset("classic");
 				MapLoader.loadMap("./res/usa/arkansas/2020_house.svg", 16, 150, "congressional", "congressional", "open", {updateText: false});
@@ -166,6 +170,10 @@ class MapLoader {
 			case "Michigan_2020_state_house":
 				PresetLoader.loadPreset("classic");
 				MapLoader.loadMap("./res/usa/michigan/2020_house.svg", 16, 0.2, "congressional", "congressional", "open", {updateText: false});
+				break;
+			case "Minnesota_2020_state_house":
+				PresetLoader.loadPreset("classic");
+				MapLoader.loadMap("./res/usa/minnesota/2020_house.svg", 16, 0.5, "congressional", "congressional", "open", {updateText: false});
 				break;
 			case "Pennsylvania_2020_state_house":
 				PresetLoader.loadPreset("classic");

@@ -261,6 +261,11 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 		<div class="map-type-header-text">State Legislatures - House</div>
 	</div>
 	<div class="map-button-box">	
+		<a href="./app/?t=Alabama_2020_state_house">
+			<div class="map-button">
+				Alabama
+			</div>
+		</a>
 		<a href="./app/?t=Arkansas_2020_state_house">
 			<div class="map-button">
 				Arkansas
@@ -269,6 +274,12 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 		<a href="./app/?t=Michigan_2020_state_house">
 			<div class="map-button">
 				Michigan
+			</div>
+		</a>
+		<br>
+		<a href="./app/?t=Minnesota_2020_state_house">
+			<div class="map-button">
+				Minnesota
 			</div>
 		</a>
 		<a href="./app/?t=Pennsylvania_2020_state_house">
@@ -305,6 +316,7 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 				Proportional
 			</div>
 		</a>
+		<br>
 		<a href="./app/?t=USA_2024_projection">
 			<div class="map-button">
 				2024
