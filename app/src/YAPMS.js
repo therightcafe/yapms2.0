@@ -6209,7 +6209,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v1.2.14';
+var currentCache = 'v1.2.18';
 
 var states = [];
 var lands = [];

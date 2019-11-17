@@ -126,9 +126,12 @@
 	
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<script>
-		(adsbygoogle = window.adsbygoogle || []).push({
-		google_ad_client: "ca-pub-1660456925957249",
-		enable_page_level_ads: true});
+		var ref = document.referrer;
+		if(ref.includes('android-app') === false) {
+			(adsbygoogle = window.adsbygoogle || []).push({
+			google_ad_client: "ca-pub-1660456925957249",
+			enable_page_level_ads: true});
+		}
 	</script>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132710089-1"></script>
 	<script>
@@ -301,7 +304,6 @@ if($mobile === false) {
 			</h1>
 		</div>
 
-		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		<ins class="adsbygoogle adslot_sidebar"
 		     style="display:inline-block;width:336px;height:280px"
 		     data-ad-client="ca-pub-1660456925957249"
@@ -416,9 +418,8 @@ if($mobile === false) {
 ?>
 </div>
 <?php
-if($mobile) {
-echo '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- mobile-ad -->
+if($mobile && strpos($_SERVER['HTTP_REFERER'], 'android-app') === false) {
+echo '<!-- mobile-ad -->
 <ins class="adsbygoogle adslot_mobile"
 	style="display:inline-block;"
 	data-full-width-responsive="true"
@@ -428,6 +429,8 @@ echo '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygo
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>';
+} else if($mobile && strpos($_SERVER['HTTP_REFERER'], 'android-app') === true) {
+	echo '<div style="background: red">The Google Play App is depreciated. Download the new App from yapms.com</div>';
 }
 ?>
 </div>
