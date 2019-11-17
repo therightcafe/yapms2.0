@@ -74,11 +74,6 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 			<p>
 				YAPms is a tool for creating and sharing political maps
 			</p>
-
-			<p>
-				<b>Supported Browsers:</b>
-				Chrome, Firefox and Opera
-			</p>
 			
 			<p> 
 				<b>Contact Email:</b>
@@ -90,10 +85,10 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 
 		<div id="warning" class="infobox">
 			<p>
-				The Google Play Store App is unsupported. 
+				<big>Android App Users -</big> The Google Play Store App is unsupported
 			</p>
 			<p>
-				Please consider using the <span>"Install App"</span> or <span>"Add to Home Screen"</span> link for the best experience.
+				Please consider using the <span>"Install App"</span> or <span>"Add to Home Screen"</span> link for the best experience
 			</p>
 		</div>
 
