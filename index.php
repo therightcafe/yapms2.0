@@ -91,7 +91,7 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 				<big>Google Play App Users -</big> The Google Play Store App is unsupported
 			</p>
 			<p>
-				Please consider using the <span>"Install App"</span> or <span>"Add to Home Screen"</span> link for the best experience
+				Please consider using the new <span>"Install App"</span> or <span>"Add to Home Screen"</span> link on <a style="color: blue" href="https://www.yapms.com/">yapms.com</a> for the best experience
 			</p>
 		</div>
 
