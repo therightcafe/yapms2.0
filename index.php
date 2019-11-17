@@ -1226,7 +1226,8 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 		}
 	});
 
-	if(window.matchMedia('(display-mode: standalone)').matches) {
+	var ref = document.referrer;
+	if(ref.includes('android-app')) {
 		var warning = document.getElementById('warning');
 		if(warning) {
 			warning.style.display = 'inline-block';
