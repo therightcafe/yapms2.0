@@ -1234,6 +1234,13 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 		var warning = document.getElementById('warning');
 		if(warning) {
 			warning.style.display = 'inline-block';
+			if(gtag) {
+				gtag('event', 'warning', {
+					'event_category': 'warning',
+					'event_label': 'Warning displayed',
+					'non_interaction': false
+				});
+			}
 		}
 	}
 	</script>
