@@ -1,5 +1,5 @@
-var indexCache = 'i1.2.10';
-var staticCache = 's1.2.10';
+var indexCache = 'i1.2.11';
+var staticCache = 's1.2.11';
 
 var _indexCache = [
 	'./',
@@ -54,7 +54,7 @@ var _indexCache = [
 	//'./app/?t=France_national_assembly',
 	'./app/?t=Germany_states',
 	'./app/?t=Germany_bundestag',
-	'./app/?t=India_lok_sabha',
+	//'./app/?t=India_lok_sabha',
 	'./app/?t=India_2019_lok_sabha',
 	//'./app/?t=Italy_states',
 	'./app/?t=Ireland_dail_eireann',
