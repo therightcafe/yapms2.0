@@ -710,6 +710,15 @@ a {
 	user-select: none;
 }
 
+.yesSelect {
+	-webkit-touch-callout: text;
+	-webkit-user-select: text;
+        -khtml-user-select: text;
+	-moz-user-select: text;
+	-ms-user-select: text;
+	user-select: text;
+}
+
 #shareurl {
 	-webkit-touch-callout: all;
 	-webkit-user-select: all;

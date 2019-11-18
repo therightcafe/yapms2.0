@@ -410,8 +410,23 @@ if($mobile === false) {
 					Contested Seats
 				</h2>
 			</div>
-		</div>
-			<div id="yapnews-articles">
+			</div>';
+
+		if(strpos($_GET["t"], '_presidential') &&
+			!strpos($_GET["t"], '_county')) {
+			include './html/info/usa_info_electoral_college.php';
+		} else {
+			switch($_GET["t"]) {
+			case "USA_2024_projection":
+			case "USA_2020_cook":
+			case "USA_2020_inside":
+			case "USA_2020_sabatos":
+				include './html/info/usa_info_electoral_college.php';
+			}
+ 		}
+
+		
+		echo '<div id="yapnews-articles">
 			</div>
 		</div>';
 }
