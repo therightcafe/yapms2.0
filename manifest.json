@@ -33,7 +33,7 @@
 			"sizes": "512x512"	
 		}
 	],
-	"start_url": "/",
+	"start_url": "https://www.yapms.com",
 	"background_color": "#f9eacb",
 	"display": "standalone",
 	"theme_color": "#000000"
