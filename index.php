@@ -88,10 +88,13 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 
 		<div id="warning" class="infobox">
 			<p>
-				<big>Google Play App Users -</big> The Google Play Store App is unsupported
+				<big>Android App Users</big>
+			<p>
+			<p>
+				The Google Play Store App has been depreciated
 			</p>
 			<p>
-				Please consider using the new <span>"Install App"</span> or <span>"Add to Home Screen"</span> link on yapms.com for the best experience
+				To download the updated App - visit yapms.com and click the <span>"Install App"</span> or <span>"Add to Home Screen"</span> button
 			</p>
 		</div>
 
@@ -275,9 +278,35 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 				Alabama
 			</div>
 		</a>
+		<a href="./app/?t=Alaska_2020_state_house">
+			<div class="map-button">
+				Alaska
+			</div>
+		</a>
 		<a href="./app/?t=Arkansas_2020_state_house">
 			<div class="map-button">
 				Arkansas
+			</div>
+		</a>
+		<a href="./app/?t=California_2020_state_house">
+			<div class="map-button">
+				California
+			</div>
+		</a>
+		<br>
+		<a href="./app/?t=Colorado_2020_state_house">
+			<div class="map-button">
+				Colorado
+			</div>
+		</a>
+		<a href="./app/?t=Connecticut_2020_state_house">
+			<div class="map-button">
+				Connecticut
+			</div>
+		</a>
+		<a href="./app/?t=Iowa_2020_state_house">
+			<div class="map-button">
+				Iowa
 			</div>
 		</a>
 		<a href="./app/?t=Michigan_2020_state_house">
@@ -286,6 +315,11 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 			</div>
 		</a>
 		<br>
+		<a href="./app/?t=NorthDakota_2020_state_house">
+			<div class="map-button">
+				North Dakota
+			</div>
+		</a>
 		<a href="./app/?t=Minnesota_2020_state_house">
 			<div class="map-button">
 				Minnesota

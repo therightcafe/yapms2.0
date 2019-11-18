@@ -163,9 +163,29 @@ class MapLoader {
 				PresetLoader.loadPreset("classic");
 				MapLoader.loadMap("./res/usa/alabama/2020_house.svg", 16, 0.15, "congressional", "congressional", "open", {updateText: false});
 				break;
+			case "Alaska_2020_state_house":
+				PresetLoader.loadPreset("classic");
+				MapLoader.loadMap("./res/usa/alaska/2020_house.svg", 16, 0.02, "congressional", "congressional", "open", {updateText: false});
+				break;
 			case "Arkansas_2020_state_house":
 				PresetLoader.loadPreset("classic");
 				MapLoader.loadMap("./res/usa/arkansas/2020_house.svg", 16, 150, "congressional", "congressional", "open", {updateText: false});
+				break;
+			case "California_2020_state_house":
+				PresetLoader.loadPreset("classic");
+				MapLoader.loadMap("./res/usa/california/2020_house.svg", 16, 0.1, "congressional", "congressional", "open", {updateText: false});
+				break;
+			case "Colorado_2020_state_house":
+				PresetLoader.loadPreset("classic");
+				MapLoader.loadMap("./res/usa/colorado/2020_house.svg", 16, 0.15, "congressional", "congressional", "open", {updateText: false});
+				break;
+			case "Connecticut_2020_state_house":
+				PresetLoader.loadPreset("classic");
+				MapLoader.loadMap("./res/usa/connecticut/2020_house.svg", 16, 0.5, "congressional", "congressional", "open", {updateText: false});
+				break;
+			case "Iowa_2020_state_house":
+				PresetLoader.loadPreset("classic");
+				MapLoader.loadMap("./res/usa/iowa/2020_house.svg", 16, 0.2, "congressional", "congressional", "open", {updateText: false});
 				break;
 			case "Michigan_2020_state_house":
 				PresetLoader.loadPreset("classic");
@@ -174,6 +194,10 @@ class MapLoader {
 			case "Minnesota_2020_state_house":
 				PresetLoader.loadPreset("classic");
 				MapLoader.loadMap("./res/usa/minnesota/2020_house.svg", 16, 0.5, "congressional", "congressional", "open", {updateText: false});
+				break;
+			case "NorthDakota_2020_state_house":
+				PresetLoader.loadPreset("classic");
+				MapLoader.loadMap("./res/usa/northdakota/2020_house.svg", 16, 0.1, "senate", "proportional", "open", {updateText: false});
 				break;
 			case "Pennsylvania_2020_state_house":
 				PresetLoader.loadPreset("classic");

@@ -5,7 +5,7 @@
 </div>
 <div class="selectmenu-display-header">
 	<img class="flag-ind">
-	<h2 class="selectmenu-display-header-text">Australia</h2>
+	<h2 class="selectmenu-display-header-text">India</h2>
 </div>
 </div>
 <div class="selectmenu-content">

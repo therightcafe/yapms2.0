@@ -15,11 +15,29 @@
 <a class="selectmenu-button" href="./?t=Alabama_2020_state_house">
 	<div class="selectmenu-button-text">Alabama</div>
 </a>
+<a class="selectmenu-button" href="./?t=Alaska_2020_state_house">
+	<div class="selectmenu-button-text">Alaska</div>
+</a>
 <a class="selectmenu-button" href="./?t=Arkansas_2020_state_house">
 	<div class="selectmenu-button-text">Arkansas</div>
 </a>
+<a class="selectmenu-button" href="./?t=California_2020_state_house">
+	<div class="selectmenu-button-text">California</div>
+</a>
+<a class="selectmenu-button" href="./?t=Colorado_2020_state_house">
+	<div class="selectmenu-button-text">Colorado</div>
+</a>
+<a class="selectmenu-button" href="./?t=Connecticut_2020_state_house">
+	<div class="selectmenu-button-text">Connecticut</div>
+</a>
+<a class="selectmenu-button" href="./?t=Iowa_2020_state_house">
+	<div class="selectmenu-button-text">Iowa</div>
+</a>
 <a class="selectmenu-button" href="./?t=Michigan_2020_state_house">
 	<div class="selectmenu-button-text">Michigan</div>
+</a>
+<a class="selectmenu-button" href="./?t=NorthDakota_2020_state_house">
+	<div class="selectmenu-button-text">North Dakota</div>
 </a>
 <a class="selectmenu-button" href="./?t=Minnesota_2020_state_house">
 	<div class="selectmenu-button-text">Minnesota</div>
