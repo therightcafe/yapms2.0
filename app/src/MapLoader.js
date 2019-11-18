@@ -183,6 +183,14 @@ class MapLoader {
 				PresetLoader.loadPreset("classic");
 				MapLoader.loadMap("./res/usa/connecticut/2020_house.svg", 16, 0.5, "congressional", "congressional", "open", {updateText: false});
 				break;
+			case "Hawaii_2020_state_house":
+				PresetLoader.loadPreset("classic");
+				MapLoader.loadMap("./res/usa/hawaii/2020_house.svg", 16, 0.2, "congressional", "congressional", "open", {updateText: false});
+				break;
+			case "Idaho_2020_state_house":
+				PresetLoader.loadPreset("classic");
+				MapLoader.loadMap("./res/usa/idaho/2020_house.svg", 16, 0.2, "senate", "proportional", "open", {updateText: false});
+				break;
 			case "Iowa_2020_state_house":
 				PresetLoader.loadPreset("classic");
 				MapLoader.loadMap("./res/usa/iowa/2020_house.svg", 16, 0.2, "congressional", "congressional", "open", {updateText: false});
@@ -195,9 +203,17 @@ class MapLoader {
 				PresetLoader.loadPreset("classic");
 				MapLoader.loadMap("./res/usa/minnesota/2020_house.svg", 16, 0.5, "congressional", "congressional", "open", {updateText: false});
 				break;
+			case "NewJersey_2020_state_house":
+				PresetLoader.loadPreset("classic");
+				MapLoader.loadMap("./res/usa/newjersey/2020_house.svg", 16, 0.1, "senate", "proportional", "open", {updateText: false});
+				break;
 			case "NorthDakota_2020_state_house":
 				PresetLoader.loadPreset("classic");
 				MapLoader.loadMap("./res/usa/northdakota/2020_house.svg", 16, 0.1, "senate", "proportional", "open", {updateText: false});
+				break;
+			case "Oregon_2020_state_house":
+				PresetLoader.loadPreset("classic");
+				MapLoader.loadMap("./res/usa/oregon/2020_house.svg", 16, 0.1, "congressional", "congressional", "open", {updateText: false});
 				break;
 			case "Pennsylvania_2020_state_house":
 				PresetLoader.loadPreset("classic");

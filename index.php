@@ -304,6 +304,17 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 				Connecticut
 			</div>
 		</a>
+		<a href="./app/?t=Hawaii_2020_state_house">
+			<div class="map-button">
+				Hawaii
+			</div>
+		</a>
+		<a href="./app/?t=Idaho_2020_state_house">
+			<div class="map-button">
+				Idaho
+			</div>
+		</a>
+		<br>
 		<a href="./app/?t=Iowa_2020_state_house">
 			<div class="map-button">
 				Iowa
@@ -314,15 +325,25 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 				Michigan
 			</div>
 		</a>
+		<a href="./app/?t=Minnesota_2020_state_house">
+			<div class="map-button">
+				Minnesota
+			</div>
+		</a>
+		<a href="./app/?t=NewJersey_2020_state_house">
+			<div class="map-button">
+				New Jersey
+			</div>
+		</a>
 		<br>
 		<a href="./app/?t=NorthDakota_2020_state_house">
 			<div class="map-button">
 				North Dakota
 			</div>
 		</a>
-		<a href="./app/?t=Minnesota_2020_state_house">
+		<a href="./app/?t=Oregon_2020_state_house">
 			<div class="map-button">
-				Minnesota
+				Oregon
 			</div>
 		</a>
 		<a href="./app/?t=Pennsylvania_2020_state_house">
