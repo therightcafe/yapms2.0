@@ -299,9 +299,9 @@ if($mobile === false) {
 		</div></a>
 		</div>
 		<div id="sidebar-header">
-			<h1>
-				YAPms
-			</h1>
+			<h1>' ,
+			$h1title
+			, '</h1>
 		</div>
 
 		<ins class="adsbygoogle adslot_sidebar"
