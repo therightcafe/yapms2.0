@@ -1999,7 +1999,7 @@ class MapLoader {
 				break;
 			case "USA_presidential_territories":
 				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/usa_presidential_territories.svg", 16, 0.75, "usa_territories_ec", "presidential", "open", {updateText: false});
+				MapLoader.loadMap("./res/usa/usa_presidential_territories.svg", 16, 0.75, "usa_territories_ec", "presidential", "open", {updateText: true});
 				break;
 			case "USA_2020_presidential":
 				PresetLoader.loadPreset('classic');
@@ -6233,7 +6233,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v1.2.31';
+var currentCache = 'v1.2.32';
 
 var states = [];
 var lands = [];
