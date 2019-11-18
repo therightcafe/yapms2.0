@@ -69,13 +69,27 @@
 	font-family: 'Roboto';
 	font-size: 14px;
 	border-top: 1px solid #555555;
-	margin-top: 6px;
 }
 
 .sidebar-box h3 {
 	margin: 5px;
 	padding: 0px;
 	border-bottom: 1px solid #cccccc;
+}
+
+#sidebar-toggle-popularvote {
+	background: #ffffff;
+	transition: background 200ms;
+	cursor: pointer;
+}
+
+#sidebar-toggle-popularvote h4 {
+	padding: 5px;
+	margin: 0px;
+}
+
+.sidebar-info-box p {
+	margin: 6px;
 }
 
 .sidebar-hover-popup {

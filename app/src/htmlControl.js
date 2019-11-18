@@ -152,9 +152,10 @@ function darkPalette() {
 	setClickButtonTextColor('#FFFFFF');
 	setMenuColor('#000000');
 	
-	setSideBarColor('#808080');
-	setSideBarTextStyle('#000000');
-	setSideBarH3Border('#777777');
+	setSideBarColor('#000000');
+	setSideBarTextStyle('#ffffff');
+	setSideBarH3Border('#444444');
+	setSideBarButtonStyle('white', 'black');
 
 	setBorderStyle('#000000', 7.0);
 
@@ -186,9 +187,10 @@ function greyscalePalette() {
 	setClickButtonTextColor('#FFFFFF');
 	setMenuColor('#101010');
 	
-	setSideBarColor('#808080');
-	setSideBarTextStyle('#000000');
-	setSideBarH3Border('#777777');
+	setSideBarColor('#101010');
+	setSideBarTextStyle('#ffffff');
+	setSideBarH3Border('#444444');
+	setSideBarButtonStyle('white', 'black');
 
 	setBorderStyle('#252525', 7.0);
 
@@ -218,11 +220,12 @@ function terminalPalette() {
 
 	setClickButtonColor('#000000');
 	setClickButtonTextColor('#ffffff');
-	setMenuColor('#eeeeee');
+	setMenuColor('#f8f9fa');
 	
-	setSideBarColor('#eeeeee');
+	setSideBarColor('#f8f9fa');
 	setSideBarTextStyle('#000000');
 	setSideBarH3Border('#cccccc');
+	setSideBarButtonStyle('black', 'white');
 	
 	setBorderStyle('#ffffff', 6.0);
 	
@@ -259,6 +262,7 @@ function lightPalette() {
 	setSideBarColor('#dcdcdc');
 	setSideBarTextStyle('#000000');
 	setSideBarH3Border('#cccccc');
+	setSideBarButtonStyle('black', 'white');
 	
 	setBorderStyle('#000000', 6.0);
 	
@@ -289,10 +293,11 @@ function contrastPalette() {
 	setClickButtonColor('#fafafa');
 	setClickButtonTextColor('#000000');
 	setMenuColor('#222222');
-	
+
 	setSideBarColor('#f8f9fa');
 	setSideBarTextStyle('#000000');
 	setSideBarH3Border('#cccccc');
+	setSideBarButtonStyle('black', 'white');
 	
 	setBorderStyle('#f8f9fa', 6.0);
 
@@ -324,9 +329,10 @@ function metallicPalette() {
 	setClickButtonTextColor('#FFFFFF');
 	setMenuColor('black');
 	
-	setSideBarColor('#848482');
-	setSideBarTextStyle('#000000');
+	setSideBarColor('#000000');
+	setSideBarTextStyle('#ffffff');
 	setSideBarH3Border('#666666');
+	setSideBarButtonStyle('white', 'black');
 	
 	setBorderStyle('#000000', 6.0);
 
@@ -357,6 +363,7 @@ function halloweenPalette() {
 	setSideBarColor('#9c9b98');
 	setSideBarTextStyle('#000000');
 	setSideBarH3Border('#666666');
+	setSideBarButtonStyle('white', 'black');
 	
 	setClickButtonColor('#060606');
 	setClickButtonTextColor('#ffffff');
@@ -394,6 +401,7 @@ function toWinPalette() {
 	setSideBarColor('#f8f9fa');
 	setSideBarTextStyle('#000000');
 	setSideBarH3Border('#cccccc');
+	setSideBarButtonStyle('black', 'white');
 
 	setBorderStyle('#f8f9fa', 6.0);
 
@@ -530,6 +538,14 @@ function setSideBarTextStyle(color) {
 		return;
 	}
 	sidebar.style.color = color;
+}
+
+function setSideBarButtonStyle(background, textColor) {
+	var popularVote = document.getElementById('sidebar-toggle-popularvote');
+	if(popularVote) {
+		popularVote.style.background = background;
+		popularVote.style.color = textColor;
+	}
 }
 
 function setSideBarSocialOutline(color, width) {

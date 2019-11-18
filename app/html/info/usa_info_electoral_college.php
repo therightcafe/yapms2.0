@@ -1,4 +1,4 @@
-<div id="usa_electoral_college_info" class="sidebar-box yesSelect">
+<div id="usa_electoral_college_info" class="sidebar-box sidebar-info-box yesSelect">
 	<h3 class="noSelect">Electoral College</h3>
 	<p>
 		The Electoral College is the process in which the United States elects its president. Each state (Including the District of Columbia) is allocated a number of electors equal to its number of representatives plus two for each of its senators.

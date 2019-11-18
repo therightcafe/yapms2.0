@@ -311,8 +311,22 @@ if($mobile === false) {
 		<script>
 			(adsbygoogle = window.adsbygoogle || []).push({});
 		</script>
+		
+		<div id="sidebar-shortcuts" class="sidebar-box">
+			<h3>Shortcuts</h3>
+			<ul>
+				<li>
+					F - Hold down to quickly fill in districts
+				</li>
+			</ul>
+		</div>
 
-		<div id="sidebar-popularvote" class="sidebar-box">
+		<div id="sidebar-toggle-popularvote" class="sidebar-box" onclick="togglePopularVote()">
+			<h4>
+				Enable Popular Vote
+			</h4>
+		</div>
+		<div id="sidebar-popularvote" class="sidebar-box" style="display: none">
 			<h3>
 				<span>
 				State Popular Vote
@@ -326,7 +340,7 @@ if($mobile === false) {
 			<div id="popularvote-ranges">
 			</div>
 		</div>
-		<div id="sidebar-national-popularvote" class="sidebar-box">
+		<div id="sidebar-national-popularvote" class="sidebar-box" style="display: none">
 			<h3>
 				<span>
 					National Popular Vote
@@ -335,7 +349,7 @@ if($mobile === false) {
 			<div id="national-popularvote-ranges">
 			</div>
 		</div>
-		<div id="sidebar-popularvote-settings" class="sidebar-box">
+		<div id="sidebar-popularvote-settings" class="sidebar-box" style="display: none">
 			<h3>
 				Settings
 			</h3>
@@ -361,14 +375,6 @@ if($mobile === false) {
 			</div>
 			<div id="sidebar-congress-party">
 			</div>
-		</div>
-		<div id="sidebar-shortcuts" class="sidebar-box">
-			<h3>Shortcuts</h3>
-			<ul>
-				<li>
-					F - Hold down to quickly fill in districts
-				</li>
-			</ul>
 		</div>';
 
 		$url = "";

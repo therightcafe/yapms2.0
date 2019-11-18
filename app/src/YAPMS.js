@@ -4862,9 +4862,10 @@ function darkPalette() {
 	setClickButtonTextColor('#FFFFFF');
 	setMenuColor('#000000');
 	
-	setSideBarColor('#808080');
-	setSideBarTextStyle('#000000');
-	setSideBarH3Border('#777777');
+	setSideBarColor('#000000');
+	setSideBarTextStyle('#ffffff');
+	setSideBarH3Border('#444444');
+	setSideBarButtonStyle('white', 'black');
 
 	setBorderStyle('#000000', 7.0);
 
@@ -4896,9 +4897,10 @@ function greyscalePalette() {
 	setClickButtonTextColor('#FFFFFF');
 	setMenuColor('#101010');
 	
-	setSideBarColor('#808080');
-	setSideBarTextStyle('#000000');
-	setSideBarH3Border('#777777');
+	setSideBarColor('#101010');
+	setSideBarTextStyle('#ffffff');
+	setSideBarH3Border('#444444');
+	setSideBarButtonStyle('white', 'black');
 
 	setBorderStyle('#252525', 7.0);
 
@@ -4928,11 +4930,12 @@ function terminalPalette() {
 
 	setClickButtonColor('#000000');
 	setClickButtonTextColor('#ffffff');
-	setMenuColor('#eeeeee');
+	setMenuColor('#f8f9fa');
 	
-	setSideBarColor('#eeeeee');
+	setSideBarColor('#f8f9fa');
 	setSideBarTextStyle('#000000');
 	setSideBarH3Border('#cccccc');
+	setSideBarButtonStyle('black', 'white');
 	
 	setBorderStyle('#ffffff', 6.0);
 	
@@ -4969,6 +4972,7 @@ function lightPalette() {
 	setSideBarColor('#dcdcdc');
 	setSideBarTextStyle('#000000');
 	setSideBarH3Border('#cccccc');
+	setSideBarButtonStyle('black', 'white');
 	
 	setBorderStyle('#000000', 6.0);
 	
@@ -4999,10 +5003,11 @@ function contrastPalette() {
 	setClickButtonColor('#fafafa');
 	setClickButtonTextColor('#000000');
 	setMenuColor('#222222');
-	
+
 	setSideBarColor('#f8f9fa');
 	setSideBarTextStyle('#000000');
 	setSideBarH3Border('#cccccc');
+	setSideBarButtonStyle('black', 'white');
 	
 	setBorderStyle('#f8f9fa', 6.0);
 
@@ -5034,9 +5039,10 @@ function metallicPalette() {
 	setClickButtonTextColor('#FFFFFF');
 	setMenuColor('black');
 	
-	setSideBarColor('#848482');
-	setSideBarTextStyle('#000000');
+	setSideBarColor('#000000');
+	setSideBarTextStyle('#ffffff');
 	setSideBarH3Border('#666666');
+	setSideBarButtonStyle('white', 'black');
 	
 	setBorderStyle('#000000', 6.0);
 
@@ -5067,6 +5073,7 @@ function halloweenPalette() {
 	setSideBarColor('#9c9b98');
 	setSideBarTextStyle('#000000');
 	setSideBarH3Border('#666666');
+	setSideBarButtonStyle('white', 'black');
 	
 	setClickButtonColor('#060606');
 	setClickButtonTextColor('#ffffff');
@@ -5104,6 +5111,7 @@ function toWinPalette() {
 	setSideBarColor('#f8f9fa');
 	setSideBarTextStyle('#000000');
 	setSideBarH3Border('#cccccc');
+	setSideBarButtonStyle('black', 'white');
 
 	setBorderStyle('#f8f9fa', 6.0);
 
@@ -5240,6 +5248,14 @@ function setSideBarTextStyle(color) {
 		return;
 	}
 	sidebar.style.color = color;
+}
+
+function setSideBarButtonStyle(background, textColor) {
+	var popularVote = document.getElementById('sidebar-toggle-popularvote');
+	if(popularVote) {
+		popularVote.style.background = background;
+		popularVote.style.color = textColor;
+	}
 }
 
 function setSideBarSocialOutline(color, width) {
@@ -5491,6 +5507,7 @@ function hideMenu(name) {
 	menu.style.display = 'none';
 }
 var lastViewPopularVote = "";
+var popularVoteEnabled = false;
 
 function numberWithCommas(number) {
 	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -5502,20 +5519,28 @@ function verifyPopularVote() {
 	}
 
 	if(enablePopularVote) {
-		var element = document.getElementById('sidebar-popularvote');
+		var element = document.getElementById('sidebar-toggle-popularvote');
 		element.style.display = 'block';
+/*
+		element = document.getElementById('sidebar-popularvote');
+		element.style.display = 'none';
 		element = document.getElementById('sidebar-national-popularvote');
-		element.style.display = 'block';
+		element.style.display = 'none';
 		element = document.getElementById('sidebar-popularvote-settings');
-		element.style.display = 'block';
+		element.style.display = 'none';
+*/
 		return true;
 	} else {
-		var element = document.getElementById('sidebar-popularvote');
+		var element = document.getElementById('sidebar-toggle-popularvote');
+		element.style.display = 'none';
+/*
+		element = document.getElementById('sidebar-popularvote');
 		element.style.display = 'none';
 		element = document.getElementById('sidebar-national-popularvote');
 		element.style.display = 'none';
 		element = document.getElementById('sidebar-popularvote-settings');
 		element.style.display = 'none';
+*/
 		return false;
 	}
 }
@@ -5549,7 +5574,10 @@ function viewPopularVote(state) {
 	if(state.disabled) {
 		popularVoteCalc.style.display = 'none';	
 	} else {
-		popularVoteCalc.style.display = 'block';	
+		// ONLY DISPLAY IF POPULAR VOTE IS ENABLED
+		if(popularVoteEnabled === true) {
+			popularVoteCalc.style.display = 'block';	
+		}
 	}
 	var title = document.getElementById("popularvote-state-title");
 	title.innerHTML = state.name;
@@ -5870,6 +5898,26 @@ function calculateAutoMargin(state) {
 		} else {
 			state.setColor(winCandidate, 0, false);
 		}
+	}
+}
+
+function togglePopularVote() {
+	var e1 = document.getElementById('sidebar-popularvote');
+	var e2 = document.getElementById('sidebar-national-popularvote');
+	var e3 = document.getElementById('sidebar-popularvote-settings');
+	var e4 = document.getElementById('sidebar-toggle-popularvote');
+	if(e1.style.display === 'none') {
+		e1.style.display = 'block';
+		e2.style.display = 'block';
+		e3.style.display = 'block';
+		e4.innerHTML = '<h4>Disable Popular Vote</h4>';
+		popularVoteEnabled = true;
+	} else if(e1.style.display === 'block') {
+		e1.style.display = 'none';
+		e2.style.display = 'none';
+		e3.style.display = 'none';
+		e4.innerHTML = '<h4>Enable Popular Vote</h4>';
+		popularVoteEnabled = false;
 	}
 }
 function saveMap(img, token) {
@@ -6233,7 +6281,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v1.2.34';
+var currentCache = 'v1.2.35';
 
 var states = [];
 var lands = [];

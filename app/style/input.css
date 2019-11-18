@@ -1,6 +1,8 @@
 input[type=range] {
 	-webkit-appearance: none;
 	background: transparent;
+	border: 1px solid white;
+	border-radius: 1em;
 }
 
 input[type=range]:focus {
@@ -9,7 +11,7 @@ input[type=range]:focus {
 
 input[type=range]::-moz-range-thumb {
 	cursor: pointer;
-	border: 0px;
+	border: none;
 	background-color: green;
 	height: 18px;
 	width: 18px;

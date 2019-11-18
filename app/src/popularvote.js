@@ -1,4 +1,5 @@
 var lastViewPopularVote = "";
+var popularVoteEnabled = false;
 
 function numberWithCommas(number) {
 	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -10,20 +11,28 @@ function verifyPopularVote() {
 	}
 
 	if(enablePopularVote) {
-		var element = document.getElementById('sidebar-popularvote');
+		var element = document.getElementById('sidebar-toggle-popularvote');
 		element.style.display = 'block';
+/*
+		element = document.getElementById('sidebar-popularvote');
+		element.style.display = 'none';
 		element = document.getElementById('sidebar-national-popularvote');
-		element.style.display = 'block';
+		element.style.display = 'none';
 		element = document.getElementById('sidebar-popularvote-settings');
-		element.style.display = 'block';
+		element.style.display = 'none';
+*/
 		return true;
 	} else {
-		var element = document.getElementById('sidebar-popularvote');
+		var element = document.getElementById('sidebar-toggle-popularvote');
+		element.style.display = 'none';
+/*
+		element = document.getElementById('sidebar-popularvote');
 		element.style.display = 'none';
 		element = document.getElementById('sidebar-national-popularvote');
 		element.style.display = 'none';
 		element = document.getElementById('sidebar-popularvote-settings');
 		element.style.display = 'none';
+*/
 		return false;
 	}
 }
@@ -57,7 +66,10 @@ function viewPopularVote(state) {
 	if(state.disabled) {
 		popularVoteCalc.style.display = 'none';	
 	} else {
-		popularVoteCalc.style.display = 'block';	
+		// ONLY DISPLAY IF POPULAR VOTE IS ENABLED
+		if(popularVoteEnabled === true) {
+			popularVoteCalc.style.display = 'block';	
+		}
 	}
 	var title = document.getElementById("popularvote-state-title");
 	title.innerHTML = state.name;
@@ -378,5 +390,25 @@ function calculateAutoMargin(state) {
 		} else {
 			state.setColor(winCandidate, 0, false);
 		}
+	}
+}
+
+function togglePopularVote() {
+	var e1 = document.getElementById('sidebar-popularvote');
+	var e2 = document.getElementById('sidebar-national-popularvote');
+	var e3 = document.getElementById('sidebar-popularvote-settings');
+	var e4 = document.getElementById('sidebar-toggle-popularvote');
+	if(e1.style.display === 'none') {
+		e1.style.display = 'block';
+		e2.style.display = 'block';
+		e3.style.display = 'block';
+		e4.innerHTML = '<h4>Disable Popular Vote</h4>';
+		popularVoteEnabled = true;
+	} else if(e1.style.display === 'block') {
+		e1.style.display = 'none';
+		e2.style.display = 'none';
+		e3.style.display = 'none';
+		e4.innerHTML = '<h4>Enable Popular Vote</h4>';
+		popularVoteEnabled = false;
 	}
 }
