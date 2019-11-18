@@ -1243,6 +1243,19 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 		</a>
 	</div>
 	</div>
+	
+	<div class="map-type-box">
+	<div class="map-type-header">
+		<div class="map-type-header-text">Other</div>
+	</div>
+	<div class="map-button-box">	
+		<a href="./sources.html" target="_blank">
+			<div class="map-button">
+				Map Sources
+			</div>
+		</a>
+	</div>
+	</div>
 
 	<script>
 	if('serviceWorker' in navigator) {
