@@ -39,7 +39,7 @@ class State {
 			this.voteCount_beforeDisable = 1;
 
 		/* ALSO PHASE THIS OUT PLEASE */
-		} else if(this.dataid === 'senatorial') {
+		} else if(this.dataid === 'senate') {
 			this.setVoteCount(2);
 			this.voteCount_beforeDisable = 2;
 
