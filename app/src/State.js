@@ -32,6 +32,10 @@ class State {
 				this.setVoteCount(1);
 				this.voteCount_beforeDisable = 1;
 			}
+		} else if(this.dataid === 'congressional') {
+			this.setVoteCount(1);
+			this.voteCount_beforeDisable = 1;
+
 		} else {
 			this.setVoteCount(data[this.dataid][this.name]);
 			this.voteCount_beforeDisable = data[this.dataid][this.name];
