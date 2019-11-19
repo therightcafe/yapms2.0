@@ -289,7 +289,7 @@ class MapLoader {
 				break;
 			case "UnitedKingdom_historic_counties":
 				PresetLoader.loadPreset('uk')
-				MapLoader.loadMap("./res/ukd/unitedkingdom_historic_counties.svg", 16, 0.4, "congressional", "congressional", "open", {updateText: false});
+				MapLoader.loadMap("./res/ukd/unitedkingdom_historic_counties.svg", 16, 0.4, "congressional", "presidential", "open", {updateText: false});
 				break;
 			case "Ukraine":
 				PresetLoader.loadPreset('uk')
