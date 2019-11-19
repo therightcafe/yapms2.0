@@ -2185,7 +2185,7 @@ class MapLoader {
 				break;
 			case 'Russia_duma':
 				PresetLoader.loadPreset('russia');
-				MapLoader.loadMap('./res/russia_constituencies.svg', 16, 0.15, 'duma', 'takeall_no_edit', 'open');
+				MapLoader.loadMap('./res/russia_constituencies.svg', 16, 0.15, 'duma', 'takeall_noedit', 'open');
 				break;
 			case "Trinidad_Tobago_house_of_representatives":
 				PresetLoader.loadPreset('trinidad_tobago');
@@ -3623,7 +3623,9 @@ class State {
 		var stateText = document.getElementById(this.name + '-text');
 		if(stateText !== null && 
 			MapLoader.save_type !== 'senatorial' &&
-			MapLoader.save_type !== 'gubernatorial') {
+			MapLoader.save_type !== 'gubernatorial' &&
+			MapLoader.save_type !== 'proportional' &&
+			MapLoader.save_type !== 'primary') {
 			var text = this.name + ' ' + value;
 			// the text elements in an svg are inside spans
 			if(typeof stateText.childNodes[1] !== 'undefined') {

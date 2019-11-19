@@ -80,7 +80,9 @@ class State {
 		var stateText = document.getElementById(this.name + '-text');
 		if(stateText !== null && 
 			MapLoader.save_type !== 'senatorial' &&
-			MapLoader.save_type !== 'gubernatorial') {
+			MapLoader.save_type !== 'gubernatorial' &&
+			MapLoader.save_type !== 'proportional' &&
+			MapLoader.save_type !== 'primary') {
 			var text = this.name + ' ' + value;
 			// the text elements in an svg are inside spans
 			if(typeof stateText.childNodes[1] !== 'undefined') {

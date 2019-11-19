@@ -401,7 +401,7 @@ class MapLoader {
 				break;
 			case 'Russia_duma':
 				PresetLoader.loadPreset('russia');
-				MapLoader.loadMap('./res/russia_constituencies.svg', 16, 0.15, 'duma', 'takeall_no_edit', 'open');
+				MapLoader.loadMap('./res/russia_constituencies.svg', 16, 0.15, 'duma', 'takeall_noedit', 'open');
 				break;
 			case "Trinidad_Tobago_house_of_representatives":
 				PresetLoader.loadPreset('trinidad_tobago');
