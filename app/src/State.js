@@ -32,9 +32,16 @@ class State {
 				this.setVoteCount(1);
 				this.voteCount_beforeDisable = 1;
 			}
-		} else if(this.dataid === 'congressional') {
+		} 
+		/* PHASE THIS OUT PLEASE */
+		else if(this.dataid === 'congressional') {
 			this.setVoteCount(1);
 			this.voteCount_beforeDisable = 1;
+
+		/* ALSO PHASE THIS OUT PLEASE */
+		} else if(this.dataid === 'senatorial') {
+			this.setVoteCount(2);
+			this.voteCount_beforeDisable = 2;
 
 		} else {
 			this.setVoteCount(data[this.dataid][this.name]);
