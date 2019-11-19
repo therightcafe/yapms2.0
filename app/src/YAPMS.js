@@ -4836,7 +4836,6 @@ function darkPalette() {
 	
 	setSideBarColor('#2b2e33');
 	setSideBarTextStyle('#ffffff');
-	setSideBarButtonStyle('white', 'black');
 
 	setBorderStyle('#000000', 7.0);
 
@@ -4870,7 +4869,6 @@ function greyscalePalette() {
 	
 	setSideBarColor('#454545');
 	setSideBarTextStyle('#ffffff');
-	setSideBarButtonStyle('white', 'black');
 
 	setBorderStyle('#252525', 7.0);
 
@@ -4904,7 +4902,6 @@ function terminalPalette() {
 	
 	setSideBarColor('#f8f9fa');
 	setSideBarTextStyle('#000000');
-	setSideBarButtonStyle('black', 'white');
 	
 	setBorderStyle('#ffffff', 6.0);
 	
@@ -4940,7 +4937,6 @@ function lightPalette() {
 	
 	setSideBarColor('#dcdcdc');
 	setSideBarTextStyle('#000000');
-	setSideBarButtonStyle('black', 'white');
 	
 	setBorderStyle('#000000', 6.0);
 	
@@ -4974,7 +4970,6 @@ function contrastPalette() {
 
 	setSideBarColor('#f8f9fa');
 	setSideBarTextStyle('#000000');
-	setSideBarButtonStyle('black', 'white');
 	
 	setBorderStyle('#f8f9fa', 6.0);
 
@@ -5008,7 +5003,6 @@ function metallicPalette() {
 	
 	setSideBarColor('#33353b');
 	setSideBarTextStyle('#ffffff');
-	setSideBarButtonStyle('white', 'black');
 	
 	setBorderStyle('#000000', 6.0);
 
@@ -5038,7 +5032,6 @@ function halloweenPalette() {
 
 	setSideBarColor('#9c9b98');
 	setSideBarTextStyle('#000000');
-	setSideBarButtonStyle('white', 'black');
 	
 	setClickButtonColor('#060606');
 	setClickButtonTextColor('#ffffff');
@@ -5075,7 +5068,6 @@ function toWinPalette() {
 	
 	setSideBarColor('#f8f9fa');
 	setSideBarTextStyle('#000000');
-	setSideBarButtonStyle('black', 'white');
 
 	setBorderStyle('#f8f9fa', 6.0);
 
@@ -5212,14 +5204,6 @@ function setSideBarTextStyle(color) {
 		return;
 	}
 	sidebar.style.color = color;
-}
-
-function setSideBarButtonStyle(background, textColor) {
-	var popularVote = document.getElementById('sidebar-toggle-popularvote');
-	if(popularVote) {
-		popularVote.style.background = background;
-		popularVote.style.color = textColor;
-	}
 }
 
 function setSideBarSocialOutline(color, width) {
