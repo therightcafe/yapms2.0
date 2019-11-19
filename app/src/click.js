@@ -43,7 +43,7 @@ function buttonClickEC(clickElement) {
 	var eceditText = document.getElementById('ecedit-message');
 	var input = document.getElementById('state-ec');
 	var stateId = document.getElementById('state-id');
-	eceditText.innerHTML = 'Set ' + split[0] + ' electoral college';
+	eceditText.innerHTML = 'Set ' + split[0] + ' delegates';
 	input.value = state.voteCount;
 	stateId.value = split[0];
 	ecedit.style.display = 'inline';
@@ -301,7 +301,7 @@ function stateClickEC(state) {
 		var eceditText = document.getElementById('ecedit-message');
 		var input = document.getElementById('state-ec');
 		var stateId = document.getElementById('state-id');
-		eceditText.innerHTML = 'Set ' + state.name + ' electoral college';
+		eceditText.innerHTML = 'Set ' + state.name + ' delegates';
 		input.value = state.voteCount;
 		stateId.value = state.name;
 		ecedit.style.display = 'inline';

@@ -1,4 +1,4 @@
-var currentCache = 'v1.2.53';
+var currentCache = 'v1.2.55';
 
 var states = [];
 var lands = [];
@@ -201,8 +201,8 @@ function setMode(set) {
 		var button = document.getElementById('modebutton-paint');
 		button.style.opacity = '0.5';
 	} else if(set === 'ec') {
-		modeText = '<i class="fas fa-edit"></i> EC Edit';
-		notificationText = "Click on a state to set its electoral college";
+		modeText = '<i class="fas fa-edit"></i> Delegate Edit';
+		notificationText = "Click on a state to set its delegate total";
 		var button = document.getElementById('modebutton-ec');
 		button.style.opacity = '0.5';
 	} else if(set === 'delete') {
@@ -227,7 +227,6 @@ function setMode(set) {
 }
 
 // if paint index is invalid, change it to tossup
-// ( WORK IN PROGRESS)
 function verifyPaintIndex() {
 	if(typeof CandidateManager.candidates[paintIndex] === 'undefined') {
 		paintIndex = 'Tossup';

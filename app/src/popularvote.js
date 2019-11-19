@@ -13,26 +13,10 @@ function verifyPopularVote() {
 	if(enablePopularVote) {
 		var element = document.getElementById('sidebar-toggle-popularvote');
 		element.style.display = 'block';
-/*
-		element = document.getElementById('sidebar-popularvote');
-		element.style.display = 'none';
-		element = document.getElementById('sidebar-national-popularvote');
-		element.style.display = 'none';
-		element = document.getElementById('sidebar-popularvote-settings');
-		element.style.display = 'none';
-*/
 		return true;
 	} else {
 		var element = document.getElementById('sidebar-toggle-popularvote');
 		element.style.display = 'none';
-/*
-		element = document.getElementById('sidebar-popularvote');
-		element.style.display = 'none';
-		element = document.getElementById('sidebar-national-popularvote');
-		element.style.display = 'none';
-		element = document.getElementById('sidebar-popularvote-settings');
-		element.style.display = 'none';
-*/
 		return false;
 	}
 }

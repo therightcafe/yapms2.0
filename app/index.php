@@ -193,7 +193,7 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 	<div id="modebutton-ec" class="click-button mode-button" onclick='setMode("ec")'>
 		<i class="fas fa-edit"></i>
 		<div class="tooltip-menu">
-			EC Edit
+			Delegate Edit
 		</div>
 	</div>
 

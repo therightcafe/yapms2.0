@@ -4162,7 +4162,7 @@ function buttonClickEC(clickElement) {
 	var eceditText = document.getElementById('ecedit-message');
 	var input = document.getElementById('state-ec');
 	var stateId = document.getElementById('state-id');
-	eceditText.innerHTML = 'Set ' + split[0] + ' electoral college';
+	eceditText.innerHTML = 'Set ' + split[0] + ' delegates';
 	input.value = state.voteCount;
 	stateId.value = split[0];
 	ecedit.style.display = 'inline';
@@ -4420,7 +4420,7 @@ function stateClickEC(state) {
 		var eceditText = document.getElementById('ecedit-message');
 		var input = document.getElementById('state-ec');
 		var stateId = document.getElementById('state-id');
-		eceditText.innerHTML = 'Set ' + state.name + ' electoral college';
+		eceditText.innerHTML = 'Set ' + state.name + ' delegates';
 		input.value = state.voteCount;
 		stateId.value = state.name;
 		ecedit.style.display = 'inline';
@@ -5493,26 +5493,10 @@ function verifyPopularVote() {
 	if(enablePopularVote) {
 		var element = document.getElementById('sidebar-toggle-popularvote');
 		element.style.display = 'block';
-/*
-		element = document.getElementById('sidebar-popularvote');
-		element.style.display = 'none';
-		element = document.getElementById('sidebar-national-popularvote');
-		element.style.display = 'none';
-		element = document.getElementById('sidebar-popularvote-settings');
-		element.style.display = 'none';
-*/
 		return true;
 	} else {
 		var element = document.getElementById('sidebar-toggle-popularvote');
 		element.style.display = 'none';
-/*
-		element = document.getElementById('sidebar-popularvote');
-		element.style.display = 'none';
-		element = document.getElementById('sidebar-national-popularvote');
-		element.style.display = 'none';
-		element = document.getElementById('sidebar-popularvote-settings');
-		element.style.display = 'none';
-*/
 		return false;
 	}
 }
@@ -6250,7 +6234,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v1.2.53';
+var currentCache = 'v1.2.55';
 
 var states = [];
 var lands = [];
@@ -6453,8 +6437,8 @@ function setMode(set) {
 		var button = document.getElementById('modebutton-paint');
 		button.style.opacity = '0.5';
 	} else if(set === 'ec') {
-		modeText = '<i class="fas fa-edit"></i> EC Edit';
-		notificationText = "Click on a state to set its electoral college";
+		modeText = '<i class="fas fa-edit"></i> Delegate Edit';
+		notificationText = "Click on a state to set its delegate total";
 		var button = document.getElementById('modebutton-ec');
 		button.style.opacity = '0.5';
 	} else if(set === 'delete') {
@@ -6479,7 +6463,6 @@ function setMode(set) {
 }
 
 // if paint index is invalid, change it to tossup
-// ( WORK IN PROGRESS)
 function verifyPaintIndex() {
 	if(typeof CandidateManager.candidates[paintIndex] === 'undefined') {
 		paintIndex = 'Tossup';
