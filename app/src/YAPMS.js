@@ -4124,7 +4124,7 @@ function buttonClick(clickElement, options) {
 	if(mode === 'move') {
 		return;
 	} else if(mode === 'paint' || mode === 'paintmove') {
-		if(MapLoader.save_type === 'proportional') {
+		if(MapLoader.save_type === 'proportional' || MapLoader.save_type === 'primary') {
 			buttonClickPaintProportional(clickElement);
 		} else {
 
@@ -4247,7 +4247,7 @@ function stateClick(clickElement, options) {
 	switch(mode) {
 		case 'paint':
 		case 'paintmove':
-			if(MapLoader.save_type === 'proportional') {
+			if(MapLoader.save_type === 'proportional' || MapLoader.save_type === 'primary') {
 				stateClickPaintProportional(state, id);
 			} else {
 				stateClickPaint(state, options);
