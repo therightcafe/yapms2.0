@@ -1087,13 +1087,13 @@ a {
 .sidebar-box {
 	font-family: 'Roboto';
 	font-size: 14px;
-	border-top: 1px solid #555555;
+	border-top: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 .sidebar-box h3 {
 	margin: 5px;
 	padding: 0px;
-	border-bottom: 1px solid #cccccc;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 #sidebar-toggle-popularvote {

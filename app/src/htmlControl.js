@@ -566,7 +566,7 @@ function setSideBarH3Border(color) {
 		var elements = sidebar.querySelectorAll(".sidebar-box h3");
 		for(var index = 0; index < elements.length; ++index) {
 			var h3 = elements[index];
-			h3.style.borderBottom = '1px solid ' + color;
+			//h3.style.borderBottom = '1px solid ' + color;
 		}
 	}
 }
