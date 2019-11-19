@@ -5,7 +5,7 @@ function buttonClick(clickElement, options) {
 	if(mode === 'move') {
 		return;
 	} else if(mode === 'paint' || mode === 'paintmove') {
-		if(MapLoader.save_type === 'primary' || MapLoader.save_type === 'proportional') {
+		if(MapLoader.save_type === 'proportional') {
 			buttonClickPaintProportional(clickElement);
 		} else {
 
@@ -128,10 +128,8 @@ function stateClick(clickElement, options) {
 	switch(mode) {
 		case 'paint':
 		case 'paintmove':
-			if(MapLoader.save_type === 'primary' || MapLoader.save_type === 'proportional') {
+			if(MapLoader.save_type === 'proportional') {
 				stateClickPaintProportional(state, id);
-			} else if(MapLoader.save_type === 'usapopular') {
-				stateClickPaintProportional(state, id);	
 			} else {
 				stateClickPaint(state, options);
 			}

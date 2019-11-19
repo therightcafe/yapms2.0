@@ -47,13 +47,8 @@ class ChartManager {
 					if(candidate.singleColor) {
 						legendColorDiv.style.display = 'none';
 					}
-
-					if((key === 'Republican' || key === 'Democrat')
-						&& MapLoader.save_year === '2020' && 
-						(MapLoader.save_type === 'senatorial' || MapLoader.save_type === 'gubernatorial')) {
-						// dont add the remove candidate button
-
-					} else if(key !== 'Tossup') {
+					
+					if(key !== 'Tossup') {
 						// after adding all the candidates, add the add candidate button
 						var legendDelete = document.createElement('div');
 						legendDelete.setAttribute('class', 'legend-delete');

@@ -1,20 +1,5 @@
 class PresetLoader {
-	static blockPresetNotify() {
-		var notification = document.getElementById('notification');
-		notification.style.display = 'inline';
-		var message = notification.querySelector('#notification-message');
-		var notificationText = 'Presets cannot be changed while editing a historical ' + MapLoader.save_type + ' map';
-		message.innerHTML = notificationText;
-		var title = notification.querySelector('#notification-title');
-		title.innerHTML = 'Sorry';
-	}
-
 	static loadPreset(value) {
-		if(blockPresets) {
-			blockPresetNotify();
-			return;
-		}
-	
 		CandidateManager.initCandidates();
 
 		switch(value) {
@@ -828,5 +813,3 @@ class PresetLoader {
 		LegendManager.toggleLegendLeans()
 	}
 }
-
-PresetLoader.blockPresets = false;

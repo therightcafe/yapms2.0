@@ -9,7 +9,6 @@ function saveMap(img, token) {
 	formData.append("fontsize", MapLoader.save_fontsize);
 	formData.append("strokewidth", MapLoader.save_strokewidth);
 	formData.append("captcha", token);
-	formData.append("updateText", mapOptions.updateText);
 	
 	console.log('token: ' + token);
 
@@ -153,7 +152,6 @@ function saveMap_user() {
 	data['year'] = MapLoader.save_year;
 	data['fontsize'] = MapLoader.save_fontsize;
 	data['strokewidth'] = MapLoader.save_strokewidth;
-	data['updatetext'] = mapOptions.updateText;
 	data['candidates'] = {};
 	data['states'] = {};
 	data['proportional'] = {};
@@ -221,7 +219,6 @@ function saveMap_new(img, token) {
 	data['year'] = MapLoader.save_year;
 	data['fontsize'] = MapLoader.save_fontsize;
 	data['strokewidth'] = MapLoader.save_strokewidth;
-	data['updatetext'] = mapOptions.updateText;
 	data['candidates'] = {};
 	data['states'] = {};
 	data['proportional'] = {};

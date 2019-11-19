@@ -1,4 +1,4 @@
-var currentCache = 'v1.2.46';
+var currentCache = 'v1.2.50';
 
 var states = [];
 var lands = [];
@@ -11,12 +11,9 @@ var maxColorValue = 2;
 
 var mode = 'paint';
 
-var blockPresets = false;
-
 var maxColorValues = 4;
 
 var mapOptions = {
-	updateText: true
 }
 
 var strokeMultiplier = 1;
@@ -183,53 +180,6 @@ function setMode(set) {
 
 	LogoManager.loadButtons();
 
-	var notification = document.getElementById('notification');
-	var message = notification.querySelector('#notification-message');
-	var title = notification.querySelector('#notification-title');
-
-	if(MapLoader.save_year !== 'open') {
-		if(set === 'ec' || set === 'candidate' || set === 'delete' || set === 'deletecandidate') {
-			title.innerHTML = 'Sorry';
-			message.innerHTML = 'This mode is not available while editing a historical ' + MapLoader.save_type + ' map';
-			notification.style.display = 'inline';
-			console.log('denied');
-			return;
-		}
-	}
-
-	if(MapLoader.save_type === 'gubernatorial') {
-		if(set === 'ec') {
-			title.innerHTML = 'Sorry';
-			message.innerHTML = 'This mode is not available while editing a guberatorial map';
-			notification.style.display = 'inline';
-			console.log('denied');
-			return;
-		}
-	}
-
-	if(MapLoader.save_type === 'senatorial') {
-		//if(set === 'delete' || set === 'ec') {
-		if(set === 'ec') {
-			title.innerHTML = 'Sorry';
-			message.innerHTML = 'This mode is not available while editing a senatorial map';
-			notification.style.display = 'inline';
-			console.log('denied');
-			return;
-
-		}
-	}
-
-	if(MapLoader.save_type === 'congressional') {
-		//if(set === 'delete' || set === 'ec') {
-		if(set === 'ec') {
-			title.innerHTML = 'Sorry';
-			message.innerHTML = 'This mode is not available while editing a congressional map';
-			notification.style.display = 'inline';
-			console.log('denied');
-			return;
-		}
-	}
-	
 	console.log('allowed');
 
 	mode = set;
@@ -263,13 +213,15 @@ function setMode(set) {
 	}
 
 	var notification = document.getElementById('notification');
-	if(mode === 'paint' || mode === 'move' || mode === 'paintmove') {
+	if(mode === 'paint') {
+		var notification = document.getElementById('notification');
 		notification.style.display = 'none';
 	} else if(mode !== 'paint') {
-		notification.style.display = 'inline';
-		var title = notification.querySelector('#notification-title');
-		title.innerHTML = modeText;
+		var notification = document.getElementById('notification');
 		var message = notification.querySelector('#notification-message');
+		var title = notification.querySelector('#notification-title');
+		notification.style.display = 'inline';
+		title.innerHTML = modeText;
 		message.innerHTML = notificationText;
 	}
 }
@@ -420,7 +372,7 @@ function start() {
 		MapLoader.loadMapFromId(php_load_map_id);
 	} else {
 		PresetLoader.loadPreset("classic");
-		MapLoader.loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open", {updateText: true, voters: 'usa_voting_pop', enablePopularVote: true});
+		MapLoader.loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open", {voters: 'usa_voting_pop', enablePopularVote: true});
 	}
 
 	Account.verifyState();

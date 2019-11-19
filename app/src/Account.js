@@ -199,7 +199,6 @@ class Account {
 		data['year'] = MapLoader.save_year;
 		data['fontsize'] = MapLoader.save_fontsize;
 		data['strokewidth'] = MapLoader.save_strokewidth;
-		data['updatetext'] = mapOptions.updateText;
 		data['candidates'] = {};
 		data['states'] = {};
 		data['proportional'] = {};

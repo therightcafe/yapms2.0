@@ -20,39 +20,20 @@ class State {
 	}
 
 	resetVoteCount() {
-		if(this.dataid === 'congressional' ||
-			this.dataid === 'usa_gubernatorial') {
-			this.setVoteCount(1, false);
-			this.voteCount_beforeDisable = 1;
-		} else if(this.dataid === 'senate') {
-			this.setVoteCount(2, false);
-			this.voteCount_beforeDisable = 2;
-		} else if(this.dataid === 'ltesenate') {
-			this.setVoteCount(1, false);
-			this.voteCount_beforeDisable = 1;
-		} else if(this.dataid === 'dem_primary' ||
-				this.dataid === 'rep_primary') {
-			this.setVoteCount(data[this.dataid][this.name], false);
-			this.voteCount_beforeDisable = data[this.dataid][this.name];
-		}else if(this.dataid === 'usa_1972_ec') {
-			this.setVoteCount(data[this.dataid][this.name], true);
-			this.voteCount_beforeDisable = data[this.dataid][this.name];
-		} else if(this.dataid === 'russia_federal_council') {
-			this.setVoteCount(2, false);
-			this.voteCount_beforeDisable = 2;
+		if(parseInt(this.dataid)) {
+			var count = parseInt(this.dataid);
+			this.setVoteCount(count);
+			this.voteCount_beforeDisable = count;		
 		} else if(this.dataid === 'duma') {
 			if(this.name === 'Russia') {
-				this.setVoteCount(225, false);
+				this.setVoteCount(225);
 				this.voteCount_beforeDisable = 225;
 			} else {
-				this.setVoteCount(1, false);
+				this.setVoteCount(1);
 				this.voteCount_beforeDisable = 1;
 			}
-		} else if(this.dataid === 'brazil_senate') {
-			this.setVoteCount(3, false);
-			this.voteCount_beforeDisable = 3;
 		} else {
-			this.setVoteCount(data[this.dataid][this.name], false);
+			this.setVoteCount(data[this.dataid][this.name]);
 			this.voteCount_beforeDisable = data[this.dataid][this.name];
 		}
 	}
@@ -73,28 +54,26 @@ class State {
 		return this.voteCount; 
 	}
 	
-	setVoteCount(value, updateText) {
+	setVoteCount(value) {
 		var diff = value - this.voteCount;
 		this.voteCount = value;
 		this.delegates = {};
 		this.delegates['Tossup'] = value;
-		if(MapLoader.save_type === 'proportional' || MapLoader.save_type === 'primary') {
+		if(MapLoader.save_type === 'proportional') {
 			this.candidate = 'Tossup';
 			this.setColor('Tossup', 2);
 		}
 		totalVotes += diff;
 
 		// update the html text display
-		if(updateText === true) {
-			var stateText = document.getElementById(this.name + '-text');
+		var stateText = document.getElementById(this.name + '-text');
+		if(stateText !== null) {
 			var text = this.name + ' ' + value;
-			if(stateText !== null) {
-				// the text elements in an svg are inside spans
-				if(typeof stateText.childNodes[1] !== 'undefined') {
-					stateText.childNodes[1].innerHTML = ' ' + value;
-				} else {
-					stateText.childNodes[0].innerHTML = this.name + ' ' + value;
-				}
+			// the text elements in an svg are inside spans
+			if(typeof stateText.childNodes[1] !== 'undefined') {
+				stateText.childNodes[1].innerHTML = ' ' + value;
+			} else {
+				stateText.childNodes[0].innerHTML = this.name + ' ' + value;
 			}
 		}
 	}
@@ -198,7 +177,8 @@ class State {
 		}
 
 		if(this.disabled == false) {
-			this.setVoteCount(0, MapLoader.save_type === "presidential");
+			this.setVoteCount(0);
+			//alert(MapLoader.save_type === "takeall");
 			this.setColor('Tossup', 2);
 
 			//this.setDisplayColor(candidates['Tossup'].colors[1]);
@@ -237,8 +217,7 @@ class State {
 
 		} else if(this.disabled == true) {
 			this.resetVoteCount();
-			this.setVoteCount(this.voteCount, MapLoader.save_type === "presidential");
-			//this.setVoteCount(this.voteCount_beforeDisable, save_type === "presidential");
+			this.setVoteCount(this.voteCount);
 			this.disabled = !this.disabled;
 			this.setColor(this.getCandidate(), this.getColorValue());
 			this.htmlElement.setAttribute('fill-opacity', '1.0');
@@ -403,12 +382,7 @@ class State {
 		// get the state and set its new vote count
 		states.forEach(function(element) {
 			if(element.getName() === stateId) {
-				// only update the text on presidential maps
-				if(mapOptions !== undefined && mapOptions.updateText !== undefined) {
-					element.setVoteCount(parseInt(input), mapOptions.updateText);
-				} else {
-					element.setVoteCount(parseInt(input), false);
-				}
+				element.setVoteCount(parseInt(input));
 			}
 		});
 
