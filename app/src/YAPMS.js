@@ -3610,7 +3610,9 @@ class State {
 
 		// update the html text display
 		var stateText = document.getElementById(this.name + '-text');
-		if(stateText !== null) {
+		if(stateText !== null && 
+			MapLoader.save_type !== 'senatorial' &&
+			MapLoader.save_type !== 'gubernatorial') {
 			var text = this.name + ' ' + value;
 			// the text elements in an svg are inside spans
 			if(typeof stateText.childNodes[1] !== 'undefined') {
@@ -6235,7 +6237,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v1.2.50';
+var currentCache = 'v1.2.51';
 
 var states = [];
 var lands = [];
