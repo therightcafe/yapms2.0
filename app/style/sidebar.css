@@ -94,6 +94,14 @@
 	margin: 6px;
 }
 
+.sidebar-info-box a:link {
+	color: #0000ff;
+}
+
+.sidebar-info-box a:visited {
+	color: #0000ff;
+}
+
 .sidebar-hover-popup {
 	margin: 0px;
 	padding: 0px;
