@@ -152,7 +152,7 @@ function darkPalette() {
 	setClickButtonTextColor('#FFFFFF');
 	setMenuColor('#000000');
 	
-	setSideBarColor('#000000');
+	setSideBarColor('#2b2e33');
 	setSideBarTextStyle('#ffffff');
 	setSideBarH3Border('#444444');
 	setSideBarButtonStyle('white', 'black');
@@ -187,7 +187,7 @@ function greyscalePalette() {
 	setClickButtonTextColor('#FFFFFF');
 	setMenuColor('#101010');
 	
-	setSideBarColor('#101010');
+	setSideBarColor('#454545');
 	setSideBarTextStyle('#ffffff');
 	setSideBarH3Border('#444444');
 	setSideBarButtonStyle('white', 'black');
