@@ -4836,7 +4836,6 @@ function darkPalette() {
 	
 	setSideBarColor('#2b2e33');
 	setSideBarTextStyle('#ffffff');
-	setSideBarH3Border('#444444');
 	setSideBarButtonStyle('white', 'black');
 
 	setBorderStyle('#000000', 7.0);
@@ -4871,7 +4870,6 @@ function greyscalePalette() {
 	
 	setSideBarColor('#454545');
 	setSideBarTextStyle('#ffffff');
-	setSideBarH3Border('#444444');
 	setSideBarButtonStyle('white', 'black');
 
 	setBorderStyle('#252525', 7.0);
@@ -4906,7 +4904,6 @@ function terminalPalette() {
 	
 	setSideBarColor('#f8f9fa');
 	setSideBarTextStyle('#000000');
-	setSideBarH3Border('#cccccc');
 	setSideBarButtonStyle('black', 'white');
 	
 	setBorderStyle('#ffffff', 6.0);
@@ -4943,7 +4940,6 @@ function lightPalette() {
 	
 	setSideBarColor('#dcdcdc');
 	setSideBarTextStyle('#000000');
-	setSideBarH3Border('#cccccc');
 	setSideBarButtonStyle('black', 'white');
 	
 	setBorderStyle('#000000', 6.0);
@@ -4978,7 +4974,6 @@ function contrastPalette() {
 
 	setSideBarColor('#f8f9fa');
 	setSideBarTextStyle('#000000');
-	setSideBarH3Border('#cccccc');
 	setSideBarButtonStyle('black', 'white');
 	
 	setBorderStyle('#f8f9fa', 6.0);
@@ -5011,9 +5006,8 @@ function metallicPalette() {
 	setClickButtonTextColor('#FFFFFF');
 	setMenuColor('black');
 	
-	setSideBarColor('#000000');
+	setSideBarColor('#33353b');
 	setSideBarTextStyle('#ffffff');
-	setSideBarH3Border('#666666');
 	setSideBarButtonStyle('white', 'black');
 	
 	setBorderStyle('#000000', 6.0);
@@ -5044,7 +5038,6 @@ function halloweenPalette() {
 
 	setSideBarColor('#9c9b98');
 	setSideBarTextStyle('#000000');
-	setSideBarH3Border('#666666');
 	setSideBarButtonStyle('white', 'black');
 	
 	setClickButtonColor('#060606');
@@ -5082,7 +5075,6 @@ function toWinPalette() {
 	
 	setSideBarColor('#f8f9fa');
 	setSideBarTextStyle('#000000');
-	setSideBarH3Border('#cccccc');
 	setSideBarButtonStyle('black', 'white');
 
 	setBorderStyle('#f8f9fa', 6.0);
@@ -5238,17 +5230,6 @@ function setSideBarSocialOutline(color, width) {
 			var element = elements[index];
 			element.style.borderColor = color;
 			element.style.borderWidth = width;
-		}
-	}
-}
-
-function setSideBarH3Border(color) {
-	var sidebar = document.getElementById('sidebar');
-	if(sidebar) {
-		var elements = sidebar.querySelectorAll(".sidebar-box h3");
-		for(var index = 0; index < elements.length; ++index) {
-			var h3 = elements[index];
-			//h3.style.borderBottom = '1px solid ' + color;
 		}
 	}
 }
