@@ -79,7 +79,8 @@
 
 #sidebar-toggle-popularvote {
 	display: none;
-	background: #ffffff;
+	background: black;
+	color: white;
 	transition: background 200ms;
 	cursor: pointer;
 }
