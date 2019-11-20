@@ -23,16 +23,25 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 			<meta property=\"og:title\" content=\"YAPms - USA {$year} Republican Primary Map\">
 			<meta property=\"og:description\" content=\"Interactive USA {$year} Republican Primary Map\">";
 		$h1title = "USA {$year} Republican Primary";
-	} else if(strpos($_GET['t'], 'state_house')) { 
+	} else if(strpos($_GET['t'], 'state_lower')) { 
 		$split = explode('_', $_GET['t']);
 		$state = $split[0];
+		switch($state) {
+			case "NewJersey": 
+				$state = "New Jersey";
+				break;
+			case "NorthDakota":
+				$state = "North Dakota";
+				break;
+		}	
 		$year = $split[1];
-		echo "<meta name=\"description\" content=\"Interactive {$state} {$year} State Legislature House Map\">
-			<title>USA - {$state} {$year} State House Election Map</title>
-			<meta property=\"og:title\" content=\"YAPms - USA {$state} {$year} State House Map\">
-			<meta property=\"og:description\" content=\"Interactive {$state} {$year} State Legislature House Map\">";
-		$h1title = "{$state} House Legislature";
+		echo "<meta name=\"description\" content=\"Interactive {$state} {$year} State Lower Legislature Map\">
+			<title>USA - {$state} {$year} State Lower Legislature Election Map</title>
+			<meta property=\"og:title\" content=\"YAPms - USA {$state} {$year} State Lower Legislature Map\">
+			<meta property=\"og:description\" content=\"Interactive {$state} {$year} State Lower Legislature Map\">";
+		$h1title = "{$state} Lower Legislature";
 	} else {
+
 	switch($_GET['t']) {
 		case 'USA_2020_senate':
 		echo '<meta name="description" content="United States interactive 2020 senate election map">

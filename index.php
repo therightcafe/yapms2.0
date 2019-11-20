@@ -273,85 +273,90 @@ _atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
 		<div class="map-type-header-text">State Legislatures - House</div>
 	</div>
 	<div class="map-button-box">	
-		<a href="./app/?t=Alabama_2020_state_house">
+		<a href="./app/?t=Alabama_2020_state_lower">
 			<div class="map-button">
 				Alabama
 			</div>
 		</a>
-		<a href="./app/?t=Alaska_2020_state_house">
+		<a href="./app/?t=Alaska_2020_state_lower">
 			<div class="map-button">
 				Alaska
 			</div>
 		</a>
-		<a href="./app/?t=Arkansas_2020_state_house">
+		<a href="./app/?t=Arkansas_2020_state_lower">
 			<div class="map-button">
 				Arkansas
 			</div>
 		</a>
-		<a href="./app/?t=California_2020_state_house">
+		<a href="./app/?t=California_2020_state_lower">
 			<div class="map-button">
 				California
 			</div>
 		</a>
-		<br>
-		<a href="./app/?t=Colorado_2020_state_house">
+		<a href="./app/?t=Colorado_2020_state_lower">
 			<div class="map-button">
 				Colorado
 			</div>
 		</a>
-		<a href="./app/?t=Connecticut_2020_state_house">
+		<br>
+		<a href="./app/?t=Connecticut_2020_state_lower">
 			<div class="map-button">
 				Connecticut
 			</div>
 		</a>
-		<a href="./app/?t=Hawaii_2020_state_house">
+		<a href="./app/?t=Florida_2020_state_lower">
+			<div class="map-button">
+				Florida
+			</div>
+		</a>
+		<a href="./app/?t=Hawaii_2020_state_lower">
 			<div class="map-button">
 				Hawaii
 			</div>
 		</a>
-		<a href="./app/?t=Idaho_2020_state_house">
+		<a href="./app/?t=Idaho_2020_state_lower">
 			<div class="map-button">
 				Idaho
 			</div>
 		</a>
 		<br>
-		<a href="./app/?t=Iowa_2020_state_house">
+		<a href="./app/?t=Iowa_2020_state_lower">
 			<div class="map-button">
 				Iowa
 			</div>
 		</a>
-		<a href="./app/?t=Michigan_2020_state_house">
+		<a href="./app/?t=Michigan_2020_state_lower">
 			<div class="map-button">
 				Michigan
 			</div>
 		</a>
-		<a href="./app/?t=Minnesota_2020_state_house">
+		<a href="./app/?t=Minnesota_2020_state_lower">
 			<div class="map-button">
 				Minnesota
 			</div>
 		</a>
-		<a href="./app/?t=NewJersey_2020_state_house">
+		<a href="./app/?t=NewJersey_2020_state_lower">
 			<div class="map-button">
 				New Jersey
 			</div>
 		</a>
 		<br>
-		<a href="./app/?t=NorthDakota_2020_state_house">
+		<a href="./app/?t=NorthDakota_2020_state_lower">
 			<div class="map-button">
 				North Dakota
 			</div>
 		</a>
-		<a href="./app/?t=Oregon_2020_state_house">
+		<a href="./app/?t=Oregon_2020_state_lower">
 			<div class="map-button">
 				Oregon
 			</div>
 		</a>
-		<a href="./app/?t=Pennsylvania_2020_state_house">
+		<a href="./app/?t=Pennsylvania_2020_state_lower">
 			<div class="map-button">
 				Pennsylvania
 			</div>
 		</a>
-		<a href="./app/?t=Texas_2020_state_house">
+		<a href="./app/?t=Texas_2020_state_lower">
 			<div class="map-button">
 				Texas
 			</div>
