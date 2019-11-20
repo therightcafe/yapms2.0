@@ -2145,7 +2145,7 @@ class MapLoader {
 				break;
 			case "UnitedKingdom_historic_counties":
 				PresetLoader.loadPreset('uk')
-				MapLoader.loadMap("./res/ukd/unitedkingdom_historic_counties.svg", 16, 0.4, "1", "takeall_noedit", "open");
+				MapLoader.loadMap("./res/ukd/unitedkingdom_historic_counties.svg", 16, 0.4, "1", "takeall", "open");
 				break;
 			case "Ukraine":
 				PresetLoader.loadPreset('uk')
