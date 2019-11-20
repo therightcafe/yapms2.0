@@ -3577,7 +3577,9 @@ class State {
 			}
 		} 
 		/* PHASE THIS OUT PLEASE */
-		else if(this.dataid === 'congressional') {
+		else if(this.dataid === 'congressional' ||
+			this.dataid === 'usa_gubernatorial' ||
+			this.dataid === 'gubernatorial') {
 			this.setVoteCount(1);
 			this.voteCount_beforeDisable = 1;
 
@@ -6199,7 +6201,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v1.2.60';
+var currentCache = 'v1.2.61';
 
 var states = [];
 var lands = [];
