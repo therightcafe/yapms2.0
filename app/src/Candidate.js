@@ -48,6 +48,7 @@ class CandidateManager {
 		MapManager.verifyMap();
 		ChartManager.updateChart();
 		countPopularVote();
+		Simulator.init();
 	}
 
 	static deleteCandidateByName(name) {
@@ -185,6 +186,7 @@ class CandidateManager {
 		LegendManager.updateLegend();
 
 		countPopularVote();
+		Simulator.init();
 	}
 	
 	static saveCustomColors() {

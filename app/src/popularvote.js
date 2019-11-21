@@ -1,8 +1,14 @@
-var lastViewPopularVote = "";
 var popularVoteEnabled = false;
 
 function numberWithCommas(number) {
 	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+function showPopularVoteButton() {
+	var element = document.getElementById('sidebar-toggle-popularvote');
+	if(element) {
+		element.style.display = 'block';
+	}
 }
 
 function verifyPopularVote() {
@@ -10,15 +16,7 @@ function verifyPopularVote() {
 		return false;
 	}
 
-	if(enablePopularVote) {
-		var element = document.getElementById('sidebar-toggle-popularvote');
-		element.style.display = 'block';
-		return true;
-	} else {
-		var element = document.getElementById('sidebar-toggle-popularvote');
-		element.style.display = 'none';
-		return false;
-	}
+	return popularVoteEnabled;
 }
 
 function autoMarginsOnClick() {
@@ -44,8 +42,6 @@ function viewPopularVote(state) {
 		return;
 	}
 
-	lastViewPopularVote = state;
-
 	var popularVoteCalc = document.getElementById('sidebar-popularvote');
 	if(state.disabled) {
 		popularVoteCalc.style.display = 'none';	
@@ -67,7 +63,7 @@ function viewPopularVote(state) {
 	}
 
 	if(state.name.includes('-AL')) {
-		title.innerHTML = "Select a disctrict to set popular vote";
+		title.innerHTML = "Select a district to set popular vote";
 		return;
 	}
 
@@ -382,13 +378,13 @@ function togglePopularVote() {
 	var e2 = document.getElementById('sidebar-national-popularvote');
 	var e3 = document.getElementById('sidebar-popularvote-settings');
 	var e4 = document.getElementById('sidebar-toggle-popularvote');
-	if(e1.style.display === 'none') {
+	if(popularVoteEnabled  === false) {
 		e1.style.display = 'block';
 		e2.style.display = 'block';
 		e3.style.display = 'block';
 		e4.innerHTML = '<h4>Disable Popular Vote</h4>';
 		popularVoteEnabled = true;
-	} else if(e1.style.display === 'block') {
+	} else if(popularVoteEnabled === true) {
 		e1.style.display = 'none';
 		e2.style.display = 'none';
 		e3.style.display = 'none';

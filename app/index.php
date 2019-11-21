@@ -155,15 +155,6 @@
 	?>
 
 	<script async src="./res/fontawesome/js/all.min.js"></script>
-
-<!-- Start Alexa Certify Javascript -->
-<script type="text/javascript">
-_atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
-(function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://certify-js.alexametrics.com/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
-</script>
-<noscript><img src="https://certify.alexametrics.com/atrk.gif?account=rBAMt1Y1Mn20Io" style="display:none" height="1" width="1" alt="" /></noscript>
-<!-- End Alexa Certify Javascript -->
-
 </head>
 
 <body id="body" onresize="onResize()">
@@ -321,12 +312,12 @@ if($mobile === false) {
 			</ul>
 		</div>
 
-		<div id="sidebar-toggle-popularvote" class="sidebar-box" onclick="togglePopularVote()">
+		<div id="sidebar-toggle-popularvote" class="sidebar-box sidebar-tool-button" onclick="togglePopularVote()" style="display: none">
 			<h4>
 				Enable Popular Vote
 			</h4>
 		</div>
-		<div id="sidebar-popularvote" class="sidebar-box" style="display: none">
+		<div id="sidebar-popularvote" class="sidebar-box sidebar-tool">
 			<h3>
 				<span>
 				State Popular Vote
@@ -340,7 +331,7 @@ if($mobile === false) {
 			<div id="popularvote-ranges">
 			</div>
 		</div>
-		<div id="sidebar-national-popularvote" class="sidebar-box" style="display: none">
+		<div id="sidebar-national-popularvote" class="sidebar-box sidebar-tool">
 			<h3>
 				<span>
 					National Popular Vote
@@ -349,7 +340,7 @@ if($mobile === false) {
 			<div id="national-popularvote-ranges">
 			</div>
 		</div>
-		<div id="sidebar-popularvote-settings" class="sidebar-box" style="display: none">
+		<div id="sidebar-popularvote-settings" class="sidebar-box sidebar-tool">
 			<h3>
 				Settings
 			</h3>
@@ -369,6 +360,41 @@ if($mobile === false) {
 				</div>
 			</div>
 		</div>
+
+		<div id="sidebar-enable-simulator" class="sidebar-box sidebar-tool-button" onclick="Simulator.toggle();">
+			<h4>
+				Enable Simulator
+			</h4>
+		</div>
+		<div id="sidebar-state-simulator" class="sidebar-box sidebar-tool">
+			<h3>
+				State Percentage
+			</h3>
+			<div id="simulator-state-title">
+				Select a State
+			</div>
+			<div id="simulator-ranges">
+			</div>
+		</div>
+		<div id="sidebar-settings-simulator" class="sidebar-box sidebar-tool">
+			<h3>
+				Settings
+			</h3>
+			<div class="sidebar-hover-popup">
+				<input type="checkbox" id="simulator-noclick">
+					Ignore Click
+				</input>
+				<div class="tooltip-text">
+					Clicking dosen\'t set state color or open menu
+				</div>
+			</div>	
+		</div>
+		<div id="sidebar-run-simulator" class="sidebar-box sidebar-tool-button sidebar-tool" onclick="Simulator.run();">
+			<h4>
+				Run Simulation
+			</h4>
+		</div>
+
 		<div id="sidebar-congress" class="sidebar-box">
 			<h3><span id="sidebar-congress-district">District</span></h3>
 			<div id="sidebar-congress-representative">
@@ -423,11 +449,17 @@ if($mobile === false) {
 			include './html/info/usa_info_electoral_college.php';
 		} else {
 			switch($_GET["t"]) {
+			case "USA_2020_senate":
+			case "USA_current_senate":
+			case "USA_senate":
+				include './html/info/usa_info_senate.php';
+				break;
 			case "USA_2024_projection":
 			case "USA_2020_cook":
 			case "USA_2020_inside":
 			case "USA_2020_sabatos":
 				include './html/info/usa_info_electoral_college.php';
+				break;
 			}
  		}
 

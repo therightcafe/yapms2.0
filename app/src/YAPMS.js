@@ -646,6 +646,7 @@ class CandidateManager {
 		MapManager.verifyMap();
 		ChartManager.updateChart();
 		countPopularVote();
+		Simulator.init();
 	}
 
 	static deleteCandidateByName(name) {
@@ -783,6 +784,7 @@ class CandidateManager {
 		LegendManager.updateLegend();
 
 		countPopularVote();
+		Simulator.init();
 	}
 	
 	static saveCustomColors() {
@@ -1782,7 +1784,6 @@ class MapManager {
 
 MapManager.lockedMap = false;
 MapManager.panObject = null;
-var enablePopularVote = false;
 var enableCongress = false;
 var enableCongressContested = false;
 
@@ -2072,7 +2073,7 @@ class MapLoader {
 				break;
 			case "USA_takeall":
 				PresetLoader.loadPreset('classic');
-				MapLoader.loadMap("./res/usa_no_districts.svg", 16, 0.75, "usa_no_districts_ec", "presidential", "open");
+				MapLoader.loadMap("./res/usa_no_districts.svg", 16, 0.75, "usa_no_districts_ec", "takeall", "open");
 				break;
 			case "USA_proportional":
 				PresetLoader.loadPreset('classic');
@@ -2274,7 +2275,9 @@ class MapLoader {
 		MapLoader.save_strokewidth = strokewidth;
 
 		if(options) {
-			enablePopularVote = options.enablePopularVote;
+			if(options.enablePopularVote) {
+				showPopularVoteButton();
+			}
 			verifyPopularVote();
 			enableCongress = options.enableCongress;
 			verifyCongress();
@@ -2722,6 +2725,14 @@ class MapLoader {
 	static clearMap() {
 		MapLoader.loadMap(MapLoader.save_filename, MapLoader.save_fontsize, MapLoader.save_strokewidth, MapLoader.save_dataid, MapLoader.save_type, MapLoader.save_year, {clear: true});
 		MapManager.setLockMap(false);
+	}
+
+	static clearMapCandidates() {
+		for(var index = 0; index < states.length; ++index) {
+			var state = states[index];
+			state.setColor("Tossup", 2);
+			state.resetDelegates();
+		}
 	}
 }
 
@@ -3547,10 +3558,14 @@ class PresetLoader {
 	}
 }
 var totalVotes = 0;
+var stateCount = 0;
 
 class State {
 	constructor(name, htmlElement, dataid) {
+		/* Real ID of the SVG element */
 		this.name = name;
+		/* Fake name for display when it has an ugly real name */
+		this.fakename = "District " + (++stateCount);
 		this.colorValue = 1;
 		this.htmlElement = htmlElement;
 		this.candidate = 'Tossup';
@@ -3597,6 +3612,11 @@ class State {
 			this.setVoteCount(data[this.dataid][this.name]);
 			this.voteCount_beforeDisable = data[this.dataid][this.name];
 		}
+	}
+	
+	resetDelegates() {
+		this.delegates = {};
+		this.delegates['Tossup'] = this.voteCount;
 	}
 
 	getCandidate() { 
@@ -3819,6 +3839,8 @@ class State {
 		if(this.disabled) {
 			return;
 		}
+
+		Simulator.viewPercentage(this);
 
 		// if changing color set to solor
 		if(this.candidate !== candidate) {
@@ -4255,8 +4277,10 @@ function stateClick(clickElement, options) {
 		case 'paint':
 		case 'paintmove':
 			if(MapLoader.save_type === 'proportional' || MapLoader.save_type === 'primary') {
+				Simulator.viewPercentage(state);
 				stateClickPaintProportional(state, id);
 			} else {
+				Simulator.viewPercentage(state);
 				stateClickPaint(state, options);
 			}
 			break;
@@ -5450,11 +5474,285 @@ function hideMenu(name) {
 	var menu = document.getElementById(name);
 	menu.style.display = 'none';
 }
-var lastViewPopularVote = "";
+class Simulator {
+	static init() {
+		for(var index = 0; index < states.length; ++index) {
+			var state = states[index];
+			state.simulator = {};
+			
+			for(var key in CandidateManager.candidates) {
+				if(key === "Tossup") {
+					continue;
+				}
+				state.simulator[key] = 0;
+			}
+		}
+		
+		for(var index = 0; index < proportionalStates.length; ++index) {
+			var state = proportionalStates[index];
+			state.simulator = {};
+			
+			for(var key in CandidateManager.candidates) {
+				if(key === "Tossup") {
+					continue;
+				}
+				state.simulator[key] = 0;
+			}
+		}
+	}
+
+	static toggle() {
+		Simulator.enabled = !Simulator.enabled;
+		var e1 = document.getElementById('sidebar-state-simulator');
+		var e2 = document.getElementById('sidebar-run-simulator');
+		var e3 = document.getElementById('sidebar-enable-simulator');
+		var e4 = document.getElementById('sidebar-settings-simulator');
+		if(Simulator.enabled) {
+			e1.style.display = 'block';
+			e2.style.display = 'block';
+			e4.style.display = 'block';
+			e3.innerHTML = '<h4>Disable Simulator</h4>';
+			Simulator.init();
+		} else {
+			e1.style.display = 'none';
+			e2.style.display = 'none';
+			e4.style.display = 'none';
+			e3.innerHTML = '<h4>Enable Simulator</h4>';
+		}
+	}
+
+	static viewPercentage(state) {
+		if(!Simulator.enabled) {
+			return;
+		}
+		
+		var ranges = document.getElementById("simulator-ranges");
+		while(ranges.firstChild) {
+			ranges.removeChild(ranges.firstChild);
+		}
+
+		for(var key in CandidateManager.candidates) {
+			if(key === "Tossup") {
+				continue;
+			}
+	
+			var total = 0;
+			for(var stateKey in state.simulator) {
+				total += state.simulator[stateKey];
+			}
+			var percent = 100;
+			if(total !== 0) {
+				percent = ((state.simulator[key] / total) * 100).toFixed(2);
+			}
+
+			var display = document.createElement("DIV");
+			display.setAttribute("id", "simulator-display-" + key);
+			display.innerHTML = key + " - " + percent + "%";
+
+			var range = document.createElement("INPUT");
+			range.setAttribute("id", "simulator-range-" + key);
+			range.setAttribute("type", "range");
+			range.setAttribute("max", 100);
+			range.setAttribute("min", 0);
+			range.setAttribute("step", 1);
+			range.value = state.simulator[key];
+
+			range.oninput = (function() {
+				var refstate = state;
+				var refkey = key;
+				var refdisplay = display;
+				return function() {
+					var value = parseInt(this.value);
+					refstate.simulator[refkey] = value;
+					
+					var total = 0;
+					for(var key in CandidateManager.candidates) {
+						if(key === "Tossup") {
+							continue;
+						}
+						total += refstate.simulator[key];	
+					}
+					
+					for(var key in CandidateManager.candidates) {
+						if(key === "Tossup") {
+							continue;
+						}
+						var display = document.getElementById("simulator-display-" + key);
+						var percent = 100;
+						if(total !== 0) {
+							percent = ((refstate.simulator[key] / total) * 100).toFixed(2);
+						}
+						display.innerHTML = key + " - "  + percent + "%";
+					}
+				}
+			})();
+			ranges.appendChild(display);
+			ranges.appendChild(range);
+		}
+
+		var title = document.getElementById("simulator-state-title");
+		if(state.name.match(/(Geometry|path([0-9]+)|g([0-9]+))/g)) {
+			title.innerHTML = state.fakename;
+		} else {
+			title.innerHTML = state.name.replace(/_/g, " ");
+		}
+	}
+
+	static run() {
+		MapLoader.clearMapCandidates();
+		Simulator.runTimeout = 5000 / states.length;
+		Simulator.runStateKey = 0;
+		Simulator.runLoop(states, 0, MapLoader.save_type === "proportional" || MapLoader.save_type === "primary");
+		Simulator.runLoop(proportionalStates, 0, true);
+	}
+
+	static runLoop(stateList, count, proportional) {
+		if(stateList.length === 0) {
+			return;
+		}
+
+		setTimeout(function() {
+			var state = stateList[count];
+			var candidates = [];
+			var totalPower = 0;
+			for(var candidateKey in state.simulator) {
+				totalPower += state.simulator[candidateKey];
+				candidates.push({"name": candidateKey, "power": state.simulator[candidateKey]});
+			}
+
+			for(var index = 0; index < candidates.length; ++index) {
+				var percentage = 1 / candidates.length;
+				if(totalPower !== 0) {
+					percentage = candidates[index].power / totalPower;
+				}
+				if(index !== 0) {
+					percentage += candidates[index - 1].percent;
+				}
+				candidates[index].percent = percentage;
+			}
+
+			if(proportional) {
+				Simulator.runProportionalState(state, candidates);
+			} else {
+				Simulator.runTakeAllState(state, candidates);
+			}
+			
+			count += 1;
+			
+			// Skip disabled states
+			while(count < stateList.length &&
+				stateList[count].disabled) {
+				count += 1;
+			}
+
+			if(count < stateList.length) {
+				Simulator.runLoop(stateList, count, proportional);
+			} else {
+				Simulator.runLoopFinish(stateList);
+			}
+		}, Simulator.runTimeout);
+	}
+	
+	static runTakeAllState(state, candidates) {
+		var random = Math.random();
+		for(var index = 0; index < candidates.length; ++index) {
+			var percent = candidates[index].percent;
+			var name = candidates[index].name;
+			if(random <= percent) {
+				state.setColor(name, 0);
+				countVotes();
+				ChartManager.updateChart();
+				LegendManager.updateLegend();
+				break;
+			}
+		}
+	}
+
+	static runProportionalState(state, candidates) {
+		var total = state.voteCount;
+		for(var index = 0; index < total; ++index) {
+			var random = Math.random();
+			for(var candidateIndex = 0; candidateIndex < candidates.length; ++candidateIndex) {
+				var percent = candidates[candidateIndex].percent;
+				if(random <= percent) {
+					var name = candidates[candidateIndex].name;
+					if(state.delegates[name]) {
+						state.delegates[name] += 1;
+					} else {
+						state.delegates[name] = 1;
+					}
+					state.delegates["Tossup"] -= 1;
+					break;
+				}
+			}
+		}
+	
+		var majorityIndex = 0;
+		for(var candidateIndex = 1; candidateIndex < candidates.length; ++candidateIndex) {
+			var checkName = candidates[candidateIndex].name;
+			var majorityName = candidates[majorityIndex].name;
+			if(state.delegates[checkName] > state.delegates[majorityName]) {
+				majorityIndex = candidateIndex;
+			}
+		}
+
+		state.setColor(candidates[majorityIndex].name, 0);
+
+		countVotes();
+		LegendManager.updateLegend();
+		ChartManager.updateChart();
+	}
+
+	static runLoopFinish(stateList) {
+		if(MapLoader.save_dataid === "usa_ec") {
+			var me01 = stateList.find(obj => {
+				return obj.name === "ME-D1";
+			});
+			var me02 = stateList.find(obj => {
+				return obj.name === "ME-D2";
+			});
+			if(me01.candidate === me02.candidate) {
+				var meal = stateList.find(obj => {
+					return obj.name === "ME-AL";
+				});
+
+				meal.setColor(me01.candidate, 0);
+			}
+
+			var ne01 = stateList.find(obj => {
+				return obj.name === "NE-D1";
+			});
+			var ne02 = stateList.find(obj => {
+				return obj.name === "NE-D2";
+			});
+			var ne03 = stateList.find(obj => {
+				return obj.name === "NE-D3";
+			});
+			if(ne01.candidate === ne02.candidate && ne02.candidate === ne03.candidate) {
+				var neal = stateList.find(obj => {
+					return obj.name === "NE-AL";
+				});
+				neal.setColor(ne01.candidate, 0);
+			}
+		}	
+	}
+}
+
+Simulator.enabled = false;
+Simulator.runStateKey = 0;
+Simulator.runStateKeyProportional = 0;
+Simulator.runTimeout = 100;
 var popularVoteEnabled = false;
 
 function numberWithCommas(number) {
 	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+function showPopularVoteButton() {
+	var element = document.getElementById('sidebar-toggle-popularvote');
+	if(element) {
+		element.style.display = 'block';
+	}
 }
 
 function verifyPopularVote() {
@@ -5462,15 +5760,7 @@ function verifyPopularVote() {
 		return false;
 	}
 
-	if(enablePopularVote) {
-		var element = document.getElementById('sidebar-toggle-popularvote');
-		element.style.display = 'block';
-		return true;
-	} else {
-		var element = document.getElementById('sidebar-toggle-popularvote');
-		element.style.display = 'none';
-		return false;
-	}
+	return popularVoteEnabled;
 }
 
 function autoMarginsOnClick() {
@@ -5496,8 +5786,6 @@ function viewPopularVote(state) {
 		return;
 	}
 
-	lastViewPopularVote = state;
-
 	var popularVoteCalc = document.getElementById('sidebar-popularvote');
 	if(state.disabled) {
 		popularVoteCalc.style.display = 'none';	
@@ -5519,7 +5807,7 @@ function viewPopularVote(state) {
 	}
 
 	if(state.name.includes('-AL')) {
-		title.innerHTML = "Select a disctrict to set popular vote";
+		title.innerHTML = "Select a district to set popular vote";
 		return;
 	}
 
@@ -5834,13 +6122,13 @@ function togglePopularVote() {
 	var e2 = document.getElementById('sidebar-national-popularvote');
 	var e3 = document.getElementById('sidebar-popularvote-settings');
 	var e4 = document.getElementById('sidebar-toggle-popularvote');
-	if(e1.style.display === 'none') {
+	if(popularVoteEnabled  === false) {
 		e1.style.display = 'block';
 		e2.style.display = 'block';
 		e3.style.display = 'block';
 		e4.innerHTML = '<h4>Disable Popular Vote</h4>';
 		popularVoteEnabled = true;
-	} else if(e1.style.display === 'block') {
+	} else if(popularVoteEnabled === true) {
 		e1.style.display = 'none';
 		e2.style.display = 'none';
 		e3.style.display = 'none';
@@ -6206,7 +6494,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v1.2.70';
+var currentCache = 'v1.2.71';
 
 var states = [];
 var lands = [];
@@ -6346,11 +6634,6 @@ function setDelegates(e) {
 		var rangeValue = 0;
 		if(range) {
 			rangeValue = parseInt(range.value);
-		} else {
-			gtag('event', 'error', {
-				'event_category': 'error',
-				'event_label': 'Could not find range element (range-' + key + ') ' + MapLoader.save_filename
-			});
 		}
 		state.delegates[key] = parseInt(rangeValue);
 		// subtract the delegates for each candidate

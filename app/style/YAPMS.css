@@ -210,8 +210,6 @@
 input[type=range] {
 	-webkit-appearance: none;
 	background: transparent;
-	border: 1px solid white;
-	border-radius: 1em;
 }
 
 input[type=range]:focus {
@@ -1096,17 +1094,20 @@ a {
 	border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 
-#sidebar-toggle-popularvote {
-	display: none;
+.sidebar-tool-button {
 	background: black;
 	color: white;
-	transition: background 200ms;
 	cursor: pointer;
 }
 
-#sidebar-toggle-popularvote h4 {
+.sidebar-tool-button h4 {
 	padding: 5px;
 	margin: 0px;
+}
+
+.sidebar-tool {
+	display: none;
+	border-left: 3px solid black;
 }
 
 .sidebar-info-box p {

@@ -1,4 +1,3 @@
-var enablePopularVote = false;
 var enableCongress = false;
 var enableCongressContested = false;
 
@@ -288,7 +287,7 @@ class MapLoader {
 				break;
 			case "USA_takeall":
 				PresetLoader.loadPreset('classic');
-				MapLoader.loadMap("./res/usa_no_districts.svg", 16, 0.75, "usa_no_districts_ec", "presidential", "open");
+				MapLoader.loadMap("./res/usa_no_districts.svg", 16, 0.75, "usa_no_districts_ec", "takeall", "open");
 				break;
 			case "USA_proportional":
 				PresetLoader.loadPreset('classic');
@@ -490,7 +489,9 @@ class MapLoader {
 		MapLoader.save_strokewidth = strokewidth;
 
 		if(options) {
-			enablePopularVote = options.enablePopularVote;
+			if(options.enablePopularVote) {
+				showPopularVoteButton();
+			}
 			verifyPopularVote();
 			enableCongress = options.enableCongress;
 			verifyCongress();
@@ -938,6 +939,14 @@ class MapLoader {
 	static clearMap() {
 		MapLoader.loadMap(MapLoader.save_filename, MapLoader.save_fontsize, MapLoader.save_strokewidth, MapLoader.save_dataid, MapLoader.save_type, MapLoader.save_year, {clear: true});
 		MapManager.setLockMap(false);
+	}
+
+	static clearMapCandidates() {
+		for(var index = 0; index < states.length; ++index) {
+			var state = states[index];
+			state.setColor("Tossup", 2);
+			state.resetDelegates();
+		}
 	}
 }
 

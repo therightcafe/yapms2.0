@@ -1,4 +1,4 @@
-var currentCache = 'v1.2.70';
+var currentCache = 'v1.2.71';
 
 var states = [];
 var lands = [];
@@ -138,11 +138,6 @@ function setDelegates(e) {
 		var rangeValue = 0;
 		if(range) {
 			rangeValue = parseInt(range.value);
-		} else {
-			gtag('event', 'error', {
-				'event_category': 'error',
-				'event_label': 'Could not find range element (range-' + key + ') ' + MapLoader.save_filename
-			});
 		}
 		state.delegates[key] = parseInt(rangeValue);
 		// subtract the delegates for each candidate

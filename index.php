@@ -54,16 +54,7 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script async src="./app/res/fontawesome/js/all.min.js"></script>
 
-<!-- Start Alexa Certify Javascript -->
-<script type="text/javascript">
-_atrk_opts = { atrk_acct:"rBAMt1Y1Mn20Io", domain:"yapms.com",dynamic: true};
-(function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://certify-js.alexametrics.com/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
-</script>
-<noscript><img src="https://certify.alexametrics.com/atrk.gif?account=rBAMt1Y1Mn20Io" style="display:none" height="1" width="1" alt="" /></noscript>
-<!-- End Alexa Certify Javascript --> 
-
 	<link rel="prerender" href="https://www.yapms.com/app/?t=USA_2020_presidential">
-
 </head>
 
 <body>

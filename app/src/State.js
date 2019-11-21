@@ -1,8 +1,12 @@
 var totalVotes = 0;
+var stateCount = 0;
 
 class State {
 	constructor(name, htmlElement, dataid) {
+		/* Real ID of the SVG element */
 		this.name = name;
+		/* Fake name for display when it has an ugly real name */
+		this.fakename = "District " + (++stateCount);
 		this.colorValue = 1;
 		this.htmlElement = htmlElement;
 		this.candidate = 'Tossup';
@@ -49,6 +53,11 @@ class State {
 			this.setVoteCount(data[this.dataid][this.name]);
 			this.voteCount_beforeDisable = data[this.dataid][this.name];
 		}
+	}
+	
+	resetDelegates() {
+		this.delegates = {};
+		this.delegates['Tossup'] = this.voteCount;
 	}
 
 	getCandidate() { 
@@ -271,6 +280,8 @@ class State {
 		if(this.disabled) {
 			return;
 		}
+
+		Simulator.viewPercentage(this);
 
 		// if changing color set to solor
 		if(this.candidate !== candidate) {
