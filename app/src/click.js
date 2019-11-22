@@ -130,10 +130,14 @@ function stateClick(clickElement, options) {
 		case 'paintmove':
 			if(MapLoader.save_type === 'proportional' || MapLoader.save_type === 'primary') {
 				Simulator.viewPercentage(state);
-				stateClickPaintProportional(state, id);
+				if(Simulator.ignoreClick === false) {
+					stateClickPaintProportional(state, id);
+				}
 			} else {
 				Simulator.viewPercentage(state);
-				stateClickPaint(state, options);
+				if(Simulator.ignoreClick === false) {
+					stateClickPaint(state, options);
+				}
 			}
 			break;
 		case 'ec':

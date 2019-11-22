@@ -138,7 +138,7 @@
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
-		gtag('config', 'UA-132710089-1');
+		gtag('config', 'UA-132710089-1', {'anonymize_ip': true});
 	</script>
 
 	<style>
@@ -366,6 +366,14 @@ if($mobile === false) {
 				Enable Simulator
 			</h4>
 		</div>
+		<div id="sidebar-presets-simulator" class="sidebar-box sidebar-tool">
+			<h3>
+				Presets
+			</h3>
+			<select>
+				<option value="uniform">Uniform</option>
+			</select>
+		</div>
 		<div id="sidebar-state-simulator" class="sidebar-box sidebar-tool">
 			<h3>
 				State Percentage
@@ -385,7 +393,7 @@ if($mobile === false) {
 					Ignore Click
 				</input>
 				<div class="tooltip-text">
-					Clicking dosen\'t set state color or open menu
+					Clicking doesn\'t set state color or open menu
 				</div>
 			</div>	
 		</div>
@@ -744,8 +752,13 @@ echo '<!-- mobile-ad -->
 	</div>
 </div>
 
+<div id="consent" style="display: none">
+	<?php require './html/consent.php'; ?>
+</div>
+
 <script src="https://www.google.com/recaptcha/api.js?render=6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo"></script>
 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?tracking=1&thirdparty=1&always=1&refreshPage=1&showNoConsent=1"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>

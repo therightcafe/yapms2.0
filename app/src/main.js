@@ -342,6 +342,7 @@ function setChangeCandidate(oldCandidate, newCandidate) {
 }
 
 function start() {
+	Simulator.initListeners();
 	KeyboardManager.init();
 	CandidateManager.initCandidates();
 	ChartManager.initChart();

@@ -23,6 +23,14 @@ class Simulator {
 				state.simulator[key] = 0;
 			}
 		}
+
+	}
+
+	static initListeners() {
+		var noclick = document.getElementById('simulator-noclick');
+		noclick.addEventListener('change', function(event) {
+			Simulator.ignoreClick = event.target.checked;
+		});
 	}
 
 	static toggle() {
@@ -31,17 +39,26 @@ class Simulator {
 		var e2 = document.getElementById('sidebar-run-simulator');
 		var e3 = document.getElementById('sidebar-enable-simulator');
 		var e4 = document.getElementById('sidebar-settings-simulator');
+		var e5 = document.getElementById('sidebar-presets-simulator');
 		if(Simulator.enabled) {
 			e1.style.display = 'block';
 			e2.style.display = 'block';
 			e4.style.display = 'block';
+			e5.style.display = 'block';
 			e3.innerHTML = '<h4>Disable Simulator</h4>';
 			Simulator.init();
 		} else {
 			e1.style.display = 'none';
 			e2.style.display = 'none';
 			e4.style.display = 'none';
+			e5.style.display = 'none';
 			e3.innerHTML = '<h4>Enable Simulator</h4>';
+		}
+	}
+
+	static initPresets() {
+		if(MapLoader.save_dataid === "usa_ec") {
+
 		}
 	}
 
@@ -266,3 +283,4 @@ Simulator.enabled = false;
 Simulator.runStateKey = 0;
 Simulator.runStateKeyProportional = 0;
 Simulator.runTimeout = 100;
+Simulator.ignoreClick = false;
