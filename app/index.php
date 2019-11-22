@@ -758,7 +758,7 @@ echo '<!-- mobile-ad -->
 
 <script src="https://www.google.com/recaptcha/api.js?render=6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo"></script>
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?tracking=1&thirdparty=1&always=1&refreshPage=1&showNoConsent=1"></script>
+<script src="https://www.geoplugin.net/extras/cookielaw.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
@@ -789,6 +789,12 @@ if('serviceWorker' in navigator) {
 	});
 } else {
 	console.log('No service worker detected');
+}
+
+if(geoplugin_cookieConsent()) {
+	alert('hello european');
+} else {
+	alert('hi american');
 }
 </script>
 </body>
