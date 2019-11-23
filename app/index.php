@@ -223,10 +223,10 @@
 		Account
 	</div>
 	
-	<div class="click-button" style="white-space: nowrap;" onclick="CookieManager.askConsent()">
-	<!--<a class="click-button" href="https://www.yapms.com/privacypolicy.html" target="_blank" rel="noreferrer">-->
+	<div class="click-button" style="white-space: nowrap;">
+	<a class="click-button" href="https://www.yapms.com/privacypolicy.html" target="_blank" rel="noreferrer">
 	<i class="fas fa-user-secret"></i> Privacy
-	<!--</a>-->
+	</a>
 	</div>
 
 <?php
