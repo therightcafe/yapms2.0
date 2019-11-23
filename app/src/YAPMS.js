@@ -1481,8 +1481,13 @@ class CookieManager {
 			CookieManager.consentGiven();
 			return;
 		}
+		
+		/* Auto Consent */
+		CookieManager.consent = true;
+		CookieManager.consentGiven();
 
 		/* Only Ask For Consent From EU IP Address */
+/*
 		if(geoplugin_cookieConsent() === false) {
 			CookieManager.consent = true;
 			CookieManager.consentGiven();
@@ -1491,6 +1496,7 @@ class CookieManager {
 			var consentPopup = document.getElementById('consent');
 			consentPopup.style.display = 'inline-block';
 		}
+*/
 	}
 
 	static consentDenied(reload) {
@@ -6754,7 +6760,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v1.2.72';
+var currentCache = 'v1.2.73';
 
 var states = [];
 var lands = [];

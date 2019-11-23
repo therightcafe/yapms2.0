@@ -71,8 +71,13 @@ class CookieManager {
 			CookieManager.consentGiven();
 			return;
 		}
+		
+		/* Auto Consent */
+		CookieManager.consent = true;
+		CookieManager.consentGiven();
 
 		/* Only Ask For Consent From EU IP Address */
+/*
 		if(geoplugin_cookieConsent() === false) {
 			CookieManager.consent = true;
 			CookieManager.consentGiven();
@@ -81,6 +86,7 @@ class CookieManager {
 			var consentPopup = document.getElementById('consent');
 			consentPopup.style.display = 'inline-block';
 		}
+*/
 	}
 
 	static consentDenied(reload) {

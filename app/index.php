@@ -750,13 +750,12 @@ echo '<!-- mobile-ad -->
 	</div>
 </div>
 
-<div id="consent" style="display: none">
+<div id="consent" style="display: none;">
 	<?php require './html/consent.php'; ?>
 </div>
 
 <!--<script src="https://www.google.com/recaptcha/api.js?render=6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo"></script>-->
-
-<script src="http://www.geoplugin.net/extras/cookielaw.js"></script>
+<!--<script src="http://www.geoplugin.net/extras/cookielaw.js"></script>-->
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
