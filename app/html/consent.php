@@ -1,19 +1,35 @@
 <h3>
-	Cookie Consent
+	Privacy Policy and Cookies
 </h3>
 
+<hr>
+
 <p>
-	Cookies are used to track analytics, server personalized ads, and improve website functionality.
+	Read our privacy policy at <a href="">this link</a>
 </p>
 
 <p>
-	For example themes are saved, custom colors are saved and 
+	Cookies are used to track analytics, serve personalized ads, detect bots, and improve website functionality. By continuing to use the website cookies for non personal advertisements and analytics will still run.
 </p>
 
-<div class="consent-button">
-	Okay!
+<p style="text-align: center">
+	Features that require personal cookies
+	<div class="consent-list-block">
+	<ul class="consent-list">
+		<li>
+			Personalized Ads (AdSense)
+		</li>
+		<li>
+			Shared Maps (reCAPTCHA)
+		</li>
+	</ul>
+	</div>
+</p>
+
+<div class="consent-button" onclick="CookieManager.consentGiven();">
+	Allow Personal Cookies
 </div>
 
-<div class="consent-button">
-	No Thanks.
+<div class="consent-button" onclick="CookieManager.consentDenied();">
+	Block Personal Cookies
 </div>

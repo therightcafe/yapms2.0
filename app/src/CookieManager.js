@@ -1,5 +1,10 @@
 class CookieManager {
 	static appendCookie(key, value) {
+		if(CookieManager.consent === false) {
+			console.log('Cookie Manager: no consent');
+			return;
+		}
+
 		CookieManager.cookies[key] = value;
 		var cookie = "";
 		var expire = new Date(Date.now() + 60 * 1000 * 60 * 12 * 7 * 100).toString();
@@ -53,6 +58,72 @@ class CookieManager {
 			CookieManager.cookies['custom4leaning'] + ',' +
 			CookieManager.cookies['custom4tilting'] + ')';
 	}
+
+	static askConsent() {
+		/* If Consent Has Already Been Denied */
+		if(CookieManager.cookies['consent'] === "false") {
+			CookieManager.consent = false;
+			CookieManager.consentDenied();
+			return;
+		/* If Consent Has Already Been Given */
+		} else if(CookieManager.cookies['consent'] === "true") {
+			CookieManager.consent = true;
+			CookieManager.consentGiven();
+			return;
+		}
+
+		/* Only Ask For Consent From EU IP Address */
+		if(geoplugin_cookieConsent() === false) {
+			CookieManager.consent = true;
+			CookieManager.consentGiven();
+			return;
+		} else {
+			var consentPopup = document.getElementById('consent');
+			consentPopup.style.display = 'inline-block';
+		}
+	}
+
+	static consentDenied(reload) {
+		var consentPopup = document.getElementById('consent');
+		consentPopup.style.display = 'none';
+		
+		/* Set Consent Cookie to False */
+		CookieManager.consent = true;
+		CookieManager.appendCookie("consent", false);
+		CookieManager.consent = false;
+
+		/* If Reload Requested */	
+		if(reload) {
+			location.reload();
+		}
+	
+		/* Load Non-Personalized Adsense */
+		(adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;
+		(adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 0;
+	}
+
+	static consentGiven() {
+		var consentPopup = document.getElementById('consent');
+		consentPopup.style.display = 'none';
+		
+		/* Set Consent Cookie to True */
+		CookieManager.consent = true;
+		CookieManager.appendCookie("consent", true);
+
+		/* Load Personalized Adsense */
+		(adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 0;
+
+		/* Load Google Recaptcha */
+		$.ajax({
+			url: "https://www.google.com/recaptcha/api.js?render=6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo",
+			dataType: "script",
+			cache: true,
+			success: function() {
+				console.log("Cookie Manager: Google Recaptcha Loaded");
+			}
+		});
+	}
 }
 
 CookieManager.cookies = {};
+CookieManager.consent = false;

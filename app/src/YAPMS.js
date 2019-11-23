@@ -1410,6 +1410,11 @@ ChartManager.chartLeans = true;
 ChartManager.chartLabels = true;
 class CookieManager {
 	static appendCookie(key, value) {
+		if(CookieManager.consent === false) {
+			console.log('Cookie Manager: no consent');
+			return;
+		}
+
 		CookieManager.cookies[key] = value;
 		var cookie = "";
 		var expire = new Date(Date.now() + 60 * 1000 * 60 * 12 * 7 * 100).toString();
@@ -1463,9 +1468,75 @@ class CookieManager {
 			CookieManager.cookies['custom4leaning'] + ',' +
 			CookieManager.cookies['custom4tilting'] + ')';
 	}
+
+	static askConsent() {
+		/* If Consent Has Already Been Denied */
+		if(CookieManager.cookies['consent'] === "false") {
+			CookieManager.consent = false;
+			CookieManager.consentDenied();
+			return;
+		/* If Consent Has Already Been Given */
+		} else if(CookieManager.cookies['consent'] === "true") {
+			CookieManager.consent = true;
+			CookieManager.consentGiven();
+			return;
+		}
+
+		/* Only Ask For Consent From EU IP Address */
+		if(geoplugin_cookieConsent() === false) {
+			CookieManager.consent = true;
+			CookieManager.consentGiven();
+			return;
+		} else {
+			var consentPopup = document.getElementById('consent');
+			consentPopup.style.display = 'inline-block';
+		}
+	}
+
+	static consentDenied(reload) {
+		var consentPopup = document.getElementById('consent');
+		consentPopup.style.display = 'none';
+		
+		/* Set Consent Cookie to False */
+		CookieManager.consent = true;
+		CookieManager.appendCookie("consent", false);
+		CookieManager.consent = false;
+
+		/* If Reload Requested */	
+		if(reload) {
+			location.reload();
+		}
+	
+		/* Load Non-Personalized Adsense */
+		(adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;
+		(adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 0;
+	}
+
+	static consentGiven() {
+		var consentPopup = document.getElementById('consent');
+		consentPopup.style.display = 'none';
+		
+		/* Set Consent Cookie to True */
+		CookieManager.consent = true;
+		CookieManager.appendCookie("consent", true);
+
+		/* Load Personalized Adsense */
+		(adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 0;
+
+		/* Load Google Recaptcha */
+		$.ajax({
+			url: "https://www.google.com/recaptcha/api.js?render=6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo",
+			dataType: "script",
+			cache: true,
+			success: function() {
+				console.log("Cookie Manager: Google Recaptcha Loaded");
+			}
+		});
+	}
 }
 
 CookieManager.cookies = {};
+CookieManager.consent = false;
 class InputManager {
 	static enableInputDesktop() {
 		var enablePan = false;
@@ -4715,6 +4786,69 @@ data = {
 
 'eu_parliament': {'IE-S':5,'IE-N':4,'IE-D':4,'BE-D':12,'BE-F':8,'BE-G':1,'FR':79,'ES':59,'PT':21,'IT':76,'MT':6,'CY':6,'GR':21,'BG':17,'RO':33,'HR':12,'HU':21,'SL':8,'AT':19,'SK':14,'CZ':21,'PO':52,'LI':11,'LV':8,'EE':7,'FI':14,'SE':21,'DK':14,'NL':29,'LU':6,'DE':96}
 }
+class SimulatorData {
+}
+
+SimulatorData.USA_2020_Cook = {
+	"AK": {"Republican": 100, "Democrat": 0},
+	"AL": {"Republican": 100, "Democrat": 0},
+	"AR": {"Republican": 100, "Democrat": 0},
+	"AZ": {"Republican": 50, "Democrat": 50},
+	"CA": {"Republican": 0, "Democrat": 100},
+	"CO": {"Republican": 20, "Democrat": 80},
+	"CT": {"Republican": 0, "Democrat": 100},
+	"DE": {"Republican": 0, "Democrat": 100},
+	"FL": {"Republican": 50, "Democrat": 50},
+	"GA": {"Republican": 70, "Democrat": 30},
+	"HI": {"Republican": 0, "Democrat": 100},
+	"IA": {"Republican": 70, "Democrat": 30},
+	"ID": {"Republican": 100, "Democrat": 0},
+	"IL": {"Republican": 0, "Democrat": 100},
+	"IN": {"Republican": 100, "Democrat": 0},
+	"KS": {"Republican": 100, "Democrat": 0},
+	"KY": {"Republican": 100, "Democrat": 0},
+	"LA": {"Republican": 100, "Democrat": 0},
+	"ME-AL": {"Republican": 30, "Democrat": 70},
+	"ME-D1": {"Republican": 0, "Democrat": 100},
+	"ME-D2": {"Republican": 70, "Democrat": 20},
+	"MI": {"Republican": 50, "Democrat": 50},
+	"MD": {"Republican": 0, "Democrat": 100},
+	"MA": {"Republican": 0, "Democrat": 100},
+	"MN": {"Republican": 30, "Democrat": 70},
+	"MS": {"Republican": 100, "Democrat": 0},
+	"MO": {"Republican": 100, "Democrat": 0},
+	"MT": {"Republican": 100, "Democrat": 0},
+	"NE-AL": {"Republican": 100, "Democrat": 0},
+	"NE-D1": {"Republican": 100, "Democrat": 0},
+	"NE-D2": {"Republican": 70, "Democrat": 30},
+	"NE-D3": {"Republican": 100, "Democrat": 0},
+	"NE-AL": {"Republican": 100, "Democrat": 0},
+	"NE-AL": {"Republican": 100, "Democrat": 0},
+	"NV": {"Republican": 30, "Democrat": 70},
+	"NH": {"Republican": 30, "Democrat": 70},
+	"NJ": {"Republican": 0, "Democrat": 100},
+	"NM": {"Republican": 0, "Democrat": 100},
+	"NY": {"Republican": 0, "Democrat": 100},
+	"NC": {"Republican": 70, "Democrat": 30},
+	"ND": {"Republican": 100, "Democrat": 0},
+	"OH": {"Republican": 80, "Democrat": 20},
+	"OK": {"Republican": 100, "Democrat": 0},
+	"OR": {"Republican": 0, "Democrat": 100},
+	"PA": {"Republican": 50, "Democrat": 50},
+	"RI": {"Republican": 0, "Democrat": 100},
+	"SC": {"Republican": 100, "Democrat": 0},
+	"SD": {"Republican": 100, "Democrat": 0},
+	"TN": {"Republican": 100, "Democrat": 0},
+	"TX": {"Republican": 80, "Democrat": 20},
+	"UT": {"Republican": 100, "Democrat": 0},
+	"VT": {"Republican": 0, "Democrat": 100},
+	"VA": {"Republican": 20, "Democrat": 80},
+	"WA": {"Republican": 0, "Democrat": 100},
+	"WI": {"Republican": 50, "Democrat": 50},
+	"WV": {"Republican": 100, "Democrat": 0},
+	"WY": {"Republican": 100, "Democrat": 0},
+	"DC": {"Republican": 0, "Democrat": 100},
+}
 var textOn = true;
 var presentationMode = false;
 
@@ -5504,6 +5638,83 @@ class Simulator {
 			}
 		}
 
+		if(php_load_map_id === "USA_2020_presidential") {
+			Simulator.cookPresidentialPreset();
+		}
+	}
+
+	static uniformPreset() {
+		var presets = document.getElementById("sidebar-presets-select-simulator");
+		presets.value = "uniform";	
+		for(var index = 0; index < states.length; ++index) {
+			var state = states[index];
+			state.simulator = {};
+			for(var key in CandidateManager.candidates) {
+				if(key === "Tossup") {
+					continue;
+				}
+				state.simulator[key] = 0;
+			}			
+		}
+		
+		for(var index = 0; index < proportionalStates.length; ++index) {
+			var state = proportionalStates[index];
+			state.simulator = {};
+			
+			for(var key in CandidateManager.candidates) {
+				if(key === "Tossup") {
+					continue;
+				}
+				state.simulator[key] = 0;
+			}
+		}
+
+		if(php_load_map_type === "USA_2020_presidential") {		
+			Simulator.cookPresidentialPreset();
+		}
+	}
+
+	static randomPreset() {
+		var presets = document.getElementById("sidebar-presets-select-simulator");
+		presets.value = "random";	
+		for(var index = 0; index < states.length; ++index) {
+			var state = states[index];
+			state.simulator = {};
+			for(var key in CandidateManager.candidates) {
+				if(key === "Tossup") {
+					continue;
+				}
+				state.simulator[key] = Math.random() * 100;
+			}			
+		}	
+		
+		for(var index = 0; index < proportionalStates.length; ++index) {
+			var state = proportionalStates[index];
+			state.simulator = {};
+			
+			for(var key in CandidateManager.candidates) {
+				if(key === "Tossup") {
+					continue;
+				}
+				state.simulator[key] = Math.random() * 100;
+			}
+		}
+	}
+
+	static cookPresidentialPreset() {
+		var presets = document.getElementById("sidebar-presets-select-simulator");
+		presets.value = "cook";	
+		for(var index = 0; index < states.length; ++index) {
+			var state = states[index];
+			state.simulator = {};
+			for(var key in CandidateManager.candidates) {
+				if(key === "Tossup") {
+					continue;
+				}
+				console.log(state.name);
+				state.simulator[key] = SimulatorData.USA_2020_Cook[state.name][key];
+			}			
+		}	
 	}
 
 	static initListeners() {
@@ -5511,6 +5722,33 @@ class Simulator {
 		noclick.addEventListener('change', function(event) {
 			Simulator.ignoreClick = event.target.checked;
 		});
+		
+		var presets = document.getElementById("sidebar-presets-select-simulator");
+		presets.addEventListener('change', function(event) {
+			switch(this.value) {
+				case "cook":
+					Simulator.cookPresidentialPreset();
+					break;
+				case "random":
+					Simulator.randomPreset();
+					break;
+				case "uniform":
+					Simulator.uniformPreset();
+					break;
+			}
+		});
+		
+		var option = document.createElement("option");
+		option.text = "Random";
+		option.value = "random";
+		presets.appendChild(option);
+
+		if(php_load_map_id === "USA_2020_presidential") {
+			option = document.createElement("option");
+			option.text = "Cook";
+			option.value = "cook";
+			presets.appendChild(option);
+		}
 	}
 
 	static toggle() {
@@ -6516,7 +6754,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v1.2.71';
+var currentCache = 'v1.2.72';
 
 var states = [];
 var lands = [];
@@ -6541,14 +6779,16 @@ var previousPalette = function() {
 };
 
 function share(autoCenter) {
-	displayMenu('sharemenu');
-
-	if(grecaptcha) {
+	closeAllPopups();
+	if(typeof grecaptcha !== 'undefined') {
 		console.log('reCaptcha detected');
 	} else {
 		console.log('reCaptcha not detected');
+		CookieManager.askConsent();
 		return;
 	}
+	
+	displayMenu('sharemenu');
 	
 	if(autoCenter) {
 		MapManager.centerMap();
@@ -6860,12 +7100,17 @@ function setChangeCandidate(oldCandidate, newCandidate) {
 }
 
 function start() {
+	CookieManager.loadCookies();
+	CookieManager.askConsent();
+
 	Simulator.initListeners();
+
 	KeyboardManager.init();
+
 	CandidateManager.initCandidates();
+
 	ChartManager.initChart();
 	ChartManager.setChart('horizontalbattle');
-	CookieManager.loadCookies();
 
 	if(php_load_map === true) {
 		var url = null;

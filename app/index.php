@@ -24,7 +24,6 @@
 	<link rel="shortcut icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
 	<link rel="manifest" href="./manifest.json">
 
-	<link href="https://yapms.org" rel="preconnect">
 	<link href="https://www.google-analytics.com" rel="preconnect">
 	<link href="https://www.gstatic.com" rel="preconnect">
 	<link href="https://www.google.com" rel="preconnect">
@@ -123,16 +122,15 @@
 			<meta name="twitter:image" content="https://www.yapms.com/app/res/yamps-96.png">';
 		}
 	?>
-	
+
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<script>
-		var ref = document.referrer;
-		if(ref.includes('android-app') === false) {
-			(adsbygoogle = window.adsbygoogle || []).push({
-			google_ad_client: "ca-pub-1660456925957249",
-			enable_page_level_ads: true});
-		}
+		(adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 1;
+		(adsbygoogle = window.adsbygoogle || []).push({
+		google_ad_client: "ca-pub-1660456925957249",
+		enable_page_level_ads: true});
 	</script>
+
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132710089-1"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
@@ -225,10 +223,10 @@
 		Account
 	</div>
 	
-	<div class="click-button" style="white-space: nowrap;">
-	<a class="click-button" href="https://www.yapms.com/privacypolicy.html" target="_blank" rel="noreferrer">
-	<i class="fas fa-user-secret"></i> Privacy Policy
-	</a>
+	<div class="click-button" style="white-space: nowrap;" onclick="CookieManager.askConsent()">
+	<!--<a class="click-button" href="https://www.yapms.com/privacypolicy.html" target="_blank" rel="noreferrer">-->
+	<i class="fas fa-user-secret"></i> Privacy
+	<!--</a>-->
 	</div>
 
 <?php
@@ -366,23 +364,13 @@ if($mobile === false) {
 				Enable Simulator
 			</h4>
 		</div>
-		<div id="sidebar-presets-simulator" class="sidebar-box sidebar-tool">
+		<div id="sidebar-presets-simulator" class="sidebar-box sidebar-tool" style="display: none;">
 			<h3>
 				Presets
 			</h3>
-			<select>
+			<select id="sidebar-presets-select-simulator">
 				<option value="uniform">Uniform</option>
 			</select>
-		</div>
-		<div id="sidebar-state-simulator" class="sidebar-box sidebar-tool">
-			<h3>
-				State Percentage
-			</h3>
-			<div id="simulator-state-title">
-				Select a State
-			</div>
-			<div id="simulator-ranges">
-			</div>
 		</div>
 		<div id="sidebar-settings-simulator" class="sidebar-box sidebar-tool">
 			<h3>
@@ -396,6 +384,16 @@ if($mobile === false) {
 					Clicking doesn\'t set state color or open menu
 				</div>
 			</div>	
+		</div>
+		<div id="sidebar-state-simulator" class="sidebar-box sidebar-tool">
+			<h3>
+				State Percentage
+			</h3>
+			<div id="simulator-state-title">
+				Select a State
+			</div>
+			<div id="simulator-ranges">
+			</div>
 		</div>
 		<div id="sidebar-run-simulator" class="sidebar-box sidebar-tool-button sidebar-tool" onclick="Simulator.run();">
 			<h4>
@@ -756,9 +754,9 @@ echo '<!-- mobile-ad -->
 	<?php require './html/consent.php'; ?>
 </div>
 
-<script src="https://www.google.com/recaptcha/api.js?render=6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo"></script>
+<!--<script src="https://www.google.com/recaptcha/api.js?render=6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo"></script>-->
 
-<script src="https://www.geoplugin.net/extras/cookielaw.js"></script>
+<script src="http://www.geoplugin.net/extras/cookielaw.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
@@ -789,12 +787,6 @@ if('serviceWorker' in navigator) {
 	});
 } else {
 	console.log('No service worker detected');
-}
-
-if(geoplugin_cookieConsent()) {
-	alert('hello european');
-} else {
-	alert('hi american');
 }
 </script>
 </body>

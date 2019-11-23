@@ -1,4 +1,4 @@
-var currentCache = 'v1.2.71';
+var currentCache = 'v1.2.72';
 
 var states = [];
 var lands = [];
@@ -23,14 +23,16 @@ var previousPalette = function() {
 };
 
 function share(autoCenter) {
-	displayMenu('sharemenu');
-
-	if(grecaptcha) {
+	closeAllPopups();
+	if(typeof grecaptcha !== 'undefined') {
 		console.log('reCaptcha detected');
 	} else {
 		console.log('reCaptcha not detected');
+		CookieManager.askConsent();
 		return;
 	}
+	
+	displayMenu('sharemenu');
 	
 	if(autoCenter) {
 		MapManager.centerMap();
@@ -342,12 +344,17 @@ function setChangeCandidate(oldCandidate, newCandidate) {
 }
 
 function start() {
+	CookieManager.loadCookies();
+	CookieManager.askConsent();
+
 	Simulator.initListeners();
+
 	KeyboardManager.init();
+
 	CandidateManager.initCandidates();
+
 	ChartManager.initChart();
 	ChartManager.setChart('horizontalbattle');
-	CookieManager.loadCookies();
 
 	if(php_load_map === true) {
 		var url = null;

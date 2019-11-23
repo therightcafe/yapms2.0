@@ -3,12 +3,33 @@
 	background: #cccccc;
 	left: 50%;
 	bottom: 50%;
+	max-height: 90%;
 	transform: translateX(-50%) translateY(50%);
 	z-index: 20;
-	padding: 10px;
+	padding: 1em;
 	border-radius: 1em;
 	border: 1px solid black;
-	box-shadow: 
+	overflow: auto;
+}
+
+#consent h3 {
+	margin: 0px;
+	padding: 0px;
+}
+
+#consent p {
+	margin: 0px;
+	margin-top: 1em;
+}
+
+.consent-list-block {
+
+}
+
+.consent-list {
+	display: inline-block;
+	vertical-align: top;	
+	text-align: left;
 }
 
 .consent-button {
@@ -19,6 +40,7 @@
 	box-shadow: 2px 3px 3px #000000;
 	padding: 0.75em;
 	transition: 250ms all;
+	margin: 0.25em;
 }
 
 .consent-button:hover {

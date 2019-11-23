@@ -1,5 +1,5 @@
-var indexCache = 'i1.2.71';
-var staticCache = 's1.2.71';
+var indexCache = 'i1.2.72';
+var staticCache = 's1.2.72';
 
 var _indexCache = [
 	'./',
@@ -175,7 +175,7 @@ var _staticCache = [
 	'https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js',
 	'https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js',
 	'https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?tracking=1&thirdparty=1&always=1&refreshPage=1&showNoConsent=1',
-	'https://www.geoplugin.net/extras/cookielaw.js',
+	'http://www.geoplugin.net/extras/cookielaw.js',
 
 	'./app/manifest.json',
 	'./manifest.json'
