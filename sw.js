@@ -1,5 +1,5 @@
-var indexCache = 'i1.3.11';
-var staticCache = 's1.3.11';
+var indexCache = 'i1.3.15';
+var staticCache = 's1.3.15';
 
 var _indexCache = [
 	'./',
@@ -170,7 +170,6 @@ var _staticCache = [
 	'https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js',
 	'https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?tracking=1&thirdparty=1&always=1&refreshPage=1&showNoConsent=1',
 
-	'./app/manifest.json',
 	'./manifest.json'
 ];
 

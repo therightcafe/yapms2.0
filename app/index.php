@@ -22,7 +22,7 @@
 	<link rel="icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
 	<link rel="apple-touch-icon" href="./res/yapms-192.png"/>
 	<link rel="shortcut icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
-	<link rel="manifest" href="./manifest.json">
+	<link rel="manifest" href="../manifest.json">
 
 	<link href="https://www.google-analytics.com" rel="preconnect">
 	<link href="https://www.gstatic.com" rel="preconnect">
