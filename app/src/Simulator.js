@@ -54,10 +54,6 @@ class Simulator {
 				state.simulator[key] = 0;
 			}
 		}
-
-		if(php_load_map_type === "USA_2020_presidential") {		
-			Simulator.cookPresidentialPreset();
-		}
 	}
 
 	static randomPreset() {
@@ -90,6 +86,7 @@ class Simulator {
 	static cookPresidentialPreset() {
 		var presets = document.getElementById("sidebar-presets-select-simulator");
 		presets.value = "cook";	
+		PresetLoader.loadPreset('classic');
 		for(var index = 0; index < states.length; ++index) {
 			var state = states[index];
 			state.simulator = {};

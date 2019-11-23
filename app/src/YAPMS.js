@@ -646,7 +646,7 @@ class CandidateManager {
 		MapManager.verifyMap();
 		ChartManager.updateChart();
 		countPopularVote();
-		Simulator.init();
+		Simulator.uniformPreset();
 	}
 
 	static deleteCandidateByName(name) {
@@ -673,6 +673,7 @@ class CandidateManager {
 		MapManager.verifyMap();
 		ChartManager.updateChart();
 		countPopularVote();
+		Simulator.uniformPreset();
 	}
 
 	static setCandidate() {
@@ -720,6 +721,7 @@ class CandidateManager {
 		countVotes();
 		LegendManager.updateLegend();
 		ChartManager.updateChart();
+		Simulator.uniformPreset();
 	}
 
 	static addCandidate(name, solid, likely, leaning, tilting) {
@@ -784,7 +786,7 @@ class CandidateManager {
 		LegendManager.updateLegend();
 
 		countPopularVote();
-		Simulator.init();
+		Simulator.uniformPreset();
 	}
 	
 	static saveCustomColors() {
@@ -5674,10 +5676,6 @@ class Simulator {
 				state.simulator[key] = 0;
 			}
 		}
-
-		if(php_load_map_type === "USA_2020_presidential") {		
-			Simulator.cookPresidentialPreset();
-		}
 	}
 
 	static randomPreset() {
@@ -5710,6 +5708,7 @@ class Simulator {
 	static cookPresidentialPreset() {
 		var presets = document.getElementById("sidebar-presets-select-simulator");
 		presets.value = "cook";	
+		PresetLoader.loadPreset('classic');
 		for(var index = 0; index < states.length; ++index) {
 			var state = states[index];
 			state.simulator = {};
@@ -6760,7 +6759,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v1.2.73';
+var currentCache = 'v1.2.75';
 
 var states = [];
 var lands = [];
