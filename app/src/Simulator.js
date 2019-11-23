@@ -94,7 +94,6 @@ class Simulator {
 				if(key === "Tossup") {
 					continue;
 				}
-				console.log(state.name);
 				state.simulator[key] = SimulatorData.USA_2020_Cook[state.name][key];
 			}			
 		}	
