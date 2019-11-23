@@ -5619,6 +5619,10 @@ function hideMenu(name) {
 }
 class Simulator {
 	static init() {
+		if(mobile) {
+			return; 
+		}
+
 		for(var index = 0; index < states.length; ++index) {
 			var state = states[index];
 			state.simulator = {};
@@ -5649,6 +5653,10 @@ class Simulator {
 	}
 
 	static uniformPreset() {
+		if(mobile) {
+			return; 
+		}
+
 		var presets = document.getElementById("sidebar-presets-select-simulator");
 		presets.value = "uniform";	
 		for(var index = 0; index < states.length; ++index) {
@@ -5676,6 +5684,10 @@ class Simulator {
 	}
 
 	static randomPreset() {
+		if(mobile) {
+			return; 
+		}
+
 		var presets = document.getElementById("sidebar-presets-select-simulator");
 		presets.value = "random";	
 		for(var index = 0; index < states.length; ++index) {
@@ -5703,6 +5715,10 @@ class Simulator {
 	}
 
 	static cookPresidentialPreset() {
+		if(mobile) {
+			return; 
+		}
+
 		var presets = document.getElementById("sidebar-presets-select-simulator");
 		presets.value = "cook";	
 		PresetLoader.loadPreset('classic');
@@ -5719,6 +5735,10 @@ class Simulator {
 	}
 
 	static initListeners() {
+		if(mobile) {
+			return; 
+		}
+
 		var noclick = document.getElementById('simulator-noclick');
 		noclick.addEventListener('change', function(event) {
 			Simulator.ignoreClick = event.target.checked;
@@ -5753,6 +5773,10 @@ class Simulator {
 	}
 
 	static toggle() {
+		if(mobile) {
+			return; 
+		}
+
 		Simulator.enabled = !Simulator.enabled;
 		var e1 = document.getElementById('sidebar-state-simulator');
 		var e2 = document.getElementById('sidebar-run-simulator');
@@ -5775,13 +5799,11 @@ class Simulator {
 		}
 	}
 
-	static initPresets() {
-		if(MapLoader.save_dataid === "usa_ec") {
-
-		}
-	}
-
 	static viewPercentage(state) {
+		if(mobile) {
+			return; 
+		}
+
 		if(!Simulator.enabled) {
 			return;
 		}
@@ -5859,6 +5881,10 @@ class Simulator {
 	}
 
 	static run() {
+		if(mobile) {
+			return; 
+		}
+
 		MapLoader.clearMapCandidates();
 		Simulator.runTimeout = 5000 / states.length;
 		Simulator.runStateKey = 0;
@@ -6755,7 +6781,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v1.3.20';
+var currentCache = 'v1.3.30';
 
 var states = [];
 var lands = [];
