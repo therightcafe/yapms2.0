@@ -1012,8 +1012,8 @@ a {
 
 .yapnews-article-snippet {
 	font-size: 14px;
-	color: #444444;
 	text-align: left;
+	color: inherit;
 }
 #sidebar {
 	overflow-y: auto;

@@ -5376,11 +5376,8 @@ function setSideBarColor(color) {
 function setSideBarTextStyle(color) {
 	var sidebar = document.getElementById('sidebar');
 	if(sidebar) {
-
-	} else {
-		return;
+		sidebar.style.color = color;
 	}
-	sidebar.style.color = color;
 }
 
 function setSideBarSocialOutline(color, width) {
@@ -6758,7 +6755,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v1.3.15';
+var currentCache = 'v1.3.20';
 
 var states = [];
 var lands = [];
