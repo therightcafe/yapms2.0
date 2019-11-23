@@ -175,7 +175,6 @@ var _staticCache = [
 	'https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js',
 	'https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js',
 	'https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?tracking=1&thirdparty=1&always=1&refreshPage=1&showNoConsent=1',
-	'http://www.geoplugin.net/extras/cookielaw.js',
 
 	'./app/manifest.json',
 	'./manifest.json'
