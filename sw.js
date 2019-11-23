@@ -1,5 +1,5 @@
-var indexCache = 'i1.3.5';
-var staticCache = 's1.3.5';
+var indexCache = 'i1.3.10';
+var staticCache = 's1.3.10';
 
 var _indexCache = [
 	'./',
@@ -128,9 +128,8 @@ var _staticCache = [
 	
 	'./app/res/presets/can/Canada_2019_house_of_commons',
 	'./app/res/presets/ind/India_2019_lok_sabha',
-	'./app/res/presets/UnitedKingdom_current_parliament'
+	'./app/res/presets/UnitedKingdom_current_parliament',
 
-/*
 	'./app/res/flags/arg.svg',
 	'./app/res/flags/aus.svg',
 	'./app/res/flags/bra.svg',
@@ -157,15 +156,12 @@ var _staticCache = [
 	'./app/data/gubernatorial_2018',
 	'./app/data/gubernatorial_2020',
 	'./app/data/gubernatorial_current',
-	'./app/data/gubernatorial_open',
 	'./app/data/senatorial_2020',
 	'./app/data/senatorial_current',
-	'./app/data/senatorial_open',
-
+	
 	'./app/res/fonts/roboto/roboto-v20-latin-regular.woff',
 
 	'./app/res/fontawesome/js/all.min.js',
-
 	'https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js',
 	'https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js',
 	'https://cdn.jsdelivr.net/npm/chart.js@2.9.2/dist/Chart.min.js',
@@ -176,7 +172,6 @@ var _staticCache = [
 
 	'./app/manifest.json',
 	'./manifest.json'
-*/
 ];
 
 function swLog(cache, message) {
