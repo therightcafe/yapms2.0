@@ -315,6 +315,26 @@ if($mobile === false) {
 				Enable Popular Vote
 			</h4>
 		</div>
+		<div id="sidebar-popularvote-settings" class="sidebar-box sidebar-tool">
+			<h3>
+				Settings
+			</h3>
+			<div class="sidebar-hover-popup"><input type="checkbox" id="popularvote-automargins" onclick="autoMarginsOnClick();" checked>Auto Margins
+				<div class="tooltip-text">
+					Setting the popular vote will also set the color of a state
+				</div>
+			</div>
+			<div class="sidebar-hover-popup"><input type="checkbox" id="popularvote-clicksetpv" checked>Auto Popular Vote
+				<div class="tooltip-text">
+					Clicking on a district will set the popular vote to max
+				</div>
+			</div>
+			<div class="sidebar-hover-popup"><input type="checkbox" id="popularvote-avoidalmargins" checked>Avoid Auto AL
+				<div class="tooltip-text">
+					Clicking on a district in Nebraska or Maine will not calculate the margin for the AL vote.	
+				</div>
+			</div>
+		</div>
 		<div id="sidebar-popularvote" class="sidebar-box sidebar-tool">
 			<h3>
 				<span>
@@ -338,26 +358,6 @@ if($mobile === false) {
 			<div id="national-popularvote-ranges">
 			</div>
 		</div>
-		<div id="sidebar-popularvote-settings" class="sidebar-box sidebar-tool">
-			<h3>
-				Settings
-			</h3>
-			<div class="sidebar-hover-popup"><input type="checkbox" id="popularvote-automargins" onclick="autoMarginsOnClick();" checked>Auto Margins
-				<div class="tooltip-text">
-					Setting the popular vote will also set the color of a state
-				</div>
-			</div>
-			<div class="sidebar-hover-popup"><input type="checkbox" id="popularvote-clicksetpv" checked>Auto Popular Vote
-				<div class="tooltip-text">
-					Clicking on a district will set the popular vote to max
-				</div>
-			</div>
-			<div class="sidebar-hover-popup"><input type="checkbox" id="popularvote-avoidalmargins" checked>Avoid Auto AL
-				<div class="tooltip-text">
-					Clicking on a district in Nebraska or Maine will not calculate the margin for the AL vote.	
-				</div>
-			</div>
-		</div>
 
 		<div id="sidebar-enable-simulator" class="sidebar-box sidebar-tool-button" onclick="Simulator.toggle();">
 			<h4>
@@ -366,7 +366,7 @@ if($mobile === false) {
 		</div>
 		<div id="sidebar-presets-simulator" class="sidebar-box sidebar-tool" style="display: none;">
 			<h3>
-				Presets
+				National Presets
 			</h3>
 			<select id="sidebar-presets-select-simulator">
 				<option value="uniform">Uniform</option>

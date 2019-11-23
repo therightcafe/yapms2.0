@@ -29,6 +29,7 @@
 	display: flex;
 	flex-direction: row;
 	margin-top: 6px;
+	min-height: 1.75em;
 }
 
 .sidebar-button {
@@ -74,7 +75,6 @@
 .sidebar-box h3 {
 	margin: 5px;
 	padding: 0px;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 .sidebar-tool-button {

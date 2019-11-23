@@ -5681,6 +5681,8 @@ class Simulator {
 				state.simulator[key] = 0;
 			}
 		}
+		
+		Simulator.viewPercentage(Simulator.state);
 	}
 
 	static randomPreset() {
@@ -5712,6 +5714,8 @@ class Simulator {
 				state.simulator[key] = Math.random() * 100;
 			}
 		}
+
+		Simulator.viewPercentage(Simulator.state);
 	}
 
 	static cookPresidentialPreset() {
@@ -5731,7 +5735,9 @@ class Simulator {
 				}
 				state.simulator[key] = SimulatorData.USA_2020_Cook[state.name][key];
 			}			
-		}	
+		}
+
+		Simulator.viewPercentage(Simulator.state);
 	}
 
 	static initListeners() {
@@ -5807,6 +5813,8 @@ class Simulator {
 		if(!Simulator.enabled) {
 			return;
 		}
+
+		Simulator.state = state;
 		
 		var ranges = document.getElementById("simulator-ranges");
 		while(ranges.firstChild) {
@@ -6029,6 +6037,7 @@ Simulator.runStateKey = 0;
 Simulator.runStateKeyProportional = 0;
 Simulator.runTimeout = 100;
 Simulator.ignoreClick = false;
+Simulator.state = null;
 var popularVoteEnabled = false;
 
 function numberWithCommas(number) {
@@ -6781,7 +6790,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v1.3.30';
+var currentCache = 'v1.3.31';
 
 var states = [];
 var lands = [];
