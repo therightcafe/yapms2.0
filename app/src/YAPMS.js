@@ -1868,7 +1868,6 @@ var enableCongressContested = false;
 
 class MapLoader {
 	static loadPresetMap(preset, options) {
-		// Remove all candidates, and load the ones for the map
 		CandidateManager.initCandidates();
 
 		var enableHouse = false;
@@ -1889,12 +1888,7 @@ class MapLoader {
 			contentType: false,
 			success: function(a, b, c) {
 				console.log("Found preset map...");
-				try {
-					MapLoader.loadSavedMap_new(a, {enableCongress: enableHouse});
-				} catch(e) {
-					MapLoader.loadSavedMap_old(a, {enableCongress: enableHouse});
-					console.log('New file load failed, attempting old');
-				}
+				MapLoader.loadSavedMap(a, {enableCongress: enableHouse});
 			},
 			error: function(a, b, c) {
 				console.log("Did not find preset map...");
@@ -1911,23 +1905,13 @@ class MapLoader {
 			success: function(data) {
 				PresetLoader.loadPreset('none');
 				console.log("Map Load: Found saved map");
-				try {
-					console.log('Map Loader: Attemping new file load');
-					MapLoader.loadSavedMap_new(data);
-					gtag('event', 'load', {
-						'event_category': 'load_map',
-						'event_label': 'loaded saved map new version ' + currentCache,
-						'non_interaction': true
-					});
-				} catch(e) {
-					console.log('Map Loader: Attemping old file load');
-					MapLoader.loadSavedMap_old(data);
-					gtag('event', 'load', {
-						'event_category': 'load_map',
-						'event_label': 'loaded saved map old version ' + currentCache,
-						'non_interaction': true
-					});
-				}
+				console.log('Map Loader: Attemping new file load');
+				MapLoader.loadSavedMap(data);
+				gtag('event', 'load', {
+					'event_category': 'load_map',
+					'event_label': 'load map from URL ' + currentCache,
+					'non_interaction': true
+				});
 			},
 			error: function() {
 				console.log("Map Loader: Did not find saved map");
@@ -1948,11 +1932,11 @@ class MapLoader {
 		switch(id) {
 			case "USA_current_house":
 				PresetLoader.loadPreset('none');
-				MapLoader.loadPresetMap(id, {enableCongress: true});
+				MapLoader.loadPresetMap('usa/' + id, {enableCongress: true});
 				break;
 			case "UnitedKingdom_current_parliament":
 				PresetLoader.loadPreset('none');
-				MapLoader.loadPresetMap(id);
+				MapLoader.loadPresetMap('ukd/' + id);
 				break;
 			case "USA_current_senate":
 			case "USA_2024_projection":
@@ -2448,10 +2432,6 @@ class MapLoader {
 	}
 
 	static loadGubernatorialFile(gubernatorialfile, onLoad) {
-
-		if(gubernatorialfile.includes('open') == false) {
-		}
-
 		CandidateManager.initCandidates();
 		
 		var candidateNames = {};
@@ -2567,7 +2547,7 @@ class MapLoader {
 		});
 	}
 
-	static loadSavedMap_new(data, options) {
+	static loadSavedMap(data, options) {
 		var obj = JSON.parse(data);	
 
 		if(options) {
@@ -2620,109 +2600,13 @@ class MapLoader {
 		}});
 	}
 
-	static loadSavedMap_old(data, options) {
-		var lines = data.split('\n');
-		var meta = lines[0].split(' ');
-		if(options) {
-			enableCongress = options.enableCongress;
-		} else {
-			enableCongress = false;
-		}
-		
-		MapLoader.loadMap(meta[0], meta[1], meta[2], meta[3], meta[4], meta[5], {enableCongress: enableCongress,
-			onLoad: function() {
-			console.log("Loading saved map...");
-
-			// --- RUN THIS AFTER THE MAP HAS BEEN LOADED ---
-		
-			// parse each candidate in the file
-			// add them to the map
-			var candidateEndLine = meta[6];
-			for(var candidateIndex = 1; candidateIndex < candidateEndLine; ++candidateIndex) {
-				var candidate = lines[candidateIndex].split(' ');
-				CandidateManager.addCandidate(candidate[0].replace(/\%/g, " "), candidate[1], candidate[2], candidate[3], candidate[4]);
-			}
-
-			// parse each state in the file
-			// change them to their candidate
-			for(var stateDataIndex = candidateEndLine; stateDataIndex < lines.length - 1; ++stateDataIndex) {
-				var stateIndex = stateDataIndex - candidateEndLine;
-				var stateData = lines[stateDataIndex].split(' ');
-				var stateName = stateData[0];
-				var state = states[stateIndex];
-
-				var voteCount = parseInt(stateData[stateData.length - 2]);
-				state.setVoteCount(voteCount);	
-				
-				// if its a primary map
-				if(MapLoader.save_type === 'primary' || MapLoader.save_type === 'proportional') {
-					var majorityCandidate = "Tossup";
-					var majorityVoteCount = 0;
-					var state = states.find(state => state.name === stateData[0]);
-
-					for(var candidateIndex = 0; candidateIndex < candidateEndLine - 1; ++candidateIndex) {
-						// get the candidate name
-						var candidateName = lines[candidateIndex + 1].split(' ')[0];
-						candidateName = candidateName.replace(/\%/g, " ");
-
-						// read in the delegate count
-						var delegates = stateData[4 + candidateIndex];
-
-						// set the delegate  count
-						state.delegates[candidateName] = parseInt(delegates);
-						if(parseInt(delegates) > majorityVoteCount) {
-							majorityVoteCount = parseInt(delegates);
-							majorityCandidate = candidateName;
-						} else if(parseInt(delegates) === majorityVoteCount) {
-							majorityCandidate = 'Tossup';
-						}
-					}
-
-					state.delegates['Tossup'] = parseInt(stateData[3]);
-
-					// set the color to the candidate with the most delegates
-					if(majorityCandidate === 'Tossup') {
-						state.setColor('Tossup', 2);
-					}
-					else {
-						state.setColor(majorityCandidate, 0);
-					}
-					
-				}
-				// otherwise
-				else {
-					// get the candidate
-					var candidateName = stateData[1].replace(/\%/g, " ");
-					// set the proper color
-					state.setColor(candidateName, parseInt(stateData[2]));
-				}
-				
-				var disable = (stateData[stateData.length - 1] === 't');
-				if(disable === true) {
-					state.toggleDisable();
-				}
-			}
-			
-			countVotes();
-			ChartManager.updateChart();
-			LegendManager.updateLegend();
-			
-		}});
-	}
-
 	static loadFileMap() {
 		var file = document.getElementById('loadfile').files[0];
 		var fileReader = new FileReader();
 		fileReader.onload = function(loadEvent) {
 			var a = loadEvent.target.result;
-			try {
-				MapLoader.loadSavedMap_new(a);
-				closeAllPopups();
-			} catch(e) {
-				console.log('New file load failed, attempting old');
-				MapLoader.loadSavedMap_old(a);
-				closeAllPopups();
-			}
+			MapLoader.loadSavedMap(a);
+			closeAllPopups();
 		}
 		fileReader.readAsText(file, 'UTF-8');
 	}
@@ -6790,7 +6674,7 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v1.3.31';
+var currentCache = 'v1.3.32';
 
 var states = [];
 var lands = [];

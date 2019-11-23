@@ -1009,7 +1009,7 @@
 		<div class="map-type-header-text">Spain</div>
 	</div>
 	<div class="map-button-box">	
-		<a href="./app/?t=Spain_constituencies">
+		<a href="./app/?t=Spain_congress_of_deputies">
 			<div class="map-button">
 				<i class="fas fa-chevron-down"></i> Congress of Deputies
 			</div>
