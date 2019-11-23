@@ -128,7 +128,7 @@ var _staticCache = [
 	
 	'./app/res/presets/can/Canada_2019_house_of_commons',
 	'./app/res/presets/ind/India_2019_lok_sabha',
-	'./app/res/presets/UnitedKingdom_current_parliament',
+	'./app/res/presets/ukd/UnitedKingdom_current_parliament',
 
 	'./app/res/flags/arg.svg',
 	'./app/res/flags/aus.svg',
