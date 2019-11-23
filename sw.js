@@ -1,12 +1,11 @@
-var indexCache = 'i1.3.1';
-var staticCache = 's1.3.1';
+var indexCache = 'i1.3.5';
+var staticCache = 's1.3.5';
 
 var _indexCache = [
 	'./',
 	'./index.php',
 	'./offline.php',
 
-	'./app/',
 	'./app/index.php',
 	
 	'./app/html/battlechart.html',
