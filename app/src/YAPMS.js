@@ -6377,6 +6377,7 @@ function saveMap(img, token) {
 			colorValue: state.colorValue,
 			disabled: state.disabled
 		};
+		console.log(obj);
 		stateData.push(obj);
 	}
 
