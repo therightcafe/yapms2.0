@@ -38,6 +38,8 @@ class Simulator {
 			return; 
 		}
 
+		console.log("Simulator: Uniform preset");
+
 		var presets = document.getElementById("sidebar-presets-select-simulator");
 		presets.value = "uniform";	
 		for(var index = 0; index < states.length; ++index) {
@@ -72,6 +74,8 @@ class Simulator {
 		if(mobile) {
 			return; 
 		}
+		
+		console.log("Simulator: Random preset");
 
 		var presets = document.getElementById("sidebar-presets-select-simulator");
 		presets.value = "random";	
@@ -107,6 +111,8 @@ class Simulator {
 		if(mobile) {
 			return; 
 		}
+		
+		console.log("Simulator: Cook preset");
 
 		var presets = document.getElementById("sidebar-presets-select-simulator");
 		presets.value = "cook";	
