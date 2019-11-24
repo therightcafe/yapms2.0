@@ -62,7 +62,7 @@ class Simulator {
 			}
 		}
 
-		if(states[0].simulator === undefined) {
+		if(typeof states[0].simulator === "undefined") {
 			Simulator.uniformPreset();
 		}
 	}
