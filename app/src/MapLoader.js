@@ -704,6 +704,8 @@ class MapLoader {
 				state.setVoteCount(stateData['votecount']);
 				state.setColor(stateData['candidate'], stateData['colorvalue']);
 				state.simulator = stateData['simulator'];
+				console.log(state.name);
+				console.log(state.simulator);
 				state.delegates = stateData['delegates'];
 				if(stateData['disabled']) {
 					state.toggleDisable();
