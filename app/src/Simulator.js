@@ -23,8 +23,18 @@ class Simulator {
 					break;
 			}
 		});
-		
+	
+		var select = document.getElementById("sidebar-presets-select-simulator");
+		while(select.firstChild) {
+			select.removeChild(select.firstChild);
+		}
+
 		var option = document.createElement("option");
+		option.text = "Uniform";
+		option.value = "uniform";
+		presets.appendChild(option);
+		
+		option = document.createElement("option");
 		option.text = "Random";
 		option.value = "random";
 		presets.appendChild(option);
@@ -34,6 +44,14 @@ class Simulator {
 			option.text = "Cook";
 			option.value = "cook";
 			presets.appendChild(option);
+
+			if(php_load_map === false) {
+				Simulator.cookPresidentialPreset();
+			}
+		} else {
+			if(php_load_map === false) {
+				Simulator.uniformPreset();
+			}
 		}
 	}
 

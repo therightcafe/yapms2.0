@@ -346,7 +346,6 @@ function start() {
 	CookieManager.loadCookies();
 	CookieManager.askConsent();
 
-	Simulator.init();
 	KeyboardManager.init();
 	CandidateManager.initCandidates();
 	ChartManager.initChart();
