@@ -5566,9 +5566,6 @@ class Simulator {
 		} else {
 			if(php_load_map === false) {
 				Simulator.uniformPreset();
-			} else {
-				select.value = "Custom";
-				select.text = "Custom";
 			}
 		}
 	}
