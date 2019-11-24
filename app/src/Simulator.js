@@ -34,6 +34,7 @@ class Simulator {
 		option.value = "custom";
 		option.selected = true;
 		option.disabled = true;
+		option.hidden = true;
 		presets.appendChild(option);
 
 		option = document.createElement("option");
