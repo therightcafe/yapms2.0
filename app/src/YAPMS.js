@@ -6372,6 +6372,7 @@ function saveMap(img, token) {
 			name: state.name,
 			candidate: state.candidate,
 			delegates: state.delegates,
+			simulator: state.simulator,
 			voteCount: state.voteCount,
 			colorValue: state.colorValue,
 			disabled: state.disabled
