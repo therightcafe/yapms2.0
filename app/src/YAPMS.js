@@ -4238,6 +4238,8 @@ function stateClick(clickElement, options) {
 	var id = clickElement.getAttribute('id');
 	var state = states.find(state => state.name === id);
 
+	console.log(state);
+
 	switch(mode) {
 		case 'paint':
 		case 'paintmove':
@@ -5517,34 +5519,36 @@ class Simulator {
 			return; 
 		}
 
-		alert('init');
-
-		for(var index = 0; index < states.length; ++index) {
-			var state = states[index];
-			state.simulator = {};
-			
-			for(var key in CandidateManager.candidates) {
-				if(key === "Tossup") {
-					continue;
-				}
-				state.simulator[key] = 0;
-			}
-		}
+		var noclick = document.getElementById('simulator-noclick');
+		noclick.addEventListener('change', function(event) {
+			Simulator.ignoreClick = event.target.checked;
+		});
 		
-		for(var index = 0; index < proportionalStates.length; ++index) {
-			var state = proportionalStates[index];
-			state.simulator = {};
-			
-			for(var key in CandidateManager.candidates) {
-				if(key === "Tossup") {
-					continue;
-				}
-				state.simulator[key] = 0;
+		var presets = document.getElementById("sidebar-presets-select-simulator");
+		presets.addEventListener('change', function(event) {
+			switch(this.value) {
+				case "cook":
+					Simulator.cookPresidentialPreset();
+					break;
+				case "random":
+					Simulator.randomPreset();
+					break;
+				case "uniform":
+					Simulator.uniformPreset();
+					break;
 			}
-		}
+		});
+		
+		var option = document.createElement("option");
+		option.text = "Random";
+		option.value = "random";
+		presets.appendChild(option);
 
 		if(php_load_map_id === "USA_2020_presidential") {
-			Simulator.cookPresidentialPreset();
+			option = document.createElement("option");
+			option.text = "Cook";
+			option.value = "cook";
+			presets.appendChild(option);
 		}
 	}
 
@@ -5645,44 +5649,6 @@ class Simulator {
 
 		if(Simulator.state) {	
 			Simulator.view(Simulator.state);
-		}
-	}
-
-	static initListeners() {
-		if(mobile) {
-			return; 
-		}
-
-		var noclick = document.getElementById('simulator-noclick');
-		noclick.addEventListener('change', function(event) {
-			Simulator.ignoreClick = event.target.checked;
-		});
-		
-		var presets = document.getElementById("sidebar-presets-select-simulator");
-		presets.addEventListener('change', function(event) {
-			switch(this.value) {
-				case "cook":
-					Simulator.cookPresidentialPreset();
-					break;
-				case "random":
-					Simulator.randomPreset();
-					break;
-				case "uniform":
-					Simulator.uniformPreset();
-					break;
-			}
-		});
-		
-		var option = document.createElement("option");
-		option.text = "Random";
-		option.value = "random";
-		presets.appendChild(option);
-
-		if(php_load_map_id === "USA_2020_presidential") {
-			option = document.createElement("option");
-			option.text = "Cook";
-			option.value = "cook";
-			presets.appendChild(option);
 		}
 	}
 
@@ -7053,13 +7019,11 @@ function start() {
 	CookieManager.loadCookies();
 	CookieManager.askConsent();
 
-	Simulator.initListeners();
-
+	Simulator.init();
 	KeyboardManager.init();
-
 	CandidateManager.initCandidates();
-
 	ChartManager.initChart();
+
 	ChartManager.setChart('horizontalbattle');
 
 	if(php_load_map === true) {

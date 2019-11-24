@@ -346,13 +346,11 @@ function start() {
 	CookieManager.loadCookies();
 	CookieManager.askConsent();
 
-	Simulator.initListeners();
-
+	Simulator.init();
 	KeyboardManager.init();
-
 	CandidateManager.initCandidates();
-
 	ChartManager.initChart();
+
 	ChartManager.setChart('horizontalbattle');
 
 	if(php_load_map === true) {
