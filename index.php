@@ -1178,7 +1178,7 @@
 	
 	<div class="map-type-box">
 	<div class="map-type-header">
-		<div class="map-type-header-text">FiveThrityEight - Polls</div>
+		<div class="map-type-header-text">FiveThirtyEight - Polls</div>
 	</div>
 	<div class="map-button-box">
 		<a href="https://projects.fivethirtyeight.com/polls/president-general/" target="_blank">
@@ -1292,7 +1292,7 @@
 				gtag('event', 'warning', {
 					'event_category': 'warning',
 					'event_label': 'Warning displayed',
-					'non_interaction': false
+					'non_interaction': true
 				});
 			}
 		}

@@ -47,7 +47,7 @@ class CandidateManager {
 		LegendManager.updateLegend();
 		MapManager.verifyMap();
 		ChartManager.updateChart();
-		countPopularVote();
+		PopularVote.count();
 		Simulator.uniformPreset();
 	}
 
@@ -74,7 +74,7 @@ class CandidateManager {
 		LegendManager.updateLegend();
 		MapManager.verifyMap();
 		ChartManager.updateChart();
-		countPopularVote();
+		PopularVote.count();
 		Simulator.uniformPreset();
 	}
 
@@ -187,7 +187,7 @@ class CandidateManager {
 		ChartManager.chart.generateLegend();
 		LegendManager.updateLegend();
 
-		countPopularVote();
+		PopularVote.count();
 		Simulator.uniformPreset();
 	}
 	

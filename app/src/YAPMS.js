@@ -160,7 +160,10 @@ class Account {
 			},
 			crossDomain: true,
 			success: function(data) {
-				console.log(data);
+				gtag('event', 'click', {
+					'event_category': 'account',
+					'event_label': 'Map Deleted From Account'
+				});
 			},
 			error: function(a, b, c) {
 				console.log(a);
@@ -262,6 +265,10 @@ class Account {
 				} else {
 					var base64name = arr[1];
 					Account.addMapBox(base64name, true);
+					gtag('event', 'click', {
+						'event_category': 'account',
+						'event_label': 'Map Saved To Account'
+					});
 				}
 			},
 			error: function(a, b, c) {
@@ -645,7 +652,7 @@ class CandidateManager {
 		LegendManager.updateLegend();
 		MapManager.verifyMap();
 		ChartManager.updateChart();
-		countPopularVote();
+		PopularVote.count();
 		Simulator.uniformPreset();
 	}
 
@@ -672,7 +679,7 @@ class CandidateManager {
 		LegendManager.updateLegend();
 		MapManager.verifyMap();
 		ChartManager.updateChart();
-		countPopularVote();
+		PopularVote.count();
 		Simulator.uniformPreset();
 	}
 
@@ -785,7 +792,7 @@ class CandidateManager {
 		ChartManager.chart.generateLegend();
 		LegendManager.updateLegend();
 
-		countPopularVote();
+		PopularVote.count();
 		Simulator.uniformPreset();
 	}
 	
@@ -1907,11 +1914,6 @@ class MapLoader {
 				console.log("Map Load: Found saved map");
 				console.log('Map Loader: Attemping new file load');
 				MapLoader.loadSavedMap(data);
-				gtag('event', 'load', {
-					'event_category': 'load_map',
-					'event_label': 'load map from URL ' + currentCache,
-					'non_interaction': true
-				});
 			},
 			error: function() {
 				console.log("Map Loader: Did not find saved map");
@@ -2339,9 +2341,8 @@ class MapLoader {
 
 		if(options) {
 			if(options.enablePopularVote) {
-				showPopularVoteButton();
+				PopularVote.showPopularVoteButton();
 			}
-			verifyPopularVote();
 			enableCongress = options.enableCongress;
 			verifyCongress();
 		}
@@ -2406,7 +2407,7 @@ class MapLoader {
 						state.popularVote['Tossup'] = state.voters;
 					}
 
-					countPopularVote();
+					PopularVote.count();
 				}
 
 				// disable the load screen when the map is finished loading
@@ -3803,7 +3804,7 @@ class State {
 			return;
 		}
 
-		Simulator.viewPercentage(this);
+		Simulator.view(this);
 
 		// if changing color set to solor
 		if(this.candidate !== candidate) {
@@ -4200,7 +4201,7 @@ function landClick(clickElement, options) {
 	});
 
 	// make the popular vote calculator point to the AL
-	viewPopularVote(AL);
+	PopularVote.view(AL);
 
 	if(mode === 'paint' || mode === 'paintmove') {
 		// check if each district has the same candidate and color value
@@ -4221,7 +4222,7 @@ function landClick(clickElement, options) {
 	countVotes();
 	ChartManager.updateChart();
 	LegendManager.updateLegend();
-	countPopularVote();
+	PopularVote.count();
 }
 
 function stateClick(clickElement, options) {
@@ -4240,12 +4241,12 @@ function stateClick(clickElement, options) {
 		case 'paint':
 		case 'paintmove':
 			if(MapLoader.save_type === 'proportional' || MapLoader.save_type === 'primary') {
-				Simulator.viewPercentage(state);
+				Simulator.view(state);
 				if(Simulator.ignoreClick === false) {
 					stateClickPaintProportional(state, id);
 				}
 			} else {
-				Simulator.viewPercentage(state);
+				Simulator.view(state);
 				if(Simulator.ignoreClick === false) {
 					stateClickPaint(state, options);
 				}
@@ -4315,12 +4316,12 @@ function stateClickPaint(state, options) {
 			}
 
 			if(autoMargins === true && avoidALMargins === false) {
-				calculateAutoMarginAL(state.name.split('-')[0]);
+				PopularVote.calculateAutoMarginAL(state.name.split('-')[0]);
 			}
 		}
 
-		viewPopularVote(state);
-		countPopularVote(options);
+		PopularVote.view(state);
+		PopularVote.count(options);
 	} else {
 		state.incrementCandidateColor(paintIndex);
 	}
@@ -5421,8 +5422,16 @@ function toggleYAPNews() {
 	if(yapnews !== null) {
 		if(yapnews.style.display === "none") {
 			yapnews.style.display = "inline-flex";
+			gtag('event', 'click', {
+				'event_category': 'sidebar',
+				'event_label': 'Toggle On'
+			});
 		} else {
 			yapnews.style.display = "none";
+			gtag('event', 'click', {
+				'event_category': 'sidebar',
+				'event_label': 'Toggle Off'
+			});
 		}
 		MapManager.centerMap();
 	}
@@ -5565,8 +5574,10 @@ class Simulator {
 				state.simulator[key] = 0;
 			}
 		}
-		
-		Simulator.viewPercentage(Simulator.state);
+	
+		if(Simulator.state) {	
+			Simulator.view(Simulator.state);
+		}
 	}
 
 	static randomPreset() {
@@ -5599,7 +5610,9 @@ class Simulator {
 			}
 		}
 
-		Simulator.viewPercentage(Simulator.state);
+		if(Simulator.state) {	
+			Simulator.view(Simulator.state);
+		}
 	}
 
 	static cookPresidentialPreset() {
@@ -5621,7 +5634,9 @@ class Simulator {
 			}			
 		}
 
-		Simulator.viewPercentage(Simulator.state);
+		if(Simulator.state) {	
+			Simulator.view(Simulator.state);
+		}
 	}
 
 	static initListeners() {
@@ -5670,7 +5685,7 @@ class Simulator {
 		Simulator.enabled = !Simulator.enabled;
 		var e1 = document.getElementById('sidebar-state-simulator');
 		var e2 = document.getElementById('sidebar-run-simulator');
-		var e3 = document.getElementById('sidebar-enable-simulator');
+		var e3 = document.getElementById('sidebar-simulator-head');
 		var e4 = document.getElementById('sidebar-settings-simulator');
 		var e5 = document.getElementById('sidebar-presets-simulator');
 		if(Simulator.enabled) {
@@ -5678,18 +5693,23 @@ class Simulator {
 			e2.style.display = 'block';
 			e4.style.display = 'block';
 			e5.style.display = 'block';
-			e3.innerHTML = '<h4>Disable Simulator</h4>';
+			e3.innerHTML = 'Disable Simulator';
 			Simulator.init();
 		} else {
 			e1.style.display = 'none';
 			e2.style.display = 'none';
 			e4.style.display = 'none';
 			e5.style.display = 'none';
-			e3.innerHTML = '<h4>Enable Simulator</h4>';
+			e3.innerHTML = 'Enable Simulator';
 		}
+		
+		gtag('event', 'click', {
+			'event_category': 'tool',
+			'event_label': 'Simulator Enabled'
+		});
 	}
 
-	static viewPercentage(state) {
+	static view(state) {
 		if(mobile) {
 			return; 
 		}
@@ -5922,400 +5942,395 @@ Simulator.runStateKeyProportional = 0;
 Simulator.runTimeout = 100;
 Simulator.ignoreClick = false;
 Simulator.state = null;
-var popularVoteEnabled = false;
-
-function numberWithCommas(number) {
-	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
-function showPopularVoteButton() {
-	var element = document.getElementById('sidebar-toggle-popularvote');
-	if(element) {
-		element.style.display = 'block';
-	}
-}
-
-function verifyPopularVote() {
-	if(mobile) {
-		return false;
-	}
-
-	return popularVoteEnabled;
-}
-
-function autoMarginsOnClick() {
-	if(verifyPopularVote() === false) {
-		return;
-	}
-
-	var autoMargins = document.getElementById('popularvote-automargins').checked;
-
-	if(autoMargins === false) {
-		return; 
-	}
-
-	// loop through all states and set the margins
-	for(var index in states) {
-		var state = states[index];
-		calculateAutoMargin(state);
-	}
-}
-
-function viewPopularVote(state) {
-	if(verifyPopularVote() === false) {
-		return;
-	}
-
-	var popularVoteCalc = document.getElementById('sidebar-popularvote');
-	if(state.disabled) {
-		popularVoteCalc.style.display = 'none';	
-	} else {
-		// ONLY DISPLAY IF POPULAR VOTE IS ENABLED
-		if(popularVoteEnabled === true) {
-			popularVoteCalc.style.display = 'block';	
+class PopularVote {
+	static showPopularVoteButton() {
+		var element = document.getElementById('sidebar-toggle-popularvote');
+		if(element) {
+			element.style.display = 'block';
 		}
 	}
-	var title = document.getElementById("popularvote-state-title");
-	title.innerHTML = state.name;
 
-	var message = document.getElementById("popularvote-message");
-	message.innerHTML = "";
-	
-	var ranges = document.getElementById("popularvote-ranges");
-	while(ranges.firstChild) {
-		ranges.removeChild(ranges.firstChild);
+	static autoMarginsOnClick() {
+		if(PopularVote.enabled === false) {
+			return;
+		}
+
+		var autoMargins = document.getElementById('popularvote-automargins').checked;
+
+		if(autoMargins === false) {
+			return; 
+		}
+
+		// loop through all states and set the margins
+		for(var index in states) {
+			var state = states[index];
+			PopularVote.calculateAutoMargin(state);
+		}
 	}
 
-	if(state.name.includes('-AL')) {
-		title.innerHTML = "Select a district to set popular vote";
-		return;
-	}
-
-	var displayTossup = document.createElement('DIV');
-	displayTossup.setAttribute('id', 'popular-display-Tossup');
-
-	var displayTurnout = document.createElement('DIV');
-	displayTurnout.setAttribute('id', 'popularvote-turnout-display');
-	displayTurnout.innerHTML = 'Turnout - ' + state.turnout + '%';
-	var turnoutRange = document.createElement('INPUT');
-	turnoutRange.setAttribute('id', 'popularvote-turnout');
-	turnoutRange.setAttribute('type', 'range');
-	turnoutRange.setAttribute('max', 100);
-	turnoutRange.setAttribute('step', 0.1);
-	turnoutRange.setAttribute('value', state.turnout);
-
-	var max  = state.voters * (state.turnout / 100.0);
-	var total = 0;
-
-	turnoutRange.onchange = (function() {
-		return function() {
-			var turnout = document.getElementById('popularvote-turnout').value;
-			state.turnout = turnout;
-			
-			var autoMargins = document.getElementById('popularvote-automargins').checked;
-
-			if(autoMargins) {
-				state.setColor('Tossup', 0, true);
-			}
-
-			for(var key in CandidateManager.candidates) {
-				if(key === 'Tossup') {
-					continue;
-				}
-				var range = document.getElementById('popular-range-' + key);
-				range.setAttribute('max', (state.voters * (turnout / 100.0)));
-				range.value = 0;
-				// call on input to reset prevValue to 0
-				range.oninput();
-				var rangeDisplay = document.getElementById('popular-display-' + key);
-				rangeDisplay.innerHTML = key + ' - 0 - 0%';
-			}
-
-			var displayTurnout = document.getElementById('popularvote-turnout-display');
-			displayTurnout.innerHTML = 'Turnout - ' + this.value + '%';
-
-			var displayTossup = document.getElementById('popular-display-Tossup');
-			displayTossup.innerHTML = 'Tossup - ' + numberWithCommas((state.voters * (turnout / 100.0)).toFixed(0)) + ' - 100%';
-			
-			total = 0;
-
-			countPopularVote();
+	static view(state) {
+		if(PopularVote.enabled === false) {
+			return;
 		}
-	})();
 
-	turnoutRange.oninput = (function() {
-		return function() {
-			var displayTurnout = document.getElementById('popularvote-turnout-display');
-			displayTurnout.innerHTML = 'Turnout - ' + this.value + '%';
-		}
-	})();
-
-	ranges.appendChild(displayTurnout);
-	ranges.appendChild(turnoutRange);
-
-	for(var key in CandidateManager.candidates) {
-		if(key === 'Tossup')
-			continue;
-
-		var range = document.createElement('INPUT');
-		range.setAttribute('id', 'popular-range-' + key);
-		range.setAttribute('type', 'range');
-		range.setAttribute('max', max);
-		range.setAttribute('step', 1);
-		if(typeof state.popularVote[key] === 'undefined') {
-			state.popularVote[key] = 0;
-		}
-		range.value = state.popularVote[key];
-		total += state.popularVote[key];
-		// create display for slider
-		var display = document.createElement('DIV');
-		display.setAttribute('id', 'popular-display-' + key);
-		display.innerHTML = key + ' - ' + numberWithCommas(range.value) + ' - ' +
-			((state.popularVote[key] / max) * 100).toFixed(2) + '%';
-
-		range.onchange = (function() {
-			return function(b) {
-				var totalVotes = 0;
-				for(var candidate in CandidateManager.candidates) {
-					if(candidate === 'Tossup')
-						continue;
-					var range = document.getElementById('popular-range-' + candidate);
-					var rangeValue = 0;
-					if(range) {
-						rangeValue = parseInt(range.value);
-					}
-					state.popularVote[candidate] = rangeValue;
-					totalVotes += rangeValue;
-				}
-				state.popularVote['Tossup'] = state.voters - totalVotes;
-
-				var autoMargins = document.getElementById('popularvote-automargins').checked;
-				if(autoMargins) {
-					calculateAutoMargin(state);
-
-					if(state.name.includes('-D')) {
-						var name = state.name.split('-')[0];
-						calculateAutoMarginAL(name);
-					}
-				}
-
-				countPopularVote();
-				countVotes();
-				LegendManager.updateLegend();
-				ChartManager.updateChart();
+		var popularVoteCalc = document.getElementById('sidebar-popularvote');
+		if(state.disabled) {
+			popularVoteCalc.style.display = 'none';	
+		} else {
+			// ONLY DISPLAY IF POPULAR VOTE IS ENABLED
+			if(PopularVote.enabled === true) {
+				popularVoteCalc.style.display = 'block';	
 			}
-		})();
+		}
+		var title = document.getElementById("popularvote-state-title");
+		title.innerHTML = state.name;
 
-		range.oninput = (function() {
-			var refkey = key;
-			var refdisplay = display;
-			var refdisplayTossup = displayTossup;
-			var prevvalue = parseInt(range.value);
-			var refstate = state;
-			var refcandidate = key;
-			return function(b) {
-				total -= prevvalue;
-				total += parseInt(this.value);
-
-				max = state.voters * (state.turnout / 100.0);
-				if(total > max) {
-					var diff = total - max;
-					total -= diff;
-					this.value -= diff;
-				}
-				
-				prevvalue = parseInt(this.value);
-
-				displayTossup.innerHTML = 'Tossup - ' + numberWithCommas((max - total).toFixed(0)) + ' - ' +
-					(( (max - total) / max) * 100).toFixed(2) + '%';
-				
-				// update the display	
-				refdisplay.innerHTML = refkey + ' - ' + numberWithCommas(this.value) + ' - ' + 
-					((this.value / max) * 100).toFixed(2) + '%';
-	
-				state.popularVote[refkey] = parseInt(this.value);
-			}
-		})();
+		var message = document.getElementById("popularvote-message");
+		message.innerHTML = "";
 		
-		ranges.appendChild(display);
-		ranges.appendChild(range);
-	}
+		var ranges = document.getElementById("popularvote-ranges");
+		while(ranges.firstChild) {
+			ranges.removeChild(ranges.firstChild);
+		}
 
-	displayTossup.innerHTML = 'Tossup - ' + numberWithCommas((max - total).toFixed(0)) + ' - ' + (( (max - total) / max) * 100).toFixed(2) + '%';
-	ranges.appendChild(displayTossup);
-}
-
-function countPopularVote() {
-	if(verifyPopularVote() === false) {
-		return;
-	}
-
-	var ranges = document.getElementById("national-popularvote-ranges");
-	while(ranges.firstChild) {
-		ranges.removeChild(ranges.firstChild);
-	}
-
-	var popularVote = {};
-	var splitState = {};
-
-	for(var stateIndex = 0, length = states.length; stateIndex < length; ++stateIndex) {
-		var state = states[stateIndex];
-
-		// skip at large state portions
 		if(state.name.includes('-AL')) {
-			continue;
+			title.innerHTML = "Select a district to set popular vote";
+			return;
 		}
 
-		for(var candidate in state.popularVote) {
+		var displayTossup = document.createElement('DIV');
+		displayTossup.setAttribute('id', 'popular-display-Tossup');
 
+		var displayTurnout = document.createElement('DIV');
+		displayTurnout.setAttribute('id', 'popularvote-turnout-display');
+		displayTurnout.innerHTML = 'Turnout - ' + state.turnout + '%';
+		var turnoutRange = document.createElement('INPUT');
+		turnoutRange.setAttribute('id', 'popularvote-turnout');
+		turnoutRange.setAttribute('type', 'range');
+		turnoutRange.setAttribute('max', 100);
+		turnoutRange.setAttribute('step', 0.1);
+		turnoutRange.setAttribute('value', state.turnout);
 
-			if(state.popularVote[candidate]) {
-				if(popularVote[candidate]) {
-					popularVote[candidate] += state.popularVote[candidate];
+		var max  = state.voters * (state.turnout / 100.0);
+		var total = 0;
+
+		turnoutRange.onchange = (function() {
+			return function() {
+				var turnout = document.getElementById('popularvote-turnout').value;
+				state.turnout = turnout;
+				
+				var autoMargins = document.getElementById('popularvote-automargins').checked;
+
+				if(autoMargins) {
+					state.setColor('Tossup', 0, true);
+				}
+
+				for(var key in CandidateManager.candidates) {
+					if(key === 'Tossup') {
+						continue;
+					}
+					var range = document.getElementById('popular-range-' + key);
+					range.setAttribute('max', (state.voters * (turnout / 100.0)));
+					range.value = 0;
+					// call on input to reset prevValue to 0
+					range.oninput();
+					var rangeDisplay = document.getElementById('popular-display-' + key);
+					rangeDisplay.innerHTML = key + ' - 0 - 0%';
+				}
+
+				var displayTurnout = document.getElementById('popularvote-turnout-display');
+				displayTurnout.innerHTML = 'Turnout - ' + this.value + '%';
+
+				var displayTossup = document.getElementById('popular-display-Tossup');
+				displayTossup.innerHTML = 'Tossup - ' + numberWithCommas((state.voters * (turnout / 100.0)).toFixed(0)) + ' - 100%';
+				
+				total = 0;
+
+				PopularVote.count();
+			}
+		})();
+
+		turnoutRange.oninput = (function() {
+			return function() {
+				var displayTurnout = document.getElementById('popularvote-turnout-display');
+				displayTurnout.innerHTML = 'Turnout - ' + this.value + '%';
+			}
+		})();
+
+		ranges.appendChild(displayTurnout);
+		ranges.appendChild(turnoutRange);
+
+		for(var key in CandidateManager.candidates) {
+			if(key === 'Tossup')
+				continue;
+
+			var range = document.createElement('INPUT');
+			range.setAttribute('id', 'popular-range-' + key);
+			range.setAttribute('type', 'range');
+			range.setAttribute('max', max);
+			range.setAttribute('step', 1);
+			if(typeof state.popularVote[key] === 'undefined') {
+				state.popularVote[key] = 0;
+			}
+			range.value = state.popularVote[key];
+			total += state.popularVote[key];
+			// create display for slider
+			var display = document.createElement('DIV');
+			display.setAttribute('id', 'popular-display-' + key);
+			display.innerHTML = key + ' - ' + numberWithCommas(range.value) + ' - ' +
+				((state.popularVote[key] / max) * 100).toFixed(2) + '%';
+
+			range.onchange = (function() {
+				return function(b) {
+					var totalVotes = 0;
+					for(var candidate in CandidateManager.candidates) {
+						if(candidate === 'Tossup')
+							continue;
+						var range = document.getElementById('popular-range-' + candidate);
+						var rangeValue = 0;
+						if(range) {
+							rangeValue = parseInt(range.value);
+						}
+						state.popularVote[candidate] = rangeValue;
+						totalVotes += rangeValue;
+					}
+					state.popularVote['Tossup'] = state.voters - totalVotes;
+
+					var autoMargins = document.getElementById('popularvote-automargins').checked;
+					if(autoMargins) {
+						PopularVote.calculateAutoMargin(state);
+
+						if(state.name.includes('-D')) {
+							var name = state.name.split('-')[0];
+							PopularVote.calculateAutoMarginAL(name);
+						}
+					}
+
+					PopularVote.count();
+					countVotes();
+					LegendManager.updateLegend();
+					ChartManager.updateChart();
+				}
+			})();
+
+			range.oninput = (function() {
+				var refkey = key;
+				var refdisplay = display;
+				var refdisplayTossup = displayTossup;
+				var prevvalue = parseInt(range.value);
+				var refstate = state;
+				var refcandidate = key;
+				return function(b) {
+					total -= prevvalue;
+					total += parseInt(this.value);
+
+					max = state.voters * (state.turnout / 100.0);
+					if(total > max) {
+						var diff = total - max;
+						total -= diff;
+						this.value -= diff;
+					}
 					
-				} else {
-					popularVote[candidate] = 0;
-					popularVote[candidate] += state.popularVote[candidate];
+					prevvalue = parseInt(this.value);
+
+					displayTossup.innerHTML = 'Tossup - ' + numberWithCommas((max - total).toFixed(0)) + ' - ' +
+						(( (max - total) / max) * 100).toFixed(2) + '%';
+					
+					// update the display	
+					refdisplay.innerHTML = refkey + ' - ' + numberWithCommas(this.value) + ' - ' + 
+						((this.value / max) * 100).toFixed(2) + '%';
+		
+					state.popularVote[refkey] = parseInt(this.value);
 				}
+			})();
 			
-				if(state.name.includes('-') && state.name.includes('AL') === false) {
-					var mainName = state.name.split('-')[0];
-					var district = state.name.split('-')[1];
-					if(typeof splitState[mainName] === 'undefined') {
-						splitState[mainName] = {}; 
-					}
+			ranges.appendChild(display);
+			ranges.appendChild(range);
+		}
 
-					if(typeof splitState[mainName][district] === 'undefined') {
-						splitState[mainName][district] = {};
-					}
+		displayTossup.innerHTML = 'Tossup - ' + numberWithCommas((max - total).toFixed(0)) + ' - ' + (( (max - total) / max) * 100).toFixed(2) + '%';
+		ranges.appendChild(displayTossup);
+	}
 
-					splitState[mainName][district][candidate] = state.popularVote[candidate];
+	static count() {
+		if(PopularVote.enabled === false) {
+			return;
+		}
+
+		var ranges = document.getElementById("national-popularvote-ranges");
+		while(ranges.firstChild) {
+			ranges.removeChild(ranges.firstChild);
+		}
+
+		var popularVote = {};
+		var splitState = {};
+
+		for(var stateIndex = 0, length = states.length; stateIndex < length; ++stateIndex) {
+			var state = states[stateIndex];
+
+			// skip at large state portions
+			if(state.name.includes('-AL')) {
+				continue;
+			}
+
+			for(var candidate in state.popularVote) {
+
+
+				if(state.popularVote[candidate]) {
+					if(popularVote[candidate]) {
+						popularVote[candidate] += state.popularVote[candidate];
+						
+					} else {
+						popularVote[candidate] = 0;
+						popularVote[candidate] += state.popularVote[candidate];
+					}
+				
+					if(state.name.includes('-') && state.name.includes('AL') === false) {
+						var mainName = state.name.split('-')[0];
+						var district = state.name.split('-')[1];
+						if(typeof splitState[mainName] === 'undefined') {
+							splitState[mainName] = {}; 
+						}
+
+						if(typeof splitState[mainName][district] === 'undefined') {
+							splitState[mainName][district] = {};
+						}
+
+						splitState[mainName][district][candidate] = state.popularVote[candidate];
+					}
+				} else {
+					state.popularVote[candidate] = 0;
 				}
+			}
+		}
+
+		for(var candidate in popularVote) {
+			var display = document.createElement('DIV');
+			display.setAttribute('id', 'national-popular-display-' + candidate);
+			display.innerHTML = candidate + ' - ' + numberWithCommas(popularVote[candidate].toFixed(0));
+			ranges.appendChild(display);
+		}
+	}
+
+	static calculateAutoMarginAL(stateName) {
+		var allDistricts = states.filter(obj => {
+			return obj.name.includes(stateName) &&
+				obj.name.includes('-AL') === false;
+		});
+
+		var atLarge = states.filter(obj => {
+			return obj.name.includes(stateName + '-AL');
+		})[0];
+
+		var firstCount = 0;
+		var firstCandidate = "Tossup";
+		var secondCount = 0;
+		var secondCandidate = "Tossup";
+		for(var candidate in CandidateManager.candidates) {
+			if(candidate === 'Tossup')
+				continue;
+
+			var votes = 0;
+			for(var key in allDistricts) {
+				if(allDistricts[key].popularVote[candidate]) {
+					votes += allDistricts[key].popularVote[candidate];
+				}
+			}
+
+			if(votes > firstCount) {
+				secondCount = firstCount;
+				secondCandidate = firstCandidate;
+				firstCount = votes;
+				firstCandidate = candidate;
+			} else if(votes > secondCount) {
+				secondCount = votes;
+				secondCandidate = candidate;
+			}
+		}
+
+		var combine = firstCount + secondCount;
+		var margin = (((firstCount - secondCount) / combine) * 100);
+
+		if(firstCandidate === 'Tossup') {
+			atLarge.setColor('Tossup', 0, false);
+		} else {
+			if(margin < 5.0) {
+				atLarge.setColor(firstCandidate, 3, false);
+			} else if(margin < 10.0) {
+				atLarge.setColor(firstCandidate, 2, false);
+			} else if(margin < 15.0) {
+				atLarge.setColor(firstCandidate, 1, false);
 			} else {
-				state.popularVote[candidate] = 0;
+				atLarge.setColor(firstCandidate, 0, false);
 			}
 		}
 	}
 
-	for(var candidate in popularVote) {
-		var display = document.createElement('DIV');
-		display.setAttribute('id', 'national-popular-display-' + candidate);
-		display.innerHTML = candidate + ' - ' + numberWithCommas(popularVote[candidate].toFixed(0));
-		ranges.appendChild(display);
-	}
-}
-
-function calculateAutoMarginAL(stateName) {
-	var allDistricts = states.filter(obj => {
-		return obj.name.includes(stateName) &&
-			obj.name.includes('-AL') === false;
-	});
-
-	var atLarge = states.filter(obj => {
-		return obj.name.includes(stateName + '-AL');
-	})[0];
-
-	var firstCount = 0;
-	var firstCandidate = "Tossup";
-	var secondCount = 0;
-	var secondCandidate = "Tossup";
-	for(var candidate in CandidateManager.candidates) {
-		if(candidate === 'Tossup')
-			continue;
-
-		var votes = 0;
-		for(var key in allDistricts) {
-			if(allDistricts[key].popularVote[candidate]) {
-				votes += allDistricts[key].popularVote[candidate];
+	static calculateAutoMargin(state) {
+		var win = 0;
+		var winCandidate = "Tossup";
+		var secondWin = 0;
+		var secondWinCandidate = "Tossup";
+		for(var candidate in CandidateManager.candidates) {
+			// don't compare margins with the no vote
+			if(candidate === 'Tossup')
+				continue;
+			var votes = state.popularVote[candidate];
+			if(votes > win) {
+				secondWin = win;
+				secondWinCandidate = winCandidate;
+				win = votes;
+				winCandidate = candidate;
+			} else if(votes > secondWin) {
+				secondWin = votes;
+				secondWinCandidate = candidate;
 			}
 		}
 
-		if(votes > firstCount) {
-			secondCount = firstCount;
-			secondCandidate = firstCandidate;
-			firstCount = votes;
-			firstCandidate = candidate;
-		} else if(votes > secondCount) {
-			secondCount = votes;
-			secondCandidate = candidate;
-		}
-	}
-
-	var combine = firstCount + secondCount;
-	var margin = (((firstCount - secondCount) / combine) * 100);
-
-	if(firstCandidate === 'Tossup') {
-		atLarge.setColor('Tossup', 0, false);
-	} else {
-		if(margin < 5.0) {
-			atLarge.setColor(firstCandidate, 3, false);
-		} else if(margin < 10.0) {
-			atLarge.setColor(firstCandidate, 2, false);
-		} else if(margin < 15.0) {
-			atLarge.setColor(firstCandidate, 1, false);
+		var combine = win + secondWin;
+		var margin = (((win - secondWin) / combine) * 100);
+		if(winCandidate === 'Tossup') {
+			state.setColor('Tossup', 0);
 		} else {
-			atLarge.setColor(firstCandidate, 0, false);
-		}
-	}
-}
-
-function calculateAutoMargin(state) {
-	var win = 0;
-	var winCandidate = "Tossup";
-	var secondWin = 0;
-	var secondWinCandidate = "Tossup";
-	for(var candidate in CandidateManager.candidates) {
-		// don't compare margins with the no vote
-		if(candidate === 'Tossup')
-			continue;
-		var votes = state.popularVote[candidate];
-		if(votes > win) {
-			secondWin = win;
-			secondWinCandidate = winCandidate;
-			win = votes;
-			winCandidate = candidate;
-		} else if(votes > secondWin) {
-			secondWin = votes;
-			secondWinCandidate = candidate;
+			if(margin < 5.0) {
+				state.setColor(winCandidate, 3, false);
+			} else if(margin < 10.0) {
+				state.setColor(winCandidate, 2, false);
+			} else if(margin < 15.0) {
+				state.setColor(winCandidate, 1, false);
+			} else {
+				state.setColor(winCandidate, 0, false);
+			}
 		}
 	}
 
-	var combine = win + secondWin;
-	var margin = (((win - secondWin) / combine) * 100);
-	if(winCandidate === 'Tossup') {
-		state.setColor('Tossup', 0);
-	} else {
-		if(margin < 5.0) {
-			state.setColor(winCandidate, 3, false);
-		} else if(margin < 10.0) {
-			state.setColor(winCandidate, 2, false);
-		} else if(margin < 15.0) {
-			state.setColor(winCandidate, 1, false);
-		} else {
-			state.setColor(winCandidate, 0, false);
+	static toggle() {
+		var e1 = document.getElementById('sidebar-popularvote');
+		var e2 = document.getElementById('sidebar-national-popularvote');
+		var e3 = document.getElementById('sidebar-popularvote-settings');
+		var e4 = document.getElementById('sidebar-popularvote-head');
+		if(PopularVote.enabled === false) {
+			e1.style.display = 'block';
+			e2.style.display = 'block';
+			e3.style.display = 'block';
+			e4.innerHTML = 'Disable Popular Vote';
+			PopularVote.enabled = true;
+		} else if(PopularVote.enabled === true) {
+			e1.style.display = 'none';
+			e2.style.display = 'none';
+			e3.style.display = 'none';
+			e4.innerHTML = 'Enable Popular Vote';
+			PopularVote.enabled = false;
 		}
+
+		gtag('event', 'click', {
+			'event_category': 'tool',
+			'event_label': 'Popular Vote Enabled'
+		});
 	}
 }
 
-function togglePopularVote() {
-	var e1 = document.getElementById('sidebar-popularvote');
-	var e2 = document.getElementById('sidebar-national-popularvote');
-	var e3 = document.getElementById('sidebar-popularvote-settings');
-	var e4 = document.getElementById('sidebar-toggle-popularvote');
-	if(popularVoteEnabled  === false) {
-		e1.style.display = 'block';
-		e2.style.display = 'block';
-		e3.style.display = 'block';
-		e4.innerHTML = '<h4>Disable Popular Vote</h4>';
-		popularVoteEnabled = true;
-	} else if(popularVoteEnabled === true) {
-		e1.style.display = 'none';
-		e2.style.display = 'none';
-		e3.style.display = 'none';
-		e4.innerHTML = '<h4>Enable Popular Vote</h4>';
-		popularVoteEnabled = false;
-	}
-}
+PopularVote.enabled = false;
 function saveMap(img, token) {
 	var formData = new FormData();
 
@@ -6363,6 +6378,7 @@ function saveMap(img, token) {
 		};
 		stateData.push(obj);
 	}
+
 	formData.append("states", JSON.stringify({
 		state_data: stateData
 	}));
@@ -6374,11 +6390,13 @@ function saveMap(img, token) {
 			name: state.name,
 			candidate: state.candidate,
 			delegates: state.delegates,
+			simulator: state.simulator,
 			voteCount: state.voteCount,
 			colorValue: state.colorValue,
 			disabled: state.disabled
 		};
 	}
+
 	formData.append("proportionalStates", JSON.stringify({
 		proportional_data: proportionalData
 	}));
@@ -6432,10 +6450,10 @@ function saveMap(img, token) {
 				image.style.display = '';
 			}
 
-			console.log('Map save succeeded');
-			gtag('event', 'map_save_succeeded', {
-				'event_category': 'map_save',
-				'event_label': 'Map save succeeded ' + currentCache 
+			console.log('Map share succeeded');
+			gtag('event', 'click', {
+				'event_category': 'share',
+				'event_label': 'Map Shared'
 			});
 		},
 		error: function(a,b,c) {
@@ -6446,11 +6464,10 @@ function saveMap(img, token) {
 			if(button) {
 				button.setAttribute('onclick', 'share()');
 			}
-			
-			console.log('Map save failed ' + a);
-			gtag('event', 'ma_save_failed', {
-				'event_category': 'map_save',
-				'event_label': 'Map save failed - ' + a
+			console.log('Map share failed ' + a);
+			gtag('event', 'click', {
+				'event_category': 'share',
+				'event_label': 'Map Shared Failed ' + currentCache 
 			});
 		}
 	});
@@ -6674,7 +6691,10 @@ function saveMap_new(img, token) {
 		}
 	});
 }
-var currentCache = 'v1.3.32';
+function numberWithCommas(number) {
+	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+var currentCache = 'v1.3.35';
 
 var states = [];
 var lands = [];
@@ -6778,17 +6798,16 @@ function share_afterCenter() {
 
 /* CATCH ERRORS AND LOG THEM */
 window.onerror = function(message, source, lineno, colno, error) {
-	if(typeof gtag !== 'undefined') {
-		if(message.includes('a[b].target.className.indexOf') || message.includes('Script error.')) {
-			return;
-		} else {
-			gtag('event', 'error', {
-				'event_category': 'error',
-				'event_label': message + ', ' + source + ', ' + lineno + ', ' + currentCache,
-				'non_interaction': true
-			});
-		}
+	if(message.includes('a[b].target.className.indexOf') ||
+		message.includes('Script error.')) {
+		return;
 	}
+	
+	gtag('event', 'error', {
+		'event_category': 'general error',
+		'event_label': message + ', ' + source + ', ' + lineno + ', ' + currentCache,
+		'non_interaction': true
+	});
 }
 
 function autoFill(stateIndex) {

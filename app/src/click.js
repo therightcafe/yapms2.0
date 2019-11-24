@@ -89,7 +89,7 @@ function landClick(clickElement, options) {
 	});
 
 	// make the popular vote calculator point to the AL
-	viewPopularVote(AL);
+	PopularVote.view(AL);
 
 	if(mode === 'paint' || mode === 'paintmove') {
 		// check if each district has the same candidate and color value
@@ -110,7 +110,7 @@ function landClick(clickElement, options) {
 	countVotes();
 	ChartManager.updateChart();
 	LegendManager.updateLegend();
-	countPopularVote();
+	PopularVote.count();
 }
 
 function stateClick(clickElement, options) {
@@ -129,12 +129,12 @@ function stateClick(clickElement, options) {
 		case 'paint':
 		case 'paintmove':
 			if(MapLoader.save_type === 'proportional' || MapLoader.save_type === 'primary') {
-				Simulator.viewPercentage(state);
+				Simulator.view(state);
 				if(Simulator.ignoreClick === false) {
 					stateClickPaintProportional(state, id);
 				}
 			} else {
-				Simulator.viewPercentage(state);
+				Simulator.view(state);
 				if(Simulator.ignoreClick === false) {
 					stateClickPaint(state, options);
 				}
@@ -204,12 +204,12 @@ function stateClickPaint(state, options) {
 			}
 
 			if(autoMargins === true && avoidALMargins === false) {
-				calculateAutoMarginAL(state.name.split('-')[0]);
+				PopularVote.calculateAutoMarginAL(state.name.split('-')[0]);
 			}
 		}
 
-		viewPopularVote(state);
-		countPopularVote(options);
+		PopularVote.view(state);
+		PopularVote.count(options);
 	} else {
 		state.incrementCandidateColor(paintIndex);
 	}

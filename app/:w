@@ -311,8 +311,7 @@ if($mobile === false) {
 		</div>
 
 		<div id="sidebar-toggle-popularvote" class="sidebar-box sidebar-tool-button" onclick="PopularVote.toggle()" style="display: none">
-			<i class="fas fa-chevron-circle-right"></i>
-			<h4 id="sidebar-popularvote-head">
+			<h4>
 				Enable Popular Vote
 			</h4>
 		</div>
@@ -320,21 +319,19 @@ if($mobile === false) {
 			<h3>
 				Settings
 			</h3>
-			<div class="sidebar-box-settings">
-				<div class="sidebar-hover-popup"><input type="checkbox" id="popularvote-automargins" onclick="PopularVote.autoMarginsOnClick();" checked>Auto Margins
-					<div class="tooltip-text">
-						Setting the popular vote will also set the color of a state
-					</div>
+			<div class="sidebar-hover-popup"><input type="checkbox" id="popularvote-automargins" onclick="PopularVote.autoMarginsOnClick();" checked>Auto Margins
+				<div class="tooltip-text">
+					Setting the popular vote will also set the color of a state
 				</div>
-				<div class="sidebar-hover-popup"><input type="checkbox" id="popularvote-clicksetpv" checked>Auto Popular Vote
-					<div class="tooltip-text">
-						Clicking on a district will set the popular vote to max
-					</div>
+			</div>
+			<div class="sidebar-hover-popup"><input type="checkbox" id="popularvote-clicksetpv" checked>Auto Popular Vote
+				<div class="tooltip-text">
+					Clicking on a district will set the popular vote to max
 				</div>
-				<div class="sidebar-hover-popup"><input type="checkbox" id="popularvote-avoidalmargins" checked>Avoid Auto AL
-					<div class="tooltip-text">
-						Clicking on a district in Nebraska or Maine will not calculate the margin for the AL vote.	
-					</div>
+			</div>
+			<div class="sidebar-hover-popup"><input type="checkbox" id="popularvote-avoidalmargins" checked>Avoid Auto AL
+				<div class="tooltip-text">
+					Clicking on a district in Nebraska or Maine will not calculate the margin for the AL vote.	
 				</div>
 			</div>
 		</div>
@@ -363,8 +360,7 @@ if($mobile === false) {
 		</div>
 
 		<div id="sidebar-enable-simulator" class="sidebar-box sidebar-tool-button" onclick="Simulator.toggle();">
-			<i class="fas fa-chevron-circle-right"></i> 
-			<h4 id="sidebar-simulator-head">
+			<h4>
 				Enable Simulator
 			</h4>
 		</div>
@@ -380,16 +376,14 @@ if($mobile === false) {
 			<h3>
 				Settings
 			</h3>
-			<div class="sidebar-box-settings">
-				<div class="sidebar-hover-popup">
-					<input type="checkbox" id="simulator-noclick">
-						Ignore Click
-					</input>
-					<div class="tooltip-text">
-						Clicking doesn\'t set state color or open menu
-					</div>
-				</div>	
-			</div>
+			<div class="sidebar-hover-popup">
+				<input type="checkbox" id="simulator-noclick">
+					Ignore Click
+				</input>
+				<div class="tooltip-text">
+					Clicking doesn\'t set state color or open menu
+				</div>
+			</div>	
 		</div>
 		<div id="sidebar-state-simulator" class="sidebar-box sidebar-tool">
 			<h3>
@@ -403,7 +397,7 @@ if($mobile === false) {
 		</div>
 		<div id="sidebar-run-simulator" class="sidebar-box sidebar-tool-button sidebar-tool" onclick="Simulator.run();">
 			<h4>
-				<i class="fas fa-play"></i> Run Simulation
+				Run Simulation
 			</h4>
 		</div>
 

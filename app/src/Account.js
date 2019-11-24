@@ -160,7 +160,10 @@ class Account {
 			},
 			crossDomain: true,
 			success: function(data) {
-				console.log(data);
+				gtag('event', 'click', {
+					'event_category': 'account',
+					'event_label': 'Map Deleted From Account'
+				});
 			},
 			error: function(a, b, c) {
 				console.log(a);
@@ -262,6 +265,10 @@ class Account {
 				} else {
 					var base64name = arr[1];
 					Account.addMapBox(base64name, true);
+					gtag('event', 'click', {
+						'event_category': 'account',
+						'event_label': 'Map Saved To Account'
+					});
 				}
 			},
 			error: function(a, b, c) {

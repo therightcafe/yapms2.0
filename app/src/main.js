@@ -1,4 +1,4 @@
-var currentCache = 'v1.3.32';
+var currentCache = 'v1.3.35';
 
 var states = [];
 var lands = [];
@@ -102,17 +102,16 @@ function share_afterCenter() {
 
 /* CATCH ERRORS AND LOG THEM */
 window.onerror = function(message, source, lineno, colno, error) {
-	if(typeof gtag !== 'undefined') {
-		if(message.includes('a[b].target.className.indexOf') || message.includes('Script error.')) {
-			return;
-		} else {
-			gtag('event', 'error', {
-				'event_category': 'error',
-				'event_label': message + ', ' + source + ', ' + lineno + ', ' + currentCache,
-				'non_interaction': true
-			});
-		}
+	if(message.includes('a[b].target.className.indexOf') ||
+		message.includes('Script error.')) {
+		return;
 	}
+	
+	gtag('event', 'error', {
+		'event_category': 'general error',
+		'event_label': message + ', ' + source + ', ' + lineno + ', ' + currentCache,
+		'non_interaction': true
+	});
 }
 
 function autoFill(stateIndex) {

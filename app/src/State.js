@@ -281,7 +281,7 @@ class State {
 			return;
 		}
 
-		Simulator.viewPercentage(this);
+		Simulator.view(this);
 
 		// if changing color set to solor
 		if(this.candidate !== candidate) {

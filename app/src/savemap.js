@@ -45,6 +45,7 @@ function saveMap(img, token) {
 		};
 		stateData.push(obj);
 	}
+
 	formData.append("states", JSON.stringify({
 		state_data: stateData
 	}));
@@ -56,11 +57,13 @@ function saveMap(img, token) {
 			name: state.name,
 			candidate: state.candidate,
 			delegates: state.delegates,
+			simulator: state.simulator,
 			voteCount: state.voteCount,
 			colorValue: state.colorValue,
 			disabled: state.disabled
 		};
 	}
+
 	formData.append("proportionalStates", JSON.stringify({
 		proportional_data: proportionalData
 	}));
@@ -114,10 +117,10 @@ function saveMap(img, token) {
 				image.style.display = '';
 			}
 
-			console.log('Map save succeeded');
-			gtag('event', 'map_save_succeeded', {
-				'event_category': 'map_save',
-				'event_label': 'Map save succeeded ' + currentCache 
+			console.log('Map share succeeded');
+			gtag('event', 'click', {
+				'event_category': 'share',
+				'event_label': 'Map Shared'
 			});
 		},
 		error: function(a,b,c) {
@@ -128,11 +131,10 @@ function saveMap(img, token) {
 			if(button) {
 				button.setAttribute('onclick', 'share()');
 			}
-			
-			console.log('Map save failed ' + a);
-			gtag('event', 'ma_save_failed', {
-				'event_category': 'map_save',
-				'event_label': 'Map save failed - ' + a
+			console.log('Map share failed ' + a);
+			gtag('event', 'click', {
+				'event_category': 'share',
+				'event_label': 'Map Shared Failed ' + currentCache 
 			});
 		}
 	});

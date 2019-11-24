@@ -42,11 +42,6 @@ class MapLoader {
 				console.log("Map Load: Found saved map");
 				console.log('Map Loader: Attemping new file load');
 				MapLoader.loadSavedMap(data);
-				gtag('event', 'load', {
-					'event_category': 'load_map',
-					'event_label': 'load map from URL ' + currentCache,
-					'non_interaction': true
-				});
 			},
 			error: function() {
 				console.log("Map Loader: Did not find saved map");
@@ -474,9 +469,8 @@ class MapLoader {
 
 		if(options) {
 			if(options.enablePopularVote) {
-				showPopularVoteButton();
+				PopularVote.showPopularVoteButton();
 			}
-			verifyPopularVote();
 			enableCongress = options.enableCongress;
 			verifyCongress();
 		}
@@ -541,7 +535,7 @@ class MapLoader {
 						state.popularVote['Tossup'] = state.voters;
 					}
 
-					countPopularVote();
+					PopularVote.count();
 				}
 
 				// disable the load screen when the map is finished loading

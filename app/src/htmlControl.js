@@ -678,8 +678,16 @@ function toggleYAPNews() {
 	if(yapnews !== null) {
 		if(yapnews.style.display === "none") {
 			yapnews.style.display = "inline-flex";
+			gtag('event', 'click', {
+				'event_category': 'sidebar',
+				'event_label': 'Toggle On'
+			});
 		} else {
 			yapnews.style.display = "none";
+			gtag('event', 'click', {
+				'event_category': 'sidebar',
+				'event_label': 'Toggle Off'
+			});
 		}
 		MapManager.centerMap();
 	}

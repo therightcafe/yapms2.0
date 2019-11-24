@@ -62,8 +62,10 @@ class Simulator {
 				state.simulator[key] = 0;
 			}
 		}
-		
-		Simulator.viewPercentage(Simulator.state);
+	
+		if(Simulator.state) {	
+			Simulator.view(Simulator.state);
+		}
 	}
 
 	static randomPreset() {
@@ -96,7 +98,9 @@ class Simulator {
 			}
 		}
 
-		Simulator.viewPercentage(Simulator.state);
+		if(Simulator.state) {	
+			Simulator.view(Simulator.state);
+		}
 	}
 
 	static cookPresidentialPreset() {
@@ -118,7 +122,9 @@ class Simulator {
 			}			
 		}
 
-		Simulator.viewPercentage(Simulator.state);
+		if(Simulator.state) {	
+			Simulator.view(Simulator.state);
+		}
 	}
 
 	static initListeners() {
@@ -167,7 +173,7 @@ class Simulator {
 		Simulator.enabled = !Simulator.enabled;
 		var e1 = document.getElementById('sidebar-state-simulator');
 		var e2 = document.getElementById('sidebar-run-simulator');
-		var e3 = document.getElementById('sidebar-enable-simulator');
+		var e3 = document.getElementById('sidebar-simulator-head');
 		var e4 = document.getElementById('sidebar-settings-simulator');
 		var e5 = document.getElementById('sidebar-presets-simulator');
 		if(Simulator.enabled) {
@@ -175,18 +181,23 @@ class Simulator {
 			e2.style.display = 'block';
 			e4.style.display = 'block';
 			e5.style.display = 'block';
-			e3.innerHTML = '<h4>Disable Simulator</h4>';
+			e3.innerHTML = 'Disable Simulator';
 			Simulator.init();
 		} else {
 			e1.style.display = 'none';
 			e2.style.display = 'none';
 			e4.style.display = 'none';
 			e5.style.display = 'none';
-			e3.innerHTML = '<h4>Enable Simulator</h4>';
+			e3.innerHTML = 'Enable Simulator';
 		}
+		
+		gtag('event', 'click', {
+			'event_category': 'tool',
+			'event_label': 'Simulator Enabled'
+		});
 	}
 
-	static viewPercentage(state) {
+	static view(state) {
 		if(mobile) {
 			return; 
 		}
