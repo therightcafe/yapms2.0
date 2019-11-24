@@ -1520,8 +1520,10 @@ class CookieManager {
 		}
 	
 		/* Load Non-Personalized Adsense */
+/*
 		(adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;
 		(adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 0;
+*/
 	}
 
 	static consentGiven() {
@@ -1533,7 +1535,7 @@ class CookieManager {
 		CookieManager.appendCookie("consent", true);
 
 		/* Load Personalized Adsense */
-		(adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 0;
+		// (adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 0;
 
 		/* Load Google Recaptcha */
 		$.ajax({
