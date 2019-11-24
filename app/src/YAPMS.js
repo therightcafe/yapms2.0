@@ -5577,8 +5577,7 @@ class Simulator {
 			}
 		}
 
-		console.log(states[0]);
-		if(typeof states[0].simulator === "undefined") {
+		if(states[0].simulator === undefined) {
 			Simulator.uniformPreset();
 		}
 	}
