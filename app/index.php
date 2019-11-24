@@ -549,10 +549,10 @@ echo '<!-- mobile-ad -->
 	<div class="selectmenu-section">Likely <input id="candidate-likely" type="color"></div>
 	<div class="selectmenu-section">Lean <input id="candidate-lean" type="color"></div>
 	<div class="selectmenu-section">Tilt <input id="candidate-tilt" type="color"></div>
-	<div class="selectmenu-button" onclick="CandidateManager.setCandidate()">
+	<div class="selectmenu-button" onclick="CandidateManager.setCandidate(); Simulator.uniformPreset();">
 		<div class="selectmenu-button-text">Apply</div>
 	</div>
-	<div class="selectmenu-button" onclick='CandidateManager.deleteCandidate()'>
+	<div class="selectmenu-button" onclick='CandidateManager.deleteCandidate(); Simulator.uniformPreset();'>
 		<div class="selectmenu-button-text">Delete</div>
 	</div>
 	</div>
@@ -632,7 +632,7 @@ echo '<!-- mobile-ad -->
 	<div class="selectmenu-section">Likely <input id="likely" type="color"></div>
 	<div class="selectmenu-section">Leaning <input id="leaning" type="color"></div>
 	<div class="selectmenu-section">Tilt <input id="tilting" type="color"></div>
-	<div class="selectmenu-button" onclick="CandidateManager.addCandidate(); closeAllPopups();">
+	<div class="selectmenu-button" onclick="CandidateManager.addCandidate(); Simulator.uniformPreset(); closeAllPopups();">
 		<div class="selectmenu-button-text">Add</div>
 	</div>
 	</div>

@@ -655,7 +655,6 @@ class CandidateManager {
 		MapManager.verifyMap();
 		ChartManager.updateChart();
 		PopularVote.count();
-		Simulator.uniformPreset();
 	}
 
 	static deleteCandidateByName(name) {
@@ -682,7 +681,6 @@ class CandidateManager {
 		MapManager.verifyMap();
 		ChartManager.updateChart();
 		PopularVote.count();
-		Simulator.uniformPreset();
 	}
 
 	static setCandidate() {
@@ -730,7 +728,6 @@ class CandidateManager {
 		countVotes();
 		LegendManager.updateLegend();
 		ChartManager.updateChart();
-		Simulator.uniformPreset();
 	}
 
 	static addCandidate(name, solid, likely, leaning, tilting) {
@@ -793,9 +790,7 @@ class CandidateManager {
 		ChartManager.updateChart();
 		ChartManager.chart.generateLegend();
 		LegendManager.updateLegend();
-
 		PopularVote.count();
-		Simulator.uniformPreset();
 	}
 	
 	static saveCustomColors() {
