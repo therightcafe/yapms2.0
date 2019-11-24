@@ -125,8 +125,6 @@ function stateClick(clickElement, options) {
 	var id = clickElement.getAttribute('id');
 	var state = states.find(state => state.name === id);
 
-	console.log(state);
-
 	switch(mode) {
 		case 'paint':
 		case 'paintmove':

@@ -4236,8 +4236,6 @@ function stateClick(clickElement, options) {
 	var id = clickElement.getAttribute('id');
 	var state = states.find(state => state.name === id);
 
-	console.log(state);
-
 	switch(mode) {
 		case 'paint':
 		case 'paintmove':
@@ -6699,7 +6697,7 @@ function saveMap_new(img, token) {
 function numberWithCommas(number) {
 	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-var currentCache = 'v1.3.35';
+var currentCache = 'v1.3.40';
 
 var states = [];
 var lands = [];
