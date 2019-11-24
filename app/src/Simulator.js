@@ -4,6 +4,8 @@ class Simulator {
 			return; 
 		}
 
+		alert('init');
+
 		for(var index = 0; index < states.length; ++index) {
 			var state = states[index];
 			state.simulator = {};
