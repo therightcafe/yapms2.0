@@ -300,12 +300,12 @@
 				Idaho
 			</div>
 		</a>
-		<br>
 		<a href="./app/?t=Iowa_2020_state_lower">
 			<div class="map-button">
 				Iowa
 			</div>
 		</a>
+		<br>
 		<a href="./app/?t=Michigan_2020_state_lower">
 			<div class="map-button">
 				Michigan
@@ -321,12 +321,17 @@
 				New Jersey
 			</div>
 		</a>
-		<br>
+		<a href="./app/?t=NewMexico_2020_state_lower">
+			<div class="map-button">
+				New Mexico
+			</div>
+		</a>
 		<a href="./app/?t=NorthDakota_2020_state_lower">
 			<div class="map-button">
 				North Dakota
 			</div>
 		</a>
+		<br>
 		<a href="./app/?t=Oregon_2020_state_lower">
 			<div class="map-button">
 				Oregon
@@ -340,6 +345,16 @@
 		<a href="./app/?t=Texas_2020_state_lower">
 			<div class="map-button">
 				Texas
+			</div>
+		</a>
+		<a href="./app/?t=Washington_2020_state_lower">
+			<div class="map-button">
+				Washington
+			</div>
+		</a>
+		<a href="./app/?t=Wisconsin_2020_state_lower">
+			<div class="map-button">
+				Wisconsin
 			</div>
 		</a>
 	</div>

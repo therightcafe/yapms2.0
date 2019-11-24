@@ -48,11 +48,14 @@
 <a class="selectmenu-button" href="./?t=Minnesota_2020_state_lower">
 	<div class="selectmenu-button-text">Minnesota</div>
 </a>
+<a class="selectmenu-button" href="./?t=NorthDakota_2020_state_lower">
+	<div class="selectmenu-button-text">North Dakota</div>
+</a>
 <a class="selectmenu-button" href="./?t=NewJersey_2020_state_lower">
 	<div class="selectmenu-button-text">New Jersey</div>
 </a>
-<a class="selectmenu-button" href="./?t=NorthDakota_2020_state_lower">
-	<div class="selectmenu-button-text">North Dakota</div>
+<a class="selectmenu-button" href="./?t=NewMexico_2020_state_lower">
+	<div class="selectmenu-button-text">New Mexico</div>
 </a>
 <a class="selectmenu-button" href="./?t=Oregon_2020_state_lower">
 	<div class="selectmenu-button-text">Oregon</div>
@@ -62,5 +65,11 @@
 </a>
 <a class="selectmenu-button" href="./?t=Texas_2020_state_lower">
 	<div class="selectmenu-button-text">Texas</div>
+</a>
+<a class="selectmenu-button" href="./?t=Washington_2020_state_lower">
+	<div class="selectmenu-button-text">Washington</div>
+</a>
+<a class="selectmenu-button" href="./?t=Wisconsin_2020_state_lower">
+	<div class="selectmenu-button-text">Wisconsin</div>
 </a>
 </div>
