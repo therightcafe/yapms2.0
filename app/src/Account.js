@@ -223,6 +223,7 @@ class Account {
 			data['states'][state.name] = {};
 			data['states'][state.name]['candidate'] = state.candidate;
 			data['states'][state.name]['delegates'] = state.delegates;
+			data['states'][state.name]['simulator'] = state.simulator;
 			data['states'][state.name]['votecount'] = state.voteCount;
 			data['states'][state.name]['colorvalue'] = state.colorValue;
 			data['states'][state.name]['disabled'] = state.disabled;
@@ -233,6 +234,7 @@ class Account {
 			data['proportional'][state.name] = {};
 			data['proportional'][state.name]['candidate'] = state.candidate;
 			data['proportional'][state.name]['delegates'] = state.delegates;
+			data['proportional'][state.name]['simulator'] = state.simulator;
 			data['proportional'][state.name]['votecount'] = state.voteCount;
 			data['proportional'][state.name]['colorvalue'] = state.colorValue;
 			data['proportional'][state.name]['disabled'] = state.disabled;
