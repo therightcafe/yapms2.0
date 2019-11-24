@@ -61,6 +61,10 @@ class Simulator {
 				Simulator.uniformPreset();
 			}
 		}
+
+		if(states[0].simulator === undefined) {
+			Simulator.uniformPreset();
+		}
 	}
 
 	static uniformPreset() {
