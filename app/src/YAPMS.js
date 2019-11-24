@@ -5543,8 +5543,15 @@ class Simulator {
 		while(select.firstChild) {
 			select.removeChild(select.firstChild);
 		}
-
+		
 		var option = document.createElement("option");
+		option.text = "Custom";
+		option.value = "custom";
+		option.select = true;
+		option.disabled = true;
+		presets.appendChild(option);
+
+		option = document.createElement("option");
 		option.text = "Uniform";
 		option.value = "uniform";
 		presets.appendChild(option);

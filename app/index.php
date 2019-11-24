@@ -392,7 +392,6 @@ if($mobile === false) {
 				National Presets
 			</h3>
 			<select id="sidebar-presets-select-simulator">
-				<option selected disabled>Custom</option>
 			</select>
 		</div>
 		<div id="sidebar-settings-simulator" class="sidebar-box sidebar-tool">
