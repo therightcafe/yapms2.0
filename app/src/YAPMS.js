@@ -5547,7 +5547,7 @@ class Simulator {
 		var option = document.createElement("option");
 		option.text = "Custom";
 		option.value = "custom";
-		option.select = true;
+		option.selected = true;
 		option.disabled = true;
 		presets.appendChild(option);
 
