@@ -703,6 +703,7 @@ class MapLoader {
 				var state = states.filter(state => state.name === stateName)[0];
 				state.setVoteCount(stateData['votecount']);
 				state.setColor(stateData['candidate'], stateData['colorvalue']);
+				state.simulator = stateData['simulator'];
 				state.delegates = stateData['delegates'];
 				if(stateData['disabled']) {
 					state.toggleDisable();
@@ -714,6 +715,7 @@ class MapLoader {
 				var state = proportionalStates.filter(state => state.name === stateName)[0];
 				state.setVoteCount(stateData['votecount']);
 				state.setColor(stateData['candidate'], stateData['colorvalue']);
+				state.simulator = stateData['simulator'];
 				state.delegates = stateData['delegates'];
 				if(stateData['disabled']) { 
 					state.toggleDisable();
