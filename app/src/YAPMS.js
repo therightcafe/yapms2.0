@@ -2084,7 +2084,10 @@ class MapLoader {
 				PresetLoader.loadPreset("classic");
 				MapLoader.loadMap("./res/usa/pennsylvania/2020_house.svg", 16, 0.25, "1", "takeall_noedit", "open");
 				break;
-			case "Texas_2020_state_house":
+			case "SouthDakota_2020_state_lower":
+				PresetLoader.loadPreset("classic");
+				MapLoader.loadMap("./res/usa/southdakota/2020_house.svg", 16, 1, "1", "takeall_noedit", "open");
+				break;
 			case "Texas_2020_state_lower":
 				PresetLoader.loadPreset("classic");
 				MapLoader.loadMap("./res/usa/texas/2020_house.svg", 16, 0.5, "1", "takeall_noedit", "open");
@@ -2285,7 +2288,7 @@ class MapLoader {
 				break;
 			case "World":
 				PresetLoader.loadPreset('classic');
-				MapLoader.loadMap("./res/world.svg", 38, 0.25, "1", "takeall_noedit", "open");
+				MapLoader.loadMap("./res/world.svg", 38, 0.25, "1", "takeall", "open");
 				break;
 			case "LTE_presidential":
 				PresetLoader.loadPreset('classic');
@@ -2338,6 +2341,13 @@ class MapLoader {
 			var ecEditButton = document.getElementById("modebutton-ec");
 			if(ecEditButton) {
 				ecEditButton.style.display = "none";
+			}	
+		}
+
+		if(type === "takeall_noedit" || type === "takeall") {
+			var fillButton = document.getElementById("modebutton-fill");
+			if(fillButton) {
+				fillButton.style.display = "none";
 			}
 		}
 
@@ -2648,19 +2658,13 @@ class MapLoader {
 				htmlElement.onclick = function() {
 					buttonClick(this);
 				}
-				if(MapLoader.save_type === 'takeall' ||
-				MapLoader.save_type === 'takeall_noedit') {
-					htmlElement.setAttribute('onmouseover', 'if(KeyboardManager.keyStates[70]){buttonClick(this, {setSolid: true});}');
-				}
+				htmlElement.setAttribute('onmouseover', 'if(KeyboardManager.keyStates[70]){buttonClick(this, {setSolid: true});}');
 				buttons.push(htmlElement);
 			} else if(name.includes('-land')) {
 				htmlElement.onclick = function() {
 					landClick(this);
 				}
-				if(MapLoader.save_type === 'takeall' ||
-				MapLoader.save_type === 'takeall_noedit') {
-					htmlElement.setAttribute('onmouseover', 'if(KeyboardManager.keyStates[70]){landClick(this, {setSolid: true});}');
-				}
+				htmlElement.setAttribute('onmouseover', 'if(KeyboardManager.keyStates[70]){landClick(this, {setSolid: true});}');
 				lands.push(htmlElement);
 			} else {
 				htmlElement.onclick = function() {
@@ -2668,10 +2672,7 @@ class MapLoader {
 				}
 				states.push(new State(name, htmlElement, dataid));
 				var stateIndex = states.length - 1;
-				if(MapLoader.save_type === 'takeall' ||
-				MapLoader.save_type === 'takeall_noedit') {
-					htmlElement.setAttribute('onmouseover', 'if(KeyboardManager.keyStates[70]){stateClick(this, {setSolid: true});}');
-				}
+				htmlElement.setAttribute('onmouseover', 'if(KeyboardManager.keyStates[70]){stateClick(this, {setSolid: true});}');
 			}
 		}
 
@@ -4251,10 +4252,11 @@ function stateClick(clickElement, options) {
 	switch(mode) {
 		case 'paint':
 		case 'paintmove':
+		case 'fill':
 			if(MapLoader.save_type === 'proportional' || MapLoader.save_type === 'primary') {
 				Simulator.view(state);
 				if(Simulator.ignoreClick === false) {
-					stateClickPaintProportional(state, id);
+					stateClickPaintProportional(state, id, options);
 				}
 			} else {
 				Simulator.view(state);
@@ -4338,8 +4340,21 @@ function stateClickPaint(state, options) {
 	}
 }
 
-function stateClickPaintProportional(state, id) {
+function stateClickPaintProportional(state, id, options) {
 	if(state.disabled) {
+		return;
+	}
+
+	if((options && options.setSolid) || mode === 'fill') {
+		state.delegates = {};
+		if(paintIndex === 'Tossup') {
+			state.delegates['Tossup'] = state.voteCount;
+			state.setColor(paintIndex, 0);
+		} else {
+			state.delegates[paintIndex] = state.voteCount;
+			state.delegates['Tossup'] = 0;
+			state.setColor(paintIndex, 2);
+		}
 		return;
 	}
 
@@ -4440,9 +4455,8 @@ function stateClickEC(state) {
 function specialClick(clickElement, e) {
 	var id = clickElement.getAttribute('id');
 	var state = states.find(state => state.name === id);
-	if(mode === 'move') {
 
-	} else if(mode === 'paint' || mode === 'paintmove') {
+	if(mode === 'paint') {
 		state.incrementCandidateColor(paintIndex);
 		countVotes();
 		ChartManager.updateChart();
@@ -4453,31 +4467,9 @@ function specialClick(clickElement, e) {
 // when a button on the legend is clicked, it saves the selected candidate
 // to a variable, so that you can paint with it
 function legendClick(candidate, button) {
-
-	if(mode === 'move') {
-
-	} else if(mode === 'paint' || mode === 'paintmove') {
+	if(mode === 'paint' || mode === 'fill') {
 		paintIndex = candidate;
 		LegendManager.selectCandidateDisplay(button);
-	} else if(mode === 'candidate' && candidate !== 'Tossup') {
-		var candidateedit = document.getElementById('candidateedit');
-		candidateedit.style.display = 'inline';
-		var nameinput = document.getElementById('candidate-name');
-		nameinput.value = candidate;
-		var solidinput = document.getElementById('candidate-solid');
-		solidinput.value = CandidateManager.candidates[candidate].colors[0];
-		var likelyinput = document.getElementById('candidate-likely');
-		likelyinput.value = CandidateManager.candidates[candidate].colors[1];
-		var leaninput = document.getElementById('candidate-lean');
-		leaninput.value = CandidateManager.candidates[candidate].colors[2];
-		var tiltinput = document.getElementById('candidate-tilt');
-		tiltinput.value = CandidateManager.candidates[candidate].colors[3];
-		var hiddeninput = document.getElementById('candidate-originalName');
-		var message = document.getElementById('candidateedit-message');
-		message.innerHTML = 'Edit ' + candidate;
-		hiddeninput.value = candidate;
-	} else if(mode === 'deletecandidate' && candidate !== 'Tossup') {
-		CandidateManager.deleteCandidateByName(candidate);		
 	}
 }
 function verifyCongress() {
@@ -6709,7 +6701,7 @@ function saveMap_new(img, token) {
 function numberWithCommas(number) {
 	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-var currentCache = 'v1.3.42';
+var currentCache = 'v1.4.0';
 
 var states = [];
 var lands = [];
@@ -6825,15 +6817,6 @@ window.onerror = function(message, source, lineno, colno, error) {
 	});
 }
 
-function autoFill(stateIndex) {
-	if(KeyboardManager.keyStates[70]) {
-		states[stateIndex].incrementCandidateColor(paintIndex);
-		countVotes();
-		ChartManager.updateChart();
-		LegendManager.updateLegend();
-	}
-}
-
 function setDelegates(e) {
 	e.parentElement.style.display = '';
 	var stateid = document.getElementById('demdel-state-name').value;
@@ -6917,13 +6900,16 @@ function setMode(set) {
 		notificationText = "Click on a state to disable/enable it";
 		var button = document.getElementById('modebutton-delete');
 		button.style.opacity = '0.5';
+	} else if(set === 'fill') {
+		var button = document.getElementById('modebutton-fill');
+		button.style.opacity = '0.5';
 	}
 
 	var notification = document.getElementById('notification');
-	if(mode === 'paint') {
+	if(mode === 'paint' || mode === 'fill') {
 		var notification = document.getElementById('notification');
 		notification.style.display = 'none';
-	} else if(mode !== 'paint') {
+	} else {
 		var notification = document.getElementById('notification');
 		var message = notification.querySelector('#notification-message');
 		var title = notification.querySelector('#notification-title');

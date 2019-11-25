@@ -1,4 +1,4 @@
-var currentCache = 'v1.3.42';
+var currentCache = 'v1.4.0';
 
 var states = [];
 var lands = [];
@@ -114,15 +114,6 @@ window.onerror = function(message, source, lineno, colno, error) {
 	});
 }
 
-function autoFill(stateIndex) {
-	if(KeyboardManager.keyStates[70]) {
-		states[stateIndex].incrementCandidateColor(paintIndex);
-		countVotes();
-		ChartManager.updateChart();
-		LegendManager.updateLegend();
-	}
-}
-
 function setDelegates(e) {
 	e.parentElement.style.display = '';
 	var stateid = document.getElementById('demdel-state-name').value;
@@ -206,13 +197,16 @@ function setMode(set) {
 		notificationText = "Click on a state to disable/enable it";
 		var button = document.getElementById('modebutton-delete');
 		button.style.opacity = '0.5';
+	} else if(set === 'fill') {
+		var button = document.getElementById('modebutton-fill');
+		button.style.opacity = '0.5';
 	}
 
 	var notification = document.getElementById('notification');
-	if(mode === 'paint') {
+	if(mode === 'paint' || mode === 'fill') {
 		var notification = document.getElementById('notification');
 		notification.style.display = 'none';
-	} else if(mode !== 'paint') {
+	} else {
 		var notification = document.getElementById('notification');
 		var message = notification.querySelector('#notification-message');
 		var title = notification.querySelector('#notification-title');

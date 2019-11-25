@@ -187,6 +187,12 @@
 			Paint
 		</div>
 	</div>
+	<div id="modebutton-fill" class="click-button mode-button" onclick='setMode("fill");'>
+		<i class="fas fa-fill-drip"></i>
+		<div class="tooltip-menu">
+			Fill
+		</div>
+	</div>
 	<div id="modebutton-delete" class="click-button mode-button" onclick='setMode("delete")'>
 		<i class="fas fa-eraser"></i>
 		<div class="tooltip-menu">

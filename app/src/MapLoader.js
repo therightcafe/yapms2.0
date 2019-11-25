@@ -215,7 +215,10 @@ class MapLoader {
 				PresetLoader.loadPreset("classic");
 				MapLoader.loadMap("./res/usa/pennsylvania/2020_house.svg", 16, 0.25, "1", "takeall_noedit", "open");
 				break;
-			case "Texas_2020_state_house":
+			case "SouthDakota_2020_state_lower":
+				PresetLoader.loadPreset("classic");
+				MapLoader.loadMap("./res/usa/southdakota/2020_house.svg", 16, 1, "1", "takeall_noedit", "open");
+				break;
 			case "Texas_2020_state_lower":
 				PresetLoader.loadPreset("classic");
 				MapLoader.loadMap("./res/usa/texas/2020_house.svg", 16, 0.5, "1", "takeall_noedit", "open");
@@ -416,7 +419,7 @@ class MapLoader {
 				break;
 			case "World":
 				PresetLoader.loadPreset('classic');
-				MapLoader.loadMap("./res/world.svg", 38, 0.25, "1", "takeall_noedit", "open");
+				MapLoader.loadMap("./res/world.svg", 38, 0.25, "1", "takeall", "open");
 				break;
 			case "LTE_presidential":
 				PresetLoader.loadPreset('classic');
@@ -469,6 +472,13 @@ class MapLoader {
 			var ecEditButton = document.getElementById("modebutton-ec");
 			if(ecEditButton) {
 				ecEditButton.style.display = "none";
+			}	
+		}
+
+		if(type === "takeall_noedit" || type === "takeall") {
+			var fillButton = document.getElementById("modebutton-fill");
+			if(fillButton) {
+				fillButton.style.display = "none";
 			}
 		}
 
@@ -779,19 +789,13 @@ class MapLoader {
 				htmlElement.onclick = function() {
 					buttonClick(this);
 				}
-				if(MapLoader.save_type === 'takeall' ||
-				MapLoader.save_type === 'takeall_noedit') {
-					htmlElement.setAttribute('onmouseover', 'if(KeyboardManager.keyStates[70]){buttonClick(this, {setSolid: true});}');
-				}
+				htmlElement.setAttribute('onmouseover', 'if(KeyboardManager.keyStates[70]){buttonClick(this, {setSolid: true});}');
 				buttons.push(htmlElement);
 			} else if(name.includes('-land')) {
 				htmlElement.onclick = function() {
 					landClick(this);
 				}
-				if(MapLoader.save_type === 'takeall' ||
-				MapLoader.save_type === 'takeall_noedit') {
-					htmlElement.setAttribute('onmouseover', 'if(KeyboardManager.keyStates[70]){landClick(this, {setSolid: true});}');
-				}
+				htmlElement.setAttribute('onmouseover', 'if(KeyboardManager.keyStates[70]){landClick(this, {setSolid: true});}');
 				lands.push(htmlElement);
 			} else {
 				htmlElement.onclick = function() {
@@ -799,10 +803,7 @@ class MapLoader {
 				}
 				states.push(new State(name, htmlElement, dataid));
 				var stateIndex = states.length - 1;
-				if(MapLoader.save_type === 'takeall' ||
-				MapLoader.save_type === 'takeall_noedit') {
-					htmlElement.setAttribute('onmouseover', 'if(KeyboardManager.keyStates[70]){stateClick(this, {setSolid: true});}');
-				}
+				htmlElement.setAttribute('onmouseover', 'if(KeyboardManager.keyStates[70]){stateClick(this, {setSolid: true});}');
 			}
 		}
 
