@@ -116,9 +116,7 @@ class Account {
 				Account.updateHTML();
 			},
 			error: function(a, b, c) {
-				console.log(a);
-				console.log(b);
-				console.log(c);
+				console.log("Account: Could not login");
 			}	
 		});
 	}
@@ -2110,7 +2108,7 @@ class MapLoader {
 				break;
 			case "USA_2020_presidential":
 				PresetLoader.loadPreset('classic');
-				MapLoader.loadMap("./res/usa_presidential.svg", 16, 0.75, "usa_ec", "proportional", "open", {voters: 'usa_voting_pop', enablePopularVote: true});
+				MapLoader.loadMap("./res/usa_presidential.svg", 16, 0.75, "usa_ec", "takeall", "open", {voters: 'usa_voting_pop', enablePopularVote: true});
 				break;
 			case "USA_split_maine":
 				PresetLoader.loadPreset('classic');
