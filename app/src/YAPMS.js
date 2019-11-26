@@ -1636,6 +1636,10 @@ class KeyboardManager {
 			KeyboardManager.keyStates = {};
 		});
 	}
+
+	static quickFill() {
+		return KeyboardManager.keyStates[70] === true;
+	}
 }
 
 KeyboardManager.keyStates = {};
@@ -2106,11 +2110,11 @@ class MapLoader {
 				break;
 			case "USA_2020_presidential":
 				PresetLoader.loadPreset('classic');
-				MapLoader.loadMap("./res/usa_presidential.svg", 16, 0.75, "usa_ec", "takeall", "open", {voters: 'usa_voting_pop', enablePopularVote: true});
+				MapLoader.loadMap("./res/usa_presidential.svg", 16, 0.75, "usa_ec", "proportional", "open", {voters: 'usa_voting_pop', enablePopularVote: true});
 				break;
 			case "USA_split_maine":
 				PresetLoader.loadPreset('classic');
-				MapLoader.loadMap("./res/usa_1972_presidential.svg", 16, 0.75, "usa_1972_ec", "takeall", "open");
+				MapLoader.loadMap("./res/usa_1972_presidential.svg", 16, 0.75, "usa_1972_ec", "proportional", "open");
 				break;
 			case "USA_2020_senate":
 				PresetLoader.loadPreset('classic');
@@ -2326,6 +2330,8 @@ class MapLoader {
 			}
 		}
 
+		setMode("paint");
+
 		if(year !== "open") {
 			var ecEditButton = document.getElementById("modebutton-ec");
 			if(ecEditButton) {
@@ -2341,14 +2347,17 @@ class MapLoader {
 			var ecEditButton = document.getElementById("modebutton-ec");
 			if(ecEditButton) {
 				ecEditButton.style.display = "none";
-			}	
+			}
+			setMode('fill');	
 		}
 
-		if(type === "takeall_noedit" || type === "takeall") {
-			var fillButton = document.getElementById("modebutton-fill");
-			if(fillButton) {
-				fillButton.style.display = "none";
+		if(type === "takeall_noedit" || type === "takeall" ||
+			type === "senatorial" || type === "gubernatorial") {
+			var paint = document.getElementById("modebutton-paint");
+			if(paint) {
+				paint.style.display = "none";
 			}
+			setMode('fill');	
 		}
 
 		MapLoader.save_filename = filename;
@@ -2406,10 +2415,6 @@ class MapLoader {
 			setCongressOnHover();
 			
 			setPalette(CookieManager.cookies['theme']);
-
-			if(mode !== 'paint' && mode !== 'move' && mode !== 'paintmove') {
-				setMode('paint');
-			}
 
 			var finishOptions = function() {
 				if(options && options.onLoad) {
@@ -2509,7 +2514,6 @@ class MapLoader {
 
 		var candidateNames = {};
 
-		console.log(senatefile);
 		$.get(senatefile, function(data) {
 			console.log('Done loading ' + senatefile);
 		
@@ -2592,10 +2596,34 @@ class MapLoader {
 			for(var stateName in obj.states) {
 				var stateData = obj.states[stateName];
 				var state = states.filter(state => state.name === stateName)[0];
-				state.setVoteCount(stateData['votecount']);
-				state.setColor(stateData['candidate'], stateData['colorvalue']);
+				var voteCount = 0;
+				var maxCandidateName = 'Tossup';
+				var maxCandidateCount = 0;
+				for(var key in stateData['delegates']) {
+					var count = stateData['delegates'][key];
+					voteCount += count;
+					if(count > maxCandidateCount) {
+						maxCandidateName = key;
+						maxCandidateCount = count;
+					} else if(count === maxCandidateCount) {
+						maxCandidateName = 'Tossup';
+					}
+				}
+				
+				state.setVoteCount(voteCount);
+				if(maxCandidateName === 'Tossup') {
+					state.setColor(maxCandidateName, 2);
+				} else {
+					state.setColor(maxCandidateName, stateData['colorvalue']);
+				}
+			
+				if(stateData['candidate']) {
+					state.setColor(stateData['candidate'], stateData['colorvalue']);
+				} else {
+					state.delegates = stateData['delegates'];
+				}
+	
 				state.simulator = stateData['simulator'];
-				state.delegates = stateData['delegates'];
 				if(stateData['disabled']) {
 					state.toggleDisable();
 				}
@@ -2604,8 +2632,27 @@ class MapLoader {
 			for(var stateName in obj.proportional) {
 				var stateData = obj.proportional[stateName];
 				var state = proportionalStates.filter(state => state.name === stateName)[0];
-				state.setVoteCount(stateData['votecount']);
-				state.setColor(stateData['candidate'], stateData['colorvalue']);
+				var voteCount = 0;
+				var maxCandidateName = 'Tossup';
+				var maxCandidateCount = 0;
+				for(var key in stateData['delegates']) {
+					var count = stateData['delegates'][key];
+					voteCount += count;
+					if(count > maxCandidateCount) {
+						maxCandidateName = key;
+						maxCandidateCount = count;
+					} else if(count === maxCandidateCount) {
+						maxCandidateName = 'Tossup';
+					}
+				}
+
+				state.setVoteCount(voteCount);
+				if(maxCandidateName === 'Tossup') {
+					state.setColor(maxCandidateName, 2);
+				} else {
+					state.setColor(maxCandidateName, stateData['colorvalue']);
+				}
+
 				state.simulator = stateData['simulator'];
 				state.delegates = stateData['delegates'];
 				if(stateData['disabled']) { 
@@ -2689,8 +2736,7 @@ class MapLoader {
 				element.onclick = (function() {
 					var ref_index = proportionalStates.length - 1;	
 					return function() {	
-						stateClickPaintProportional(
-						proportionalStates[ref_index]);
+						stateClickPaint(proportionalStates[ref_index], {proportional: true});
 					}
 				})();
 			}
@@ -3625,10 +3671,10 @@ class State {
 		// update the html text display
 		var stateText = document.getElementById(this.name + '-text');
 		if(stateText !== null && 
-			MapLoader.save_type !== 'senatorial' &&
-			MapLoader.save_type !== 'gubernatorial' &&
-			MapLoader.save_type !== 'proportional' &&
-			MapLoader.save_type !== 'primary') {
+			(MapLoader.save_dataid === 'usa_ec' ||
+			MapLoader.save_dataid === 'usa_1972_ec' ||
+			MapLoader.save_dataid === 'usa_no_districts_ec' ||
+			MapLoader.save_dataid === 'usa_pre_civilwar_ec')) {
 			var text = this.name + ' ' + value;
 			// the text elements in an svg are inside spans
 			if(typeof stateText.childNodes[1] !== 'undefined') {
@@ -3827,6 +3873,12 @@ class State {
 			this.colorValue += 1;
 		}
 
+		this.delegates = {};
+		this.delegates[candidate] = this.voteCount;
+		if(candidate !== 'Tossup') {
+			this.delegates['Tossup'] = 0;
+		}
+
 		// keep the color value within bounds
 		if(this.candidate === 'Tossup') {
 			// if the candidate is tossup go to max
@@ -3891,7 +3943,7 @@ class State {
 	}
 
 	// directly change the color of a state (add error checking pls)
-	setColor(candidate, colorValue, setPopularVote) {
+	setColor(candidate, colorValue, options = {setPopularVote: false, setDelegates: true}) {
 		if(this.disabled) {
 			return;
 		}
@@ -3901,6 +3953,12 @@ class State {
 		// prevent black color
 		if(candidate === 'Tossup' && colorValue == 0) {
 			colorValue = 2;
+		}
+
+		if(options.setDelegates) {
+			this.delegates = {};
+			this.delegates['Tossup'] = 0;
+			this.delegates[candidate] = this.voteCount;
 		}
 
 		this.colorValue = colorValue;
@@ -3919,7 +3977,7 @@ class State {
 			button.style.fill = color;
 		}
 
-		if(setPopularVote) {
+		if(options.setPopularVote) {
 			for(var key in CandidateManager.candidates) {
 				if(key === candidate) {
 					this.popularVote[key] = this.voters * (this.turnout / 100.0);
@@ -4122,19 +4180,12 @@ function updateBattleChart() {
 	}
 }
 
-function buttonClick(clickElement, options) {
+function buttonClick(clickElement) {
 	if(php_candidate_edit === false)
 		return;
 
-	if(mode === 'move') {
-		return;
-	} else if(mode === 'paint' || mode === 'paintmove') {
-		if(MapLoader.save_type === 'proportional' || MapLoader.save_type === 'primary') {
-			buttonClickPaintProportional(clickElement);
-		} else {
-
-			buttonClickPaint(clickElement, options);
-		}
+	if(mode === 'paint' || mode === 'fill') {
+		buttonClickPaint(clickElement);
 	} else if(mode === 'ec') {
 		buttonClickEC(clickElement);
 	} else if(mode === 'delete') {
@@ -4143,20 +4194,12 @@ function buttonClick(clickElement, options) {
 	
 	countVotes();
 	ChartManager.updateChart();
-	LegendManager.updateLegend();
-}
+	LegendManager.updateLegend(); }
 
-function buttonClickPaint(clickElement, options) {
+function buttonClickPaint(clickElement) {
 	var id = clickElement.getAttribute('id').split('-')[0];
 	var state = states.find(state => state.name === id);
-	stateClickPaint(state, options);
-	//state.incrementCandidateColor(paintIndex);
-}
-
-function buttonClickPaintProportional(clickElement) {
-	var id = clickElement.getAttribute('id').split('-')[0];
-	var state = states.find(state => state.name === id);
-	stateClickPaintProportional(state);
+	stateClickPaint(state);
 }
 
 function buttonClickEC(clickElement) {
@@ -4177,11 +4220,10 @@ function buttonClickDelete(clickElement) {
 	var id = clickElement.getAttribute('id');
 	var split = id.split('-');
 	var state = states.find(state => state.name === split[0]);
-
 	state.toggleDisable();
 }
 
-function landClick(clickElement, options) {
+function landClick(clickElement) {
 	if(php_candidate_edit === false)
 		return;
 
@@ -4189,10 +4231,7 @@ function landClick(clickElement, options) {
 		return;
 	}
 
-	var setSolid = false;
-	if(options) {
-		setSolid = options.setSolid;
-	}
+	var setSolid = KeyboardManager.quickFill();
 
 	var id = clickElement.getAttribute('id');
 	var split = id.split('-');
@@ -4215,15 +4254,15 @@ function landClick(clickElement, options) {
 	// make the popular vote calculator point to the AL
 	PopularVote.view(AL);
 
-	if(mode === 'paint' || mode === 'paintmove') {
+	if(mode === 'paint' || mode === 'paintmove' || mode === 'fill') {
 		// check if each district has the same candidate and color value
-		if(setSolid === false) {
-			AL.incrementCandidateColor(paintIndex);
-		} else {
+		if(setSolid) {
 			AL.setColor(paintIndex, 0);
+		} else {
+			AL.incrementCandidateColor(paintIndex);
 		}
 		districts.forEach(function(district) {
-			district.setColor(AL.getCandidate(), AL.getColorValue(), true);
+			district.setColor(AL.getCandidate(), AL.getColorValue());
 		});
 	} else if(mode === 'delete') {
 		districts.forEach(function(district) {
@@ -4237,32 +4276,19 @@ function landClick(clickElement, options) {
 	PopularVote.count();
 }
 
-function stateClick(clickElement, options) {
+function stateClick(clickElement) {
 	if(php_candidate_edit === false)
 		return;
 
-	// first element is the state
-	// second element might be button
-	//var split = id.split('-');
-	// get state where state.name equals the id attribute
-	//var state = states.find(state => state.name === split[0]);
 	var id = clickElement.getAttribute('id');
 	var state = states.find(state => state.name === id);
 
 	switch(mode) {
 		case 'paint':
-		case 'paintmove':
 		case 'fill':
-			if(MapLoader.save_type === 'proportional' || MapLoader.save_type === 'primary') {
-				Simulator.view(state);
-				if(Simulator.ignoreClick === false) {
-					stateClickPaintProportional(state, id, options);
-				}
-			} else {
-				Simulator.view(state);
-				if(Simulator.ignoreClick === false) {
-					stateClickPaint(state, options);
-				}
+			Simulator.view(state);
+			if(Simulator.ignoreClick === false) {
+				stateClickPaint(state);
 			}
 			break;
 		case 'ec':
@@ -4280,80 +4306,30 @@ function stateClick(clickElement, options) {
 
 var tooltipTimeout = null;
 
-function stateClickPaint(state, options) {
-
-	if(state.candidate === 'Tossup' && paintIndex === 'Tossup') {
-		var tooltip = document.getElementById('legend-tooltip');
-		if(tooltip) {
-			tooltip.style.opacity = 0.7;
-
-			if(tooltipTimeout) {
-				window.clearTimeout(tooltipTimeout);
-			}
-
-			tooltipTimeout = setTimeout(function() {
-				tooltip.style.opacity = 0.0;
-			}, 3000);
-		}
-	}
-
-	if(mobile === false) {
-		var setPopularVoteElement = document.getElementById('popularvote-clicksetpv');
-		var setPopularVote = false;
-		if(setPopularVoteElement) {
-			setPopularVote = setPopularVoteElement.checked;
-		}
-
-		var setSolid = false;
-		if(options) {
-			setSolid = options.setSolid;
-		}
-
-		if(setSolid) {
-			state.setColor(paintIndex, 0, setPopularVote);
-		} else {
-			state.incrementCandidateColor(paintIndex, setPopularVote);
-		}
-
-		if(state.name.includes('-D')) {
-			var autoMarginsElement = document.getElementById('popularvote-automargins');
-			var autoMargins = false;
-			if(autoMarginsElement) {
-				autoMargins = autoMarginsElement.checked;
-			}
-
-			var avoidALMarginsElement = document.getElementById('popularvote-avoidalmargins').checked;
-			var avoidALMargins = false;
-			if(avoidALMarginsElement) {
-				avoidALMargins = avoidALMarginsElement.checked;
-			}
-
-			if(autoMargins === true && avoidALMargins === false) {
-				PopularVote.calculateAutoMarginAL(state.name.split('-')[0]);
-			}
-		}
-
-		PopularVote.view(state);
-		PopularVote.count(options);
-	} else {
-		state.incrementCandidateColor(paintIndex);
-	}
-}
-
-function stateClickPaintProportional(state, id, options) {
+function stateClickPaint(state, options = {}) {
 	if(state.disabled) {
 		return;
 	}
-
-	if((options && options.setSolid) || mode === 'fill') {
-		state.delegates = {};
-		if(paintIndex === 'Tossup') {
-			state.delegates['Tossup'] = state.voteCount;
+	
+	if(mode === 'fill' && typeof options.proportional === 'undefined') {
+		if(KeyboardManager.quickFill()) {
 			state.setColor(paintIndex, 0);
-		} else {
+			state.delegates = {};
 			state.delegates[paintIndex] = state.voteCount;
+			if(paintIndex !== 'Tossup') {
+				state.delegates['Tossup'] = 0;
+			}
+		} else {
+			state.incrementCandidateColor(paintIndex, false);
+		}
+
+		return;
+	} else if(mode === 'paint' && KeyboardManager.quickFill() && typeof options.proportional === 'undefined') {
+		state.setColor(paintIndex, 0);
+		state.delegates = {};
+		state.delegates[paintIndex] = state.voteCount;
+		if(paintIndex !== 'Tossup') {
 			state.delegates['Tossup'] = 0;
-			state.setColor(paintIndex, 2);
 		}
 		return;
 	}
@@ -4391,6 +4367,9 @@ function stateClickPaintProportional(state, id, options) {
 		range.setAttribute('id', 'range-' + key);
 		range.setAttribute('type', 'range');
 		range.setAttribute('max', max);
+		if(state.delegates[key] === undefined) {
+			state.delegates[key] = 0;
+		}
 		range.value = state.delegates[key];
 		total += state.delegates[key];
 		// create display for slider
@@ -4456,7 +4435,7 @@ function specialClick(clickElement, e) {
 	var id = clickElement.getAttribute('id');
 	var state = states.find(state => state.name === id);
 
-	if(mode === 'paint') {
+	if(mode === 'paint' || mode === 'fill') {
 		state.incrementCandidateColor(paintIndex);
 		countVotes();
 		ChartManager.updateChart();
@@ -4464,13 +4443,9 @@ function specialClick(clickElement, e) {
 	}
 }
 
-// when a button on the legend is clicked, it saves the selected candidate
-// to a variable, so that you can paint with it
 function legendClick(candidate, button) {
-	if(mode === 'paint' || mode === 'fill') {
-		paintIndex = candidate;
-		LegendManager.selectCandidateDisplay(button);
-	}
+	paintIndex = candidate;
+	LegendManager.selectCandidateDisplay(button);
 }
 function verifyCongress() {
 	if(mobile) {
@@ -6336,148 +6311,64 @@ class PopularVote {
 }
 
 PopularVote.enabled = false;
-function saveMap(img, token) {
-	var formData = new FormData();
+function logData() {
 
-	formData.append("img", img);
-	formData.append("filename", MapLoader.save_filename);
-	formData.append("dataid", MapLoader.save_dataid);
-	formData.append("type", MapLoader.save_type);
-	formData.append("year", MapLoader.save_year);
-	formData.append("fontsize", MapLoader.save_fontsize);
-	formData.append("strokewidth", MapLoader.save_strokewidth);
-	formData.append("captcha", token);
-	
-	console.log('token: ' + token);
+	var data = {};
+	data['filename'] = MapLoader.save_filename;
+	data['dataid'] = MapLoader.save_dataid;
+	data['type'] = MapLoader.save_type;
+	data['year'] = MapLoader.save_year;
+	data['fontsize'] = MapLoader.save_fontsize;
+	data['strokewidth'] = MapLoader.save_strokewidth;
+	data['candidates'] = {};
+	data['states'] = {};
+	data['proportional'] = {};
 
-	var candidateData = [];
 	for(var key in CandidateManager.candidates) {
 		if(key === 'Tossup') {
 			continue;
 		}
 		var candidate = CandidateManager.candidates[key];
-		var obj = {
-			name: candidate.name,
-			solid: candidate.colors[0],
-			likely: candidate.colors[1],
-			lean: candidate.colors[2],
-			tilt: candidate.colors[3]
-		};
-		candidateData.push(obj);
+		data['candidates'][candidate.name] = {};
+		data['candidates'][candidate.name]['solid'] = candidate.colors[0];
+		data['candidates'][candidate.name]['likely'] = candidate.colors[1];
+		data['candidates'][candidate.name]['lean'] = candidate.colors[2];
+		data['candidates'][candidate.name]['tilt'] = candidate.colors[3];
 	}
 
-	formData.append("candidates", JSON.stringify({
-		candidate_data: candidateData
-	}));
-
-	var stateData = [];
 	for(var stateIndex = 0; stateIndex < states.length; ++stateIndex) {
 		var state = states[stateIndex];
-		var obj = {
-			name: state.name,
-			candidate: state.candidate,
-			delegates: state.delegates,
-			simulator: state.simulator,
-			voteCount: state.voteCount,
-			colorValue: state.colorValue,
-			disabled: state.disabled
-		};
-		console.log(obj);
-		stateData.push(obj);
-	}
-
-	formData.append("states", JSON.stringify({
-		state_data: stateData
-	}));
-
-	var proportionalData = [];
-	for(var stateIndex = 0; stateIndex < proportionalStates; ++stateIndex) {
-		var state = proportionalStates[stateIndex];
-		var obj = {
-			name: state.name,
-			candidate: state.candidate,
-			delegates: state.delegates,
-			simulator: state.simulator,
-			voteCount: state.voteCount,
-			colorValue: state.colorValue,
-			disabled: state.disabled
-		};
-	}
-
-	formData.append("proportionalStates", JSON.stringify({
-		proportional_data: proportionalData
-	}));
-
-	$.ajax({
-		url: "./savemap_simple.php",
-		type: "POST",
-		data: formData,
-		processData: false,
-		contentType: false,
-		success: function(a,b,c) {
-			console.log(a);
-			var data = a.split(' ');
-			var url = data[0];
-			var filename = data[1];
-
-			var shareurl = document.getElementById('shareurl');
-			if(url === 'reCaptcha_Failed(restart_web_browser)') {
-				shareurl.setAttribute('href', url);
-				shareurl.innerHTML = 'reCaptcha Failed: possible solution is to restart your web-browser';
-
-			} else if(url === 'reCaptcha_Bot_Detected') {
-				shareurl.setAttribute('href', url);
-				shareurl.innerHTML = 'reCaptcha Failed: suspicious activity detected';
-				
-			} else {
-				shareurl.setAttribute('href', url);
-				shareurl.innerHTML = url;
+		// Remove zero delegates
+		for(var key in state.delegates) {
+			var count = state.delegates[key];
+			if(count === 0) {
+				delete state.delegates[key];
 			}
-			
-			shareurl.style.display = '';
-
-			var downloadbtn = document.getElementById('downloadbutton');
-			if(downloadbtn) {
-				downloadbtn.style.display = 'inline-block';
-				downloadbtn.setAttribute('href', 'https://yapms.org/downloadmap.php?f=' + filename);
-			}
-			
-			var button = document.getElementById('share-button');
-			if(button) {
-				button.setAttribute('onclick', 'share()');
-			}
-
-			var loadingAnimation = document.getElementById('loading-animation');
-			if(loadingAnimation) {
-				loadingAnimation.style.display = 'none';
-			}
-		
-			var image = document.getElementById('screenshotimg');
-			if(image) {
-				image.style.display = '';
-			}
-
-			console.log('Map share succeeded');
-			gtag('event', 'click', {
-				'event_category': 'share',
-				'event_label': 'Map Shared'
-			});
-		},
-		error: function(a,b,c) {
-			console.log(a);
-			console.log(b);
-			console.log(c);
-			var button = document.getElementById('share-button');
-			if(button) {
-				button.setAttribute('onclick', 'share()');
-			}
-			console.log('Map share failed ' + a);
-			gtag('event', 'click', {
-				'event_category': 'share',
-				'event_label': 'Map Shared Failed ' + currentCache 
-			});
 		}
-	});
+		data['states'][state.name] = {};
+		//data['states'][state.name]['candidate'] = state.candidate;
+		data['states'][state.name]['delegates'] = state.delegates;
+		data['states'][state.name]['colorvalue'] = state.colorValue;
+		data['states'][state.name]['disabled'] = state.disabled;
+	}
+
+	for(var stateIndex = 0; stateIndex < proportionalStates.length; ++stateIndex) {
+		var state = proportionalStates[stateIndex];
+		// Remove zero delegates
+		for(var key in state.delegates) {
+			var count = state.delegates[key];
+			if(count === 0) {
+				delete state.delegates[key];
+			}
+		}
+		data['proportional'][state.name] = {};
+		//data['proportional'][state.name]['candidate'] = state.candidate;
+		data['proportional'][state.name]['delegates'] = state.delegates;
+		data['proportional'][state.name]['colorvalue'] = state.colorValue;
+		data['proportional'][state.name]['disabled'] = state.disabled;
+	}
+
+	console.log(JSON.stringify(data));
 }
 
 function saveMap_user() {
@@ -6529,7 +6420,7 @@ function saveMap_user() {
 		data['proportional'][state.name]['colorvalue'] = state.colorValue;
 		data['proportional'][state.name]['disabled'] = state.disabled;
 	}
-	
+
 	formData.append("data", JSON.stringify(data));
 	
 	$.ajax({
@@ -6853,10 +6744,10 @@ function setDelegates(e) {
 	}
 	
 	if(majorityCandidate === 'Tossup') {
-		state.setColor('Tossup', 2);
+		state.setColor('Tossup', 2, {setDelegates: false});
 	}
 	else {
-		state.setColor(majorityCandidate, 0);
+		state.setColor(majorityCandidate, 0, {setDelegates: false});
 	}
 
 	countVotes();
@@ -6929,79 +6820,51 @@ function verifyPaintIndex() {
 // iterate over each state and delegate votes to the candidate
 function countVotes() {
 	var mid = document.getElementById("battlechartmid");
-	if(mid !== null) {
+	if(mid) {
 		mid.setAttribute("fill", CandidateManager.TOSSUP.colors[2]);
 	}
 
-	if(MapLoader.save_type === 'primary' || MapLoader.save_type === 'proportional') {
-		for(var key in CandidateManager.candidates) {
-			var candidate = CandidateManager.candidates[key];
-			candidate.voteCount = 0;
-			candidate.probVoteCounts = [0,0,0,0];
-			for(var stateIndex = 0, length = states.length; stateIndex < length; ++stateIndex) {
-				var state = states[stateIndex];
-				if(typeof state.delegates === 'undefined') {
-					state.delegates = {};
-				}
-				if(typeof state.delegates[key] === 'undefined') {
-					state.delegates[key] = 0;
-					if(key === 'Tossup') {
-						state.delegates[key] = state.voteCount;	
-					}
-				}
-
-				if(isNaN(state.delegates[key])) {
-					console.log(state);
-				}
-
-				candidate.voteCount += state.delegates[key];
-				candidate.probVoteCounts[0] += state.delegates[key];
+	for(var key in CandidateManager.candidates) {
+		var candidate = CandidateManager.candidates[key];
+		candidate.voteCount = 0;
+		candidate.probVoteCounts = [0,0,0,0];
+		for(var stateIndex = 0, length = states.length; stateIndex < length; ++stateIndex) {
+			var state = states[stateIndex];
+			if(typeof state.delegates === 'undefined') {
+				state.delegates = {};
 			}
+			if(typeof state.delegates[key] === 'undefined') {
+				state.delegates[key] = 0;
+				/*if(key === 'Tossup') {
+					state.delegates[key] = state.voteCount;	
+				}*/
+			}
+
+			candidate.voteCount += state.delegates[key];
+			candidate.probVoteCounts[state.colorValue] += state.delegates[key];
 		}
-	} else {
-		// iterate over every candidate
-		//candidates.forEach(function(candidate, candidateIndex) {
-		var candidateIndex = -1;
-		for(var key in CandidateManager.candidates) {
-			var candidate = CandidateManager.candidates[key];
-			++candidateIndex;
-			candidate.voteCount = 0;
-			candidate.probVoteCounts = [0,0,0,0];
-			// iterate over every state
-		
-			for(var stateIndex = 0, length = states.length; stateIndex < length; ++stateIndex) {
-				var state = states[stateIndex];
-				// if the candidate value of the state
-				// equals the index value of the candidate
-				// add the vote count to the candidate 
-				if(state.candidate === key) {
-					candidate.voteCount += state.voteCount;
-					candidate.probVoteCounts[state.colorValue] += state.voteCount;
+
+		for(var stateIndex = 0, length = proportionalStates.length; stateIndex < length; ++stateIndex) {
+			var state = proportionalStates[stateIndex];
+			if(typeof state.delegates === 'undefined') {
+				state.delegates = {};
+			}
+			if(typeof state.delegates[key] === 'undefined') {
+				state.delegates[key] = 0;
+				if(key === 'Tossup') {
+					state.delegates[key] = state.voteCount;
 				}
 			}
-
-			for(var stateIndex = 0, length = proportionalStates.length; stateIndex < length; ++stateIndex) {
-				var state = proportionalStates[stateIndex];
-				if(typeof state.delegates === 'undefined') {
-					state.delegates = {};
-				}
-				if(typeof state.delegates[key] === 'undefined') {
-					state.delegates[key] = 0;
-					if(key === 'Tossup') {
-						state.delegates[key] = state.voteCount;	
-					}
-				}
-				candidate.voteCount += state.delegates[key];
-				candidate.probVoteCounts[0] += state.delegates[key];
-			}
-
-			if(mid !== null) {
-				if(candidate.voteCount > Math.ceil(totalVotes / 2)) {
-					if(key === 'Tossup') {
-						mid.setAttribute("fill",candidate.colors[2]);
-					} else {
-						mid.setAttribute("fill", candidate.colors[0]);
-					}
+			
+			candidate.voteCount += state.delegates[key];
+			candidate.probVoteCounts[0] += state.delegates[key];
+		}
+		if(mid) {
+			if(candidate.voteCount > Math.ceil(totalVotes / 2)) {
+				if(key === 'Tossup') {
+					mid.setAttribute("fill",candidate.colors[2]);
+				} else {
+					mid.setAttribute("fill", candidate.colors[0]);
 				}
 			}
 		}

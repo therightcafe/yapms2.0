@@ -150,10 +150,10 @@ function setDelegates(e) {
 	}
 	
 	if(majorityCandidate === 'Tossup') {
-		state.setColor('Tossup', 2);
+		state.setColor('Tossup', 2, {setDelegates: false});
 	}
 	else {
-		state.setColor(majorityCandidate, 0);
+		state.setColor(majorityCandidate, 0, {setDelegates: false});
 	}
 
 	countVotes();
@@ -226,79 +226,51 @@ function verifyPaintIndex() {
 // iterate over each state and delegate votes to the candidate
 function countVotes() {
 	var mid = document.getElementById("battlechartmid");
-	if(mid !== null) {
+	if(mid) {
 		mid.setAttribute("fill", CandidateManager.TOSSUP.colors[2]);
 	}
 
-	if(MapLoader.save_type === 'primary' || MapLoader.save_type === 'proportional') {
-		for(var key in CandidateManager.candidates) {
-			var candidate = CandidateManager.candidates[key];
-			candidate.voteCount = 0;
-			candidate.probVoteCounts = [0,0,0,0];
-			for(var stateIndex = 0, length = states.length; stateIndex < length; ++stateIndex) {
-				var state = states[stateIndex];
-				if(typeof state.delegates === 'undefined') {
-					state.delegates = {};
-				}
-				if(typeof state.delegates[key] === 'undefined') {
-					state.delegates[key] = 0;
-					if(key === 'Tossup') {
-						state.delegates[key] = state.voteCount;	
-					}
-				}
-
-				if(isNaN(state.delegates[key])) {
-					console.log(state);
-				}
-
-				candidate.voteCount += state.delegates[key];
-				candidate.probVoteCounts[0] += state.delegates[key];
+	for(var key in CandidateManager.candidates) {
+		var candidate = CandidateManager.candidates[key];
+		candidate.voteCount = 0;
+		candidate.probVoteCounts = [0,0,0,0];
+		for(var stateIndex = 0, length = states.length; stateIndex < length; ++stateIndex) {
+			var state = states[stateIndex];
+			if(typeof state.delegates === 'undefined') {
+				state.delegates = {};
 			}
+			if(typeof state.delegates[key] === 'undefined') {
+				state.delegates[key] = 0;
+				/*if(key === 'Tossup') {
+					state.delegates[key] = state.voteCount;	
+				}*/
+			}
+
+			candidate.voteCount += state.delegates[key];
+			candidate.probVoteCounts[state.colorValue] += state.delegates[key];
 		}
-	} else {
-		// iterate over every candidate
-		//candidates.forEach(function(candidate, candidateIndex) {
-		var candidateIndex = -1;
-		for(var key in CandidateManager.candidates) {
-			var candidate = CandidateManager.candidates[key];
-			++candidateIndex;
-			candidate.voteCount = 0;
-			candidate.probVoteCounts = [0,0,0,0];
-			// iterate over every state
-		
-			for(var stateIndex = 0, length = states.length; stateIndex < length; ++stateIndex) {
-				var state = states[stateIndex];
-				// if the candidate value of the state
-				// equals the index value of the candidate
-				// add the vote count to the candidate 
-				if(state.candidate === key) {
-					candidate.voteCount += state.voteCount;
-					candidate.probVoteCounts[state.colorValue] += state.voteCount;
+
+		for(var stateIndex = 0, length = proportionalStates.length; stateIndex < length; ++stateIndex) {
+			var state = proportionalStates[stateIndex];
+			if(typeof state.delegates === 'undefined') {
+				state.delegates = {};
+			}
+			if(typeof state.delegates[key] === 'undefined') {
+				state.delegates[key] = 0;
+				if(key === 'Tossup') {
+					state.delegates[key] = state.voteCount;
 				}
 			}
-
-			for(var stateIndex = 0, length = proportionalStates.length; stateIndex < length; ++stateIndex) {
-				var state = proportionalStates[stateIndex];
-				if(typeof state.delegates === 'undefined') {
-					state.delegates = {};
-				}
-				if(typeof state.delegates[key] === 'undefined') {
-					state.delegates[key] = 0;
-					if(key === 'Tossup') {
-						state.delegates[key] = state.voteCount;	
-					}
-				}
-				candidate.voteCount += state.delegates[key];
-				candidate.probVoteCounts[0] += state.delegates[key];
-			}
-
-			if(mid !== null) {
-				if(candidate.voteCount > Math.ceil(totalVotes / 2)) {
-					if(key === 'Tossup') {
-						mid.setAttribute("fill",candidate.colors[2]);
-					} else {
-						mid.setAttribute("fill", candidate.colors[0]);
-					}
+			
+			candidate.voteCount += state.delegates[key];
+			candidate.probVoteCounts[0] += state.delegates[key];
+		}
+		if(mid) {
+			if(candidate.voteCount > Math.ceil(totalVotes / 2)) {
+				if(key === 'Tossup') {
+					mid.setAttribute("fill",candidate.colors[2]);
+				} else {
+					mid.setAttribute("fill", candidate.colors[0]);
 				}
 			}
 		}

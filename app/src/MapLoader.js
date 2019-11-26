@@ -237,11 +237,11 @@ class MapLoader {
 				break;
 			case "USA_2020_presidential":
 				PresetLoader.loadPreset('classic');
-				MapLoader.loadMap("./res/usa_presidential.svg", 16, 0.75, "usa_ec", "takeall", "open", {voters: 'usa_voting_pop', enablePopularVote: true});
+				MapLoader.loadMap("./res/usa_presidential.svg", 16, 0.75, "usa_ec", "proportional", "open", {voters: 'usa_voting_pop', enablePopularVote: true});
 				break;
 			case "USA_split_maine":
 				PresetLoader.loadPreset('classic');
-				MapLoader.loadMap("./res/usa_1972_presidential.svg", 16, 0.75, "usa_1972_ec", "takeall", "open");
+				MapLoader.loadMap("./res/usa_1972_presidential.svg", 16, 0.75, "usa_1972_ec", "proportional", "open");
 				break;
 			case "USA_2020_senate":
 				PresetLoader.loadPreset('classic');
@@ -457,6 +457,8 @@ class MapLoader {
 			}
 		}
 
+		setMode("paint");
+
 		if(year !== "open") {
 			var ecEditButton = document.getElementById("modebutton-ec");
 			if(ecEditButton) {
@@ -472,14 +474,17 @@ class MapLoader {
 			var ecEditButton = document.getElementById("modebutton-ec");
 			if(ecEditButton) {
 				ecEditButton.style.display = "none";
-			}	
+			}
+			setMode('fill');	
 		}
 
-		if(type === "takeall_noedit" || type === "takeall") {
-			var fillButton = document.getElementById("modebutton-fill");
-			if(fillButton) {
-				fillButton.style.display = "none";
+		if(type === "takeall_noedit" || type === "takeall" ||
+			type === "senatorial" || type === "gubernatorial") {
+			var paint = document.getElementById("modebutton-paint");
+			if(paint) {
+				paint.style.display = "none";
 			}
+			setMode('fill');	
 		}
 
 		MapLoader.save_filename = filename;
@@ -537,10 +542,6 @@ class MapLoader {
 			setCongressOnHover();
 			
 			setPalette(CookieManager.cookies['theme']);
-
-			if(mode !== 'paint' && mode !== 'move' && mode !== 'paintmove') {
-				setMode('paint');
-			}
 
 			var finishOptions = function() {
 				if(options && options.onLoad) {
@@ -640,7 +641,6 @@ class MapLoader {
 
 		var candidateNames = {};
 
-		console.log(senatefile);
 		$.get(senatefile, function(data) {
 			console.log('Done loading ' + senatefile);
 		
@@ -723,10 +723,34 @@ class MapLoader {
 			for(var stateName in obj.states) {
 				var stateData = obj.states[stateName];
 				var state = states.filter(state => state.name === stateName)[0];
-				state.setVoteCount(stateData['votecount']);
-				state.setColor(stateData['candidate'], stateData['colorvalue']);
+				var voteCount = 0;
+				var maxCandidateName = 'Tossup';
+				var maxCandidateCount = 0;
+				for(var key in stateData['delegates']) {
+					var count = stateData['delegates'][key];
+					voteCount += count;
+					if(count > maxCandidateCount) {
+						maxCandidateName = key;
+						maxCandidateCount = count;
+					} else if(count === maxCandidateCount) {
+						maxCandidateName = 'Tossup';
+					}
+				}
+				
+				state.setVoteCount(voteCount);
+				if(maxCandidateName === 'Tossup') {
+					state.setColor(maxCandidateName, 2);
+				} else {
+					state.setColor(maxCandidateName, stateData['colorvalue']);
+				}
+			
+				if(stateData['candidate']) {
+					state.setColor(stateData['candidate'], stateData['colorvalue']);
+				} else {
+					state.delegates = stateData['delegates'];
+				}
+	
 				state.simulator = stateData['simulator'];
-				state.delegates = stateData['delegates'];
 				if(stateData['disabled']) {
 					state.toggleDisable();
 				}
@@ -735,8 +759,27 @@ class MapLoader {
 			for(var stateName in obj.proportional) {
 				var stateData = obj.proportional[stateName];
 				var state = proportionalStates.filter(state => state.name === stateName)[0];
-				state.setVoteCount(stateData['votecount']);
-				state.setColor(stateData['candidate'], stateData['colorvalue']);
+				var voteCount = 0;
+				var maxCandidateName = 'Tossup';
+				var maxCandidateCount = 0;
+				for(var key in stateData['delegates']) {
+					var count = stateData['delegates'][key];
+					voteCount += count;
+					if(count > maxCandidateCount) {
+						maxCandidateName = key;
+						maxCandidateCount = count;
+					} else if(count === maxCandidateCount) {
+						maxCandidateName = 'Tossup';
+					}
+				}
+
+				state.setVoteCount(voteCount);
+				if(maxCandidateName === 'Tossup') {
+					state.setColor(maxCandidateName, 2);
+				} else {
+					state.setColor(maxCandidateName, stateData['colorvalue']);
+				}
+
 				state.simulator = stateData['simulator'];
 				state.delegates = stateData['delegates'];
 				if(stateData['disabled']) { 
@@ -820,8 +863,7 @@ class MapLoader {
 				element.onclick = (function() {
 					var ref_index = proportionalStates.length - 1;	
 					return function() {	
-						stateClickPaintProportional(
-						proportionalStates[ref_index]);
+						stateClickPaint(proportionalStates[ref_index], {proportional: true});
 					}
 				})();
 			}

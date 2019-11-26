@@ -16,6 +16,10 @@ class KeyboardManager {
 			KeyboardManager.keyStates = {};
 		});
 	}
+
+	static quickFill() {
+		return KeyboardManager.keyStates[70] === true;
+	}
 }
 
 KeyboardManager.keyStates = {};

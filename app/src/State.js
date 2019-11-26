@@ -90,10 +90,10 @@ class State {
 		// update the html text display
 		var stateText = document.getElementById(this.name + '-text');
 		if(stateText !== null && 
-			MapLoader.save_type !== 'senatorial' &&
-			MapLoader.save_type !== 'gubernatorial' &&
-			MapLoader.save_type !== 'proportional' &&
-			MapLoader.save_type !== 'primary') {
+			(MapLoader.save_dataid === 'usa_ec' ||
+			MapLoader.save_dataid === 'usa_1972_ec' ||
+			MapLoader.save_dataid === 'usa_no_districts_ec' ||
+			MapLoader.save_dataid === 'usa_pre_civilwar_ec')) {
 			var text = this.name + ' ' + value;
 			// the text elements in an svg are inside spans
 			if(typeof stateText.childNodes[1] !== 'undefined') {
@@ -292,6 +292,12 @@ class State {
 			this.colorValue += 1;
 		}
 
+		this.delegates = {};
+		this.delegates[candidate] = this.voteCount;
+		if(candidate !== 'Tossup') {
+			this.delegates['Tossup'] = 0;
+		}
+
 		// keep the color value within bounds
 		if(this.candidate === 'Tossup') {
 			// if the candidate is tossup go to max
@@ -356,7 +362,7 @@ class State {
 	}
 
 	// directly change the color of a state (add error checking pls)
-	setColor(candidate, colorValue, setPopularVote) {
+	setColor(candidate, colorValue, options = {setPopularVote: false, setDelegates: true}) {
 		if(this.disabled) {
 			return;
 		}
@@ -366,6 +372,12 @@ class State {
 		// prevent black color
 		if(candidate === 'Tossup' && colorValue == 0) {
 			colorValue = 2;
+		}
+
+		if(options.setDelegates) {
+			this.delegates = {};
+			this.delegates['Tossup'] = 0;
+			this.delegates[candidate] = this.voteCount;
 		}
 
 		this.colorValue = colorValue;
@@ -384,7 +396,7 @@ class State {
 			button.style.fill = color;
 		}
 
-		if(setPopularVote) {
+		if(options.setPopularVote) {
 			for(var key in CandidateManager.candidates) {
 				if(key === candidate) {
 					this.popularVote[key] = this.voters * (this.turnout / 100.0);

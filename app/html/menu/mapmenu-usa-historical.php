@@ -195,7 +195,7 @@
 	<div class="selectmenu-button-text">1820</div>
 </a>
 <a class="selectmenu-button" href="./?t=USA_1816_presidential">
-	<div class="selectmenu-button-text">1812</div>
+	<div class="selectmenu-button-text">1816</div>
 </a>
 <a class="selectmenu-button" href="./?t=USA_1812_presidential">
 	<div class="selectmenu-button-text">1812</div>
@@ -204,7 +204,7 @@
 	<div class="selectmenu-button-text">1808</div>
 </a>
 <a class="selectmenu-button" href="./?t=USA_1804_presidential">
-	<div class="selectmenu-button-text">1832</div>
+	<div class="selectmenu-button-text">1804</div>
 </a>
 <a class="selectmenu-button" href="./?t=USA_1800_presidential">
 	<div class="selectmenu-button-text">1800</div>

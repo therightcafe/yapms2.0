@@ -1,16 +1,9 @@
-function buttonClick(clickElement, options) {
+function buttonClick(clickElement) {
 	if(php_candidate_edit === false)
 		return;
 
-	if(mode === 'move') {
-		return;
-	} else if(mode === 'paint' || mode === 'paintmove') {
-		if(MapLoader.save_type === 'proportional' || MapLoader.save_type === 'primary') {
-			buttonClickPaintProportional(clickElement);
-		} else {
-
-			buttonClickPaint(clickElement, options);
-		}
+	if(mode === 'paint' || mode === 'fill') {
+		buttonClickPaint(clickElement);
 	} else if(mode === 'ec') {
 		buttonClickEC(clickElement);
 	} else if(mode === 'delete') {
@@ -19,20 +12,12 @@ function buttonClick(clickElement, options) {
 	
 	countVotes();
 	ChartManager.updateChart();
-	LegendManager.updateLegend();
-}
+	LegendManager.updateLegend(); }
 
-function buttonClickPaint(clickElement, options) {
+function buttonClickPaint(clickElement) {
 	var id = clickElement.getAttribute('id').split('-')[0];
 	var state = states.find(state => state.name === id);
-	stateClickPaint(state, options);
-	//state.incrementCandidateColor(paintIndex);
-}
-
-function buttonClickPaintProportional(clickElement) {
-	var id = clickElement.getAttribute('id').split('-')[0];
-	var state = states.find(state => state.name === id);
-	stateClickPaintProportional(state);
+	stateClickPaint(state);
 }
 
 function buttonClickEC(clickElement) {
@@ -53,11 +38,10 @@ function buttonClickDelete(clickElement) {
 	var id = clickElement.getAttribute('id');
 	var split = id.split('-');
 	var state = states.find(state => state.name === split[0]);
-
 	state.toggleDisable();
 }
 
-function landClick(clickElement, options) {
+function landClick(clickElement) {
 	if(php_candidate_edit === false)
 		return;
 
@@ -65,10 +49,7 @@ function landClick(clickElement, options) {
 		return;
 	}
 
-	var setSolid = false;
-	if(options) {
-		setSolid = options.setSolid;
-	}
+	var setSolid = KeyboardManager.quickFill();
 
 	var id = clickElement.getAttribute('id');
 	var split = id.split('-');
@@ -91,15 +72,15 @@ function landClick(clickElement, options) {
 	// make the popular vote calculator point to the AL
 	PopularVote.view(AL);
 
-	if(mode === 'paint' || mode === 'paintmove') {
+	if(mode === 'paint' || mode === 'paintmove' || mode === 'fill') {
 		// check if each district has the same candidate and color value
-		if(setSolid === false) {
-			AL.incrementCandidateColor(paintIndex);
-		} else {
+		if(setSolid) {
 			AL.setColor(paintIndex, 0);
+		} else {
+			AL.incrementCandidateColor(paintIndex);
 		}
 		districts.forEach(function(district) {
-			district.setColor(AL.getCandidate(), AL.getColorValue(), true);
+			district.setColor(AL.getCandidate(), AL.getColorValue());
 		});
 	} else if(mode === 'delete') {
 		districts.forEach(function(district) {
@@ -113,32 +94,19 @@ function landClick(clickElement, options) {
 	PopularVote.count();
 }
 
-function stateClick(clickElement, options) {
+function stateClick(clickElement) {
 	if(php_candidate_edit === false)
 		return;
 
-	// first element is the state
-	// second element might be button
-	//var split = id.split('-');
-	// get state where state.name equals the id attribute
-	//var state = states.find(state => state.name === split[0]);
 	var id = clickElement.getAttribute('id');
 	var state = states.find(state => state.name === id);
 
 	switch(mode) {
 		case 'paint':
-		case 'paintmove':
 		case 'fill':
-			if(MapLoader.save_type === 'proportional' || MapLoader.save_type === 'primary') {
-				Simulator.view(state);
-				if(Simulator.ignoreClick === false) {
-					stateClickPaintProportional(state, id, options);
-				}
-			} else {
-				Simulator.view(state);
-				if(Simulator.ignoreClick === false) {
-					stateClickPaint(state, options);
-				}
+			Simulator.view(state);
+			if(Simulator.ignoreClick === false) {
+				stateClickPaint(state);
 			}
 			break;
 		case 'ec':
@@ -156,80 +124,30 @@ function stateClick(clickElement, options) {
 
 var tooltipTimeout = null;
 
-function stateClickPaint(state, options) {
-
-	if(state.candidate === 'Tossup' && paintIndex === 'Tossup') {
-		var tooltip = document.getElementById('legend-tooltip');
-		if(tooltip) {
-			tooltip.style.opacity = 0.7;
-
-			if(tooltipTimeout) {
-				window.clearTimeout(tooltipTimeout);
-			}
-
-			tooltipTimeout = setTimeout(function() {
-				tooltip.style.opacity = 0.0;
-			}, 3000);
-		}
-	}
-
-	if(mobile === false) {
-		var setPopularVoteElement = document.getElementById('popularvote-clicksetpv');
-		var setPopularVote = false;
-		if(setPopularVoteElement) {
-			setPopularVote = setPopularVoteElement.checked;
-		}
-
-		var setSolid = false;
-		if(options) {
-			setSolid = options.setSolid;
-		}
-
-		if(setSolid) {
-			state.setColor(paintIndex, 0, setPopularVote);
-		} else {
-			state.incrementCandidateColor(paintIndex, setPopularVote);
-		}
-
-		if(state.name.includes('-D')) {
-			var autoMarginsElement = document.getElementById('popularvote-automargins');
-			var autoMargins = false;
-			if(autoMarginsElement) {
-				autoMargins = autoMarginsElement.checked;
-			}
-
-			var avoidALMarginsElement = document.getElementById('popularvote-avoidalmargins').checked;
-			var avoidALMargins = false;
-			if(avoidALMarginsElement) {
-				avoidALMargins = avoidALMarginsElement.checked;
-			}
-
-			if(autoMargins === true && avoidALMargins === false) {
-				PopularVote.calculateAutoMarginAL(state.name.split('-')[0]);
-			}
-		}
-
-		PopularVote.view(state);
-		PopularVote.count(options);
-	} else {
-		state.incrementCandidateColor(paintIndex);
-	}
-}
-
-function stateClickPaintProportional(state, id, options) {
+function stateClickPaint(state, options = {}) {
 	if(state.disabled) {
 		return;
 	}
-
-	if((options && options.setSolid) || mode === 'fill') {
-		state.delegates = {};
-		if(paintIndex === 'Tossup') {
-			state.delegates['Tossup'] = state.voteCount;
+	
+	if(mode === 'fill' && typeof options.proportional === 'undefined') {
+		if(KeyboardManager.quickFill()) {
 			state.setColor(paintIndex, 0);
-		} else {
+			state.delegates = {};
 			state.delegates[paintIndex] = state.voteCount;
+			if(paintIndex !== 'Tossup') {
+				state.delegates['Tossup'] = 0;
+			}
+		} else {
+			state.incrementCandidateColor(paintIndex, false);
+		}
+
+		return;
+	} else if(mode === 'paint' && KeyboardManager.quickFill() && typeof options.proportional === 'undefined') {
+		state.setColor(paintIndex, 0);
+		state.delegates = {};
+		state.delegates[paintIndex] = state.voteCount;
+		if(paintIndex !== 'Tossup') {
 			state.delegates['Tossup'] = 0;
-			state.setColor(paintIndex, 2);
 		}
 		return;
 	}
@@ -267,6 +185,9 @@ function stateClickPaintProportional(state, id, options) {
 		range.setAttribute('id', 'range-' + key);
 		range.setAttribute('type', 'range');
 		range.setAttribute('max', max);
+		if(state.delegates[key] === undefined) {
+			state.delegates[key] = 0;
+		}
 		range.value = state.delegates[key];
 		total += state.delegates[key];
 		// create display for slider
@@ -332,7 +253,7 @@ function specialClick(clickElement, e) {
 	var id = clickElement.getAttribute('id');
 	var state = states.find(state => state.name === id);
 
-	if(mode === 'paint') {
+	if(mode === 'paint' || mode === 'fill') {
 		state.incrementCandidateColor(paintIndex);
 		countVotes();
 		ChartManager.updateChart();
@@ -340,11 +261,7 @@ function specialClick(clickElement, e) {
 	}
 }
 
-// when a button on the legend is clicked, it saves the selected candidate
-// to a variable, so that you can paint with it
 function legendClick(candidate, button) {
-	if(mode === 'paint' || mode === 'fill') {
-		paintIndex = candidate;
-		LegendManager.selectCandidateDisplay(button);
-	}
+	paintIndex = candidate;
+	LegendManager.selectCandidateDisplay(button);
 }

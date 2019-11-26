@@ -1,145 +1,61 @@
-function saveMap(img, token) {
-	var formData = new FormData();
+function logData() {
 
-	formData.append("img", img);
-	formData.append("filename", MapLoader.save_filename);
-	formData.append("dataid", MapLoader.save_dataid);
-	formData.append("type", MapLoader.save_type);
-	formData.append("year", MapLoader.save_year);
-	formData.append("fontsize", MapLoader.save_fontsize);
-	formData.append("strokewidth", MapLoader.save_strokewidth);
-	formData.append("captcha", token);
-	
-	console.log('token: ' + token);
+	var data = {};
+	data['filename'] = MapLoader.save_filename;
+	data['dataid'] = MapLoader.save_dataid;
+	data['type'] = MapLoader.save_type;
+	data['year'] = MapLoader.save_year;
+	data['fontsize'] = MapLoader.save_fontsize;
+	data['strokewidth'] = MapLoader.save_strokewidth;
+	data['candidates'] = {};
+	data['states'] = {};
+	data['proportional'] = {};
 
-	var candidateData = [];
 	for(var key in CandidateManager.candidates) {
 		if(key === 'Tossup') {
 			continue;
 		}
 		var candidate = CandidateManager.candidates[key];
-		var obj = {
-			name: candidate.name,
-			solid: candidate.colors[0],
-			likely: candidate.colors[1],
-			lean: candidate.colors[2],
-			tilt: candidate.colors[3]
-		};
-		candidateData.push(obj);
+		data['candidates'][candidate.name] = {};
+		data['candidates'][candidate.name]['solid'] = candidate.colors[0];
+		data['candidates'][candidate.name]['likely'] = candidate.colors[1];
+		data['candidates'][candidate.name]['lean'] = candidate.colors[2];
+		data['candidates'][candidate.name]['tilt'] = candidate.colors[3];
 	}
 
-	formData.append("candidates", JSON.stringify({
-		candidate_data: candidateData
-	}));
-
-	var stateData = [];
 	for(var stateIndex = 0; stateIndex < states.length; ++stateIndex) {
 		var state = states[stateIndex];
-		var obj = {
-			name: state.name,
-			candidate: state.candidate,
-			delegates: state.delegates,
-			simulator: state.simulator,
-			voteCount: state.voteCount,
-			colorValue: state.colorValue,
-			disabled: state.disabled
-		};
-		console.log(obj);
-		stateData.push(obj);
-	}
-
-	formData.append("states", JSON.stringify({
-		state_data: stateData
-	}));
-
-	var proportionalData = [];
-	for(var stateIndex = 0; stateIndex < proportionalStates; ++stateIndex) {
-		var state = proportionalStates[stateIndex];
-		var obj = {
-			name: state.name,
-			candidate: state.candidate,
-			delegates: state.delegates,
-			simulator: state.simulator,
-			voteCount: state.voteCount,
-			colorValue: state.colorValue,
-			disabled: state.disabled
-		};
-	}
-
-	formData.append("proportionalStates", JSON.stringify({
-		proportional_data: proportionalData
-	}));
-
-	$.ajax({
-		url: "./savemap_simple.php",
-		type: "POST",
-		data: formData,
-		processData: false,
-		contentType: false,
-		success: function(a,b,c) {
-			console.log(a);
-			var data = a.split(' ');
-			var url = data[0];
-			var filename = data[1];
-
-			var shareurl = document.getElementById('shareurl');
-			if(url === 'reCaptcha_Failed(restart_web_browser)') {
-				shareurl.setAttribute('href', url);
-				shareurl.innerHTML = 'reCaptcha Failed: possible solution is to restart your web-browser';
-
-			} else if(url === 'reCaptcha_Bot_Detected') {
-				shareurl.setAttribute('href', url);
-				shareurl.innerHTML = 'reCaptcha Failed: suspicious activity detected';
-				
-			} else {
-				shareurl.setAttribute('href', url);
-				shareurl.innerHTML = url;
+		// Remove zero delegates
+		for(var key in state.delegates) {
+			var count = state.delegates[key];
+			if(count === 0) {
+				delete state.delegates[key];
 			}
-			
-			shareurl.style.display = '';
-
-			var downloadbtn = document.getElementById('downloadbutton');
-			if(downloadbtn) {
-				downloadbtn.style.display = 'inline-block';
-				downloadbtn.setAttribute('href', 'https://yapms.org/downloadmap.php?f=' + filename);
-			}
-			
-			var button = document.getElementById('share-button');
-			if(button) {
-				button.setAttribute('onclick', 'share()');
-			}
-
-			var loadingAnimation = document.getElementById('loading-animation');
-			if(loadingAnimation) {
-				loadingAnimation.style.display = 'none';
-			}
-		
-			var image = document.getElementById('screenshotimg');
-			if(image) {
-				image.style.display = '';
-			}
-
-			console.log('Map share succeeded');
-			gtag('event', 'click', {
-				'event_category': 'share',
-				'event_label': 'Map Shared'
-			});
-		},
-		error: function(a,b,c) {
-			console.log(a);
-			console.log(b);
-			console.log(c);
-			var button = document.getElementById('share-button');
-			if(button) {
-				button.setAttribute('onclick', 'share()');
-			}
-			console.log('Map share failed ' + a);
-			gtag('event', 'click', {
-				'event_category': 'share',
-				'event_label': 'Map Shared Failed ' + currentCache 
-			});
 		}
-	});
+		data['states'][state.name] = {};
+		//data['states'][state.name]['candidate'] = state.candidate;
+		data['states'][state.name]['delegates'] = state.delegates;
+		data['states'][state.name]['colorvalue'] = state.colorValue;
+		data['states'][state.name]['disabled'] = state.disabled;
+	}
+
+	for(var stateIndex = 0; stateIndex < proportionalStates.length; ++stateIndex) {
+		var state = proportionalStates[stateIndex];
+		// Remove zero delegates
+		for(var key in state.delegates) {
+			var count = state.delegates[key];
+			if(count === 0) {
+				delete state.delegates[key];
+			}
+		}
+		data['proportional'][state.name] = {};
+		//data['proportional'][state.name]['candidate'] = state.candidate;
+		data['proportional'][state.name]['delegates'] = state.delegates;
+		data['proportional'][state.name]['colorvalue'] = state.colorValue;
+		data['proportional'][state.name]['disabled'] = state.disabled;
+	}
+
+	console.log(JSON.stringify(data));
 }
 
 function saveMap_user() {
@@ -191,7 +107,7 @@ function saveMap_user() {
 		data['proportional'][state.name]['colorvalue'] = state.colorValue;
 		data['proportional'][state.name]['disabled'] = state.disabled;
 	}
-	
+
 	formData.append("data", JSON.stringify(data));
 	
 	$.ajax({
