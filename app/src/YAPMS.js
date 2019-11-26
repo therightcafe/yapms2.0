@@ -3626,7 +3626,7 @@ class State {
 		var diff = value - this.voteCount;
 		this.voteCount = value;
 		this.delegates = {};
-		this.delegates['Tossup'] = value;
+		this.setDelegates("Tossup", value);
 		if(MapLoader.save_type === 'proportional') {
 			this.candidate = 'Tossup';
 			this.setColor('Tossup', 2);
@@ -3945,11 +3945,13 @@ class State {
 		var input = document.getElementById('state-ec').value;
 
 		// get the state and set its new vote count
-		states.forEach(function(element) {
-			if(element.getName() === stateId) {
-				element.setVoteCount(parseInt(input));
+		for(var index = 0, length = states.length; index < length; ++index) {
+			var state = states[index];
+			if(state.getName() === stateId) {
+				state.setVoteCount(parseInt(input));
+				break;
 			}
-		});
+		}
 
 		// recount the votes
 		countVotes();
