@@ -1,5 +1,4 @@
 function logData() {
-
 	var data = {};
 	data['filename'] = MapLoader.save_filename;
 	data['dataid'] = MapLoader.save_dataid;
