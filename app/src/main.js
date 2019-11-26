@@ -114,53 +114,6 @@ window.onerror = function(message, source, lineno, colno, error) {
 	});
 }
 
-function setDelegates(e) {
-	e.parentElement.style.display = '';
-	var stateid = document.getElementById('demdel-state-name').value;
-	var state = states.find(state => state.name === stateid);
-	if(!state) {
-		state = proportionalStates.find(state => state.name === stateid);
-	}
-	// keep the total delegates
-	var total = state.voteCount;
-	for(var key in CandidateManager.candidates) {
-		if(key === 'Tossup')
-			continue;
-		var range = document.getElementById('range-' + key);
-		var rangeValue = 0;
-		if(range) {
-			rangeValue = parseInt(range.value);
-		}
-		state.delegates[key] = parseInt(rangeValue);
-		// subtract the delegates for each candidate
-		total -= parseInt(rangeValue);
-	}
-	// set the tossup delegates to the remaining
-	state.delegates['Tossup'] = total;
-
-	var majorityCandidate = 'Tossup';
-	var majorityVoteCount = 0;
-	for(var key in state.delegates) {
-		if(state.delegates[key] > majorityVoteCount) {
-			majorityCandidate = key;
-			majorityVoteCount = state.delegates[key];
-		} else if(state.delegates[key] === majorityVoteCount) {
-			majorityCandidate = 'Tossup';
-		}
-	}
-	
-	if(majorityCandidate === 'Tossup') {
-		state.setColor('Tossup', 2, {setDelegates: false});
-	}
-	else {
-		state.setColor(majorityCandidate, 0, {setDelegates: false});
-	}
-
-	countVotes();
-	ChartManager.updateChart();
-	LegendManager.updateLegend();
-}
-
 function setMode(set) {
 	console.log('mode ' +  mode + ' | set ' + set + 
 		' | mapType ' + MapLoader.save_type + ' | mapYear ' + MapLoader.save_year);

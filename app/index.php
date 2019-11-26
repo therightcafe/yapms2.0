@@ -540,7 +540,7 @@ echo '<!-- mobile-ad -->
 	<div id="demdel-ranges" class="selectmenu-content">
 	</div>
 	<input id="demdel-state-name" type="hidden">
-	<button class="setbutton" onclick="setDelegates(this)">set</button>
+	<button class="setbutton" onclick="closeAllPopups()">okay</button>
 </div>
 
 <div id="ecedit" class="popup selectmenu">

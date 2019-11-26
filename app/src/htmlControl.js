@@ -132,6 +132,12 @@ function setPalette(palette, setCookie) {
 			lightPalette();
 			break;
 	}
+
+	/* Fix All States Tossup Color */
+	for(var index = 0, length = states.length; index < length; ++index) {
+		var state = states[index];
+		state.verifyTossupColor();
+	}
 }
 
 function darkPalette() {
@@ -164,7 +170,6 @@ function darkPalette() {
 	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
 	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
 	countVotes();
-	MapManager.verifyMap();
 	previousPalette = darkPalette;
 }
 
@@ -197,7 +202,6 @@ function greyscalePalette() {
 	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
 	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
 	countVotes();
-	MapManager.verifyMap();
 	previousPalette = darkPalette;
 }
 
@@ -230,7 +234,6 @@ function terminalPalette() {
 	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
 	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
 	countVotes();
-	MapManager.verifyMap();
 	previousPalette = terminalPalette;
 }
 
@@ -265,7 +268,6 @@ function lightPalette() {
 	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
 	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
 	countVotes();
-	MapManager.verifyMap();
 	previousPalette = lightPalette;
 }
 
@@ -298,7 +300,6 @@ function contrastPalette() {
 	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#000000';
 	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
 	countVotes();
-	MapManager.verifyMap();
 	previousPalette = contrastPalette;
 }
 
@@ -331,7 +332,6 @@ function metallicPalette() {
 	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
 	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
 	countVotes();
-	MapManager.verifyMap();
 	previousPalette = metallicPalette;
 }
 
@@ -363,7 +363,6 @@ function halloweenPalette() {
 	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
 	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
 	countVotes();
-	MapManager.verifyMap();
 	previousPalette = halloweenPalette;
 }
 
@@ -396,7 +395,6 @@ function toWinPalette() {
 	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#000000';
 	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
 	countVotes();
-	MapManager.verifyMap();
 	previousPalette = toWinPalette;
 }
 

@@ -24,9 +24,21 @@ class PopularVote {
 		}
 	}
 
-	static view(state) {
+	static view(state, candidate) {
 		if(PopularVote.enabled === false) {
 			return;
+		}
+
+		var autoPopularVote = document.getElementById('popularvote-clicksetpv').checked;
+		if(autoPopularVote) {
+			for(var key in CandidateManager.candidates) {
+				if(key === candidate) {
+					state.popularVote[key] = state.voters * (state.turnout / 100.0);
+				} else {
+					state.popularVote[key] = 0;
+				}
+			}
+			PopularVote.count();
 		}
 
 		var popularVoteCalc = document.getElementById('sidebar-popularvote');
@@ -209,6 +221,7 @@ class PopularVote {
 	}
 
 	static count() {
+		console.log('count');
 		if(PopularVote.enabled === false) {
 			return;
 		}
@@ -230,8 +243,6 @@ class PopularVote {
 			}
 
 			for(var candidate in state.popularVote) {
-
-
 				if(state.popularVote[candidate]) {
 					if(popularVote[candidate]) {
 						popularVote[candidate] += state.popularVote[candidate];
@@ -308,16 +319,16 @@ class PopularVote {
 		var margin = (((firstCount - secondCount) / combine) * 100);
 
 		if(firstCandidate === 'Tossup') {
-			atLarge.setColor('Tossup', 0, false);
+			atLarge.setColor('Tossup', 0);
 		} else {
 			if(margin < 5.0) {
-				atLarge.setColor(firstCandidate, 3, false);
+				atLarge.setColor(firstCandidate, 3);
 			} else if(margin < 10.0) {
-				atLarge.setColor(firstCandidate, 2, false);
+				atLarge.setColor(firstCandidate, 2);
 			} else if(margin < 15.0) {
-				atLarge.setColor(firstCandidate, 1, false);
+				atLarge.setColor(firstCandidate, 1);
 			} else {
-				atLarge.setColor(firstCandidate, 0, false);
+				atLarge.setColor(firstCandidate, 0);
 			}
 		}
 	}

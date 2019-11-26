@@ -73,7 +73,6 @@ class PresetLoader {
 				break;
 		}
 		
-		MapManager.verifyMap();
 		verifyPaintIndex();
 		countVotes();
 		ChartManager.updateChart();

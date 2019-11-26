@@ -241,7 +241,7 @@ class MapLoader {
 				break;
 			case "USA_split_maine":
 				PresetLoader.loadPreset('classic');
-				MapLoader.loadMap("./res/usa_1972_presidential.svg", 16, 0.75, "usa_1972_ec", "proportional", "open");
+				MapLoader.loadMap("./res/usa_1972_presidential.svg", 16, 0.75, "usa_1972_ec", "takeall", "open");
 				break;
 			case "USA_2020_senate":
 				PresetLoader.loadPreset('classic');
@@ -530,11 +530,8 @@ class MapLoader {
 				// convert font size to string with px
 				textHTML.style.fontSize = '' + fontsize + 'px';
 			}
-
+		
 			MapLoader.initData(dataid);
-
-			// count the votes and update the displayed
-			// numbers on the chart and legend
 
 			countVotes();
 			ChartManager.updateChart();
@@ -563,6 +560,7 @@ class MapLoader {
 
 				// disable the load screen when the map is finished loading
 				var loadScreen = document.getElementById('application-loading');
+
 				setTimeout(function() {
 					loadScreen.style.display = 'none';
 				}, 200);

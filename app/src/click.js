@@ -69,9 +69,6 @@ function landClick(clickElement) {
 		}
 	});
 
-	// make the popular vote calculator point to the AL
-	PopularVote.view(AL);
-
 	if(mode === 'paint' || mode === 'paintmove' || mode === 'fill') {
 		// check if each district has the same candidate and color value
 		if(setSolid) {
@@ -91,7 +88,6 @@ function landClick(clickElement) {
 	countVotes();
 	ChartManager.updateChart();
 	LegendManager.updateLegend();
-	PopularVote.count();
 }
 
 function stateClick(clickElement) {
@@ -124,31 +120,31 @@ function stateClick(clickElement) {
 
 var tooltipTimeout = null;
 
-function stateClickPaint(state, options = {}) {
+function stateClickPaint(state, options = {proportional: false}) {
 	if(state.disabled) {
 		return;
 	}
 	
-	if(mode === 'fill' && typeof options.proportional === 'undefined') {
+	if(mode === 'fill' && options.proportional === false) {
 		if(KeyboardManager.quickFill()) {
 			state.setColor(paintIndex, 0);
+		/*
 			state.delegates = {};
+			state.delegates['Tossup'] = 0;
 			state.delegates[paintIndex] = state.voteCount;
-			if(paintIndex !== 'Tossup') {
-				state.delegates['Tossup'] = 0;
-			}
+		*/
 		} else {
-			state.incrementCandidateColor(paintIndex, false);
+			state.incrementCandidateColor(paintIndex);
 		}
 
 		return;
-	} else if(mode === 'paint' && KeyboardManager.quickFill() && typeof options.proportional === 'undefined') {
+	} else if(mode === 'paint' && KeyboardManager.quickFill() && options.proportional === false) {
 		state.setColor(paintIndex, 0);
+		/*
 		state.delegates = {};
+		state.delegates['Tossup'] = 0;
 		state.delegates[paintIndex] = state.voteCount;
-		if(paintIndex !== 'Tossup') {
-			state.delegates['Tossup'] = 0;
-		}
+		*/
 		return;
 	}
 
@@ -199,6 +195,7 @@ function stateClickPaint(state, options = {}) {
 		// this is how you reference the display DOM
 		// im not sure exactly what this is but its weird
 		range.oninput = (function() {
+			var refstate = state;
 			var refkey = key;
 			var refdisplay = display;
 			var refdisplayTossup = displayTossup;
@@ -221,6 +218,12 @@ function stateClickPaint(state, options = {}) {
 				// update the display	
 				refdisplay.innerHTML = refkey + ' - ' + this.value + ' - ' + 
 					((this.value / max) * 100).toFixed(2) + '%';
+		
+				refstate.setDelegates("Tossup", (max - total));	
+				refstate.setDelegates(refkey, parseInt(this.value));	
+				countVotes();
+				ChartManager.updateChart();
+				LegendManager.updateLegend();
 			}
 		})();
 

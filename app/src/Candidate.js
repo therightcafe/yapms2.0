@@ -45,7 +45,6 @@ class CandidateManager {
 		ChartManager.chart.generateLegend();
 		countVotes();
 		LegendManager.updateLegend();
-		MapManager.verifyMap();
 		ChartManager.updateChart();
 		PopularVote.count();
 	}
@@ -71,7 +70,6 @@ class CandidateManager {
 		ChartManager.chart.generateLegend();
 		countVotes();
 		LegendManager.updateLegend();
-		MapManager.verifyMap();
 		ChartManager.updateChart();
 		PopularVote.count();
 	}
@@ -117,7 +115,6 @@ class CandidateManager {
 		}
 
 		ChartManager.chart.generateLegend();
-		MapManager.verifyMap();
 		countVotes();
 		LegendManager.updateLegend();
 		ChartManager.updateChart();
@@ -177,7 +174,6 @@ class CandidateManager {
 		var candidate = new Candidate(name, [solid, likely, leaning, tilting]);
 		CandidateManager.candidates[name] = candidate;
 
-		MapManager.verifyMap();
 		verifyPaintIndex();
 		countVotes();
 		ChartManager.updateChart();
@@ -237,4 +233,4 @@ class CandidateManager {
 
 CandidateManager.candidates = {};
 CandidateManager.tossupColor = 2;
-CandidateManager.TOSSUP = new Candidate('Tossup', ['#000000', '#ffffff', '#bbb7b2', '#000000']);
+CandidateManager.TOSSUP = new Candidate('Tossup', ['#000000', '#ffffff', '#696969', '#000000']);

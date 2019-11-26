@@ -7,7 +7,7 @@ class State {
 		this.name = name;
 		/* Fake name for display when it has an ugly real name */
 		this.fakename = "District " + (++stateCount);
-		this.colorValue = 1;
+		this.colorValue = 2;
 		this.htmlElement = htmlElement;
 		this.candidate = 'Tossup';
 		this.dataid = dataid;
@@ -19,8 +19,9 @@ class State {
 		this.voters = 0;
 		this.popularVote = {};
 		this.turnout = 100;
-		this.onChange = function() { 
-		}
+
+		/* Call This When The State Changes Color */
+		this.onChange = function() {}
 	}
 
 	resetVoteCount() {
@@ -58,6 +59,26 @@ class State {
 	resetDelegates() {
 		this.delegates = {};
 		this.delegates['Tossup'] = this.voteCount;
+	}
+
+	setDelegates(candidate, amount) {
+		this.delegates[candidate] = amount;
+		var majorityCandidate = "Tossup";
+		var majorityCount = 0;
+		var majorityColor = 2;
+		console.log(this.delegates);
+		for(var candidate in this.delegates) {
+			var count = this.delegates[candidate];
+			if(count > majorityCount) {
+				majorityCandidate = candidate;
+				majorityCount = count;
+				majorityColor = 0;
+			} else if(count === majorityCount) {
+				majorityCandidate = "Tossup";
+				majorityColor = 2;
+			}
+		}
+		this.setColor(majorityCandidate, majorityColor, {setDelegates: false});
 	}
 
 	getCandidate() { 
@@ -276,12 +297,13 @@ class State {
 
 	// only incrememnt though the colors of the specified candidate
 	// if the state isn't this candidates color, start at solid
-	incrementCandidateColor(candidate, setPopularVote) {
+	incrementCandidateColor(candidate, options = {setPopularVote: false, setDelegates: true}) {
 		if(this.disabled) {
 			return;
 		}
 
 		Simulator.view(this);
+		PopularVote.view(this, candidate);
 
 		// if changing color set to solor
 		if(this.candidate !== candidate) {
@@ -291,11 +313,11 @@ class State {
 		else {
 			this.colorValue += 1;
 		}
-
-		this.delegates = {};
-		this.delegates[candidate] = this.voteCount;
-		if(candidate !== 'Tossup') {
+	
+		if(options.setDelegates) {
+			this.delegates = {};
 			this.delegates['Tossup'] = 0;
+			this.delegates[candidate] = this.voteCount;
 		}
 
 		// keep the color value within bounds
@@ -346,23 +368,12 @@ class State {
 			button.style.fill = color;
 		}
 
-		if(setPopularVote) {
-			for(var key in CandidateManager.candidates) {
-				if(key === candidate) {
-					this.popularVote[key] = this.voters * (this.turnout / 100.0);
-				} else {
-					this.popularVote[key] = 0;
-				}
-			}
-		}
-
-		if(typeof this.onChange === 'function') {
-			this.onChange();
-		}
+		if(this.onChange)
+		this.onChange();
 	}
 
 	// directly change the color of a state (add error checking pls)
-	setColor(candidate, colorValue, options = {setPopularVote: false, setDelegates: true}) {
+	setColor(candidate, colorValue, options = {setDelegates: true}) {
 		if(this.disabled) {
 			return;
 		}
@@ -396,19 +407,8 @@ class State {
 			button.style.fill = color;
 		}
 
-		if(options.setPopularVote) {
-			for(var key in CandidateManager.candidates) {
-				if(key === candidate) {
-					this.popularVote[key] = this.voters * (this.turnout / 100.0);
-				} else {
-					this.popularVote[key] = 0;
-				}
-			}
-		}
-		
-		if(typeof this.onChange === 'function') {
-			this.onChange();
-		}
+		if(this.onChange)
+		this.onChange();
 	}
 
 	static setEC() {
@@ -430,6 +430,5 @@ class State {
 		countVotes();
 		ChartManager.updateChart();
 		LegendManager.updateLegend();
-		MapManager.verifyMap();
 	}
 };
