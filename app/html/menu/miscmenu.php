@@ -11,10 +11,12 @@
 	<i class="fas fa-info"></i>
 	<div class="selectmenu-button-text">Version Info</div>
 </a>
+<!--
 <a class="selectmenu-button" onclick="logData();">
 	<i class="fas fa-info"></i>
 	<div class="selectmenu-button-text">Log Data</div>
 </a>
+-->
 <a class="selectmenu-button" onclick="enableFullscreen()">
 	<i class="fas fa-expand-arrows-alt"></i>
 	<div class="selectmenu-button-text">Fullscreen</div>
