@@ -150,8 +150,12 @@ class Simulator {
 
 		var presets = document.getElementById("sidebar-presets-select-simulator");
 		presets.value = "cook";	
+
 		CandidateManager.addCandidate("Republican", "#bf1d29", "#ff5865", "#ff8b98", "#cf8980");
 		CandidateManager.addCandidate("Democrat", "#1c408c", "#577ccc", "#8aafff", "#949bb3");
+		countVotes();
+		ChartManager.updateChart();
+	
 		for(var index = 0; index < states.length; ++index) {
 			var state = states[index];
 			state.simulator = {};

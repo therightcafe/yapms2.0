@@ -56,7 +56,9 @@ function landClick(clickElement) {
 		}
 		districts.forEach(function(district) {
 			district.setColor(AL.candidate, AL.colorValue);
+			PopularVote.view(district, paintIndex)
 		});
+		PopularVote.view(AL, paintIndex)
 	} else if(mode === 'delete') {
 		districts.forEach(function(district) {
 			district.toggleDisable();

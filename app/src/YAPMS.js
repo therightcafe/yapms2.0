@@ -4143,7 +4143,9 @@ function landClick(clickElement) {
 		}
 		districts.forEach(function(district) {
 			district.setColor(AL.candidate, AL.colorValue);
+			PopularVote.view(district, paintIndex)
 		});
+		PopularVote.view(AL, paintIndex)
 	} else if(mode === 'delete') {
 		districts.forEach(function(district) {
 			district.toggleDisable();
@@ -5516,8 +5518,12 @@ class Simulator {
 
 		var presets = document.getElementById("sidebar-presets-select-simulator");
 		presets.value = "cook";	
+
 		CandidateManager.addCandidate("Republican", "#bf1d29", "#ff5865", "#ff8b98", "#cf8980");
 		CandidateManager.addCandidate("Democrat", "#1c408c", "#577ccc", "#8aafff", "#949bb3");
+		countVotes();
+		ChartManager.updateChart();
+	
 		for(var index = 0; index < states.length; ++index) {
 			var state = states[index];
 			state.simulator = {};
@@ -6232,7 +6238,6 @@ function logData() {
 			}
 		}
 		data['states'][state.name] = {};
-		//data['states'][state.name]['candidate'] = state.candidate;
 		data['states'][state.name]['delegates'] = state.delegates;
 		data['states'][state.name]['colorvalue'] = state.colorValue;
 		data['states'][state.name]['disabled'] = state.disabled;
@@ -6248,7 +6253,6 @@ function logData() {
 			}
 		}
 		data['proportional'][state.name] = {};
-		//data['proportional'][state.name]['candidate'] = state.candidate;
 		data['proportional'][state.name]['delegates'] = state.delegates;
 		data['proportional'][state.name]['colorvalue'] = state.colorValue;
 		data['proportional'][state.name]['disabled'] = state.disabled;
@@ -6292,7 +6296,6 @@ function saveMap_user() {
 		data['states'][state.name] = {};
 		data['states'][state.name]['candidate'] = state.candidate;
 		data['states'][state.name]['delegates'] = state.delegates;
-		data['states'][state.name]['votecount'] = state.voteCount;
 		data['states'][state.name]['colorvalue'] = state.colorValue;
 		data['states'][state.name]['disabled'] = state.disabled;
 	}
@@ -6302,7 +6305,6 @@ function saveMap_user() {
 		data['proportional'][state.name] = {};
 		data['proportional'][state.name]['candidate'] = state.candidate;
 		data['proportional'][state.name]['delegates'] = state.delegates;
-		data['proportional'][state.name]['votecount'] = state.voteCount;
 		data['proportional'][state.name]['colorvalue'] = state.colorValue;
 		data['proportional'][state.name]['disabled'] = state.disabled;
 	}
@@ -6362,9 +6364,7 @@ function saveMap_new(img, token) {
 	for(var stateIndex = 0; stateIndex < states.length; ++stateIndex) {
 		var state = states[stateIndex];
 		data['states'][state.name] = {};
-		data['states'][state.name]['candidate'] = state.candidate;
 		data['states'][state.name]['delegates'] = state.delegates;
-		data['states'][state.name]['votecount'] = state.voteCount;
 		data['states'][state.name]['colorvalue'] = state.colorValue;
 		data['states'][state.name]['disabled'] = state.disabled;
 	}
@@ -6372,9 +6372,7 @@ function saveMap_new(img, token) {
 	for(var stateIndex = 0; stateIndex < proportionalStates.length; ++stateIndex) {
 		var state = proportionalStates[stateIndex];
 		data['proportional'][state.name] = {};
-		data['proportional'][state.name]['candidate'] = state.candidate;
 		data['proportional'][state.name]['delegates'] = state.delegates;
-		data['proportional'][state.name]['votecount'] = state.voteCount;
 		data['proportional'][state.name]['colorvalue'] = state.colorValue;
 		data['proportional'][state.name]['disabled'] = state.disabled;
 	}
@@ -6478,7 +6476,7 @@ function saveMap_new(img, token) {
 function numberWithCommas(number) {
 	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-var currentCache = 'v1.4.0';
+var currentCache = 'v1.4.1';
 
 var states = [];
 var lands = [];
