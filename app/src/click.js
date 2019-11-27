@@ -101,12 +101,15 @@ function stateClick(clickElement) {
 
 var tooltipTimeout = null;
 
-function stateClickPaint(state) {
+function stateClickPaint(state, options = {forceProportional: false}) {
 	if(state.disabled) {
 		return;
 	}
 
-	if(MapLoader.save_type !== "proportional") {
+	if(options.forceProportional) {
+		displayProportionalEdit(state);
+		return;
+	} else if(MapLoader.save_type !== "proportional") {
 		if(KeyboardManager.quickFill()) {
 			state.setColor(paintIndex, 0);
 		} else {

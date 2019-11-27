@@ -861,7 +861,7 @@ class MapLoader {
 				element.onclick = (function() {
 					var ref_index = proportionalStates.length - 1;	
 					return function() {	
-						stateClickPaint(proportionalStates[ref_index], {proportional: true});
+						stateClickPaint(proportionalStates[ref_index], {forceProportional: true});
 					}
 				})();
 			}

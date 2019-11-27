@@ -2657,7 +2657,7 @@ class MapLoader {
 				element.onclick = (function() {
 					var ref_index = proportionalStates.length - 1;	
 					return function() {	
-						stateClickPaint(proportionalStates[ref_index], {proportional: true});
+						stateClickPaint(proportionalStates[ref_index], {forceProportional: true});
 					}
 				})();
 			}
@@ -4188,12 +4188,15 @@ function stateClick(clickElement) {
 
 var tooltipTimeout = null;
 
-function stateClickPaint(state) {
+function stateClickPaint(state, options = {forceProportional: false}) {
 	if(state.disabled) {
 		return;
 	}
 
-	if(MapLoader.save_type !== "proportional") {
+	if(options.forceProportional) {
+		displayProportionalEdit(state);
+		return;
+	} else if(MapLoader.save_type !== "proportional") {
 		if(KeyboardManager.quickFill()) {
 			state.setColor(paintIndex, 0);
 		} else {
@@ -6476,7 +6479,7 @@ function saveMap_new(img, token) {
 function numberWithCommas(number) {
 	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-var currentCache = 'v1.4.1';
+var currentCache = 'v1.4.2';
 
 var states = [];
 var lands = [];
