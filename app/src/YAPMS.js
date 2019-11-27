@@ -3896,7 +3896,7 @@ class State {
 		this.onChange();
 	}
 
-	setEC() {
+	static setEC() {
 		// hide the popup window
 		closeAllPopups();
 
