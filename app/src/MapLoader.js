@@ -883,6 +883,12 @@ class MapLoader {
 			state.setColor("Tossup", 2);
 			state.resetDelegates();
 		}
+
+		for(var index = 0; index < proportionalStates.length; ++index) {
+			var state = proportionalStates[index];
+			state.setColor("Tossup", 2);
+			state.resetDelegates();
+		}
 	}
 }
 

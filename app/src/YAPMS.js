@@ -2679,6 +2679,12 @@ class MapLoader {
 			state.setColor("Tossup", 2);
 			state.resetDelegates();
 		}
+
+		for(var index = 0; index < proportionalStates.length; ++index) {
+			var state = proportionalStates[index];
+			state.setColor("Tossup", 2);
+			state.resetDelegates();
+		}
 	}
 }
 
@@ -5666,15 +5672,20 @@ class Simulator {
 			return; 
 		}
 
+		if(Simulator.runState !== 0) {
+			return;
+		}
+
+		Simulator.runState = 2;
 		MapLoader.clearMapCandidates();
 		Simulator.runTimeout = 5000 / states.length;
-		Simulator.runStateKey = 0;
 		Simulator.runLoop(states, 0, MapLoader.save_type === "proportional" || MapLoader.save_type === "primary");
 		Simulator.runLoop(proportionalStates, 0, true);
 	}
 
 	static runLoop(stateList, count, proportional) {
 		if(stateList.length === 0) {
+			Simulator.runState -= 1;
 			return;
 		}
 
@@ -5771,6 +5782,7 @@ class Simulator {
 	}
 
 	static runLoopFinish(stateList) {
+		Simulator.runState -= 1;
 		if(MapLoader.save_dataid === "usa_ec") {
 			var me01 = stateList.find(obj => {
 				return obj.name === "ME-D1";
@@ -5806,8 +5818,8 @@ class Simulator {
 }
 
 Simulator.enabled = false;
-Simulator.runStateKey = 0;
-Simulator.runStateKeyProportional = 0;
+// 0 = available
+Simulator.runState = 0;
 Simulator.runTimeout = 100;
 Simulator.ignoreClick = false;
 Simulator.state = null;
@@ -6482,7 +6494,7 @@ function saveMap_new(img, token) {
 function numberWithCommas(number) {
 	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-var currentCache = 'v1.4.2';
+var currentCache = 'v1.5.0';
 
 var states = [];
 var lands = [];
