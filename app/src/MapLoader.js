@@ -744,9 +744,12 @@ class MapLoader {
 			
 				if(stateData['candidate']) {
 					state.setColor(stateData['candidate'], stateData['colorvalue']);
-				} //else {
+					if(obj['type'] === "proportional") {
+						state.delegates = stateData['delegates'];
+					}
+				} else {
 					state.delegates = stateData['delegates'];
-				//}
+				}
 	
 				state.simulator = stateData['simulator'];
 				if(stateData['disabled']) {
