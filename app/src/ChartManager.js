@@ -394,7 +394,6 @@ class ChartManager {
 		ChartManager.chart.destroy();
 		// then rebuild
 		ChartManager.chart = new Chart(ctx, {type: type, data: ChartManager.chartData, options: ChartManager.chartOptions});
-		countVotes();
 		ChartManager.updateChart();
 	}
 

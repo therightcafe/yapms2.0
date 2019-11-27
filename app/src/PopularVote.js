@@ -221,7 +221,6 @@ class PopularVote {
 	}
 
 	static count() {
-		console.log('count');
 		if(PopularVote.enabled === false) {
 			return;
 		}

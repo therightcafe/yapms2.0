@@ -150,12 +150,13 @@ class Simulator {
 
 		var presets = document.getElementById("sidebar-presets-select-simulator");
 		presets.value = "cook";	
-		PresetLoader.loadPreset('classic');
+		CandidateManager.addCandidate("Republican", "#bf1d29", "#ff5865", "#ff8b98", "#cf8980");
+		CandidateManager.addCandidate("Democrat", "#1c408c", "#577ccc", "#8aafff", "#949bb3");
 		for(var index = 0; index < states.length; ++index) {
 			var state = states[index];
 			state.simulator = {};
 			for(var key in CandidateManager.candidates) {
-				if(key === "Tossup") {
+				if(key !== "Republican" && key !== "Democrat") {
 					continue;
 				}
 				state.simulator[key] = SimulatorData.USA_2020_Cook[state.name][key];
@@ -384,7 +385,7 @@ class Simulator {
 			}
 		}
 
-		state.setColor(candidates[majorityIndex].name, 0);
+		state.setColor(candidates[majorityIndex].name, 0, {setDelegates: false});
 
 		countVotes();
 		LegendManager.updateLegend();

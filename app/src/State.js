@@ -57,8 +57,12 @@ class State {
 	}
 	
 	resetDelegates() {
+		if(this.disabled === true) {
+			return;
+		}
 		this.delegates = {};
 		this.delegates['Tossup'] = this.voteCount;
+		this.setColor("Tossup", 2, {setDelegates: false});
 	}
 
 	setDelegates(candidate, amount) {
@@ -66,13 +70,14 @@ class State {
 		var majorityCandidate = "Tossup";
 		var majorityCount = 0;
 		var majorityColor = 2;
-		console.log(this.delegates);
 		for(var candidate in this.delegates) {
 			var count = this.delegates[candidate];
 			if(count > majorityCount) {
-				majorityCandidate = candidate;
-				majorityCount = count;
-				majorityColor = 0;
+				if(candidate !== "Tossup") {
+					majorityCandidate = candidate;
+					majorityCount = count;
+					majorityColor = 0;
+				}
 			} else if(count === majorityCount) {
 				majorityCandidate = "Tossup";
 				majorityColor = 2;
@@ -81,22 +86,6 @@ class State {
 		this.setColor(majorityCandidate, majorityColor, {setDelegates: false});
 	}
 
-	getCandidate() { 
-		return this.candidate; 
-	}
-
-	getName() { 
-		return this.name; 
-	}
-	
-	getColorValue() { 
-		return this.colorValue; 
-	}
-
-	getVoteCount() { 
-		return this.voteCount; 
-	}
-	
 	setVoteCount(value) {
 		var diff = value - this.voteCount;
 		this.voteCount = value;
@@ -189,7 +178,7 @@ class State {
 		} else if(this.locked == true) {
 			this.disabled = false;
 			this.locked = !this.locked;
-			this.setColor(this.getCandidate(), this.getColorValue());
+			this.setColor(this.candidate, this.colorValue);
 			this.htmlElement.setAttribute('fill-opacity', '1.0');
 			this.htmlElement.setAttribute('stroke-opacity', '1.0');
 			if(this.name.includes('-S')) {
@@ -266,7 +255,7 @@ class State {
 			this.resetVoteCount();
 			this.setVoteCount(this.voteCount);
 			this.disabled = !this.disabled;
-			this.setColor(this.getCandidate(), this.getColorValue());
+			this.setColor(this.candidate, this.colorValue);
 			this.htmlElement.setAttribute('fill-opacity', '1.0');
 			this.htmlElement.setAttribute('stroke-opacity', '1.0');
 			if(this.name.includes('-S')) {
@@ -297,13 +286,10 @@ class State {
 
 	// only incrememnt though the colors of the specified candidate
 	// if the state isn't this candidates color, start at solid
-	incrementCandidateColor(candidate, options = {setPopularVote: false, setDelegates: true}) {
+	incrementCandidateColor(candidate, options = {setDelegates: true}) {
 		if(this.disabled) {
 			return;
 		}
-
-		Simulator.view(this);
-		PopularVote.view(this, candidate);
 
 		// if changing color set to solor
 		if(this.candidate !== candidate) {
@@ -411,7 +397,7 @@ class State {
 		this.onChange();
 	}
 
-	static setEC() {
+	setEC() {
 		// hide the popup window
 		closeAllPopups();
 
@@ -422,7 +408,7 @@ class State {
 		// get the state and set its new vote count
 		for(var index = 0, length = states.length; index < length; ++index) {
 			var state = states[index];
-			if(state.getName() === stateId) {
+			if(state.name === stateId) {
 				state.setVoteCount(parseInt(input));
 				break;
 			}
@@ -433,4 +419,4 @@ class State {
 		ChartManager.updateChart();
 		LegendManager.updateLegend();
 	}
-};
+}

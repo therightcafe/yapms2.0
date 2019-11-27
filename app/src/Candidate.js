@@ -1,5 +1,3 @@
-// list of candidates
-
 class Candidate {
 	constructor(name, colors) {
 		this.name = name;
@@ -29,39 +27,8 @@ class CandidateManager {
 		for(var index = 0; index < states.length; ++index) {
 			var state = states[index];
 			// set the candidate to tossup
-			if(state.getCandidate() === candidateid) {
+			if(state.candidate === candidateid) {
 				state.setColor('Tossup', 0);
-			}
-
-			// if its a primary remove the delegates and set them to tossup
-			var dels = state.delegates[candidateid];
-			if(dels) {
-				state.delegates['Tossup'] += dels;
-			}
-			state.delegates[candidateid] = undefined;
-		}
-
-		delete CandidateManager.candidates[candidateid];
-		ChartManager.chart.generateLegend();
-		countVotes();
-		LegendManager.updateLegend();
-		ChartManager.updateChart();
-		PopularVote.count();
-	}
-
-	static deleteCandidateByName(name) {
-		var candidateid = name;
-		for(var index = 0; index < states.length; ++index) {
-			state = states[index];
-			// set the candidate to tossup
-			if(state.getCandidate() === candidateid) {
-				state.setColor('Tossup', 0);
-			}
-
-			// if its a primary remove the delegates and set them to tossup
-			var dels = state.delegates[candidateid];
-			if(dels) {
-				state.delegates['Tossup'] += dels;
 			}
 			state.delegates[candidateid] = undefined;
 		}
@@ -77,19 +44,18 @@ class CandidateManager {
 	static setCandidate() {
 		closeAllPopups();
 
-		var candidateid = document.getElementById('candidate-originalName').value;
+		var oldname= document.getElementById('candidate-originalName').value;
 		var newname = document.getElementById('candidate-name').value;
 		var solidColor = document.getElementById('candidate-solid').value;
 		var likelyColor = document.getElementById('candidate-likely').value;
 		var leanColor = document.getElementById('candidate-lean').value;
 		var tiltColor = document.getElementById('candidate-tilt').value;
-
+			
 		// only rename the property if the name changed
-		if(newname !== candidateid) {
+		if(newname !== oldname) {
 			Object.defineProperty(CandidateManager.candidates, newname,
-				Object.getOwnPropertyDescriptor(CandidateManager.candidates, candidateid));
-			setChangeCandidate(candidateid, newname);
-			delete CandidateManager.candidates[candidateid];
+			Object.getOwnPropertyDescriptor(CandidateManager.candidates, oldname));
+			delete CandidateManager.candidates[oldname];
 		}
 
 		var candidate = CandidateManager.candidates[newname];
@@ -113,9 +79,22 @@ class CandidateManager {
 		} else {
 			candidate.singleColor = false;
 		}
+		
+		for(var index = 0; index < states.length; ++index) {
+			var state = states[index];
+			if(state.candidate === newname) {
+				state.setColor(newname, state.colorValue, {setDelegates: false});
+				console.log(state.colorValue);
+			} else if(state.candidate === oldname) {
+				state.setColor(newname, state.colorValue, {setDelegates: false});
+			
+				state.delegates[newname] = state.delegates[oldname];
+				state.delegates[oldname] = undefined;
+
+			}	
+		}
 
 		ChartManager.chart.generateLegend();
-		countVotes();
 		LegendManager.updateLegend();
 		ChartManager.updateChart();
 	}
@@ -175,11 +154,9 @@ class CandidateManager {
 		CandidateManager.candidates[name] = candidate;
 
 		verifyPaintIndex();
-		countVotes();
-		ChartManager.updateChart();
 		ChartManager.chart.generateLegend();
+		ChartManager.updateChart();
 		LegendManager.updateLegend();
-		PopularVote.count();
 	}
 	
 	static saveCustomColors() {

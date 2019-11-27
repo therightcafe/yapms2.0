@@ -169,7 +169,6 @@ function darkPalette() {
 	ChartManager.chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
 	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
 	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
-	countVotes();
 	previousPalette = darkPalette;
 }
 
@@ -201,7 +200,6 @@ function greyscalePalette() {
 	ChartManager.chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
 	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
 	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
-	countVotes();
 	previousPalette = darkPalette;
 }
 
@@ -233,7 +231,6 @@ function terminalPalette() {
 	ChartManager.chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
 	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
 	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
-	countVotes();
 	previousPalette = terminalPalette;
 }
 
@@ -267,7 +264,6 @@ function lightPalette() {
 	ChartManager.chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
 	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
 	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
-	countVotes();
 	previousPalette = lightPalette;
 }
 
@@ -299,7 +295,6 @@ function contrastPalette() {
 	ChartManager.chartBarScales.yAxes[0].ticks.fontColor = '#000000';
 	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#000000';
 	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
-	countVotes();
 	previousPalette = contrastPalette;
 }
 
@@ -331,7 +326,6 @@ function metallicPalette() {
 	ChartManager.chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
 	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
 	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
-	countVotes();
 	previousPalette = metallicPalette;
 }
 
@@ -362,7 +356,6 @@ function halloweenPalette() {
 	ChartManager.chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
 	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
 	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
-	countVotes();
 	previousPalette = halloweenPalette;
 }
 
@@ -394,7 +387,6 @@ function toWinPalette() {
 	ChartManager.chartBarScales.yAxes[0].ticks.fontColor = '#000000';
 	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#000000';
 	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
-	countVotes();
 	previousPalette = toWinPalette;
 }
 

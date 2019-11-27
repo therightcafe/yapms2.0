@@ -360,11 +360,6 @@ if($mobile === false) {
 						Clicking on a district will set the popular vote to max
 					</div>
 				</div>
-				<div class="sidebar-hover-popup"><input type="checkbox" id="popularvote-avoidalmargins" checked>Avoid Auto AL
-					<div class="tooltip-text">
-						Clicking on a district in Nebraska or Maine will not calculate the margin for the AL vote.	
-					</div>
-				</div>
 			</div>
 		</div>
 		<div id="sidebar-popularvote" class="sidebar-box sidebar-tool">

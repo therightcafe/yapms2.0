@@ -613,8 +613,6 @@ $("#login-form").submit(function(event) {
 	event.preventDefault();
 	Account.login();
 });
-// list of candidates
-
 class Candidate {
 	constructor(name, colors) {
 		this.name = name;
@@ -644,39 +642,8 @@ class CandidateManager {
 		for(var index = 0; index < states.length; ++index) {
 			var state = states[index];
 			// set the candidate to tossup
-			if(state.getCandidate() === candidateid) {
+			if(state.candidate === candidateid) {
 				state.setColor('Tossup', 0);
-			}
-
-			// if its a primary remove the delegates and set them to tossup
-			var dels = state.delegates[candidateid];
-			if(dels) {
-				state.delegates['Tossup'] += dels;
-			}
-			state.delegates[candidateid] = undefined;
-		}
-
-		delete CandidateManager.candidates[candidateid];
-		ChartManager.chart.generateLegend();
-		countVotes();
-		LegendManager.updateLegend();
-		ChartManager.updateChart();
-		PopularVote.count();
-	}
-
-	static deleteCandidateByName(name) {
-		var candidateid = name;
-		for(var index = 0; index < states.length; ++index) {
-			state = states[index];
-			// set the candidate to tossup
-			if(state.getCandidate() === candidateid) {
-				state.setColor('Tossup', 0);
-			}
-
-			// if its a primary remove the delegates and set them to tossup
-			var dels = state.delegates[candidateid];
-			if(dels) {
-				state.delegates['Tossup'] += dels;
 			}
 			state.delegates[candidateid] = undefined;
 		}
@@ -692,19 +659,18 @@ class CandidateManager {
 	static setCandidate() {
 		closeAllPopups();
 
-		var candidateid = document.getElementById('candidate-originalName').value;
+		var oldname= document.getElementById('candidate-originalName').value;
 		var newname = document.getElementById('candidate-name').value;
 		var solidColor = document.getElementById('candidate-solid').value;
 		var likelyColor = document.getElementById('candidate-likely').value;
 		var leanColor = document.getElementById('candidate-lean').value;
 		var tiltColor = document.getElementById('candidate-tilt').value;
-
+			
 		// only rename the property if the name changed
-		if(newname !== candidateid) {
+		if(newname !== oldname) {
 			Object.defineProperty(CandidateManager.candidates, newname,
-				Object.getOwnPropertyDescriptor(CandidateManager.candidates, candidateid));
-			setChangeCandidate(candidateid, newname);
-			delete CandidateManager.candidates[candidateid];
+			Object.getOwnPropertyDescriptor(CandidateManager.candidates, oldname));
+			delete CandidateManager.candidates[oldname];
 		}
 
 		var candidate = CandidateManager.candidates[newname];
@@ -728,9 +694,22 @@ class CandidateManager {
 		} else {
 			candidate.singleColor = false;
 		}
+		
+		for(var index = 0; index < states.length; ++index) {
+			var state = states[index];
+			if(state.candidate === newname) {
+				state.setColor(newname, state.colorValue, {setDelegates: false});
+				console.log(state.colorValue);
+			} else if(state.candidate === oldname) {
+				state.setColor(newname, state.colorValue, {setDelegates: false});
+			
+				state.delegates[newname] = state.delegates[oldname];
+				state.delegates[oldname] = undefined;
+
+			}	
+		}
 
 		ChartManager.chart.generateLegend();
-		countVotes();
 		LegendManager.updateLegend();
 		ChartManager.updateChart();
 	}
@@ -790,11 +769,9 @@ class CandidateManager {
 		CandidateManager.candidates[name] = candidate;
 
 		verifyPaintIndex();
-		countVotes();
-		ChartManager.updateChart();
 		ChartManager.chart.generateLegend();
+		ChartManager.updateChart();
 		LegendManager.updateLegend();
-		PopularVote.count();
 	}
 	
 	static saveCustomColors() {
@@ -1245,7 +1222,6 @@ class ChartManager {
 		ChartManager.chart.destroy();
 		// then rebuild
 		ChartManager.chart = new Chart(ctx, {type: type, data: ChartManager.chartData, options: ChartManager.chartOptions});
-		countVotes();
 		ChartManager.updateChart();
 	}
 
@@ -2783,9 +2759,7 @@ class PresetLoader {
 				PresetLoader.loadPresetPortugal();
 				break;
 		}
-		
-		verifyPaintIndex();
-		countVotes();
+	
 		ChartManager.updateChart();
 		ChartManager.chart.generateLegend();
 		LegendManager.updateLegend();
@@ -3582,8 +3556,12 @@ class State {
 	}
 	
 	resetDelegates() {
+		if(this.disabled === true) {
+			return;
+		}
 		this.delegates = {};
 		this.delegates['Tossup'] = this.voteCount;
+		this.setColor("Tossup", 2, {setDelegates: false});
 	}
 
 	setDelegates(candidate, amount) {
@@ -3591,13 +3569,14 @@ class State {
 		var majorityCandidate = "Tossup";
 		var majorityCount = 0;
 		var majorityColor = 2;
-		console.log(this.delegates);
 		for(var candidate in this.delegates) {
 			var count = this.delegates[candidate];
 			if(count > majorityCount) {
-				majorityCandidate = candidate;
-				majorityCount = count;
-				majorityColor = 0;
+				if(candidate !== "Tossup") {
+					majorityCandidate = candidate;
+					majorityCount = count;
+					majorityColor = 0;
+				}
 			} else if(count === majorityCount) {
 				majorityCandidate = "Tossup";
 				majorityColor = 2;
@@ -3606,22 +3585,6 @@ class State {
 		this.setColor(majorityCandidate, majorityColor, {setDelegates: false});
 	}
 
-	getCandidate() { 
-		return this.candidate; 
-	}
-
-	getName() { 
-		return this.name; 
-	}
-	
-	getColorValue() { 
-		return this.colorValue; 
-	}
-
-	getVoteCount() { 
-		return this.voteCount; 
-	}
-	
 	setVoteCount(value) {
 		var diff = value - this.voteCount;
 		this.voteCount = value;
@@ -3714,7 +3677,7 @@ class State {
 		} else if(this.locked == true) {
 			this.disabled = false;
 			this.locked = !this.locked;
-			this.setColor(this.getCandidate(), this.getColorValue());
+			this.setColor(this.candidate, this.colorValue);
 			this.htmlElement.setAttribute('fill-opacity', '1.0');
 			this.htmlElement.setAttribute('stroke-opacity', '1.0');
 			if(this.name.includes('-S')) {
@@ -3791,7 +3754,7 @@ class State {
 			this.resetVoteCount();
 			this.setVoteCount(this.voteCount);
 			this.disabled = !this.disabled;
-			this.setColor(this.getCandidate(), this.getColorValue());
+			this.setColor(this.candidate, this.colorValue);
 			this.htmlElement.setAttribute('fill-opacity', '1.0');
 			this.htmlElement.setAttribute('stroke-opacity', '1.0');
 			if(this.name.includes('-S')) {
@@ -3822,13 +3785,10 @@ class State {
 
 	// only incrememnt though the colors of the specified candidate
 	// if the state isn't this candidates color, start at solid
-	incrementCandidateColor(candidate, options = {setPopularVote: false, setDelegates: true}) {
+	incrementCandidateColor(candidate, options = {setDelegates: true}) {
 		if(this.disabled) {
 			return;
 		}
-
-		Simulator.view(this);
-		PopularVote.view(this, candidate);
 
 		// if changing color set to solor
 		if(this.candidate !== candidate) {
@@ -3936,7 +3896,7 @@ class State {
 		this.onChange();
 	}
 
-	static setEC() {
+	setEC() {
 		// hide the popup window
 		closeAllPopups();
 
@@ -3947,7 +3907,7 @@ class State {
 		// get the state and set its new vote count
 		for(var index = 0, length = states.length; index < length; ++index) {
 			var state = states[index];
-			if(state.getName() === stateId) {
+			if(state.name === stateId) {
 				state.setVoteCount(parseInt(input));
 				break;
 			}
@@ -3958,7 +3918,7 @@ class State {
 		ChartManager.updateChart();
 		LegendManager.updateLegend();
 	}
-};
+}
 function updateBattleChart() {
 
 	if(Object.keys(CandidateManager.candidates).length > 3) {
@@ -4129,43 +4089,20 @@ function buttonClick(clickElement) {
 	if(php_candidate_edit === false)
 		return;
 
+	var id = clickElement.getAttribute('id').split('-')[0];
+	var state = states.find(state => state.name === id);
+
 	if(mode === 'paint' || mode === 'fill') {
-		buttonClickPaint(clickElement);
+		stateClickPaint(state);
 	} else if(mode === 'ec') {
-		buttonClickEC(clickElement);
+		stateClickEC(state);
 	} else if(mode === 'delete') {
-		buttonClickDelete(clickElement);
+		stateClickDelete(state);
 	}
 	
 	countVotes();
 	ChartManager.updateChart();
-	LegendManager.updateLegend(); }
-
-function buttonClickPaint(clickElement) {
-	var id = clickElement.getAttribute('id').split('-')[0];
-	var state = states.find(state => state.name === id);
-	stateClickPaint(state);
-}
-
-function buttonClickEC(clickElement) {
-	var id = clickElement.getAttribute('id');
-	var split = id.split('-');
-	var state = states.find(state => state.name === split[0]);
-	var ecedit = document.getElementById('ecedit');
-	var eceditText = document.getElementById('ecedit-message');
-	var input = document.getElementById('state-ec');
-	var stateId = document.getElementById('state-id');
-	eceditText.innerHTML = 'Set ' + split[0] + ' delegates';
-	input.value = state.voteCount;
-	stateId.value = split[0];
-	ecedit.style.display = 'inline';
-}
-
-function buttonClickDelete(clickElement) {
-	var id = clickElement.getAttribute('id');
-	var split = id.split('-');
-	var state = states.find(state => state.name === split[0]);
-	state.toggleDisable();
+	LegendManager.updateLegend(); 
 }
 
 function landClick(clickElement) {
@@ -4196,7 +4133,8 @@ function landClick(clickElement) {
 		}
 	});
 
-	if(mode === 'paint' || mode === 'paintmove' || mode === 'fill') {
+	if(mode === 'paint' || mode === 'fill') {
+		Simulator.view(AL);
 		// check if each district has the same candidate and color value
 		if(setSolid) {
 			AL.setColor(paintIndex, 0);
@@ -4204,7 +4142,7 @@ function landClick(clickElement) {
 			AL.incrementCandidateColor(paintIndex);
 		}
 		districts.forEach(function(district) {
-			district.setColor(AL.getCandidate(), AL.getColorValue());
+			district.setColor(AL.candidate, AL.colorValue);
 		});
 	} else if(mode === 'delete') {
 		districts.forEach(function(district) {
@@ -4227,6 +4165,7 @@ function stateClick(clickElement) {
 	switch(mode) {
 		case 'paint':
 		case 'fill':
+			PopularVote.view(state, paintIndex)
 			Simulator.view(state);
 			if(Simulator.ignoreClick === false) {
 				stateClickPaint(state);
@@ -4247,34 +4186,67 @@ function stateClick(clickElement) {
 
 var tooltipTimeout = null;
 
-function stateClickPaint(state, options = {proportional: false}) {
+function stateClickPaint(state) {
 	if(state.disabled) {
 		return;
 	}
-	
-	if(mode === 'fill' && options.proportional === false) {
+
+	if(MapLoader.save_type !== "proportional") {
 		if(KeyboardManager.quickFill()) {
 			state.setColor(paintIndex, 0);
-		/*
-			state.delegates = {};
-			state.delegates['Tossup'] = 0;
-			state.delegates[paintIndex] = state.voteCount;
-		*/
 		} else {
 			state.incrementCandidateColor(paintIndex);
 		}
-
 		return;
-	} else if(mode === 'paint' && KeyboardManager.quickFill() && options.proportional === false) {
-		state.setColor(paintIndex, 0);
-		/*
-		state.delegates = {};
-		state.delegates['Tossup'] = 0;
-		state.delegates[paintIndex] = state.voteCount;
-		*/
-		return;
+	} else if(MapLoader.save_type === "proportional") {
+		if(KeyboardManager.quickFill()) {
+			state.setColor(paintIndex, 0);
+			return;
+		}
+		if(mode === "fill") {
+			state.incrementCandidateColor(paintIndex);
+			return;
+		}
 	}
 
+	displayProportionalEdit(state);
+}
+
+function stateClickDelete(state) {
+	state.toggleDisable();
+}
+
+function stateClickEC(state) {
+	if(state.disabled === false) {
+		var ecedit = document.getElementById('ecedit');
+		var eceditText = document.getElementById('ecedit-message');
+		var input = document.getElementById('state-ec');
+		var stateId = document.getElementById('state-id');
+		eceditText.innerHTML = 'Set ' + state.name + ' delegates';
+		input.value = state.voteCount;
+		stateId.value = state.name;
+		ecedit.style.display = 'inline';
+	}
+}
+
+function specialClick(clickElement, e) {
+	var id = clickElement.getAttribute('id');
+	var state = states.find(state => state.name === id);
+
+	if(mode === 'paint' || mode === 'fill') {
+		state.incrementCandidateColor(paintIndex);
+		countVotes();
+		ChartManager.updateChart();
+		LegendManager.updateLegend();
+	}
+}
+
+function legendClick(candidate, button) {
+	paintIndex = candidate;
+	LegendManager.selectCandidateDisplay(button);
+}
+
+function displayProportionalEdit(state) {
 	LogoManager.loadButtons();
 	closeAllPopups();
 	var demdel = document.getElementById('demdel');
@@ -4360,40 +4332,6 @@ function stateClickPaint(state, options = {proportional: false}) {
 
 	displayTossup.innerHTML = 'Tossup - ' + (max - total) + ' - ' + (( (max - total) / max) * 100).toFixed(2) + '%';
 	ranges.appendChild(displayTossup);
-}
-
-function stateClickDelete(state) {
-	state.toggleDisable();
-}
-
-function stateClickEC(state) {
-	if(state.disabled === false) {
-		var ecedit = document.getElementById('ecedit');
-		var eceditText = document.getElementById('ecedit-message');
-		var input = document.getElementById('state-ec');
-		var stateId = document.getElementById('state-id');
-		eceditText.innerHTML = 'Set ' + state.name + ' delegates';
-		input.value = state.voteCount;
-		stateId.value = state.name;
-		ecedit.style.display = 'inline';
-	}
-}
-
-function specialClick(clickElement, e) {
-	var id = clickElement.getAttribute('id');
-	var state = states.find(state => state.name === id);
-
-	if(mode === 'paint' || mode === 'fill') {
-		state.incrementCandidateColor(paintIndex);
-		countVotes();
-		ChartManager.updateChart();
-		LegendManager.updateLegend();
-	}
-}
-
-function legendClick(candidate, button) {
-	paintIndex = candidate;
-	LegendManager.selectCandidateDisplay(button);
 }
 function verifyCongress() {
 	if(mobile) {
@@ -4839,7 +4777,6 @@ function darkPalette() {
 	ChartManager.chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
 	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
 	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
-	countVotes();
 	previousPalette = darkPalette;
 }
 
@@ -4871,7 +4808,6 @@ function greyscalePalette() {
 	ChartManager.chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
 	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
 	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
-	countVotes();
 	previousPalette = darkPalette;
 }
 
@@ -4903,7 +4839,6 @@ function terminalPalette() {
 	ChartManager.chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
 	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
 	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
-	countVotes();
 	previousPalette = terminalPalette;
 }
 
@@ -4937,7 +4872,6 @@ function lightPalette() {
 	ChartManager.chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
 	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
 	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
-	countVotes();
 	previousPalette = lightPalette;
 }
 
@@ -4969,7 +4903,6 @@ function contrastPalette() {
 	ChartManager.chartBarScales.yAxes[0].ticks.fontColor = '#000000';
 	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#000000';
 	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
-	countVotes();
 	previousPalette = contrastPalette;
 }
 
@@ -5001,7 +4934,6 @@ function metallicPalette() {
 	ChartManager.chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
 	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
 	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
-	countVotes();
 	previousPalette = metallicPalette;
 }
 
@@ -5032,7 +4964,6 @@ function halloweenPalette() {
 	ChartManager.chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
 	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
 	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
-	countVotes();
 	previousPalette = halloweenPalette;
 }
 
@@ -5064,7 +4995,6 @@ function toWinPalette() {
 	ChartManager.chartBarScales.yAxes[0].ticks.fontColor = '#000000';
 	ChartManager.chartBarScales.xAxes[0].ticks.fontColor = '#000000';
 	ChartManager.setChart(ChartManager.chartType, ChartManager.chartPosition);
-	countVotes();
 	previousPalette = toWinPalette;
 }
 
@@ -5586,12 +5516,13 @@ class Simulator {
 
 		var presets = document.getElementById("sidebar-presets-select-simulator");
 		presets.value = "cook";	
-		PresetLoader.loadPreset('classic');
+		CandidateManager.addCandidate("Republican", "#bf1d29", "#ff5865", "#ff8b98", "#cf8980");
+		CandidateManager.addCandidate("Democrat", "#1c408c", "#577ccc", "#8aafff", "#949bb3");
 		for(var index = 0; index < states.length; ++index) {
 			var state = states[index];
 			state.simulator = {};
 			for(var key in CandidateManager.candidates) {
-				if(key === "Tossup") {
+				if(key !== "Republican" && key !== "Democrat") {
 					continue;
 				}
 				state.simulator[key] = SimulatorData.USA_2020_Cook[state.name][key];
@@ -5820,7 +5751,7 @@ class Simulator {
 			}
 		}
 
-		state.setColor(candidates[majorityIndex].name, 0);
+		state.setColor(candidates[majorityIndex].name, 0, {setDelegates: false});
 
 		countVotes();
 		LegendManager.updateLegend();
@@ -6091,7 +6022,6 @@ class PopularVote {
 	}
 
 	static count() {
-		console.log('count');
 		if(PopularVote.enabled === false) {
 			return;
 		}
@@ -6744,13 +6674,14 @@ function countVotes() {
 			}
 			if(typeof state.delegates[key] === 'undefined') {
 				state.delegates[key] = 0;
-				/*if(key === 'Tossup') {
-					state.delegates[key] = state.voteCount;	
-				}*/
 			}
 
 			candidate.voteCount += state.delegates[key];
-			candidate.probVoteCounts[state.colorValue] += state.delegates[key];
+			if(state.candidate === "Tossup" && key !== "Tossup") {
+				candidate.probVoteCounts[0] += state.delegates[key];
+			} else {
+				candidate.probVoteCounts[state.colorValue] += state.delegates[key];
+			}
 		}
 
 		for(var stateIndex = 0, length = proportionalStates.length; stateIndex < length; ++stateIndex) {
@@ -6766,7 +6697,11 @@ function countVotes() {
 			}
 			
 			candidate.voteCount += state.delegates[key];
-			candidate.probVoteCounts[0] += state.delegates[key];
+			if(state.candidate === "Tossup" && key !== "Tossup") {
+				candidate.probVoteCounts[0] += state.delegates[key];
+			} else {
+				candidate.probVoteCounts[state.colorValue] += state.delegates[key];
+			}
 		}
 		if(mid) {
 			if(candidate.voteCount > Math.ceil(totalVotes / 2)) {
@@ -6803,7 +6738,8 @@ function setChangeCandidate(oldCandidate, newCandidate) {
 		var state = states[stateIndex];
 
 		if(state.candidate === oldCandidate) {
-			state.setColor(newCandidate, state.colorValue);	
+			state.setColor(newCandidate, state.colorValue, {updateDelegates: false});	
+			alert("test");
 		}
 
 		state.delegates[newCandidate] = state.delegates[oldCandidate];

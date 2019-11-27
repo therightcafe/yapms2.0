@@ -2,43 +2,20 @@ function buttonClick(clickElement) {
 	if(php_candidate_edit === false)
 		return;
 
+	var id = clickElement.getAttribute('id').split('-')[0];
+	var state = states.find(state => state.name === id);
+
 	if(mode === 'paint' || mode === 'fill') {
-		buttonClickPaint(clickElement);
+		stateClickPaint(state);
 	} else if(mode === 'ec') {
-		buttonClickEC(clickElement);
+		stateClickEC(state);
 	} else if(mode === 'delete') {
-		buttonClickDelete(clickElement);
+		stateClickDelete(state);
 	}
 	
 	countVotes();
 	ChartManager.updateChart();
-	LegendManager.updateLegend(); }
-
-function buttonClickPaint(clickElement) {
-	var id = clickElement.getAttribute('id').split('-')[0];
-	var state = states.find(state => state.name === id);
-	stateClickPaint(state);
-}
-
-function buttonClickEC(clickElement) {
-	var id = clickElement.getAttribute('id');
-	var split = id.split('-');
-	var state = states.find(state => state.name === split[0]);
-	var ecedit = document.getElementById('ecedit');
-	var eceditText = document.getElementById('ecedit-message');
-	var input = document.getElementById('state-ec');
-	var stateId = document.getElementById('state-id');
-	eceditText.innerHTML = 'Set ' + split[0] + ' delegates';
-	input.value = state.voteCount;
-	stateId.value = split[0];
-	ecedit.style.display = 'inline';
-}
-
-function buttonClickDelete(clickElement) {
-	var id = clickElement.getAttribute('id');
-	var split = id.split('-');
-	var state = states.find(state => state.name === split[0]);
-	state.toggleDisable();
+	LegendManager.updateLegend(); 
 }
 
 function landClick(clickElement) {
@@ -69,7 +46,8 @@ function landClick(clickElement) {
 		}
 	});
 
-	if(mode === 'paint' || mode === 'paintmove' || mode === 'fill') {
+	if(mode === 'paint' || mode === 'fill') {
+		Simulator.view(AL);
 		// check if each district has the same candidate and color value
 		if(setSolid) {
 			AL.setColor(paintIndex, 0);
@@ -77,7 +55,7 @@ function landClick(clickElement) {
 			AL.incrementCandidateColor(paintIndex);
 		}
 		districts.forEach(function(district) {
-			district.setColor(AL.getCandidate(), AL.getColorValue());
+			district.setColor(AL.candidate, AL.colorValue);
 		});
 	} else if(mode === 'delete') {
 		districts.forEach(function(district) {
@@ -100,6 +78,7 @@ function stateClick(clickElement) {
 	switch(mode) {
 		case 'paint':
 		case 'fill':
+			PopularVote.view(state, paintIndex)
 			Simulator.view(state);
 			if(Simulator.ignoreClick === false) {
 				stateClickPaint(state);
@@ -120,34 +99,67 @@ function stateClick(clickElement) {
 
 var tooltipTimeout = null;
 
-function stateClickPaint(state, options = {proportional: false}) {
+function stateClickPaint(state) {
 	if(state.disabled) {
 		return;
 	}
-	
-	if(mode === 'fill' && options.proportional === false) {
+
+	if(MapLoader.save_type !== "proportional") {
 		if(KeyboardManager.quickFill()) {
 			state.setColor(paintIndex, 0);
-		/*
-			state.delegates = {};
-			state.delegates['Tossup'] = 0;
-			state.delegates[paintIndex] = state.voteCount;
-		*/
 		} else {
 			state.incrementCandidateColor(paintIndex);
 		}
-
 		return;
-	} else if(mode === 'paint' && KeyboardManager.quickFill() && options.proportional === false) {
-		state.setColor(paintIndex, 0);
-		/*
-		state.delegates = {};
-		state.delegates['Tossup'] = 0;
-		state.delegates[paintIndex] = state.voteCount;
-		*/
-		return;
+	} else if(MapLoader.save_type === "proportional") {
+		if(KeyboardManager.quickFill()) {
+			state.setColor(paintIndex, 0);
+			return;
+		}
+		if(mode === "fill") {
+			state.incrementCandidateColor(paintIndex);
+			return;
+		}
 	}
 
+	displayProportionalEdit(state);
+}
+
+function stateClickDelete(state) {
+	state.toggleDisable();
+}
+
+function stateClickEC(state) {
+	if(state.disabled === false) {
+		var ecedit = document.getElementById('ecedit');
+		var eceditText = document.getElementById('ecedit-message');
+		var input = document.getElementById('state-ec');
+		var stateId = document.getElementById('state-id');
+		eceditText.innerHTML = 'Set ' + state.name + ' delegates';
+		input.value = state.voteCount;
+		stateId.value = state.name;
+		ecedit.style.display = 'inline';
+	}
+}
+
+function specialClick(clickElement, e) {
+	var id = clickElement.getAttribute('id');
+	var state = states.find(state => state.name === id);
+
+	if(mode === 'paint' || mode === 'fill') {
+		state.incrementCandidateColor(paintIndex);
+		countVotes();
+		ChartManager.updateChart();
+		LegendManager.updateLegend();
+	}
+}
+
+function legendClick(candidate, button) {
+	paintIndex = candidate;
+	LegendManager.selectCandidateDisplay(button);
+}
+
+function displayProportionalEdit(state) {
 	LogoManager.loadButtons();
 	closeAllPopups();
 	var demdel = document.getElementById('demdel');
@@ -233,38 +245,4 @@ function stateClickPaint(state, options = {proportional: false}) {
 
 	displayTossup.innerHTML = 'Tossup - ' + (max - total) + ' - ' + (( (max - total) / max) * 100).toFixed(2) + '%';
 	ranges.appendChild(displayTossup);
-}
-
-function stateClickDelete(state) {
-	state.toggleDisable();
-}
-
-function stateClickEC(state) {
-	if(state.disabled === false) {
-		var ecedit = document.getElementById('ecedit');
-		var eceditText = document.getElementById('ecedit-message');
-		var input = document.getElementById('state-ec');
-		var stateId = document.getElementById('state-id');
-		eceditText.innerHTML = 'Set ' + state.name + ' delegates';
-		input.value = state.voteCount;
-		stateId.value = state.name;
-		ecedit.style.display = 'inline';
-	}
-}
-
-function specialClick(clickElement, e) {
-	var id = clickElement.getAttribute('id');
-	var state = states.find(state => state.name === id);
-
-	if(mode === 'paint' || mode === 'fill') {
-		state.incrementCandidateColor(paintIndex);
-		countVotes();
-		ChartManager.updateChart();
-		LegendManager.updateLegend();
-	}
-}
-
-function legendClick(candidate, button) {
-	paintIndex = candidate;
-	LegendManager.selectCandidateDisplay(button);
 }

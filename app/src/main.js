@@ -194,13 +194,14 @@ function countVotes() {
 			}
 			if(typeof state.delegates[key] === 'undefined') {
 				state.delegates[key] = 0;
-				/*if(key === 'Tossup') {
-					state.delegates[key] = state.voteCount;	
-				}*/
 			}
 
 			candidate.voteCount += state.delegates[key];
-			candidate.probVoteCounts[state.colorValue] += state.delegates[key];
+			if(state.candidate === "Tossup" && key !== "Tossup") {
+				candidate.probVoteCounts[0] += state.delegates[key];
+			} else {
+				candidate.probVoteCounts[state.colorValue] += state.delegates[key];
+			}
 		}
 
 		for(var stateIndex = 0, length = proportionalStates.length; stateIndex < length; ++stateIndex) {
@@ -216,7 +217,11 @@ function countVotes() {
 			}
 			
 			candidate.voteCount += state.delegates[key];
-			candidate.probVoteCounts[0] += state.delegates[key];
+			if(state.candidate === "Tossup" && key !== "Tossup") {
+				candidate.probVoteCounts[0] += state.delegates[key];
+			} else {
+				candidate.probVoteCounts[state.colorValue] += state.delegates[key];
+			}
 		}
 		if(mid) {
 			if(candidate.voteCount > Math.ceil(totalVotes / 2)) {
@@ -253,7 +258,8 @@ function setChangeCandidate(oldCandidate, newCandidate) {
 		var state = states[stateIndex];
 
 		if(state.candidate === oldCandidate) {
-			state.setColor(newCandidate, state.colorValue);	
+			state.setColor(newCandidate, state.colorValue, {updateDelegates: false});	
+			alert("test");
 		}
 
 		state.delegates[newCandidate] = state.delegates[oldCandidate];

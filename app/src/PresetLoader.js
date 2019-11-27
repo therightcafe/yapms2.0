@@ -72,9 +72,7 @@ class PresetLoader {
 				PresetLoader.loadPresetPortugal();
 				break;
 		}
-		
-		verifyPaintIndex();
-		countVotes();
+	
 		ChartManager.updateChart();
 		ChartManager.chart.generateLegend();
 		LegendManager.updateLegend();
