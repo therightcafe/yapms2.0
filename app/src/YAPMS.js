@@ -2540,9 +2540,9 @@ class MapLoader {
 			
 				if(stateData['candidate']) {
 					state.setColor(stateData['candidate'], stateData['colorvalue']);
-				} else {
+				} //else {
 					state.delegates = stateData['delegates'];
-				}
+				//}
 	
 				state.simulator = stateData['simulator'];
 				if(stateData['disabled']) {
