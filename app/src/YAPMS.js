@@ -158,8 +158,8 @@ class Account {
 			},
 			crossDomain: true,
 			success: function(data) {
-				gtag('event', 'click', {
-					'event_category': 'account',
+				gtag('event', currentCache, {
+					'event_category': 'Account',
 					'event_label': 'Map Deleted From Account'
 				});
 			},
@@ -275,8 +275,8 @@ class Account {
 				} else {
 					var base64name = arr[1];
 					Account.addMapBox(base64name, true);
-					gtag('event', 'click', {
-						'event_category': 'account',
+					gtag('event', currentCache, {
+						'event_category': 'Account',
 						'event_label': 'Map Saved To Account'
 					});
 				}
@@ -5290,14 +5290,14 @@ function toggleYAPNews() {
 	if(yapnews !== null) {
 		if(yapnews.style.display === "none") {
 			yapnews.style.display = "inline-flex";
-			gtag('event', 'click', {
-				'event_category': 'sidebar',
+			gtag('event', currentCache, {
+				'event_category': 'Sidebar',
 				'event_label': 'Toggle On'
 			});
 		} else {
 			yapnews.style.display = "none";
-			gtag('event', 'click', {
-				'event_category': 'sidebar',
+			gtag('event', currentCache, {
+				'event_category': 'Sidebar',
 				'event_label': 'Toggle Off'
 			});
 		}
@@ -5570,18 +5570,21 @@ class Simulator {
 			e5.style.display = 'block';
 			e3.innerHTML = 'Disable Simulator';
 			Simulator.init();
+			gtag('event', currentCache, {
+				'event_category': 'Simulator',
+				'event_label': 'Simulator Enabled'
+			});
 		} else {
 			e1.style.display = 'none';
 			e2.style.display = 'none';
 			e4.style.display = 'none';
 			e5.style.display = 'none';
 			e3.innerHTML = 'Enable Simulator';
+			gtag('event', currentCache, {
+				'event_category': 'Simulator',
+				'event_label': 'Simulator Disabled'
+			});
 		}
-		
-		gtag('event', 'click', {
-			'event_category': 'tool',
-			'event_label': 'Simulator Enabled'
-		});
 	}
 
 	static view(state) {
@@ -6206,18 +6209,21 @@ class PopularVote {
 			e3.style.display = 'block';
 			e4.innerHTML = 'Disable Popular Vote';
 			PopularVote.enabled = true;
+			gtag('event', currentCache, {
+				'event_category': 'Popular Vote',
+				'event_label': 'Popular Vote Enabled'
+			});
 		} else if(PopularVote.enabled === true) {
 			e1.style.display = 'none';
 			e2.style.display = 'none';
 			e3.style.display = 'none';
 			e4.innerHTML = 'Enable Popular Vote';
 			PopularVote.enabled = false;
+			gtag('event', currentCache, {
+				'event_category': 'Popular Vote',
+				'event_label': 'Popular Vote Disabled'
+			});
 		}
-
-		gtag('event', 'click', {
-			'event_category': 'tool',
-			'event_label': 'Popular Vote Enabled'
-		});
 	}
 }
 
@@ -6469,9 +6475,9 @@ function saveMap_new(img, token) {
 			}
 
 			console.log('Map save NEW succeeded');
-			gtag('event', 'map_save_succeeded', {
-				'event_category': 'map_save',
-				'event_label': 'Map save NEW succeeded ' + currentCache 
+			gtag('event', currentCache, {
+				'event_category': 'Map Save',
+				'event_label': 'Map save succeeded'
 			});
 		},
 		error: function(a,b,c) {
@@ -6482,11 +6488,9 @@ function saveMap_new(img, token) {
 			if(button) {
 				button.setAttribute('onclick', 'share()');
 			}
-			
-			console.log('Map save NEW failed ' + a);
-			gtag('event', 'ma_save_failed', {
-				'event_category': 'map_save',
-				'event_label': 'Map save NEW failed - ' + a
+			gtag('event', currentCache, {
+				'event_category': 'Map Save',
+				'event_label': 'Map save failed'
 			});
 		}
 	});
@@ -6494,7 +6498,7 @@ function saveMap_new(img, token) {
 function numberWithCommas(number) {
 	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-var currentCache = 'v1.5.1';
+var currentCache = 'v1.5.2';
 
 var states = [];
 var lands = [];
@@ -6603,8 +6607,8 @@ window.onerror = function(message, source, lineno, colno, error) {
 		return;
 	}
 	
-	gtag('event', 'error', {
-		'event_category': 'general error',
+	gtag('event', currentCache, {
+		'event_category': 'Error',
 		'event_label': message + ', ' + source + ', ' + lineno + ', ' + currentCache,
 		'non_interaction': true
 	});

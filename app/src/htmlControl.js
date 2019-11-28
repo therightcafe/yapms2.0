@@ -668,14 +668,14 @@ function toggleYAPNews() {
 	if(yapnews !== null) {
 		if(yapnews.style.display === "none") {
 			yapnews.style.display = "inline-flex";
-			gtag('event', 'click', {
-				'event_category': 'sidebar',
+			gtag('event', currentCache, {
+				'event_category': 'Sidebar',
 				'event_label': 'Toggle On'
 			});
 		} else {
 			yapnews.style.display = "none";
-			gtag('event', 'click', {
-				'event_category': 'sidebar',
+			gtag('event', currentCache, {
+				'event_category': 'Sidebar',
 				'event_label': 'Toggle Off'
 			});
 		}

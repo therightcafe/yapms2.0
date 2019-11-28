@@ -245,9 +245,9 @@ function saveMap_new(img, token) {
 			}
 
 			console.log('Map save NEW succeeded');
-			gtag('event', 'map_save_succeeded', {
-				'event_category': 'map_save',
-				'event_label': 'Map save NEW succeeded ' + currentCache 
+			gtag('event', currentCache, {
+				'event_category': 'Map Save',
+				'event_label': 'Map save succeeded'
 			});
 		},
 		error: function(a,b,c) {
@@ -258,11 +258,9 @@ function saveMap_new(img, token) {
 			if(button) {
 				button.setAttribute('onclick', 'share()');
 			}
-			
-			console.log('Map save NEW failed ' + a);
-			gtag('event', 'ma_save_failed', {
-				'event_category': 'map_save',
-				'event_label': 'Map save NEW failed - ' + a
+			gtag('event', currentCache, {
+				'event_category': 'Map Save',
+				'event_label': 'Map save failed'
 			});
 		}
 	});

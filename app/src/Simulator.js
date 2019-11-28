@@ -190,18 +190,21 @@ class Simulator {
 			e5.style.display = 'block';
 			e3.innerHTML = 'Disable Simulator';
 			Simulator.init();
+			gtag('event', currentCache, {
+				'event_category': 'Simulator',
+				'event_label': 'Simulator Enabled'
+			});
 		} else {
 			e1.style.display = 'none';
 			e2.style.display = 'none';
 			e4.style.display = 'none';
 			e5.style.display = 'none';
 			e3.innerHTML = 'Enable Simulator';
+			gtag('event', currentCache, {
+				'event_category': 'Simulator',
+				'event_label': 'Simulator Disabled'
+			});
 		}
-		
-		gtag('event', 'click', {
-			'event_category': 'tool',
-			'event_label': 'Simulator Enabled'
-		});
 	}
 
 	static view(state) {

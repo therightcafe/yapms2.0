@@ -107,8 +107,8 @@ window.onerror = function(message, source, lineno, colno, error) {
 		return;
 	}
 	
-	gtag('event', 'error', {
-		'event_category': 'general error',
+	gtag('event', currentCache, {
+		'event_category': 'Error',
 		'event_label': message + ', ' + source + ', ' + lineno + ', ' + currentCache,
 		'non_interaction': true
 	});

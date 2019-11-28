@@ -381,18 +381,21 @@ class PopularVote {
 			e3.style.display = 'block';
 			e4.innerHTML = 'Disable Popular Vote';
 			PopularVote.enabled = true;
+			gtag('event', currentCache, {
+				'event_category': 'Popular Vote',
+				'event_label': 'Popular Vote Enabled'
+			});
 		} else if(PopularVote.enabled === true) {
 			e1.style.display = 'none';
 			e2.style.display = 'none';
 			e3.style.display = 'none';
 			e4.innerHTML = 'Enable Popular Vote';
 			PopularVote.enabled = false;
+			gtag('event', currentCache, {
+				'event_category': 'Popular Vote',
+				'event_label': 'Popular Vote Disabled'
+			});
 		}
-
-		gtag('event', 'click', {
-			'event_category': 'tool',
-			'event_label': 'Popular Vote Enabled'
-		});
 	}
 }
 
