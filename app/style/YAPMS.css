@@ -1038,6 +1038,10 @@ a {
 	max-width: 336px;
 }
 
+#IL_BASE {
+	min-height: 255px;
+}
+
 #sidebar-social {
 	display: flex;
 	flex-direction: row;
