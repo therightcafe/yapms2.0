@@ -37,6 +37,8 @@
 		gtag('config', 'UA-132710089-1');
 	</script>
 
+	<script data-ad-client="ca-pub-1660456925957249" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
 	<link rel="icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
 	<link rel="shortcut icon" href="https://www.yapms.com/favicon.ico" type="image/x-icon"/>
 	
