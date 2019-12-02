@@ -329,7 +329,7 @@ if($mobile === false) {
 		</script>
 -->
 
-		<input type="hidden" name="IL_IN_ARTICLE">
+		<input class="adslot_sidebar" type="hidden" name="IL_IN_ARTICLE">
 		
 		<div id="sidebar-shortcuts" class="sidebar-box">
 			<h3>Shortcuts</h3>
