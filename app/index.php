@@ -319,6 +319,7 @@ if($mobile === false) {
 			, '</h1>
 		</div>
 
+<!--
 		<ins class="adsbygoogle adslot_sidebar"
 		     style="display:inline-block;width:336px;height:280px"
 		     data-ad-client="ca-pub-1660456925957249"
@@ -326,6 +327,7 @@ if($mobile === false) {
 		<script>
 			(adsbygoogle = window.adsbygoogle || []).push({});
 		</script>
+-->
 
 		<input type="hidden" name="IL_IN_ARTICLE">
 		
