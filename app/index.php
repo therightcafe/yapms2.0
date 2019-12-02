@@ -131,6 +131,12 @@
 		enable_page_level_ads: true});
 	</script>
 
+	<script type="text/javascript">
+		var infolinks_pid = 3160874;
+		var infolinks_wsid = 0;
+	</script>
+	<script type="text/javascript" src="//resources.infolinks.com/js/infolinks_main.js"></script>
+
 <!--
 	<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
 	<script>
@@ -313,15 +319,6 @@ if($mobile === false) {
 			, '</h1>
 		</div>
 
-		<!-- /21838847269/sidebar_ad -->
-		<!--
-		<div id="div-gpt-ad-1574562672629-0">
-			<script>
-				googletag.cmd.push(function() { googletag.display("div-gpt-ad-1574562672629-0"); });
-			</script>
-		</div>
-		-->
-
 		<ins class="adsbygoogle adslot_sidebar"
 		     style="display:inline-block;width:336px;height:280px"
 		     data-ad-client="ca-pub-1660456925957249"
@@ -329,6 +326,8 @@ if($mobile === false) {
 		<script>
 			(adsbygoogle = window.adsbygoogle || []).push({});
 		</script>
+
+		<input type="hidden" name="IL_IN_ARTICLE">
 		
 		<div id="sidebar-shortcuts" class="sidebar-box">
 			<h3>Shortcuts</h3>

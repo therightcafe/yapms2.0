@@ -728,10 +728,6 @@ a {
 	user-select: all;
 }
 
-#outlines {
-	stroke-width: 1.5px;
-}
-
 #outlines path {
 	transition: all 100ms linear;
 }

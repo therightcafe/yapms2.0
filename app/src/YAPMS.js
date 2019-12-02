@@ -1951,9 +1951,17 @@ class MapLoader {
 				PresetLoader.loadPreset("classic");
 				MapLoader.loadMap("./res/usa/alaska/2020_house.svg", 16, 0.02, "1", "takeall_noedit", "open");
 				break;
+			case "Arkansas_2020_state_upper":
+				PresetLoader.loadPreset("classic");
+				MapLoader.loadMap("./res/usa/arkansas/2020_upper.svg", 16, 4.5, "1", "takeall_noedit", "open");
+				break;
 			case "Arkansas_2020_state_lower":
 				PresetLoader.loadPreset("classic");
 				MapLoader.loadMap("./res/usa/arkansas/2020_house.svg", 16, 150, "1", "takeall_noedit", "open");
+				break;
+			case "California_2020_state_upper":
+				PresetLoader.loadPreset("classic");
+				MapLoader.loadMap("./res/usa/california/2020_upper.svg", 16, 0.25, "1", "takeall_noedit", "open");
 				break;
 			case "California_2020_state_lower":
 				PresetLoader.loadPreset("classic");
@@ -1966,6 +1974,10 @@ class MapLoader {
 			case "Connecticut_2020_state_lower":
 				PresetLoader.loadPreset("classic");
 				MapLoader.loadMap("./res/usa/connecticut/2020_house.svg", 16, 0.5, "1", "takeall_noedit", "open");
+				break;
+			case "Florida_2020_state_upper":
+				PresetLoader.loadPreset("classic");
+				MapLoader.loadMap("./res/usa/florida/2020_upper.svg", 16, 0.1, "1", "takeall_noedit", "open");
 				break;
 			case "Florida_2020_state_lower":
 				PresetLoader.loadPreset("classic");
@@ -2087,6 +2099,8 @@ class MapLoader {
 				MapLoader.loadMap("./res/usa_pre_civilwar.svg", 16, 0.75, "usa_pre_civilwar_ec", "presidential", "open");
 				break;
 			case "Pakistan_national_assembly":
+				alert('test');
+				PresetLoader.loadPreset('argentina');
 				MapLoader.loadMap("./res/pak/pakistan.svg", 16, 0.08, "1", "takeall_noedit", "open");
 				break;
 			case "Argentina_chamber_of_deputies":
@@ -2128,6 +2142,10 @@ class MapLoader {
 			case "Portugal_assembly_of_the_republic":
 				PresetLoader.loadPreset('portugal');
 				MapLoader.loadMap("./res/portugal_constituencies.svg", 16, 0.25, "portugal_constituencies", "proportional", "open");
+				break;
+			case "Poland":
+				PresetLoader.loadPreset('portugal');
+				MapLoader.loadMap("./res/pol/poland_senate.svg", 16, 0.25, "1", "takeall_noedit", "open");
 				break;
 			case "Spain_congress_of_deputies":
 				PresetLoader.loadPreset('spain');
