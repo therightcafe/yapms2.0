@@ -1266,6 +1266,9 @@
 		.register('./sw.js')
 		.then(function(a) {
 			console.log('SW: registered');
+			if(a.waiting && a.active) {
+				console.log('SW: update found');
+			}
 		}, function(err) {
 			console.log('SW: register error ', err);
 		});

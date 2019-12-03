@@ -233,6 +233,10 @@
 	<i class="fas fa-clipboard"></i> Misc
 	</div>
 
+	<div id="update-button" class="click-button" onclick="forceUpdate()" style="white-space: nowrap; display: none;">
+		<i class="fas fa-arrow-up"></i> Update
+	</div>
+
 	<div id="login-button" class="customGPlusSignIn click-button" style="white-space: nowrap; margin-left: auto;" onclick='displayMenu("loginmenu");'>	
 		<i class="fas fa-sign-in-alt"></i> Login
 	</div>
@@ -801,6 +805,13 @@ if('serviceWorker' in navigator) {
 	.register('../sw.js')
 	.then(function(a) {
 		console.log('SW: registered');
+		if(a.waiting) {
+			console.log('SW: update found');
+			var updateButton = document.getElementById("update-button");
+			if(updateButton) {
+				updateButton.style.display = "inline";
+			}
+		}
 	}, function(err) {
 		console.log('SW: register error ', err);
 	});

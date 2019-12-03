@@ -1,5 +1,5 @@
-var indexCache = 'i1.5.5';
-var staticCache = 's1.5.5';
+var indexCache = 'i1.6.0';
+var staticCache = 's1.6.0';
 
 var _indexCache = [
 	'./',
@@ -181,6 +181,8 @@ self.addEventListener('message', function(event) {
 	var clientID = event.source.id;
 	swLog('Message', event.data);
 	if(event.data === 'loaded') {
+		self.skipWaiting();
+	} else if(event.data === 'skipwaiting') {
 		self.skipWaiting();
 	}
 });

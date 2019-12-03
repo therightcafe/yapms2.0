@@ -1,4 +1,4 @@
-var currentCache = 'v1.5.5';
+var currentCache = 'v1.6.0';
 
 var states = [];
 var lands = [];
@@ -264,6 +264,20 @@ function setChangeCandidate(oldCandidate, newCandidate) {
 
 		state.delegates[newCandidate] = state.delegates[oldCandidate];
 		state.delegates[oldCandidate] = undefined;
+	}
+}
+
+function forceUpdate() {
+	if('serviceWorker' in navigator) {
+		navigator.serviceWorker.register('../sw.js')
+		.then(function(reg) {
+			if(reg.waiting) {
+				reg.waiting.postMessage("skipwaiting");
+				setTimeout(function() {
+					location.reload();
+				}, 150);
+			}
+		});
 	}
 }
 

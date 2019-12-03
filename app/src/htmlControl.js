@@ -662,7 +662,6 @@ function unsetBattleHorizontal() {
 	bottombar.style.minWidth = '0';
 }
 
-
 function toggleYAPNews() {
 	var yapnews = document.getElementById("sidebar");
 	if(yapnews !== null) {
