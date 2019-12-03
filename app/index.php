@@ -123,7 +123,7 @@
 		}
 	?>
 
-	/* Auto Ads */
+	<!-- Auto Ads -->
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<script>
 		//(adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 1;
@@ -132,7 +132,7 @@
 		enable_page_level_ads: true});
 	</script>
 
-	/* Display Ads */
+	<!-- Display Ads -->
 	<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
 	<script>
 	window.googletag = window.googletag || {cmd: []};
@@ -146,7 +146,7 @@
 		});
 	</script>
 
-	/* Analytics */
+	<!-- Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132710089-1"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
