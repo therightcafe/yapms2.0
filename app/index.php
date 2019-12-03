@@ -123,27 +123,13 @@
 		}
 	?>
 
-	<!-- Auto Ads -->
+	<!-- Ads -->
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<script>
 		//(adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 1;
 		(adsbygoogle = window.adsbygoogle || []).push({
 		google_ad_client: "ca-pub-1660456925957249",
 		enable_page_level_ads: true});
-	</script>
-
-	<!-- Display Ads -->
-	<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-	<script>
-	window.googletag = window.googletag || {cmd: []};
-		googletag.cmd.push(function() {
-			googletag.defineSlot('/21838847269/sidebar_ad', 
-			[[180, 150], [300, 100], [320, 100], [250, 250], [336, 280], [300, 250], [200, 200]], 
-			'div-gpt-ad-1574562672629-0').addService(googletag.pubads());
-			googletag.pubads().enableSingleRequest();
-			googletag.pubads().collapseEmptyDivs();
-			googletag.enableServices();
-		});
 	</script>
 
 	<!-- Analytics -->
@@ -319,7 +305,6 @@ if($mobile === false) {
 			, '</h1>
 		</div>
 
-		<!--
 		<ins class="adsbygoogle adslot_sidebar"
 		     style="display:inline-block;width:336px;height:280px"
 		     data-ad-client="ca-pub-1660456925957249"
@@ -327,15 +312,7 @@ if($mobile === false) {
 		<script>
 			(adsbygoogle = window.adsbygoogle || []).push({});
 		</script>
-		-->
 
-		<!-- /21838847269/sidebar_ad -->
-		<div id="div-gpt-ad-1575406314460-0">
-		  <script>
-		    googletag.cmd.push(function() { googletag.display("div-gpt-ad-1575406314460-0"); });
-		  </script>
-		</div>
-		
 		<div id="sidebar-shortcuts" class="sidebar-box">
 			<h3>Shortcuts</h3>
 			<ul>
