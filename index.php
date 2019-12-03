@@ -253,7 +253,26 @@
 	<div class="map-type-box">	
 	<div class="map-type-header">
 		<img src="app/res/flags/usa.svg">
-		<div class="map-type-header-text">State Legislatures - House</div>
+		<div class="map-type-header-text">State Legislatures - Upper</div>
+	</div>
+	<div class="map-button-box">	
+		<a href="./app/?t=Arkansas_2020_state_upper">
+			<div class="map-button">
+				Arkansas
+			</div>
+		</a>
+		<a href="./app/?t=Texas_2020_state_upper">
+			<div class="map-button">
+				Texas
+			</div>
+		</a>
+	</div>
+	</div>
+	
+	<div class="map-type-box">	
+	<div class="map-type-header">
+		<img src="app/res/flags/usa.svg">
+		<div class="map-type-header-text">State Legislatures - Lower</div>
 	</div>
 	<div class="map-button-box">	
 		<a href="./app/?t=Alabama_2020_state_lower">

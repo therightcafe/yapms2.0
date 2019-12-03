@@ -38,11 +38,20 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 				break;
 		}	
 		$year = $split[1];
-		echo "<meta name=\"description\" content=\"Interactive {$state} {$year} State Lower Legislature Map\">
-			<title>USA - {$state} {$year} State Lower Legislature Election Map</title>
-			<meta property=\"og:title\" content=\"YAPms - USA {$state} {$year} State Lower Legislature Map\">
-			<meta property=\"og:description\" content=\"Interactive {$state} {$year} State Lower Legislature Map\">";
+		echo "<meta name=\"description\" content=\"Interactive {$state} {$year} Lower State Legislature Map\">
+			<title>USA - {$state} {$year} Lower State Legislature Election Map</title>
+			<meta property=\"og:title\" content=\"YAPms - USA {$state} {$year} Lower State Legislature Map\">
+			<meta property=\"og:description\" content=\"Interactive {$state} {$year} Lower State Legislature Map\">";
 		$h1title = "{$state} Lower Legislature";
+	} else if(strpos($_GET['t'], 'state_upper')) {
+		$split = explode('_', $_GET['t']);
+		$state = $split[0];
+		$year = $split[1];
+		echo "<meta name=\"description\" content=\"Interactive {$state} {$year} Upper State Legislature Map\">
+			<title>USA - {$state} {$year} Upper State Legislature Election Map</title>
+			<meta property=\"og:title\" content=\"YAPms - USA {$state} {$year} Upper State Legislature Map\">
+			<meta property=\"og:description\" content=\"Interactive {$state} {$year} Upper State Legislature Map\">";
+		$h1title = "{$state} Upper Legislature";
 	} else {
 
 	switch($_GET['t']) {

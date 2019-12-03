@@ -10,7 +10,16 @@
 </div>
 <div class="selectmenu-content">
 <a class="selectmenu-split">
-	<div class="selectmenu-split-text">House</div>
+	<div class="selectmenu-split-text">Upper</div>
+</a>
+<a class="selectmenu-button" href="./?t=Arkansas_2020_state_upper">
+	<div class="selectmenu-button-text">Arkansas</div>
+</a>
+<a class="selectmenu-button" href="./?t=Texas_2020_state_upper">
+	<div class="selectmenu-button-text">Texas</div>
+</a>
+<a class="selectmenu-split">
+	<div class="selectmenu-split-text">Lower</div>
 </a>
 <a class="selectmenu-button" href="./?t=Alabama_2020_state_lower">
 	<div class="selectmenu-button-text">Alabama</div>
