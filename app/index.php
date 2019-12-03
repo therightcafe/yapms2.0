@@ -217,6 +217,10 @@
 	}
 ?>
 
+	<div id="update-button" class="click-button" onclick="forceUpdate()" style="white-space: nowrap; display: none;">
+		<i class="fas fa-arrow-up"></i> Update
+	</div>
+
 	<div class="click-button" id="share-button" onclick="displayMenu('sharemenu-autocenter');" style="white-space: nowrap;">
 	<i class="fas fa-share-alt"></i> Share Map
 	</div>
@@ -231,10 +235,6 @@
 
 	<div class="click-button" onclick="displayMenu('miscmenu')" style="white-space: nowrap;">
 	<i class="fas fa-clipboard"></i> Misc
-	</div>
-
-	<div id="update-button" class="click-button" onclick="forceUpdate()" style="white-space: nowrap; display: none;">
-		<i class="fas fa-arrow-up"></i> Update
 	</div>
 
 	<div id="login-button" class="customGPlusSignIn click-button" style="white-space: nowrap; margin-left: auto;" onclick='displayMenu("loginmenu");'>	

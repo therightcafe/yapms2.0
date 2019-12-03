@@ -1,4 +1,4 @@
-var currentCache = 'v1.6.2';
+var currentCache = 'v1.6.3';
 
 var states = [];
 var lands = [];
@@ -273,6 +273,11 @@ function forceUpdate() {
 		.then(function(reg) {
 			if(reg.waiting) {
 				reg.waiting.postMessage("skipwaiting");
+				gtag('event', currentCache, {
+					'event_category': 'Manual Update',
+					'event_label': 'Manual update from ' + currentCache,
+					'non_interaction': true
+				});
 				setTimeout(function() {
 					location.reload();
 				}, 150);
