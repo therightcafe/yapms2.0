@@ -263,6 +263,11 @@
 				Arkansas
 			</div>
 		</a>
+		<a href="./app/?t=NewJersey_2020_state_upper">
+			<div class="map-button">
+				New Jersey
+			</div>
+		</a>
 		<a href="./app/?t=Pennsylvania_2020_state_upper">
 			<div class="map-button">
 				Pennsylvania

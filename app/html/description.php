@@ -46,6 +46,11 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 	} else if(strpos($_GET['t'], 'state_upper')) {
 		$split = explode('_', $_GET['t']);
 		$state = $split[0];
+		switch($state) {
+			case "NewJersey": 
+				$state = "New Jersey";
+				break;
+		}	
 		$year = $split[1];
 		echo "<meta name=\"description\" content=\"Interactive {$state} {$year} Upper State Legislature Map\">
 			<title>USA - {$state} {$year} Upper State Legislature Election Map</title>
