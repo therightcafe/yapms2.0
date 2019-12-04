@@ -222,7 +222,7 @@
 			<div class="map-button">
 				Cook Political Report
 				<br>
-				<small>11/11/19</small>
+				<small>12/2/19</small>
 			</div>
 		</a>
 	</div>
