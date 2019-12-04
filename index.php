@@ -106,6 +106,8 @@
 				<i class="fab fa-twitter"></i> Twitter
 			</div>
 		</a>
+		<script async src="https://cse.google.com/cse.js?cx=partner-pub-1660456925957249:5117910178"></script>
+		<div class="gcse-search"></div>
 	</div>
 	<h2 class="header">United States</h2>
 
