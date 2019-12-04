@@ -261,6 +261,11 @@
 				Arkansas
 			</div>
 		</a>
+		<a href="./app/?t=Pennsylvania_2020_state_upper">
+			<div class="map-button">
+				Pennsylvania
+			</div>
+		</a>
 		<a href="./app/?t=Texas_2020_state_upper">
 			<div class="map-button">
 				Texas
