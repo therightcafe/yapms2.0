@@ -46,7 +46,7 @@
 		} else {
 			$mobile = false;	
 			echo '<script>var mobile = false;</script>';
-		};
+		}
 
 		if(isset($_GET["autoReload"]) && !empty($_GET["autoReload"])) {
 			echo '<script>
