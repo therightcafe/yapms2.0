@@ -306,7 +306,7 @@ if($mobile === false) {
 		</div>
 
 		<ins class="adsbygoogle adslot_sidebar"
-			style="display:inline-block;width:250px;height:336px;"
+			style="display:inline-block;width:336px;height:336px;"
 			data-ad-client="ca-pub-1660456925957249"
 			data-ad-slot="8033943742"></ins>
 		<script>
