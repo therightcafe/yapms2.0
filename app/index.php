@@ -308,8 +308,6 @@ if($mobile === false) {
 		<!--style="display:inline-block;min-width:336px;height:280px"-->
 		<ins class="adsbygoogle adslot_sidebar"
 			style="display:inline-block;min-width:250;min-height:90"
-			data-full-width-responsive="true"
-			data-ad-format="rectangle"
 			data-ad-client="ca-pub-1660456925957249"
 			data-ad-slot="8033943742"></ins>
 		<script>
