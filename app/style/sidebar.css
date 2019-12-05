@@ -191,6 +191,7 @@
 	.adslot_sidebar {
 		max-width: 336px;
 		max-height: 336px;
+		height: 336px;
 	}
 }
 
@@ -204,6 +205,7 @@
 	.adslot_sidebar {
 		max-width: 300px;
 		max-height: 300px;
+		height: 300px;
 	}
 
 	.social-link {
@@ -222,6 +224,7 @@
 	.adslot_sidebar {
 		max-width: 250px;
 		max-height: 300px;
+		height: 300px;
 	}
 
 	.social-link {
