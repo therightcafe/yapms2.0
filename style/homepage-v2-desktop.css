@@ -39,26 +39,33 @@ a {
 	flex: 1 1 85%;
 }
 
+.featured-section {
+	flex-direction: row;
+}
+
+.featured-section > h2 {
+	margin: 0.5em;
+	padding: 0em;
+}
+
 #infobox {
-	display: inline-block;
 	padding: 7px;
 	margin: 5px;
 	border: 1px solid black;
+	border-radius: 6px;
 	background: white;
 	font-size: 1em;
 }
 
-#upcoming {
+.info-box {
 	display: inline-block;
-}
-
-.upcoming-election {
-	display: inline-block;
-	border-radius: 5px;
+	border: 1px solid black;
+	border-radius: 6px;
 	margin: 0.5em;
+	vertical-align: top;
 }
 
-.upcoming-election h3 {
+.info-box h3 {
 	background: black;
 	color: white;
 	font-weight: normal;
@@ -67,17 +74,24 @@ a {
 	padding: 1em;
 	padding-bottom: 0.5em;
 	padding-top: 0.5em;
-	border-radius: 3px;
 }
 
-.upcoming-info {
+.info-box > .text {
+	display: block;
 	padding: 5px;
-	background: #dddddd;
-	border-radius: 6px;
 	margin: 3px;
 }
 
 .map-button {
+	display: block;
+	flex: 1 1;
+	font-size: 1em;
+	background: #dddddd;
+	padding: 5px;
+	border: 1px solid #aaaaaa;
+	border-radius: 6px;
+	margin: 3px;
+	cursor: pointer;
 	transition: background 500ms;
 }
 
@@ -97,14 +111,14 @@ a {
 .navigation-1 {
 	position: relative;
 	color: white;
-	margin: 0.5em;
+	padding: 0.3em;
 	width: 100%;
 	
 	overflow: visible;
 	transition: width 200ms linear 0ms;
 }
 
-.navigation-1 > h3 {
+.navigation-1 > .header {
 	display: flex;
 	flex-direction: row;
 	padding: 0.5em;
@@ -115,14 +129,17 @@ a {
 	border-radius: 8px;
 }
 
-.navigation-1 > h3 > img {
-	border-radius: 3px;
-}
-
-
-.navigation-1 > h3 > .text {
+.navigation-1 > .header > h3 {
 	flex: 1 1;
 	white-space: nowrap;
+	font-size: 1.1em;
+	font-weight: normal;
+	padding: 0px;
+	margin: 0px;
+}
+
+.navigation-1 > .header > img {
+	border-radius: 3px;
 }
 
 .navigation-1:hover {
@@ -155,8 +172,9 @@ a {
 .navigation-4 {
 	flex: 1 1;
 	font-size: 1em;
-	padding: 5px;
 	background: #dddddd;
+	padding: 5px;
+	border: 1px solid #aaaaaa;
 	border-radius: 6px;
 	margin: 3px;
 	transition: background 500ms;
