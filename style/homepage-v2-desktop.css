@@ -1,5 +1,5 @@
 html, body {
-	background: #eeeeee;
+	background: #f8f9fa;
 	font-family: 'Roboto';
 	font-size: 18px;
 	padding: 0px;
@@ -40,12 +40,16 @@ a {
 }
 
 .featured-section {
+	display: block;
+	vertical-align: top;
 	flex-direction: row;
 }
 
 .featured-section > h2 {
-	margin: 0.5em;
+	margin: 0.75em;
 	padding: 0em;
+	font-size: 1.5em;
+	color: black;
 }
 
 #infobox {
@@ -59,36 +63,57 @@ a {
 
 .info-box {
 	display: inline-block;
+	background: white;
 	border: 1px solid black;
 	border-radius: 6px;
 	margin: 0.5em;
 	vertical-align: top;
+	box-shadow: 1px 1px 4px #666666;
 }
 
-.info-box h3 {
+.info-box > .info-box-header {
+	display: flex;
+	flex-direction: row;
 	background: black;
 	color: white;
+	padding: 0.5em;
+}
+
+.info-box > .info-box-header > h3 {
+	flex: 1 1;
 	font-weight: normal;
 	font-size: 1em;
 	margin: 0px;
-	padding: 1em;
-	padding-bottom: 0.5em;
-	padding-top: 0.5em;
+	padding: 0px;
 }
 
-.info-box > .text {
+.info-box > .info-box-header > img {
+	border-radius: 3px;
+}
+
+.info-box > p {
 	display: block;
-	padding: 5px;
-	margin: 3px;
+	margin: 0.4em;
+}
+
+.info-box > ul {
+	columns: 3;
+	text-align: left;
+	list-style-position: inside;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.info-box > ul > li {
+	white-space: nowrap;
 }
 
 .map-button {
-	display: block;
+	display: inline-block;
 	flex: 1 1;
-	font-size: 1em;
-	background: #dddddd;
-	padding: 5px;
-	border: 1px solid #aaaaaa;
+	font-size: 0.9em;
+	color: #333399;
+	padding: 6px;
 	border-radius: 6px;
 	margin: 3px;
 	cursor: pointer;
@@ -96,7 +121,7 @@ a {
 }
 
 .map-button:hover {
-	background: #ccccdd;
+	background: #ccccee;
 }
 
 #navigation {
@@ -162,6 +187,7 @@ a {
 	left: 50%;
 	width: 50%;
 	opacity: 0;
+	padding-bottom: 2em;
 }
 
 .navigation-3 {
@@ -172,15 +198,25 @@ a {
 .navigation-4 {
 	flex: 1 1;
 	font-size: 1em;
-	background: #dddddd;
-	padding: 5px;
+	background: #eaecf0;
 	border: 1px solid #aaaaaa;
-	border-radius: 6px;
-	margin: 3px;
-	transition: background 500ms;
+	border-radius: 4px;
+	transition: background 300ms;
+	margin: 0.075em;
+	padding: 0.25em;
 	cursor: pointer;
 }
 
 .navigation-4:hover {
-	background: #ccccdd;
+	background: #ccccee;
+}
+
+.navigation-label {
+	flex: 1 1;
+	font-size: 1em;
+	background: black;
+	color: white;
+	border-radius: 4px;
+	margin: 0.1em;
+	padding: 0.1em;
 }

@@ -3637,7 +3637,8 @@ class State {
 			(MapLoader.save_dataid === 'usa_ec' ||
 			MapLoader.save_dataid === 'usa_1972_ec' ||
 			MapLoader.save_dataid === 'usa_no_districts_ec' ||
-			MapLoader.save_dataid === 'usa_pre_civilwar_ec')) {
+			MapLoader.save_dataid === 'usa_pre_civilwar_ec' ||
+			MapLoader.save_dataid === 'usa_territories_ec')) {
 			var text = this.name + ' ' + value;
 			// the text elements in an svg are inside spans
 			if(typeof stateText.childNodes[1] !== 'undefined') {
@@ -6523,7 +6524,7 @@ function saveMap_new(img, token) {
 function numberWithCommas(number) {
 	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-var currentCache = 'v1.7.12';
+var currentCache = 'v1.7.20';
 
 var states = [];
 var lands = [];

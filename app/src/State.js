@@ -103,7 +103,8 @@ class State {
 			(MapLoader.save_dataid === 'usa_ec' ||
 			MapLoader.save_dataid === 'usa_1972_ec' ||
 			MapLoader.save_dataid === 'usa_no_districts_ec' ||
-			MapLoader.save_dataid === 'usa_pre_civilwar_ec')) {
+			MapLoader.save_dataid === 'usa_pre_civilwar_ec' ||
+			MapLoader.save_dataid === 'usa_territories_ec')) {
 			var text = this.name + ' ' + value;
 			// the text elements in an svg are inside spans
 			if(typeof stateText.childNodes[1] !== 'undefined') {

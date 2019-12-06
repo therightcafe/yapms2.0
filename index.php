@@ -62,7 +62,7 @@
 
 <?php
 	if($redesign) {
-		require './html/homepage-v2-desktop.php';
+		require './html/v2/desktop.php';
 	} else {
 		require './html/homepage-v1.php';
 	}
