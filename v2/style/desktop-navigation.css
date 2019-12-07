@@ -1,0 +1,99 @@
+#navigation {
+	text-align: center;
+	margin-top: 5px;
+	margin-right: 5px;
+	flex: 1 1 15%;
+	
+	z-index: 1;
+}
+
+.navigation-1 {
+	position: relative;
+	color: white;
+	padding-left: 0.25em;
+	padding-right: 0.25em;
+	padding-bottom: 0.75em;
+	padding-top: 0em;
+	width: 100%;
+	
+	overflow: visible;
+	transition: width 200ms linear 0ms;
+}
+
+.navigation-1 > .header {
+	display: flex;
+	flex-direction: row;
+	padding: 0.6em;
+	margin-bottom: 0em;
+	font-weight: normal;
+	font-size: 1em;
+	background: black;
+	border-radius: 8px;
+}
+
+.navigation-1 > .header > h3 {
+	flex: 1 1;
+	white-space: nowrap;
+	font-size: 1.1em;
+	font-weight: normal;
+	padding: 0px;
+	margin: 0px;
+}
+
+.navigation-1 > .header > img {
+	border-radius: 3px;
+}
+
+.navigation-1:hover {
+	width: 200%;
+	transition: width 100ms linear 0ms;
+}
+
+.navigation-1:hover .navigation-2 {
+	visibility: visible;
+	opacity: 1;
+	transition: opacity 200ms linear 100ms;
+}
+
+.navigation-2 {
+	visibility: hidden;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	color: black;
+	left: 50%;
+	width: 50%;
+	opacity: 0;
+	padding-bottom: 2em;
+}
+
+.navigation-3 {
+	display: flex;
+	flex-direction: row;
+}
+
+.navigation-4 {
+	flex: 1 1;
+	font-size: 1em;
+	background: #eaecf0;
+	border: 1px solid #aaaaaa;
+	border-radius: 4px;
+	transition: background 300ms;
+	margin: 0.075em;
+	padding: 0.25em;
+	cursor: pointer;
+}
+
+.navigation-4:hover {
+	background: #ccccee;
+}
+
+.navigation-label {
+	flex: 1 1;
+	font-size: 1em;
+	background: black;
+	color: white;
+	border-radius: 4px;
+	margin: 0.1em;
+	padding: 0.1em;
+}

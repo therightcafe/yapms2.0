@@ -14,7 +14,7 @@
 		<p><small>
 			December 10, 2019
 		</small></p>
-		<a class="map-button" href="./app/?t=Arkansas_2020_state_lower">
+		<a class="link" href="./app/?t=Arkansas_2020_state_lower">
 			House
 		</a>
 	</div>
@@ -42,7 +42,7 @@
 		<p><small>
 			December 12, 2019
 		</small></p>
-		<a class="map-button" href="./app/?t=UnitedKingdom_house_of_commons">
+		<a class="link" href="./app/?t=UnitedKingdom_house_of_commons">
 			House of Commons
 		</a>
 	</div>

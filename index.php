@@ -31,10 +31,12 @@
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132710089-1"></script>
 	<script>
 		var host = window.location.hostname;
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-		gtag('config', 'UA-132710089-1');
+		if(host !== "localhost") {
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-132710089-1');
+		}
 	</script>
 
 	<script data-ad-client="ca-pub-1660456925957249" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -48,12 +50,28 @@
 	<link rel="prerender" href="https://www.yapms.com/app/?t=USA_2020_presidential">
 	
 	<?php
-		$redesign = isset($_GET['redesign']) && $_GET['redesign'] === 'true';
+		$mobile = false;
+		if(strpos($_SERVER['HTTP_USER_AGENT'], 'Mobi')) {
+			$mobile = true;	
+		} else {
+			$mobile = false;	
+		}
+
+		$redesign = false;
+
+		if($_COOKIE['redesign'] === 'true') {
+			$redesign = true;
+		}
 
 		if($redesign) {
-			echo '<link rel="stylesheet" type="text/css" href="style/homepage-v2-desktop.css">';
+			echo '<link rel="stylesheet" type="text/css" href="./v2/style/style.css">';
+			if($mobile) {
+				echo '<link rel="stylesheet" type="text/css" href="./v2/style/mobile-navigation.css">';
+			} else {
+				echo '<link rel="stylesheet" type="text/css" href="./v2/style/desktop-navigation.css">';
+			}
 		} else {
-			echo '<link rel="stylesheet" type="text/css" href="style.css">';
+			echo '<link rel="stylesheet" type="text/css" href="./v1/style.css">';
 		}
 	?>
 </head>
@@ -62,11 +80,13 @@
 
 <?php
 	if($redesign) {
-		require './html/v2/desktop.php';
+		require './v2/html/body.php';
 	} else {
-		require './html/homepage-v1.php';
+		require './v1/body.php';
 	}
 ?>
+
+	<script src="./v2/script/mobile-navigation.js"></script>
 
 	<script>
 	if('serviceWorker' in navigator) {
