@@ -110,7 +110,7 @@
 		var install = document.getElementById('installbutton');
 		if(install) {
 			console.log('Display Install Button');
-			install.style.display = 'inline';
+			install.style.display = 'inline-block';
 			install.onclick = function() {
 				install.style.display = 'none';
 				deferredPrompt.prompt();

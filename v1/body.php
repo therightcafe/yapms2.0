@@ -62,7 +62,7 @@
 		location.reload();	
 	">
 		<div class="infobox link redesign">
-			New Design 
+			<i class="fas fa-arrow-up"></i> New Design 
 		</div>
 	</a>
 </div>

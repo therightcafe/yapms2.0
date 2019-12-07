@@ -28,6 +28,6 @@
 		document.cookie = 'redesign=false; expires=' + cookiedate.toUTCString();
 		location.reload();
 	">
-		Old Design
+		<i class="fas fa-arrow-down"></i> Old Design
 	</a>
 </div>
