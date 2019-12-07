@@ -10,7 +10,7 @@
 				United States
 			</h3>
 		</div>
-		<a class="link" href="./app/?=USA_2020_presidential">
+		<a class="link" href="./app/?t=USA_2020_presidential">
 			Presidential
 		</a>
 		<a class="link" href="./app/?t=USA_2020_democratic_primary">
