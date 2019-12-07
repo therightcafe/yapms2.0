@@ -23,7 +23,9 @@
 	</a>
 	
 	<a class="social redesign" onclick="
-		document.cookie = 'redesign=false';
+		var cookiedate = new Date;
+		cookiedate.setFullYear(cookiedate.getFullYear() + 10);
+		document.cookie = 'redesign=false; expires=' + cookiedate.toUTCString();
 		location.reload();
 	">
 		Old Design

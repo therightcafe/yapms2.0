@@ -56,7 +56,9 @@
 	</a>
 
 	<a onclick="
-		document.cookie = 'redesign=true';
+		var cookiedate = new Date;
+		cookiedate.setFullYear(cookiedate.getFullYear() + 10);
+		document.cookie = 'redesign=true; expires=' + cookiedate.toUTCString();
 		location.reload();	
 	">
 		<div class="infobox link redesign">
