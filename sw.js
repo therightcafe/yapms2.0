@@ -1,5 +1,5 @@
-var indexCache = 'i1.9.2';
-var staticCache = 's1.9.2';
+var indexCache = 'i1.9.3';
+var staticCache = 's1.9.3';
 
 var _indexCache = [
 	'./',
@@ -184,6 +184,11 @@ self.addEventListener('message', function(event) {
 		self.skipWaiting();
 	} else if(event.data === 'skipwaiting') {
 		self.skipWaiting();
+	} else if(event.data === 'refetch-home') {
+		caches.open(indexCache).then(function(cache) {
+			cache.delete('./').then(cache.add('./'));
+			cache.delete('./index.php').then(cache.add('./index.php'));
+		});
 	}
 });
 

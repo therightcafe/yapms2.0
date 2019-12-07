@@ -59,7 +59,7 @@
 		var cookiedate = new Date;
 		cookiedate.setFullYear(cookiedate.getFullYear() + 10);
 		document.cookie = 'redesign=true; expires=' + cookiedate.toUTCString();
-		location.reload();	
+		refetchHome();
 	">
 		<div class="infobox link redesign">
 			<i class="fas fa-arrow-up"></i> New Design 

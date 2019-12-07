@@ -145,6 +145,20 @@
 			}
 		}
 	}
+
+	function refetchHome() {
+		if('serviceWorker' in navigator) {
+			navigator.serviceWorker.register('../sw.js')
+			.then(function(reg) {
+				reg.active.postMessage("refetch-home");
+				setTimeout(function() {
+					location.reload();
+				}, 150);
+			});
+		} else {
+			location.reload();
+		}
+	}
 	</script>
 </body>
 </html>

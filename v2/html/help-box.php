@@ -26,7 +26,7 @@
 		var cookiedate = new Date;
 		cookiedate.setFullYear(cookiedate.getFullYear() + 10);
 		document.cookie = 'redesign=false; expires=' + cookiedate.toUTCString();
-		location.reload();
+		refetchHome();
 	">
 		<i class="fas fa-arrow-down"></i> Old Design
 	</a>
