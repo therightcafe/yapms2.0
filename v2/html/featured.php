@@ -41,7 +41,7 @@
 		<a class="link" href="./app/?t=Canada_house_of_commons">
 			House of Commons
 		</a>
-		<a class="link" href="./app/?t=UnitedKingdom_current_parliament">
+		<a class="link" href="./app/?t=Canada_2019_house_of_commons">
 			2019 Results
 		</a>
 	</div>
