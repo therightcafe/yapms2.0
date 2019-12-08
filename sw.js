@@ -1,4 +1,4 @@
-var indexCache = 'i1.9.11';
+var indexCache = 'i1.9.12';
 var staticCache = 's1.9.3';
 
 var _indexCache = [
