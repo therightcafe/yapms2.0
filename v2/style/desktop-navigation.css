@@ -29,6 +29,7 @@
 	font-size: 1em;
 	background: black;
 	border-radius: 8px;
+	border: 1px solid #f8f9fa;
 }
 
 .navigation-1 > .header > h3 {
@@ -94,6 +95,7 @@
 	background: black;
 	color: white;
 	border-radius: 4px;
+	border: 1px solid #f8f9fa;
 	margin: 0.1em;
 	padding: 0.1em;
 }

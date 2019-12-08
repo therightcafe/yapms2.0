@@ -1,7 +1,9 @@
 <div id="upcoming" class="featured-section">
+	<div class="featured-section-header">
 	<h2>
 		Upcoming Elections
 	</h2>
+	</div>
 	<div class="info-box">
 		<div class="info-box-header">
 			<img src="app/res/flags/usa.svg">

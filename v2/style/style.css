@@ -42,16 +42,45 @@ a {
 }
 
 .featured-section {
-	display: block;
+	display: inline-block;
+	max-width: 85%;
+	margin: 0.5em;
 	vertical-align: top;
+}
+
+.featured-section > .featured-section-header {
+	display: flex;
+	flex-direction: row;
+	background: black;
+	color: white;
+	font-weight: normal;
+	margin: 0em;
+	padding: 0.2em;
+	font-size: 1.5em;
+	border-radius: 6px;
+	box-shadow: 1px 1px 3px #333333;
+}
+
+.featured-section > .featured-section-header > img {
+	margin: auto;
+	border-radius: 3px;
+}
+
+.featured-section > .featured-section-header > h2 {
+	flex: 1 1;
+	font-size: 1em;
+	font-weight: normal;
+	margin: 0px;
+	padding: 0.1em;
+}
+
+#top-featured {
+	display: flex;
 	flex-direction: row;
 }
 
-.featured-section > h2 {
-	margin: 0.75em;
-	padding: 0em;
-	font-size: 1.5em;
-	color: black;
+#top-featured > .featured-section {
+	flex: 1 1;
 }
 
 .help-box {
@@ -81,7 +110,6 @@ a {
 	padding: 0.4em;
 	margin: 0.2em;
 	border-radius: 8px;
-	border: 2px solid white;
 	cursor: pointer;
 }
 
@@ -140,16 +168,21 @@ a {
 	margin: 0.4em;
 }
 
-.info-box > ul {
-	columns: 3;
-	text-align: left;
-	list-style-position: inside;
-	padding-left: 1em;
-	padding-right: 1em;
+.info-box > .list {
+	display: block;
+	text-align: center;
+	margin: 0px;
 }
 
-.info-box > ul > li {
+.info-box > .list > p {
 	white-space: nowrap;
+	flex: 1 1;
+	padding: 0.3em;
+	margin: 0.4em;
+	display: inline-block;
+	background: #eeeeee;
+	border-radius: 5px;
+	box-shadow: 1px 1px 4px #888888;
 }
 
 .link {
