@@ -7,7 +7,7 @@
 	<div class="navigation-2">
 		<div class="navigation-3">
 			<a class="navigation-4" href="./app/?t=World">
-				United Nations
+				World
 			</a>
 		</div>
 		<div class="navigation-3">

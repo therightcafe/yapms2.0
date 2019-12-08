@@ -9,6 +9,18 @@
 	z-index: 1;
 }
 
+.navigation-search {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.search-form {
+	position: relative;
+	width: 90%;
+	margin: auto;
+	overflow: visible;
+}
+
 .navigation-1 {
 	position: relative;
 	color: white;

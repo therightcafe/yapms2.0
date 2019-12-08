@@ -1,3 +1,7 @@
+<?php
+	require './v2/html/map-datalist.php';
+?>
+
 <div id="topbar">
 	<h1>
 		Yet Another Political Map Simulator
@@ -7,6 +11,7 @@
 <div id="layout">
 	<div id="navigation">
 		<?php
+			require './v2/html/map-search.php';
 			require './v2/html/usa-national-elections.php';
 			require './v2/html/usa-forecasts.php';
 			require './v2/html/usa-current-congress.php';

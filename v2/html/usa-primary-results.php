@@ -15,10 +15,10 @@
 			</a>
 		</div>
 		<div class="navigation-3">
-			<a class="navigation-4">
+			<a class="navigation-4" href="./app/?t=USA_2016_democratic_primary">
 				2016
 			</a>
-			<a class="navigation-4">
+			<a class="navigation-4" href="./app/?t=USA_2016_republican_primary">
 				2016
 			</a>
 		</div>

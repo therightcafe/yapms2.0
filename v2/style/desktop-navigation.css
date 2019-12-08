@@ -7,6 +7,17 @@
 	z-index: 1;
 }
 
+.search-form {
+	position: relative;
+	padding-left: 0.25em;
+	padding-right: 0.25em;
+	padding-bottom: 0.75em;
+	padding-top: 0em;
+	width: 100%;
+	
+	overflow: visible;
+}
+
 .navigation-1 {
 	position: relative;
 	color: white;

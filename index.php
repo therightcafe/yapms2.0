@@ -81,12 +81,14 @@
 <?php
 	if($redesign) {
 		require './v2/html/body.php';
+		echo '<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+			<script src="./v2/script/mobile-navigation.js"></script>
+			<script src="./v2/script/bookmark.js"></script>
+			<script src="./v2/script/cookies.js"></script>';
 	} else {
 		require './v1/body.php';
 	}
 ?>
-
-	<script src="./v2/script/mobile-navigation.js"></script>
 
 	<script>
 	if('serviceWorker' in navigator) {

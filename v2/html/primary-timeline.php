@@ -62,7 +62,7 @@
 		<p>Maine (D/R)</p>
 		<p>Massachusetts (D/R)</p>
 		<p>Minnesota (D/R)</p>
-		<p>North Caropna (D/R)</p>
+		<p>North Carolina (D/R)</p>
 		<p>Oklahoma (D/R)</p>
 		<p>Tennessee (D/R)</p>
 		<p>Texas (D/R)</p>

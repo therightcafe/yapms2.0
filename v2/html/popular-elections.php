@@ -51,6 +51,9 @@
 		<a class="link" href="./app/?t=Canada_2019_house_of_commons">
 			2019 Results
 		</a>
+		<a class="link" href="./app/?t=Canada_provinces">
+			Provinces
+		</a>
 		</div>
 	</div>
 	<div class="info-box popular-4">

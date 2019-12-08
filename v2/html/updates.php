@@ -1,4 +1,4 @@
-<div id="New Maps" class="featured-section">
+<div id="updates" class="featured-section">
 	<div class="featured-section-header">
 	<h2>
 		Updates
