@@ -10,6 +10,7 @@
 	<option value="USA Blank Senate">
 	<option value="USA Blank Governors">
 	<option value="USA Counties">
+	<option value="USA Cook Political Report House">
 	<option value="USA Cook Political Report Presidential">
 	<option value="USA Sabatos Crystal Ball Presidential">
 	<option value="USA Inside Elections Presidential">

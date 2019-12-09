@@ -59,7 +59,7 @@
 
 		$redesign = false;
 
-		if($_COOKIE['redesign'] === 'true') {
+		if($_COOKIE['redesign'] === 'true' || isset($_COOKIE['redesign']) === false) {
 			$redesign = true;
 		}
 

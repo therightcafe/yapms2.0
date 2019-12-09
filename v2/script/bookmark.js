@@ -10,6 +10,7 @@ maplist['USA Current House'] = './app/?t=USA_current_house';
 maplist['USA Blank Senate'] = './app/?t=USA_senate';
 maplist['USA Blank Governors'] = './app/?t=USA_governors';
 maplist['USA Counties'] = './app/?t=USA_county';
+maplist['USA Cook Political Report House'] = './app/?t=USA_2020_house_cook';
 maplist['USA Cook Political Report Presidential'] = './app/?t=USA_2020_cook';
 maplist['USA Sabatos Crystal Ball Presidential'] = './app/?t=USA_2020_sabatos';
 maplist['USA Inside Elections Presidential'] = './app/?t=USA_2020_inside';
