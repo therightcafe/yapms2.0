@@ -15,7 +15,7 @@
 		<div class="link-list">
 		<p>Cook Political Report</p>
 		<p><small>
-			December 2, 2019
+			December 6, 2019
 		</small></p>
 		<a class="link" href="./app/?t=USA_2020_house_cook">
 			House
@@ -47,9 +47,10 @@
 			</h3>
 		</div>
 		<div class="link-list">
-		<p>New Jersey</p>
-		<a class="link" href="./app/?t=NewJersey_2020_state_upper">
-			Senate
+		<p>Congressional Districts</p>
+		<p><small>North Carolina Redistricting</small></p>
+		<a class="link" href="./app/?t=USA_2020_house">
+			House
 		</a>
 		</div>
 	</div>

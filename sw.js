@@ -1,10 +1,17 @@
-var indexCache = 'i1.10.1';
-var staticCache = 's1.10.1';
+var indexCache = 'i1.10.3';
+var staticCache = 's1.10.3';
 
 var _indexCache = [
 	'./',
 	'./index.php',
 	'./offline.php',
+
+	'./v2/style/mobile-navigation.css',
+	'./v2/style/desktop-navigation.css',
+	'./v2/style/style.css',
+	'./v2/script/mobile-navigation.js',
+	'./v2/script/bookmark.js',
+	'./v2/script/cookies.js',
 	
 	'./app/html/battlechart.html',
 	'./app/html/closebutton.svg',
