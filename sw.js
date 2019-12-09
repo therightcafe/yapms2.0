@@ -1,5 +1,5 @@
-var indexCache = 'i1.9.15';
-var staticCache = 's1.9.3';
+var indexCache = 'i1.10.0';
+var staticCache = 's1.10.0';
 
 var _indexCache = [
 	'./',
@@ -79,13 +79,13 @@ var _staticCache = [
 	'./app/res/usa_presidential.svg',
 	'./app/res/usa_pre_civilwar.svg',
 	'./app/res/usa_1972_presidential.svg',
-	'./app/res/usa_congressional_2018.svg',
 	'./app/res/usa_dem_primary.svg',
 	'./app/res/usa_rep_primary.svg',
 	'./app/res/usa_gubernatorial.svg',
 	'./app/res/usa_no_districts.svg',
 	'./app/res/usa_senate.svg',
 	'./app/res/usa_county.svg',
+	'./app/res/usa/house/12-2-2019-house.svg',
 
 	'./app/res/arg/argentina_provinces_buenos.svg',
 	'./app/res/australia_constituencies.svg',

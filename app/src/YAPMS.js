@@ -2081,7 +2081,7 @@ class MapLoader {
 				break;
 			case "USA_2020_house":
 				PresetLoader.loadPreset('classic');
-				MapLoader.loadMap("./res/usa_congressional_2018.svg", 16, 0.075, "1", "takeall_noedit", "open", {enableCongress: true});
+				MapLoader.loadMap("./res/usa/house/12-2-2019-house.svg", 16, 0.075, "1", "takeall_noedit", "open", {enableCongress: true});
 				break;
 			case "USA_2008_house":
 				PresetLoader.loadPreset('classic');
@@ -6524,7 +6524,7 @@ function saveMap_new(img, token) {
 function numberWithCommas(number) {
 	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-var currentCache = 'v1.9.6';
+var currentCache = 'v1.10.0';
 
 var states = [];
 var lands = [];
