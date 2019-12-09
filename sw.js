@@ -1,5 +1,5 @@
-var indexCache = 'i1.10.5';
-var staticCache = 's1.10.5';
+var indexCache = 'i1.10.6';
+var staticCache = 's1.10.6';
 
 var _indexCache = [
 	'./',
@@ -78,8 +78,7 @@ var _indexCache = [
 	'./app/?t=UnitedKingdom_current_parliament',
 
 	'./app/style/YAPMS.css',
-	'./app/style/mobile.css',
-	'./style.css'
+	'./app/style/mobile.css'
 ];
 
 var _staticCache = [
