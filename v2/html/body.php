@@ -41,6 +41,7 @@
 			require './v2/html/global.php'; 
 		?>			
 	</div>
+
 	<div id="featured">
 	<?php
 		require './v2/html/help-box.php';

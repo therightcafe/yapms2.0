@@ -8,6 +8,7 @@
 	<meta name="keywords" content="Map,Election,Political,Interactive,Simulator,Electoral,2020,USA,Presidential">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<meta name="HandheldFriendly" content="true">
+	<meta name="apple-mobile-web-app-capable" content="yes">
 	
 	<meta property="og:image:type" content="image/png">
 	<meta property="og:site_name" content="yapms.com">
