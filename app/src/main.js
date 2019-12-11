@@ -1,4 +1,4 @@
-var currentCache = 'v1.11.1';
+var currentCache = 'v1.11.5';
 
 var states = [];
 var lands = [];
@@ -155,8 +155,9 @@ function setMode(set) {
 		button.style.opacity = '0.5';
 	}
 
+/*
 	var notification = document.getElementById('notification');
-	if(mode === 'paint' || mode === 'fill') {
+	if(mode === 'paint' || mode === 'fill' || mode === 'delete' || mode === 'edit') {
 		var notification = document.getElementById('notification');
 		notification.style.display = 'none';
 	} else {
@@ -167,6 +168,7 @@ function setMode(set) {
 		title.innerHTML = modeText;
 		message.innerHTML = notificationText;
 	}
+*/
 }
 
 // if paint index is invalid, change it to tossup
@@ -290,7 +292,6 @@ function start() {
 	CookieManager.loadCookies();
 	CookieManager.askConsent();
 
-	KeyboardManager.init();
 	CandidateManager.initCandidates();
 	ChartManager.initChart();
 

@@ -5,7 +5,7 @@
 			2020 Primary Timeline	
 		</h2>
 	</div>
-	<div class="featured-section-grid-4">
+	<div class="in-featured-grid">
 	<div class="info-box primary-1">
 		<div class="info-box-header">
 			<h3>
@@ -56,7 +56,7 @@
 		<p>Alabama (D/R)</p>
 		<p>American Samoa (D)</p>
 		<p>Arkansas (D/R)</p>
-		<p>Capfornia (D/R)</p>
+		<p>California (D/R)</p>
 		<p>Colorado (D/R)</p>
 		<p>Democrats Abroad (D)</p>
 		<p>Maine (D/R)</p>

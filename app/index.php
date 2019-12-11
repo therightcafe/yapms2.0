@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="noSelect" lang="en">
+<html id="html" class="noSelect" lang="en">
 <head>
 	<meta charset="UTF-8">
 <?php
@@ -318,6 +318,9 @@ if($mobile === false) {
 			<ul>
 				<li>
 					F - Hold down to quickly fill in districts
+				</li>
+				<li id="county-house-d" style="display: none">
+					D - Hold down to fill/disable entire states
 				</li>
 			</ul>
 		</div>

@@ -77,7 +77,7 @@ maplist['Sweden Riksdag'] = './app/?t=Sweden_riksdag';
 maplist['Switzerland Council of States'] = './app/?t=Switzerland_council_of_states';
 maplist['Switzerland National Council'] = './app/?t=Switzerland_national_council';
 maplist['Turkey National Assembly'] = './app/?t=Turkey_national_assembly';
-maplist['Trinidad and Tobago - House of Representatives'] = './app/?t=Trinidad_Tobago_house_of_representatives';
+maplist['Trinidad and Tobago House of Representatives'] = './app/?t=Trinidad_Tobago_house_of_representatives';
 maplist['United Kingdom House of Commons'] = './app/?t=UnitedKingdom_house_of_commons';
 maplist['United Kingdom Current Parliament'] = './app/?t=UnitedKingdom_current_parliament';
 maplist['United Kingdom Historic Counties'] = './app/?t=UnitedKingdom_historic_counties';
@@ -91,7 +91,7 @@ class BookmarkManager {
 		link.setAttribute("class", "link");
 		link.setAttribute("href", href);
 		link.setAttribute("id", "bookmark-" + name);
-		link.innerHTML = '<div style="display:table-cell; vertical-align: middle;">' + name + '</div>';
+		link.innerHTML = '<div>' + name + '</div>';
 		var bookmarkList = document.getElementById("bookmark-list");
 		bookmarkList.appendChild(link);
 	}

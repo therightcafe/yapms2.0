@@ -4,7 +4,23 @@
 		Updates
 	</h2>
 	</div>
-	<div class="featured-section-grid">
+	<div class="in-featured-grid">
+	<div class="info-box update-1">
+		<div class="info-box-header">
+			<h3>
+				New Feature
+			</h3>
+		</div>
+		<div class="link-list">
+		<p>Hold D to fill or delete entire states</p>
+		<a class="link" href="./app/?t=USA_2020_house_cook">
+			House
+		</a>
+		<a class="link" href="./app/?t=USA_county">
+			County
+		</a>
+		</div>
+	</div>
 	<div class="info-box update-1">
 		<div class="info-box-header">
 			<img src="app/res/flags/usa.svg">
@@ -54,7 +70,7 @@
 		</a>
 		</div>
 	</div>
-	<div class="info-box update-4">
+	<div class="info-box update-4" style="grid-column: 1 / 3">
 		<div class="info-box-header">
 			<img src="app/res/flags/swe.svg">
 			<h3>

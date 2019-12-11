@@ -82,6 +82,9 @@ function closeAllPopups() {
 	if(mysaves) {
 		Account.closeMyMaps();
 	}
+
+	// Remove active focus from close button
+	document.activeElement.blur();
 }
 
 function displayCustomColorMenu(type) {
@@ -702,5 +705,13 @@ function ifInIframe() {
 			element.style.display = 'none';
 		}
 		setPalette("light", false);
+	}
+}
+
+function showShortcuts() {
+	if(MapLoader.save_filename === './res/usa_county.svg' ||
+		MapLoader.save_filename === './res/usa/house/12-2-2019-house.svg') {
+		var countyHouse = document.getElementById("county-house-d");
+		countyHouse.style.display = '';
 	}
 }

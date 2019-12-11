@@ -112,6 +112,8 @@ function stateClickPaint(state, options = {forceProportional: false}) {
 	} else if(MapLoader.save_type !== "proportional") {
 		if(KeyboardManager.quickFill()) {
 			state.setColor(paintIndex, 0);
+		} else if(KeyboardManager.areaSelect()) {
+			paintEntireState(state);
 		} else {
 			state.incrementCandidateColor(paintIndex);
 		}
@@ -130,8 +132,62 @@ function stateClickPaint(state, options = {forceProportional: false}) {
 	displayProportionalEdit(state);
 }
 
+function paintEntireState(state) {
+	if(MapLoader.save_filename === './res/usa/house/12-2-2019-house.svg' ||
+		MapLoader.save_filename === './res/usa_county.svg') {
+		var setDisable = !state.disabled;
+		var stateName = state.name.substr(0,2);
+		for(var index = 0, length = states.length; index < length; ++index) {
+			var state_a = states[index];
+			var stateName_a = '';
+			if(MapLoader.save_filename === './res/usa/house/12-2-2019-house.svg') {
+				stateName = state.name.substr(0, 2);
+				stateName_a = state_a.name.substr(0, 2);
+			} else if(MapLoader.save_filename === './res/usa_county.svg') {
+
+				stateName = state.name.substr(-2);
+				stateName_a = state_a.name.substr(-2);
+			}
+			if(stateName_a === stateName) {
+					state_a.setColor(paintIndex, 0);
+			}
+		}
+	}
+}
+
 function stateClickDelete(state) {
-	state.toggleDisable();
+	if(KeyboardManager.areaSelect()) {
+		deleteEntireState(state);
+	} else {
+		state.toggleDisable();
+	}
+}
+
+function deleteEntireState(state) {
+	if(MapLoader.save_filename === './res/usa/house/12-2-2019-house.svg' ||
+		MapLoader.save_filename === './res/usa_county.svg') {
+		var setDisable = !state.disabled;
+		var stateName = state.name.substr(0,2);
+		for(var index = 0, length = states.length; index < length; ++index) {
+			var state_a = states[index];
+			var stateName_a = '';
+			if(MapLoader.save_filename === './res/usa/house/12-2-2019-house.svg') {
+				stateName = state.name.substr(0, 2);
+				stateName_a = state_a.name.substr(0, 2);
+			} else if(MapLoader.save_filename === './res/usa_county.svg') {
+
+				stateName = state.name.substr(-2);
+				stateName_a = state_a.name.substr(-2);
+			}
+			if(stateName_a === stateName) {
+				if(setDisable && state_a.disabled === false) {
+					state_a.toggleDisable();
+				} else if(!setDisable && state_a.disabled === true) {
+					state_a.toggleDisable();
+				}
+			}
+		}
+	}
 }
 
 function stateClickEC(state) {

@@ -1599,30 +1599,32 @@ class InputManager {
 	}
 }
 class KeyboardManager {
-	static init() {
-		$("html").keydown(function(event) {
-			KeyboardManager.keyStates[event.which] = true;
-		});
-
-		$("html").keyup(function(event) {
-			KeyboardManager.keyStates[event.which] = false;
-		});
-
-		$("html").mouseleave(function(event) {
-			KeyboardManager.keyStates = {};
-		});
-
-		$("html").mouseenter(function(event) {
-			KeyboardManager.keyStates = {};
-		});
-	}
-
 	static quickFill() {
 		return KeyboardManager.keyStates[70] === true;
+	}
+
+	static areaSelect() {
+		return KeyboardManager.keyStates[68] === true;
 	}
 }
 
 KeyboardManager.keyStates = {};
+
+$("html").keydown(function(event) {
+	KeyboardManager.keyStates[event.which] = true;
+});
+
+$("html").keyup(function(event) {
+	KeyboardManager.keyStates[event.which] = false;
+});
+
+$("html").mouseleave(function(event) {
+	KeyboardManager.keyStates = {};
+});
+
+$("html").mouseenter(function(event) {
+	KeyboardManager.keyStates = {};
+});
 class LegendManager {
 	static toggleLegendCounter() {
 		LegendManager.legendCounter = !LegendManager.legendCounter;
@@ -2081,7 +2083,7 @@ class MapLoader {
 				break;
 			case "USA_2020_house":
 				PresetLoader.loadPreset('classic');
-				MapLoader.loadMap("./res/usa/house/12-2-2019-house.svg", 16, 0.075, "1", "takeall_noedit", "open", {enableCongress: true});
+				MapLoader.loadMap("./res/usa/house/12-2-2019-house.svg", 16, 0.075, "1", "takeall_noedit", "open", {enableCongress: true, enableEraser: true});
 				break;
 			case "USA_2008_house":
 				PresetLoader.loadPreset('classic');
@@ -2368,6 +2370,7 @@ class MapLoader {
 				}
 
 				setCongressContested();
+				showShortcuts();
 
 				if(options && options.voters) {
 					for(var stateIndex = 0, length = states.length; stateIndex < length; ++stateIndex) {
@@ -2655,13 +2658,15 @@ class MapLoader {
 				htmlElement.onclick = function() {
 					buttonClick(this);
 				}
-				htmlElement.setAttribute('onmouseover', 'if(KeyboardManager.keyStates[70]){buttonClick(this, {setSolid: true});}');
+				htmlElement.setAttribute('onmouseover', 
+				'if(KeyboardManager.keyStates[70]){buttonClick(this, {setSolid: true});}');
 				buttons.push(htmlElement);
 			} else if(name.includes('-land')) {
 				htmlElement.onclick = function() {
 					landClick(this);
 				}
-				htmlElement.setAttribute('onmouseover', 'if(KeyboardManager.keyStates[70]){landClick(this, {setSolid: true});}');
+				htmlElement.setAttribute('onmouseover', 
+				'if(KeyboardManager.keyStates[70]){landClick(this, {setSolid: true});}');
 				lands.push(htmlElement);
 			} else {
 				htmlElement.onclick = function() {
@@ -2669,7 +2674,8 @@ class MapLoader {
 				}
 				states.push(new State(name, htmlElement, dataid));
 				var stateIndex = states.length - 1;
-				htmlElement.setAttribute('onmouseover', 'if(KeyboardManager.keyStates[70]){stateClick(this, {setSolid: true});}');
+				htmlElement.setAttribute('onmouseover', 
+				"if(KeyboardManager.keyStates[70]){stateClick(this, {setSolid: true});}");
 			}
 		}
 
@@ -4235,6 +4241,8 @@ function stateClickPaint(state, options = {forceProportional: false}) {
 	} else if(MapLoader.save_type !== "proportional") {
 		if(KeyboardManager.quickFill()) {
 			state.setColor(paintIndex, 0);
+		} else if(KeyboardManager.areaSelect()) {
+			paintEntireState(state);
 		} else {
 			state.incrementCandidateColor(paintIndex);
 		}
@@ -4253,8 +4261,62 @@ function stateClickPaint(state, options = {forceProportional: false}) {
 	displayProportionalEdit(state);
 }
 
+function paintEntireState(state) {
+	if(MapLoader.save_filename === './res/usa/house/12-2-2019-house.svg' ||
+		MapLoader.save_filename === './res/usa_county.svg') {
+		var setDisable = !state.disabled;
+		var stateName = state.name.substr(0,2);
+		for(var index = 0, length = states.length; index < length; ++index) {
+			var state_a = states[index];
+			var stateName_a = '';
+			if(MapLoader.save_filename === './res/usa/house/12-2-2019-house.svg') {
+				stateName = state.name.substr(0, 2);
+				stateName_a = state_a.name.substr(0, 2);
+			} else if(MapLoader.save_filename === './res/usa_county.svg') {
+
+				stateName = state.name.substr(-2);
+				stateName_a = state_a.name.substr(-2);
+			}
+			if(stateName_a === stateName) {
+					state_a.setColor(paintIndex, 0);
+			}
+		}
+	}
+}
+
 function stateClickDelete(state) {
-	state.toggleDisable();
+	if(KeyboardManager.areaSelect()) {
+		deleteEntireState(state);
+	} else {
+		state.toggleDisable();
+	}
+}
+
+function deleteEntireState(state) {
+	if(MapLoader.save_filename === './res/usa/house/12-2-2019-house.svg' ||
+		MapLoader.save_filename === './res/usa_county.svg') {
+		var setDisable = !state.disabled;
+		var stateName = state.name.substr(0,2);
+		for(var index = 0, length = states.length; index < length; ++index) {
+			var state_a = states[index];
+			var stateName_a = '';
+			if(MapLoader.save_filename === './res/usa/house/12-2-2019-house.svg') {
+				stateName = state.name.substr(0, 2);
+				stateName_a = state_a.name.substr(0, 2);
+			} else if(MapLoader.save_filename === './res/usa_county.svg') {
+
+				stateName = state.name.substr(-2);
+				stateName_a = state_a.name.substr(-2);
+			}
+			if(stateName_a === stateName) {
+				if(setDisable && state_a.disabled === false) {
+					state_a.toggleDisable();
+				} else if(!setDisable && state_a.disabled === true) {
+					state_a.toggleDisable();
+				}
+			}
+		}
+	}
 }
 
 function stateClickEC(state) {
@@ -4582,7 +4644,9 @@ data = {
 
 'rep_primary': {'AL': 50, 'AK': 28, 'AS': 9, 'AZ': 57, 'AR': 40, 'CA': 172, 'CO': 37, 'CT': 28, 'DE': 16, 'DC': 19, 'FL': 122, 'GA': 76, 'GU': 9, 'HI': 19, 'ID': 32, 'IL': 67, 'IN': 70, 'IA': 40, 'KS': 39, 'KY': 46, 'LA': 46, 'ME': 22, 'MD': 38, 'MA': 41, 'MI': 73, 'MN': 39, 'MS': 39, 'MO': 54, 'MT': 27, 'NE': 36, 'NV': 25, 'NH': 22, 'NJ': 49, 'NM': 22, 'NY': 95, 'NC': 71, 'ND': 29, 'NI': 9, 'OH': 82, 'OK': 43, 'OR': 28, 'PA': 88, 'PR': 23, 'RI': 19, 'SC': 50, 'SD': 29, 'TN': 58, 'TX': 155, 'UT': 40, 'VT': 17, 'VI': 9, 'VA': 49, 'WA': 44, 'WV': 34, 'WI': 52, 'WY': 29},
 
-'eu_parliament': {'IE-S':5,'IE-N':4,'IE-D':4,'BE-D':12,'BE-F':8,'BE-G':1,'FR':79,'ES':59,'PT':21,'IT':76,'MT':6,'CY':6,'GR':21,'BG':17,'RO':33,'HR':12,'HU':21,'SL':8,'AT':19,'SK':14,'CZ':21,'PO':52,'LI':11,'LV':8,'EE':7,'FI':14,'SE':21,'DK':14,'NL':29,'LU':6,'DE':96}
+'eu_parliament': {'IE-S':5,'IE-N':4,'IE-D':4,'BE-D':12,'BE-F':8,'BE-G':1,'FR':79,'ES':59,'PT':21,'IT':76,'MT':6,'CY':6,'GR':21,'BG':17,'RO':33,'HR':12,'HU':21,'SL':8,'AT':19,'SK':14,'CZ':21,'PO':52,'LI':11,'LV':8,'EE':7,'FI':14,'SE':21,'DK':14,'NL':29,'LU':6,'DE':96},
+
+'to_short_hand': {'Alabama': 'AL', 'Alaska': 'AK', 'Arizona': 'AZ', 'Arkansas': 'AR', 'California': 'CA', 'Colorado': 'CO', 'Connecticut': 'CT', 'Delaware': 'DE', 'Florida': 'FL', 'Georgia': 'GA', 'Hawaii': 'HI', 'Idaho': 'ID', 'Illinois': 'IL', 'Indiana': 'IN', 'Iowa': 'IA', 'Kansas': 'KS', 'Kentucky': 'KY', 'Louisiana': 'LA', 'Maine': 'ME', 'Maryland': 'MD', 'Massachusetts': 'MA', 'Michigan': 'MI', 'Minnesota': 'MN', 'Mississippi': 'MS', 'Missouri': 'MO', 'Montana': 'MT', 'Nebraska': 'NE', 'Nevada': 'NV', 'New Hampshire': 'NH', 'New Jersey': 'NJ', 'New Mexico': 'NM', 'New York': 'NY', 'North Carolina': 'NC', 'North Dakota': 'ND', 'Ohio': 'OH', 'Oklahoma': 'OK', 'Oregon': 'OR', 'Pennsylvania': 'PA', 'Rhode Island': 'RI', 'South Carolina': 'SC', 'South Dakota': 'SD', 'Tennessee': 'TN', 'Texas': 'TX', 'Utah': 'UT', 'Vermont': 'VT', 'Virginia': 'VA', 'Washington': 'WA', 'West Virginia': 'WV', 'Wisconsin': 'WI', 'Wyoming': 'WY' } 
 }
 class SimulatorData {
 }
@@ -4731,6 +4795,9 @@ function closeAllPopups() {
 	if(mysaves) {
 		Account.closeMyMaps();
 	}
+
+	// Remove active focus from close button
+	document.activeElement.blur();
 }
 
 function displayCustomColorMenu(type) {
@@ -5351,6 +5418,14 @@ function ifInIframe() {
 			element.style.display = 'none';
 		}
 		setPalette("light", false);
+	}
+}
+
+function showShortcuts() {
+	if(MapLoader.save_filename === './res/usa_county.svg' ||
+		MapLoader.save_filename === './res/usa/house/12-2-2019-house.svg') {
+		var countyHouse = document.getElementById("county-house-d");
+		countyHouse.style.display = '';
 	}
 }
 function displayVersionInfo() {
@@ -6524,7 +6599,7 @@ function saveMap_new(img, token) {
 function numberWithCommas(number) {
 	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-var currentCache = 'v1.11.1';
+var currentCache = 'v1.11.5';
 
 var states = [];
 var lands = [];
@@ -6681,8 +6756,9 @@ function setMode(set) {
 		button.style.opacity = '0.5';
 	}
 
+/*
 	var notification = document.getElementById('notification');
-	if(mode === 'paint' || mode === 'fill') {
+	if(mode === 'paint' || mode === 'fill' || mode === 'delete' || mode === 'edit') {
 		var notification = document.getElementById('notification');
 		notification.style.display = 'none';
 	} else {
@@ -6693,6 +6769,7 @@ function setMode(set) {
 		title.innerHTML = modeText;
 		message.innerHTML = notificationText;
 	}
+*/
 }
 
 // if paint index is invalid, change it to tossup
@@ -6816,7 +6893,6 @@ function start() {
 	CookieManager.loadCookies();
 	CookieManager.askConsent();
 
-	KeyboardManager.init();
 	CandidateManager.initCandidates();
 	ChartManager.initChart();
 

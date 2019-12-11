@@ -1,4 +1,4 @@
-<div class="grid-2">
+<div class="featured-grid">
 <?php
 	require './v2/html/popular-elections.php';
 	require './v2/html/bookmarks.php';

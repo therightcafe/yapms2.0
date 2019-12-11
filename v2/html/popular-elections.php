@@ -1,10 +1,10 @@
 <div id="popular-maps" class="featured-section">
 	<div class="featured-section-header">
 	<h2>
-		Popular Elections 
+		Popular Elections
 	</h2>
 	</div>
-	<div class="featured-section-grid">
+	<div class="in-featured-grid">
 	<div class="info-box popular-1">
 		<div class="info-box-header">
 			<img src="app/res/flags/usa.svg">
@@ -12,7 +12,7 @@
 				United States
 			</h3>
 		</div>
-		<div class="link-list">
+		<div class="link-list-2">
 		<a class="link" href="./app/?t=USA_2020_presidential">
 			Presidential
 		</a>
@@ -28,7 +28,7 @@
 				United Kingdom
 			</h3>
 		</div>
-		<div class="link-list">
+		<div class="link-list-2">
 		<a class="link" href="./app/?t=UnitedKingdom_house_of_commons">
 			House of Commons
 		</a>
@@ -44,7 +44,7 @@
 				Canada
 			</h3>
 		</div>
-		<div class="link-list">
+		<div class="link-list-2">
 		<a class="link" href="./app/?t=Canada_house_of_commons">
 			House of Commons
 		</a>
@@ -60,10 +60,10 @@
 		<div class="info-box-header">
 			<img src="app/res/flags/usa.svg">
 			<h3>
-				State Legislatures
+				Lower State Legislatures
 			</h3>
 		</div>
-		<div class="link-list">
+		<div class="link-list-2">
 		<a class="link" href="./app/?t=Arkansas_2020_state_lower">
 			Arkansas
 		</a>

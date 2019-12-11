@@ -285,7 +285,7 @@ class MapLoader {
 				break;
 			case "USA_2020_house":
 				PresetLoader.loadPreset('classic');
-				MapLoader.loadMap("./res/usa/house/12-2-2019-house.svg", 16, 0.075, "1", "takeall_noedit", "open", {enableCongress: true});
+				MapLoader.loadMap("./res/usa/house/12-2-2019-house.svg", 16, 0.075, "1", "takeall_noedit", "open", {enableCongress: true, enableEraser: true});
 				break;
 			case "USA_2008_house":
 				PresetLoader.loadPreset('classic');
@@ -572,6 +572,7 @@ class MapLoader {
 				}
 
 				setCongressContested();
+				showShortcuts();
 
 				if(options && options.voters) {
 					for(var stateIndex = 0, length = states.length; stateIndex < length; ++stateIndex) {
@@ -859,13 +860,15 @@ class MapLoader {
 				htmlElement.onclick = function() {
 					buttonClick(this);
 				}
-				htmlElement.setAttribute('onmouseover', 'if(KeyboardManager.keyStates[70]){buttonClick(this, {setSolid: true});}');
+				htmlElement.setAttribute('onmouseover', 
+				'if(KeyboardManager.keyStates[70]){buttonClick(this, {setSolid: true});}');
 				buttons.push(htmlElement);
 			} else if(name.includes('-land')) {
 				htmlElement.onclick = function() {
 					landClick(this);
 				}
-				htmlElement.setAttribute('onmouseover', 'if(KeyboardManager.keyStates[70]){landClick(this, {setSolid: true});}');
+				htmlElement.setAttribute('onmouseover', 
+				'if(KeyboardManager.keyStates[70]){landClick(this, {setSolid: true});}');
 				lands.push(htmlElement);
 			} else {
 				htmlElement.onclick = function() {
@@ -873,7 +876,8 @@ class MapLoader {
 				}
 				states.push(new State(name, htmlElement, dataid));
 				var stateIndex = states.length - 1;
-				htmlElement.setAttribute('onmouseover', 'if(KeyboardManager.keyStates[70]){stateClick(this, {setSolid: true});}');
+				htmlElement.setAttribute('onmouseover', 
+				"if(KeyboardManager.keyStates[70]){stateClick(this, {setSolid: true});}");
 			}
 		}
 

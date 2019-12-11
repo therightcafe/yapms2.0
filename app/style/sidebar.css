@@ -176,6 +176,10 @@
 	list-style-position: inside;
 }
 
+#sidebar-shortcuts > ul > li {
+	margin-bottom: 0.1em;
+}
+
 #yapnews-articles {
 	border-top: 1px solid rgba(0, 0, 0, 0.5);
 	font-family: Times;
