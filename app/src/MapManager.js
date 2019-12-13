@@ -2,7 +2,7 @@ class MapManager {
 	static centerMap() {
 		if(MapManager.panObject === null)
 			return;
-
+		
 		MapManager.panObject.resize();
 		MapManager.panObject.fit();
 		MapManager.panObject.center();

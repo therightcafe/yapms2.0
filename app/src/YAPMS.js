@@ -1748,7 +1748,7 @@ class MapManager {
 	static centerMap() {
 		if(MapManager.panObject === null)
 			return;
-
+		
 		MapManager.panObject.resize();
 		MapManager.panObject.fit();
 		MapManager.panObject.center();
@@ -6599,7 +6599,7 @@ function saveMap_new(img, token) {
 function numberWithCommas(number) {
 	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-var currentCache = 'v1.11.5';
+var currentCache = 'v1.12.0';
 
 var states = [];
 var lands = [];
@@ -6655,18 +6655,53 @@ function share_afterCenter() {
 		}, 3000);
 	}
 
-	html2canvas(document.getElementById('application'), {logging: true, onclone: function(clone) {
+	html2canvas(document.getElementById('application'), {/*width: 1200, height: 630,*/ logging: false, onclone: function(clone) {
+/*
+		console.log(clone);
+		clone.getElementById('application').style.maxWidth = '1200px';
+		clone.getElementById('application').style.width = '1200px';
+		clone.getElementById('application').style.minWidth = '1200px';
+		clone.getElementById('application').style.maxHeight = '630px';
+		clone.getElementById('application').style.height = '630px';
+		clone.getElementById('application').style.minHeight = '630px';
+*/ 
+
 		// remove the custom fonts from the clone
 		var svgtext = clone.getElementById('text');
 		if(svgtext) {
 			svgtext.style.fontFamily = 'arial';
 			svgtext.style.fontSize = '15px';
 		}
-		var svg = clone.getElementById('svgdata');
+
+		var svg = clone.getElementById("svgdata");
 		var mapdiv = clone.getElementById('map-div');
 		if(svg && mapdiv) {
-			svg.setAttribute('width', mapdiv.offsetWidth);
-			svg.setAttribute('height', mapdiv.offsetHeight);
+/*
+			var view = svg.firstChild;
+			while(view.firstChild) {
+				view.parentNode.insertBefore(view.firstChild, view);
+			}
+			view.parentNode.removeChild(view);
+*/
+
+			var width = mapdiv.offsetWidth + (mapdiv.offsetWidth * 0);
+			var height = mapdiv.offsetHeight + (mapdiv.offsetHeight * 0);
+			svg.setAttribute('width', width);
+			svg.setAttribute('height', height);
+/*
+			svg.setAttribute('viewBox', -width * 0.35 + ' ' + 0 + ' ' + width * 1.35 + ' ' + height);
+			console.log(svg);
+			var pan = svgPanZoom(svg, {
+				fit: true,
+				center: true,
+				contain: false,
+				panEnabled: true,
+				zoomEnabled: true,
+				dblClickZoomEnabled: false,
+				maxZoom: 100,
+				zoomScaleSensitivity: 0.1
+			});
+*/
 		}
 		var notification = clone.getElementById('legend-tooltip');
 		if(notification) {
@@ -6694,6 +6729,8 @@ function share_afterCenter() {
 		i.src = img;
 		i.style.width = '40vw';
 		i.style.height = 'auto';
+		//i.style.display = '';
+		if(grecaptcha)
 		grecaptcha.execute('6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo', {action: 'share'})
 		.then(function(token) {
 			saveMap_new(img, token);

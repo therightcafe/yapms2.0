@@ -7,6 +7,24 @@
 	<div class="in-featured-grid">
 	<div class="info-box update-1">
 		<div class="info-box-header">
+			<img src="app/res/flags/ukd.svg">
+			<h3>
+				UK 2019 Results
+			</h3>
+		</div>
+		<p>CON - 365</p>
+		<p>LAB - 203</p>
+		<p>SNP - 48</p>
+		<p>LDM - 11</p>
+		<p>Other - 23</p>
+		<div class="link-list">
+		<a class="link" href="./app/?t=UnitedKingdom_current_parliament">
+			2019 Results
+		</a>
+		</div>
+	</div>
+	<div class="info-box update-2">
+		<div class="info-box-header">
 			<h3>
 				New Feature
 			</h3>
@@ -21,7 +39,7 @@
 		</a>
 		</div>
 	</div>
-	<div class="info-box update-1">
+	<div class="info-box update-3">
 		<div class="info-box-header">
 			<img src="app/res/flags/usa.svg">
 			<h3>
@@ -38,7 +56,7 @@
 		</a>
 		</div>
 	</div>
-	<div class="info-box update-2">
+	<div class="info-box update-4">
 		<div class="info-box-header">
 			<img src="app/res/flags/usa.svg">
 			<h3>
@@ -55,7 +73,7 @@
 		</a>
 		</div>
 	</div>
-	<div class="info-box update-3">
+	<div class="info-box update-5">
 		<div class="info-box-header">
 			<img src="app/res/flags/usa.svg">
 			<h3>
@@ -70,7 +88,7 @@
 		</a>
 		</div>
 	</div>
-	<div class="info-box update-4" style="grid-column: 1 / 3">
+	<div class="info-box update-6">
 		<div class="info-box-header">
 			<img src="app/res/flags/swe.svg">
 			<h3>

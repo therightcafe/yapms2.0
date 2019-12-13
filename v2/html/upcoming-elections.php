@@ -7,19 +7,18 @@
 	<div class="in-featured-grid">
 	<div class="info-box upcoming-1">
 		<div class="info-box-header">
-			<img src="app/res/flags/usa.svg">
+			<img src="app/res/flags/tat.svg">
 			<h3>
-				Arkansas
+				Trinidad and Tobago
 			</h3>
 		</div>
 		<div class="link-list">
-		<p>Primary Election</p>
-		<p>HOR District 22</p>
+		<p>General Election</p>
 		<p><small>
-			December 10, 2019
+			September 2020
 		</small></p>
-		<a class="link" href="./app/?t=Arkansas_2020_state_lower">
-			House
+		<a class="link" href="./app/?t=Trinidad_Tobago_house_of_representatives">
+			House of Representatives
 		</a>
 		</div>
 	</div>
@@ -27,31 +26,39 @@
 		<div class="info-box-header">
 			<img src="app/res/flags/usa.svg">
 			<h3>
-				Tennessee
+				United States
 			</h3>
 		</div>
 		<div class="link-list">
-		<p>Special Election</p>
-		<p>HOR District 77</p>
+		<p>General Election</p>
 		<p><small>
-			December 10, 2019
+			November 3rd, 2020
 		</small></p>
+		<a class="link" href="./app/?t=USA_2020_presidential">
+			President
+		</a>
+		<a class="link" href="./app/?t=USA_2020_senate">
+			Senate
+		</a>
+		<a class="link" href="./app/?t=USA_2020_house">
+			House
+		</a>
 		</div>
 	</div>
 	<div class="info-box upcoming-3">
 		<div class="info-box-header">
-			<img src="app/res/flags/ukd.svg">
+			<img src="app/res/flags/ire.svg">
 			<h3>
-				United Kingdom
+				Ireland
 			</h3>
 		</div>
 		<div class="link-list">
-		<p>Parliamentary</p>
+		<p>General Election</p>
 		<p><small>
-			December 12, 2019
+			April 10, 2019
 		</small></p>
-		<a class="link" href="./app/?t=UnitedKingdom_house_of_commons">
-			House of Commons
+		<a class="link" href="./app/?t=Ireland_dail_eireann">
+			Dáil Éireann
 		</a>
 		</div>
 	</div>
