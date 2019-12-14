@@ -1,6 +1,5 @@
 <div id="primary-timeline" class="featured-section">
 	<div class="featured-section-header">
-		<img src="app/res/flags/usa.svg">
 		<h2>
 			2020 Primary Timeline	
 		</h2>

@@ -7,4 +7,3 @@
 	require './v2/html/primary-timeline.php';
 ?>
 </div>
-<iframe src="https://www.strawpoll.me/embed_1/19053997" style="width:680px;height:320px;border:0;border-radius: 6px; margin-bottom: 20px;">Loading poll...</iframe>

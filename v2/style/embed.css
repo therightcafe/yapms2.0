@@ -1,0 +1,12 @@
+#list-container {
+	display: table;
+	margin: auto;
+}
+
+ol {
+	text-align: left;
+}
+
+ol > li {
+	margin: 2em;
+}

@@ -55,7 +55,7 @@
 		<div class="link-list">
 		<p>General Election</p>
 		<p><small>
-			April 10, 2019
+			April 10, 2020
 		</small></p>
 		<a class="link" href="./app/?t=Ireland_dail_eireann">
 			Dáil Éireann

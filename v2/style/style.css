@@ -1,4 +1,5 @@
 html, body {
+	text-align: center;
 	background: #f0f1f2;
 	font-family: 'Roboto';
 	font-size: 18px;
@@ -61,11 +62,6 @@ a {
 	box-shadow: 1px 1px 3px #444444;
 }
 
-.featured-section > .featured-section-header > img {
-	margin: auto;
-	border-radius: 3px;
-}
-
 .featured-section > .featured-section-header > h2 {
 	flex: 1 1;
 	font-size: 1em;
@@ -74,32 +70,15 @@ a {
 	padding: 0.1em;
 }
 
-#top-featured {
-	display: flex;
-	flex-direction: row;
-}
-
-#top-featured > .featured-section {
-	flex: 1 1;
-}
-
 .help-box {
 	padding: 0.5em;
 	margin: 0.5em;
-	border-radius: 0px;
-	background: #0a1612;
 	background: white;
 	color: black;
 	font-size: 1em;
 	border-radius: 8px;
 	border: 1px solid black;
 	box-shadow: 1px 1px 3px #666666;
-	grid-column: 1 / 3;
-	grid-row: 1;
-}
-
-.help-box > p {
-	flex: 1 1;
 }
 
 #warning {
@@ -112,7 +91,6 @@ a {
 
 .social {
 	display: inline-block;
-	background: #7289da;
 	color: white;
 	font-size: 20px;
 	font-weight: bold;
@@ -155,7 +133,6 @@ a {
 	background: white;
 	border: 1px solid black;
 	border-radius: 6px;
-	margin: 0.5em;
 	vertical-align: top;
 	box-shadow: 1px 1px 3px #666666;
 }
@@ -237,55 +214,28 @@ a {
 
 .link-list-2 {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: repeat(2, 1fr);
 	margin: auto;
 }
 
 .featured-grid {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 	grid-gap: 3em;
 	margin: 5em;
 	margin-top: 1em;
 }
 
-.featured-grid > #popular-maps {
-	grid-row: 1;
-	grid-column: 1;
-}
-
-.featured-grid > #bookmarks {
-	grid-row: 1;
-	grid-column: 2;
-}
-
-.featured-grid > #updates {
-	grid-row: 2;
-	grid-column: 1;
-}
-
-.featured-grid > #upcoming {
-	grid-row: 2;
-	grid-column: 2;	
-} 
-
-.featured-grid > #primary-timeline {
-	grid-row: 3;
-	grid-column: 1 / 3;
-}
-
 .in-featured-grid  {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	flex: 1 1;
+	grid-gap: 0.5em;
+	margin-top: 0.5em;
 }
 
 #primary-timeline > .in-featured-grid {
 	grid-template-columns: repeat(4, 1fr);
-}
-
-.upcoming-3 {
-	grid-column: 1 / 3;
 }
 
 .primary-5 {
@@ -372,4 +322,13 @@ a {
 }
 
 #bookmark-list > .link > div {
+}
+
+#footer {
+	display: flex;
+	flex-direction: row;
+	padding: 1em;
+	color: white;
+	background: #0a1612;
+	box-shadow: 0px -1px 4px #333333;
 }
