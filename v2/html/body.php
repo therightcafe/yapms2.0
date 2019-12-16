@@ -55,7 +55,9 @@
 </div>
 
 <?php
+/*
 if($mobile === false) {
 	require './v2/html/footer.php';
 }
+*/
 ?>

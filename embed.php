@@ -54,7 +54,9 @@
 <body>
 <div id="topbar">
 	<h1>
-		Yet Another Political Map Simulator
+		<a href="./index.php">
+			Yet Another Political Map Simulator
+		</a>
 	</h1>
 </div>
 
@@ -85,6 +87,9 @@
 			&ltiframe src=[YOUR LINK HERE]>&lt/iframe>
 		</code>
 		<p>Replace [YOUR LINK HERE] with the URL you copied in step 5.</p>
+	</li>
+	<li>
+		Adjust the CSS to your liking.
 	</li>
 </ol>
 </div>

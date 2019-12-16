@@ -2836,7 +2836,7 @@ class PresetLoader {
 	static loadPresetDemocraticPrimary() {
 		var biden = new Candidate('Biden',
 			['#009900','#009900','#009900','#009900']);
-		var harris = new Candidate('Harris',
+		var steyer = new Candidate('Steyer',
 			['#ff9900','#ff9900','#ff9900','#ff9900']);
 		var sanders = new Candidate('Sanders',
 			['#457fff','#457fff','#457fff','#457fff']);
@@ -2852,11 +2852,11 @@ class PresetLoader {
 			['#3da882','#3da882','#3da882','#3da882']);
 		
 		CandidateManager.candidates['Biden'] = biden;
-		CandidateManager.candidates['Harris'] = harris;
 		CandidateManager.candidates['Sanders'] = sanders;
 		CandidateManager.candidates['Warren'] = warren;
 		CandidateManager.candidates['Buttigieg'] = buttigieg;
 		CandidateManager.candidates['Klobuchar'] = klobuchar;
+		CandidateManager.candidates['Steyer'] = steyer;
 		CandidateManager.candidates['Booker'] = booker;
 		CandidateManager.candidates['Yang'] = yang;
 	}
@@ -6601,7 +6601,7 @@ function saveMap_new(img, token) {
 function numberWithCommas(number) {
 	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-var currentCache = 'v1.12.3';
+var currentCache = 'v1.12.5';
 
 var states = [];
 var lands = [];
