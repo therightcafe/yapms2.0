@@ -4,7 +4,7 @@
 		Upcoming Elections
 	</h2>
 	</div>
-	<div class="in-featured-grid">
+	<div class="featured-section-body">
 	<div class="info-box upcoming-1">
 		<div class="info-box-header">
 			<img src="app/res/flags/tat.svg">

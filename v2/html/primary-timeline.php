@@ -4,7 +4,7 @@
 			2020 Primary Timeline	
 		</h2>
 	</div>
-	<div class="in-featured-grid">
+	<div class="featured-section-body">
 	<div class="info-box primary-1">
 		<div class="info-box-header">
 			<h3>
