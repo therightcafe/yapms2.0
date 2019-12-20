@@ -380,7 +380,11 @@ class State {
 
 		this.colorValue = colorValue;
 		
-		var color = CandidateManager.candidates[candidate].colors[colorValue];
+		var color = '#000000';
+		console.log(candidate);
+		if(CandidateManager.candidates[candidate]) {
+			color = CandidateManager.candidates[candidate].colors[colorValue];
+		}
 
 		this.htmlElement.style.fill = color;
 
