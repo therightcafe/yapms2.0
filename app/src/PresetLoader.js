@@ -71,6 +71,9 @@ class PresetLoader {
 			case 'portugal':
 				PresetLoader.loadPresetPortugal();
 				break;
+			case 'pakistan':
+				PresetLoader.loadPresetPakistan();
+				break;
 		}
 	
 		ChartManager.updateChart();
@@ -807,6 +810,53 @@ class PresetLoader {
 		CandidateManager.candidates['SolS'] = sols;
 		CandidateManager.candidates['EDU/UDF'] = eduudf;
 		CandidateManager.candidates['LdT'] = ldt;
+		LegendManager.toggleLegendLeans()
+	}
+	
+	static loadPresetPakistan() {
+		var pti = new Candidate('PTI', 
+			['#ff0f0f','#ff0f0f','#ff0f0f','#ff0f0f']);
+		var mqmp = new Candidate('MQM-P', 
+			['#8f0303','#8f0303','#8f0303','#8f0303']);
+		var pmlq = new Candidate('PML-Q', 
+			['#00800d','#00800d','#00800d','#00800d']);
+		var bap = new Candidate('BAP', 
+			['#9eee58','#9eee58','#9eee58','#9eee58']);
+		var gda = new Candidate('GDA', 
+			['#769c1e','#769c1e','#769c1e','#769c1e']);
+		var aml = new Candidate('AML', 
+			['#4aee31','#4aee31','#4aee31','#4aee31']);
+		var jwp = new Candidate('JWP', 
+			['#d984e3','#d984e3','#d984e3','#d984e3']);
+		
+		var bnpn = new Candidate('BNP-M', 
+			['#eee600','#eee600','#eee600','#eee600']);
+
+		var pmln = new Candidate('PML-N', 
+			['#228000','#228000','#228000','#228000']);
+		var ppp = new Candidate('PPP', 
+			['#000000','#000000','#000000','#000000']);
+		var mma = new Candidate('MMA', 
+			['#004c00','#004c00','#004c00','#004c00']);
+		var anp = new Candidate('ANP', 
+			['#ff0800','#ff0800','#ff0800','#ff0800']);
+
+		var ind = new Candidate('Ind', 
+			['#afafaf','#afafaf','#afafaf','#afafaf']);
+
+		CandidateManager.candidates['PTI'] = pti;
+		CandidateManager.candidates['MQM-P'] = mqmp;
+		CandidateManager.candidates['PML-Q'] = pmlq;
+		CandidateManager.candidates['BAP'] = bap;
+		CandidateManager.candidates['GDA'] = gda;
+		CandidateManager.candidates['AML'] = aml;
+		CandidateManager.candidates['JWP'] = jwp;
+		CandidateManager.candidates['BNP-N'] = bnpn;
+		CandidateManager.candidates['PML-N'] = pmln;
+		CandidateManager.candidates['PPP'] = ppp;
+		CandidateManager.candidates['MMA'] = mma;
+		CandidateManager.candidates['ANP'] = anp;
+		CandidateManager.candidates['Ind'] = ind;
 		LegendManager.toggleLegendLeans()
 	}
 }
