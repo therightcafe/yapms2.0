@@ -829,7 +829,7 @@ class PresetLoader {
 		var jwp = new Candidate('JWP', 
 			['#d984e3','#d984e3','#d984e3','#d984e3']);
 		
-		var bnpn = new Candidate('BNP-M', 
+		var bnpm = new Candidate('BNP-M', 
 			['#eee600','#eee600','#eee600','#eee600']);
 
 		var pmln = new Candidate('PML-N', 
@@ -851,7 +851,7 @@ class PresetLoader {
 		CandidateManager.candidates['GDA'] = gda;
 		CandidateManager.candidates['AML'] = aml;
 		CandidateManager.candidates['JWP'] = jwp;
-		CandidateManager.candidates['BNP-N'] = bnpn;
+		CandidateManager.candidates['BNP-M'] = bnpm;
 		CandidateManager.candidates['PML-N'] = pmln;
 		CandidateManager.candidates['PPP'] = ppp;
 		CandidateManager.candidates['MMA'] = mma;
