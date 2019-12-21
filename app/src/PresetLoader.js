@@ -71,6 +71,9 @@ class PresetLoader {
 			case 'portugal':
 				PresetLoader.loadPresetPortugal();
 				break;
+			case 'eu':
+				PresetLoader.loadPresetEU();
+				break;
 		}
 	
 		ChartManager.updateChart();
@@ -808,5 +811,28 @@ class PresetLoader {
 		CandidateManager.candidates['EDU/UDF'] = eduudf;
 		CandidateManager.candidates['LdT'] = ldt;
 		LegendManager.toggleLegendLeans()
+	}
+	
+	static loadPresetEU() {
+		var epp = new Candidate('EPP',
+			['#3399FF','#3399FF','#3399FF','#3399FF']);
+		var pes = new Candidate('PES',
+			['#F0001C','#F0001C','#F0001C','#F0001C']);
+		var alde = new Candidate('ALDE',
+			['#FFD700','#FFD700','#FFD700','#FFD700']);
+		var egp = new Candidate('EGP',
+			['#99CC33','#99CC33','#99CC33','#99CC33']);
+		var ecrp = new Candidate('ECRP',
+			['#0054A5','#0054A5','#0054A5','#0054A5']);
+		var idp = new Candidate('IDP',
+			['#26428B','#26428B','#26428B','#26428B']);
+		var pel = new Candidate('PEL',
+			['#800000','#800000','#800000','#800000']);
+		var efa = new Candidate('EFA',
+			['#662287','#662287','#662287','#662287']);
+		var edp = new Candidate('EDP',
+			['#EE9900','#EE9900','#EE9900','#EE9900']);
+		var ecpm = new Candidate('ECPM',
+			['#0BAE2C','#0BAE2C','#0BAE2C','#0BAE2C']);
 	}
 }
