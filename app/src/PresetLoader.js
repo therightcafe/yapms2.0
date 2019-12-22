@@ -240,33 +240,30 @@ class PresetLoader {
 			['#cccc00', '#cccc00', '#cccc00', '#cccc00']);
 		var grn = new Candidate('GRN',
 			['#6AB023', '#6AB023', '#6AB023', '#6AB023']);
-		var bxp = new Candidate('BXP',
-			['#12B6CF', '#12B6CF', '#12B6CF', '#12B6CF']);
 		var dup = new Candidate('DUP',
 			['#D46A4C', '#D46A4C', '#D46A4C', '#D46A4C']);
 		var sf = new Candidate('SF',
 			['#008800', '#008800', '#008800', '#008800']);
 		var pc = new Candidate('PC',
 			['#008142', '#008142', '#008142', '#008142']);
-		var apni = new Candidate('APNI',
-			['#F6CB2F', '#F6CB2F', '#F6CB2F', '#F6CB2F']);
 		var sdlp = new Candidate('SDLP',
-			['#2AA82C', '#2AA82C', '#2AA82C', '#2AA82C']);
-		var uup = new Candidate('UUP',
-			['#9999FF', '#9999FF', '#9999FF', '#9999FF']);
+			['#579c85', '#579c85', '#579c85', '#579c85']);
+		var all = new Candidate('ALL',
+			['#EFCD53', '#EFCD53', '#EFCD53', '#EFCD53']);
+		var ind = new Candidate('Ind',
+			['#aaaaaa', '#aaaaaa', '#aaaaaa', '#aaaaaa']);
 
 		CandidateManager.candidates['CON'] = con;
 		CandidateManager.candidates['LAB'] = lab;
 		CandidateManager.candidates['LDM'] = ldm;
 		CandidateManager.candidates['SNP'] = snp 
 		CandidateManager.candidates['GRN'] = grn;
-		CandidateManager.candidates['BXP'] = bxp;
 		CandidateManager.candidates['DUP'] = dup;
 		CandidateManager.candidates['SF'] = sf;
 		CandidateManager.candidates['PC'] = pc;
-		CandidateManager.candidates['APNI'] = apni;
 		CandidateManager.candidates['SDLP'] = sdlp;
-		CandidateManager.candidates['UUP'] = uup;
+		CandidateManager.candidates['ALL'] = all;
+		CandidateManager.candidates['Ind'] = ind;
 		LegendManager.toggleLegendLeans()
 	}
 
@@ -916,5 +913,18 @@ class PresetLoader {
 			['#0BAE2C','#0BAE2C','#0BAE2C','#0BAE2C']);
 		var ni = new Candidate('NI',
 			['#C0C0C0','#C0C0C0','#C0C0C0','#C0C0C0']);
+
+		CandidateManager.candidates['EPP'] = epp;
+		CandidateManager.candidates['PES'] = pes;
+		CandidateManager.candidates['ALDE'] = alde;
+		CandidateManager.candidates['EGP'] = egp;
+		CandidateManager.candidates['ECRP'] = ecrp;
+		CandidateManager.candidates['IDP'] = idp;
+		CandidateManager.candidates['PEL'] = pel;
+		CandidateManager.candidates['EFA'] = efa;
+		CandidateManager.candidates['EDP'] = edp;
+		CandidateManager.candidates['ECPM'] = ecpm;
+		CandidateManager.candidates['NI'] = ni;
+		LegendManager.toggleLegendLeans();
 	}
 }
