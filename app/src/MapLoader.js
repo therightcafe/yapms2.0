@@ -439,7 +439,7 @@ class MapLoader {
 				MapLoader.loadMap("./res/che/switzerland_cantons.svg", 16, 0.25, "switzerland_council_of_states", "proportional", "open");
 				break;
 			case "EuropeanUnion":
-				PresetLoader.loadPreset('classic');
+				PresetLoader.loadPreset('eu');
 				MapLoader.loadMap("./res/eu.svg", 16, 0.25, "eu_parliament", "proportional", "open");
 				break;
 			case "World":

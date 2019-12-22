@@ -9,6 +9,23 @@
 		<div class="info-box-header">
 			<img src="app/res/flags/usa.svg">
 			<h3>
+				Forecast
+			</h3>
+		</div>
+		<div class="link-list">
+		<p>Cook Political Report</p>
+		<p><small>
+			December 20, 2019
+		</small></p>
+		<a class="link" href="./app/?t=USA_2020_house_cook">
+			House
+		</a>
+		</div>
+	</div>
+	<div class="info-box">
+		<div class="info-box-header">
+			<img src="app/res/flags/usa.svg">
+			<h3>
 				Congress
 			</h3>
 		</div>
@@ -33,7 +50,7 @@
 			</a>
 		</div>
 	</div>
-	<div class="info-box update-1">
+	<div class="info-box">
 		<div class="info-box-header">
 			<img src="app/res/flags/ukd.svg">
 			<h3>
@@ -51,7 +68,7 @@
 		</a>
 		</div>
 	</div>
-	<div class="info-box update-2">
+	<div class="info-box">
 		<div class="info-box-header">
 			<h3>
 				New Feature
@@ -67,24 +84,7 @@
 		</a>
 		</div>
 	</div>
-	<div class="info-box update-3">
-		<div class="info-box-header">
-			<img src="app/res/flags/usa.svg">
-			<h3>
-				Forecast
-			</h3>
-		</div>
-		<div class="link-list">
-		<p>Cook Political Report</p>
-		<p><small>
-			December 6, 2019
-		</small></p>
-		<a class="link" href="./app/?t=USA_2020_house_cook">
-			House
-		</a>
-		</div>
-	</div>
-	<div class="info-box update-4">
+	<div class="info-box">
 		<div class="info-box-header">
 			<img src="app/res/flags/usa.svg">
 			<h3>
@@ -101,7 +101,7 @@
 		</a>
 		</div>
 	</div>
-	<div class="info-box update-5">
+	<div class="info-box">
 		<div class="info-box-header">
 			<img src="app/res/flags/usa.svg">
 			<h3>
