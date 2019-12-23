@@ -27,6 +27,7 @@ foreach($q as $row) {
 	unset($row[6]);
 	unset($row[7]);
 	unset($row[8]);
+	unset($row["text"]);
 	array_push($data, $row);	
 }
 
