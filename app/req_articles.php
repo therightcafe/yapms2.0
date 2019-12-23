@@ -11,23 +11,13 @@ catch(PDOException $e) {
 	die();
 }
 
-$sql = 'select * from articles order by upload desc limit 10 offset 0';
+$sql = 'select title, author, snippet, id from articles order by upload desc limit 10 offset 0';
 
 $q = $dbh->query($sql);
 
 $data = array();
 
 foreach($q as $row) {
-	unset($row[0]);
-	unset($row[1]);
-	unset($row[2]);
-	unset($row[3]);
-	unset($row[4]);
-	unset($row[5]);
-	unset($row[6]);
-	unset($row[7]);
-	unset($row[8]);
-	unset($row["text"]);
 	array_push($data, $row);	
 }
 
