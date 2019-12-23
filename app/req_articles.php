@@ -18,6 +18,10 @@ $q = $dbh->query($sql);
 $data = array();
 
 foreach($q as $row) {
+	unset($row[0]);
+	unset($row[1]);
+	unset($row[2]);
+	unset($row[3]);
 	array_push($data, $row);	
 }
 
