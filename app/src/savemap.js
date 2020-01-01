@@ -87,6 +87,13 @@ function saveMap_user() {
 
 	for(var stateIndex = 0; stateIndex < states.length; ++stateIndex) {
 		var state = states[stateIndex];
+		// Remove zero delegates
+		for(var key in state.delegates) {
+			var count = state.delegates[key];
+			if(count === 0) {
+				delete state.delegates[key];
+			}
+		}
 		data['states'][state.name] = {};
 		data['states'][state.name]['candidate'] = state.candidate;
 		data['states'][state.name]['delegates'] = state.delegates;
@@ -96,6 +103,13 @@ function saveMap_user() {
 
 	for(var stateIndex = 0; stateIndex < proportionalStates.length; ++stateIndex) {
 		var state = proportionalStates[stateIndex];
+		// Remove zero delegates
+		for(var key in state.delegates) {
+			var count = state.delegates[key];
+			if(count === 0) {
+				delete state.delegates[key];
+			}
+		}
 		data['proportional'][state.name] = {};
 		data['proportional'][state.name]['candidate'] = state.candidate;
 		data['proportional'][state.name]['delegates'] = state.delegates;
@@ -157,6 +171,13 @@ function saveMap_new(img, token) {
 
 	for(var stateIndex = 0; stateIndex < states.length; ++stateIndex) {
 		var state = states[stateIndex];
+		// Remove zero delegates
+		for(var key in state.delegates) {
+			var count = state.delegates[key];
+			if(count === 0) {
+				delete state.delegates[key];
+			}
+		}
 		data['states'][state.name] = {};
 		data['states'][state.name]['delegates'] = state.delegates;
 		data['states'][state.name]['colorvalue'] = state.colorValue;
@@ -165,6 +186,13 @@ function saveMap_new(img, token) {
 
 	for(var stateIndex = 0; stateIndex < proportionalStates.length; ++stateIndex) {
 		var state = proportionalStates[stateIndex];
+		// Remove zero delegates
+		for(var key in state.delegates) {
+			var count = state.delegates[key];
+			if(count === 0) {
+				delete state.delegates[key];
+			}
+		}
 		data['proportional'][state.name] = {};
 		data['proportional'][state.name]['delegates'] = state.delegates;
 		data['proportional'][state.name]['colorvalue'] = state.colorValue;

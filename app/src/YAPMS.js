@@ -715,6 +715,7 @@ class CandidateManager {
 	}
 
 	static addCandidate(name, solid, likely, leaning, tilting) {
+
 		if(name === undefined) {
 			var nameHTML = document.getElementById('name');
 			if(nameHTML !== null) {
@@ -1977,6 +1978,10 @@ class MapLoader {
 				PresetLoader.loadPreset("classic");
 				MapLoader.loadMap("./res/usa/connecticut/2020_house.svg", 16, 0.5, "1", "takeall_noedit", "open");
 				break;
+			case "Florida_2020_state_upper":
+				PresetLoader.loadPreset("classic");
+				MapLoader.loadMap("./res/usa/florida/2020_upper.svg", 16, 0.00025, "1", "takeall_noedit", "open");
+				break;
 			case "Florida_2020_state_lower":
 				PresetLoader.loadPreset("classic");
 				MapLoader.loadMap("./res/usa/florida/2020_house.svg", 16, 0.25, "1", "takeall_noedit", "open");
@@ -1996,6 +2001,10 @@ class MapLoader {
 			case "Michigan_2020_state_lower":
 				PresetLoader.loadPreset("classic");
 				MapLoader.loadMap("./res/usa/michigan/2020_house.svg", 16, 0.2, "1", "takeall_noedit", "open");
+				break;
+			case "Minnesota_2020_state_upper":
+				PresetLoader.loadPreset("classic");
+				MapLoader.loadMap("./res/usa/minnesota/2020_upper.svg", 16, 0.5, "1", "takeall_noedit", "open");
 				break;
 			case "Minnesota_2020_state_lower":
 				PresetLoader.loadPreset("classic");
@@ -2829,7 +2838,7 @@ class PresetLoader {
 		var walsh = new Candidate('Walsh',
 			['#1c408c','#1c408c','#1c408c','#1c408c']);
 		
-		CandidateManager.candidates['Drumpf'] = trump;
+		CandidateManager.candidates['Trump'] = trump;
 		CandidateManager.candidates['Weld'] = weld;
 		CandidateManager.candidates['Walsh'] = walsh;
 	}
@@ -6544,6 +6553,13 @@ function saveMap_user() {
 
 	for(var stateIndex = 0; stateIndex < states.length; ++stateIndex) {
 		var state = states[stateIndex];
+		// Remove zero delegates
+		for(var key in state.delegates) {
+			var count = state.delegates[key];
+			if(count === 0) {
+				delete state.delegates[key];
+			}
+		}
 		data['states'][state.name] = {};
 		data['states'][state.name]['candidate'] = state.candidate;
 		data['states'][state.name]['delegates'] = state.delegates;
@@ -6553,6 +6569,13 @@ function saveMap_user() {
 
 	for(var stateIndex = 0; stateIndex < proportionalStates.length; ++stateIndex) {
 		var state = proportionalStates[stateIndex];
+		// Remove zero delegates
+		for(var key in state.delegates) {
+			var count = state.delegates[key];
+			if(count === 0) {
+				delete state.delegates[key];
+			}
+		}
 		data['proportional'][state.name] = {};
 		data['proportional'][state.name]['candidate'] = state.candidate;
 		data['proportional'][state.name]['delegates'] = state.delegates;
@@ -6614,6 +6637,13 @@ function saveMap_new(img, token) {
 
 	for(var stateIndex = 0; stateIndex < states.length; ++stateIndex) {
 		var state = states[stateIndex];
+		// Remove zero delegates
+		for(var key in state.delegates) {
+			var count = state.delegates[key];
+			if(count === 0) {
+				delete state.delegates[key];
+			}
+		}
 		data['states'][state.name] = {};
 		data['states'][state.name]['delegates'] = state.delegates;
 		data['states'][state.name]['colorvalue'] = state.colorValue;
@@ -6622,6 +6652,13 @@ function saveMap_new(img, token) {
 
 	for(var stateIndex = 0; stateIndex < proportionalStates.length; ++stateIndex) {
 		var state = proportionalStates[stateIndex];
+		// Remove zero delegates
+		for(var key in state.delegates) {
+			var count = state.delegates[key];
+			if(count === 0) {
+				delete state.delegates[key];
+			}
+		}
 		data['proportional'][state.name] = {};
 		data['proportional'][state.name]['delegates'] = state.delegates;
 		data['proportional'][state.name]['colorvalue'] = state.colorValue;

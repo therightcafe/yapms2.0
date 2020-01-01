@@ -100,6 +100,7 @@ class CandidateManager {
 	}
 
 	static addCandidate(name, solid, likely, leaning, tilting) {
+
 		if(name === undefined) {
 			var nameHTML = document.getElementById('name');
 			if(nameHTML !== null) {

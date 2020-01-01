@@ -102,7 +102,7 @@ class PresetLoader {
 		var walsh = new Candidate('Walsh',
 			['#1c408c','#1c408c','#1c408c','#1c408c']);
 		
-		CandidateManager.candidates['Drumpf'] = trump;
+		CandidateManager.candidates['Trump'] = trump;
 		CandidateManager.candidates['Weld'] = weld;
 		CandidateManager.candidates['Walsh'] = walsh;
 	}

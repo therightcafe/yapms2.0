@@ -179,6 +179,10 @@ class MapLoader {
 				PresetLoader.loadPreset("classic");
 				MapLoader.loadMap("./res/usa/connecticut/2020_house.svg", 16, 0.5, "1", "takeall_noedit", "open");
 				break;
+			case "Florida_2020_state_upper":
+				PresetLoader.loadPreset("classic");
+				MapLoader.loadMap("./res/usa/florida/2020_upper.svg", 16, 0.00025, "1", "takeall_noedit", "open");
+				break;
 			case "Florida_2020_state_lower":
 				PresetLoader.loadPreset("classic");
 				MapLoader.loadMap("./res/usa/florida/2020_house.svg", 16, 0.25, "1", "takeall_noedit", "open");
@@ -198,6 +202,10 @@ class MapLoader {
 			case "Michigan_2020_state_lower":
 				PresetLoader.loadPreset("classic");
 				MapLoader.loadMap("./res/usa/michigan/2020_house.svg", 16, 0.2, "1", "takeall_noedit", "open");
+				break;
+			case "Minnesota_2020_state_upper":
+				PresetLoader.loadPreset("classic");
+				MapLoader.loadMap("./res/usa/minnesota/2020_upper.svg", 16, 0.5, "1", "takeall_noedit", "open");
 				break;
 			case "Minnesota_2020_state_lower":
 				PresetLoader.loadPreset("classic");

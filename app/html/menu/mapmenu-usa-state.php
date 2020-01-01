@@ -15,6 +15,9 @@
 <a class="selectmenu-button" href="./?t=Arkansas_2020_state_upper">
 	<div class="selectmenu-button-text">Arkansas</div>
 </a>
+<a class="selectmenu-button" href="./?t=Minnesota_2020_state_upper">
+	<div class="selectmenu-button-text">Minnesota</div>
+</a>
 <a class="selectmenu-button" href="./?t=NewJersey_2020_state_upper">
 	<div class="selectmenu-button-text">New Jersey</div>
 </a>

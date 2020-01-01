@@ -15,14 +15,19 @@
 			<a class="navigation-4" href="./app/?t=Arkansas_2020_state_upper">
 				Arkansas
 			</a>
-			<a class="navigation-4" href="./app/?t=NewJersey_2020_state_upper">
-				New Jersey
+			<a class="navigation-4" href="./app/?t=Minnesota_2020_state_upper">
+				Minnesota
 			</a>
 		</div>
 		<div class="navigation-3">
+			<a class="navigation-4" href="./app/?t=NewJersey_2020_state_upper">
+				New Jersey
+			</a>
 			<a class="navigation-4" href="./app/?t=Pennsylvania_2020_state_upper">
 				Pennsylvania
 			</a>
+		</div>
+		<div class="navigation-3">
 			<a class="navigation-4" href="./app/?t=Texas_2020_state_upper">
 				Texas
 			</a>
