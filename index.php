@@ -84,9 +84,26 @@
 		echo '<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
 			<script src="./v2/script/mobile-navigation.js"></script>
 			<script src="./v2/script/bookmark.js"></script>
-			<script src="./v2/script/cookies.js"></script>';
+			<script src="./v2/script/cookies.js"></script>
+			<script>
+			if(gtag) {
+				gtag("event", "Home Page", {
+					"event_category": "Home Page Version",
+					"event_label": "Home Page New",
+					"non_interaction": true
+				});
+			}
+			</script>';
 	} else {
-		require './v1/body.php';
+		require './v1/body.php
+			if(gtag) {
+				gtag("event", "Home Page", {
+					"event_category": "Home Page Version",
+					"event_label": "Home Page Old",
+					"non_interaction": true
+				});
+			}
+			</script>';
 	}
 ?>
 
@@ -125,8 +142,8 @@
 
 	window.addEventListener('appinstalled', (evt) => {
 		if(gtag) {
-			gtag('event', 'install', {
-				'event_category': 'install',
+			gtag('event', 'Home Page', {
+				'event_category': 'Install',
 				'event_label': 'User installed to homescreen',
 				'non_interaction': false
 			});
@@ -139,8 +156,8 @@
 		if(warning) {
 			warning.style.display = 'inline-block';
 			if(gtag) {
-				gtag('event', 'warning', {
-					'event_category': 'warning',
+				gtag('event', 'Home Page', {
+					'event_category': 'Warning',
 					'event_label': 'Warning displayed',
 					'non_interaction': true
 				});
