@@ -97,8 +97,8 @@
 			}
 			</script>';
 	} else {
-		require './v1/body.php
-			if(gtag) {
+		require './v1/body.php';
+		echo 'if(gtag) {
 				gtag("event", "Home Page", {
 					"event_category": "Home Page Version",
 					"event_label": "Home Page Old",
