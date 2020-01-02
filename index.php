@@ -92,6 +92,8 @@
 					"event_label": "Home Page New",
 					"non_interaction": true
 				});
+			} else {
+				console.log("No google analytics detected");
 			}
 			</script>';
 	} else {
@@ -102,6 +104,8 @@
 					"event_label": "Home Page Old",
 					"non_interaction": true
 				});
+			} else {
+				console.log("No google analytics detected");
 			}
 			</script>';
 	}
