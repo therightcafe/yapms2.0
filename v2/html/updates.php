@@ -9,6 +9,22 @@
 		<div class="info-box-header">
 			<img src="app/res/flags/usa.svg">
 			<h3>
+				New Maps
+			</h3>
+		</div>
+		<div class="link-list">
+		<p>State Senate Maps</p>
+		<a class="link" href="./app/?t=California_2020_state_upper">California</a>
+		<a class="link" href="./app/?t=Florida_2020_state_upper">Florida</a>
+		<a class="link" href="./app/?t=Minnesota_2020_state_upper">Minnesota</a>
+		<a class="link" href="./app/?t=NorthDakota_2020_state_upper">North Dakota</a>
+		<a class="link" href="./app/?t=Ohio_2020_state_upper">Ohio</a>
+		</div>
+	</div>
+	<div class="info-box">
+		<div class="info-box-header">
+			<img src="app/res/flags/usa.svg">
+			<h3>
 				Forecast
 			</h3>
 		</div>

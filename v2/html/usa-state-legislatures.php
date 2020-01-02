@@ -15,6 +15,14 @@
 			<a class="navigation-4" href="./app/?t=Arkansas_2020_state_upper">
 				Arkansas
 			</a>
+			<a class="navigation-4" href="./app/?t=California_2020_state_upper">
+				California
+			</a>
+		</div>
+		<div class="navigation-3">
+			<a class="navigation-4" href="./app/?t=Florida_2020_state_upper">
+				Florida
+			</a>
 			<a class="navigation-4" href="./app/?t=Minnesota_2020_state_upper">
 				Minnesota
 			</a>
@@ -22,6 +30,14 @@
 		<div class="navigation-3">
 			<a class="navigation-4" href="./app/?t=NewJersey_2020_state_upper">
 				New Jersey
+			</a>
+			<a class="navigation-4" href="./app/?t=NorthDakota_2020_state_upper">
+				North Dakota
+			</a>
+		</div>
+		<div class="navigation-3">
+			<a class="navigation-4" href="./app/?t=Ohio_2020_state_upper">
+				Ohio
 			</a>
 			<a class="navigation-4" href="./app/?t=Pennsylvania_2020_state_upper">
 				Pennsylvania

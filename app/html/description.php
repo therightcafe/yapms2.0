@@ -50,6 +50,9 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 			case "NewJersey": 
 				$state = "New Jersey";
 				break;
+			case "NorthDakota":
+				$state = "North Dakota";
+				break;
 		}	
 		$year = $split[1];
 		echo "<meta name=\"description\" content=\"Interactive {$state} {$year} Upper State Legislature Map\">

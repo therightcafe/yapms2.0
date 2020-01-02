@@ -15,11 +15,23 @@
 <a class="selectmenu-button" href="./?t=Arkansas_2020_state_upper">
 	<div class="selectmenu-button-text">Arkansas</div>
 </a>
+<a class="selectmenu-button" href="./?t=California_2020_state_upper">
+	<div class="selectmenu-button-text">California</div>
+</a>
+<a class="selectmenu-button" href="./?t=Florida_2020_state_upper">
+	<div class="selectmenu-button-text">Florida</div>
+</a>
 <a class="selectmenu-button" href="./?t=Minnesota_2020_state_upper">
 	<div class="selectmenu-button-text">Minnesota</div>
 </a>
 <a class="selectmenu-button" href="./?t=NewJersey_2020_state_upper">
 	<div class="selectmenu-button-text">New Jersey</div>
+</a>
+<a class="selectmenu-button" href="./?t=NorthDakota_2020_state_upper">
+	<div class="selectmenu-button-text">North Dakota</div>
+</a>
+<a class="selectmenu-button" href="./?t=Ohio_2020_state_upper">
+	<div class="selectmenu-button-text">Ohio</div>
 </a>
 <a class="selectmenu-button" href="./?t=Pennsylvania_2020_state_upper">
 	<div class="selectmenu-button-text">Pennsylvania</div>
