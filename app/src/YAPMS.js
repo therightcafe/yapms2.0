@@ -5453,8 +5453,8 @@ function setBattleHorizontal() {
 	battlechartright.style.width = '100%';
 
 	var battlechartleft = document.getElementById('battlechartleft');
-	battlechartleft.style.height = '20%';
-	battlechartleft.style.width = '100%';
+	battlechartleft.style.height = '20px';
+	battlechartleft.style.width = '20px';
 
 	var topbar = document.getElementById('topbar');
 	topbar.style.borderRight = topbar.style.borderBottom;
@@ -5505,8 +5505,8 @@ function unsetBattleHorizontal() {
 	battlechartright.style.width = '85%';
 	battlechartright.style.height = '100%';
 	var battlechartright = document.getElementById('battlechartleft');
-	battlechartleft.style.height = '20%';
-	battlechartleft.style.width = '15%';
+	battlechartleft.style.height = '20px';
+	battlechartleft.style.width = '20px';
 	
 	var topbar = document.getElementById('topbar');
 	//topbar.style.boxShadow = '0px -1px 3px black';
@@ -6774,7 +6774,7 @@ function saveMap_new(img, token) {
 function numberWithCommas(number) {
 	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-var currentCache = 'v1.15.0';
+var currentCache = 'v1.15.3';
 
 var states = [];
 var lands = [];
