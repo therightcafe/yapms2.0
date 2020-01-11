@@ -3762,8 +3762,18 @@ class State {
 			}
 		}
 		this.setColor(majorityCandidate, majorityColor, {setDelegates: false});
-	}
 
+		
+	}
+/*
+	test_setColor(options) {
+		var svg = document.getElementById("svgdata");
+		var defs = svg.querySelector("#defs");
+		if(defs === null) {
+			defs = document.createElement("defs");
+		}
+	}
+*/
 	setVoteCount(value) {
 		var diff = value - this.voteCount;
 		this.voteCount = value;
@@ -6774,7 +6784,7 @@ function saveMap_new(img, token) {
 function numberWithCommas(number) {
 	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-var currentCache = 'v1.15.3';
+var currentCache = 'v1.15.5';
 
 var states = [];
 var lands = [];

@@ -84,8 +84,18 @@ class State {
 			}
 		}
 		this.setColor(majorityCandidate, majorityColor, {setDelegates: false});
-	}
 
+		
+	}
+/*
+	test_setColor(options) {
+		var svg = document.getElementById("svgdata");
+		var defs = svg.querySelector("#defs");
+		if(defs === null) {
+			defs = document.createElement("defs");
+		}
+	}
+*/
 	setVoteCount(value) {
 		var diff = value - this.voteCount;
 		this.voteCount = value;
