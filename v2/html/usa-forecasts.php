@@ -47,7 +47,7 @@
 				Cook Political Report
 				<br>
 				<small>
-					12/20/19
+					1/24/20
 				</small>
 			</a>
 		</div>

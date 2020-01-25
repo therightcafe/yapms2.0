@@ -9,6 +9,23 @@
 		<div class="info-box-header">
 			<img src="app/res/flags/usa.svg">
 			<h3>
+				Forecast
+			</h3>
+		</div>
+		<div class="link-list">
+		<p>Cook Political Report</p>
+		<p><small>
+			January 24, 2020
+		</small></p>
+		<a class="link" href="./app/?t=USA_2020_house_cook">
+			Cook House
+		</a>
+		</div>
+	</div>
+	<div class="info-box">
+		<div class="info-box-header">
+			<img src="app/res/flags/usa.svg">
+			<h3>
 				New Maps
 			</h3>
 		</div>
@@ -19,23 +36,6 @@
 		<a class="link" href="./app/?t=Minnesota_2020_state_upper">Minnesota</a>
 		<a class="link" href="./app/?t=NorthDakota_2020_state_upper">North Dakota</a>
 		<a class="link" href="./app/?t=Ohio_2020_state_upper">Ohio</a>
-		</div>
-	</div>
-	<div class="info-box">
-		<div class="info-box-header">
-			<img src="app/res/flags/usa.svg">
-			<h3>
-				Forecast
-			</h3>
-		</div>
-		<div class="link-list">
-		<p>Cook Political Report</p>
-		<p><small>
-			December 20, 2019
-		</small></p>
-		<a class="link" href="./app/?t=USA_2020_house_cook">
-			Cook House
-		</a>
 		</div>
 	</div>
 	<div class="info-box">
