@@ -2223,7 +2223,8 @@ class MapLoader {
 				break;
 			case 'Australia_house_of_representatives':
 				PresetLoader.loadPreset('australia')
-				MapLoader.loadMap("./res/australia_constituencies.svg", 16, 0.5, "1", "takeall_noedit", "open");
+				//MapLoader.loadMap("./res/australia_constituencies.svg", 16, 0.5, "1", "takeall_noedit", "open");
+				MapLoader.loadMap("./res/aus/australia.svg", 16, 0.1, "1", "takeall_noedit", "open");
 				break;
 			case "Australia_states":
 				PresetLoader.loadPreset('australia')
@@ -6784,7 +6785,7 @@ function saveMap_new(img, token) {
 function numberWithCommas(number) {
 	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-var currentCache = 'v1.15.5';
+var currentCache = 'v1.20.2';
 
 var states = [];
 var lands = [];

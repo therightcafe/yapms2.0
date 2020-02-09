@@ -7,6 +7,22 @@
 	<div class="featured-section-body">
 	<div class="info-box">
 		<div class="info-box-header">
+			<img src="app/res/flags/aus.svg">
+			<h3>
+				Fix
+			</h3>
+		</div>
+		<div class="link-list">
+		<p><small>
+			Fixed house of representatives
+		</small></p>
+		<a class="link" href="./app/?t=Australia_house_of_representatives">
+			House
+		</a>
+		</div>
+	</div>
+	<div class="info-box">
+		<div class="info-box-header">
 			<img src="app/res/flags/usa.svg">
 			<h3>
 				Forecast
@@ -97,38 +113,6 @@
 		</a>
 		<a class="link" href="./app/?t=USA_county">
 			County
-		</a>
-		</div>
-	</div>
-	<div class="info-box">
-		<div class="info-box-header">
-			<img src="app/res/flags/usa.svg">
-			<h3>
-				Forecast
-			</h3>
-		</div>
-		<div class="link-list">
-		<p>Sabatos Crystal Ball</p>
-		<p><small>
-			November 7, 2019
-		</small></p>
-		<a class="link" href="./app/?t=USA_2020_sabatos">
-			Presidential
-		</a>
-		</div>
-	</div>
-	<div class="info-box">
-		<div class="info-box-header">
-			<img src="app/res/flags/usa.svg">
-			<h3>
-				New Map
-			</h3>
-		</div>
-		<div class="link-list">
-		<p>Congressional Districts</p>
-		<p><small>North Carolina Redistricting</small></p>
-		<a class="link" href="./app/?t=USA_2020_house">
-			House
 		</a>
 		</div>
 	</div>
