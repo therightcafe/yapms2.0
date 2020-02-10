@@ -6785,7 +6785,7 @@ function saveMap_new(img, token) {
 function numberWithCommas(number) {
 	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-var currentCache = 'v1.20.2';
+var currentCache = 'v1.20.3';
 
 var states = [];
 var lands = [];

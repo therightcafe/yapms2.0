@@ -37,12 +37,6 @@
 		</div>
 	</a>
 
-	<a href="https://discord.gg/WQh5fHU">
-		<div class="infobox link">
-			<i class="fab fa-discord"></i> Discord
-		</div>
-	</a>
-	
 	<a href="https://www.reddit.com/r/YAPms/">
 		<div class="infobox link reddit">
 			<i class="fab fa-reddit"></i> Reddit
