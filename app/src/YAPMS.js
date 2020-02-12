@@ -2869,10 +2869,10 @@ class PresetLoader {
 			['#ff9900','#ff9900','#ff9900','#ff9900']);
 		var klobuchar = new Candidate('Klobuchar',
 			['#000000','#000000','#000000','#000000']);
-		var yang = new Candidate('Yang',
-			['#3DA882','#3DA882','#3DA882','#3DA882']);
-		var booker = new Candidate('Booker',
-			['#66CCFF','#66CCFF','#66CCFF','#66CCFF']);
+		var gabbard = new Candidate('Gabbard',
+			['#FF0074','#FF0074','#FF0074','#FF0074']);
+		var steyer = new Candidate('Steyer',
+			['#3da882','#3da882','#3da882','#3da882']);
 		
 		CandidateManager.candidates['Biden'] = biden;
 		CandidateManager.candidates['Sanders'] = sanders;
@@ -2880,29 +2880,8 @@ class PresetLoader {
 		CandidateManager.candidates['Buttigieg'] = buttigieg;
 		CandidateManager.candidates['Bloomberg'] = bloomberg;
 		CandidateManager.candidates['Klobuchar'] = klobuchar;
-		CandidateManager.candidates['Yang'] = yang;
-		CandidateManager.candidates['Booker'] = booker;
-
-		if(mobile === false) {
-			var gabbard = new Candidate('Gabbard',
-				['#FF0074','#FF0074','#FF0074','#FF0074']);
-			var steyer = new Candidate('Steyer',
-				['#666666','#666666','#666666','#666666']);
-			var castro = new Candidate('Castro',
-				['#CC9900','#CC9900','#CC9900','#CC9900']);
-			var bennet = new Candidate('Bennet',
-				['#9966FF','#9966FF','#9966FF','#9966FF']);
-			var delaney = new Candidate('Delaney',
-				['#990000','#990000','#990000','#990000']);
-			var williamson = new Candidate('Williamson',
-				['#6672FF','#6672FF','#6672FF','#6672FF']);
-			CandidateManager.candidates['Gabbard'] = gabbard;
-			CandidateManager.candidates['Steyer'] = steyer;
-			CandidateManager.candidates['Castro'] = castro;
-			CandidateManager.candidates['Bennet'] = bennet;
-			CandidateManager.candidates['Delaney'] = delaney;
-			CandidateManager.candidates['Williamson'] = williamson;
-		}
+		CandidateManager.candidates['Gabbard'] = gabbard;
+		CandidateManager.candidates['Steyer'] = steyer;
 	}
 
 	// French parties
@@ -6785,7 +6764,7 @@ function saveMap_new(img, token) {
 function numberWithCommas(number) {
 	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-var currentCache = 'v1.20.3';
+var currentCache = 'v1.20.4';
 
 var states = [];
 var lands = [];
